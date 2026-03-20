@@ -12,7 +12,7 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   integrations: [react(), markdoc(), keystatic()],
   site: 'https://alistair-obrien.github.io',
-  base: '/alistair-obrien/',
+  // base: '/alistair-obrien/',
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
