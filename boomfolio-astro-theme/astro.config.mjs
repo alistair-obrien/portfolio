@@ -11,7 +11,8 @@ import vercel from "@astrojs/vercel";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), markdoc(), keystatic()],
-
+  site: 'https://alistair-obrien.github.io',
+  base: '/boomfolio-astro-theme',
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
