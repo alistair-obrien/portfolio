@@ -1,0 +1,15 @@
+name: Alistair
+title: Programmer, Creative Soul and Problem Solver
+description: I like to get my hands dirty
+avatar: '@assets/hero/avatar.png'
+location: Osaka, Japan
+socialLinks:
+  - url: mailto:alistair.m.obrien@gmail.com
+    icon: Email
+    label: Email
+  - url: https://github.com/alistair-obrien
+    icon: GitHub
+    label: GitHub
+  - url: https://jp.linkedin.com/in/alistair-o-brien
+    icon: LinkedIn
+    label: LinkedIn

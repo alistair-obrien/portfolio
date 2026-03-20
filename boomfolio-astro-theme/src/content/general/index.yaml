@@ -1,0 +1,10 @@
+enableThemeSelector: false
+extraLinksEnabled: false
+extraLinks: []
+showAboutSection: true
+showProjectsSection: true
+showBlogSection: false
+showWorkSection: true
+showEducationSection: true
+showHackathonsSection: true
+showContactSection: true
