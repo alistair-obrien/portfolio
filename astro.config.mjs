@@ -12,7 +12,6 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   integrations: [react(), markdoc(), keystatic()],
   site: 'https://alistair-obrien.github.io',
-  // base: '/alistair-obrien/',
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
@@ -23,8 +22,6 @@ export default defineConfig({
   output: "server",
 
   adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
+    imageService: true
   }),
 });
