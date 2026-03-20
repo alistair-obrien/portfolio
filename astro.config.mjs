@@ -12,7 +12,6 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   integrations: [react(), markdoc(), keystatic()],
   site: 'https://alistair-obrien.github.io',
-  // base: '/boomfolio-astro-theme',
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
@@ -20,7 +19,7 @@ export default defineConfig({
     },
   },
 
-  output: "server",
+  output: "static",
 
   adapter: vercel({
     webAnalytics: {
