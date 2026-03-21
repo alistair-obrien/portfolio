@@ -42,10 +42,10 @@ function formatPeriod(startDate: Date, endDate?: Date) {
         sortedHackathons.map((hackathon) => (
           <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
             <div class="card-body">
-              <div class="flex items-start gap-4">
+              <div class="flex flex-col md:flex-row items-start gap-4">
                 {hackathon.data.logo && (
                   <div class="avatar flex-shrink-0">
-                    <div class="w-64 h-48 rounded">
+                    <div class="w-64 h-48">
                       <Image
                         src={hackathon.data.logo}
                         alt={hackathon.data.title}
