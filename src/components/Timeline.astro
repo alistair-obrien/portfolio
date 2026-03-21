@@ -86,7 +86,7 @@ const entriesWithContent = await Promise.all(
 ---
 
 <section id={collection} class={`py-20 px-4 bg-${backgroundColor}`}>
-  <div class="max-w-4xl mx-auto">
+  <div class={`mx-auto ${variant === "timeline" ? "max-w-4xl" : "max-w-4xl"}`}>
     <div class="text-center mb-12">
       <h2 class="text-4xl font-bold">{sectionTitle}</h2>
       {
@@ -99,74 +99,31 @@ const entriesWithContent = await Promise.all(
     {
       variant === "timeline" ? (
         <>
-          <ul class="timeline timeline-vertical">
+          <ul class="timeline timeline-compact md:timeline-vertical flex-col">
             {entriesWithContent.map(({ entry, Content }, index) => (
               <li class="w-full">
                 {index > 0 && <hr class="bg-base-100 hidden md:block" />}
-
-                {/* LEFT slot — desktop only, even items */}
-                <div class="timeline-start hidden md:block md:max-w-2xs pt-3 mb-10">
-                  {index % 2 === 0 && (
-                    <>
-                      <time class="font-mono text-sm text-base-content/70 block italic text-end">
-                        {formatPeriod(entry.data.startDate, entry.data.endDate)}
-                        {calculateDuration(entry.data.startDate, entry.data.endDate) && (
-                          <span class="ml-1 text-base-content/50">
-                            {calculateDuration(entry.data.startDate, entry.data.endDate)}
-                          </span>
-                        )}
-                      </time>
-                      <div class="card bg-base-100 shadow-xl mt-2">
-                        <div class="card-body">
-                          <div class="flex items-center gap-4">
-                            {entry.data.logo && (
-                              <div class="avatar">
-                                <div class="w-12 mask mask-squircle">
-                                  <Image
-                                    src={entry.data.logo}
-                                    alt={entry.data.title}
-                                    inferSize={true}
-                                  />
-                                </div>
-                              </div>
-                            )}
-                            <div class="flex-1">
-                              <h3 class="card-title">{entry.data.title}</h3>
-                              <p class={`text-${color} font-semibold`}>
-                                {entry.data.subtitle}
-                              </p>
-                              {entry.data.location && (
-                                <p class="text-sm text-base-content/60">
-                                  {entry.data.location}
-                                </p>
-                              )}
-                            </div>
-                          </div>
-                          <div class="card-actions justify-end mt-2">
-                            <button
-                              class="btn btn-ghost btn-sm"
-                              onclick={`document.getElementById('modal-${entry.id}').showModal()`}
-                            >
-                              Read more
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
-
                 <div class="timeline-middle">
                   <IconComponent class={`size-5 text-${color} mx-3 my-1`} />
                 </div>
-
-                {/* RIGHT slot — always on mobile, odd items on desktop */}
-                <div class={`timeline-end w-full md:max-w-2xs pt-3 mb-10 ${index % 2 === 0 ? "md:hidden" : ""}`}>
-                  <time class="font-mono text-sm text-base-content/70 block italic text-start">
+                <div
+                  class={`timeline-${index % 2 === 0 ? "start" : "end"} w-full md:max-w-2xs pt-3 mb-10`}
+                >
+                  <time
+                    class={`font-mono text-sm text-base-content/70 block italic text-end ${
+                      index % 2 === 0 ? "md:text-end" : "md:text-start"
+                    }`}
+                  >
                     {formatPeriod(entry.data.startDate, entry.data.endDate)}
-                    {calculateDuration(entry.data.startDate, entry.data.endDate) && (
+                    {calculateDuration(
+                      entry.data.startDate,
+                      entry.data.endDate,
+                    ) && (
                       <span class="ml-1 text-base-content/50">
-                        {calculateDuration(entry.data.startDate, entry.data.endDate)}
+                        {calculateDuration(
+                          entry.data.startDate,
+                          entry.data.endDate,
+                        )}
                       </span>
                     )}
                   </time>
@@ -207,9 +164,8 @@ const entriesWithContent = await Promise.all(
                     </div>
                   </div>
                 </div>
-
                 {index < entriesWithContent.length - 1 && (
-                  <hr class="bg-base-100" />
+                  <hr class="bg-base-100 hidden md:block" />
                 )}
               </li>
             ))}
@@ -299,13 +255,12 @@ const entriesWithContent = await Promise.all(
         </>
       ) : (
         <ul class="list bg-base-100 rounded-box shadow-lg">
-          {entriesWithContent.map(({ entry, Content }) => (
+          {entriesWithContent.map(({ entry, Content }, index) => (
             <li class="border-b hover:opacity-85 transition-opacity border-base-300 last:border-b-0">
               <details class="collapse">
                 <summary class="collapse-title pe-5">
-                  <div class="flex flex-col gap-1 md:flex-row md:items-center">
-                    {/* Logo + name — below date on mobile, left on desktop */}
-                    <div class="flex items-center gap-3 flex-1 order-2 md:order-1">
+                  <div class="list-row p-0 items-center after:hidden">
+                    <div>
                       {entry.data.logo && (
                         <div class="avatar">
                           <div class="w-10 mask mask-squircle">
@@ -317,21 +272,22 @@ const entriesWithContent = await Promise.all(
                           </div>
                         </div>
                       )}
-                      <div>
-                        <h3 class="font-bold text-lg">{entry.data.title}</h3>
-                        <p class={`text-${color} font-semibold text-sm`}>
-                          {entry.data.subtitle}
-                        </p>
-                      </div>
                     </div>
-                    {/* Date — above name on mobile, right on desktop */}
-                    <div class="text-xs md:text-sm text-base-content/60 font-mono italic md:whitespace-nowrap order-1 md:order-2">
+
+                    <div>
+                      <h3 class="font-bold text-lg">{entry.data.title}</h3>
+                      <p class={`text-${color} font-semibold text-sm`}>
+                        {entry.data.subtitle}
+                      </p>
+                    </div>
+
+                    <div class="text-sm text-base-content/70 font-mono whitespace-nowrap">
                       {formatPeriod(entry.data.startDate, entry.data.endDate)}
                       {calculateDuration(
                         entry.data.startDate,
                         entry.data.endDate,
                       ) && (
-                        <span class="ml-1 text-base-content/40">
+                        <span class="ml-1 text-base-content/50">
                           {calculateDuration(
                             entry.data.startDate,
                             entry.data.endDate,
