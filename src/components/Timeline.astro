@@ -107,11 +107,11 @@ const entriesWithContent = await Promise.all(
                   <IconComponent class={`size-5 text-${color} mx-3 my-1`} />
                 </div>
                 <div
-                  class={`timeline-${index % 2 === 0 ? "start" : "end"} w-full md:max-w-2xs pt-3 mb-10`}
+                  class={`timeline-end md:${index % 2 === 0 ? "timeline-start" : "timeline-end"} w-full md:max-w-2xs pt-3 mb-10`}
                 >
                   <time
-                    class={`font-mono text-sm text-base-content/70 block italic text-end ${
-                      index % 2 === 0 ? "md:text-end" : "md:text-start"
+                    class={`font-mono text-sm text-base-content/70 block italic text-start md:${
+                      index % 2 === 0 ? "text-end" : "text-start"
                     }`}
                   >
                     {formatPeriod(entry.data.startDate, entry.data.endDate)}
@@ -255,12 +255,13 @@ const entriesWithContent = await Promise.all(
         </>
       ) : (
         <ul class="list bg-base-100 rounded-box shadow-lg">
-          {entriesWithContent.map(({ entry, Content }, index) => (
+          {entriesWithContent.map(({ entry, Content }) => (
             <li class="border-b hover:opacity-85 transition-opacity border-base-300 last:border-b-0">
               <details class="collapse">
                 <summary class="collapse-title pe-5">
-                  <div class="list-row p-0 items-center after:hidden">
-                    <div>
+                  <div class="flex flex-col gap-1 md:flex-row md:items-center">
+                    {/* Logo + name — below date on mobile, left on desktop */}
+                    <div class="flex items-center gap-3 flex-1 order-2 md:order-1">
                       {entry.data.logo && (
                         <div class="avatar">
                           <div class="w-10 mask mask-squircle">
@@ -272,22 +273,21 @@ const entriesWithContent = await Promise.all(
                           </div>
                         </div>
                       )}
+                      <div>
+                        <h3 class="font-bold text-lg">{entry.data.title}</h3>
+                        <p class={`text-${color} font-semibold text-sm`}>
+                          {entry.data.subtitle}
+                        </p>
+                      </div>
                     </div>
-
-                    <div>
-                      <h3 class="font-bold text-lg">{entry.data.title}</h3>
-                      <p class={`text-${color} font-semibold text-sm`}>
-                        {entry.data.subtitle}
-                      </p>
-                    </div>
-
-                    <div class="text-sm text-base-content/70 font-mono whitespace-nowrap">
+                    {/* Date — above name on mobile, right on desktop */}
+                    <div class="text-xs md:text-sm text-base-content/60 font-mono italic md:whitespace-nowrap order-1 md:order-2">
                       {formatPeriod(entry.data.startDate, entry.data.endDate)}
                       {calculateDuration(
                         entry.data.startDate,
                         entry.data.endDate,
                       ) && (
-                        <span class="ml-1 text-base-content/50">
+                        <span class="ml-1 text-base-content/40">
                           {calculateDuration(
                             entry.data.startDate,
                             entry.data.endDate,
