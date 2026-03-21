@@ -10,10 +10,12 @@ The name should be the same as the theme name below.
 */
 @plugin "daisyui" {
   themes:
-    light --default,
-    dark --prefersdark,
-    synthwave,
-    retro,
-    valentine,
-    dim;
+    caramellatte --default,
+    dim --prefersdark,
+    dark,
+    coffee;
 }
+
+/* * {
+  outline: 1px solid red;
+} */

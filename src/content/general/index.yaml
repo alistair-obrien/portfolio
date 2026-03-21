@@ -1,4 +1,4 @@
-enableThemeSelector: false
+enableThemeSelector: true
 extraLinksEnabled: false
 extraLinks: []
 showAboutSection: true

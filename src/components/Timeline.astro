@@ -99,18 +99,20 @@ const entriesWithContent = await Promise.all(
     {
       variant === "timeline" ? (
         <>
-          <ul class="timeline timeline-vertical timeline-snap-icon">
+          <ul class="timeline timeline-compact md:timeline-vertical flex-col">
             {entriesWithContent.map(({ entry, Content }, index) => (
-              <li>
-                {index > 0 && <hr class="bg-base-100" />}
+              <li class="w-full">
+                {index > 0 && <hr class="bg-base-100 hidden md:block" />}
                 <div class="timeline-middle">
                   <IconComponent class={`size-5 text-${color} mx-3 my-1`} />
                 </div>
                 <div
-                  class={`timeline-${index % 2 === 0 ? "start" : "end"} max-w-2xs pt-3 mb-10`}
+                  class={`timeline-${index % 2 === 0 ? "start" : "end"} w-full md:max-w-2xs pt-3 mb-10`}
                 >
                   <time
-                    class={`font-mono text-sm text-base-content/70 block italic ${index % 2 === 0 ? "text-end" : ""}`}
+                    class={`font-mono text-sm text-base-content/70 block italic text-end ${
+                      index % 2 === 0 ? "md:text-end" : "md:text-start"
+                    }`}
                   >
                     {formatPeriod(entry.data.startDate, entry.data.endDate)}
                     {calculateDuration(
