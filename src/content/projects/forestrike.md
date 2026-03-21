@@ -12,6 +12,8 @@ endDate: 2025-11-21
 skills:
   - C#
   - Unity
-  - Gitlab
+  - Python
+  - Nintendo Switch
+  - Steam
 demoLink: https://store.steampowered.com/app/2325920/Forestrike/
 ---
