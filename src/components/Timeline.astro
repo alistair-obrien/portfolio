@@ -259,41 +259,43 @@ const entriesWithContent = await Promise.all(
             <li class="border-b hover:opacity-85 transition-opacity border-base-300 last:border-b-0">
               <details class="collapse">
                 <summary class="collapse-title pe-5">
-                  <div class="list-row p-0 items-center after:hidden">
-                    <div>
-                      {entry.data.logo && (
-                        <div class="avatar">
-                          <div class="w-10 mask mask-squircle">
-                            <Image
-                              src={entry.data.logo}
-                              alt={entry.data.title}
-                              inferSize={true}
-                            />
-                          </div>
-                        </div>
-                      )}
-                    </div>
-
-                    <div>
-                      <h3 class="font-bold text-lg">{entry.data.title}</h3>
-                      <p class={`text-${color} font-semibold text-sm`}>
-                        {entry.data.subtitle}
-                      </p>
-                    </div>
-
-                    <div class="text-sm text-base-content/70 font-mono whitespace-nowrap">
+                  <div class="flex flex-col gap-1">
+                    <!-- Date: always on top on mobile, hidden on md+ (shown inline there) -->
+                    <div class="text-xs text-base-content/70 font-mono md:hidden">
                       {formatPeriod(entry.data.startDate, entry.data.endDate)}
-                      {calculateDuration(
-                        entry.data.startDate,
-                        entry.data.endDate,
-                      ) && (
+                      {calculateDuration(entry.data.startDate, entry.data.endDate) && (
                         <span class="ml-1 text-base-content/50">
-                          {calculateDuration(
-                            entry.data.startDate,
-                            entry.data.endDate,
-                          )}
+                          {calculateDuration(entry.data.startDate, entry.data.endDate)}
                         </span>
                       )}
+                    </div>
+
+                    <!-- Logo + title row -->
+                    <div class="list-row p-0 items-center after:hidden">
+                      <div>
+                        {entry.data.logo && (
+                          <div class="avatar">
+                            <div class="w-10 mask mask-squircle">
+                              <Image src={entry.data.logo} alt={entry.data.title} inferSize={true} />
+                            </div>
+                          </div>
+                        )}
+                      </div>
+
+                      <div>
+                        <h3 class="font-bold text-lg">{entry.data.title}</h3>
+                        <p class={`text-${color} font-semibold text-sm`}>{entry.data.subtitle}</p>
+                      </div>
+
+                      <!-- Date: hidden on mobile, shown inline on md+ -->
+                      <div class="hidden md:block text-sm text-base-content/70 font-mono whitespace-nowrap">
+                        {formatPeriod(entry.data.startDate, entry.data.endDate)}
+                        {calculateDuration(entry.data.startDate, entry.data.endDate) && (
+                          <span class="ml-1 text-base-content/50">
+                            {calculateDuration(entry.data.startDate, entry.data.endDate)}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </summary>
