@@ -7,4 +7,4 @@ showBlogSection: false
 showWorkSection: true
 showEducationSection: true
 showHackathonsSection: true
-showContactSection: true
+showContactSection: false
