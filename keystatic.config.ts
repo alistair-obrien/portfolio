@@ -178,6 +178,10 @@ export default config({
           label: "Show Projects Section",
           defaultValue: true,
         }),
+        showToolsSection: fields.checkbox({
+          label: "Show Tools Section",
+          defaultValue: true,
+        }),
         showBlogSection: fields.checkbox({
           label: "Show Blog Section",
           defaultValue: true,
@@ -409,6 +413,78 @@ export default config({
             image: {
               directory: "src/assets/projects",
               publicPath: "@assets/projects/",
+            },
+          },
+          components: {
+            Spotify: block({
+              label: "Spotify Playlist",
+              schema: {
+                url: fields.text({ label: "Playlist ID" }),
+              },
+            }),
+          },
+        }),
+      },
+    }),
+
+    tools: collection({
+      label: "Tools",
+      path: "src/content/tools/*",
+      slugField: "title",
+      entryLayout: "content",
+      format: {
+        contentField: "content",
+      },
+      schema: {
+        featured: fields.checkbox({
+          label: "Featured Tool",
+          description: "Show this tool on the homepage",
+          defaultValue: false,
+        }),
+        title: fields.slug({
+          name: { label: "Tool Name" },
+        }),
+        description: fields.text({
+          label: "Short Description",
+          multiline: true,
+          description: "Brief tool summary for cards",
+        }),
+        image: fields.image({
+          label: "Tool Image",
+          directory: "src/assets/tools",
+          publicPath: "@assets/tools/",
+          validation: { isRequired: true },
+          description: "Main tool image",
+        }),
+        startDate: fields.date({
+          label: "Start Date",
+          validation: { isRequired: true },
+        }),
+        endDate: fields.date({
+          label: "End Date",
+          description: "Leave empty if ongoing",
+        }),
+        skills: fields.array(fields.text({ label: "Skill" }), {
+          label: "Skills/Technologies",
+          itemLabel: (props) => props.value,
+          description: "Technologies and tools used in this tool",
+        }),
+        demoLink: fields.url({
+          label: "Demo Link",
+          description: "Live demo URL (optional)",
+        }),
+        sourceLink: fields.url({
+          label: "Source Code Link",
+          description: "GitHub or repository URL (optional)",
+        }),
+        content: fields.markdoc({
+          label: "Full Description",
+          description: "Detailed project information",
+          extension: "md",
+          options: {
+            image: {
+              directory: "src/assets/tools",
+              publicPath: "@assets/tools/",
             },
           },
           components: {

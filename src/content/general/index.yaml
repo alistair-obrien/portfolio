@@ -3,6 +3,7 @@ extraLinksEnabled: false
 extraLinks: []
 showAboutSection: true
 showProjectsSection: true
+showToolsSection: true
 showBlogSection: false
 showWorkSection: true
 showEducationSection: true

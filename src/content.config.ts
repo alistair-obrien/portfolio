@@ -83,6 +83,26 @@ const projects = defineCollection({
     }),
 });
 
+// Tolls collection
+const tools = defineCollection({
+  loader: glob({
+    pattern: "**/*.{md,mdoc,yaml}",
+    base: "./src/content/tools",
+  }),
+  schema: ({ image }) =>
+    z.object({
+      featured: z.boolean().optional().default(false),
+      title: z.string(),
+      description: z.string(),
+      image: image(),
+      startDate: z.coerce.date(),
+      endDate: z.coerce.date().optional(),
+      skills: z.array(z.string()),
+      demoLink: z.string().url().optional(),
+      sourceLink: z.string().url().optional(),
+    }),
+});
+
 // Hackathons collection
 const hackathons = defineCollection({
   loader: glob({
@@ -153,6 +173,7 @@ const general = defineCollection({
     ),
     showAboutSection: z.boolean(),
     showProjectsSection: z.boolean(),
+    showToolsSection: z.boolean(),
     showBlogSection: z.boolean(),
     showWorkSection: z.boolean(),
     showEducationSection: z.boolean(),
@@ -180,6 +201,7 @@ export const collections = {
   work,
   education,
   projects,
+  tools,
   hackathons,
   blog,
   about,
