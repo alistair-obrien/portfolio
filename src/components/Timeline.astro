@@ -99,7 +99,7 @@ const entriesWithContent = await Promise.all(
     {
       variant === "timeline" ? (
         <>
-          <ul class="timeline timeline-compact md:timeline-vertical flex-col">
+          <ul class="timeline timeline-vertical">
             {entriesWithContent.map(({ entry, Content }, index) => (
               <li class="w-full">
                 {index > 0 && <hr class="bg-base-100 hidden md:block" />}
