@@ -27,11 +27,11 @@ const general = generalEntry.data;
   description={heroEntry.data.description}
 >
   <main>
-    <!-- Hero Section (Always visible) -->
-    <Hero hero={heroEntry.data} />
+    
+    <!-- <Hero hero={heroEntry.data} /> -->
 
     <!-- All other sections hidden on mobile -->
-    <div class="hidden lg:block">
+    <div>
       <!-- About Section -->
       {
         general.showAboutSection && (

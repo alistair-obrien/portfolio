@@ -1,7 +1,6 @@
 ---
 title: About Me
 photo: '@assets/about/photo.jpg'
-link: https://jp.linkedin.com/in/alistair-o-brien
 ---
 I enjoy getting stuck into interesting projects and finding the best ways to optimize workflows for all contributors. This includes setting up robust and deliberate architecture as well as intuitive tools for designers.
 
