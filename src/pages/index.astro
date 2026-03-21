@@ -22,6 +22,14 @@ const generalEntry = await getEntry("general", "index");
 const general = generalEntry.data;
 ---
 
+<script>
+  const user = "alistair.m.obrien";
+  const domain = "gmail.com";
+  const email = `${user}@${domain}`;
+  document.getElementById("email-link").href = `mailto:${email}`;
+  document.getElementById("email-link").textContent = email;
+</script>
+
 <Layout
   title={`${heroEntry.data.name} - Portfolio`}
   description={heroEntry.data.description}
@@ -37,13 +45,7 @@ const general = generalEntry.data;
          <p class="text-lg text-base-content/70">
           Programming - Project Management - Workflow Optimization
         </p>
-
-        <a 
-          href="mailto:alistair.m.obrien@gmail.com" 
-          class="text-primary underline mt-4 inline-block"
-        >
-          alistair.m.obrien@gmail.com
-        </a>
+          <a id="email-link" class="text-primary underline mt-4 inline-block"></a>
         </div>
       </div>
     </section>
