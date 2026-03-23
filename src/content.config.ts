@@ -56,6 +56,7 @@ const education = defineCollection({
     z.object({
       title: z.string(),
       subtitle: z.string(),
+      location: z.string().optional(),
       startDate: z.coerce.date(),
       endDate: z.coerce.date().optional(),
       logo: image().optional(),

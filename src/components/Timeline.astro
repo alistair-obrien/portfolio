@@ -285,7 +285,13 @@ const entriesWithContent = await Promise.all(
                       <h3 class="font-bold text-lg">{entry.data.title}</h3>
                       <p class={`text-${color} font-semibold text-sm`}>
                         {entry.data.subtitle}
+
                       </p>
+                      {entry.data.location && (
+                        <p class="text-sm text-base-content/60">
+                          {entry.data.location}
+                        </p>
+                      )}
                     </div>
 
                     <!-- Date (desktop) -->

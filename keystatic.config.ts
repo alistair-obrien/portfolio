@@ -343,6 +343,10 @@ export default config({
           publicPath: "@assets/education/",
           description: "Optional institution logo",
         }),
+        location: fields.text({
+          label: "Location",
+          description: "Country or city (e.g., 'Brazil', 'Remote')",
+        }),
         link: fields.url({
           label: "Institution Website",
           description: "Optional link to institution website",
