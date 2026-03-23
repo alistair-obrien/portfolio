@@ -14,11 +14,11 @@ image: '@assets/projects/the-aetherlight/image.jpg'
 startDate: 2013-12-01
 endDate: 2017-07-01
 platforms:
-  - web
-  - ios
-  - android
   - windows
   - mac
+  - ios
+  - android
+  - web
 skills:
   - C#
   - Unity

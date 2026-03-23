@@ -6,9 +6,10 @@ description: >-
   sound designers can elevate your game to the next level!
 image: '@assets/tools/audiophile/image.png'
 startDate: 2023-01-01
+platforms:
+  - unity
 skills:
   - C#
-  - Unity
 demoLink: https://pixel-dust-dev.itch.io/audiophile-unity-sfx-tool
 sourceLink: https://github.com/alistair-obrien/Unity-Audiophile
 ---
