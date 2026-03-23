@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import SkillBadge from "./SkillBadge.astro";
+import PlatformBadge from "./PlatformBadge.astro";
 import { ExternalLink, Eye } from "@lucide/astro";
 import type { CollectionEntry } from "astro:content";
 
@@ -49,6 +50,9 @@ function formatPeriod(startDate: Date, endDate?: Date) {
     <div class="flex flex-wrap gap-2 mt-2">
       {project.data.skills.map((skill) => <SkillBadge skill={skill} />)}
     </div>
+    <div class="flex flex-wrap gap-2 mt-2">
+      {project.data.platforms?.map((platform) => <PlatformBadge platform={platform} />)}
+    </div>
     <div class="card-actions justify-end mt-4 gap-2">
       {
         project.data.demoLink && (
@@ -84,11 +88,9 @@ function formatPeriod(startDate: Date, endDate?: Date) {
           </a>
         )
       }
-      <div class="tooltip" data-tip="View project details">
-        <a href={`/projects/${project.id}`} class="btn btn-sm btn-primary">
-          <Eye class="size-4" />
-        </a>
-      </div>
+      <a href={`/projects/${project.id}`} class="btn btn-sm btn-primary">
+        More Details
+      </a>
     </div>
   </div>
 </article>

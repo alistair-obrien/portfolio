@@ -10,12 +10,17 @@ description: >-
 image: '@assets/projects/the-aetherlight/image.jpg'
 startDate: 2013-12-01
 endDate: 2017-07-01
+platforms:
+  - web
+  - ios
+  - android
+  - windows
+  - mac
 skills:
   - C#
   - Unity
   - Java
   - Blender
   - Photoshop
-  - Web
 demoLink: https://www.mmorpg.com/the-aetherlight-chronicles-of-the-resistance
 ---

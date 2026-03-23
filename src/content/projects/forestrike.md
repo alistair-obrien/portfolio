@@ -9,11 +9,12 @@ description: >-
 image: '@assets/projects/forestrike/image.webp'
 startDate: 2022-01-21
 endDate: 2025-11-21
+platforms:
+  - windows
+  - switch
 skills:
   - C#
   - Unity
   - Python
-  - Nintendo Switch
-  - Steam
 demoLink: https://store.steampowered.com/app/2325920/Forestrike/
 ---

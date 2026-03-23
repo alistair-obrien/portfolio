@@ -84,11 +84,9 @@ function formatPeriod(startDate: Date, endDate?: Date) {
           </a>
         )
       }
-      <div class="tooltip" data-tip="View details">
-        <a href={`/tools/${tool.id}`} class="btn btn-sm btn-primary">
-          <Eye class="size-4" />
-        </a>
-      </div>
+      <a href={`/tools/${tool.id}`} class="btn btn-sm btn-primary">
+          More Details
+      </a>
     </div>
   </div>
 </article>

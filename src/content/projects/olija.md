@@ -8,12 +8,14 @@ description: >-
 image: '@assets/projects/olija/image.jpg'
 startDate: 2020-09-01
 endDate: 2021-01-28
+platforms:
+  - windows
+  - switch
+  - playstation
+  - xbox
 skills:
-  - Unity
   - C#
+  - Unity
   - Construct 2
-  - Nintendo Switch
-  - PS4
-  - XBox One
 demoLink: https://store.steampowered.com/app/1297330/Olija/
 ---

@@ -1,0 +1,15 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  platform: string;
+  class?: string;
+}
+
+const { platform, class: className } = Astro.props;
+---
+
+<Icon 
+  name={platform} 
+  class="primary w-5 h-5 m-1" 
+/>
