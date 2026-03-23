@@ -1,6 +1,9 @@
 ---
 featured: true
 title: Forestrike
+roles:
+  - Lead Programmer
+  - Producer
 description: >-
   Forestrike is a martial arts roguelite where every death brings you closer to
   winning the fight before it begins. Use your ‘Foresight’ ability to experiment

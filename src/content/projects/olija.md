@@ -1,6 +1,8 @@
 ---
 featured: true
 title: Olija
+roles:
+  - Programmer
 description: >-
   Olija is a game about Faraday's quest, a man shipwrecked then trapped in the
   mysterious country of Terraphage. Armed with a legendary harpoon, he and other

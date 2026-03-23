@@ -376,6 +376,11 @@ export default config({
         title: fields.slug({
           name: { label: "Project Name" },
         }),
+        roles: fields.array(fields.text({ label: "Roles" }), {
+          label: "Roles",
+          itemLabel: (props) => props.value,
+          description: "e.g., Programmer, Producer",
+        }),
         description: fields.text({
           label: "Short Description",
           multiline: true,

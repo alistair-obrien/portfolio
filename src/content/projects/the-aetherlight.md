@@ -1,6 +1,9 @@
 ---
 featured: true
 title: The Aetherlight
+roles:
+  - Programmer
+  - 3D Artist
 description: >-
   The Aetherlight is a kid-friendly MMORPG from Scarlet City. Based loosely upon
   the Bible, players will join the Resistance and work with the mysterious
