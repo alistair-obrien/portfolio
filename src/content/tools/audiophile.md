@@ -12,6 +12,8 @@ skills:
 demoLink: https://pixel-dust-dev.itch.io/audiophile-unity-sfx-tool
 sourceLink: https://github.com/alistair-obrien/Unity-Audiophile
 ---
+## Features
+
 - Fast AudioClip variations generation to save time on manually assigning clips
 - Weighted randomized clip playback for more detailed randomization
 - Randomized pitch and Randomized volume for more variation and control
@@ -22,3 +24,12 @@ sourceLink: https://github.com/alistair-obrien/Unity-Audiophile
 - Inbuilt Pooled Audio System to help keep your audio playing optimized
 - No complicated framework to learn
 - One line of code to add a Sound Event, and one line of code to play a sound event
+
+```
+public SoundEvent _sound;
+
+public void Start()
+{
+    _sound.Play();
+}
+```
