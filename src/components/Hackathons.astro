@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { ExternalLink, Eye } from "@lucide/astro";
 
 const hackathonEntries = await getCollection("hackathons");
 
@@ -74,8 +75,9 @@ function formatPeriod(startDate: Date, endDate?: Date) {
                         href={hackathon.data.sourceLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn btn-sm btn-outline btn-primary"
+                        class="btn btn-sm btn-soft gap-1"
                       >
+                        <ExternalLink class="size-4" />
                         View Game Jam Entry
                       </a>
                     </div>
