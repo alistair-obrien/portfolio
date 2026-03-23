@@ -5,5 +5,15 @@ location: Auckland, New Zealand
 startDate: 2013-12-01
 endDate: 2017-07-01
 logo: '@assets/work/scarlet-city-studios/logo.png'
-skills: []
+link: https://scarletcitystudios.com/
+skills:
+  - Unity
+  - C#
+  - Java
+  - Blender
+  - Photoshop
 ---
+- Programming
+- 3D Modeling
+- Hand Painted Texturing
+- Shaders
