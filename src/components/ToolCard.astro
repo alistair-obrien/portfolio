@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import SkillBadge from "./SkillBadge.astro";
+import PlatformBadge from "./PlatformBadge.astro";
 import { ExternalLink, Eye } from "@lucide/astro";
 import type { CollectionEntry } from "astro:content";
 
@@ -48,6 +49,9 @@ function formatPeriod(startDate: Date, endDate?: Date) {
     <p class="text-base-content/80">{tool.data.description}</p>
     <div class="flex flex-wrap gap-2 mt-2">
       {tool.data.skills.map((skill) => <SkillBadge skill={skill} />)}
+    </div>
+    <div class="flex flex-wrap gap-2 mt-2">
+      {tool.data.platforms?.map((platform) => <PlatformBadge platform={platform} />)}
     </div>
     <div class="card-actions justify-end mt-4 gap-2">
       {

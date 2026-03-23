@@ -478,6 +478,11 @@ export default config({
           label: "End Date",
           description: "Leave empty if ongoing",
         }),
+        platforms: fields.array(fields.text({ label: "Platform" }), {
+          label: "Platforms",
+          itemLabel: (props) => props.value,
+          description: "e.g., godot, unity",
+        }),
         skills: fields.array(fields.text({ label: "Skill" }), {
           label: "Skills/Technologies",
           itemLabel: (props) => props.value,

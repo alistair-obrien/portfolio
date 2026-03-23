@@ -6,9 +6,12 @@ description: >-
   through code.
 image: '@assets/tools/weighted-randomizer/image.png'
 startDate: 2022-07-01
+platforms:
+  - unity
+  - godot
 skills:
   - C#
-  - Unity
+  - GDScript
 demoLink: https://github.com/alistair-obrien/Unity-WeightedObjects
 sourceLink: https://github.com/alistair-obrien/Unity-WeightedObjects
 ---
