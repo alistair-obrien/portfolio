@@ -4,7 +4,7 @@ extraLinks: []
 showAboutSection: true
 showProjectsSection: true
 showToolsSection: true
-showBlogSection: false
+showBlogSection: true
 showWorkSection: true
 showEducationSection: true
 showHackathonsSection: true
