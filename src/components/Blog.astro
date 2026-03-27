@@ -6,7 +6,7 @@ import { ArrowRight } from "@lucide/astro";
 const blogEntries = await getCollection("blog");
 
 // Sort by publish date, most recent first
-const sortedPosts = blogEntries.sort(
+const sortedPosts = blogEntries.filter((post) => !post.data.isDraft).sort(
   (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
 );
 

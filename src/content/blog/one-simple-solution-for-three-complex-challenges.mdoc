@@ -1,0 +1,40 @@
+---
+title: Time Traversal and C.O.W
+description: >-
+  An overview of how a simple system solves multiple complex time traversal
+  features elegantly.
+image: '@assets/blog/one-simple-solution-for-three-complex-challenges/image.png'
+publishDate: 2026-03-27
+tags: []
+---
+From the very start of the project I knew I needed to implement some kind of way to scrub through the simulation.
+
+This was to serve both the Editing philosophy and mechanics I planned to add to the game.
+
+### Editing Philosophy
+
+The game is the editor is the game.
+
+I designed the engine to have as few split paths as possible. When you right click a character  on the map while playing or when you right click a character in the hierarchy tree, the route is the same. It queries the backend for what actions are possible on that entity.
+
+Because of that I knew I did not want to have an undo/redo buffer specific to an editor context, but rather I needed the undo/redo to be supported completely.
+
+This would allow the editor to jump back and forth between an editor UI and a gameplay UI, mutating parts of the simulation how they see fit, all under a shared history timeline.
+
+### Mechanics
+
+Recording
+
+AI Simulation Paths
+
+Predictive Mods
+
+Previewing Action Outcomes
+
+### The Solution
+
+Copy on Write.
+
+It's a simple and elegant solution to what would normally be quite complex challenges.
+
+TODO

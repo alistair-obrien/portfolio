@@ -535,6 +535,10 @@ export default config({
           multiline: true,
           description: "SEO description and excerpt",
         }),
+        isDraft: fields.checkbox({
+          label: "Draft",
+          description: "Mark as draft",
+        }),
         image: fields.image({
           label: "Cover Image",
           directory: "src/assets/blog",

@@ -131,7 +131,8 @@ const blog = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      description: z.string(),
+      isDraft: z.boolean().optional().default(true),
+      description: z.string().optional(),
       image: image(),
       publishDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
