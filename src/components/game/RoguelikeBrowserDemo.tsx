@@ -1,4 +1,4 @@
-import { startTransition, useEffect, useRef, useState } from "react";
+import { startTransition, useEffect, useMemo, useRef, useState } from "react";
 
 type IdLike = { Value?: string | null } | string | null | undefined;
 
@@ -77,6 +77,17 @@ type Footprint = {
   height: number;
 };
 
+type PreparedMap = {
+  mapId: string;
+  width: number;
+  height: number;
+  walkableCells: Set<string>;
+  propCells: Set<string>;
+  itemCells: Set<string>;
+  playerCells: Set<string>;
+  characterCells: Set<string>;
+};
+
 function getIdValue(id: IdLike): string | null {
   if (!id) {
     return null;
@@ -124,6 +135,83 @@ function footprintContains(
 
 function getTileAt(map: MapPresentation, x: number, y: number) {
   return (map.Tiles ?? []).find((tile) => footprintContains(tile.CellFootprint, x, y));
+}
+
+function toCellKey(x: number, y: number) {
+  return `${x}:${y}`;
+}
+
+function addFootprintToSet(
+  target: Set<string>,
+  footprintValue: string | null | undefined,
+) {
+  const footprint = parseFootprint(footprintValue);
+
+  if (!footprint) {
+    return;
+  }
+
+  for (let yy = footprint.y; yy < footprint.y + footprint.height; yy += 1) {
+    for (let xx = footprint.x; xx < footprint.x + footprint.width; xx += 1) {
+      target.add(toCellKey(xx, yy));
+    }
+  }
+}
+
+function prepareMap(
+  map: MapPresentation | null,
+  playerId: string | null,
+): PreparedMap | null {
+  if (!map) {
+    return null;
+  }
+
+  const prepared: PreparedMap = {
+    mapId: getIdValue(map.MapId) ?? "",
+    width: map.Width ?? 0,
+    height: map.Height ?? 0,
+    walkableCells: new Set<string>(),
+    propCells: new Set<string>(),
+    itemCells: new Set<string>(),
+    playerCells: new Set<string>(),
+    characterCells: new Set<string>(),
+  };
+
+  for (const tile of map.Tiles ?? []) {
+    const footprint = parseFootprint(tile.CellFootprint);
+
+    if (!footprint) {
+      continue;
+    }
+
+    for (let yy = footprint.y; yy < footprint.y + footprint.height; yy += 1) {
+      for (let xx = footprint.x; xx < footprint.x + footprint.width; xx += 1) {
+        const key = toCellKey(xx, yy);
+
+        if (tile.Walkable !== false) {
+          prepared.walkableCells.add(key);
+        }
+      }
+    }
+  }
+
+  for (const prop of map.Props ?? []) {
+    addFootprintToSet(prepared.propCells, prop.CellFootprint);
+  }
+
+  for (const item of map.Items ?? []) {
+    addFootprintToSet(prepared.itemCells, item.CellFootprint);
+  }
+
+  for (const character of map.Characters ?? []) {
+    const isPlayer = getIdValue(character.CharacterId) === playerId;
+    addFootprintToSet(
+      isPlayer ? prepared.playerCells : prepared.characterCells,
+      character.CellFootprint,
+    );
+  }
+
+  return prepared;
 }
 
 function getActiveMap(state: GameState | null) {
@@ -182,6 +270,7 @@ export default function RoguelikeBrowserDemo() {
   const engineRef = useRef<RoguelikeEngineModule | null>(null);
   const sessionIdRef = useRef<string | null>(null);
 
+  const [sessionId, setSessionId] = useState<string | null>(null);
   const [state, setState] = useState<GameState | null>(null);
   const [logEntries, setLogEntries] = useState<LogEntry[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -205,6 +294,7 @@ export default function RoguelikeBrowserDemo() {
 
         engineRef.current = engine;
         sessionIdRef.current = envelope.SessionId ?? null;
+        setSessionId(envelope.SessionId ?? null);
 
         if (!envelope.Ok || !envelope.State || !envelope.SessionId) {
           setErrorMessage(envelope.ErrorMessage || "Failed to create a browser-local session.");
@@ -247,19 +337,23 @@ export default function RoguelikeBrowserDemo() {
 
   const activeMap = getActiveMap(state);
   const playerId = getIdValue(state?.PlayerHUD?.characterUid);
+  const preparedMap = useMemo(
+    () => prepareMap(activeMap, playerId),
+    [activeMap, playerId],
+  );
 
   async function handleReset() {
     const engine = engineRef.current;
-    const sessionId = sessionIdRef.current;
+    const currentSessionId = sessionIdRef.current;
 
-    if (!engine || !sessionId || isBusy) {
+    if (!engine || !currentSessionId || isBusy) {
       return;
     }
 
     setIsBusy(true);
 
     try {
-      const envelope = await engine.resetSession(sessionId);
+      const envelope = await engine.resetSession(currentSessionId);
 
       startTransition(() => {
         setErrorMessage(envelope.Ok ? null : envelope.ErrorMessage || "Reset failed.");
@@ -284,16 +378,16 @@ export default function RoguelikeBrowserDemo() {
 
   async function handleMove(mapId: string, x: number, y: number) {
     const engine = engineRef.current;
-    const sessionId = sessionIdRef.current;
+    const currentSessionId = sessionIdRef.current;
 
-    if (!engine || !sessionId || isBusy) {
+    if (!engine || !currentSessionId || isBusy) {
       return;
     }
 
     setIsBusy(true);
 
     try {
-      const envelope = await engine.movePlayerToCell(sessionId, mapId, x, y);
+      const envelope = await engine.movePlayerToCell(currentSessionId, mapId, x, y);
 
       startTransition(() => {
         setErrorMessage(envelope.Ok ? null : envelope.ErrorMessage || "Move failed.");
@@ -317,7 +411,7 @@ export default function RoguelikeBrowserDemo() {
         <button
           type="button"
           onClick={handleReset}
-          disabled={!sessionIdRef.current || isBusy}
+          disabled={!sessionId || isBusy}
           className="rounded-full border border-base-300 bg-base-100 px-4 py-2 text-sm font-medium text-base-content transition hover:bg-base-200 disabled:cursor-not-allowed disabled:opacity-50"
         >
           Reset
@@ -325,34 +419,22 @@ export default function RoguelikeBrowserDemo() {
       </div>
 
       <div className="overflow-auto rounded-[1.5rem] border border-base-300 bg-base-100 p-3 shadow-sm">
-        {activeMap ? (
+        {preparedMap ? (
           <div
             className="grid w-max gap-px rounded-xl bg-base-300 p-px"
             style={{
-              gridTemplateColumns: `repeat(${activeMap.Width ?? 0}, minmax(0, 1fr))`,
+              gridTemplateColumns: `repeat(${preparedMap.width}, minmax(0, 1fr))`,
             }}
           >
-            {Array.from({ length: activeMap.Height ?? 0 }, (_, y) =>
-              Array.from({ length: activeMap.Width ?? 0 }, (_, x) => {
-                const mapId = getIdValue(activeMap.MapId) ?? "";
-                const tile = getTileAt(activeMap, x, y);
-                const isWalkable = tile?.Walkable !== false;
-                const playerAtCell = (activeMap.Characters ?? []).some(
-                  (character) =>
-                    getIdValue(character.CharacterId) === playerId &&
-                    footprintContains(character.CellFootprint, x, y),
-                );
-                const characterAtCell = (activeMap.Characters ?? []).some(
-                  (character) =>
-                    getIdValue(character.CharacterId) !== playerId &&
-                    footprintContains(character.CellFootprint, x, y),
-                );
-                const itemAtCell = (activeMap.Items ?? []).some((item) =>
-                  footprintContains(item.CellFootprint, x, y),
-                );
-                const propAtCell = (activeMap.Props ?? []).some((prop) =>
-                  footprintContains(prop.CellFootprint, x, y),
-                );
+            {Array.from({ length: preparedMap.height }, (_, y) =>
+              Array.from({ length: preparedMap.width }, (_, x) => {
+                const key = toCellKey(x, y);
+                const mapId = preparedMap.mapId;
+                const isWalkable = preparedMap.walkableCells.has(key);
+                const playerAtCell = preparedMap.playerCells.has(key);
+                const characterAtCell = preparedMap.characterCells.has(key);
+                const itemAtCell = preparedMap.itemCells.has(key);
+                const propAtCell = preparedMap.propCells.has(key);
                 const canAttemptMove =
                   isWalkable && !propAtCell && !characterAtCell && !playerAtCell;
 
