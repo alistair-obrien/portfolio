@@ -1,9 +1,11 @@
 # build output
 dist/
+dist/**
 
 # generated types
 .astro/
 .vercel/
+.templateengine/
 
 # dependencies
 node_modules/
@@ -17,6 +19,17 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+
+# .NET build output
+**/bin/
+**/obj/
+.dotnet/
+*.user
+*.rsuser
+*.suo
+.vs/
+artifacts/widgets/
+public/widgets/roguelike/
 
 # macOS-specific files
 .DS_Store

@@ -1,40 +1,265 @@
 ---
-title: Time Traversal and C.O.W
+title: Time Traversal with Copy on Write
 description: >-
-  An overview of how a simple system solves multiple complex time traversal
-  features elegantly.
+  How copy on write lets my engine scrub history, render action previews, and
+  run AI pathing against possible futures without cloning the whole world.
+isDraft: false
 image: '@assets/blog/one-simple-solution-for-three-complex-challenges/image.png'
 publishDate: 2026-03-27
-tags: []
+updatedDate: 2026-03-27
+tags:
+  - Game Engine
+  - Architecture
+  - AI
+  - Simulation
 ---
-From the very start of the project I knew I needed to implement some kind of way to scrub through the simulation.
 
-This was to serve both the Editing philosophy and mechanics I planned to add to the game.
+##  Command Pattern
 
-### Editing Philosophy
+##  Copy on Write
+Copy on Write (C.O.W) is an optimization strategy where multiple entities can share the same data until one of them needs to modify it.
+At that point, a copy of the data is created for the modifying entity, allowing for efficient memory usage and performance.
+This is commonly used in operating systems when multiple processes share the same memory pages until one of them needs to write to it, at which point a copy of the page is made for that process.
 
-The game is the editor is the game.
+Let's take a look at forking the state of the game domain in order to support undo/redo, simulation branching for AI, and action previews.
 
-I designed the engine to have as few split paths as possible. When you right click a character  on the map while playing or when you right click a character in the hierarchy tree, the route is the same. It queries the backend for what actions are possible on that entity.
+Very simply, all these features can be implemented with the same three steps:
+1. Open a Simulation Branch
+2. Run one or many commands to mutate the domain models
+3. Commit or Discard the Branch
 
-Because of that I knew I did not want to have an undo/redo buffer specific to an editor context, but rather I needed the undo/redo to be supported completely.
+When the domain is small, this is easy to implement with a simple copy of the entire state.
+The entre Root can be deep cloned, pushed on a stack, and the branch can be mutated without affecting the mainline.
+Then to commit, the branch can replace the mainline, and to discard, the branch can simply be thrown away.
 
-This would allow the editor to jump back and forth between an editor UI and a gameplay UI, mutating parts of the simulation how they see fit, all under a shared history timeline.
+# Todo: show animation
 
-### Mechanics
+However, as the domain grows, this approach becomes slower and more memory intensive, as the entire state needs to be copied for each branch, even if only a small portion of it is modified.
+It's also important to note that commands generally modify only a small portion of the state.
 
-Recording
+Think for example of a command for one character attacking another character. The involved entities are:
+- The Attacker Entity
+- The Attacker's Weapon Entity
+- The Defender Entity
+- The Defender's Armor Entity
 
-AI Simulation Paths
+What if the game world has 10,000 entities, and only 4 of them are involved in the attack command?
+We don't want to clone the entire 10,0000 entities just to mutate 0.04% of the state.
 
-Predictive Mods
+What if we simply take a slice of the world? Perhaps we only clone a section of the world? 
+In the above scenario we are on a map with multiple entities. Lets say we have 20 characters, each with 10 items, and 40 props scattered across the map.
+240 etities in total, with still only 4 involved in the attack command. 
+1.6% of the state is involved in the command. This is a fair improvement, but still very wasteful.
+We can clone the subsection, apply mutations, then merge or discard. 
 
-Previewing Action Outcomes
+It also has a major flaw. What if the attack command depends on the state of the world outside of the slice? 
+For example, what if the command updates a relationship to a faction? 
+Or we want to preview over multiple ticks and a weather change occurs?
+It becomes easy to either miss important state changes, or to have the slice grow in large chunks and become less and less performant. 
 
-### The Solution
+# TODO: show animation
 
-Copy on Write.
+So we don't want tp clone the entire world, but we also don't want to clone a slice of the world.
 
-It's a simple and elegant solution to what would normally be quite complex challenges.
+This is where Copy on Write comes in. 
+With C.O.W, we can create a narrow layer representing the modified state and only push actual changes to that layer.
 
-TODO
+Here we have a flat dictionary of every single entity in the world.
+
+```Csharp
+Dictionary<string, Entity> worldState = new Dictionary<string, Entity>();
+```
+
+When we want to get an entity to read or write, we always go through a resolvement function.
+
+```Csharp
+TryResolve(string entityId)
+{
+    return worldState[entityId];
+}
+```
+
+Every Command is only allowed to pass keys, and never direct references. 
+This means every command must go through the resolvement function to get the entity it wants to mutate.
+Importantly, it also means we have a single funnel for all reads and writes to the world state.
+
+We can use that funnel to implement copy on write.
+
+First, we actually want to have a stack of snapshots, where each snapshot represents a point in time. 
+Each snapshot is a local dictionary of changes that have been made.
+
+```Csharp
+Dictionary<string, Entity> worldState = new Dictionary<string, Entity>();
+Stack<Dictionary<string, Entity>> history = new();
+```
+
+Now the process for resolving an entity looks like this:
+1. Check if the entity exists in the top snapshot of the history stack. If it does, return it.
+2. If it doesn't, resolve it from the world state, clone it, and add it to the top snapshot of the history stack before returning it.
+3. If it does exist, then we can return it directly.
+
+```Csharp
+TryResolve(string entityId)
+{
+    // History is empty, resolve from world state
+    if (history.Count == 0)
+        return worldState[entityId];
+
+    // History is not empty, check the top snapshot
+    var topSnapshot = history.Peek();
+    if (topSnapshot.TryGetValue(entityId, out var existing))
+        return existing;
+    
+    // Entity does not exist in the top snapshot, resolve from world state, clone it, and add it to the top snapshot
+    // This is the copy on write step
+    topSnapshot[entityId] = worldState[entityId].DeepClone();
+}
+```
+
+With this setup, our clone is the minimum size necessary to represent the changes made by the command.
+If a command only modifies 4 entities, then only those 4 entities are cloned and stored in the snapshot. 
+If a command modifies 100 entities, then those 100 entities are cloned and stored in the snapshot. 
+If a command modifies 0 entities, then no cloning occurs at all.
+
+There is almost no wastage of memory or performance.
+
+However there is an additional step we need to take make this truly zero waste.
+When we resolve an entity from a command we don't always intend to mutate it.
+Very often we just want to read the state of an entity to make a decision, and if we clone it every time we read it, then we are doing a lot of unnecessary cloning.
+So we can add an additional parameter to the resolvement function to indicate whether we intend to mutate the entity or not.
+This is a similar concept to File Access Modes in operating systems, where you can open a file in read-only mode or read-write mode.
+
+```Csharp
+Entity Resolve(string entityId, bool write)
+{
+    // History is empty, resolve from world state
+    if (history.Count == 0)
+        return worldState[entityId];
+
+    // History is not empty, check the top snapshot
+    var topSnapshot = history.Peek();
+    if (topSnapshot.TryGetValue(entityId, out var existing))
+        return existing;
+    
+    // Entity does not exist in the top snapshot, resolve from world state
+    var resolvedEntity = worldState[entityId];
+    
+    // If we intend to mutate the entity, clone it and add it to the top snapshot
+    if (write)
+        topSnapshot[entityId] = resolvedEntity.DeepClone();
+    
+    return resolvedEntity;
+}
+```
+
+It then places the responsibility on the command handlers to indicate whether they intend to mutate an entity or not.
+
+```Csharp
+void HandleAttackCommand(AttackCommand command)
+{
+    var attacker = TryResolve(command.AttackerId, write: true);
+    var defender = TryResolve(command.DefenderId, write: true);
+    var weapon = TryResolve(attacker.WeaponId, write: false);
+    var armor = TryResolve(defender.ArmorId, write: false);
+
+    // Perform attack logic and mutate attacker and defender as necessary
+}
+```
+
+Now as you can imagine, this is very easy to mess up. 
+If a command handler forgets to indicate that it intends to mutate an entity, then it will not be cloned and the mutation will affect the mainline state instead of the branch.
+This is quite dangerous, and very prone to regression bugs that can be hard to track down.
+
+In order to mitigate the risk, we can actually make the resolvement function return a ReadOnly interface.
+
+```Csharp
+public IReadOnlyEntity ResolveReadOnly(string entityId)
+{
+    if (history.Count == 0)
+    {
+        return worldState[entityId];
+    }
+
+    var topSnapshot = history.Peek();
+      if (topSnapshot.TryGetValue(entityId, out var branchedEntity))
+        return branchedEntity;
+}
+
+Entity Resolve(string entityId)
+{
+    // History is empty, resolve from world state
+    if (history.Count == 0)
+        return worldState[entityId];
+
+    // History is not empty, check the top snapshot
+    var topSnapshot = history.Peek();
+    if (topSnapshot.TryGetValue(entityId, out var existing))
+        return existing;
+    
+    // Entity does not exist in the top snapshot, resolve from world state
+    var resolvedEntity = worldState[entityId];
+    
+    // If we intend to mutate the entity, clone it and add it to the top snapshot
+    if (write)
+        topSnapshot[entityId] = resolved.Entity.DeepClone();
+
+    return topSnapshot[entityId];
+}
+```
+
+Now instead of a delicate boolean parameter, we have two separate resolvement functions, one for reading and one for writing.
+The read function returns a read-only interface, which means any attempt to mutate the entity through that interface will result in a compile-time error, thus preventing accidental mutations of the mainline state.
+If we refactor a command handler to mutate an entity that it previously only read, the code will fail to compile until we update the resolvement function to use the write version, which is a much safer failure mode than accidentally mutating the mainline state.
+This mitigates the risk of regression bugs and makes it much easier to track down any issues that do arise, as the compiler will point us directly to the offending code.
+
+On the other side, here is the implementation of the Entity class.
+
+```Csharp
+public interface IReadOnlyCharacter : IReadOnlyEntity
+{
+    string Id { get; }
+    string Name { get; }
+    string WeaponId { get; }
+    string ArmorId { get; }
+    int Health { get; }
+}
+
+public class Character : Entity, IReadOnlyCharacter
+{
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public string WeaponId { get; set; }
+    public string ArmorId { get; set; } 
+    public int Health { get; set; } 
+
+    public Entity DeepClone()
+    {
+        return new Entity
+        {
+            Id = this.Id,
+            Name = this.Name,
+            WeaponId = this.WeaponId,
+            ArmorId = this.ArmorId,
+            Health = this.Health
+        };
+    }
+}
+```
+
+To implement the command handler now, we can do this:
+
+```Csharp
+void HandleAttackCommand(AttackCommand command)
+{
+    var attacker = ResolveReadOnly(command.AttackerId);
+    var weapon = ResolveReadOnly(attacker.WeaponId);
+
+    var defender = Resolve(command.DefenderId);
+    var armor = Resolve(defender.ArmorId);
+    
+    // Perform attack logic and mutate attacker and defender as necessary
+}
+```
+
+Here we have decided with compile safety that we only need to read the armor.
+However let's say we later decide that armor should have durability that gets reduced when hit, we simply change the armor resolve to use the write version.

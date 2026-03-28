@@ -23,5 +23,13 @@ export default defineMarkdocConfig({
         username: { type: String },
       },
     },
+    CopyOnWriteHistory: {
+      render: component('./src/components/CopyOnWriteHistory.astro'),
+      attributes: {},
+    },
+    SimulationBranching: {
+      render: component('./src/components/SimulationBranching.astro'),
+      attributes: {},
+    },
   },
 });

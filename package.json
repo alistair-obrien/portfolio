@@ -4,9 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:widget": "powershell -ExecutionPolicy Bypass -File ./scripts/dev-roguelike-widget.ps1",
+    "prebuild": "npm run widget:publish",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "widget:publish": "powershell -ExecutionPolicy Bypass -File ./scripts/publish-roguelike-widget.ps1"
   },
   "dependencies": {
     "@astrojs/markdoc": "^0.15.10",

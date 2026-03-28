@@ -610,6 +610,14 @@ export default config({
                 }),
               },
             }),
+            CopyOnWriteHistory: block({
+              label: "Copy on Write History Explorer",
+              schema: {},
+            }),
+            SimulationBranching: block({
+              label: "Simulation Branching Explorer",
+              schema: {},
+            }),
           },
         }),
       },
