@@ -87,6 +87,16 @@ type PreparedMap = {
   playerCells: Set<string>;
   characterCells: Set<string>;
 };
+const TILE_SIZE = 12;
+
+function resolveThemeColor(
+  styles: CSSStyleDeclaration,
+  variableName: string,
+  fallback: string,
+) {
+  const value = styles.getPropertyValue(variableName).trim();
+  return value ? `oklch(${value})` : fallback;
+}
 
 function getIdValue(id: IdLike): string | null {
   if (!id) {
@@ -126,29 +136,6 @@ function parseFootprint(value: string | null | undefined): Footprint | null {
   }
 
   return { x, y, width, height };
-}
-
-function footprintContains(
-  footprint: string | null | undefined,
-  x: number,
-  y: number,
-) {
-  const parsed = parseFootprint(footprint);
-
-  if (!parsed) {
-    return false;
-  }
-
-  return (
-    x >= parsed.x &&
-    x < parsed.x + parsed.width &&
-    y >= parsed.y &&
-    y < parsed.y + parsed.height
-  );
-}
-
-function getTileAt(map: MapPresentation, x: number, y: number) {
-  return (map.Tiles ?? []).find((tile) => footprintContains(tile.CellFootprint, x, y));
 }
 
 function toCellKey(x: number, y: number) {
@@ -283,6 +270,7 @@ async function loadEngineModule() {
 export default function RoguelikeBrowserDemo() {
   const engineRef = useRef<RoguelikeEngineModule | null>(null);
   const sessionIdRef = useRef<string | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [state, setState] = useState<GameState | null>(null);
@@ -356,6 +344,106 @@ export default function RoguelikeBrowserDemo() {
     [activeMap, playerId],
   );
 
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const map = preparedMap;
+
+    if (!canvas || !map) {
+      return;
+    }
+
+    const dpr = window.devicePixelRatio || 1;
+    const cssWidth = map.width * TILE_SIZE;
+    const cssHeight = map.height * TILE_SIZE;
+
+    canvas.width = Math.max(1, Math.floor(cssWidth * dpr));
+    canvas.height = Math.max(1, Math.floor(cssHeight * dpr));
+    canvas.style.width = `${cssWidth}px`;
+    canvas.style.height = `${cssHeight}px`;
+
+    const context = canvas.getContext("2d");
+    if (!context) {
+      return;
+    }
+
+    const styles = getComputedStyle(canvas);
+    const colorBase100 = resolveThemeColor(styles, "--b1", "#f8f1e4");
+    const colorBase200 = resolveThemeColor(styles, "--b2", "#efe4d0");
+    const colorBase300 = resolveThemeColor(styles, "--b3", "#dbc9aa");
+    const colorNeutral = resolveThemeColor(styles, "--n", "#2f241f");
+    const colorAccent = resolveThemeColor(styles, "--a", "#c9824b");
+    const colorSecondary = resolveThemeColor(styles, "--s", "#7b9a79");
+    const colorGrid = "rgba(90, 72, 54, 0.18)";
+
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    context.scale(dpr, dpr);
+    context.clearRect(0, 0, cssWidth, cssHeight);
+
+    context.fillStyle = colorBase200;
+    context.fillRect(0, 0, cssWidth, cssHeight);
+
+    for (let y = 0; y < map.height; y += 1) {
+      for (let x = 0; x < map.width; x += 1) {
+        const key = toCellKey(x, y);
+        const px = x * TILE_SIZE;
+        const py = y * TILE_SIZE;
+
+        const isWalkable = map.walkableCells.has(key);
+        const playerAtCell = map.playerCells.has(key);
+        const characterAtCell = map.characterCells.has(key);
+        const itemAtCell = map.itemCells.has(key);
+        const propAtCell = map.propCells.has(key);
+
+        context.fillStyle = isWalkable ? colorBase100 : colorBase300;
+        context.fillRect(px, py, TILE_SIZE, TILE_SIZE);
+
+        if (propAtCell) {
+          context.fillStyle = colorBase300;
+          context.fillRect(px, py, TILE_SIZE, TILE_SIZE);
+          continue;
+        }
+
+        if (itemAtCell) {
+          context.fillStyle = colorAccent;
+          context.fillRect(px + 4, py + 4, TILE_SIZE - 8, TILE_SIZE - 8);
+        }
+
+        if (characterAtCell) {
+          context.fillStyle = colorSecondary;
+          context.beginPath();
+          context.arc(px + TILE_SIZE / 2, py + TILE_SIZE / 2, 2.5, 0, Math.PI * 2);
+          context.fill();
+        }
+
+        if (playerAtCell) {
+          context.fillStyle = colorNeutral;
+          context.beginPath();
+          context.arc(px + TILE_SIZE / 2, py + TILE_SIZE / 2, 4, 0, Math.PI * 2);
+          context.fill();
+        }
+      }
+    }
+
+    context.strokeStyle = colorGrid;
+    context.lineWidth = 1;
+
+    for (let x = 0; x <= map.width; x += 1) {
+      const px = x * TILE_SIZE + 0.5;
+      context.beginPath();
+      context.moveTo(px, 0);
+      context.lineTo(px, cssHeight);
+      context.stroke();
+    }
+
+    for (let y = 0; y <= map.height; y += 1) {
+      const py = y * TILE_SIZE + 0.5;
+      context.beginPath();
+      context.moveTo(0, py);
+      context.lineTo(cssWidth, py);
+      context.stroke();
+    }
+  }, [preparedMap]);
+
   async function handleReset() {
     const engine = engineRef.current;
     const currentSessionId = sessionIdRef.current;
@@ -419,6 +507,58 @@ export default function RoguelikeBrowserDemo() {
     }
   }
 
+  function getCellFromPointer(
+    clientX: number,
+    clientY: number,
+    map: PreparedMap | null,
+  ) {
+    const canvas = canvasRef.current;
+
+    if (!canvas || !map) {
+      return null;
+    }
+
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width <= 0 || rect.height <= 0) {
+      return null;
+    }
+
+    const relativeX = (clientX - rect.left) / rect.width;
+    const relativeY = (clientY - rect.top) / rect.height;
+
+    if (relativeX < 0 || relativeX > 1 || relativeY < 0 || relativeY > 1) {
+      return null;
+    }
+
+    const x = Math.min(map.width - 1, Math.max(0, Math.floor(relativeX * map.width)));
+    const y = Math.min(map.height - 1, Math.max(0, Math.floor(relativeY * map.height)));
+
+    return { x, y };
+  }
+
+  function handleCanvasClick(event: React.MouseEvent<HTMLCanvasElement>) {
+    if (!preparedMap || isBusy) {
+      return;
+    }
+
+    const cell = getCellFromPointer(event.clientX, event.clientY, preparedMap);
+    if (!cell) {
+      return;
+    }
+
+    const key = toCellKey(cell.x, cell.y);
+    const isWalkable = preparedMap.walkableCells.has(key);
+    const blockedByProp = preparedMap.propCells.has(key);
+    const blockedByCharacter = preparedMap.characterCells.has(key);
+    const blockedByPlayer = preparedMap.playerCells.has(key);
+
+    if (!isWalkable || blockedByProp || blockedByCharacter || blockedByPlayer) {
+      return;
+    }
+
+    void handleMove(preparedMap.mapId, cell.x, cell.y);
+  }
+
   return (
     <div className="space-y-4">
       <div className="flex justify-end">
@@ -434,63 +574,14 @@ export default function RoguelikeBrowserDemo() {
 
       <div className="overflow-auto rounded-[1.5rem] border border-base-300 bg-base-100 p-3 shadow-sm">
         {preparedMap ? (
-          <div
-            className="grid w-max gap-px rounded-xl bg-base-300 p-px"
-            style={{
-              gridTemplateColumns: `repeat(${preparedMap.width}, minmax(0, 1fr))`,
-            }}
-          >
-            {Array.from({ length: preparedMap.height }, (_, y) =>
-              Array.from({ length: preparedMap.width }, (_, x) => {
-                const key = toCellKey(x, y);
-                const mapId = preparedMap.mapId;
-                const isWalkable = preparedMap.walkableCells.has(key);
-                const playerAtCell = preparedMap.playerCells.has(key);
-                const characterAtCell = preparedMap.characterCells.has(key);
-                const itemAtCell = preparedMap.itemCells.has(key);
-                const propAtCell = preparedMap.propCells.has(key);
-                const canAttemptMove =
-                  isWalkable && !propAtCell && !characterAtCell && !playerAtCell;
-
-                let label = "";
-                let tileClassName =
-                  "bg-base-200 text-base-content/20 hover:bg-base-200 hover:text-base-content/40";
-
-                if (!isWalkable) {
-                  label = "#";
-                  tileClassName =
-                    "bg-base-300 text-base-content/55 hover:bg-base-300 hover:text-base-content/55";
-                } else if (propAtCell) {
-                  label = "#";
-                  tileClassName = "bg-base-300 text-base-content/70 hover:bg-base-300";
-                } else if (playerAtCell) {
-                  label = "@";
-                  tileClassName = "bg-neutral text-neutral-content hover:bg-neutral";
-                } else if (characterAtCell) {
-                  label = "n";
-                  tileClassName = "bg-secondary/20 text-secondary hover:bg-secondary/25";
-                } else if (itemAtCell) {
-                  label = "*";
-                  tileClassName = "bg-accent/20 text-accent hover:bg-accent/25";
-                } else {
-                  label = ".";
-                }
-
-                return (
-                  <button
-                    key={`${x}:${y}`}
-                    type="button"
-                    disabled={isBusy || !canAttemptMove}
-                    onClick={() => void handleMove(mapId, x, y)}
-                    className={`flex h-4 w-4 items-center justify-center text-[9px] leading-none transition ${tileClassName} disabled:cursor-default disabled:opacity-100`}
-                    aria-label={`Move player to ${x}, ${y}`}
-                  >
-                    {label}
-                  </button>
-                );
-              }),
-            )}
-          </div>
+          <canvas
+            ref={canvasRef}
+            onClick={handleCanvasClick}
+            className={`block max-w-none rounded-xl bg-base-200 ${
+              isBusy ? "cursor-wait" : "cursor-crosshair"
+            }`}
+            aria-label="Roguelike map"
+          />
         ) : (
           <div className="min-h-[32rem] rounded-xl border border-dashed border-base-300 bg-base-100" />
         )}
