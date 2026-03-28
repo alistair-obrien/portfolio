@@ -29,14 +29,21 @@ function parseEnvelope(payload) {
   return envelope;
 }
 
+function serializeCommand(command) {
+  return JSON.stringify(command);
+}
+
+function serializeCommands(commands) {
+  return JSON.stringify(commands);
+}
+
+export function createCommand(type, payload) {
+  return { Type: type, Payload: payload };
+}
+
 export async function createSession() {
   const exports = await ensureRuntime();
   return parseEnvelope(exports.CreateSession());
-}
-
-export async function getSessionState(sessionId) {
-  const exports = await ensureRuntime();
-  return parseEnvelope(exports.GetSessionState(sessionId));
 }
 
 export async function resetSession(sessionId) {
@@ -44,17 +51,42 @@ export async function resetSession(sessionId) {
   return parseEnvelope(exports.ResetSession(sessionId));
 }
 
-export async function previewPlayerMoveToCell(sessionId, mapId, x, y) {
-  const exports = await ensureRuntime();
-  return parseEnvelope(exports.PreviewPlayerMoveToCell(sessionId, mapId, x, y));
-}
-
-export async function movePlayerToCell(sessionId, mapId, x, y) {
-  const exports = await ensureRuntime();
-  return parseEnvelope(exports.MovePlayerToCell(sessionId, mapId, x, y));
-}
-
 export async function disposeSession(sessionId) {
   const exports = await ensureRuntime();
-  return exports.DisposeSession(sessionId);
+  return parseEnvelope(exports.DisposeSession(sessionId));
+}
+
+export async function getGameState(sessionId) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.GetGameState(sessionId));
+}
+
+export async function executeCommand(sessionId, command) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.ExecuteCommand(sessionId, serializeCommand(command)));
+}
+
+export async function executeCommands(sessionId, commands) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.ExecuteCommands(sessionId, serializeCommands(commands)));
+}
+
+export async function executeTrackedCommand(sessionId, command) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.ExecuteTrackedCommand(sessionId, serializeCommand(command)));
+}
+
+export async function executeTrackedCommands(sessionId, commands) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.ExecuteTrackedCommands(sessionId, serializeCommands(commands)));
+}
+
+export async function executePreviewCommand(sessionId, command) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.ExecutePreviewCommand(sessionId, serializeCommand(command)));
+}
+
+export async function executePreviewCommands(sessionId, commands) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.ExecutePreviewCommands(sessionId, serializeCommands(commands)));
 }

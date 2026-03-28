@@ -2,9 +2,22 @@ import { startTransition, useEffect, useMemo, useRef, useState } from "react";
 
 type IdLike = { Value?: string | null } | string | null | undefined;
 
+type CommandResult = {
+  Ok?: boolean;
+  ErrorMessage?: string | null;
+};
+
+type EngineEventPayload = {
+  MoveResult?: {
+    From?: string | null;
+    To?: string | null;
+  } | null;
+};
+
 type EngineEvent = {
   Type?: string;
   Description?: string;
+  Payload?: EngineEventPayload | null;
 };
 
 type PlayerHud = {
@@ -45,12 +58,15 @@ type GameState = {
 };
 
 type EngineEnvelope = {
-  Ok?: boolean;
   SessionId?: string;
-  ErrorMessage?: string | null;
+  Result?: CommandResult | null;
   Events?: EngineEvent[] | null;
-  Path?: EnginePathStep[] | null;
   State?: GameState | null;
+};
+
+type EngineCommand = {
+  Type: string;
+  Payload: Record<string, unknown>;
 };
 
 type EnginePathStep = {
@@ -65,21 +81,13 @@ type EnginePathStep = {
 };
 
 type RoguelikeEngineModule = {
+  createCommand(type: string, payload: Record<string, unknown>): EngineCommand;
   createSession(): Promise<EngineEnvelope>;
   resetSession(sessionId: string): Promise<EngineEnvelope>;
-  previewPlayerMoveToCell(
-    sessionId: string,
-    mapId: string,
-    x: number,
-    y: number,
-  ): Promise<EngineEnvelope>;
-  movePlayerToCell(
-    sessionId: string,
-    mapId: string,
-    x: number,
-    y: number,
-  ): Promise<EngineEnvelope>;
-  disposeSession(sessionId: string): Promise<boolean>;
+  disposeSession(sessionId: string): Promise<EngineEnvelope>;
+  getGameState(sessionId: string): Promise<EngineEnvelope>;
+  executeTrackedCommand(sessionId: string, command: EngineCommand): Promise<EngineEnvelope>;
+  executePreviewCommand(sessionId: string, command: EngineCommand): Promise<EngineEnvelope>;
 };
 
 type LogEntry = {
@@ -106,9 +114,11 @@ type PreparedMap = {
   characterCells: Set<string>;
   playerFootprint: Footprint | null;
 };
+
 const TILE_SIZE = 12;
 const PREVIEW_DEBOUNCE_MS = 40;
 const STEP_TWEEN_MS = 85;
+const MOVE_COMMAND_TYPE = "MapsAPI.Commands.MoveCharacterAlongPathToCell";
 
 function resolveThemeColor(
   styles: CSSStyleDeclaration,
@@ -276,7 +286,34 @@ function normalizePath(path: EnginePathStep[] | null | undefined) {
   ) as Array<Required<EnginePathStep>>;
 }
 
-function getPathTarget(path: EnginePathStep[]) {
+function normalizePathFromEvents(events: EngineEvent[] | null | undefined) {
+  return normalizePath(
+    (events ?? []).flatMap((event) => {
+      const moveResult = event.Payload?.MoveResult;
+      const from = parseFootprint(moveResult?.From);
+      const to = parseFootprint(moveResult?.To);
+
+      if (!from || !to) {
+        return [];
+      }
+
+      return [
+        {
+          FromX: from.x,
+          FromY: from.y,
+          FromWidth: from.width,
+          FromHeight: from.height,
+          ToX: to.x,
+          ToY: to.y,
+          ToWidth: to.width,
+          ToHeight: to.height,
+        },
+      ];
+    }),
+  );
+}
+
+function getPathTarget(path: Array<Required<EnginePathStep>>) {
   const lastStep = path[path.length - 1];
 
   if (!lastStep) {
@@ -286,14 +323,22 @@ function getPathTarget(path: EnginePathStep[]) {
   return { x: lastStep.ToX, y: lastStep.ToY };
 }
 
+function isEnvelopeOk(envelope: EngineEnvelope) {
+  return envelope.Result?.Ok === true;
+}
+
+function getEnvelopeError(envelope: EngineEnvelope, fallback: string) {
+  return envelope.Result?.ErrorMessage || fallback;
+}
+
 function buildLogEntry(command: string, envelope: EngineEnvelope): LogEntry {
-  const ok = envelope.Ok === true;
+  const ok = isEnvelopeOk(envelope);
 
   if (!ok) {
     return {
       command,
       ok: false,
-      details: [envelope.ErrorMessage || "Command failed."],
+      details: [getEnvelopeError(envelope, "Command failed.")],
     };
   }
 
@@ -307,6 +352,26 @@ function buildLogEntry(command: string, envelope: EngineEnvelope): LogEntry {
 
 function prependLogEntry(entries: LogEntry[], entry: LogEntry) {
   return [entry, ...entries].slice(0, 12);
+}
+
+function createTypedId(typeName: string, value: string | null) {
+  return value ? `${typeName}:${value}` : null;
+}
+
+function createMovePlayerCommand(
+  engine: RoguelikeEngineModule,
+  mapId: string,
+  playerId: string,
+  x: number,
+  y: number,
+) {
+  return engine.createCommand(MOVE_COMMAND_TYPE, {
+    ActorId: createTypedId("CharacterId", playerId),
+    MapId: createTypedId("MapChunkId", mapId),
+    CharacterId: createTypedId("CharacterId", playerId),
+    ToX: x,
+    ToY: y,
+  });
 }
 
 async function loadEngineModule() {
@@ -347,31 +412,39 @@ export default function RoguelikeBrowserDemo() {
     async function boot() {
       try {
         const engine = await loadEngineModule();
-        const envelope = await engine.createSession();
+        const sessionEnvelope = await engine.createSession();
+        const nextSessionId = sessionEnvelope.SessionId ?? null;
 
         if (disposed) {
-          if (envelope.SessionId) {
-            await engine.disposeSession(envelope.SessionId);
+          if (nextSessionId) {
+            await engine.disposeSession(nextSessionId);
           }
 
           return;
         }
 
         engineRef.current = engine;
-        sessionIdRef.current = envelope.SessionId ?? null;
-        setSessionId(envelope.SessionId ?? null);
+        sessionIdRef.current = nextSessionId;
+        setSessionId(nextSessionId);
 
-        if (!envelope.Ok || !envelope.State || !envelope.SessionId) {
-          setErrorMessage(envelope.ErrorMessage || "Failed to create a browser-local session.");
+        if (!nextSessionId || !isEnvelopeOk(sessionEnvelope)) {
+          setErrorMessage(getEnvelopeError(sessionEnvelope, "Failed to create a browser-local session."));
+          return;
+        }
+
+        const stateEnvelope = await engine.getGameState(nextSessionId);
+
+        if (!isEnvelopeOk(stateEnvelope) || !stateEnvelope.State) {
+          setErrorMessage(getEnvelopeError(stateEnvelope, "Failed to load the browser-local game state."));
           return;
         }
 
         startTransition(() => {
-          setState(envelope.State ?? null);
+          setState(stateEnvelope.State ?? null);
           setErrorMessage(null);
           setLogEntries([
             {
-              command: "reset",
+              command: "create session",
               ok: true,
               details: ["Seeded development world."],
             },
@@ -400,10 +473,10 @@ export default function RoguelikeBrowserDemo() {
       }
 
       const engine = engineRef.current;
-      const sessionId = sessionIdRef.current;
+      const currentSessionId = sessionIdRef.current;
 
-      if (engine && sessionId) {
-        void engine.disposeSession(sessionId);
+      if (engine && currentSessionId) {
+        void engine.disposeSession(currentSessionId);
       }
     };
   }, []);
@@ -511,18 +584,20 @@ export default function RoguelikeBrowserDemo() {
       context.stroke();
     }
 
-    if (previewPath.length > 0) {
+    const previewSteps = normalizePath(previewPath);
+
+    if (previewSteps.length > 0) {
       context.strokeStyle = colorAccent;
       context.lineWidth = 2;
       context.beginPath();
 
-      const firstStep = previewPath[0];
+      const firstStep = previewSteps[0]!;
       context.moveTo(
         firstStep.FromX * TILE_SIZE + TILE_SIZE / 2,
         firstStep.FromY * TILE_SIZE + TILE_SIZE / 2,
       );
 
-      for (const step of previewPath) {
+      for (const step of previewSteps) {
         context.lineTo(
           step.ToX * TILE_SIZE + TILE_SIZE / 2,
           step.ToY * TILE_SIZE + TILE_SIZE / 2,
@@ -531,7 +606,7 @@ export default function RoguelikeBrowserDemo() {
 
       context.stroke();
 
-      const target = getPathTarget(previewPath);
+      const target = getPathTarget(previewSteps);
       if (target) {
         context.fillStyle = "rgba(201, 130, 75, 0.22)";
         context.beginPath();
@@ -637,22 +712,30 @@ export default function RoguelikeBrowserDemo() {
     setAnimatedPlayerPosition(null);
 
     try {
-      const envelope = await engine.resetSession(currentSessionId);
+      const resetEnvelope = await engine.resetSession(currentSessionId);
+      let stateEnvelope: EngineEnvelope | null = null;
+
+      if (isEnvelopeOk(resetEnvelope)) {
+        stateEnvelope = await engine.getGameState(currentSessionId);
+      }
 
       startTransition(() => {
-        setErrorMessage(envelope.Ok ? null : envelope.ErrorMessage || "Reset failed.");
+        const ok = isEnvelopeOk(resetEnvelope) && (!stateEnvelope || isEnvelopeOk(stateEnvelope));
+        setErrorMessage(
+          ok
+            ? null
+            : getEnvelopeError(
+                stateEnvelope && !isEnvelopeOk(stateEnvelope) ? stateEnvelope : resetEnvelope,
+                "Reset failed.",
+              ),
+        );
 
-        if (envelope.State) {
-          setState(envelope.State);
+        if (stateEnvelope?.State) {
+          setState(stateEnvelope.State);
         }
 
         setLogEntries((current) =>
-          prependLogEntry(
-            current,
-            envelope.Ok
-              ? { command: "reset", ok: true, details: ["Seeded development world."] }
-              : buildLogEntry("reset", envelope),
-          ),
+          prependLogEntry(current, buildLogEntry("reset", resetEnvelope)),
         );
       });
     } finally {
@@ -663,9 +746,9 @@ export default function RoguelikeBrowserDemo() {
   async function handleMove(mapId: string, x: number, y: number) {
     const engine = engineRef.current;
     const currentSessionId = sessionIdRef.current;
-    const previousState = state;
+    const currentPlayerId = getIdValue(state?.PlayerHUD?.characterUid);
 
-    if (!engine || !currentSessionId || isBusy) {
+    if (!engine || !currentSessionId || !currentPlayerId || isBusy) {
       return;
     }
 
@@ -673,24 +756,37 @@ export default function RoguelikeBrowserDemo() {
     clearPreviewPath();
 
     try {
-      const envelope = await engine.movePlayerToCell(currentSessionId, mapId, x, y);
-      const movePath = normalizePath(envelope.Path);
+      const command = createMovePlayerCommand(engine, mapId, currentPlayerId, x, y);
+      const response = await engine.executeTrackedCommand(currentSessionId, command);
+      const movePath = normalizePathFromEvents(response.Events);
 
-      if (envelope.Ok && previousState && movePath.length > 0) {
+      if (isEnvelopeOk(response) && movePath.length > 0) {
         await animatePath(movePath);
       } else {
         setAnimatedPlayerPosition(null);
       }
 
-      startTransition(() => {
-        setErrorMessage(envelope.Ok ? null : envelope.ErrorMessage || "Move failed.");
+      const stateEnvelope = isEnvelopeOk(response)
+        ? await engine.getGameState(currentSessionId)
+        : null;
 
-        if (envelope.State) {
-          setState(envelope.State);
+      startTransition(() => {
+        const ok = isEnvelopeOk(response) && (!stateEnvelope || isEnvelopeOk(stateEnvelope));
+        setErrorMessage(
+          ok
+            ? null
+            : getEnvelopeError(
+                stateEnvelope && !isEnvelopeOk(stateEnvelope) ? stateEnvelope : response,
+                "Move failed.",
+              ),
+        );
+
+        if (stateEnvelope?.State) {
+          setState(stateEnvelope.State);
         }
 
         setLogEntries((current) =>
-          prependLogEntry(current, buildLogEntry(`move (${x}, ${y})`, envelope)),
+          prependLogEntry(current, buildLogEntry(`move (${x}, ${y})`, response)),
         );
       });
     } finally {
@@ -741,8 +837,9 @@ export default function RoguelikeBrowserDemo() {
   function queuePreviewForCell(x: number, y: number) {
     const engine = engineRef.current;
     const currentSessionId = sessionIdRef.current;
+    const currentPlayerId = getIdValue(state?.PlayerHUD?.characterUid);
 
-    if (!preparedMap || !engine || !currentSessionId || isBusy) {
+    if (!preparedMap || !engine || !currentSessionId || !currentPlayerId || isBusy) {
       return;
     }
 
@@ -761,14 +858,16 @@ export default function RoguelikeBrowserDemo() {
     previewRequestIdRef.current = requestId;
 
     previewTimerRef.current = window.setTimeout(() => {
+      const command = createMovePlayerCommand(engine, preparedMap.mapId, currentPlayerId, x, y);
+
       void engine
-        .previewPlayerMoveToCell(currentSessionId, preparedMap.mapId, x, y)
+        .executePreviewCommand(currentSessionId, command)
         .then((envelope) => {
           if (previewRequestIdRef.current !== requestId) {
             return;
           }
 
-          setPreviewPath(envelope.Ok ? normalizePath(envelope.Path) : []);
+          setPreviewPath(isEnvelopeOk(envelope) ? normalizePathFromEvents(envelope.Events) : []);
         })
         .catch(() => {
           if (previewRequestIdRef.current === requestId) {

@@ -5,11 +5,9 @@ using System.Runtime.Versioning;
 using Newtonsoft.Json;
 
 public sealed record BrowserGameEnvelope(
-    bool Ok,
     string SessionId,
-    string ErrorMessage,
-    IReadOnlyList<HeadlessEventEnvelope> Events,
-    IReadOnlyList<HeadlessPathStepEnvelope> Path,
+    CommandResult Result,
+    IReadOnlyList<GameEventEnvelope> Events,
     RootGameModelPresentation? State
 );
 
@@ -17,7 +15,7 @@ public sealed record BrowserGameEnvelope(
 public static partial class BrowserGameExports
 {
     private static readonly object SyncRoot = new();
-    private static readonly Dictionary<string, HeadlessGameSession> Sessions = new();
+    private static readonly Dictionary<string, GameInstance> Sessions = new(StringComparer.Ordinal);
     private static readonly JsonSerializerSettings JsonSettings = new()
     {
         TypeNameHandling = TypeNameHandling.None,
@@ -30,14 +28,15 @@ public static partial class BrowserGameExports
     static BrowserGameExports()
     {
         TypedIdTypeRegistry.EnsureInitialized();
+        Debug.BindLogger(new BrowserConsoleLogger());
     }
 
     [JSExport]
     public static string CreateSession()
     {
-        var session = new HeadlessGameSession();
         var sessionId = Guid.NewGuid().ToString("N");
-        var state = session.Reset(seedDevelopmentWorld: true);
+        var session = new GameInstance();
+        var response = session.Reset(seedDevelopmentWorld: true);
 
         lock (SyncRoot)
         {
@@ -45,96 +44,151 @@ public static partial class BrowserGameExports
         }
 
         return Serialize(new BrowserGameEnvelope(
-            Ok: true,
             SessionId: sessionId,
-            ErrorMessage: string.Empty,
-            Events: Array.Empty<HeadlessEventEnvelope>(),
-            Path: Array.Empty<HeadlessPathStepEnvelope>(),
-            State: state));
-    }
-
-    [JSExport]
-    public static string GetSessionState(string sessionId)
-    {
-        if (!TryGetSession(sessionId, out var session))
-            return SerializeMissingSession(sessionId);
-
-        return Serialize(new BrowserGameEnvelope(
-            Ok: true,
-            SessionId: sessionId,
-            ErrorMessage: string.Empty,
-            Events: Array.Empty<HeadlessEventEnvelope>(),
-            Path: Array.Empty<HeadlessPathStepEnvelope>(),
-            State: session.GetState()));
+            Result: response.Result,
+            Events: response.Events,
+            State: null));
     }
 
     [JSExport]
     public static string ResetSession(string sessionId)
     {
-        if (!TryGetSession(sessionId, out var session))
-            return SerializeMissingSession(sessionId);
-
-        return Serialize(new BrowserGameEnvelope(
-            Ok: true,
-            SessionId: sessionId,
-            ErrorMessage: string.Empty,
-            Events: Array.Empty<HeadlessEventEnvelope>(),
-            Path: Array.Empty<HeadlessPathStepEnvelope>(),
-            State: session.Reset(seedDevelopmentWorld: true)));
+        return ExecuteForSession(
+            sessionId,
+            session => session.Reset(seedDevelopmentWorld: true));
     }
 
     [JSExport]
-    public static string PreviewPlayerMoveToCell(string sessionId, string mapId, int x, int y)
+    public static string DisposeSession(string sessionId)
     {
-        if (!TryGetSession(sessionId, out var session))
-            return SerializeMissingSession(sessionId);
+        GameInstance? session = null;
 
-        var normalizedMapId = NormalizeTypedIdValue(mapId);
-        var response = session.PreviewPlayerMoveToCell(new MapChunkId(normalizedMapId), x, y);
-
-        return Serialize(new BrowserGameEnvelope(
-            Ok: response.Ok,
-            SessionId: sessionId,
-            ErrorMessage: response.ErrorMessage ?? string.Empty,
-            Events: response.Events ?? Array.Empty<HeadlessEventEnvelope>(),
-            Path: response.Path ?? Array.Empty<HeadlessPathStepEnvelope>(),
-            State: response.State));
-    }
-
-    [JSExport]
-    public static string MovePlayerToCell(string sessionId, string mapId, int x, int y)
-    {
-        if (!TryGetSession(sessionId, out var session))
-            return SerializeMissingSession(sessionId);
-
-        var normalizedMapId = NormalizeTypedIdValue(mapId);
-        var response = session.MovePlayerToCell(new MapChunkId(normalizedMapId), x, y);
-
-        return Serialize(new BrowserGameEnvelope(
-            Ok: response.Ok,
-            SessionId: sessionId,
-            ErrorMessage: response.ErrorMessage ?? string.Empty,
-            Events: response.Events ?? Array.Empty<HeadlessEventEnvelope>(),
-            Path: response.Path ?? Array.Empty<HeadlessPathStepEnvelope>(),
-            State: response.State));
-    }
-
-    [JSExport]
-    public static bool DisposeSession(string sessionId)
-    {
         lock (SyncRoot)
         {
-            return Sessions.Remove(sessionId);
+            if (sessionId != null && Sessions.TryGetValue(sessionId, out var resolvedSession))
+            {
+                session = resolvedSession;
+                Sessions.Remove(sessionId);
+            }
+        }
+
+        if (session == null)
+            return SerializeMissingSession(sessionId ?? string.Empty);
+
+        session.Dispose();
+
+        return Serialize(new BrowserGameEnvelope(
+            SessionId: sessionId ?? string.Empty,
+            Result: new CommandResult(true, null),
+            Events: Array.Empty<GameEventEnvelope>(),
+            State: null));
+    }
+
+    [JSExport]
+    public static string ExecuteCommand(string sessionId, string commandJson)
+    {
+        return ExecuteForSession(
+            sessionId,
+            session => session.ExecuteCommandPayload(commandJson));
+    }
+
+    [JSExport]
+    public static string ExecuteCommands(string sessionId, string commandsJson)
+    {
+        return ExecuteForSession(
+            sessionId,
+            session => session.ExecuteCommandsPayload(commandsJson));
+    }
+
+    [JSExport]
+    public static string ExecuteTrackedCommand(string sessionId, string commandJson)
+    {
+        return ExecuteForSession(
+            sessionId,
+            session => session.ExecuteTrackedCommandPayload(commandJson));
+    }
+
+    [JSExport]
+    public static string ExecuteTrackedCommands(string sessionId, string commandsJson)
+    {
+        return ExecuteForSession(
+            sessionId,
+            session => session.ExecuteTrackedCommandsPayload(commandsJson));
+    }
+
+    [JSExport]
+    public static string ExecutePreviewCommand(string sessionId, string commandJson)
+    {
+        return ExecuteForSession(
+            sessionId,
+            session => session.ExecutePreviewCommandPayload(commandJson));
+    }
+
+    [JSExport]
+    public static string ExecutePreviewCommands(string sessionId, string commandsJson)
+    {
+        return ExecuteForSession(
+            sessionId,
+            session => session.ExecutePreviewCommandsPayload(commandsJson));
+    }
+
+    [JSExport]
+    public static string GetGameState(string sessionId)
+    {
+        if (!TryGetSession(sessionId, out var session))
+            return SerializeMissingSession(sessionId);
+
+        try
+        {
+            return Serialize(new BrowserGameEnvelope(
+                SessionId: sessionId ?? string.Empty,
+                Result: new CommandResult(true, null),
+                Events: Array.Empty<GameEventEnvelope>(),
+                State: session.GetGameState()));
+        }
+        catch (Exception ex)
+        {
+            return Serialize(new BrowserGameEnvelope(
+                SessionId: sessionId ?? string.Empty,
+                Result: new CommandResult(false, ex.Message),
+                Events: Array.Empty<GameEventEnvelope>(),
+                State: null));
         }
     }
 
-    private static bool TryGetSession(string sessionId, out HeadlessGameSession session)
+    private static string ExecuteForSession(
+        string sessionId,
+        Func<GameInstance, GameSessionExecutionResponse> operation)
     {
-        HeadlessGameSession? resolvedSession;
+        if (!TryGetSession(sessionId, out var session))
+            return SerializeMissingSession(sessionId);
+
+        try
+        {
+            var response = operation(session);
+            return Serialize(new BrowserGameEnvelope(
+                SessionId: sessionId ?? string.Empty,
+                Result: response.Result,
+                Events: response.Events,
+                State: null));
+        }
+        catch (Exception ex)
+        {
+            return Serialize(new BrowserGameEnvelope(
+                SessionId: sessionId ?? string.Empty,
+                Result: new CommandResult(false, ex.Message),
+                Events: Array.Empty<GameEventEnvelope>(),
+                State: null));
+        }
+    }
+
+    private static bool TryGetSession(string sessionId, out GameInstance session)
+    {
+        GameInstance? resolvedSession = null;
 
         lock (SyncRoot)
         {
-            var found = Sessions.TryGetValue(sessionId, out resolvedSession);
+            var found = sessionId != null && Sessions.TryGetValue(sessionId, out resolvedSession);
             session = resolvedSession!;
             return found;
         }
@@ -143,28 +197,14 @@ public static partial class BrowserGameExports
     private static string SerializeMissingSession(string sessionId)
     {
         return Serialize(new BrowserGameEnvelope(
-            Ok: false,
             SessionId: sessionId ?? string.Empty,
-            ErrorMessage: $"No browser-local session exists for '{sessionId}'.",
-            Events: Array.Empty<HeadlessEventEnvelope>(),
-            Path: Array.Empty<HeadlessPathStepEnvelope>(),
+            Result: new CommandResult(false, $"No browser-local session exists for '{sessionId}'."),
+            Events: Array.Empty<GameEventEnvelope>(),
             State: null));
     }
 
     private static string Serialize(object value)
     {
         return JsonConvert.SerializeObject(value, JsonSettings);
-    }
-
-    private static string NormalizeTypedIdValue(string? value)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-            return string.Empty;
-
-        var separatorIndex = value.IndexOf(':');
-        if (separatorIndex > 0 && separatorIndex < value.Length - 1)
-            return value[(separatorIndex + 1)..];
-
-        return value;
     }
 }
