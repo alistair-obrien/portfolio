@@ -16,4 +16,25 @@ Get-ChildItem -Path $outputPath -Force -ErrorAction SilentlyContinue | Remove-It
 
 dotnet publish $projectPath -c Release -o $publishPath --no-restore
 
-Copy-Item -Path (Join-Path $publishPath "wwwroot\*") -Destination $outputPath -Recurse -Force
+$wwwrootPath = Join-Path $publishPath "wwwroot"
+
+if (-not (Test-Path $wwwrootPath))
+{
+    throw "Could not find published wwwroot output at $wwwrootPath."
+}
+
+Get-ChildItem -Path $wwwrootPath -Force | ForEach-Object {
+    Copy-Item -Path $_.FullName -Destination $outputPath -Recurse -Force
+}
+
+$frameworkPath = Join-Path $outputPath "_framework"
+$dotnetModule = Get-ChildItem -Path $frameworkPath -Filter "dotnet.*.js" |
+    Where-Object { $_.Name -notlike "dotnet.native.*" -and $_.Name -notlike "dotnet.runtime.*" } |
+    Select-Object -First 1
+
+if (-not $dotnetModule)
+{
+    throw "Could not find the published dotnet JS module in $frameworkPath."
+}
+
+Copy-Item -Path $dotnetModule.FullName -Destination (Join-Path $frameworkPath "dotnet.js") -Force

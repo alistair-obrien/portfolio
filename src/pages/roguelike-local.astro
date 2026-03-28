@@ -1,48 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import RoguelikeBrowserDemo from "../components/game/RoguelikeBrowserDemo";
 ---
 
 <Layout
   title="Roguelike Browser Widget"
-  description="A standalone Blazor WebAssembly widget running the C# roguelike engine directly in the browser."
+  description="A React widget powered by the C# roguelike engine running directly in browser-local WebAssembly."
 >
   <main class="bg-base-200 px-4 py-16">
-    <div class="mx-auto max-w-6xl space-y-8">
-      <section class="space-y-4">
-        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-secondary">
-          Browser-Local
-        </p>
-        <h1 class="text-4xl font-semibold text-base-content">
-          C# roguelike widget with no server session
-        </h1>
-        <p class="max-w-3xl text-base leading-7 text-base-content/70">
-          This embed is a standalone Blazor WebAssembly app. Each iframe instance
-          boots its own in-browser `GameCore` session, so you can drop multiple
-          widgets onto a page without managing per-user backend state.
-        </p>
-      </section>
-
+    <div class="mx-auto max-w-6xl">
       <section class="rounded-[2rem] border border-base-300 bg-base-100 p-4 shadow-sm">
-        <iframe
-          src="/widgets/roguelike/index.html"
-          title="Roguelike browser widget"
-          loading="lazy"
-          class="h-[980px] w-full rounded-[1.5rem] border-0 bg-[#08111d]"
-        ></iframe>
-      </section>
-
-      <section class="rounded-[2rem] border border-base-300 bg-base-100 p-6 shadow-sm">
-        <h2 class="text-2xl font-semibold text-base-content">Embed</h2>
-        <p class="mt-3 text-base leading-7 text-base-content/70">
-          Once published, the widget can be embedded anywhere with a plain iframe.
-        </p>
-        <pre class="mt-4 overflow-auto rounded-2xl bg-neutral p-4 text-sm text-neutral-content"><code>{`<iframe
-  src="https://your-site.vercel.app/widgets/roguelike/index.html"
-  title="Cyberpunk Roguelike Widget"
-  width="100%"
-  height="980"
-  style="border:0;border-radius:24px;overflow:hidden"
-></iframe>`}</code></pre>
+        <RoguelikeBrowserDemo client:load />
       </section>
     </div>
   </main>
