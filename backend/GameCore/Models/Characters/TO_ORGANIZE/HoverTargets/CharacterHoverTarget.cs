@@ -1,0 +1,1 @@
+﻿public record CharacterHoverTarget(string CharacterUid) : HoverTargetBase;

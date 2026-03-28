@@ -1,0 +1,1 @@
+﻿public record DamageHoverTarget(DamageInstance DamageComponent, int DamageIndex) : HoverTargetBase;

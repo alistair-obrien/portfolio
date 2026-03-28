@@ -1,0 +1,4 @@
+﻿public abstract record TurnMutation 
+{ 
+        
+}

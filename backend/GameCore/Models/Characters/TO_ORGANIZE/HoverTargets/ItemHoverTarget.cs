@@ -1,0 +1,1 @@
+﻿public record ItemHoverTarget(string ItemUid, bool ShowIcon) : HoverTargetBase;
