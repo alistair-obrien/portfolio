@@ -94,10 +94,24 @@ function getIdValue(id: IdLike): string | null {
   }
 
   if (typeof id === "string") {
-    return id;
+    return normalizeTypedIdValue(id);
   }
 
-  return id.Value ?? null;
+  return normalizeTypedIdValue(id.Value ?? null);
+}
+
+function normalizeTypedIdValue(value: string | null | undefined): string | null {
+  if (!value) {
+    return null;
+  }
+
+  const separatorIndex = value.indexOf(":");
+
+  if (separatorIndex > 0 && separatorIndex < value.length - 1) {
+    return value.slice(separatorIndex + 1);
+  }
+
+  return value;
 }
 
 function parseFootprint(value: string | null | undefined): Footprint | null {

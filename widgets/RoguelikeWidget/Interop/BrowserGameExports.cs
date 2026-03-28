@@ -85,7 +85,8 @@ public static partial class BrowserGameExports
         if (!TryGetSession(sessionId, out var session))
             return SerializeMissingSession(sessionId);
 
-        var response = session.MovePlayerToCell(new MapChunkId(mapId), x, y);
+        var normalizedMapId = NormalizeTypedIdValue(mapId);
+        var response = session.MovePlayerToCell(new MapChunkId(normalizedMapId), x, y);
 
         return Serialize(new BrowserGameEnvelope(
             Ok: response.Ok,
@@ -129,5 +130,17 @@ public static partial class BrowserGameExports
     private static string Serialize(object value)
     {
         return JsonConvert.SerializeObject(value, JsonSettings);
+    }
+
+    private static string NormalizeTypedIdValue(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return string.Empty;
+
+        var separatorIndex = value.IndexOf(':');
+        if (separatorIndex > 0 && separatorIndex < value.Length - 1)
+            return value[(separatorIndex + 1)..];
+
+        return value;
     }
 }

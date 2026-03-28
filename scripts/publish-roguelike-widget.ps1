@@ -3,26 +3,26 @@ $ErrorActionPreference = "Stop"
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $projectPath = Join-Path $repoRoot "widgets\RoguelikeWidget\RoguelikeWidget.csproj"
 $outputPath = Join-Path $repoRoot "public\widgets\roguelike"
-$publishPath = Join-Path $repoRoot "artifacts\widgets\roguelike-publish"
+$stagingPath = Join-Path $repoRoot "public\widgets\roguelike.__staging"
 
-$env:DOTNET_CLI_HOME = $repoRoot
-$env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = "1"
+New-Item -ItemType Directory -Path $stagingPath -Force | Out-Null
+Get-ChildItem -Path $stagingPath -Force -ErrorAction SilentlyContinue | Remove-Item -Recurse -Force
 
-New-Item -ItemType Directory -Path $publishPath -Force | Out-Null
-New-Item -ItemType Directory -Path $outputPath -Force | Out-Null
+dotnet publish $projectPath -c Release -o $stagingPath --no-restore
 
-Get-ChildItem -Path $publishPath -Force -ErrorAction SilentlyContinue | Remove-Item -Recurse -Force
-Get-ChildItem -Path $outputPath -Force -ErrorAction SilentlyContinue | Remove-Item -Recurse -Force
+if ($LASTEXITCODE -ne 0)
+{
+    throw "dotnet publish failed for $projectPath."
+}
 
-dotnet publish $projectPath -c Release -o $publishPath --no-restore
-
-$wwwrootPath = Join-Path $publishPath "wwwroot"
-
+$wwwrootPath = Join-Path $stagingPath "wwwroot"
 if (-not (Test-Path $wwwrootPath))
 {
     throw "Could not find published wwwroot output at $wwwrootPath."
 }
 
+New-Item -ItemType Directory -Path $outputPath -Force | Out-Null
+Get-ChildItem -Path $outputPath -Force -ErrorAction SilentlyContinue | Remove-Item -Recurse -Force
 Get-ChildItem -Path $wwwrootPath -Force | ForEach-Object {
     Copy-Item -Path $_.FullName -Destination $outputPath -Recurse -Force
 }
@@ -37,4 +37,76 @@ if (-not $dotnetModule)
     throw "Could not find the published dotnet JS module in $frameworkPath."
 }
 
-Copy-Item -Path $dotnetModule.FullName -Destination (Join-Path $frameworkPath "dotnet.js") -Force
+$dotnetModuleContent = Get-Content -Raw $dotnetModule.FullName
+$jsonMatch = [regex]::Match(
+    $dotnetModuleContent,
+    '/\*json-start\*/(?<json>\{.*?\})/\*json-end\*/',
+    [System.Text.RegularExpressions.RegexOptions]::Singleline)
+
+if (-not $jsonMatch.Success)
+{
+    throw "Could not find embedded dotnet runtime config in $($dotnetModule.FullName)."
+}
+
+$dotnetConfig = $jsonMatch.Groups["json"].Value | ConvertFrom-Json
+$hotReloadPattern = "Microsoft.DotNet.HotReload.WebAssembly.Browser"
+
+if ($dotnetConfig.resources -and $dotnetModuleContent -like "*$hotReloadPattern*")
+{
+    if ($dotnetConfig.resources.assembly)
+    {
+        $dotnetConfig.resources.assembly = @(
+            $dotnetConfig.resources.assembly |
+                Where-Object { $_.virtualPath -notlike "$hotReloadPattern*" }
+        )
+    }
+
+    if ($dotnetConfig.resources.libraryInitializers)
+    {
+        $dotnetConfig.resources.libraryInitializers = @(
+            $dotnetConfig.resources.libraryInitializers |
+                Where-Object { $_.name -notlike "*$hotReloadPattern*" }
+        )
+    }
+
+    if ($dotnetConfig.resources.modulesAfterConfigLoaded)
+    {
+        $dotnetConfig.resources.modulesAfterConfigLoaded = @(
+            $dotnetConfig.resources.modulesAfterConfigLoaded |
+                Where-Object { $_.name -notlike "*$hotReloadPattern*" }
+        )
+    }
+
+    $patchedJson = $dotnetConfig | ConvertTo-Json -Depth 100 -Compress:$false
+    $patchedDotnetModuleContent = $dotnetModuleContent.Substring(0, $jsonMatch.Index) +
+        "/*json-start*/$patchedJson/*json-end*/" +
+        $dotnetModuleContent.Substring($jsonMatch.Index + $jsonMatch.Length)
+
+    Set-Content -Path $dotnetModule.FullName -Value $patchedDotnetModuleContent -NoNewline
+}
+
+$stableDotnetModulePath = Join-Path $frameworkPath "dotnet.js"
+if (-not (Test-Path $stableDotnetModulePath))
+{
+    Copy-Item -Path $dotnetModule.FullName -Destination $stableDotnetModulePath -Force
+}
+
+$hotReloadContentPath = Join-Path $outputPath "_content\Microsoft.DotNet.HotReload.WebAssembly.Browser"
+if (Test-Path $hotReloadContentPath)
+{
+    Remove-Item -Path $hotReloadContentPath -Recurse -Force
+}
+
+Get-ChildItem -Path $frameworkPath -Filter "Microsoft.DotNet.HotReload.WebAssembly.Browser*" -ErrorAction SilentlyContinue |
+    Remove-Item -Force
+
+Get-ChildItem -Path $outputPath -Filter "*.staticwebassets.*" -ErrorAction SilentlyContinue |
+    Remove-Item -Force
+
+Get-ChildItem -Path $outputPath -Filter "*.runtimeconfig.json" -ErrorAction SilentlyContinue |
+    Remove-Item -Force
+
+Get-ChildItem -Path $outputPath -Filter "web.config" -ErrorAction SilentlyContinue |
+    Remove-Item -Force
+
+Get-ChildItem -Path $stagingPath -Force -ErrorAction SilentlyContinue | Remove-Item -Recurse -Force
