@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "astro dev",
     "dev:widget": "powershell -ExecutionPolicy Bypass -File ./scripts/dev-roguelike-widget.ps1",
-    "prebuild": "npm run widget:publish",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

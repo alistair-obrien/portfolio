@@ -29,7 +29,6 @@ pnpm-debug.log*
 *.suo
 .vs/
 artifacts/widgets/
-public/widgets/roguelike/
 
 # macOS-specific files
 .DS_Store
