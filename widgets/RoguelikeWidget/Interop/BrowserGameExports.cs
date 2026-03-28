@@ -9,6 +9,7 @@ public sealed record BrowserGameEnvelope(
     string SessionId,
     string ErrorMessage,
     IReadOnlyList<HeadlessEventEnvelope> Events,
+    IReadOnlyList<HeadlessPathStepEnvelope> Path,
     RootGameModelPresentation? State
 );
 
@@ -48,6 +49,7 @@ public static partial class BrowserGameExports
             SessionId: sessionId,
             ErrorMessage: string.Empty,
             Events: Array.Empty<HeadlessEventEnvelope>(),
+            Path: Array.Empty<HeadlessPathStepEnvelope>(),
             State: state));
     }
 
@@ -62,6 +64,7 @@ public static partial class BrowserGameExports
             SessionId: sessionId,
             ErrorMessage: string.Empty,
             Events: Array.Empty<HeadlessEventEnvelope>(),
+            Path: Array.Empty<HeadlessPathStepEnvelope>(),
             State: session.GetState()));
     }
 
@@ -76,7 +79,26 @@ public static partial class BrowserGameExports
             SessionId: sessionId,
             ErrorMessage: string.Empty,
             Events: Array.Empty<HeadlessEventEnvelope>(),
+            Path: Array.Empty<HeadlessPathStepEnvelope>(),
             State: session.Reset(seedDevelopmentWorld: true)));
+    }
+
+    [JSExport]
+    public static string PreviewPlayerMoveToCell(string sessionId, string mapId, int x, int y)
+    {
+        if (!TryGetSession(sessionId, out var session))
+            return SerializeMissingSession(sessionId);
+
+        var normalizedMapId = NormalizeTypedIdValue(mapId);
+        var response = session.PreviewPlayerMoveToCell(new MapChunkId(normalizedMapId), x, y);
+
+        return Serialize(new BrowserGameEnvelope(
+            Ok: response.Ok,
+            SessionId: sessionId,
+            ErrorMessage: response.ErrorMessage ?? string.Empty,
+            Events: response.Events ?? Array.Empty<HeadlessEventEnvelope>(),
+            Path: response.Path ?? Array.Empty<HeadlessPathStepEnvelope>(),
+            State: response.State));
     }
 
     [JSExport]
@@ -93,6 +115,7 @@ public static partial class BrowserGameExports
             SessionId: sessionId,
             ErrorMessage: response.ErrorMessage ?? string.Empty,
             Events: response.Events ?? Array.Empty<HeadlessEventEnvelope>(),
+            Path: response.Path ?? Array.Empty<HeadlessPathStepEnvelope>(),
             State: response.State));
     }
 
@@ -124,6 +147,7 @@ public static partial class BrowserGameExports
             SessionId: sessionId ?? string.Empty,
             ErrorMessage: $"No browser-local session exists for '{sessionId}'.",
             Events: Array.Empty<HeadlessEventEnvelope>(),
+            Path: Array.Empty<HeadlessPathStepEnvelope>(),
             State: null));
     }
 

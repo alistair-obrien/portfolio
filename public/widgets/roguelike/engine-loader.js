@@ -44,6 +44,11 @@ export async function resetSession(sessionId) {
   return parseEnvelope(exports.ResetSession(sessionId));
 }
 
+export async function previewPlayerMoveToCell(sessionId, mapId, x, y) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.PreviewPlayerMoveToCell(sessionId, mapId, x, y));
+}
+
 export async function movePlayerToCell(sessionId, mapId, x, y) {
   const exports = await ensureRuntime();
   return parseEnvelope(exports.MovePlayerToCell(sessionId, mapId, x, y));

@@ -49,12 +49,26 @@ type EngineEnvelope = {
   SessionId?: string;
   ErrorMessage?: string | null;
   Events?: EngineEvent[] | null;
+  Path?: EnginePathStep[] | null;
   State?: GameState | null;
+};
+
+type EnginePathStep = {
+  FromX?: number;
+  FromY?: number;
+  ToX?: number;
+  ToY?: number;
 };
 
 type RoguelikeEngineModule = {
   createSession(): Promise<EngineEnvelope>;
   resetSession(sessionId: string): Promise<EngineEnvelope>;
+  previewPlayerMoveToCell(
+    sessionId: string,
+    mapId: string,
+    x: number,
+    y: number,
+  ): Promise<EngineEnvelope>;
   movePlayerToCell(
     sessionId: string,
     mapId: string,
@@ -88,6 +102,8 @@ type PreparedMap = {
   characterCells: Set<string>;
 };
 const TILE_SIZE = 12;
+const PREVIEW_DEBOUNCE_MS = 40;
+const STEP_TWEEN_MS = 85;
 
 function resolveThemeColor(
   styles: CSSStyleDeclaration,
@@ -234,6 +250,26 @@ function getActiveMap(state: GameState | null) {
   return maps[0] ?? null;
 }
 
+function normalizePath(path: EnginePathStep[] | null | undefined) {
+  return (path ?? []).filter(
+    (step) =>
+      typeof step.FromX === "number" &&
+      typeof step.FromY === "number" &&
+      typeof step.ToX === "number" &&
+      typeof step.ToY === "number",
+  ) as Array<Required<EnginePathStep>>;
+}
+
+function getPathTarget(path: EnginePathStep[]) {
+  const lastStep = path[path.length - 1];
+
+  if (!lastStep) {
+    return null;
+  }
+
+  return { x: lastStep.ToX, y: lastStep.ToY };
+}
+
 function buildLogEntry(command: string, envelope: EngineEnvelope): LogEntry {
   const ok = envelope.Ok === true;
 
@@ -271,12 +307,21 @@ export default function RoguelikeBrowserDemo() {
   const engineRef = useRef<RoguelikeEngineModule | null>(null);
   const sessionIdRef = useRef<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const previewTimerRef = useRef<number | null>(null);
+  const previewRequestIdRef = useRef(0);
+  const hoveredCellKeyRef = useRef<string | null>(null);
+  const animationFrameRef = useRef<number | null>(null);
 
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [state, setState] = useState<GameState | null>(null);
   const [logEntries, setLogEntries] = useState<LogEntry[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isBusy, setIsBusy] = useState(false);
+  const [previewPath, setPreviewPath] = useState<EnginePathStep[]>([]);
+  const [animatedPlayerPosition, setAnimatedPlayerPosition] = useState<{
+    x: number;
+    y: number;
+  } | null>(null);
 
   useEffect(() => {
     let disposed = false;
@@ -327,6 +372,14 @@ export default function RoguelikeBrowserDemo() {
 
     return () => {
       disposed = true;
+
+      if (previewTimerRef.current !== null) {
+        window.clearTimeout(previewTimerRef.current);
+      }
+
+      if (animationFrameRef.current !== null) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
 
       const engine = engineRef.current;
       const sessionId = sessionIdRef.current;
@@ -389,7 +442,7 @@ export default function RoguelikeBrowserDemo() {
         const py = y * TILE_SIZE;
 
         const isWalkable = map.walkableCells.has(key);
-        const playerAtCell = map.playerCells.has(key);
+        const playerAtCell = map.playerCells.has(key) && !animatedPlayerPosition;
         const characterAtCell = map.characterCells.has(key);
         const itemAtCell = map.itemCells.has(key);
         const propAtCell = map.propCells.has(key);
@@ -442,7 +495,119 @@ export default function RoguelikeBrowserDemo() {
       context.lineTo(cssWidth, py);
       context.stroke();
     }
-  }, [preparedMap]);
+
+    if (previewPath.length > 0) {
+      context.strokeStyle = colorAccent;
+      context.lineWidth = 2;
+      context.beginPath();
+
+      const firstStep = previewPath[0];
+      context.moveTo(
+        firstStep.FromX * TILE_SIZE + TILE_SIZE / 2,
+        firstStep.FromY * TILE_SIZE + TILE_SIZE / 2,
+      );
+
+      for (const step of previewPath) {
+        context.lineTo(
+          step.ToX * TILE_SIZE + TILE_SIZE / 2,
+          step.ToY * TILE_SIZE + TILE_SIZE / 2,
+        );
+      }
+
+      context.stroke();
+
+      const target = getPathTarget(previewPath);
+      if (target) {
+        context.fillStyle = "rgba(201, 130, 75, 0.22)";
+        context.beginPath();
+        context.arc(
+          target.x * TILE_SIZE + TILE_SIZE / 2,
+          target.y * TILE_SIZE + TILE_SIZE / 2,
+          TILE_SIZE * 0.34,
+          0,
+          Math.PI * 2,
+        );
+        context.fill();
+      }
+    }
+
+    if (animatedPlayerPosition) {
+      context.fillStyle = colorNeutral;
+      context.beginPath();
+      context.arc(
+        animatedPlayerPosition.x * TILE_SIZE + TILE_SIZE / 2,
+        animatedPlayerPosition.y * TILE_SIZE + TILE_SIZE / 2,
+        4,
+        0,
+        Math.PI * 2,
+      );
+      context.fill();
+    }
+  }, [animatedPlayerPosition, preparedMap, previewPath]);
+
+  function clearPreviewPath() {
+    hoveredCellKeyRef.current = null;
+    previewRequestIdRef.current += 1;
+
+    if (previewTimerRef.current !== null) {
+      window.clearTimeout(previewTimerRef.current);
+      previewTimerRef.current = null;
+    }
+
+    setPreviewPath([]);
+  }
+
+  async function animatePath(path: EnginePathStep[]) {
+    const steps = normalizePath(path);
+
+    if (steps.length === 0) {
+      setAnimatedPlayerPosition(null);
+      return;
+    }
+
+    if (animationFrameRef.current !== null) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
+
+    await new Promise<void>((resolve) => {
+      let stepIndex = 0;
+      let stepStartTime: number | null = null;
+
+      const tick = (timestamp: number) => {
+        const currentStep = steps[stepIndex];
+
+        if (!currentStep) {
+          setAnimatedPlayerPosition(null);
+          animationFrameRef.current = null;
+          resolve();
+          return;
+        }
+
+        if (stepStartTime === null) {
+          stepStartTime = timestamp;
+        }
+
+        const rawProgress = (timestamp - stepStartTime) / STEP_TWEEN_MS;
+        const progress = Math.min(1, rawProgress);
+        const eased = 1 - (1 - progress) * (1 - progress);
+
+        setAnimatedPlayerPosition({
+          x: currentStep.FromX + (currentStep.ToX - currentStep.FromX) * eased,
+          y: currentStep.FromY + (currentStep.ToY - currentStep.FromY) * eased,
+        });
+
+        if (progress >= 1) {
+          stepIndex += 1;
+          stepStartTime = timestamp;
+        }
+
+        animationFrameRef.current = requestAnimationFrame(tick);
+      };
+
+      animationFrameRef.current = requestAnimationFrame(tick);
+    });
+  }
 
   async function handleReset() {
     const engine = engineRef.current;
@@ -453,6 +618,8 @@ export default function RoguelikeBrowserDemo() {
     }
 
     setIsBusy(true);
+    clearPreviewPath();
+    setAnimatedPlayerPosition(null);
 
     try {
       const envelope = await engine.resetSession(currentSessionId);
@@ -481,15 +648,24 @@ export default function RoguelikeBrowserDemo() {
   async function handleMove(mapId: string, x: number, y: number) {
     const engine = engineRef.current;
     const currentSessionId = sessionIdRef.current;
+    const previousState = state;
 
     if (!engine || !currentSessionId || isBusy) {
       return;
     }
 
     setIsBusy(true);
+    clearPreviewPath();
 
     try {
       const envelope = await engine.movePlayerToCell(currentSessionId, mapId, x, y);
+      const movePath = normalizePath(envelope.Path);
+
+      if (envelope.Ok && previousState && movePath.length > 0) {
+        await animatePath(movePath);
+      } else {
+        setAnimatedPlayerPosition(null);
+      }
 
       startTransition(() => {
         setErrorMessage(envelope.Ok ? null : envelope.ErrorMessage || "Move failed.");
@@ -536,6 +712,75 @@ export default function RoguelikeBrowserDemo() {
     return { x, y };
   }
 
+  function canPreviewMove(map: PreparedMap, x: number, y: number) {
+    const key = toCellKey(x, y);
+
+    return (
+      map.walkableCells.has(key) &&
+      !map.propCells.has(key) &&
+      !map.characterCells.has(key) &&
+      !map.playerCells.has(key)
+    );
+  }
+
+  function queuePreviewForCell(x: number, y: number) {
+    const engine = engineRef.current;
+    const currentSessionId = sessionIdRef.current;
+
+    if (!preparedMap || !engine || !currentSessionId || isBusy) {
+      return;
+    }
+
+    const targetKey = toCellKey(x, y);
+    if (hoveredCellKeyRef.current === targetKey) {
+      return;
+    }
+
+    hoveredCellKeyRef.current = targetKey;
+
+    if (previewTimerRef.current !== null) {
+      window.clearTimeout(previewTimerRef.current);
+    }
+
+    const requestId = previewRequestIdRef.current + 1;
+    previewRequestIdRef.current = requestId;
+
+    previewTimerRef.current = window.setTimeout(() => {
+      void engine
+        .previewPlayerMoveToCell(currentSessionId, preparedMap.mapId, x, y)
+        .then((envelope) => {
+          if (previewRequestIdRef.current !== requestId) {
+            return;
+          }
+
+          setPreviewPath(envelope.Ok ? normalizePath(envelope.Path) : []);
+        })
+        .catch(() => {
+          if (previewRequestIdRef.current === requestId) {
+            setPreviewPath([]);
+          }
+        });
+    }, PREVIEW_DEBOUNCE_MS);
+  }
+
+  function handleCanvasPointerMove(event: React.PointerEvent<HTMLCanvasElement>) {
+    if (!preparedMap || isBusy) {
+      return;
+    }
+
+    const cell = getCellFromPointer(event.clientX, event.clientY, preparedMap);
+    if (!cell || !canPreviewMove(preparedMap, cell.x, cell.y)) {
+      clearPreviewPath();
+      return;
+    }
+
+    queuePreviewForCell(cell.x, cell.y);
+  }
+
+  function handleCanvasPointerLeave() {
+    clearPreviewPath();
+  }
+
   function handleCanvasClick(event: React.MouseEvent<HTMLCanvasElement>) {
     if (!preparedMap || isBusy) {
       return;
@@ -576,6 +821,8 @@ export default function RoguelikeBrowserDemo() {
         {preparedMap ? (
           <canvas
             ref={canvasRef}
+            onPointerMove={handleCanvasPointerMove}
+            onPointerLeave={handleCanvasPointerLeave}
             onClick={handleCanvasClick}
             className={`block max-w-none rounded-xl bg-base-200 ${
               isBusy ? "cursor-wait" : "cursor-crosshair"

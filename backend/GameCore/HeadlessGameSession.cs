@@ -6,10 +6,18 @@ public sealed record HeadlessEventEnvelope(
     string Description
 );
 
+public sealed record HeadlessPathStepEnvelope(
+    int FromX,
+    int FromY,
+    int ToX,
+    int ToY
+);
+
 public sealed record HeadlessCommandResponse(
     bool Ok,
     string ErrorMessage,
     IReadOnlyList<HeadlessEventEnvelope> Events,
+    IReadOnlyList<HeadlessPathStepEnvelope> Path,
     RootGameModelPresentation State
 );
 
@@ -30,10 +38,24 @@ public sealed class HeadlessGameSession
     public HeadlessCommandResponse Execute(IGameCommand command)
     {
         var result = _gameInstance.TryExecuteCommand(command, out var eventsBuffer);
+        var path = BuildPathEnvelopes(eventsBuffer);
         return new HeadlessCommandResponse(
             result.Ok,
             result.ErrorMessage,
             BuildEventEnvelopes(eventsBuffer),
+            path,
+            _gameInstance.PullRootGameModelPresentation());
+    }
+
+    public HeadlessCommandResponse Preview(IGameCommand command)
+    {
+        var result = _gameInstance.TryPreviewCommand(command, out var eventsBuffer);
+        var path = BuildPathEnvelopes(eventsBuffer);
+        return new HeadlessCommandResponse(
+            result.Ok,
+            result.ErrorMessage,
+            BuildEventEnvelopes(eventsBuffer),
+            path,
             _gameInstance.PullRootGameModelPresentation());
     }
 
@@ -82,10 +104,34 @@ public sealed class HeadlessGameSession
                 false,
                 "No player character is assigned in this session.",
                 new List<HeadlessEventEnvelope>(),
+                new List<HeadlessPathStepEnvelope>(),
                 state);
         }
 
         return Execute(new MapsAPI.Commands.MoveCharacterAlongPathToCell(
+            playerId.Value,
+            mapId,
+            playerId.Value,
+            x,
+            y));
+    }
+
+    public HeadlessCommandResponse PreviewPlayerMoveToCell(MapChunkId mapId, int x, int y)
+    {
+        var state = _gameInstance.PullRootGameModelPresentation();
+        var playerId = state.PlayerHUD?.characterUid;
+
+        if (!playerId.HasValue)
+        {
+            return new HeadlessCommandResponse(
+                false,
+                "No player character is assigned in this session.",
+                new List<HeadlessEventEnvelope>(),
+                new List<HeadlessPathStepEnvelope>(),
+                state);
+        }
+
+        return Preview(new MapsAPI.Commands.MoveCharacterAlongPathToCell(
             playerId.Value,
             mapId,
             playerId.Value,
@@ -102,6 +148,21 @@ public sealed class HeadlessGameSession
             .Select(evt => new HeadlessEventEnvelope(
                 evt.GetType().Name,
                 evt.ToString() ?? evt.GetType().Name))
+            .ToList();
+    }
+
+    private static IReadOnlyList<HeadlessPathStepEnvelope> BuildPathEnvelopes(IEnumerable<IGameEvent> eventsBuffer)
+    {
+        if (eventsBuffer == null)
+            return new List<HeadlessPathStepEnvelope>();
+
+        return eventsBuffer
+            .OfType<MapsAPI.Events.CharacterMovedOnMap>()
+            .Select(evt => new HeadlessPathStepEnvelope(
+                evt.MoveResult.From.X,
+                evt.MoveResult.From.Y,
+                evt.MoveResult.To.X,
+                evt.MoveResult.To.Y))
             .ToList();
     }
 }
