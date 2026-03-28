@@ -24,6 +24,13 @@
         <button class="reset-button" @onclick="Reset">Reset</button>
     </header>
 
+    @if (!string.IsNullOrWhiteSpace(Session.LastMessage))
+    {
+        <article class="card feedback-card">
+            <p class="lede">@Session.LastMessage</p>
+        </article>
+    }
+
     @if (player is not null)
     {
         <div class="status-grid">
@@ -54,19 +61,30 @@
                 {
                     @for (var x = 0; x < activeMap.Width; x++)
                     {
-                        var occupant = FindOccupant(activeCharacters, x, y);
+                        var tileX = x;
+                        var tileY = y;
+                        var occupant = FindOccupant(activeCharacters, tileX, tileY);
                         var isPlayer = occupant?.CharacterId == player?.characterUid;
                         var cssClass = occupant is null
                             ? "cell"
                             : isPlayer
                                 ? "cell occupied player"
                                 : "cell occupied";
+                        var clickClass = isPlayer ? "cell-button current-cell" : "cell-button";
                         var marker = occupant is null ? string.Empty : isPlayer ? "@" : "C";
                         var title = occupant is null
-                            ? $"({x}, {y})"
-                            : $"{occupant.CharacterPresentation?.Name ?? occupant.CharacterId.Value} @ ({x}, {y})";
+                            ? $"Move to ({tileX}, {tileY})"
+                            : isPlayer
+                                ? $"You are here: ({tileX}, {tileY})"
+                                : $"{occupant.CharacterPresentation?.Name ?? occupant.CharacterId.Value} @ ({tileX}, {tileY})";
 
-                        <div class="@cssClass" title="@title">@marker</div>
+                        <button
+                            type="button"
+                            class="@clickClass"
+                            title="@title"
+                            @onclick="@(() => MoveToCell(activeMap.MapId, tileX, tileY))">
+                            <div class="@cssClass">@marker</div>
+                        </button>
                     }
                 }
             </div>
@@ -96,6 +114,11 @@
     private void Reset()
     {
         Session.Reset();
+    }
+
+    private void MoveToCell(MapChunkId mapId, int x, int y)
+    {
+        Session.MovePlayerToCell(mapId, x, y);
     }
 
     private static MapCharacterPlacementPresentation? FindOccupant(

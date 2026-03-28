@@ -261,6 +261,31 @@ h1[b-p48uhj90on] {
   background: rgba(146, 181, 255, 0.14);
 }
 
+.cell-button[b-p48uhj90on] {
+  padding: 0;
+  border: 0;
+  min-width: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cell-button:hover .cell[b-p48uhj90on],
+.cell-button:focus-visible .cell[b-p48uhj90on] {
+  outline: 1px solid rgba(93, 240, 193, 0.75);
+  outline-offset: -1px;
+  background: rgba(16, 38, 66, 0.98);
+}
+
+.cell-button.current-cell[b-p48uhj90on] {
+  cursor: default;
+}
+
+.cell-button.current-cell:hover .cell[b-p48uhj90on],
+.cell-button.current-cell:focus-visible .cell[b-p48uhj90on] {
+  background: rgba(38, 211, 255, 0.9);
+  outline: none;
+}
+
 .cell[b-p48uhj90on] {
   aspect-ratio: 1;
   min-width: 0;
@@ -282,6 +307,10 @@ h1[b-p48uhj90on] {
 .player[b-p48uhj90on] {
   background: rgba(38, 211, 255, 0.9);
   color: #04151d;
+}
+
+.feedback-card[b-p48uhj90on] {
+  margin-bottom: 1rem;
 }
 
 .placements[b-p48uhj90on] {

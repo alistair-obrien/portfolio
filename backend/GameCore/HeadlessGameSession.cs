@@ -71,6 +71,28 @@ public sealed class HeadlessGameSession
         return _gameInstance.PullRootGameModelPresentation();
     }
 
+    public HeadlessCommandResponse MovePlayerToCell(MapChunkId mapId, int x, int y)
+    {
+        var state = _gameInstance.PullRootGameModelPresentation();
+        var playerId = state.PlayerHUD?.characterUid;
+
+        if (!playerId.HasValue)
+        {
+            return new HeadlessCommandResponse(
+                false,
+                "No player character is assigned in this session.",
+                new List<HeadlessEventEnvelope>(),
+                state);
+        }
+
+        return Execute(new MapsAPI.Commands.MoveCharacterAlongPathToCell(
+            playerId.Value,
+            mapId,
+            playerId.Value,
+            x,
+            y));
+    }
+
     private static IReadOnlyList<HeadlessEventEnvelope> BuildEventEnvelopes(IEnumerable<IGameEvent> eventsBuffer)
     {
         if (eventsBuffer == null)

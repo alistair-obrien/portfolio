@@ -98,6 +98,31 @@ h1 {
   background: rgba(146, 181, 255, 0.14);
 }
 
+.cell-button {
+  padding: 0;
+  border: 0;
+  min-width: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cell-button:hover .cell,
+.cell-button:focus-visible .cell {
+  outline: 1px solid rgba(93, 240, 193, 0.75);
+  outline-offset: -1px;
+  background: rgba(16, 38, 66, 0.98);
+}
+
+.cell-button.current-cell {
+  cursor: default;
+}
+
+.cell-button.current-cell:hover .cell,
+.cell-button.current-cell:focus-visible .cell {
+  background: rgba(38, 211, 255, 0.9);
+  outline: none;
+}
+
 .cell {
   aspect-ratio: 1;
   min-width: 0;
@@ -119,6 +144,10 @@ h1 {
 .player {
   background: rgba(38, 211, 255, 0.9);
   color: #04151d;
+}
+
+.feedback-card {
+  margin-bottom: 1rem;
 }
 
 .placements {
