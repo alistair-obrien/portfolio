@@ -9,8 +9,12 @@ public sealed record HeadlessEventEnvelope(
 public sealed record HeadlessPathStepEnvelope(
     int FromX,
     int FromY,
+    int FromWidth,
+    int FromHeight,
     int ToX,
-    int ToY
+    int ToY,
+    int ToWidth,
+    int ToHeight
 );
 
 public sealed record HeadlessCommandResponse(
@@ -161,8 +165,12 @@ public sealed class HeadlessGameSession
             .Select(evt => new HeadlessPathStepEnvelope(
                 evt.MoveResult.From.X,
                 evt.MoveResult.From.Y,
+                evt.MoveResult.From.Width,
+                evt.MoveResult.From.Height,
                 evt.MoveResult.To.X,
-                evt.MoveResult.To.Y))
+                evt.MoveResult.To.Y,
+                evt.MoveResult.To.Width,
+                evt.MoveResult.To.Height))
             .ToList();
     }
 }

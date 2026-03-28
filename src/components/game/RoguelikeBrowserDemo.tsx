@@ -56,8 +56,12 @@ type EngineEnvelope = {
 type EnginePathStep = {
   FromX?: number;
   FromY?: number;
+  FromWidth?: number;
+  FromHeight?: number;
   ToX?: number;
   ToY?: number;
+  ToWidth?: number;
+  ToHeight?: number;
 };
 
 type RoguelikeEngineModule = {
@@ -100,6 +104,7 @@ type PreparedMap = {
   itemCells: Set<string>;
   playerCells: Set<string>;
   characterCells: Set<string>;
+  playerFootprint: Footprint | null;
 };
 const TILE_SIZE = 12;
 const PREVIEW_DEBOUNCE_MS = 40;
@@ -192,6 +197,7 @@ function prepareMap(
     itemCells: new Set<string>(),
     playerCells: new Set<string>(),
     characterCells: new Set<string>(),
+    playerFootprint: null,
   };
 
   for (const tile of map.Tiles ?? []) {
@@ -222,6 +228,12 @@ function prepareMap(
 
   for (const character of map.Characters ?? []) {
     const isPlayer = getIdValue(character.CharacterId) === playerId;
+    const footprint = parseFootprint(character.CellFootprint);
+
+    if (isPlayer && footprint) {
+      prepared.playerFootprint = footprint;
+    }
+
     addFootprintToSet(
       isPlayer ? prepared.playerCells : prepared.characterCells,
       character.CellFootprint,
@@ -255,8 +267,12 @@ function normalizePath(path: EnginePathStep[] | null | undefined) {
     (step) =>
       typeof step.FromX === "number" &&
       typeof step.FromY === "number" &&
+      typeof step.FromWidth === "number" &&
+      typeof step.FromHeight === "number" &&
       typeof step.ToX === "number" &&
-      typeof step.ToY === "number",
+      typeof step.ToY === "number" &&
+      typeof step.ToWidth === "number" &&
+      typeof step.ToHeight === "number",
   ) as Array<Required<EnginePathStep>>;
 }
 
@@ -321,6 +337,8 @@ export default function RoguelikeBrowserDemo() {
   const [animatedPlayerPosition, setAnimatedPlayerPosition] = useState<{
     x: number;
     y: number;
+    width: number;
+    height: number;
   } | null>(null);
 
   useEffect(() => {
@@ -469,10 +487,7 @@ export default function RoguelikeBrowserDemo() {
         }
 
         if (playerAtCell) {
-          context.fillStyle = colorNeutral;
-          context.beginPath();
-          context.arc(px + TILE_SIZE / 2, py + TILE_SIZE / 2, 4, 0, Math.PI * 2);
-          context.fill();
+          continue;
         }
       }
     }
@@ -531,17 +546,15 @@ export default function RoguelikeBrowserDemo() {
       }
     }
 
-    if (animatedPlayerPosition) {
+    const renderedPlayerFootprint = animatedPlayerPosition ?? map.playerFootprint;
+    if (renderedPlayerFootprint) {
       context.fillStyle = colorNeutral;
-      context.beginPath();
-      context.arc(
-        animatedPlayerPosition.x * TILE_SIZE + TILE_SIZE / 2,
-        animatedPlayerPosition.y * TILE_SIZE + TILE_SIZE / 2,
-        4,
-        0,
-        Math.PI * 2,
+      context.fillRect(
+        renderedPlayerFootprint.x * TILE_SIZE + 1,
+        renderedPlayerFootprint.y * TILE_SIZE + 1,
+        renderedPlayerFootprint.width * TILE_SIZE - 2,
+        renderedPlayerFootprint.height * TILE_SIZE - 2,
       );
-      context.fill();
     }
   }, [animatedPlayerPosition, preparedMap, previewPath]);
 
@@ -595,6 +608,8 @@ export default function RoguelikeBrowserDemo() {
         setAnimatedPlayerPosition({
           x: currentStep.FromX + (currentStep.ToX - currentStep.FromX) * eased,
           y: currentStep.FromY + (currentStep.ToY - currentStep.FromY) * eased,
+          width: currentStep.ToWidth,
+          height: currentStep.ToHeight,
         });
 
         if (progress >= 1) {
