@@ -56,7 +56,7 @@ Some rules that are necessary for the command pattern to work effectively in our
 
 Here are some examples of what commands look like:
 
-```Csharp
+```csharp
 public sealed record AddEntityToMap(
     CharacterId ActorId,
     MapChunkId MapId,
@@ -77,7 +77,7 @@ Note: By using record types, we get immutability and save on boilerplate as we d
 
 In order to execute a command, we simply need to construct a command then send it off to the centralized command handler.
 
-```Csharp
+```csharp
 var command = new MoveEntityAlongPathToCell(
     ActorId: "Player",
     MapId: "Map1",
@@ -92,7 +92,7 @@ In this example, we are passing a command from a view to it's bound coordinator.
 
 Let's see what the coordinator does with the command.
 
-```Csharp
+```csharp
 public class GameCoordinator
 {
     GameInstance _gameInstance;
@@ -112,7 +112,7 @@ The coordinator simply forwards the command to the game instance to execute, and
 
 Lets look at what game instance does with the command.
 
-```Csharp
+```csharp
 public class GameInstance
 {
     public CommandResult ExecuteCommand(IGameCommand command, out List<IGameEvent> events)
@@ -204,7 +204,7 @@ Above in the Command Pattern we showed that every command can only pass keys to 
 
 It's very simple. We just look up the entity in the world state dictionary by its key and return it.
 
-```Csharp
+```csharp
 Dictionary<string, Entity> worldState = new Dictionary<string, Entity>();
 
 bool TryResolve(string entityId, out Entity entity)
@@ -220,7 +220,7 @@ In order to implement C.O.W, we can maintain a stack of dictionaries that repres
 When a command is executed, we push a new dictionary onto the stack.
 When an entity is resolved, we first check if it exists in the top dictionary of the stack. If it does, we return it. If it doesn't, we resolve it from the world state, clone it, and add it to the top dictionary before returning it.
 
-```Csharp
+```csharp
 
 private List<Dictionary<string, Entity>> history = new();
 private int currentSimulationLayerIndex = 0;
@@ -301,7 +301,7 @@ Now we have the command pattern funneling everything through a single mutation p
 To support undo/redo, the Game Instance simply needs to keep a stack of snapshots and support being able to increment and decrement the index of the current snapshot.
 When a command we want to be able to undo is executed, we simply push a new snapshot onto the stack.
 
-```Csharp
+```csharp
 void ProcessCommand(IGameCommand command)
 {
     _gameInstance.PushSimulationLayer();
@@ -325,7 +325,7 @@ To support AI simulation branching, we can simply create a new snapshot for each
 Each branch can then execute commands and mutate its own snapshot without affecting the mainline or other branches.
 When the AI is done simulating, it can evaluate the outcomes of each branch and choose the best one to commit to the mainline.
 
-```Csharp
+```csharp
 void GetBestTurnAction()
 {
     var availableactions = GetAvailableActionsForAI();
@@ -361,7 +361,7 @@ The preview can then render the resulting events to show the player what would h
 If the player decides to commit to the action, we can simply merge the preview snapshot into the mainline snapshot.
 If the player decides to discard the action, we can simply discard the preview snapshot.
 
-```Csharp
+```csharp
 void PreviewAction(IGameCommand command)
 {
     _gameInstance.PushSimulationLayer();
@@ -378,7 +378,7 @@ To support recording and replaying, we can maintain a list of snapshots that rep
 When a command is executed, we can push a new snapshot onto the list.
 To replay, we can simply iterate through the list of snapshots and render the resulting events for each snapshot to show the sequence of actions that occurred.
 
-```Csharp
+```csharp
 Dictionary<string, Entity> baseState = new();
 List<Event> recording = new();
 
@@ -410,7 +410,7 @@ The implant can then execute commands and mutate its own snapshot to simulate th
 The implant can then render the resulting events to show the player what could happen if they were to commit to a certain sequence of actions.
 The player can then choose to commit to the sequence of actions, which would merge the implant's prediction snapshot into the mainline snapshot, or discard the sequence of actions, which would simply discard the implant's prediction snapshot.
 
-```Csharp
+```csharp
 void PreviewImplantPrediction(List<IGameCommand> commands)
 {
     _gameInstance.PushSimulationLayer();

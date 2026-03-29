@@ -1,6 +1,21 @@
 import { defineMarkdocConfig, component } from '@astrojs/markdoc/config';
+import shiki from '@astrojs/markdoc/shiki';
+import horizonLight from './src/themes/horizon-light.json';
+import horizonDark from './src/themes/horizon-dark.json';
+
+const codeHighlighting = await shiki({
+  themes: {
+    light: horizonLight,
+    dark: horizonDark,
+  },
+  defaultColor: 'light',
+  langAlias: {
+    cs: 'csharp',
+  },
+});
 
 export default defineMarkdocConfig({
+  extends: [codeHighlighting],
   tags: {
     Spotify: {
       render: component('./src/components/Spotify.astro'),

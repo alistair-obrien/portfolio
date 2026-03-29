@@ -16,6 +16,23 @@ The name should be the same as the theme name below.
     coffee;
 }
 
+.astro-code {
+  border-radius: 0.75rem;
+}
+
+html[data-theme="dim"] .astro-code,
+html[data-theme="dark"] .astro-code,
+html[data-theme="coffee"] .astro-code {
+  background-color: var(--shiki-dark-bg) !important;
+  color: var(--shiki-dark) !important;
+}
+
+html[data-theme="dim"] .astro-code span,
+html[data-theme="dark"] .astro-code span,
+html[data-theme="coffee"] .astro-code span {
+  color: var(--shiki-dark) !important;
+}
+
 /* * {
   outline: 1px solid red;
 } */
