@@ -4,7 +4,7 @@ description: >-
   How copy on write lets my engine scrub history, render action previews, and
   run AI pathing against possible futures without cloning the whole world.
 isDraft: false
-image: '@assets/blog/one-simple-solution-for-three-complex-challenges/image.png'
+image: '@assets/blog/one-simple-solution-for-three-complex-challenges/image.jpg'
 publishDate: 2026-03-27
 updatedDate: 2026-03-27
 tags:
@@ -13,31 +13,170 @@ tags:
   - AI
   - Simulation
 ---
+Given the ambitions of what I wanted my game to be, I knew that I would have to find a core solution to being able to move through state history smoothly, and this feature could not simply be added on top at a later time.
+In short, the very core architecture of entity management and state mutation would have to be designed with time traversal in mind from the very beginning.
 
-##  Command Pattern
+The features in mind that I wanted to support were:
 
-##  Copy on Write
+#### Undo/Redo
+
+As the game content is editable in the environment of the actual game, undo/redo needs to be a native feature of the engine, not a layer on the top of an editor context. The game engine itself needs to be able to scrub through history and the editor simply interface with that.
+
+#### AI Simulation Branching
+
+The ability for AI to simulate multiple possible futures based on different actions, and then choose the best one.
+
+#### Action Previews
+
+The ability for players to preview the outcome of an action without having to make alternative preview commands/events.
+
+#### Recording and Replaying
+
+The ability to record a sequence of actions and replay them later. I wanted to implement a mechanic around Cyberpunk's Brain Dance. For example a mission may require a paranoid client to require proof that the deed was done. The player must then ensure that they have a recording of the event, and then hand off the recording to the client as proof.
+
+#### Advanced Prediction Implants
+
+As the theme is cyberpunk, I think it's very interesting to have certain installable implants that allow the player to see a little bit into the futur of their actions. Or even an implant that shows the player a whole sequence of actions and their outcomes, then giving the player the choice to commit or discard that macro.
+
+It was only fitting then that I spend a lot of initial development time on figuring out the best way to support these in a way that presented the least friction possible.
+
+The solution I came up with after a while of researching and prototyping was to implement a strict domain model mutation path via a Command Pattern combined with Copy on Write. Let's break down what that means.
+
+## Command Pattern and Strict Mutation Path
+
+Very simply put, the command pattern is a design pattern that encapsulates a request as an object.
+Rather than the sender calling a method directly on the receiver, it creates a command object that contains all the information about the request, and then passes that command object to the receiver to be executed.
+Essentially it decouples the sender from the receiver by making an intermediate object that will be handled by the receiver. These immutable command objects can be stored, queued, logged, passed around, and processed safely.
+
+Some rules that are necessary for the command pattern to work effectively in our case are:
+
+1. Commands must NEVER hold direct references to domain models.
+1. Commands can only pass identifiers (e.g. string IDs) to reference domain models. (This is very important!)
+1. Commands must be easily constructable with just primitive data types. This is because commands should be expected to come from anywhere, for example a dialogue system.
+
+Here are some examples of what commands look like:
+
+```Csharp
+public sealed record AddEntityToMap(
+    CharacterId ActorId,
+    MapChunkId MapId,
+    IGameDbId EntityId,
+    CellPosition CellPosition
+    ) : IGameCommand;
+
+public sealed record MoveEntityAlongPathToCell(
+    CharacterId ActorId,
+    MapChunkId MapId,
+    CharacterId CharacterId,
+    int ToX,
+    int ToY
+) : IGameCommand;
+```
+
+Note: By using record types, we get immutability and save on boilerplate as we don't need to write constructors, getters, or equality methods manually.
+
+In order to execute a command, we simply need to construct a command then send it off to the centralized command handler.
+
+```Csharp
+var command = new MoveEntityAlongPathToCell(
+    ActorId: "Player",
+    MapId: "Map1",
+    CharacterId: "Player",
+    ToX: 5,
+    ToY: 10
+);
+_coordinator.SubmitCommand(command);
+```
+
+In this example, we are passing a command from a view to it's bound coordinator.
+
+Let's see what the coordinator does with the command.
+
+```Csharp
+public class GameCoordinator
+{
+    GameInstance _gameInstance;
+
+    public void SubmitCommand(IGameCommand command)
+    {
+        _gameInstance.ExecuteCommand(command, out var events);
+        foreach (var e in events)
+        {
+            _views.ForEach(v => v.RenderEvent(e));
+        }
+    }
+}
+```
+
+The coordinator simply forwards the command to the game instance to execute, and receives the resulting events which it can then forward to the bound views.
+
+Lets look at what game instance does with the command.
+
+```Csharp
+public class GameInstance
+{
+    public CommandResult ExecuteCommand(IGameCommand command, out List<IGameEvent> events)
+    {
+        if (command is MoveEntityAlongPathToCell moveCommand)
+        {
+            return HandleMoveEntityAlongPathToCell(moveCommand, out events);
+        }
+        else
+        {
+            throw new InvalidOperationException($"Unhandled command type: {command.GetType().Name}");
+        }
+    }
+
+    private CommandResult HandleMoveEntityAlongPathToCell(MoveEntityAlongPathToCell command, out List<IGameEvent> events)
+    {
+        if (!TryResolveEntity(command.CharacterId))
+            return CommandResult.Fail("Character not found");
+        
+        if (!Pathfinding.FindPath(character.Position, new CellPosition(command.ToX, command.ToY), out var path))
+            return CommandResult.Fail("No path found");
+
+        foreach (var step in path)
+        {
+            character.Position = step;
+            events.Add(new CharacterMovedEvent(character.Id, step));
+        }
+
+        return CommandResult.Success();
+    }
+}
+```
+
+A brief rundown of the command execution process is as follows:
+
+1. The GameInstance receives the command and routes it to the appropriate handler based on its type.
+1. The handler then resolves any necessary entities from their keys.
+1. The handler then mutates the entities as necesssary to perform the logic of the.
+1. The handler then returns events that represent the changes that occurred as a result of the command, which can then be rendered by the views.
+
+In order to add a new command we simply need to:
+
+1. Define a new command record type that implements IGameCommand.
+1. Implement a new handler method in GameInstance that takes the command as a parameter.
+1. Add a new case in the ExecuteCommand method to route the command to the new handler.
+
+Now that we understand the command pattern and strict mutation path, let's move on to cover the Copy on Write strategy.
+
+## Copy on Write
+
 Copy on Write (C.O.W) is an optimization strategy where multiple entities can share the same data until one of them needs to modify it.
-At that point, a copy of the data is created for the modifying entity, allowing for efficient memory usage and performance.
+At the point of needing a unique forked copy, the data is cloned and references updated, allowing for efficient memory usage and performance.
 This is commonly used in operating systems when multiple processes share the same memory pages until one of them needs to write to it, at which point a copy of the page is made for that process.
 
-Let's take a look at forking the state of the game domain in order to support undo/redo, simulation branching for AI, and action previews.
+In our case, we know that we want to fork the state of the world under certain circumstances so that we can quickly and easily rollback changes or evaluate multiple outcoomes.
 
-Very simply, all these features can be implemented with the same three steps:
-1. Open a Simulation Branch
-2. Run one or many commands to mutate the domain models
-3. Commit or Discard the Branch
-
-When the domain is small, this is easy to implement with a simple copy of the entire state.
-The entre Root can be deep cloned, pushed on a stack, and the branch can be mutated without affecting the mainline.
+When the domain is small, this is easy to implement by simply copying the entire game state.
+The entire Root can be deep cloned, pushed on a stack, and the branch can be mutated without affecting the mainline.
 Then to commit, the branch can replace the mainline, and to discard, the branch can simply be thrown away.
 
-# Todo: show animation
-
 However, as the domain grows, this approach becomes slower and more memory intensive, as the entire state needs to be copied for each branch, even if only a small portion of it is modified.
-It's also important to note that commands generally modify only a small portion of the state.
 
 Think for example of a command for one character attacking another character. The involved entities are:
+
 - The Attacker Entity
 - The Attacker's Weapon Entity
 - The Defender Entity
@@ -46,220 +185,254 @@ Think for example of a command for one character attacking another character. Th
 What if the game world has 10,000 entities, and only 4 of them are involved in the attack command?
 We don't want to clone the entire 10,0000 entities just to mutate 0.04% of the state.
 
-What if we simply take a slice of the world? Perhaps we only clone a section of the world? 
+What if we simply take a slice of the world? Perhaps we only clone a section of the world?
 In the above scenario we are on a map with multiple entities. Lets say we have 20 characters, each with 10 items, and 40 props scattered across the map.
-240 etities in total, with still only 4 involved in the attack command. 
-1.6% of the state is involved in the command. This is a fair improvement, but still very wasteful.
-We can clone the subsection, apply mutations, then merge or discard. 
+260 etities in total, with still only 4 involved in the attack command.
+1.5% of the state is involved in the command. This is a fair improvement, but still very wasteful.
 
-It also has a major flaw. What if the attack command depends on the state of the world outside of the slice? 
-For example, what if the command updates a relationship to a faction? 
-Or we want to preview over multiple ticks and a weather change occurs?
-It becomes easy to either miss important state changes, or to have the slice grow in large chunks and become less and less performant. 
+It also has a major flaw. What if the attack command depends on the state of the world outside of the slice?
+For example, what if the command updates a relationship to a faction which needs to be taken into account for the AI's next tick?
+Or we want to preview over multiple ticks and a weather change occurs which should affect visibility?
+It becomes easy to either miss important state changes in our subsection, or to have the slice grow in large chunks and become less and less performant.
 
-# TODO: show animation
+So we don't want to clone the entire world, but we also don't want to clone a slice of the world. We really only want to clone the entities that are actually being modified by the command.
 
-So we don't want tp clone the entire world, but we also don't want to clone a slice of the world.
-
-This is where Copy on Write comes in. 
+This is where Copy on Write comes in.
 With C.O.W, we can create a narrow layer representing the modified state and only push actual changes to that layer.
 
-Here we have a flat dictionary of every single entity in the world.
+Above in the Command Pattern we showed that every command can only pass keys to reference entities, and that the command handlers must resolve those keys to get the actual entities they want to mutate. So what does resolving an entity look like?
+
+It's very simple. We just look up the entity in the world state dictionary by its key and return it.
 
 ```Csharp
 Dictionary<string, Entity> worldState = new Dictionary<string, Entity>();
-```
 
-When we want to get an entity to read or write, we always go through a resolvement function.
-
-```Csharp
-TryResolve(string entityId)
+bool TryResolve(string entityId, out Entity entity)
 {
-    return worldState[entityId];
+    return worldState.TryGetValue(entityId, out entity);
 }
 ```
 
-Every Command is only allowed to pass keys, and never direct references. 
-This means every command must go through the resolvement function to get the entity it wants to mutate.
-Importantly, it also means we have a single funnel for all reads and writes to the world state.
+So the state of the entity is always retrieved from the dictionary for every command that it is involved in.
+This gives us a single point of access for resolving entities, which is the perfect place to implement our copy on write strategy.
 
-We can use that funnel to implement copy on write.
-
-First, we actually want to have a stack of snapshots, where each snapshot represents a point in time. 
-Each snapshot is a local dictionary of changes that have been made.
+In order to implement C.O.W, we can maintain a stack of dictionaries that represent the modified state of the world at each level of command execution.
+When a command is executed, we push a new dictionary onto the stack.
+When an entity is resolved, we first check if it exists in the top dictionary of the stack. If it does, we return it. If it doesn't, we resolve it from the world state, clone it, and add it to the top dictionary before returning it.
 
 ```Csharp
-Dictionary<string, Entity> worldState = new Dictionary<string, Entity>();
-Stack<Dictionary<string, Entity>> history = new();
-```
 
-Now the process for resolving an entity looks like this:
-1. Check if the entity exists in the top snapshot of the history stack. If it does, return it.
-2. If it doesn't, resolve it from the world state, clone it, and add it to the top snapshot of the history stack before returning it.
-3. If it does exist, then we can return it directly.
+private List<Dictionary<string, Entity>> history = new();
+private int currentSimulationLayerIndex = 0;
 
-```Csharp
-TryResolve(string entityId)
+bool TryResolve(string entityId, out Entity entity)
 {
     // History is empty, resolve from world state
     if (history.Count == 0)
-        return worldState[entityId];
+        return worldState.TryGetValue(entityId, out entity);
 
-    // History is not empty, check the top snapshot
-    var topSnapshot = history.Peek();
-    if (topSnapshot.TryGetValue(entityId, out var existing))
-        return existing;
+    // History is not empty, check the current simulaition layer for the entity
+    var currentSimulationLayer = history[currentSimulationLayerIndex];
+    if (currentSimulationLayer.TryGetValue(entityId, out entity))
+        return true;
     
-    // Entity does not exist in the top snapshot, resolve from world state, clone it, and add it to the top snapshot
+    // Entity does not exist in the current simulation snapshot, resolve from world state, clone it, and add it to the current simulation snapshot
     // This is the copy on write step
-    topSnapshot[entityId] = worldState[entityId].DeepClone();
+    currentSimulationLayer[entityId] = entity.DeepClone();
+    entity = currentSimulationLayer[entityId];
+    return true;
+}
+
+void PushSimulationLayer()
+{
+    history.Add(new Dictionary<string, Entity>());
+    currentSimulationLayerIndex++;
+}
+
+void PopSimulationLayer()
+{
+    if (currentSimulationLayerIndex < 0)
+        throw new InvalidOperationException("No simulation layer to pop");
+
+    history.RemoveAt(currentSimulationLayerIndex);
+    currentSimulationLayerIndex--;
+}
+
+void Flatten()
+{
+    if (history.Count == 0)
+        return;
+
+    var currentSimulationLayer = history[currentSimulationLayerIndex];
+    foreach (var kvp in currentSimulationLayer)
+    {
+        worldState[kvp.Key] = kvp.Value;
+    }
+
+    history.Clear();
+    currentSimulationLayerIndex = 0;
+}
+
+void SetIndex(int index)
+{
+    if (index < 0 || index >= history.Count)
+        throw new InvalidOperationException("Invalid simulation layer index");
+
+    currentSimulationLayerIndex = index;
 }
 ```
 
 With this setup, our clone is the minimum size necessary to represent the changes made by the command.
-If a command only modifies 4 entities, then only those 4 entities are cloned and stored in the snapshot. 
-If a command modifies 100 entities, then those 100 entities are cloned and stored in the snapshot. 
+
+If a command only modifies 4 entities, then only those 4 entities are cloned and stored in the snapshot.
+
+If a command modifies 100 entities, then those 100 entities are cloned and stored in the snapshot.
+
 If a command modifies 0 entities, then no cloning occurs at all.
 
 There is almost no wastage of memory or performance.
 
-However there is an additional step we need to take make this truly zero waste.
-When we resolve an entity from a command we don't always intend to mutate it.
-Very often we just want to read the state of an entity to make a decision, and if we clone it every time we read it, then we are doing a lot of unnecessary cloning.
-So we can add an additional parameter to the resolvement function to indicate whether we intend to mutate the entity or not.
-This is a similar concept to File Access Modes in operating systems, where you can open a file in read-only mode or read-write mode.
+## Implementing Time Traversal Features
+
+Now we have the command pattern funneling everything through a single mutation path, and we have copy on write implemented at the point of entity resolution within that mutation path we are in the perfect position to support all of our time traversal features with minimal friction.
+
+### Undo/Redo
+
+To support undo/redo, the Game Instance simply needs to keep a stack of snapshots and support being able to increment and decrement the index of the current snapshot.
+When a command we want to be able to undo is executed, we simply push a new snapshot onto the stack.
 
 ```Csharp
-Entity Resolve(string entityId, bool write)
+void ProcessCommand(IGameCommand command)
 {
-    // History is empty, resolve from world state
-    if (history.Count == 0)
-        return worldState[entityId];
+    _gameInstance.PushSimulationLayer();
+    _gameInstance.ExecuteCommand(command, out var events);
+}
 
-    // History is not empty, check the top snapshot
-    var topSnapshot = history.Peek();
-    if (topSnapshot.TryGetValue(entityId, out var existing))
-        return existing;
-    
-    // Entity does not exist in the top snapshot, resolve from world state
-    var resolvedEntity = worldState[entityId];
-    
-    // If we intend to mutate the entity, clone it and add it to the top snapshot
-    if (write)
-        topSnapshot[entityId] = resolvedEntity.DeepClone();
-    
-    return resolvedEntity;
+void Undo()
+{
+    _gameInstance.Undo();
+}
+
+void Redo()
+{
+    _gameInstance.Redo();
 }
 ```
 
-It then places the responsibility on the command handlers to indicate whether they intend to mutate an entity or not.
+### AI Simulation Branching
+
+To support AI simulation branching, we can simply create a new snapshot for each branch of the simulation.
+Each branch can then execute commands and mutate its own snapshot without affecting the mainline or other branches.
+When the AI is done simulating, it can evaluate the outcomes of each branch and choose the best one to commit to the mainline.
 
 ```Csharp
-void HandleAttackCommand(AttackCommand command)
+void GetBestTurnAction()
 {
-    var attacker = TryResolve(command.AttackerId, write: true);
-    var defender = TryResolve(command.DefenderId, write: true);
-    var weapon = TryResolve(attacker.WeaponId, write: false);
-    var armor = TryResolve(defender.ArmorId, write: false);
+    var availableactions = GetAvailableActionsForAI();
 
-    // Perform attack logic and mutate attacker and defender as necessary
-}
-```
-
-Now as you can imagine, this is very easy to mess up. 
-If a command handler forgets to indicate that it intends to mutate an entity, then it will not be cloned and the mutation will affect the mainline state instead of the branch.
-This is quite dangerous, and very prone to regression bugs that can be hard to track down.
-
-In order to mitigate the risk, we can actually make the resolvement function return a ReadOnly interface.
-
-```Csharp
-public IReadOnlyEntity ResolveReadOnly(string entityId)
-{
-    if (history.Count == 0)
+    bool bestActionFound = false;
+    IGameCommand bestAction = null;
+    foreach (var action in availableactions)
     {
-        return worldState[entityId];
-    }
+        _gameInstance.PushSimulationLayer();
+        _gameInstance.ExecuteCommand(action, out var events);
+        _gameInstance.PopSimulationLayer();
 
-    var topSnapshot = history.Peek();
-      if (topSnapshot.TryGetValue(entityId, out var branchedEntity))
-        return branchedEntity;
-}
-
-Entity Resolve(string entityId)
-{
-    // History is empty, resolve from world state
-    if (history.Count == 0)
-        return worldState[entityId];
-
-    // History is not empty, check the top snapshot
-    var topSnapshot = history.Peek();
-    if (topSnapshot.TryGetValue(entityId, out var existing))
-        return existing;
-    
-    // Entity does not exist in the top snapshot, resolve from world state
-    var resolvedEntity = worldState[entityId];
-    
-    // If we intend to mutate the entity, clone it and add it to the top snapshot
-    if (write)
-        topSnapshot[entityId] = resolved.Entity.DeepClone();
-
-    return topSnapshot[entityId];
-}
-```
-
-Now instead of a delicate boolean parameter, we have two separate resolvement functions, one for reading and one for writing.
-The read function returns a read-only interface, which means any attempt to mutate the entity through that interface will result in a compile-time error, thus preventing accidental mutations of the mainline state.
-If we refactor a command handler to mutate an entity that it previously only read, the code will fail to compile until we update the resolvement function to use the write version, which is a much safer failure mode than accidentally mutating the mainline state.
-This mitigates the risk of regression bugs and makes it much easier to track down any issues that do arise, as the compiler will point us directly to the offending code.
-
-On the other side, here is the implementation of the Entity class.
-
-```Csharp
-public interface IReadOnlyCharacter : IReadOnlyEntity
-{
-    string Id { get; }
-    string Name { get; }
-    string WeaponId { get; }
-    string ArmorId { get; }
-    int Health { get; }
-}
-
-public class Character : Entity, IReadOnlyCharacter
-{
-    public string Id { get; set; }
-    public string Name { get; set; }
-    public string WeaponId { get; set; }
-    public string ArmorId { get; set; } 
-    public int Health { get; set; } 
-
-    public Entity DeepClone()
-    {
-        return new Entity
+        // Evaluate the outcome of the action and store it for later comparison
+        if (IsBestActionSoFar(action))
         {
-            Id = this.Id,
-            Name = this.Name,
-            WeaponId = this.WeaponId,
-            ArmorId = this.ArmorId,
-            Health = this.Health
-        };
+            bestActionFound = true;
+            bestAction = action;
+        }
+    }
+
+    if (bestActionFound)
+    {
+        _gameInstance.ExecuteCommand(bestAction); // Commit the best action to the mainline
     }
 }
 ```
 
-To implement the command handler now, we can do this:
+### Action Previews
+
+To support action previews, we can create a new snapshot for the preview.
+The preview can then execute commands and mutate its own snapshot without affecting the mainline.
+The preview can then render the resulting events to show the player what would happen if they were to commit to that action.
+If the player decides to commit to the action, we can simply merge the preview snapshot into the mainline snapshot.
+If the player decides to discard the action, we can simply discard the preview snapshot.
 
 ```Csharp
-void HandleAttackCommand(AttackCommand command)
+void PreviewAction(IGameCommand command)
 {
-    var attacker = ResolveReadOnly(command.AttackerId);
-    var weapon = ResolveReadOnly(attacker.WeaponId);
+    _gameInstance.PushSimulationLayer();
+    _gameInstance.ExecuteCommand(command, out var events);
+    _gameInstance.PopSimulationLayer();
 
-    var defender = Resolve(command.DefenderId);
-    var armor = Resolve(defender.ArmorId);
-    
-    // Perform attack logic and mutate attacker and defender as necessary
+    _views.ForEach(v => v.RenderPreviewEvents(events));
 }
 ```
 
-Here we have decided with compile safety that we only need to read the armor.
-However let's say we later decide that armor should have durability that gets reduced when hit, we simply change the armor resolve to use the write version.
+### Recording and Replaying
+
+To support recording and replaying, we can maintain a list of snapshots that represent the state of the world at each point in time.
+When a command is executed, we can push a new snapshot onto the list.
+To replay, we can simply iterate through the list of snapshots and render the resulting events for each snapshot to show the sequence of actions that occurred.
+
+```Csharp
+Dictionary<string, Entity> baseState = new();
+List<Event> recording = new();
+
+void StartRecording()
+{
+    recording.Clear();
+    baseState = worldState; // Capture the initial state of the world
+}
+
+void RecordCommand(IGameCommand command)
+{
+    _gameInstance.ExecuteCommand(command, out var events);
+    recording.AddRange(events);
+}
+
+async Task Replay()
+{
+    foreach (var snapshot in recording)
+    {
+        await _views.ForEach(v => v.RenderEvents(snapshot));
+    }
+}
+```
+
+### Advanced Prediction Implants
+
+To support advanced prediction implants, we can create a new snapshot for the implant's prediction.
+The implant can then execute commands and mutate its own snapshot to simulate the possible future outcomes of the player's actions.
+The implant can then render the resulting events to show the player what could happen if they were to commit to a certain sequence of actions.
+The player can then choose to commit to the sequence of actions, which would merge the implant's prediction snapshot into the mainline snapshot, or discard the sequence of actions, which would simply discard the implant's prediction snapshot.
+
+```Csharp
+void PreviewImplantPrediction(List<IGameCommand> commands)
+{
+    _gameInstance.PushSimulationLayer();
+    foreach (var command in commands)    {
+        _gameInstance.ExecuteCommand(command, out var events);
+    }
+    _gameInstance.PopSimulationLayer();
+    _views.ForEach(v => v.RenderPreviewEvents(events));
+}
+
+void CommitImplantPrediction(List<IGameCommand> commands)
+{
+    foreach (var command in commands)    {
+        _gameInstance.ExecuteCommand(command, out var events);
+    }
+}
+```
+
+## Conclusion
+
+By implementing a strict command pattern for all domain mutations and using copy on write at the point of entity resolution, we are able to efficiently support a wide range of time traversal features with minimal friction.
+
+There is no need for complex state management or manual tracking of changes in multiple places, as the command pattern funnels everything through a single mutation path and copy on write ensures that we only clone what we need to clone when we need to clone it.
+
+This reduces a lot of the complexity of managing state that would often times creep into the controller layer or even the view layer. With this simple but effective setup, work can focus on implementing features and content rather than managing state and edge cases around time traversal.
