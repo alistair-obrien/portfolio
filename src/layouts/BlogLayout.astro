@@ -10,9 +10,10 @@ interface Props {
   updatedDate?: Date;
   image: any;
   tags?: string[];
+  readingTime: number;
 }
 
-const { title, description, publishDate, updatedDate, image, tags } = Astro.props;
+const { title, description, publishDate, updatedDate, image, tags, readingTime } = Astro.props;
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', {
@@ -22,10 +23,6 @@ function formatDate(date: Date) {
   });
 }
 
-// Calculate reading time (rough estimate based on word count)
-const content = await Astro.slots.render('default');
-const wordCount = content.split(/\s+/).length;
-const readingTime = Math.ceil(wordCount / 200); // Average reading speed: 200 words/min
 ---
 
 <Layout title={title} description={description}>

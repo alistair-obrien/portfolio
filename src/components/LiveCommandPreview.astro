@@ -1,0 +1,51 @@
+---
+import GuidedCommandPreview from "./blog/GuidedCommandPreview";
+---
+
+<div class="not-prose my-10 rounded-[2rem] border border-base-300 bg-base-100 p-5 shadow-sm sm:p-7">
+  <div class="space-y-2">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+      Live Wasm Demo
+    </p>
+    <h3 class="m-0 text-2xl font-semibold text-base-content">
+      A guided version of the real command flow
+    </h3>
+    <p class="m-0 max-w-3xl text-sm leading-6 text-base-content/70">
+      Rather than asking the reader to play with a tiny level, this demo offers
+      a few real commands discovered from the browser-local engine. Selecting a
+      card shows the preview branch, and committing it promotes that future into
+      live history.
+    </p>
+  </div>
+
+  <div class="mt-5 grid gap-3 md:grid-cols-3">
+    <div class="rounded-2xl bg-base-200/70 p-4">
+      <p class="m-0 text-xs font-semibold uppercase tracking-[0.2em] text-base-content/50">
+        Select
+      </p>
+      <p class="m-0 mt-2 text-sm leading-6 text-base-content/70">
+        Inspect a real preview branch without mutating the active snapshot.
+      </p>
+    </div>
+    <div class="rounded-2xl bg-base-200/70 p-4">
+      <p class="m-0 text-xs font-semibold uppercase tracking-[0.2em] text-base-content/50">
+        Commit
+      </p>
+      <p class="m-0 mt-2 text-sm leading-6 text-base-content/70">
+        Promote the selected future into tracked history using the same command.
+      </p>
+    </div>
+    <div class="rounded-2xl bg-base-200/70 p-4">
+      <p class="m-0 text-xs font-semibold uppercase tracking-[0.2em] text-base-content/50">
+        Reset
+      </p>
+      <p class="m-0 mt-2 text-sm leading-6 text-base-content/70">
+        Return to the seeded world and try a different branch.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <GuidedCommandPreview client:load />
+  </div>
+</div>

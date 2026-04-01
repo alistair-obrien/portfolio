@@ -46,5 +46,9 @@ export default defineMarkdocConfig({
       render: component('./src/components/SimulationBranching.astro'),
       attributes: {},
     },
+    LiveCommandPreview: {
+      render: component('./src/components/LiveCommandPreview.astro'),
+      attributes: {},
+    },
   },
 });

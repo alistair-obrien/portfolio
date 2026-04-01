@@ -98,6 +98,16 @@ internal static class BrowserGameInstanceExtensions
 
     private static IEnumerable<IGameCommand> BuildDevelopmentWorldSeedCommands()
     {
+        var driver = new NeuralDriverBlueprint
+        {
+            Id = Root.SYSTEM_DRIVER_ID,
+            Name = "Administrator Neural Driver",
+            Substrate = NeuralDriverSubstrate.Organic,
+            Agency = NeuralDriverAgency.Human,
+        };
+        driver.Grants.AddRange(GrantCatalog.CreateBuildingGrants());
+        driver.Grants.AddRange(GrantCatalog.CreateAuthoringGrants());
+
         var character = new CharacterBlueprint
         {
             Id = Root.SYSTEM_ID,
@@ -105,8 +115,7 @@ internal static class BrowserGameInstanceExtensions
         };
 
         character.OperatingSystem.Id = OperatingSystemIds.GenoSys;
-        character.OperatingSystem.Modules.Add(OperatingSystemModuleBlueprint.CreateBuilding());
-        character.OperatingSystem.Modules.Add(OperatingSystemModuleBlueprint.CreateAuthoring());
+        character.ActiveNeuralDriverId = driver.Id;
 
         const int mapWidth = 52;
         const int mapHeight = 30;
@@ -115,6 +124,7 @@ internal static class BrowserGameInstanceExtensions
 
         var commands = new List<IGameCommand>
         {
+            new DatabaseAPI.Commands.CreateOrUpdateModel(driver),
             new DatabaseAPI.Commands.CreateOrUpdateModel(character),
             new CharactersAPI.Commands.AssignPlayerCharacter(Root.SYSTEM_ID),
             new MapsAPI.Commands.CreateMap(Root.SYSTEM_ID, testMapId, mapWidth, mapHeight),
