@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "widget:publish": "powershell -ExecutionPolicy Bypass -File ./scripts/publish-roguelike-widget.ps1"
+    "widget:publish": "powershell -ExecutionPolicy Bypass -File ./scripts/publish-roguelike-widget.ps1",
+    "widget:publish:proc-gen": "powershell -ExecutionPolicy Bypass -File ./scripts/publish-proc-gen-widget.ps1"
   },
   "dependencies": {
     "@astrojs/markdoc": "^0.15.10",

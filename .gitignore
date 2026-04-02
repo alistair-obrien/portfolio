@@ -24,6 +24,7 @@ pnpm-debug.log*
 **/bin/
 **/obj/
 .dotnet/
+.dotnet-cli/
 *.user
 *.rsuser
 *.suo
