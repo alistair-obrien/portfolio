@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProcGenBrowserDemo from "../components/game/ProcGenBrowserDemo";
+---
+
+<Layout
+  title="Proc-Gen Showcase"
+  description="A browser-local procedural generation showcase powered by the shared C# ProcGen library compiled to WebAssembly."
+>
+  <main>
+    <div>
+      <section>
+        <ProcGenBrowserDemo client:load />
+      </section>
+    </div>
+  </main>
+</Layout>
