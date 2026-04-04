@@ -23,23 +23,42 @@ Tower Block - Compact vertical core + units
 
 ### General Shape
 
-The first step was to partition the area of the apartment floor into workable regions.
+The first step was to reduce the building to circulation.
 
-Essentially we have:
+At this point I am not thinking about apartment sizing at all yet. I just want a clean corridor shape that matches the broad architectural style:
 
-- Apartments around the outside of the building
-- Inner Apartments
-- Corridor Between the Outer and Inner Apartments
-- Remaining empty space in the middle
+- a straight bar
+- an `L`
+- a `C`
+- or a fully enclosed loop
 
-These can be expressed by just drawing a few rectangles.
+That gives me a useful "circulation skeleton" before any finer subdivision happens.
 
 {% procgenembed
    eyebrow="Interactive Demo"
    src="/proc-gen?embed=1&generator=Apartment_StageOne&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&horizontalCorridorLength=56&verticalCorridorLength=36&corridorWidth=5"
    height="44rem" /%}
 
+### Access Points
+
+Once the corridor exists, the next decision is how people actually enter and move vertically through the building.
+
+For now I am keeping that very simple:
+
+- one elevator block
+- two stairwells
+- and a few simple placement modes to see how the feel changes
+
+This is still intentionally abstract. I am not trying to produce code-compliant architecture here yet, only a readable access pattern layered onto the corridor skeleton.
+
+{% procgenembed
+   eyebrow="Interactive Demo"
+   src="/proc-gen?embed=1&generator=Apartment_StageTwo&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&horizontalCorridorLength=56&verticalCorridorLength=36&corridorWidth=5&elevatorSize=4&stairwellSize=6&accessPlacementMode=0"
+   height="44rem" /%}
+
 ### Apartment Rows
+
+Only after the circulation and access points feel right does it make sense to start talking about apartment zones.
 
 By looking at the references, one thing that is fairly consistent is that apartments are generally the same size and layout, with units close to corners being a little bit adjusted in order to fit their door to the corridor.
 
@@ -62,7 +81,3 @@ Our min/max parameters allow our apartments to adjust within a sensible range to
 ### Apartment Interiors
 
 Lets keep cutting!
-
-### Stairs/Elevators
-
-Okie dokie

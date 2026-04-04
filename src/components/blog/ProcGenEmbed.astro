@@ -119,7 +119,7 @@ const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
 
     host.replaceChildren(shell);
 
-    window.__PROCGEN_APP_CONFIG__ = {
+    const runtimeConfig = {
       mode: "wasm",
       moduleUrl: "/widgets/proc-gen/engine-loader.js",
       search: embedSearch,
@@ -127,33 +127,48 @@ const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
       updateDocumentTitle: false,
     };
 
-    if (window.__procgenInlineShaderLoaded !== true) {
-      await new Promise((resolve, reject) => {
+    if (!window.__procgenInlineShaderPromise) {
+      window.__procgenInlineShaderPromise = new Promise((resolve, reject) => {
         const script = document.createElement("script");
         script.src = "/widgets/proc-gen/procgen-shaders.js";
         script.async = false;
-        script.onload = () => {
-          window.__procgenInlineShaderLoaded = true;
-          resolve();
-        };
+        script.onload = resolve;
         script.onerror = reject;
         document.body.appendChild(script);
       });
     }
 
-    if (window.__procgenInlineAppLoaded !== true) {
-      await new Promise((resolve, reject) => {
-        const script = document.createElement("script");
-        script.src = "/widgets/proc-gen/app.js";
-        script.async = false;
-        script.onload = () => {
-          window.__procgenInlineAppLoaded = true;
-          resolve();
-        };
-        script.onerror = reject;
-        document.body.appendChild(script);
+    await window.__procgenInlineShaderPromise;
+
+    if (!window.__procgenInlineAppSourcePromise) {
+      window.__procgenInlineAppSourcePromise = fetch("/widgets/proc-gen/app.js").then(async (appResponse) => {
+        if (!appResponse.ok) {
+          throw new Error(`Failed to load ProcGen app script (HTTP ${appResponse.status}).`);
+        }
+
+        return appResponse.text();
       });
     }
+
+    window.__procgenInlineMountQueue = (window.__procgenInlineMountQueue || Promise.resolve()).then(async () => {
+      const appSource = await window.__procgenInlineAppSourcePromise;
+      const scopedDocument = Object.create(document);
+      scopedDocument.getElementById = (id) => host.querySelector(`#${id}`);
+      scopedDocument.querySelector = (selector) => host.querySelector(selector);
+      scopedDocument.querySelectorAll = (selector) => host.querySelectorAll(selector);
+
+      const previousConfig = window.__PROCGEN_APP_CONFIG__;
+      window.__PROCGEN_APP_CONFIG__ = runtimeConfig;
+
+      try {
+        const mountApp = new Function("document", appSource);
+        mountApp(scopedDocument);
+      } finally {
+        window.__PROCGEN_APP_CONFIG__ = previousConfig;
+      }
+    });
+
+    await window.__procgenInlineMountQueue;
   })().catch((error) => {
     console.error(error);
   });
