@@ -152,10 +152,25 @@ const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
 
     window.__procgenInlineMountQueue = (window.__procgenInlineMountQueue || Promise.resolve()).then(async () => {
       const appSource = await window.__procgenInlineAppSourcePromise;
-      const scopedDocument = Object.create(document);
-      scopedDocument.getElementById = (id) => host.querySelector(`#${id}`);
-      scopedDocument.querySelector = (selector) => host.querySelector(selector);
-      scopedDocument.querySelectorAll = (selector) => host.querySelectorAll(selector);
+      const baseDocument = document;
+      const scopedDocument = new Proxy(baseDocument, {
+        get(target, prop) {
+          if (prop === "getElementById") {
+            return (id) => host.querySelector(`#${id}`);
+          }
+
+          if (prop === "querySelector") {
+            return (selector) => host.querySelector(selector);
+          }
+
+          if (prop === "querySelectorAll") {
+            return (selector) => host.querySelectorAll(selector);
+          }
+
+          const value = Reflect.get(target, prop, target);
+          return typeof value === "function" ? value.bind(target) : value;
+        },
+      });
 
       const previousConfig = window.__PROCGEN_APP_CONFIG__;
       window.__PROCGEN_APP_CONFIG__ = runtimeConfig;
