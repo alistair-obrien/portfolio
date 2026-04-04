@@ -38,7 +38,7 @@ let requestSequence = 0;
 let currentAbortController = null;
 let renderFrameId = 0;
 let storySnapshotCanvases = [];
-let storyMaskCanvases = [];
+let storyMaskBuffers = [];
 let storyMaskTextures = [];
 let gridEnabled = false;
 let runtimeBridgePromise = null;
@@ -903,12 +903,7 @@ function createMaskSnapshot(layers) {
     return null;
   }
 
-  const snapshot = document.createElement("canvas");
-  snapshot.width = currentMap.width;
-  snapshot.height = currentMap.height;
-
-  const snapshotContext = snapshot.getContext("2d", { willReadFrequently: true });
-  const imageData = snapshotContext.createImageData(currentMap.width, currentMap.height);
+  const imageData = new Uint8Array(currentMap.width * currentMap.height * 4);
   const setChannel = (values, channelIndex) => {
     if (!Array.isArray(values)) {
       return;
@@ -918,29 +913,71 @@ function createMaskSnapshot(layers) {
       const x = values[index];
       const y = values[index + 1];
       const pixelIndex = (y * currentMap.width + x) * 4 + channelIndex;
-      imageData.data[pixelIndex] = 255;
+      imageData[pixelIndex] = 255;
     }
+  };
+
+  const setRects = (rects, channelIndex) => {
+    if (!Array.isArray(rects)) {
+      return;
+    }
+
+    rects.forEach((rect) => {
+      for (let y = rect.y; y < rect.y + rect.height; y += 1) {
+        for (let x = rect.x; x < rect.x + rect.width; x += 1) {
+          const pixelIndex = (y * currentMap.width + x) * 4 + channelIndex;
+          imageData[pixelIndex] = 255;
+        }
+      }
+    });
   };
 
   setChannel(layers?.walls || [], 0);
   setChannel(layers?.doors || [], 1);
   setChannel(layers?.windows || [], 2);
-  snapshotContext.putImageData(imageData, 0, 0);
-  return snapshot;
+
+  if (Array.isArray(currentMap.regions) && currentMap.regions.length > 0) {
+    currentMap.regions.forEach((region) => {
+      if ((region.kind || "").toLowerCase() === "outside") {
+        return;
+      }
+
+      setRects(region.rects || [], 3);
+    });
+  } else {
+    setChannel(layers?.floors || [], 3);
+    setChannel(layers?.ceilings || [], 3);
+  }
+
+  return {
+    width: currentMap.width,
+    height: currentMap.height,
+    data: imageData,
+  };
 }
 
 function rebuildShaderTextures() {
   disposeShaderTextures();
 
-  if (!gl || storyMaskCanvases.length === 0) {
+  if (!gl || storyMaskBuffers.length === 0) {
     return;
   }
 
-  storyMaskTextures = storyMaskCanvases.map((maskCanvas) => {
+  storyMaskTextures = storyMaskBuffers.map((maskBuffer) => {
     const texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, texture);
     gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, maskCanvas);
+    gl.texImage2D(
+      gl.TEXTURE_2D,
+      0,
+      gl.RGBA,
+      maskBuffer.width,
+      maskBuffer.height,
+      0,
+      gl.RGBA,
+      gl.UNSIGNED_BYTE,
+      maskBuffer.data,
+    );
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
@@ -1190,7 +1227,7 @@ function renderRegionLegend() {
 
 function rebuildStorySnapshots() {
   storySnapshotCanvases = [];
-  storyMaskCanvases = [];
+  storyMaskBuffers = [];
 
   if (!currentMap) {
     disposeShaderTextures();
@@ -1199,13 +1236,13 @@ function rebuildStorySnapshots() {
 
   if (Array.isArray(currentMap.storyLayers) && currentMap.storyLayers.length > 0) {
     storySnapshotCanvases = currentMap.storyLayers.map((layers) => createStorySnapshot(layers));
-    storyMaskCanvases = currentMap.storyLayers.map((layers) => createMaskSnapshot(layers));
+    storyMaskBuffers = currentMap.storyLayers.map((layers) => createMaskSnapshot(layers));
     rebuildShaderTextures();
     return;
   }
 
   storySnapshotCanvases = [createStorySnapshot(currentMap.layers)];
-  storyMaskCanvases = [createMaskSnapshot(currentMap.layers)];
+  storyMaskBuffers = [createMaskSnapshot(currentMap.layers)];
   rebuildShaderTextures();
 }
 

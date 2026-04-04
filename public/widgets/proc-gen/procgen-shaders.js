@@ -83,7 +83,7 @@ float sampleItemMask(vec2 uv) {
   return texture(u_mask, uv).b;
 }
 
-float sampleCharacterMask(vec2 uv) {
+float sampleFloorMask(vec2 uv) {
   return texture(u_mask, uv).a;
 }
 
@@ -194,9 +194,14 @@ void main() {
   float center = sampleWallMask(uv);
   float propMask = samplePropMask(uv);
   float itemMask = sampleItemMask(uv);
-  float characterMask = sampleCharacterMask(uv);
+  float floorMask = sampleFloorMask(uv);
   float sceneGrad = directionalGradient(uv, GRADIENT_DIRECTION);
-  float openFloor = (1.0 - center) * (1.0 - propMask) * (1.0 - itemMask) * (1.0 - characterMask);
+  float openFloor = floorMask * (1.0 - center) * (1.0 - propMask) * (1.0 - itemMask);
+
+  if (floorMask < 0.5 && center < 0.5 && propMask < 0.5 && itemMask < 0.5) {
+    outColor = vec4(backdrop, 1.0);
+    return;
+  }
 
   float shadowRay = 0.0;
   float shadowNorm = 0.0;
@@ -340,12 +345,11 @@ void main() {
   vec3 itemColor = shadeDetail(u_item_color, sceneGrad, DETAIL_GRADIENT_STRENGTH);
   itemColor = mix(itemColor, ITEM_OUTLINE_COLOR.rgb, itemInnerOutline * ITEM_OUTLINE_COLOR.a);
 
-  vec3 characterColor = shadeDetail(u_character_color, sceneGrad, DETAIL_GRADIENT_STRENGTH);
-
-  vec3 base = mix(floorColor, wallColor, center);
+  vec3 base = backdrop;
+  base = mix(base, floorColor, floorMask);
+  base = mix(base, wallColor, center);
   base = mix(base, propColor, propMask);
   base = mix(base, itemColor, itemMask);
-  base = mix(base, characterColor, characterMask);
   base *= 1.0 - wallOcclusion * (1.0 - center);
 
 outColor = vec4(base, 1.0);
