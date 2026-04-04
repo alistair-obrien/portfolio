@@ -50,19 +50,21 @@ const widgetAssetVersion = Date.now().toString();
   <div
     id={hostId}
     class:list={["procgen-inline-shell procgen-app", fullHeight && "procgen-inline-shell-full"]}
-    style={fullHeight ? undefined : `height:${height};`}
+    style={fullHeight ? undefined : `--procgen-inline-height:${height}; height:min(var(--procgen-inline-height), 82svh);`}
   ></div>
 </div>
 
 <style is:global>
   .procgen-inline-shell {
     min-height: 20rem;
+    max-height: 82svh;
     width: 100%;
     position: relative;
     overflow: hidden;
   }
 
   .procgen-inline-shell.procgen-app > .shell {
+    width: 100% !important;
     height: 100% !important;
     min-height: 0 !important;
     max-height: 100% !important;
@@ -74,6 +76,14 @@ const widgetAssetVersion = Date.now().toString();
   .procgen-inline-shell.procgen-app > .shell .viewport {
     min-height: 0;
     max-height: 100%;
+  }
+
+  .procgen-inline-shell.procgen-app > .shell .controls {
+    overflow: auto;
+  }
+
+  .procgen-inline-shell.procgen-app > .shell .viewport {
+    overflow: hidden;
   }
 
   .procgen-inline-shell-full.procgen-app > .shell .controls {
@@ -97,27 +107,78 @@ const widgetAssetVersion = Date.now().toString();
     max-height: 100%;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 1024px) {
     .procgen-inline-shell:not(.procgen-inline-shell-full) {
-      height: auto !important;
-      min-height: 52rem;
-      overflow: visible;
+      height: min(var(--procgen-inline-height, 44rem), 78svh) !important;
+      min-height: 32rem;
+      max-height: 78svh;
+      overflow: hidden;
     }
 
     .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell {
-      height: auto !important;
-      min-height: 52rem !important;
-      max-height: none !important;
-      overflow: visible;
+      display: flex !important;
+      flex-direction: column;
+      height: 100% !important;
+      min-height: 0 !important;
+      max-height: 100% !important;
+      overflow: hidden;
+      width: 100% !important;
     }
 
-    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .controls,
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell > .panel {
+      width: 100%;
+      min-width: 0;
+    }
+
     .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .viewport {
-      max-height: none;
+      flex: 0 0 14rem;
+      min-height: 14rem;
+      max-height: 14rem;
+      overflow: hidden;
     }
 
     .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .controls {
-      overflow: visible;
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .viewport-stage,
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .canvas-shell {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      min-width: 0 !important;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .procgen-inline-shell:not(.procgen-inline-shell-full) {
+      height: min(var(--procgen-inline-height, 44rem), 76svh) !important;
+      min-height: 30rem;
+      max-height: 76svh;
+      overflow: hidden;
+    }
+
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .viewport {
+      flex: 0 0 13rem;
+      min-height: 13rem;
+      max-height: 13rem;
+      overflow: hidden;
+    }
+
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .controls {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .viewport-stage,
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .canvas-shell {
+      height: 100% !important;
+      min-height: 0 !important;
     }
   }
 </style>
