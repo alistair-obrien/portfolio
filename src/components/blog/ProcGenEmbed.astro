@@ -96,6 +96,30 @@ const widgetAssetVersion = Date.now().toString();
     height: 100%;
     max-height: 100%;
   }
+
+  @media (max-width: 720px) {
+    .procgen-inline-shell:not(.procgen-inline-shell-full) {
+      height: auto !important;
+      min-height: 52rem;
+      overflow: visible;
+    }
+
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell {
+      height: auto !important;
+      min-height: 52rem !important;
+      max-height: none !important;
+      overflow: visible;
+    }
+
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .controls,
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .viewport {
+      max-height: none;
+    }
+
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .controls {
+      overflow: visible;
+    }
+  }
 </style>
 
 <script define:vars={{ hostId, embedSearch, storageKey, widgetAssetVersion }} is:inline>

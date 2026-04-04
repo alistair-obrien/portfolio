@@ -136,9 +136,9 @@
 .procgen-app.embed-mode .shell    {
   padding: var(--space-4);
   gap: var(--space-4);
-  grid-template-columns: minmax(16rem, 20rem) minmax(0, 1fr);
+  grid-template-columns: minmax(14.5rem, 18rem) minmax(0, 1fr);
 }
-.procgen-app.embed-mode .controls { padding: 0.9rem; gap: var(--space-4); }
+.procgen-app.embed-mode .controls { padding: 0.8rem; gap: var(--space-3); }
 .procgen-app.embed-mode .viewport { padding: var(--space-4); }
 
 /* ─── Layout ─── */
@@ -707,7 +707,21 @@
 
 /* ─── Responsive: mobile ─── */
 @media (max-width: 720px) {
-  .procgen-app .controls     { gap: var(--space-5); }
+  .procgen-app .shell {
+    padding: var(--space-3);
+    gap: var(--space-3);
+    grid-template-rows: minmax(14rem, 18rem) minmax(0, 1fr);
+  }
+
+  .procgen-app .viewport {
+    padding: var(--space-3);
+  }
+
+  .procgen-app .controls {
+    gap: var(--space-4);
+    padding: var(--space-4);
+  }
+
   .procgen-app .controls-title { font-size: 1.05rem; }
   .procgen-app .control-section { gap: 0.45rem; }
 
@@ -748,36 +762,57 @@
 
   .procgen-app .story-select {
     min-width: 0;
-    max-width: 7rem;
-    padding: 0.55rem 0.75rem;
+    max-width: 6.5rem;
+    padding: 0.5rem 0.65rem;
   }
 
   .procgen-app .region-legend {
-    max-width: min(11rem, calc(100% - 7rem));
-    padding: var(--space-3);
+    gap: 0.3rem;
+    max-width: 8.75rem;
+    padding: 0.45rem 0.5rem;
   }
 
   .procgen-app .canvas-overlay-left-center {
     top: auto;
-    left: var(--space-4);
-    bottom: 5.8rem;
+    left: var(--space-3);
+    bottom: 5.25rem;
     transform: none;
   }
 
+  .procgen-app .canvas-overlay-top-right {
+    top: var(--space-3);
+    right: var(--space-3);
+  }
+
+  .procgen-app .canvas-overlay-bottom-right {
+    right: var(--space-3);
+    bottom: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .procgen-app .canvas-overlay-bottom-left {
+    left: var(--space-3);
+    bottom: var(--space-3);
+  }
+
   .procgen-app .overlay-icon-button {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
   }
 
   .procgen-app .overlay-icon {
-    width: 1rem;
-    height: 1rem;
+    width: 0.9rem;
+    height: 0.9rem;
   }
 
   .procgen-app .render-mode-picker { gap: 0.4rem; }
 
   .procgen-app .render-mode-button {
-    min-width: 4.1rem;
-    padding: 0.55rem 0.7rem;
+    min-width: 3.7rem;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .procgen-app .legend-label {
+    font-size: 0.68rem;
   }
 }
