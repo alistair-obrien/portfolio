@@ -618,6 +618,33 @@ export default config({
               label: "Simulation Branching Explorer",
               schema: {},
             }),
+            procgenembed: block({
+              label: "ProcGen Embed",
+              schema: {
+                eyebrow: fields.text({
+                  label: "Eyebrow",
+                  description: "Optional small heading above the embed",
+                }),
+                title: fields.text({
+                  label: "Title",
+                  description: "Optional embed title",
+                }),
+                description: fields.text({
+                  label: "Description",
+                  multiline: true,
+                  description: "Optional embed description",
+                }),
+                src: fields.text({
+                  label: "Source URL",
+                  description: "Embed config URL, for example /proc-gen?embed=1&generator=Apartment_StageOne",
+                  validation: { isRequired: true },
+                }),
+                height: fields.text({
+                  label: "Height",
+                  description: "Optional CSS height such as 44rem",
+                }),
+              },
+            }),
           },
         }),
       },

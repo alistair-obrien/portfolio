@@ -123,7 +123,7 @@ const toys = defineCollection({
       endDate: z.coerce.date().optional(),
       skills: z.array(z.string()),
       platforms: z.array(z.string()).optional(),
-      demoLink: z.string().url().optional(),
+      demoLink: z.string().optional(),
       sourceLink: z.string().url().optional(),
       widgetSrc: z.string().optional(),
       widgetHeight: z.string().optional(),
