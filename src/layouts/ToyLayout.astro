@@ -2,7 +2,7 @@
 import Layout from "./Layout.astro";
 import SkillBadge from "../components/SkillBadge.astro";
 import ProcGenEmbed from "../components/blog/ProcGenEmbed.astro";
-import { ExternalLink, Maximize2 } from "@lucide/astro";
+import { ExternalLink } from "@lucide/astro";
 
 interface Props {
   title: string;
@@ -83,26 +83,12 @@ function calculateDuration(startDate: Date, endDate?: Date) {
     </div>
 
     <header class="mb-8">
-      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
-        <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80 mb-3">
-            Interactive Toy
-          </p>
-          <h1 class="text-5xl font-bold mb-4">{title}</h1>
-          <p class="text-xl text-base-content/70 max-w-4xl">{description}</p>
-        </div>
-
-        {fullscreenLink && (
-          <a
-            href={fullscreenLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary gap-2"
-          >
-            <Maximize2 class="size-5" />
-            Fullscreen
-          </a>
-        )}
+      <div class="mb-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80 mb-3">
+          Interactive Toy
+        </p>
+        <h1 class="text-5xl font-bold mb-4">{title}</h1>
+        <p class="text-xl text-base-content/70 max-w-4xl">{description}</p>
       </div>
 
       <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/60 mb-6">
@@ -117,19 +103,8 @@ function calculateDuration(startDate: Date, endDate?: Date) {
         )}
       </div>
 
-      {(demoLink || sourceLink) && (
+      {sourceLink && (
         <div class="flex flex-wrap gap-3 mb-6">
-          {demoLink && (
-            <a
-              href={demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-soft gap-2"
-            >
-              <ExternalLink class="size-5" />
-              Related Post
-            </a>
-          )}
           {sourceLink && (
             <a
               href={sourceLink}
@@ -154,7 +129,27 @@ function calculateDuration(startDate: Date, endDate?: Date) {
     </header>
 
     {widgetSrc && (
-      <section class="mb-10 rounded-[1.75rem] border border-base-300 bg-base-100/70 p-4 shadow-xl backdrop-blur-sm">
+      <section class="mb-10 rounded-xl border border-base-300 bg-base-100/70 p-3 shadow-xl backdrop-blur-sm">
+        {(fullscreenLink || demoLink) && (
+          <div class="mb-3 flex flex-wrap items-center justify-between gap-3 px-1">
+            <div class="text-sm font-medium text-base-content/60">
+              Interactive playground
+            </div>
+            <div class="flex flex-wrap gap-2">
+              {demoLink && (
+                <a
+                  href={demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-soft btn-sm gap-2"
+                >
+                  <ExternalLink class="size-4" />
+                  Related Post
+                </a>
+              )}
+            </div>
+          </div>
+        )}
         <ProcGenEmbed src={widgetSrc} height={widgetHeight} />
       </section>
     )}

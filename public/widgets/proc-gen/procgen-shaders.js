@@ -37,7 +37,7 @@ uniform vec3 u_item_color;
 // place to tweak mood, contrast, crispness, and material response.
 
 // Global lighting and gradient.
-const vec4 INNER_OUTLINE_COLOR = vec4(1.0, 1.0, 1.0, 1.0);
+const vec4 INNER_OUTLINE_COLOR = vec4(0.93, 0.91, 0.88, 0.82);
 const vec2 GRADIENT_DIRECTION = vec2(-0.8, -0.6);
 const float FLOOR_GRADIENT_STRENGTH = 0.85;
 const float WALL_GRADIENT_STRENGTH = 1.0;
@@ -64,8 +64,8 @@ const float AO_EDGE_REACH = 0.75;
 const float AO_FALLOFF = 1.0;
 
 // Wall interior highlight.
-const float OUTLINE_PIXELS = 2.0;
-const float OUTLINE_FALLOFF = 0.5;
+const float OUTLINE_PIXELS = 3.4;
+const float OUTLINE_FALLOFF = 1.35;
 
 // Door/prop outline look.
 const vec4 PROP_OUTLINE_COLOR = vec4(0.7529412, 0.4862745, 0.28235295, 1.0);
@@ -346,8 +346,9 @@ void main() {
   floorColor = mix(floorColor, FLOOR_NOISE_COLOR, noiseValue * FLOOR_NOISE_STRENGTH);
 
   vec3 wallGradColor = mix(u_wall_shadow, u_wall_light, sceneGrad);
-  vec3 wallColor = mix(u_wall_shadow, wallGradColor, WALL_GRADIENT_STRENGTH);
-  wallColor = mix(wallColor, u_outline_color, innerOutline * INNER_OUTLINE_COLOR.a);
+  vec3 wallGradBase = mix(u_wall_shadow, wallGradColor, WALL_GRADIENT_STRENGTH);
+  vec3 outlineTint = mix(u_outline_color, INNER_OUTLINE_COLOR.rgb, 0.45);
+  vec3 wallColor = mix(wallGradBase, outlineTint, innerOutline * INNER_OUTLINE_COLOR.a);
 
   vec3 propColor = shadeDetail(u_prop_color, sceneGrad, DETAIL_GRADIENT_STRENGTH);
   propColor = mix(propColor, u_outline_color, propInnerOutline * PROP_OUTLINE_COLOR.a);

@@ -14,7 +14,7 @@ skills:
   - Astro
   - Procedural Generation
 demoLink: /blog/generating-apartment-complexes
-widgetSrc: /proc-gen?embed=1&generator=Apartment_StageOne&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&horizontalCorridorLength=56&verticalCorridorLength=36&corridorWidth=5
+widgetSrc: /proc-gen?embed=1&generator=Apartment_StageOne
 widgetHeight: 42rem
 fullscreenLink: /widgets/proc-gen/index.html?generator=Apartment_StageOne
 ---

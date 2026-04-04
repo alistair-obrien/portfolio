@@ -8,6 +8,7 @@ const resetButton = document.getElementById("reset");
 const inputsRoot = document.getElementById("inputs");
 // const generateButton = document.getElementById("generate");
 const fitViewButton = document.getElementById("fit-view");
+const fullscreenViewButton = document.getElementById("fullscreen-view");
 const toggleGridButton = document.getElementById("toggle-grid");
 const renderModePicker = document.getElementById("render-mode-picker");
 const renderFlatButton = document.getElementById("render-flat");
@@ -46,6 +47,7 @@ let renderMode = "flat";
 let gl = null;
 let shaderRuntime = null;
 let noiseTexture = null;
+let fullscreenTarget = null;
 
 const knownEmbedParams = new Set([
   "embed",
@@ -59,6 +61,7 @@ const knownEmbedParams = new Set([
   "hideLegend",
   "hideStoryPicker",
   "hideFit",
+  "hideFullscreen",
   "hideGrid",
   "hideRenderer",
   "lockGenerator",
@@ -190,6 +193,7 @@ function parseEmbedConfig() {
     hideLegend: parseBooleanParam(searchParams, "hideLegend"),
     hideStoryPicker: parseBooleanParam(searchParams, "hideStoryPicker"),
     hideFit: parseBooleanParam(searchParams, "hideFit"),
+    hideFullscreen: parseBooleanParam(searchParams, "hideFullscreen"),
     hideGridButton: parseBooleanParam(searchParams, "hideGrid"),
     hideRenderer: parseBooleanParam(searchParams, "hideRenderer"),
     lockGenerator: parseBooleanParam(searchParams, "lockGenerator"),
@@ -197,8 +201,17 @@ function parseEmbedConfig() {
     renderMode: searchParams.get("renderer") || searchParams.get("renderMode") || "",
     hiddenOptions: parseCsvSet(searchParams.get("hideOptions")),
     lockedOptions: parseCsvSet(searchParams.get("lockOptions")),
+    fullscreenUrl: searchParams.get("fullscreenUrl") || "",
     optionOverrides,
   };
+}
+
+function resolveFullscreenTarget() {
+  return appRoot.closest(".procgen-inline-shell") || appRoot;
+}
+
+function canUseEmbeddedFullscreen() {
+  return embedConfig.isEmbed && runtimeConfig.mode === "wasm";
 }
 
 function getThemeColor(variableName, fallback) {
@@ -377,6 +390,10 @@ function applyEmbedChrome() {
     fitViewButton.hidden = embedConfig.hideFit;
   }
 
+  if (fullscreenViewButton) {
+    fullscreenViewButton.hidden = !canUseEmbeddedFullscreen() || embedConfig.hideFullscreen;
+  }
+
   if (toggleGridButton) {
     toggleGridButton.hidden = embedConfig.hideGridButton;
   }
@@ -534,6 +551,102 @@ function normalizeOptionValue(option, value) {
   return clamp(rounded, option.minValue, option.maxValue);
 }
 
+function buildFullscreenUrl() {
+  const baseUrl = embedConfig.fullscreenUrl || "/widgets/proc-gen/index.html";
+  const url = new URL(baseUrl, window.location.origin);
+  const params = url.searchParams;
+
+  params.set("generator", generatorSelect.value);
+  params.set("renderer", renderMode);
+
+  if (gridEnabled) {
+    params.set("grid", "1");
+  } else {
+    params.delete("grid");
+  }
+
+  Object.entries(readOptions()).forEach(([key, value]) => {
+    params.set(key, String(value));
+  });
+
+  [
+    "embed",
+    "widget",
+    "minimal",
+    "hideTitle",
+    "hideGenerator",
+    "hideReset",
+    "hideLegend",
+    "hideStoryPicker",
+    "hideFit",
+    "hideFullscreen",
+    "hideGrid",
+    "hideRenderer",
+    "lockGenerator",
+    "lockOptions",
+    "hideOptions",
+    "title",
+    "fullscreenUrl",
+    "storageKey",
+  ].forEach((key) => params.delete(key));
+
+  return url.toString();
+}
+
+function isFullscreenActive() {
+  return Boolean(document.fullscreenElement && fullscreenTarget && document.fullscreenElement === fullscreenTarget);
+}
+
+function updateFullscreenButtonState() {
+  if (!fullscreenViewButton) {
+    return;
+  }
+
+  const active = isFullscreenActive();
+  fullscreenViewButton.classList.toggle("is-active", active);
+  fullscreenViewButton.setAttribute("aria-pressed", active ? "true" : "false");
+  fullscreenViewButton.setAttribute("aria-label", active ? "Exit fullscreen" : "Expand widget to fullscreen");
+  fullscreenViewButton.title = active ? "Exit fullscreen" : "Expand widget to fullscreen";
+}
+
+async function toggleFullscreenView() {
+  if (!fullscreenTarget) {
+    fullscreenTarget = resolveFullscreenTarget();
+  }
+
+  if (isFullscreenActive()) {
+    if (document.exitFullscreen) {
+      await document.exitFullscreen();
+    }
+    return;
+  }
+
+  if (fullscreenTarget?.requestFullscreen) {
+    await fullscreenTarget.requestFullscreen();
+    fitViewportToMap();
+    requestRender();
+    return;
+  }
+
+  window.open(buildFullscreenUrl(), "_blank", "noopener,noreferrer");
+}
+
+function updateTooltipPlacement(tooltip) {
+  if (!(tooltip instanceof HTMLElement)) {
+    return;
+  }
+
+  const bubble = tooltip.querySelector(".tooltip-bubble");
+  if (!(bubble instanceof HTMLElement)) {
+    return;
+  }
+
+  tooltip.classList.remove("tooltip-below");
+  const bubbleRect = bubble.getBoundingClientRect();
+  const needsBelow = bubbleRect.top < 12;
+  tooltip.classList.toggle("tooltip-below", needsBelow);
+}
+
 function buildInputs() {
   const definition = generatorDefinitionById[generatorSelect.value];
   const savedState = loadState();
@@ -580,6 +693,11 @@ function buildInputs() {
 
       bubble.className = "tooltip-bubble";
       bubble.textContent = option.description;
+
+      const refreshPlacement = () => updateTooltipPlacement(tooltip);
+      trigger.addEventListener("mouseenter", refreshPlacement);
+      trigger.addEventListener("focus", refreshPlacement);
+      tooltip.addEventListener("mouseenter", refreshPlacement);
 
       tooltip.append(trigger, bubble);
       titleWrap.append(tooltip, name);
@@ -1351,12 +1469,12 @@ function renderShaderMap(width, height, dpr) {
   gl.uniform2f(runtime.uniforms.cameraCenter, cameraCenterX, cameraCenterY);
   gl.uniform1f(runtime.uniforms.scale, scaledMapScale);
   gl.uniform3fv(runtime.uniforms.backdropTop, parseColorToRgb(getThemeColor("--canvas", "#242932"), [0.14, 0.16, 0.2]));
-  gl.uniform3fv(runtime.uniforms.backdropBottom, parseColorToRgb(getThemeColor("--surface-strong", "#252c36"), [0.15, 0.17, 0.21]));
-  gl.uniform3fv(runtime.uniforms.floorLight, parseColorToRgb(getThemeColor("--region-corridor", "#35556d"), [0.21, 0.33, 0.43]));
-  gl.uniform3fv(runtime.uniforms.floorShadow, parseColorToRgb(getThemeColor("--map-floor", "#2f3643"), [0.18, 0.21, 0.26]));
-  gl.uniform3fv(runtime.uniforms.wallLight, parseColorToRgb(getThemeColor("--map-wall", "#d87b24"), [0.84, 0.48, 0.14]));
-  gl.uniform3fv(runtime.uniforms.wallShadow, parseColorToRgb("#6f3d10", [0.44, 0.24, 0.06]));
-  gl.uniform3fv(runtime.uniforms.outlineColor, [1, 1, 1]);
+  gl.uniform3fv(runtime.uniforms.backdropBottom, parseColorToRgb(getThemeColor("--surface-strong", "#252c36"), [0.14, 0.16, 0.2]));
+  gl.uniform3fv(runtime.uniforms.floorLight, parseColorToRgb(getThemeColor("--region-corridor", "#4a657d"), [0.29, 0.4, 0.49]));
+  gl.uniform3fv(runtime.uniforms.floorShadow, parseColorToRgb(getThemeColor("--map-floor", "#435163"), [0.25, 0.31, 0.38]));
+  gl.uniform3fv(runtime.uniforms.wallLight, parseColorToRgb(getThemeColor("--map-wall", "#dbc6ad"), [0.86, 0.78, 0.68]));
+  gl.uniform3fv(runtime.uniforms.wallShadow, parseColorToRgb("#8f785f", [0.56, 0.47, 0.37]));
+  gl.uniform3fv(runtime.uniforms.outlineColor, [0.88, 0.86, 0.82]);
   gl.uniform3fv(runtime.uniforms.propColor, parseColorToRgb(getThemeColor("--map-door", "#9df18f"), [0.62, 0.95, 0.56]));
   gl.uniform3fv(runtime.uniforms.itemColor, parseColorToRgb(getThemeColor("--map-window", "#84b8ff"), [0.52, 0.72, 1]));
   gl.drawArrays(gl.TRIANGLES, 0, 6);
@@ -1587,6 +1705,12 @@ fitViewButton.addEventListener("click", () => {
   requestRender();
 });
 
+fullscreenViewButton?.addEventListener("click", () => {
+  toggleFullscreenView().catch(() => {
+    window.open(buildFullscreenUrl(), "_blank", "noopener,noreferrer");
+  });
+});
+
 toggleGridButton?.addEventListener("click", () => {
   gridEnabled = !gridEnabled;
   updateGridButtonState();
@@ -1671,6 +1795,7 @@ async function initialize() {
   selectedStoryIndex = initialState.selectedStory || 0;
   gridEnabled = embedConfig.showGrid || initialState.gridEnabled === true;
   renderMode = normalizeRenderMode(embedConfig.renderMode || initialState.renderMode);
+  fullscreenTarget = resolveFullscreenTarget();
 
   applyEmbedChrome();
   updateGeneratorTitle();
@@ -1679,6 +1804,7 @@ async function initialize() {
   resizeCanvas();
   updateGridButtonState();
   updateRenderModeUi();
+  updateFullscreenButtonState();
   if (renderMode === "shader") {
     ensureShaderRuntime();
   }
@@ -1691,6 +1817,12 @@ async function initialize() {
 
   await generate({ resetViewport: true });
 }
+
+document.addEventListener("fullscreenchange", () => {
+  updateFullscreenButtonState();
+  fitViewportToMap();
+  requestRender();
+});
 
 initialize().catch((error) => {
   setStatus(error instanceof Error ? error.message : "Initialization failed.");
