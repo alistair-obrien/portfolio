@@ -605,7 +605,7 @@
 
 .procgen-app .canvas-overlay-side         { top: var(--space-4); left: var(--space-4); }
 .procgen-app .canvas-overlay-top-right    { top: var(--space-4); right: var(--space-4); }
-.procgen-app .canvas-overlay-left-center  { top: 50%; left: var(--space-4); transform: translateY(-50%); }
+.procgen-app .canvas-overlay-left-center  { top: var(--space-4); left: var(--space-4); transform: none; }
 .procgen-app .canvas-overlay-bottom-right { right: var(--space-4); bottom: var(--space-4); display: grid; gap: var(--space-3); }
 .procgen-app .canvas-overlay-bottom-left  { left: var(--space-4); bottom: var(--space-4); }
 
