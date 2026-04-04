@@ -18,22 +18,25 @@
   --tooltip-border:       #2c3544;
 
   /* Map colors */
-  --map-floor:            #435163;
-  --map-wall:             #dbc6ad;
+  --map-floor:            #51687e;
+  --map-wall:             #e4d3bd;
+  --map-low-wall:         #c3ab8c;
+  --map-low-wall-top:     #efe1d0;
   --map-door:             #b9a182;
-  --map-window:           #95a7bf;
+  --map-window:           #93dcff;
   --map-grid:             rgba(255, 255, 255, 0.09);
   --map-outline:          rgba(255, 255, 255, 0.08);
 
   /* Region colors */
   --region-default:       #495668;
   --region-outside:       #37404d;
-  --region-corridor:      #4a657d;
+  --region-corridor:      #5e7f9d;
   --region-access-core:   #5e5574;
   --region-elevator:      #826a4a;
   --region-stair:         #745563;
   --region-apartment-zone:#59624f;
-  --region-apartment:     #536876;
+  --region-apartment:     #6a8494;
+  --region-balcony:       #66727d;
 
   /* Typography */
   --font-lg:  1.2rem;

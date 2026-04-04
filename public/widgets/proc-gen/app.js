@@ -1063,7 +1063,7 @@ function createMaskSnapshot(layers) {
   };
 
   setChannel(layers?.walls || [], 0);
-  setChannel(layers?.doors || [], 1);
+  setChannel(layers?.lowWalls || [], 1);
   setChannel(layers?.windows || [], 2);
 
   if (Array.isArray(currentMap.regions) && currentMap.regions.length > 0) {
@@ -1268,8 +1268,8 @@ function createStorySnapshot(layers) {
     drawFlatCells(snapshotContext, layers?.floors || [], getThemeColor("--map-floor", "#2f3643"));
     drawFlatCells(snapshotContext, layers?.ceilings || [], getThemeColor("--map-floor", "#2f3643"));
   }
+  drawFlatCells(snapshotContext, layers?.lowWalls || [], getThemeColor("--map-low-wall", "#b59e82"));
   drawFlatCells(snapshotContext, layers?.walls || [], getThemeColor("--map-wall", "#d87b24"));
-  drawFlatCells(snapshotContext, layers?.doors || [], getThemeColor("--map-door", "#9df18f"));
   drawFlatCells(snapshotContext, layers?.windows || [], getThemeColor("--map-window", "#84b8ff"));
 
   return snapshot;
@@ -1287,12 +1287,16 @@ function getRegionColor(kind) {
     case "elevator":
       return getThemeColor("--region-elevator", "#8a6e42");
     case "stair":
+    case "stair-up":
+    case "stair-down":
       return getThemeColor("--region-stair", "#7a5560");
     case "apartmentzone":
     case "apartment-zone":
       return getThemeColor("--region-apartment-zone", "#55604c");
     case "apartment":
       return getThemeColor("--region-apartment", "#49636f");
+    case "balcony":
+      return getThemeColor("--region-balcony", "#5b6773");
     default:
       return getThemeColor("--region-default", "#404958");
   }
@@ -1305,6 +1309,120 @@ function drawRegions(targetContext, regions) {
       targetContext.fillRect(rect.x, rect.y, rect.width, rect.height);
     });
   });
+}
+
+function drawLowWallCells(targetContext, values) {
+  if (!Array.isArray(values) || values.length === 0 || !currentMap) {
+    return;
+  }
+
+  const fillColor = getThemeColor("--map-low-wall", "#bba78e");
+
+  targetContext.save();
+  targetContext.translate(viewportState.offsetX, viewportState.offsetY);
+  targetContext.scale(viewportState.scale, viewportState.scale);
+  targetContext.fillStyle = fillColor;
+
+  for (let index = 0; index < values.length; index += 2) {
+    const x = values[index];
+    const y = values[index + 1];
+    targetContext.fillRect(x, y, 1, 1);
+  }
+
+  targetContext.restore();
+}
+
+function drawFeatureOverlays(targetContext, regions) {
+  if (!Array.isArray(regions) || regions.length === 0 || !currentMap) {
+    return;
+  }
+
+  const elevatorColor = getThemeColor("--region-elevator", "#8a6e42");
+  const stairColor = getThemeColor("--region-stair", "#7a5560");
+  targetContext.save();
+  targetContext.translate(viewportState.offsetX, viewportState.offsetY);
+  targetContext.scale(viewportState.scale, viewportState.scale);
+  targetContext.lineCap = "square";
+  targetContext.lineJoin = "miter";
+
+  regions.forEach((region) => {
+    const kind = String(region.kind || "").toLowerCase();
+    if (kind !== "elevator" && kind !== "stair" && kind !== "stair-up" && kind !== "stair-down") {
+      return;
+    }
+
+    (region.rects || []).forEach((rect) => {
+      if (!rect || rect.width <= 0 || rect.height <= 0) {
+        return;
+      }
+
+      const inset = Math.max(0.35, Math.min(rect.width, rect.height) * 0.18);
+      const x = rect.x + inset;
+      const y = rect.y + inset;
+      const width = Math.max(0.2, rect.width - inset * 2);
+      const height = Math.max(0.2, rect.height - inset * 2);
+
+      const isStair = kind === "stair" || kind === "stair-up" || kind === "stair-down";
+      targetContext.strokeStyle = kind === "elevator" ? elevatorColor : stairColor;
+      targetContext.fillStyle = kind === "elevator" ? `${elevatorColor}22` : `${stairColor}18`;
+      targetContext.lineWidth = Math.max(0.12, 1 / Math.max(viewportState.scale, 1));
+
+      targetContext.fillRect(x, y, width, height);
+      targetContext.strokeRect(x, y, width, height);
+
+      if (kind === "elevator") {
+        const centerX = rect.x + rect.width / 2;
+        const centerY = rect.y + rect.height / 2;
+        targetContext.beginPath();
+        targetContext.moveTo(centerX, y + 0.35);
+        targetContext.lineTo(centerX, y + height - 0.35);
+        targetContext.moveTo(x + 0.35, centerY);
+        targetContext.lineTo(x + width - 0.35, centerY);
+        targetContext.stroke();
+        return;
+      }
+
+      const steps = Math.max(3, Math.min(6, Math.floor(Math.max(rect.width, rect.height) / 1.6)));
+      targetContext.beginPath();
+
+      if (rect.width >= rect.height) {
+        const run = width / steps;
+        for (let step = 0; step < steps; step += 1) {
+          const stepX = x + step * run;
+          targetContext.moveTo(stepX, y + height);
+          targetContext.lineTo(stepX + run, y + height);
+          targetContext.lineTo(stepX + run, y + height - ((step + 1) / steps) * height);
+        }
+      } else {
+        const rise = height / steps;
+        for (let step = 0; step < steps; step += 1) {
+          const stepY = y + step * rise;
+          targetContext.moveTo(x, stepY + rise);
+          targetContext.lineTo(x, stepY);
+          targetContext.lineTo(x + ((step + 1) / steps) * width, stepY);
+        }
+      }
+
+      targetContext.stroke();
+
+      const arrowSize = Math.max(0.4, Math.min(width, height) * 0.28);
+      const centerX = rect.x + rect.width / 2;
+      const centerY = rect.y + rect.height / 2;
+      targetContext.beginPath();
+      if (kind === "stair-down") {
+        targetContext.moveTo(centerX - arrowSize * 0.4, centerY - arrowSize * 0.25);
+        targetContext.lineTo(centerX, centerY + arrowSize * 0.35);
+        targetContext.lineTo(centerX + arrowSize * 0.4, centerY - arrowSize * 0.25);
+      } else {
+        targetContext.moveTo(centerX - arrowSize * 0.4, centerY + arrowSize * 0.25);
+        targetContext.lineTo(centerX, centerY - arrowSize * 0.35);
+        targetContext.lineTo(centerX + arrowSize * 0.4, centerY + arrowSize * 0.25);
+      }
+      targetContext.stroke();
+    });
+  });
+
+  targetContext.restore();
 }
 
 function renderRegionLegend() {
@@ -1441,6 +1559,7 @@ function renderMap() {
     currentMap.height * viewportState.scale,
   );
   flatCtx.restore();
+  drawFeatureOverlays(flatCtx, currentMap.regions);
 
   updateViewportMeta();
 }
@@ -1488,8 +1607,8 @@ function renderShaderMap(width, height, dpr) {
   gl.uniform3fv(runtime.uniforms.wallLight, parseColorToRgb(getThemeColor("--map-wall", "#dbc6ad"), [0.86, 0.78, 0.68]));
   gl.uniform3fv(runtime.uniforms.wallShadow, parseColorToRgb("#8f785f", [0.56, 0.47, 0.37]));
   gl.uniform3fv(runtime.uniforms.outlineColor, [0.88, 0.86, 0.82]);
-  gl.uniform3fv(runtime.uniforms.propColor, parseColorToRgb(getThemeColor("--map-door", "#9df18f"), [0.62, 0.95, 0.56]));
-  gl.uniform3fv(runtime.uniforms.itemColor, parseColorToRgb(getThemeColor("--map-window", "#84b8ff"), [0.52, 0.72, 1]));
+  gl.uniform3fv(runtime.uniforms.propColor, parseColorToRgb(getThemeColor("--map-low-wall", "#b59e82"), [0.71, 0.62, 0.51]));
+  gl.uniform3fv(runtime.uniforms.itemColor, parseColorToRgb(getThemeColor("--map-window", "#9bdcff"), [0.61, 0.86, 1]));
   gl.drawArrays(gl.TRIANGLES, 0, 6);
 
   if (gridEnabled || currentMap) {
@@ -1508,6 +1627,7 @@ function renderShaderMap(width, height, dpr) {
       currentMap.height * viewportState.scale,
     );
     flatCtx.restore();
+    drawFeatureOverlays(flatCtx, currentMap.regions);
   }
 
   return true;

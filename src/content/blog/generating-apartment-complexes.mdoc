@@ -53,7 +53,7 @@ This is still intentionally abstract. I am not trying to produce code-compliant 
 
 {% procgenembed
    eyebrow="Interactive Demo"
-   src="/proc-gen?embed=1&generator=Apartment_StageTwo&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&horizontalCorridorLength=56&verticalCorridorLength=36&corridorWidth=5&elevatorSize=4&stairwellSize=6&accessPlacementMode=0"
+   src="/proc-gen?embed=1&generator=Apartment_StageTwo&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&horizontalCorridorLength=56&verticalCorridorLength=36&corridorWidth=5&elevatorSize=4&stairwellSize=6&elevatorSide=0&stairSide=1&accessArrangement=1"
    height="44rem" /%}
 
 ### Apartment Placement
@@ -83,7 +83,39 @@ The result is not interior detail yet. It is just the first version of "these ar
 
 {% procgenembed
    eyebrow="Interactive Demo"
-   src="/proc-gen?embed=1&generator=Apartment_StageThree&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&corridorWidth=8&elevatorSize=4&stairwellSize=6&accessPlacementMode=2&outerApartmentsAcross=6&outerApartmentsDown=4&targetApartmentWidth=12&targetApartmentDepth=12&outerPopulation=1&innerPopulation=1&doorWidth=2"
+   src="/proc-gen?embed=1&generator=Apartment_StageThree&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&corridorWidth=8&elevatorSize=4&stairwellSize=6&elevatorSide=0&stairSide=1&accessArrangement=1&outerApartmentsAcross=6&outerApartmentsDown=4&targetApartmentWidth=12&targetApartmentDepth=12&outerPopulation=1&innerPopulation=1&doorWidth=2"
+   height="44rem" /%}
+
+### Exterior Features
+
+Once the apartment blocks exist, the next layer is how those units meet the outside.
+
+This is where the layout starts to feel less like abstract occupancy and more like housing:
+
+- balconies can project from units that have real exterior exposure
+- windows can be distributed along exposed walls
+- balcony rails can be treated separately from full-height walls
+
+That also means this stage has to be a little more selective. Not every apartment should automatically receive the same exterior treatment.
+
+For example:
+
+- enclosed layouts should not suddenly grow exterior balconies into the courtyard void
+- a wall that already opens onto a balcony does not also need a window pass layered on top of it
+- and inner apartments only work if there is still enough true remaining space for them after circulation and access are carved out
+
+So stage four is really about adding facade logic on top of the placement pass:
+
+- keep the apartment placement from stage three
+- detect which apartment edges are genuinely exterior-facing
+- add windows where that makes sense
+- add balconies only where they have a believable outside condition
+
+It is still not interior design yet. It is the first point where the apartment blocks begin to read like actual homes with an outside face.
+
+{% procgenembed
+   eyebrow="Interactive Demo"
+   src="/proc-gen?embed=1&generator=Apartment_StageFour&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=cshape&rotation=90deg&corridorWidth=8&elevatorSize=4&stairwellSize=6&elevatorSide=0&stairSide=1&accessArrangement=1&outerApartmentsAcross=6&outerApartmentsDown=4&targetApartmentWidth=12&targetApartmentDepth=12&outerPopulation=1&innerPopulation=0&doorWidth=2&windowWidth=4"
    height="44rem" /%}
 
 ### Individual Apartments
