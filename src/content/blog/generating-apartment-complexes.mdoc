@@ -120,13 +120,29 @@ It is still not interior design yet. It is the first point where the apartment b
 
 ### Individual Apartments
 
-Still keeping it very simple, lets just subdivide our rows.
+Up to this point each apartment is still just a block.
 
-This will now define each individual apartment
+The next step is to start cutting those blocks into something that actually reads like a home.
 
-Our min/max parameters allow our apartments to adjust within a sensible range to fit the intended size of the rows.
+For now I am still keeping that intentionally constrained and readable:
 
-\#TODO: Add interactive display of apartment
+- a simple `1LDK` assumption
+- an entry and service band near the corridor
+- a bedroom
+- and a larger living/dining/kitchen space toward the exterior
+
+This is not trying to be a complete architectural solver yet. It is just enough subdivision to make the apartment blocks start reading as plausible units instead of anonymous rectangles.
+
+It also gives me a place to reason about:
+
+- how rooms connect to one another
+- where internal doorways should exist
+- and how much area is being given to service space versus living space
+
+{% procgenembed
+   eyebrow="Interactive Demo"
+   src="/proc-gen?embed=1&generator=Apartment_StageFive&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&corridorWidth=8&elevatorSize=5&stairwellSize=6&elevatorSide=0&stairSide=1&accessArrangement=0&outerApartmentsAcross=6&outerApartmentsDown=4&targetApartmentWidth=18&targetApartmentDepth=18&outerPopulation=1&innerPopulation=0&doorWidth=2&windowWidth=4&balconyDepth=4&balconyInset=2"
+   height="44rem" /%}
 
 ### Apartment Interiors
 

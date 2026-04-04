@@ -37,6 +37,11 @@
   --region-apartment-zone:#59624f;
   --region-apartment:     #6a8494;
   --region-balcony:       #66727d;
+  --region-room-ldk:      #72899a;
+  --region-room-bedroom:  #617786;
+  --region-room-bath:     #607b83;
+  --region-room-wc:       #6d6f87;
+  --region-room-entry:    #56616e;
 
   /* Typography */
   --font-lg:  1.2rem;

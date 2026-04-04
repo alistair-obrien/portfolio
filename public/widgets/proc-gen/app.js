@@ -1297,6 +1297,16 @@ function getRegionColor(kind) {
       return getThemeColor("--region-apartment", "#49636f");
     case "balcony":
       return getThemeColor("--region-balcony", "#5b6773");
+    case "room-ldk":
+      return getThemeColor("--region-room-ldk", "#72899a");
+    case "room-bedroom":
+      return getThemeColor("--region-room-bedroom", "#617786");
+    case "room-bath":
+      return getThemeColor("--region-room-bath", "#607b83");
+    case "room-wc":
+      return getThemeColor("--region-room-wc", "#6d6f87");
+    case "room-entry":
+      return getThemeColor("--region-room-entry", "#56616e");
     default:
       return getThemeColor("--region-default", "#404958");
   }
@@ -1425,6 +1435,43 @@ function drawFeatureOverlays(targetContext, regions) {
   targetContext.restore();
 }
 
+function drawRegionLabels(targetContext, regions) {
+  if (!Array.isArray(regions) || regions.length === 0 || !currentMap) {
+    return;
+  }
+
+  targetContext.save();
+  targetContext.translate(viewportState.offsetX, viewportState.offsetY);
+  targetContext.scale(viewportState.scale, viewportState.scale);
+  targetContext.textAlign = "center";
+  targetContext.textBaseline = "middle";
+  targetContext.fillStyle = "rgba(242, 236, 226, 0.92)";
+  targetContext.strokeStyle = "rgba(23, 27, 35, 0.68)";
+
+  regions.forEach((region) => {
+    const kind = String(region.kind || "").toLowerCase();
+    if (!kind.startsWith("room-")) {
+      return;
+    }
+
+    (region.rects || []).forEach((rect) => {
+      if (!rect || rect.width < 5 || rect.height < 4) {
+        return;
+      }
+
+      const fontSize = Math.max(1.8, Math.min(rect.width * 0.22, rect.height * 0.42, 3.2));
+      targetContext.font = `600 ${fontSize}px ui-sans-serif, system-ui, sans-serif`;
+      targetContext.lineWidth = Math.max(0.08, 0.6 / Math.max(viewportState.scale, 1));
+      const centerX = rect.x + rect.width / 2;
+      const centerY = rect.y + rect.height / 2;
+      targetContext.strokeText(region.label, centerX, centerY);
+      targetContext.fillText(region.label, centerX, centerY);
+    });
+  });
+
+  targetContext.restore();
+}
+
 function renderRegionLegend() {
   if (!regionLegend) {
     return;
@@ -1446,6 +1493,9 @@ function renderRegionLegend() {
   const seen = new Set();
   const items = regions.filter((region) => {
     const key = `${region.kind}:${region.label}`;
+    if ((region.kind || "").toLowerCase().startsWith("room-")) {
+      return false;
+    }
     if (seen.has(key)) {
       return false;
     }
@@ -1560,6 +1610,7 @@ function renderMap() {
   );
   flatCtx.restore();
   drawFeatureOverlays(flatCtx, currentMap.regions);
+  drawRegionLabels(flatCtx, currentMap.regions);
 
   updateViewportMeta();
 }
@@ -1628,6 +1679,7 @@ function renderShaderMap(width, height, dpr) {
     );
     flatCtx.restore();
     drawFeatureOverlays(flatCtx, currentMap.regions);
+    drawRegionLabels(flatCtx, currentMap.regions);
   }
 
   return true;
