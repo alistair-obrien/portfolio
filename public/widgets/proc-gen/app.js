@@ -89,6 +89,14 @@ const dragState = {
   lastY: 0,
 };
 
+const gestureState = {
+  activePointers: new Map(),
+  pinchDistance: 0,
+  pinchScale: 1,
+  pinchMapX: 0,
+  pinchMapY: 0,
+};
+
 async function ensureRuntimeBridge() {
   if (!runtimeBridgePromise) {
     runtimeBridgePromise = createRuntimeBridge();
@@ -221,6 +229,11 @@ function getThemeColor(variableName, fallback) {
 
 function normalizeRenderMode(value) {
   return String(value || "").toLowerCase() === "shader" ? "shader" : "flat";
+}
+
+function shouldHideLegendForViewport() {
+  return embedConfig.hideLegend
+    || (embedConfig.isEmbed && window.matchMedia("(max-width: 720px)").matches);
 }
 
 function updateGeneratorTitle() {
@@ -1299,7 +1312,7 @@ function renderRegionLegend() {
     return;
   }
 
-  if (embedConfig.hideLegend) {
+  if (shouldHideLegendForViewport()) {
     regionLegend.hidden = true;
     regionLegend.innerHTML = "";
     return;
@@ -1620,6 +1633,64 @@ function onWheel(event) {
   requestRender();
 }
 
+function getPinchMetrics() {
+  const pointers = [...gestureState.activePointers.values()];
+  if (pointers.length < 2) {
+    return null;
+  }
+
+  const [first, second] = pointers;
+  const deltaX = second.clientX - first.clientX;
+  const deltaY = second.clientY - first.clientY;
+
+  return {
+    distance: Math.hypot(deltaX, deltaY),
+    centerX: (first.clientX + second.clientX) * 0.5,
+    centerY: (first.clientY + second.clientY) * 0.5,
+  };
+}
+
+function beginPinchGesture() {
+  const metrics = getPinchMetrics();
+  if (!metrics || !currentMap) {
+    return;
+  }
+
+  const rect = canvasShell.getBoundingClientRect();
+  const centerX = metrics.centerX - rect.left;
+  const centerY = metrics.centerY - rect.top;
+
+  gestureState.pinchDistance = Math.max(metrics.distance, 1);
+  gestureState.pinchScale = viewportState.scale;
+  gestureState.pinchMapX = (centerX - viewportState.offsetX) / Math.max(viewportState.scale, 0.0001);
+  gestureState.pinchMapY = (centerY - viewportState.offsetY) / Math.max(viewportState.scale, 0.0001);
+  dragState.pointerId = null;
+  canvasShell.classList.remove("is-dragging");
+}
+
+function updatePinchGesture() {
+  const metrics = getPinchMetrics();
+  if (!metrics || !currentMap) {
+    return;
+  }
+
+  const rect = canvasShell.getBoundingClientRect();
+  const centerX = metrics.centerX - rect.left;
+  const centerY = metrics.centerY - rect.top;
+  const minZoom = Math.max(viewportState.fitScale * minZoomMultiplier, 0.1);
+  const nextScale = clamp(
+    gestureState.pinchScale * (Math.max(metrics.distance, 1) / Math.max(gestureState.pinchDistance, 1)),
+    minZoom,
+    maxZoom,
+  );
+
+  viewportState.scale = nextScale;
+  viewportState.offsetX = centerX - gestureState.pinchMapX * nextScale;
+  viewportState.offsetY = centerY - gestureState.pinchMapY * nextScale;
+  viewportState.hasUserAdjusted = true;
+  requestRender();
+}
+
 function onPointerDown(event) {
   if (!currentMap) {
     return;
@@ -1629,14 +1700,39 @@ function onPointerDown(event) {
     return;
   }
 
+  gestureState.activePointers.set(event.pointerId, {
+    clientX: event.clientX,
+    clientY: event.clientY,
+  });
+
+  canvasShell.setPointerCapture(event.pointerId);
+
+  if (gestureState.activePointers.size >= 2) {
+    beginPinchGesture();
+    return;
+  }
+
   dragState.pointerId = event.pointerId;
   dragState.lastX = event.clientX;
   dragState.lastY = event.clientY;
   canvasShell.classList.add("is-dragging");
-  canvasShell.setPointerCapture(event.pointerId);
 }
 
 function onPointerMove(event) {
+  if (!gestureState.activePointers.has(event.pointerId)) {
+    return;
+  }
+
+  gestureState.activePointers.set(event.pointerId, {
+    clientX: event.clientX,
+    clientY: event.clientY,
+  });
+
+  if (gestureState.activePointers.size >= 2) {
+    updatePinchGesture();
+    return;
+  }
+
   if (dragState.pointerId !== event.pointerId) {
     return;
   }
@@ -1652,16 +1748,29 @@ function onPointerMove(event) {
 }
 
 function stopDragging(event) {
-  if (dragState.pointerId !== event.pointerId) {
+  gestureState.activePointers.delete(event.pointerId);
+
+  if (canvasShell.hasPointerCapture(event.pointerId)) {
+    canvasShell.releasePointerCapture(event.pointerId);
+  }
+
+  if (gestureState.activePointers.size >= 2) {
+    beginPinchGesture();
+    return;
+  }
+
+  const remainingPointer = [...gestureState.activePointers.entries()][0];
+  if (remainingPointer) {
+    const [pointerId, pointer] = remainingPointer;
+    dragState.pointerId = pointerId;
+    dragState.lastX = pointer.clientX;
+    dragState.lastY = pointer.clientY;
+    canvasShell.classList.add("is-dragging");
     return;
   }
 
   dragState.pointerId = null;
   canvasShell.classList.remove("is-dragging");
-
-  if (canvasShell.hasPointerCapture(event.pointerId)) {
-    canvasShell.releasePointerCapture(event.pointerId);
-  }
 }
 
 generatorSelect.addEventListener("change", () => {

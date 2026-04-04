@@ -551,6 +551,7 @@
   position: relative;
   overflow: hidden;
   cursor: grab;
+  touch-action: none;
 }
 
 .procgen-app canvas {
@@ -767,9 +768,7 @@
   }
 
   .procgen-app .region-legend {
-    gap: 0.3rem;
-    max-width: 8.75rem;
-    padding: 0.45rem 0.5rem;
+    display: none !important;
   }
 
   .procgen-app .canvas-overlay-left-center {
