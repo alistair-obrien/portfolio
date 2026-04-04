@@ -64,13 +64,13 @@ At this step the corridor dimensions are no longer really the primary input. Ins
 
 - how many apartments I want to place
 - the target width and depth of those apartments
-- and whether the remaining middle space should stay open or be filled as well
+- and whether apartments populate the outer side, the inner side, or both
 
 That shift matters because it turns the problem from "draw a nice corridor" into "fit a useful number of homes around circulation."
 
 The access points are now hard constraints. Apartments cannot just be stamped in a perfect ring anymore; they have to work around elevator and stair blocks, and that immediately creates more believable asymmetry near those interruptions.
 
-For enclosed forms, I also want the option to fill the center instead of leaving it as a permanent void. Sometimes that middle space should remain open like a courtyard, and sometimes it should be treated as more usable apartment area. That becomes a meaningful design switch rather than an accident of the corridor shape.
+For enclosed forms, the more useful question is not "fill the hole," but whether the corridor has apartments on its outer edge, its inner edge, or both. That lets the middle remain a true open void when it should, while still giving me a compact way to study how dense the inner ring becomes.
 
 So this next stage is really about coarse placement:
 
@@ -83,7 +83,7 @@ The result is not interior detail yet. It is just the first version of "these ar
 
 {% procgenembed
    eyebrow="Interactive Demo"
-   src="/proc-gen?embed=1&generator=Apartment_StageThree&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&corridorWidth=8&elevatorSize=4&stairwellSize=6&accessPlacementMode=2&apartmentsAcross=6&apartmentsDown=4&targetApartmentWidth=12&targetApartmentDepth=12&fillCenter=1"
+   src="/proc-gen?embed=1&generator=Apartment_StageThree&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&corridorWidth=8&elevatorSize=4&stairwellSize=6&accessPlacementMode=2&outerApartmentsAcross=6&outerApartmentsDown=4&targetApartmentWidth=12&targetApartmentDepth=12&outerPopulation=1&innerPopulation=1&doorWidth=2"
    height="44rem" /%}
 
 ### Individual Apartments
