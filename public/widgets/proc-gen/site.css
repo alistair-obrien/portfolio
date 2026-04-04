@@ -568,7 +568,7 @@
   position: relative;
   flex: 1 1 auto;
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr);
   overflow: hidden;
   cursor: grab;
   touch-action: none;
@@ -654,14 +654,22 @@
 }
 
 .procgen-app .canvas-bottom-bar {
+  position: absolute;
+  left: var(--space-4);
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 6;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: var(--space-3);
-  padding: var(--space-3);
+  padding: 0;
+  pointer-events: none;
 }
 
+.procgen-app .render-mode-picker,
 .procgen-app .canvas-actions {
+  pointer-events: auto;
   display: inline-flex;
   gap: var(--space-2);
   justify-content: flex-end;
@@ -669,10 +677,7 @@
 }
 
 .procgen-app .fullscreen-control {
-  position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
-  z-index: 6;
+  position: static;
 }
 
 /* ─── Region legend ─── */

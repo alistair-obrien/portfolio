@@ -56,17 +56,30 @@ This is still intentionally abstract. I am not trying to produce code-compliant 
    src="/proc-gen?embed=1&generator=Apartment_StageTwo&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&horizontalCorridorLength=56&verticalCorridorLength=36&corridorWidth=5&elevatorSize=4&stairwellSize=6&accessPlacementMode=0"
    height="44rem" /%}
 
-### Apartment Rows
+### Apartment Placement
 
-Only after the circulation and access points feel right does it make sense to start talking about apartment zones.
+Once the corridor and access points are in place, I can stop thinking in terms of a freeform corridor length and start thinking in terms of apartments.
 
-By looking at the references, one thing that is fairly consistent is that apartments are generally the same size and layout, with units close to corners being a little bit adjusted in order to fit their door to the corridor.
+At this step the corridor dimensions are no longer really the primary input. Instead, the building is driven by:
 
-We can group apartments essentially by rows. North and South Rows, then the West and East Rows.
+- how many apartments I want to place
+- the target width and depth of those apartments
+- and whether the remaining middle space should stay open or be filled as well
 
-So lets divide our space into these rectangles.
+That shift matters because it turns the problem from "draw a nice corridor" into "fit a useful number of homes around circulation."
 
-\#TODO: Add interactive display of rectangle
+The access points are now hard constraints. Apartments cannot just be stamped in a perfect ring anymore; they have to work around elevator and stair blocks, and that immediately creates more believable asymmetry near those interruptions.
+
+For enclosed forms, I also want the option to fill the center instead of leaving it as a permanent void. Sometimes that middle space should remain open like a courtyard, and sometimes it should be treated as more usable apartment area. That becomes a meaningful design switch rather than an accident of the corridor shape.
+
+So this next stage is really about coarse placement:
+
+- decide how many apartments should exist
+- derive the corridor run from those apartment targets
+- reserve the access points
+- then pack apartments into the remaining valid space
+
+The result is not interior detail yet. It is just the first version of "these are the apartment blocks that fit this circulation pattern."
 
 ### Individual Apartments
 
