@@ -21,6 +21,7 @@ const parsedUrl = new URL(src, "https://procgen.local");
 const embedSearch = parsedUrl.search || "";
 const storageKey = `procgen-embed:${parsedUrl.pathname}${embedSearch}`;
 const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
+const widgetAssetVersion = Date.now().toString();
 ---
 
 <link rel="stylesheet" href="/widgets/proc-gen/site.css" />
@@ -97,14 +98,16 @@ const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
   }
 </style>
 
-<script define:vars={{ hostId, embedSearch, storageKey }} is:inline>
+<script define:vars={{ hostId, embedSearch, storageKey, widgetAssetVersion }} is:inline>
   (async () => {
     const host = document.getElementById(hostId);
     if (!host) {
       return;
     }
 
-    const response = await fetch("/widgets/proc-gen/index.html");
+    const response = await fetch(`/widgets/proc-gen/index.html?v=${encodeURIComponent(widgetAssetVersion)}`, {
+      cache: "no-store",
+    });
     if (!response.ok) {
       throw new Error(`Failed to load ProcGen widget shell (HTTP ${response.status}).`);
     }
@@ -127,27 +130,31 @@ const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
       updateDocumentTitle: false,
     };
 
-    if (!window.__procgenInlineShaderPromise) {
+    if (window.__procgenInlineShaderVersion !== widgetAssetVersion) {
       window.__procgenInlineShaderPromise = new Promise((resolve, reject) => {
         const script = document.createElement("script");
-        script.src = "/widgets/proc-gen/procgen-shaders.js";
+        script.src = `/widgets/proc-gen/procgen-shaders.js?v=${encodeURIComponent(widgetAssetVersion)}`;
         script.async = false;
         script.onload = resolve;
         script.onerror = reject;
         document.body.appendChild(script);
       });
+      window.__procgenInlineShaderVersion = widgetAssetVersion;
     }
 
     await window.__procgenInlineShaderPromise;
 
-    if (!window.__procgenInlineAppSourcePromise) {
-      window.__procgenInlineAppSourcePromise = fetch("/widgets/proc-gen/app.js").then(async (appResponse) => {
+    if (window.__procgenInlineAppSourceVersion !== widgetAssetVersion) {
+      window.__procgenInlineAppSourcePromise = fetch(`/widgets/proc-gen/app.js?v=${encodeURIComponent(widgetAssetVersion)}`, {
+        cache: "no-store",
+      }).then(async (appResponse) => {
         if (!appResponse.ok) {
           throw new Error(`Failed to load ProcGen app script (HTTP ${appResponse.status}).`);
         }
 
         return appResponse.text();
       });
+      window.__procgenInlineAppSourceVersion = widgetAssetVersion;
     }
 
     window.__procgenInlineMountQueue = (window.__procgenInlineMountQueue || Promise.resolve()).then(async () => {
