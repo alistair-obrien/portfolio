@@ -51,8 +51,8 @@
 
   /* Border radius */
   --radius-sm:   0.2rem;
-  --radius-md:   0.75rem;
-  --radius-lg:   0.8rem;
+  --radius-md:   0.2rem;
+  --radius-lg:   0.4rem;
   --radius-pill: 999px;
 
   /* Layout */
@@ -61,7 +61,7 @@
   --canvas-min-height:   20rem;
   --shell-gap:           var(--space-5);
   --panel-padding:       var(--space-4);
-  --controls-gap:        var(--space-2);
+  --controls-gap:        var(--space-1);
 
   /* Tooltip */
   --tooltip-min-width:   14rem;
@@ -80,6 +80,17 @@
   /* Scrollbar */
   --scrollbar-size:    0.85rem;
   --scrollbar-border:  3px;
+
+  /* Interaction states */
+  --surface-hover:       rgba(255, 255, 255, 0.04);
+  --panel-highlight:     rgba(255, 255, 255, 0.02);
+  --shadow-thumb:        rgba(12, 18, 24, 0.45);
+  --shadow-tooltip:      rgba(0, 0, 0, 0.24);
+  --border-ghost:        #91abc2;
+  --swatch-border:       rgba(255, 255, 255, 0.1);
+  --accent-selected-bg:  rgba(105, 209, 216, 0.08);
+  --accent-focus-ring:   rgba(105, 209, 216, 0.45);
+  --text-on-accent:      #1a2428;
 }
 
 /* ─── Reset ─── */
@@ -129,7 +140,7 @@
   min-height: 0;
   background: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  box-shadow: inset 0 1px 0 var(--panel-highlight);
 }
 
 /* ─── Scrollbars ─── */
@@ -182,7 +193,7 @@
 
 .procgen-app .control-section {
   display: grid;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .procgen-app .section-label {
@@ -222,7 +233,7 @@
 }
 
 .procgen-app select {
-  padding: 0.72rem 0.9rem;
+  padding: 0.45rem 0.75rem;
 }
 
 .procgen-app button {
@@ -242,15 +253,15 @@
 .procgen-app button:active { transform: translateY(0); }
 
 .procgen-app .ghost-button {
-  padding: 0.72rem 0.92rem;
+  padding: 0.45rem 0.75rem;
   background: transparent;
   color: var(--text);
-  border-color: #91abc2;
+  border-color: var(--border-ghost);
   box-shadow: none;
 }
 
 .procgen-app .ghost-button:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-hover);
 }
 
 /* ─── Option fields ─── */
@@ -301,6 +312,11 @@
 .procgen-app .option-slider {
   appearance: none;
   background: transparent;
+  cursor: grab;
+}
+
+.procgen-app .option-slider:active {
+  cursor: grabbing;
 }
 
 .procgen-app .option-slider::-webkit-slider-runnable-track {
@@ -317,7 +333,12 @@
   border: 2px solid var(--accent-soft);
   border-radius: 10%;
   background: var(--accent);
-  box-shadow: 0 0 0 2px rgba(12, 18, 24, 0.45);
+  box-shadow: 0 0 0 2px var(--shadow-thumb);
+  cursor: grab;
+}
+
+.procgen-app .option-slider:active::-webkit-slider-thumb {
+  cursor: grabbing;
 }
 
 .procgen-app .option-slider::-moz-range-track {
@@ -332,7 +353,12 @@
   border: 3px solid var(--accent);
   border-radius: 50%;
   background: var(--surface-strong);
-  box-shadow: 0 0 0 2px rgba(12, 18, 24, 0.45);
+  box-shadow: 0 0 0 2px var(--shadow-thumb);
+  cursor: grab;
+}
+
+.procgen-app .option-slider:active::-moz-range-thumb {
+  cursor: grabbing;
 }
 
 .procgen-app .option-number {
@@ -355,7 +381,7 @@
   display: grid;
   justify-items: center;
   gap: var(--space-1);
-  padding: 0.65rem 0.4rem 0.55rem;
+  padding: 0.35rem 0.4rem 0.3rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--surface-soft);
@@ -365,20 +391,20 @@
 
 .procgen-app .rotation-choice-button:hover,
 .procgen-app .shape-choice-button:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-hover);
   color: var(--text);
 }
 
 .procgen-app .rotation-choice-button.is-selected,
 .procgen-app .shape-choice-button.is-selected {
   border-color: var(--accent);
-  background: rgba(153, 244, 141, 0.08);
-  color: var(--text);
+  background: var(--accent);
+  color: var(--text-on-accent);
 }
 
 .procgen-app .rotation-choice-button:focus-visible,
 .procgen-app .shape-choice-button:focus-visible {
-  outline: 2px solid rgba(153, 244, 141, 0.45);
+  outline: 2px solid var(--accent-focus-ring);
   outline-offset: 2px;
 }
 
@@ -390,8 +416,8 @@
 }
 
 .procgen-app .rotation-preview-icon {
-  width: 1.45rem;
-  height: 1.45rem;
+  width: 1.1rem;
+  height: 1.1rem;
   fill: currentColor;
 }
 
@@ -426,7 +452,7 @@
 
 .procgen-app .tooltip-trigger:hover,
 .procgen-app .tooltip-trigger:focus-visible {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-hover);
   color: var(--text);
 }
 
@@ -434,7 +460,7 @@
 
 .procgen-app .tooltip-bubble {
   position: absolute;
-  bottom: calc(100% + 0.55rem);
+  bottom: calc(100%);
   left: 0;
   z-index: 10;
   min-width: var(--tooltip-min-width);
@@ -446,7 +472,7 @@
   color: var(--text);
   font-size: var(--font-sm);
   line-height: 1.45;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1rem 2rem var(--shadow-tooltip);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-0.2rem);
@@ -457,10 +483,10 @@
 .procgen-app .tooltip-bubble::before {
   content: "";
   position: absolute;
-  bottom: -0.42rem;
+  bottom: -0.5rem;
   left: 1rem;
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 0.9rem;
+  height: 0.9rem;
   border-right: 1px solid var(--tooltip-border);
   border-bottom: 1px solid var(--tooltip-border);
   background: var(--tooltip);
@@ -559,7 +585,7 @@
 
 .procgen-app .overlay-button.is-active {
   border-color: var(--accent);
-  background: rgba(141, 244, 244, 0.08);
+  background: var(--accent-selected-bg);
   color: var(--text);
 }
 
@@ -586,7 +612,7 @@
   width: 0.8rem;
   height: 0.8rem;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--swatch-border);
   flex: 0 0 auto;
 }
 
