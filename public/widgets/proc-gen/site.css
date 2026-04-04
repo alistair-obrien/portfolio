@@ -1,42 +1,91 @@
-.procgen-standalone {
-  margin: 0;
-  background: #20252d;
+/* ─── Design Tokens ─── */
+.procgen-app {
+  /* Colors */
+  --bg:                   #20252d;
+  --surface:              #2a313d;
+  --surface-soft:         #303846;
+  --surface-strong:       #252c36;
+  --border:               #394353;
+  --text:                 #dce5f2;
+  --text-muted:           #7d8fa7;
+  --accent:               #69d1d8;
+  --accent-soft:          #414c53;
+  --scroll-track:         #252b35;
+  --scroll-thumb:         #3f4b5e;
+  --scroll-thumb-hover:   #f0f4fa;
+  --canvas:               #242932;
+  --tooltip:              #171d26;
+  --tooltip-border:       #2b3442;
+
+  /* Map colors */
+  --map-floor:            #2f3643;
+  --map-wall:             #0c3f6e;
+  --map-door:             #9df18f;
+  --map-window:           #84b8ff;
+  --map-grid:             rgba(255, 255, 255, 0.09);
+  --map-outline:          rgba(255, 255, 255, 0.08);
+
+  /* Region colors */
+  --region-default:       #404958;
+  --region-outside:       #353e4d;
+  --region-corridor:      #35556d;
+  --region-access-core:   #52436f;
+  --region-elevator:      #866a44;
+  --region-stair:         #6f4d59;
+  --region-apartment-zone:#4f5d47;
+  --region-apartment:     #48626c;
+
+  /* Typography */
+  --font-lg:  1.2rem;
+  --font-md:  0.9rem;
+  --font-sm:  0.8rem;
+  --font-xs:  0.75rem;
+
+  /* Spacing scale */
+  --space-1:  0.2rem;
+  --space-2:  0.4rem;
+  --space-3:  0.55rem;
+  --space-4:  0.75rem;
+  --space-5:  1rem;
+  --space-6:  1.2rem;
+
+  /* Border radius */
+  --radius-sm:   0.2rem;
+  --radius-md:   0.75rem;
+  --radius-lg:   0.8rem;
+  --radius-pill: 999px;
+
+  /* Layout */
+  --controls-min-width:  19rem;
+  --controls-max-width:  23rem;
+  --canvas-min-height:   20rem;
+  --shell-gap:           var(--space-5);
+  --panel-padding:       var(--space-4);
+  --controls-gap:        var(--space-2);
+
+  /* Tooltip */
+  --tooltip-min-width:   14rem;
+  --tooltip-max-width:   16rem;
+
+  /* Overlay */
+  --overlay-bg:          rgba(41, 48, 59, 0.94);
+  --overlay-shadow:      0 0.75rem 2rem rgba(0, 0, 0, 0.18);
+  --overlay-blur:        blur(10px);
+  --overlay-icon-size:   2.85rem;
+  --overlay-icon-stroke: 1.15rem;
+
+  /* Transitions */
+  --trans-fast:  120ms ease;
+
+  /* Scrollbar */
+  --scrollbar-size:    0.85rem;
+  --scrollbar-border:  3px;
 }
 
-.procgen-app {
-  --bg: #20252d;
-  --surface: #2a313d;
-  --surface-soft: #303846;
-  --surface-strong: #252c36;
-  --border: #394353;
-  --text: #dce5f2;
-  --text-muted: #7d8fa7;
-  --accent: #69d1d8;
-  --accent-soft: #415346;
-  --scroll-track: #252b35;
-  --scroll-thumb: #3f4b5e;
-  --scroll-thumb-hover: #f0f4fa;
-  --canvas: #242932;
-  --map-floor: #2f3643;
-  --map-wall: #0c3f6e;
-  --map-door: #9df18f;
-  --map-window: #84b8ff;
-  --map-grid: rgba(255, 255, 255, 0.09);
-  --map-outline: rgba(255, 255, 255, 0.08);
-  --region-default: #404958;
-  --region-outside: #353e4d;
-  --region-corridor: #35556d;
-  --region-access-core: #52436f;
-  --region-elevator: #866a44;
-  --region-stair: #6f4d59;
-  --region-apartment-zone: #4f5d47;
-  --region-apartment: #48626c;
-  --tooltip: #171d26;
-  --tooltip-border: #2b3442;
-  --font-lg: 1.2rem;
-  --font-md: 0.9rem;
-  --font-sm: 0.8rem;
-  --font-xs: 0.75rem;
+/* ─── Reset ─── */
+.procgen-standalone {
+  margin: 0;
+  background: var(--bg);
 }
 
 .procgen-app,
@@ -54,37 +103,26 @@
   color: var(--text);
 }
 
-.procgen-app.embed-mode .shell {
-  padding: 0.75rem;
-  gap: 0.75rem;
-}
-
-.procgen-app.embed-mode .panel {
-  border-radius: 0.9rem;
-}
-
-.procgen-app.embed-mode .controls {
-  padding: 1rem;
-  gap: 1rem;
-}
-
-.procgen-app.embed-mode .viewport {
-  padding: 0.75rem;
-}
-
 .procgen-app input,
 .procgen-app select,
 .procgen-app button {
   font: inherit;
 }
 
+/* ─── Embed mode overrides ─── */
+.procgen-app.embed-mode .shell    { padding: var(--space-4); gap: var(--space-4); }
+.procgen-app.embed-mode .panel    { border-radius: var(--radius-lg); }
+.procgen-app.embed-mode .controls { padding: var(--space-5); gap: var(--space-5); }
+.procgen-app.embed-mode .viewport { padding: var(--space-4); }
+
+/* ─── Layout ─── */
 .procgen-app .shell {
   display: grid;
-  grid-template-columns: minmax(19rem, 23rem) minmax(0, 1fr);
-  gap: 1rem;
+  grid-template-columns: minmax(var(--controls-min-width), var(--controls-max-width)) minmax(0, 1fr);
+  gap: var(--shell-gap);
   height: 100dvh;
   min-height: 100dvh;
-  padding: 1rem;
+  padding: var(--space-5);
 }
 
 .procgen-app .panel {
@@ -94,6 +132,7 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }
 
+/* ─── Scrollbars ─── */
 .procgen-app .controls,
 .procgen-app .viewport {
   min-height: 0;
@@ -104,8 +143,8 @@
 
 .procgen-app .controls::-webkit-scrollbar,
 .procgen-app .viewport::-webkit-scrollbar {
-  width: 0.85rem;
-  height: 0.85rem;
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
 }
 
 .procgen-app .controls::-webkit-scrollbar-track,
@@ -116,8 +155,8 @@
 .procgen-app .controls::-webkit-scrollbar-thumb,
 .procgen-app .viewport::-webkit-scrollbar-thumb {
   background: var(--scroll-thumb);
-  border: 3px solid var(--scroll-track);
-  border-radius: 999px;
+  border: var(--scrollbar-border) solid var(--scroll-track);
+  border-radius: var(--radius-pill);
 }
 
 .procgen-app .controls::-webkit-scrollbar-thumb:hover,
@@ -125,15 +164,12 @@
   background: var(--scroll-thumb-hover);
 }
 
+/* ─── Controls panel ─── */
 .procgen-app .controls {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
-  padding: 1.35rem 1.2rem 1.5rem;
-}
-
-.procgen-app .controls-header {
-  padding-top: 0.2rem;
+  gap: var(--controls-gap);
+  padding: var(--panel-padding);
 }
 
 .procgen-app .controls-title {
@@ -146,7 +182,7 @@
 
 .procgen-app .control-section {
   display: grid;
-  gap: 0.55rem;
+  gap: var(--space-3);
 }
 
 .procgen-app .section-label {
@@ -173,13 +209,14 @@
   flex: 1 1 auto;
 }
 
+/* ─── Form controls ─── */
 .procgen-app select,
 .procgen-app input[type="number"],
 .procgen-app .option-choice {
   width: 100%;
   min-width: 0;
   border: 1px solid var(--border);
-  border-radius: 0.7rem;
+  border-radius: var(--radius-md);
   background: var(--surface);
   color: var(--text);
 }
@@ -190,21 +227,19 @@
 
 .procgen-app button {
   border: 1px solid transparent;
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   background: var(--accent);
-  color: #1e2623;
   cursor: pointer;
   font-weight: 700;
-  transition: transform 120ms ease, border-color 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+  transition:
+    transform    var(--trans-fast),
+    border-color var(--trans-fast),
+    background   var(--trans-fast),
+    box-shadow   var(--trans-fast);
 }
 
-.procgen-app button:hover {
-  transform: translateY(-1px);
-}
-
-.procgen-app button:active {
-  transform: translateY(0);
-}
+.procgen-app button:hover  { transform: translateY(-1px); }
+.procgen-app button:active { transform: translateY(0); }
 
 .procgen-app .ghost-button {
   padding: 0.72rem 0.92rem;
@@ -218,21 +253,16 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
+/* ─── Option fields ─── */
 .procgen-app .inputs {
   display: grid;
-  gap: 0.95rem;
-}
-
-.procgen-app .option-field {
-  display: grid;
-  gap: 0.55rem;
+  gap: var(--space-2);
 }
 
 .procgen-app .option-header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 5.1rem;
   align-items: center;
-  gap: 0.9rem;
 }
 
 .procgen-app .option-field.is-choice .option-header {
@@ -246,10 +276,7 @@
   min-width: 0;
 }
 
-.procgen-app .option-name {
-  color: #c2ddff;
-  font-weight: 700;
-}
+.procgen-app .option-name { font-weight: 500; }
 
 .procgen-app .option-meta {
   color: var(--text-muted);
@@ -262,7 +289,7 @@
 .procgen-app .option-controls {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 5.1rem;
-  gap: 0.9rem;
+  gap: var(--space-1);
   align-items: center;
 }
 
@@ -270,16 +297,15 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
+/* ─── Slider ─── */
 .procgen-app .option-slider {
-  width: 100%;
-  margin: 0;
   appearance: none;
   background: transparent;
 }
 
 .procgen-app .option-slider::-webkit-slider-runnable-track {
   height: 0.46rem;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: linear-gradient(90deg, var(--accent-soft), var(--accent-soft));
 }
 
@@ -288,15 +314,15 @@
   width: 1rem;
   height: 1rem;
   margin-top: -0.27rem;
-  border: 3px solid var(--accent);
-  border-radius: 50%;
-  background: var(--surface-strong);
+  border: 2px solid var(--accent-soft);
+  border-radius: 10%;
+  background: var(--accent);
   box-shadow: 0 0 0 2px rgba(12, 18, 24, 0.45);
 }
 
 .procgen-app .option-slider::-moz-range-track {
   height: 0.46rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--accent-soft);
 }
 
@@ -310,33 +336,28 @@
 }
 
 .procgen-app .option-number {
-  padding: 0.62rem 0.75rem;
+  padding: 0.2rem 0.75rem;
   text-align: right;
   color: var(--text);
   background: var(--surface-soft);
 }
 
-.procgen-app .option-choice {
-  padding: 0.72rem 0.9rem;
-  background: var(--surface-soft);
-  color: var(--text);
-}
-
+/* ─── Choice buttons ─── */
 .procgen-app .rotation-choice-group,
 .procgen-app .shape-choice-group {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.55rem;
+  gap: var(--space-1);
 }
 
 .procgen-app .rotation-choice-button,
 .procgen-app .shape-choice-button {
   display: grid;
   justify-items: center;
-  gap: 0.35rem;
+  gap: var(--space-1);
   padding: 0.65rem 0.4rem 0.55rem;
   border: 1px solid var(--border);
-  border-radius: 0.85rem;
+  border-radius: var(--radius-sm);
   background: var(--surface-soft);
   color: var(--text-muted);
   box-shadow: none;
@@ -377,9 +398,10 @@
 .procgen-app .rotation-choice-label,
 .procgen-app .shape-choice-label {
   font-size: var(--font-xs);
-  line-height: 1;
+  line-height: 0.5rem;
 }
 
+/* ─── Tooltip ─── */
 .procgen-app .tooltip {
   position: relative;
   display: inline-flex;
@@ -393,12 +415,13 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--text-muted);
   font-size: var(--font-xs);
   font-weight: 700;
   line-height: 1;
+  margin: 0.4rem 0;
 }
 
 .procgen-app .tooltip-trigger:hover,
@@ -407,20 +430,18 @@
   color: var(--text);
 }
 
-.procgen-app .tooltip-trigger:focus-visible {
-  outline: none;
-}
+.procgen-app .tooltip-trigger:focus-visible { outline: none; }
 
 .procgen-app .tooltip-bubble {
   position: absolute;
   bottom: calc(100% + 0.55rem);
   left: 0;
   z-index: 10;
-  min-width: 14rem;
-  max-width: 16rem;
+  min-width: var(--tooltip-min-width);
+  max-width: var(--tooltip-max-width);
   padding: 0.72rem 0.82rem;
   border: 1px solid var(--tooltip-border);
-  border-radius: 0.8rem;
+  border-radius: var(--radius-lg);
   background: var(--tooltip);
   color: var(--text);
   font-size: var(--font-sm);
@@ -429,7 +450,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(-0.2rem);
-  transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+  transition: opacity var(--trans-fast), transform var(--trans-fast), visibility var(--trans-fast);
   pointer-events: none;
 }
 
@@ -453,14 +474,15 @@
   transform: translateY(-0.35rem);
 }
 
+/* ─── Viewport ─── */
 .procgen-app .viewport {
-  padding: 1rem;
+  padding: var(--space-5);
 }
 
 .procgen-app .viewport-stage,
 .procgen-app .canvas-shell {
   height: 100%;
-  min-height: 20rem;
+  min-height: var(--canvas-min-height);
 }
 
 .procgen-app .canvas-shell {
@@ -479,64 +501,40 @@
   touch-action: none;
 }
 
-.procgen-app #canvas-shader {
-  z-index: 0;
-}
+.procgen-app #canvas-shader { z-index: 0; }
+.procgen-app #canvas-flat   { z-index: 1; }
 
-.procgen-app #canvas-flat {
-  z-index: 1;
-}
+.procgen-app .canvas-shell.is-dragging { cursor: grabbing; }
 
-.procgen-app .canvas-shell.is-dragging {
-  cursor: grabbing;
-}
-
+/* ─── Canvas overlays ─── */
 .procgen-app .canvas-overlay {
   position: absolute;
   pointer-events: none;
   z-index: 5;
 }
 
-.procgen-app .canvas-overlay-side {
-  top: 0.75rem;
-  left: 0.75rem;
-}
+.procgen-app .canvas-overlay-side         { top: var(--space-4); left: var(--space-4); }
+.procgen-app .canvas-overlay-top-right    { top: var(--space-4); right: var(--space-4); }
+.procgen-app .canvas-overlay-bottom-right { right: var(--space-4); bottom: var(--space-4); display: grid; gap: var(--space-3); }
+.procgen-app .canvas-overlay-bottom-left  { left: var(--space-4); bottom: var(--space-4); }
 
-.procgen-app .canvas-overlay-top-right {
-  top: 0.75rem;
-  right: 0.75rem;
-}
-
-.procgen-app .canvas-overlay-bottom-right {
-  right: 0.75rem;
-  bottom: 0.75rem;
-  display: grid;
-  gap: 0.55rem;
-}
-
-.procgen-app .canvas-overlay-bottom-left {
-  left: 0.75rem;
-  bottom: 0.75rem;
-}
-
-.procgen-app .story-picker {
-  pointer-events: auto;
-}
+/* ─── Overlay controls ─── */
+.procgen-app .story-picker { pointer-events: auto; }
 
 .procgen-app .story-select,
 .procgen-app .overlay-button {
   pointer-events: auto;
   border: 1px solid var(--border);
-  background: rgba(41, 48, 59, 0.94);
+  background: var(--overlay-bg);
   color: var(--text);
-  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(10px);
+  box-shadow: var(--overlay-shadow);
+  backdrop-filter: var(--overlay-blur);
 }
 
 .procgen-app .story-select {
   min-width: 7rem;
   padding: 0.62rem 0.8rem;
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
 }
 
 .procgen-app .overlay-button {
@@ -547,34 +545,35 @@
 
 .procgen-app .render-mode-picker {
   display: inline-flex;
-  gap: 0.5rem;
+  gap: var(--space-2);
   pointer-events: auto;
 }
 
 .procgen-app .render-mode-button {
   min-width: 4.8rem;
   padding: 0.6rem 0.8rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: var(--font-xs);
   font-weight: 700;
 }
 
 .procgen-app .overlay-button.is-active {
   border-color: var(--accent);
-  background: rgba(153, 244, 141, 0.08);
+  background: rgba(141, 244, 244, 0.08);
   color: var(--text);
 }
 
+/* ─── Region legend ─── */
 .procgen-app .region-legend {
   display: grid;
   gap: 0.45rem;
   max-width: min(14rem, calc(100% - 8rem));
   padding: 0.7rem;
   border: 1px solid var(--border);
-  border-radius: 0.8rem;
-  background: rgba(41, 48, 59, 0.94);
-  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  background: var(--overlay-bg);
+  box-shadow: var(--overlay-shadow);
+  backdrop-filter: var(--overlay-blur);
 }
 
 .procgen-app .legend-item {
@@ -586,7 +585,7 @@
 .procgen-app .legend-swatch {
   width: 0.8rem;
   height: 0.8rem;
-  border-radius: 0.2rem;
+  border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.1);
   flex: 0 0 auto;
 }
@@ -596,16 +595,17 @@
   color: var(--text);
 }
 
+/* ─── Icon buttons ─── */
 .procgen-app .overlay-icon-button {
-  width: 2.85rem;
-  height: 2.85rem;
+  width: var(--overlay-icon-size);
+  height: var(--overlay-icon-size);
   padding: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 }
 
 .procgen-app .overlay-icon {
-  width: 1.15rem;
-  height: 1.15rem;
+  width: var(--overlay-icon-stroke);
+  height: var(--overlay-icon-stroke);
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -613,22 +613,23 @@
   stroke-linejoin: round;
 }
 
+/* ─── Responsive: tablet ─── */
 @media (max-width: 1024px) {
   .procgen-app .shell {
     grid-template-columns: 1fr;
     grid-template-rows: minmax(15rem, 38dvh) minmax(0, 1fr);
-    gap: 0.75rem;
-    padding: 0.75rem;
+    gap: var(--space-4);
+    padding: var(--space-4);
   }
 
   .procgen-app .viewport {
     grid-row: 1;
-    padding: 0.75rem;
+    padding: var(--space-4);
   }
 
   .procgen-app .controls {
     grid-row: 2;
-    padding: 1rem;
+    padding: var(--space-5);
   }
 
   .procgen-app .viewport-stage,
@@ -641,31 +642,22 @@
   }
 }
 
+/* ─── Responsive: mobile ─── */
 @media (max-width: 720px) {
-  .procgen-app .controls {
-    gap: 1rem;
-  }
-
-  .procgen-app .controls-title {
-    font-size: 1.05rem;
-  }
-
-  .procgen-app .control-section {
-    gap: 0.45rem;
-  }
+  .procgen-app .controls     { gap: var(--space-5); }
+  .procgen-app .controls-title { font-size: 1.05rem; }
+  .procgen-app .control-section { gap: 0.45rem; }
 
   .procgen-app .controls-row {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .procgen-app .ghost-button {
-    width: 100%;
-  }
+  .procgen-app .ghost-button { width: 100%; }
 
   .procgen-app .option-controls {
     grid-template-columns: 1fr;
-    gap: 0.55rem;
+    gap: var(--space-3);
   }
 
   .procgen-app .rotation-choice-group,
@@ -673,9 +665,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .procgen-app .option-field {
-    gap: 0.4rem;
-  }
+  .procgen-app .option-field  { gap: 0.4rem; }
 
   .procgen-app .option-header {
     grid-template-columns: minmax(0, 1fr) auto;
@@ -701,7 +691,7 @@
 
   .procgen-app .region-legend {
     max-width: min(11rem, calc(100% - 7rem));
-    padding: 0.55rem;
+    padding: var(--space-3);
   }
 
   .procgen-app .overlay-icon-button {
@@ -714,9 +704,7 @@
     height: 1rem;
   }
 
-  .procgen-app .render-mode-picker {
-    gap: 0.4rem;
-  }
+  .procgen-app .render-mode-picker { gap: 0.4rem; }
 
   .procgen-app .render-mode-button {
     min-width: 4.1rem;
