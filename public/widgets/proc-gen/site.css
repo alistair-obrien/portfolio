@@ -138,8 +138,6 @@
   gap: var(--space-4);
   grid-template-columns: minmax(14.5rem, 18rem) minmax(0, 1fr);
 }
-.procgen-app.embed-mode .controls { padding: 0.8rem; gap: var(--space-3); }
-.procgen-app.embed-mode .viewport { padding: var(--space-4); }
 
 /* ─── Layout ─── */
 .procgen-app .shell {
@@ -801,7 +799,17 @@
     align-items: stretch;
   }
 
+  .procgen-app .controls-row.controls-row-start {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
   .procgen-app .ghost-button { width: 100%; }
+
+  .procgen-app .controls-row.controls-row-start .ghost-button {
+    width: auto;
+    flex: 0 0 auto;
+  }
 
   .procgen-app .option-controls:not(.is-choice) {
     grid-template-columns: minmax(0, 1fr) 4.6rem;
