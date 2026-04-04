@@ -33,3 +33,8 @@ export async function generateMap(request) {
   const exports = await ensureRuntime();
   return parseEnvelope(exports.GenerateMap(JSON.stringify(request)));
 }
+
+export async function getGeneratorCatalog() {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.GetGeneratorCatalog());
+}

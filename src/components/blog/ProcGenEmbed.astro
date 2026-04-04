@@ -1,0 +1,146 @@
+---
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  src: string;
+  height?: string;
+  fullHeight?: boolean;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  src,
+  height = "44rem",
+  fullHeight = false,
+} = Astro.props;
+
+const parsedUrl = new URL(src, "https://procgen.local");
+const embedSearch = parsedUrl.search || "";
+const storageKey = `procgen-embed:${parsedUrl.pathname}${embedSearch}`;
+const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
+---
+
+<link rel="stylesheet" href="/widgets/proc-gen/site.css" />
+
+<div class:list={["not-prose", fullHeight ? "flex min-h-0 flex-1 flex-col" : "my-10"]}>
+  {(eyebrow || title || description) && (
+    <div class="mb-4">
+      {eyebrow && (
+        <p class="m-0 text-xs font-semibold uppercase tracking-[0.22em] text-primary/80">
+          {eyebrow}
+        </p>
+      )}
+      {title && (
+        <h3 class="m-0 mt-2 text-xl font-semibold text-base-content">
+          {title}
+        </h3>
+      )}
+      {description && (
+        <p class="m-0 mt-2 max-w-3xl text-sm leading-6 text-base-content/70">
+          {description}
+        </p>
+      )}
+    </div>
+  )}
+
+  <div
+    id={hostId}
+    class:list={["procgen-inline-shell procgen-app", fullHeight && "procgen-inline-shell-full"]}
+    style={fullHeight ? undefined : `height:${height};`}
+  ></div>
+</div>
+
+<style is:global>
+  .procgen-inline-shell {
+    min-height: 20rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .procgen-inline-shell.procgen-app > .shell {
+    height: 100% !important;
+    min-height: 100% !important;
+    padding: 0;
+  }
+
+  .procgen-inline-shell.procgen-app > .shell .controls,
+  .procgen-inline-shell.procgen-app > .shell .viewport {
+    max-height: 100%;
+  }
+
+  .procgen-inline-shell .panel {
+    border-radius: 0;
+  }
+
+  .procgen-inline-shell-full {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100%;
+  }
+</style>
+
+<script define:vars={{ hostId, embedSearch, storageKey }} is:inline>
+  (async () => {
+    const host = document.getElementById(hostId);
+    if (!host) {
+      return;
+    }
+
+    const response = await fetch("/widgets/proc-gen/index.html");
+    if (!response.ok) {
+      throw new Error(`Failed to load ProcGen widget shell (HTTP ${response.status}).`);
+    }
+
+    const html = await response.text();
+    const parsed = new DOMParser().parseFromString(html, "text/html");
+    const shell = parsed.querySelector(".procgen-app > .shell, main.shell");
+
+    if (!shell) {
+      throw new Error("Could not find ProcGen widget shell markup.");
+    }
+
+    host.replaceChildren(shell);
+
+    window.__PROCGEN_APP_CONFIG__ = {
+      mode: "wasm",
+      moduleUrl: "/widgets/proc-gen/engine-loader.js",
+      search: embedSearch,
+      storageKey,
+      updateDocumentTitle: false,
+    };
+
+    if (window.__procgenInlineShaderLoaded !== true) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = "/widgets/proc-gen/procgen-shaders.js";
+        script.async = false;
+        script.onload = () => {
+          window.__procgenInlineShaderLoaded = true;
+          resolve();
+        };
+        script.onerror = reject;
+        document.body.appendChild(script);
+      });
+    }
+
+    if (window.__procgenInlineAppLoaded !== true) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = "/widgets/proc-gen/app.js";
+        script.async = false;
+        script.onload = () => {
+          window.__procgenInlineAppLoaded = true;
+          resolve();
+        };
+        script.onerror = reject;
+        document.body.appendChild(script);
+      });
+    }
+  })().catch((error) => {
+    console.error(error);
+  });
+</script>

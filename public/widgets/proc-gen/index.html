@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ProcGen Widget</title>
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ProcGen DevApp</title>
+  <link rel="stylesheet" href="./site.css"/>
+</head>
+<body class="procgen-standalone">
+  <div id="procgen-app" class="procgen-app">
+    <main class="shell">
+      <section class="panel controls">
+        <header id="controls-header" class="controls-header">
+          <h1 id="generator-title" class="controls-title">Apartment Generator</h1>
+        </header>
+
+        <section id="generator-section" class="control-section">
+          <p class="section-label">Generator Type</p>
+          <div class="controls-row controls-row-start">
+            <select id="generator"></select>
+            <button id="reset" class="ghost-button" type="button">Reset</button>
+          </div>
+        </section>
+
+        <div id="inputs" class="inputs"></div>
+      </section>
+
+      <section class="panel viewport">
+        <div class="viewport-stage">
+          <div id="canvas-shell" class="canvas-shell">
+            <canvas id="canvas-flat"></canvas>
+            <canvas id="canvas-shader" hidden></canvas>
+
+            <div id="render-mode-picker" class="canvas-overlay canvas-overlay-bottom-left render-mode-picker">
+              <button
+                id="render-flat"
+                class="overlay-button render-mode-button"
+                type="button"
+                aria-label="Use simple flat renderer"
+                title="Simple flat renderer">
+                Flat
+              </button>
+              <button
+                id="render-shader"
+                class="overlay-button render-mode-button"
+                type="button"
+                aria-label="Use shader renderer"
+                title="Nice shader renderer">
+                Shader
+              </button>
+            </div>
+
+            <div class="canvas-overlay canvas-overlay-bottom-right">
+              <button
+                id="toggle-grid"
+                class="overlay-button overlay-icon-button"
+                type="button"
+                aria-label="Toggle grid"
+                title="Toggle grid">
+                <svg class="overlay-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M10 4v16" />
+                  <path d="M16 4v16" />
+                  <path d="M4 10h16" />
+                  <path d="M4 16h16" />
+                </svg>
+              </button>
+              <button
+                id="fit-view"
+                class="overlay-button overlay-icon-button"
+                type="button"
+                aria-label="Fit map to frame"
+                title="Fit map to frame">
+                <svg class="overlay-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 10V4h6" />
+                  <path d="M20 10V4h-6" />
+                  <path d="M4 14v6h6" />
+                  <path d="M20 14v6h-6" />
+                  <path d="M10 4 4 10" />
+                  <path d="M14 4 20 10" />
+                  <path d="m10 20-6-6" />
+                  <path d="m14 20 6-6" />
+                </svg>
+              </button>
+            </div>
+
+            <div id="story-picker" class="canvas-overlay canvas-overlay-side story-picker" hidden>
+              <select id="story-select" class="story-select"></select>
+            </div>
+
+            <div id="region-legend" class="canvas-overlay canvas-overlay-top-right region-legend" hidden></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./procgen-shaders.js"></script>
+  <script src="./app.js"></script>
+</body>
 </html>

@@ -30,6 +30,7 @@ pnpm-debug.log*
 *.suo
 .vs/
 artifacts/widgets/
+public/widgets/*.__staging
 
 # macOS-specific files
 .DS_Store

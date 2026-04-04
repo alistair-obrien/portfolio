@@ -1,54 +1,17 @@
-import { defineMarkdocConfig, component } from '@astrojs/markdoc/config';
-import shiki from '@astrojs/markdoc/shiki';
-import horizonLight from './src/themes/horizon-light.json';
-import horizonDark from './src/themes/horizon-dark.json';
-
-const codeHighlighting = await shiki({
-  themes: {
-    light: horizonLight,
-    dark: horizonDark,
-  },
-  defaultColor: 'light',
-  langAlias: {
-    cs: 'csharp',
-  },
-});
+import { component, defineMarkdocConfig } from "@astrojs/markdoc/config";
 
 export default defineMarkdocConfig({
-  extends: [codeHighlighting],
   tags: {
-    Spotify: {
-      render: component('./src/components/Spotify.astro'),
+    procgenembed: {
+      render: component("./src/components/blog/ProcGenEmbed.astro"),
+      selfClosing: true,
       attributes: {
-        url: { type: String, required: true },
+        eyebrow: { type: String },
+        title: { type: String },
+        description: { type: String },
+        src: { type: String, required: true },
+        height: { type: String },
       },
-    },
-    YouTube: {
-      render: component('./src/components/YouTube.astro'),
-      attributes: {
-        id: { type: String },
-        url: { type: String },
-      },
-    },
-    Twitter: {
-      render: component('./src/components/Twitter.astro'),
-      attributes: {
-        url: { type: String },
-        id: { type: String },
-        username: { type: String },
-      },
-    },
-    CopyOnWriteHistory: {
-      render: component('./src/components/CopyOnWriteHistory.astro'),
-      attributes: {},
-    },
-    SimulationBranching: {
-      render: component('./src/components/SimulationBranching.astro'),
-      attributes: {},
-    },
-    LiveCommandPreview: {
-      render: component('./src/components/LiveCommandPreview.astro'),
-      attributes: {},
     },
   },
 });

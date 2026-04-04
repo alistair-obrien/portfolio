@@ -1,17 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProcGenBrowserDemo from "../components/game/ProcGenBrowserDemo";
+import ProcGenEmbed from "../components/blog/ProcGenEmbed.astro";
+
+const widgetSrc = `/proc-gen${Astro.url.search}`;
 ---
 
 <Layout
-  title="Proc-Gen Showcase"
-  description="A browser-local procedural generation showcase powered by the shared C# ProcGen library compiled to WebAssembly."
+  title="Proc-Gen Dev Tool"
+  description="An inline proc-gen widget powered by the browser-local ProcGen WASM build."
 >
-  <main>
-    <div>
-      <section>
-        <ProcGenBrowserDemo client:load />
-      </section>
-    </div>
+  <main class="flex min-h-screen px-4 py-10 sm:px-6 lg:px-8">
+    <section class="mx-auto flex min-h-0 max-w-6xl flex-1 flex-col gap-6">
+      <header class="space-y-3">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
+          ProcGen Dev Tool
+        </p>
+        <h1 class="text-3xl font-semibold text-base-content sm:text-4xl">
+          Inline proc-gen widget
+        </h1>
+        <p class="max-w-3xl text-sm leading-7 text-base-content/70 sm:text-base">
+          This page uses the same inline widget component as the blog, with its
+          generator and control surface configured through query params.
+        </p>
+      </header>
+
+      <ProcGenEmbed src={widgetSrc} fullHeight={true} />
+    </section>
   </main>
 </Layout>

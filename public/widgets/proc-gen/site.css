@@ -1,0 +1,725 @@
+.procgen-standalone {
+  margin: 0;
+  background: #20252d;
+}
+
+.procgen-app {
+  --bg: #20252d;
+  --surface: #2a313d;
+  --surface-soft: #303846;
+  --surface-strong: #252c36;
+  --border: #394353;
+  --text: #dce5f2;
+  --text-muted: #7d8fa7;
+  --accent: #69d1d8;
+  --accent-soft: #415346;
+  --scroll-track: #252b35;
+  --scroll-thumb: #3f4b5e;
+  --scroll-thumb-hover: #f0f4fa;
+  --canvas: #242932;
+  --map-floor: #2f3643;
+  --map-wall: #0c3f6e;
+  --map-door: #9df18f;
+  --map-window: #84b8ff;
+  --map-grid: rgba(255, 255, 255, 0.09);
+  --map-outline: rgba(255, 255, 255, 0.08);
+  --region-default: #404958;
+  --region-outside: #353e4d;
+  --region-corridor: #35556d;
+  --region-access-core: #52436f;
+  --region-elevator: #866a44;
+  --region-stair: #6f4d59;
+  --region-apartment-zone: #4f5d47;
+  --region-apartment: #48626c;
+  --tooltip: #171d26;
+  --tooltip-border: #2b3442;
+  --font-lg: 1.2rem;
+  --font-md: 0.9rem;
+  --font-sm: 0.8rem;
+  --font-xs: 0.75rem;
+}
+
+.procgen-app,
+.procgen-app * {
+  box-sizing: border-box;
+  font-size: var(--font-md);
+}
+
+.procgen-app {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.procgen-app.embed-mode .shell {
+  padding: 0.75rem;
+  gap: 0.75rem;
+}
+
+.procgen-app.embed-mode .panel {
+  border-radius: 0.9rem;
+}
+
+.procgen-app.embed-mode .controls {
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.procgen-app.embed-mode .viewport {
+  padding: 0.75rem;
+}
+
+.procgen-app input,
+.procgen-app select,
+.procgen-app button {
+  font: inherit;
+}
+
+.procgen-app .shell {
+  display: grid;
+  grid-template-columns: minmax(19rem, 23rem) minmax(0, 1fr);
+  gap: 1rem;
+  height: 100dvh;
+  min-height: 100dvh;
+  padding: 1rem;
+}
+
+.procgen-app .panel {
+  min-height: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.procgen-app .controls,
+.procgen-app .viewport {
+  min-height: 0;
+  overflow: auto;
+  scrollbar-width: auto;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+.procgen-app .controls::-webkit-scrollbar,
+.procgen-app .viewport::-webkit-scrollbar {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.procgen-app .controls::-webkit-scrollbar-track,
+.procgen-app .viewport::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+
+.procgen-app .controls::-webkit-scrollbar-thumb,
+.procgen-app .viewport::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border: 3px solid var(--scroll-track);
+  border-radius: 999px;
+}
+
+.procgen-app .controls::-webkit-scrollbar-thumb:hover,
+.procgen-app .viewport::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+.procgen-app .controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1.35rem 1.2rem 1.5rem;
+}
+
+.procgen-app .controls-header {
+  padding-top: 0.2rem;
+}
+
+.procgen-app .controls-title {
+  margin: 0;
+  color: var(--accent);
+  font-size: var(--font-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.procgen-app .control-section {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.procgen-app .section-label {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.procgen-app .controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.procgen-app .controls-row-start {
+  align-items: stretch;
+}
+
+.procgen-app .controls-row-start select {
+  flex: 1 1 auto;
+}
+
+.procgen-app select,
+.procgen-app input[type="number"],
+.procgen-app .option-choice {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.procgen-app select {
+  padding: 0.72rem 0.9rem;
+}
+
+.procgen-app button {
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background: var(--accent);
+  color: #1e2623;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 120ms ease, border-color 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+}
+
+.procgen-app button:hover {
+  transform: translateY(-1px);
+}
+
+.procgen-app button:active {
+  transform: translateY(0);
+}
+
+.procgen-app .ghost-button {
+  padding: 0.72rem 0.92rem;
+  background: transparent;
+  color: var(--text);
+  border-color: #91abc2;
+  box-shadow: none;
+}
+
+.procgen-app .ghost-button:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.procgen-app .inputs {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.procgen-app .option-field {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.procgen-app .option-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 5.1rem;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.procgen-app .option-field.is-choice .option-header {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.procgen-app .option-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.procgen-app .option-name {
+  color: #c2ddff;
+  font-weight: 700;
+}
+
+.procgen-app .option-meta {
+  color: var(--text-muted);
+  font-size: var(--font-xs);
+  width: 100%;
+  text-align: center;
+  justify-self: stretch;
+}
+
+.procgen-app .option-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 5.1rem;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.procgen-app .option-controls.is-choice {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.procgen-app .option-slider {
+  width: 100%;
+  margin: 0;
+  appearance: none;
+  background: transparent;
+}
+
+.procgen-app .option-slider::-webkit-slider-runnable-track {
+  height: 0.46rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-soft), var(--accent-soft));
+}
+
+.procgen-app .option-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.27rem;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  background: var(--surface-strong);
+  box-shadow: 0 0 0 2px rgba(12, 18, 24, 0.45);
+}
+
+.procgen-app .option-slider::-moz-range-track {
+  height: 0.46rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+
+.procgen-app .option-slider::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  background: var(--surface-strong);
+  box-shadow: 0 0 0 2px rgba(12, 18, 24, 0.45);
+}
+
+.procgen-app .option-number {
+  padding: 0.62rem 0.75rem;
+  text-align: right;
+  color: var(--text);
+  background: var(--surface-soft);
+}
+
+.procgen-app .option-choice {
+  padding: 0.72rem 0.9rem;
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.procgen-app .rotation-choice-group,
+.procgen-app .shape-choice-group {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.procgen-app .rotation-choice-button,
+.procgen-app .shape-choice-button {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.4rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  background: var(--surface-soft);
+  color: var(--text-muted);
+  box-shadow: none;
+}
+
+.procgen-app .rotation-choice-button:hover,
+.procgen-app .shape-choice-button:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.procgen-app .rotation-choice-button.is-selected,
+.procgen-app .shape-choice-button.is-selected {
+  border-color: var(--accent);
+  background: rgba(153, 244, 141, 0.08);
+  color: var(--text);
+}
+
+.procgen-app .rotation-choice-button:focus-visible,
+.procgen-app .shape-choice-button:focus-visible {
+  outline: 2px solid rgba(153, 244, 141, 0.45);
+  outline-offset: 2px;
+}
+
+.procgen-app .rotation-choice-icon,
+.procgen-app .shape-choice-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.procgen-app .rotation-preview-icon {
+  width: 1.45rem;
+  height: 1.45rem;
+  fill: currentColor;
+}
+
+.procgen-app .rotation-choice-label,
+.procgen-app .shape-choice-label {
+  font-size: var(--font-xs);
+  line-height: 1;
+}
+
+.procgen-app .tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.procgen-app .tooltip-trigger {
+  width: 1.15rem;
+  height: 1.15rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.procgen-app .tooltip-trigger:hover,
+.procgen-app .tooltip-trigger:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.procgen-app .tooltip-trigger:focus-visible {
+  outline: none;
+}
+
+.procgen-app .tooltip-bubble {
+  position: absolute;
+  bottom: calc(100% + 0.55rem);
+  left: 0;
+  z-index: 10;
+  min-width: 14rem;
+  max-width: 16rem;
+  padding: 0.72rem 0.82rem;
+  border: 1px solid var(--tooltip-border);
+  border-radius: 0.8rem;
+  background: var(--tooltip);
+  color: var(--text);
+  font-size: var(--font-sm);
+  line-height: 1.45;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.24);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.2rem);
+  transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+  pointer-events: none;
+}
+
+.procgen-app .tooltip-bubble::before {
+  content: "";
+  position: absolute;
+  bottom: -0.42rem;
+  left: 1rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-right: 1px solid var(--tooltip-border);
+  border-bottom: 1px solid var(--tooltip-border);
+  background: var(--tooltip);
+  transform: rotate(45deg);
+}
+
+.procgen-app .tooltip:hover .tooltip-bubble,
+.procgen-app .tooltip:focus-within .tooltip-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-0.35rem);
+}
+
+.procgen-app .viewport {
+  padding: 1rem;
+}
+
+.procgen-app .viewport-stage,
+.procgen-app .canvas-shell {
+  height: 100%;
+  min-height: 20rem;
+}
+
+.procgen-app .canvas-shell {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.procgen-app canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.procgen-app #canvas-shader {
+  z-index: 0;
+}
+
+.procgen-app #canvas-flat {
+  z-index: 1;
+}
+
+.procgen-app .canvas-shell.is-dragging {
+  cursor: grabbing;
+}
+
+.procgen-app .canvas-overlay {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.procgen-app .canvas-overlay-side {
+  top: 0.75rem;
+  left: 0.75rem;
+}
+
+.procgen-app .canvas-overlay-top-right {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.procgen-app .canvas-overlay-bottom-right {
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.procgen-app .canvas-overlay-bottom-left {
+  left: 0.75rem;
+  bottom: 0.75rem;
+}
+
+.procgen-app .story-picker {
+  pointer-events: auto;
+}
+
+.procgen-app .story-select,
+.procgen-app .overlay-button {
+  pointer-events: auto;
+  border: 1px solid var(--border);
+  background: rgba(41, 48, 59, 0.94);
+  color: var(--text);
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.procgen-app .story-select {
+  min-width: 7rem;
+  padding: 0.62rem 0.8rem;
+  border-radius: 0.75rem;
+}
+
+.procgen-app .overlay-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.procgen-app .render-mode-picker {
+  display: inline-flex;
+  gap: 0.5rem;
+  pointer-events: auto;
+}
+
+.procgen-app .render-mode-button {
+  min-width: 4.8rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 999px;
+  font-size: var(--font-xs);
+  font-weight: 700;
+}
+
+.procgen-app .overlay-button.is-active {
+  border-color: var(--accent);
+  background: rgba(153, 244, 141, 0.08);
+  color: var(--text);
+}
+
+.procgen-app .region-legend {
+  display: grid;
+  gap: 0.45rem;
+  max-width: min(14rem, calc(100% - 8rem));
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  background: rgba(41, 48, 59, 0.94);
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.procgen-app .legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.procgen-app .legend-swatch {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 0.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 0 0 auto;
+}
+
+.procgen-app .legend-label {
+  font-size: var(--font-xs);
+  color: var(--text);
+}
+
+.procgen-app .overlay-icon-button {
+  width: 2.85rem;
+  height: 2.85rem;
+  padding: 0;
+  border-radius: 999px;
+}
+
+.procgen-app .overlay-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 1024px) {
+  .procgen-app .shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(15rem, 38dvh) minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .procgen-app .viewport {
+    grid-row: 1;
+    padding: 0.75rem;
+  }
+
+  .procgen-app .controls {
+    grid-row: 2;
+    padding: 1rem;
+  }
+
+  .procgen-app .viewport-stage,
+  .procgen-app .canvas-shell {
+    min-height: 0;
+  }
+
+  .procgen-app .canvas-shell {
+    height: min(38dvh, 22rem);
+  }
+}
+
+@media (max-width: 720px) {
+  .procgen-app .controls {
+    gap: 1rem;
+  }
+
+  .procgen-app .controls-title {
+    font-size: 1.05rem;
+  }
+
+  .procgen-app .control-section {
+    gap: 0.45rem;
+  }
+
+  .procgen-app .controls-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .procgen-app .ghost-button {
+    width: 100%;
+  }
+
+  .procgen-app .option-controls {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .procgen-app .rotation-choice-group,
+  .procgen-app .shape-choice-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .procgen-app .option-field {
+    gap: 0.4rem;
+  }
+
+  .procgen-app .option-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.6rem;
+  }
+
+  .procgen-app .option-number {
+    text-align: left;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .procgen-app .option-meta {
+    width: auto;
+    text-align: right;
+    justify-self: end;
+  }
+
+  .procgen-app .story-select {
+    min-width: 0;
+    max-width: 7rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .procgen-app .region-legend {
+    max-width: min(11rem, calc(100% - 7rem));
+    padding: 0.55rem;
+  }
+
+  .procgen-app .overlay-icon-button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .procgen-app .overlay-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .procgen-app .render-mode-picker {
+    gap: 0.4rem;
+  }
+
+  .procgen-app .render-mode-button {
+    min-width: 4.1rem;
+    padding: 0.55rem 0.7rem;
+  }
+}
