@@ -31,14 +31,19 @@ uniform vec3 u_wall_shadow;
 uniform vec3 u_outline_color;
 uniform vec3 u_prop_color;
 uniform vec3 u_item_color;
-uniform vec3 u_character_color;
 
+// Artist knobs:
+// These constants shape the overall look of the renderer and are the main
+// place to tweak mood, contrast, crispness, and material response.
+
+// Global lighting and gradient.
 const vec4 INNER_OUTLINE_COLOR = vec4(1.0, 1.0, 1.0, 1.0);
 const vec2 GRADIENT_DIRECTION = vec2(-0.8, -0.6);
 const float FLOOR_GRADIENT_STRENGTH = 0.85;
 const float WALL_GRADIENT_STRENGTH = 1.0;
 const float DETAIL_GRADIENT_STRENGTH = 1.0;
 
+// Small-detail contact shadowing for doors/windows/props.
 const float PROP_SHADOW_STRENGTH = 0.5;
 const vec2 PROP_SHADOW_DIRECTION = vec2(1.0, 1.0);
 const float PROP_SHADOW_FALLOFF = 2.89;
@@ -48,6 +53,7 @@ const float PROP_AO_STRENGTH = 0.25;
 const float PROP_AO_EDGE_REACH = 0.5;
 const float PROP_AO_FALLOFF = 1.0;
 
+// Large wall shadow and ambient occlusion.
 const float SHADOW_STRENGTH = 1.5;
 const vec2 SHADOW_DIRECTION = vec2(5.0, 5.0);
 const float SHADOW_FALLOFF = 2.89;
@@ -57,17 +63,21 @@ const float AO_STRENGTH = 0.25;
 const float AO_EDGE_REACH = 0.75;
 const float AO_FALLOFF = 1.0;
 
+// Wall interior highlight.
 const float OUTLINE_PIXELS = 2.0;
 const float OUTLINE_FALLOFF = 0.5;
 
+// Door/prop outline look.
 const vec4 PROP_OUTLINE_COLOR = vec4(0.7529412, 0.4862745, 0.28235295, 1.0);
 const float PROP_OUTLINE_PIXELS = 2.0;
 const float PROP_OUTLINE_FALLOFF = 0.0;
 
+// Window/item outline look.
 const vec4 ITEM_OUTLINE_COLOR = vec4(0.0, 0.0, 0.0, 0.7019608);
 const float ITEM_OUTLINE_PIXELS = 2.0;
 const float ITEM_OUTLINE_FALLOFF = 1.0;
 
+// Floor texture/noise breakup.
 const float FLOOR_NOISE_STRENGTH = 0.18;
 const vec3 FLOOR_NOISE_COLOR = vec3(0.0);
 

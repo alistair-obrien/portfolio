@@ -25,7 +25,7 @@ const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
 
 <link rel="stylesheet" href="/widgets/proc-gen/site.css" />
 
-<div class:list={["not-prose", fullHeight ? "flex min-h-0 flex-1 flex-col" : "my-10"]}>
+<div class:list={["not-prose", fullHeight ? "flex min-h-0 flex-1 flex-col overflow-hidden" : "my-10"]}>
   {(eyebrow || title || description) && (
     <div class="mb-4">
       {eyebrow && (
@@ -63,13 +63,29 @@ const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
 
   .procgen-inline-shell.procgen-app > .shell {
     height: 100% !important;
-    min-height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
     padding: 0;
+    overflow: hidden;
   }
 
   .procgen-inline-shell.procgen-app > .shell .controls,
   .procgen-inline-shell.procgen-app > .shell .viewport {
+    min-height: 0;
     max-height: 100%;
+  }
+
+  .procgen-inline-shell-full.procgen-app > .shell .controls {
+    overflow: auto;
+  }
+
+  .procgen-inline-shell-full.procgen-app > .shell .viewport {
+    overflow: hidden;
+  }
+
+  .procgen-inline-shell-full.procgen-app > .shell .viewport-stage,
+  .procgen-inline-shell-full.procgen-app > .shell .canvas-shell {
+    min-height: 0 !important;
   }
 
   .procgen-inline-shell .panel {
@@ -77,9 +93,11 @@ const hostId = `procgen-host-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, "-")}`;
   }
 
   .procgen-inline-shell-full {
-    flex: 1 1 auto;
+    display: flex;
+    flex: 1 1 0;
     min-height: 0;
     height: 100%;
+    max-height: 100%;
   }
 </style>
 

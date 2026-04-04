@@ -879,7 +879,6 @@ function ensureShaderRuntime() {
       outlineColor: gl.getUniformLocation(program, "u_outline_color"),
       propColor: gl.getUniformLocation(program, "u_prop_color"),
       itemColor: gl.getUniformLocation(program, "u_item_color"),
-      characterColor: gl.getUniformLocation(program, "u_character_color"),
     },
   };
 
@@ -1360,7 +1359,6 @@ function renderShaderMap(width, height, dpr) {
   gl.uniform3fv(runtime.uniforms.outlineColor, [1, 1, 1]);
   gl.uniform3fv(runtime.uniforms.propColor, parseColorToRgb(getThemeColor("--map-door", "#9df18f"), [0.62, 0.95, 0.56]));
   gl.uniform3fv(runtime.uniforms.itemColor, parseColorToRgb(getThemeColor("--map-window", "#84b8ff"), [0.52, 0.72, 1]));
-  gl.uniform3fv(runtime.uniforms.characterColor, [0.93, 0.33, 0.47]);
   gl.drawArrays(gl.TRIANGLES, 0, 6);
 
   if (gridEnabled || currentMap) {

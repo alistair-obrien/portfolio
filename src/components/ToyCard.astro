@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import SkillBadge from "./SkillBadge.astro";
+import PlatformBadge from "./PlatformBadge.astro";
+import { Maximize2 } from "@lucide/astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  toy: CollectionEntry<"toys">;
+}
+
+const { toy } = Astro.props;
+
+function formatPeriod(startDate: Date, endDate?: Date) {
+  const options: Intl.DateTimeFormatOptions = {
+    month: "short",
+    year: "numeric",
+  };
+  const start = startDate.toLocaleDateString("en-US", options);
+  const end = endDate
+    ? endDate.toLocaleDateString("en-US", options)
+    : "Present";
+  return `${start} - ${end}`;
+}
+---
+
+<article class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+  <a class="hover:opacity-80 transition-opacity" href={`/toys/${toy.id}`}>
+    <figure class="aspect-video">
+      <Image
+        src={toy.data.image}
+        alt={toy.data.title}
+        class="w-full h-full object-cover"
+        width={600}
+        height={400}
+      />
+    </figure>
+  </a>
+  <div class="card-body">
+    <h3 class="card-title hover:text-primary transition-colors">
+      <a href={`/toys/${toy.id}`}>{toy.data.title}</a>
+    </h3>
+    <time class="text-sm text-base-content/60">
+      {formatPeriod(toy.data.startDate, toy.data.endDate)}
+    </time>
+    <p class="text-base-content/80">{toy.data.description}</p>
+    <div class="flex flex-wrap gap-2 mt-2">
+      {toy.data.skills.map((skill) => <SkillBadge skill={skill} />)}
+    </div>
+    <div class="flex flex-wrap gap-2 mt-2">
+      {toy.data.platforms?.map((platform) => <PlatformBadge platform={platform} />)}
+    </div>
+    <div class="card-actions justify-end mt-4 gap-2">
+      {toy.data.fullscreenLink && (
+        <a
+          href={toy.data.fullscreenLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-sm btn-soft gap-1"
+        >
+          <Maximize2 class="size-4" />
+          Fullscreen
+        </a>
+      )}
+      <a href={`/toys/${toy.id}`} class="btn btn-sm btn-primary">
+        Explore Toy
+      </a>
+    </div>
+  </div>
+</article>

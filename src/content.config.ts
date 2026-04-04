@@ -107,6 +107,30 @@ const tools = defineCollection({
     }),
 });
 
+// Toys collection
+const toys = defineCollection({
+  loader: glob({
+    pattern: "**/*.{md,mdoc,yaml}",
+    base: "./src/content/toys",
+  }),
+  schema: ({ image }) =>
+    z.object({
+      featured: z.boolean().optional().default(false),
+      title: z.string(),
+      description: z.string(),
+      image: image(),
+      startDate: z.coerce.date(),
+      endDate: z.coerce.date().optional(),
+      skills: z.array(z.string()),
+      platforms: z.array(z.string()).optional(),
+      demoLink: z.string().url().optional(),
+      sourceLink: z.string().url().optional(),
+      widgetSrc: z.string().optional(),
+      widgetHeight: z.string().optional(),
+      fullscreenLink: z.string().optional(),
+    }),
+});
+
 // Hackathons collection
 const hackathons = defineCollection({
   loader: glob({
@@ -179,6 +203,7 @@ const general = defineCollection({
     showAboutSection: z.boolean(),
     showProjectsSection: z.boolean(),
     showToolsSection: z.boolean(),
+    showToysSection: z.boolean(),
     showBlogSection: z.boolean(),
     showWorkSection: z.boolean(),
     showEducationSection: z.boolean(),
@@ -207,6 +232,7 @@ export const collections = {
   education,
   projects,
   tools,
+  toys,
   hackathons,
   blog,
   about,
