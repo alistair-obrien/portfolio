@@ -148,7 +148,11 @@
   gap: var(--shell-gap);
   height: 100dvh;
   min-height: 100dvh;
-  padding: var(--space-5);
+  padding:
+    var(--space-5)
+    var(--space-5)
+    max(var(--space-5), env(safe-area-inset-bottom))
+    var(--space-5);
 }
 
 .procgen-app .panel {
@@ -163,9 +167,18 @@
 .procgen-app .controls,
 .procgen-app .viewport {
   min-height: 0;
-  overflow: auto;
+  overflow-x: hidden;
   scrollbar-width: auto;
   scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  -webkit-overflow-scrolling: touch;
+}
+
+.procgen-app .controls {
+  overflow-y: auto;
+}
+
+.procgen-app .viewport {
+  overflow: hidden;
 }
 
 .procgen-app .controls::-webkit-scrollbar,
@@ -545,13 +558,29 @@
 .procgen-app .canvas-shell {
   height: 100%;
   min-height: var(--canvas-min-height);
+  width: 100%;
+  min-width: 0;
+}
+
+.procgen-app .viewport-stage {
+  display: flex;
 }
 
 .procgen-app .canvas-shell {
   position: relative;
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   overflow: hidden;
   cursor: grab;
   touch-action: none;
+}
+
+.procgen-app .canvas-stage {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  width: 100%;
 }
 
 .procgen-app canvas {
@@ -610,7 +639,6 @@
 .procgen-app .render-mode-picker {
   display: inline-flex;
   gap: var(--space-2);
-  pointer-events: auto;
 }
 
 .procgen-app .render-mode-button {
@@ -625,6 +653,28 @@
   border-color: var(--accent);
   background: var(--accent-selected-bg);
   color: var(--text);
+}
+
+.procgen-app .canvas-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.procgen-app .canvas-actions {
+  display: inline-flex;
+  gap: var(--space-2);
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.procgen-app .fullscreen-control {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 6;
 }
 
 /* ─── Region legend ─── */
@@ -681,9 +731,13 @@
 @media (max-width: 1024px) {
   .procgen-app .shell {
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(15rem, 38dvh) minmax(0, 1fr);
+    grid-template-rows: minmax(18rem, 44dvh) minmax(0, 1fr);
     gap: var(--space-4);
-    padding: var(--space-4);
+    padding:
+      var(--space-4)
+      var(--space-4)
+      max(var(--space-4), env(safe-area-inset-bottom))
+      var(--space-4);
   }
 
   .procgen-app .viewport {
@@ -702,7 +756,7 @@
   }
 
   .procgen-app .canvas-shell {
-    height: min(38dvh, 22rem);
+    height: 100%;
   }
 }
 
@@ -711,23 +765,32 @@
   .procgen-app .shell {
     padding: var(--space-3);
     gap: var(--space-3);
-    grid-template-rows: minmax(12rem, 14rem) minmax(0, 1fr);
+    grid-template-rows: minmax(17.5rem, 21rem) minmax(0, 1fr);
   }
 
   .procgen-app.embed-mode .shell {
-    grid-template-rows: minmax(11rem, 13rem) minmax(0, 1fr);
+    grid-template-rows: minmax(16rem, 18.5rem) minmax(0, 1fr);
   }
 
   .procgen-app .viewport {
-    padding: var(--space-3);
+    padding: 0;
     min-width: 0;
   }
 
   .procgen-app .controls {
-    gap: var(--space-4);
-    padding: var(--space-4);
+    gap: var(--space-3);
+    padding: var(--space-3);
     min-width: 0;
     overflow: auto;
+  }
+
+  .procgen-app select {
+    padding: 0.4rem 0.65rem;
+    font-size: var(--font-sm);
+  }
+
+  .procgen-app button {
+    font-size: var(--font-sm);
   }
 
   .procgen-app .controls-title { font-size: 1.05rem; }
@@ -740,9 +803,9 @@
 
   .procgen-app .ghost-button { width: 100%; }
 
-  .procgen-app .option-controls {
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
+  .procgen-app .option-controls:not(.is-choice) {
+    grid-template-columns: minmax(0, 1fr) 4.6rem;
+    gap: var(--space-2);
   }
 
   .procgen-app .rotation-choice-group,
@@ -757,21 +820,28 @@
     gap: 0.6rem;
   }
 
+  .procgen-app .option-label {
+    font-size: var(--font-sm);
+  }
+
   .procgen-app .option-number {
-    text-align: left;
-    padding: 0.7rem 0.85rem;
+    text-align: right;
+    padding: 0.45rem 0.65rem;
+    font-size: var(--font-sm);
   }
 
   .procgen-app .option-meta {
     width: auto;
     text-align: right;
     justify-self: end;
+    font-size: var(--font-xs);
   }
 
   .procgen-app .story-select {
     min-width: 0;
-    max-width: 6.5rem;
-    padding: 0.5rem 0.65rem;
+    max-width: 5.75rem;
+    padding: 0.4rem 0.55rem;
+    font-size: var(--font-sm);
   }
 
   .procgen-app .region-legend {
@@ -781,41 +851,26 @@
   .procgen-app .canvas-overlay-left-center {
     top: auto;
     left: var(--space-3);
-    bottom: 5.25rem;
+    bottom: var(--space-3);
     transform: none;
   }
 
-  .procgen-app .canvas-overlay-top-right {
-    top: var(--space-3);
-    right: var(--space-3);
-  }
-
-  .procgen-app .canvas-overlay-bottom-right {
-    right: var(--space-3);
-    bottom: var(--space-3);
-    gap: var(--space-2);
-  }
-
-  .procgen-app .canvas-overlay-bottom-left {
-    left: var(--space-3);
-    bottom: var(--space-3);
-  }
-
   .procgen-app .overlay-icon-button {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .procgen-app .overlay-icon {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 0.8rem;
+    height: 0.8rem;
   }
 
   .procgen-app .render-mode-picker { gap: 0.4rem; }
 
   .procgen-app .render-mode-button {
-    min-width: 3.7rem;
-    padding: 0.45rem 0.6rem;
+    min-width: 3.25rem;
+    padding: 0.4rem 0.55rem;
+    font-size: var(--font-sm);
   }
 
   .procgen-app .legend-label {
@@ -826,5 +881,49 @@
   .procgen-app .canvas-shell {
     width: 100%;
     min-width: 0;
+  }
+
+  .procgen-app .canvas-shell {
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .procgen-app .canvas-bottom-bar {
+    position: absolute;
+    left: var(--space-3);
+    right: var(--space-3);
+    bottom: var(--space-3);
+    z-index: 6;
+    padding: 0;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-2);
+    pointer-events: none;
+  }
+
+  .procgen-app .render-mode-picker,
+  .procgen-app .canvas-actions {
+    pointer-events: auto;
+  }
+
+  .procgen-app .canvas-actions {
+    gap: 0.45rem;
+  }
+
+  .procgen-app .fullscreen-control {
+    position: static;
+  }
+
+  .procgen-app .option-choice {
+    min-height: 3rem;
+    padding: 0.45rem 0.4rem;
+  }
+
+  .procgen-app .choice-icon {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  .procgen-app .choice-label {
+    font-size: var(--font-xs);
   }
 }

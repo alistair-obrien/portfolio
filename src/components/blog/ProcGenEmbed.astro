@@ -109,15 +109,16 @@ const widgetAssetVersion = Date.now().toString();
 
   @media (max-width: 1024px) {
     .procgen-inline-shell:not(.procgen-inline-shell-full) {
-      height: min(var(--procgen-inline-height, 44rem), 78svh) !important;
+      height: min(var(--procgen-inline-height, 44rem), 80svh) !important;
       min-height: 32rem;
-      max-height: 78svh;
+      max-height: 80svh;
       overflow: hidden;
     }
 
     .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell {
-      display: flex !important;
-      flex-direction: column;
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      grid-template-rows: minmax(15.5rem, 17.5rem) minmax(0, 1fr) !important;
       height: 100% !important;
       min-height: 0 !important;
       max-height: 100% !important;
@@ -126,19 +127,20 @@ const widgetAssetVersion = Date.now().toString();
     }
 
     .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell > .panel {
+      grid-column: 1;
       width: 100%;
       min-width: 0;
     }
 
     .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .viewport {
-      flex: 0 0 14rem;
-      min-height: 14rem;
-      max-height: 14rem;
+      grid-row: 1;
+      min-height: 0;
+      max-height: none;
       overflow: hidden;
     }
 
     .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .controls {
-      flex: 1 1 auto;
+      grid-row: 2;
       min-height: 0;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
@@ -155,24 +157,14 @@ const widgetAssetVersion = Date.now().toString();
 
   @media (max-width: 720px) {
     .procgen-inline-shell:not(.procgen-inline-shell-full) {
-      height: min(var(--procgen-inline-height, 44rem), 76svh) !important;
+      height: min(var(--procgen-inline-height, 44rem), 78svh) !important;
       min-height: 30rem;
-      max-height: 76svh;
+      max-height: 78svh;
       overflow: hidden;
     }
 
-    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .viewport {
-      flex: 0 0 13rem;
-      min-height: 13rem;
-      max-height: 13rem;
-      overflow: hidden;
-    }
-
-    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .controls {
-      flex: 1 1 auto;
-      min-height: 0;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
+    .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell {
+      grid-template-rows: minmax(14rem, 15rem) minmax(0, 1fr) !important;
     }
 
     .procgen-inline-shell:not(.procgen-inline-shell-full).procgen-app > .shell .viewport-stage,

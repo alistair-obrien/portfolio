@@ -1219,7 +1219,7 @@ function renderStoryPicker() {
     return;
   }
 
-  storyPicker.hidden = embedConfig.hideStoryPicker;
+  storyPicker.hidden = embedConfig.hideStoryPicker || currentMap.stories <= 1;
   storySelect.innerHTML = "";
 
   for (let storyIndex = currentMap.stories - 1; storyIndex >= 0; storyIndex -= 1) {
@@ -1696,7 +1696,7 @@ function onPointerDown(event) {
     return;
   }
 
-  if (event.target instanceof Element && event.target.closest(".canvas-overlay")) {
+  if (event.target instanceof Element && (event.target.closest(".canvas-overlay") || event.target.closest(".canvas-bottom-bar"))) {
     return;
   }
 
