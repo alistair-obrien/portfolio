@@ -6,6 +6,98 @@ image: '@assets/blog/generating-apartment-complexes/image.png'
 publishDate: 2026-04-01
 tags: []
 ---
+
+TAKE TWO
+
+### Plot Parameters
+The first thing to define is the overall footprint of the building.
+What's fairly liberating about this step, and helpful to the generation uniqueness is that there are actually two footprints to consider.
+The X and Y of the entire plot, and then the amount of stories (Z).
+
+We can consider this our constant. This can never change (We would have to buy another plot of land to change it). 
+So this is the first thing we set, and then all the rest of the generation process has to work within that constraint.
+
+It's liberating in the sense that even if there's only space for a few apartments on a single floor, the building can still pack in more units vertically.
+For generation it makes things very interesting as a small narrow space can still be viable for a high end luxury tower, while a large plot can be packed densely with less stories for a lower socio economic residential space.
+
+By using the XY size and shape as a limit therefore makes it a bit easier to reason about certain generated architecture, such as corridor paths, access point placements and how many apartments can actually fit on each floor.
+
+So the first step of the entire process is going to be to define the overall plot size and shape.
+
+
+{% procgenembed
+   eyebrow="Interactive Demo"
+   src="/proc-gen?embed=1&generator=Apartment_StageOne&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&horizontalCorridorLength=56&verticalCorridorLength=36&corridorWidth=5"
+   height="44rem" /%}
+
+### Apartment Parameters
+
+Now that we have a way to define the overall plot (which later can be derived from a simply divided city block), we now need to define the apartment parameters.
+
+We are essentially jumping right into creating the living space we want to serve and ignoring access and circulation for now.
+
+There are a few variables we could use here which, when combined, form the type of tenants we are designing for.
+- Apartment Layout: Is this building serving familiies, students, single professionals, elites? Japan has some good classifications for this. 1R, 1K, 1DK, 1LDK, 2LDK, etc.
+- Location: Is this building in the city center, or in the suburbs? Is it in a high density area where space is at a premium, or is it in a more sprawling area where space is abundant?
+- Building Age: When was this building built? Older buildings tend to have larger units. Large does not mean more luxurious. So the size of the apartment is not necessarily a direct correlation to the wealth of the tenants.
+- Target Demographic: How wealthy are the tenants? This can influence the spacing of the apartments, and the amount of emphasis pput on exterior features such as balconies and windows.
+
+At this stage we are roleplaying as the real estate developer, making sure to create the most efficient and profitable building possible for the target demographic.
+We can pack low socio economic tenants more densely, and omit exterior features. However high end luxury apartments need to have more spacing between them so as to consider mitigating sound pollutions and emphasizing the amount of light that can come in.
+
+We can create the general apartment standalone for now and then simply place them primitively in the plot.
+We want to create the ideal apartment for the demographic and plot size, and then derive the access and circulation from there.
+This way we are serving the living space first, and making compromises on the circulation and access second, rather than the other way around.
+
+Note that at this point we are looking only at the internal layout of the apartment, and not thinking about exterior features such as balconies and windows yet. 
+That comes later.
+
+If our intended apartment layout doesnt fit enough in the plot, then we do have the option to build vertical. A 2 story apartment for example.
+
+What is enough? Minimum 4 apartments per floor for a building to be viable.
+If we can not fit 4 apartments per floor, then we, as the developer have made a poor investment and must reconsider our demographic for the plot we are working with.
+
+Important to note, apartment blocks tend to serve one layout type. So we are not trying to fit a mix of 1R, 1K, 1DK, 1LDK, 2LDK, etc in the same building. 
+We are picking one layout and then packing it as efficiently as possible.
+
+{% procgenembed
+   eyebrow="Interactive Demo"
+   src="/proc-gen?embed=1&generator=Apartment_StageOne&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&horizontalCorridorLength=56&verticalCorridorLength=36&corridorWidth=5"
+   height="44rem" /%}
+
+### Circulation and Access
+Circulation and access are defined based on the shape and the available area left after roughly placing the apartments.
+The circulation is the path that connects the apartments to the access points, and the access points are the points of entry and exit for the building, such as elevators and stairwells.
+
+We can derive the area available for circulation and access from the total plot size minus the area taken up by the apartments.
+
+Let's also introduce a symmetry variable here. Luxury apartments tend to have more symmetry in their circulation and access, while lower socio economic apartments tend to be more utilitarian and less concerned with symmetry.
+So we can derive the symmetry from the target demographic as well.
+
+Additionally we want to ensure spacing between apartments is affected by the target demographic as well. Luxury apartments need more spacing between them, while lower socio economic apartments can be packed more densely.
+
+For a packed apartment block, we want to create a grid of all apartments that we can fit.
+Then we can carve circulation paths through that grid, and place access points in a way that serves the circulation paths.
+
+For a more luxury apartment block, we want to relax the apartments in a symmetrical way.
+We can start with a grid and then relax the apartments outwards from the center, creating more space between them and more room for circulation and access.
+The space resulting in the center will define our circulation and access pattern.
+
+If we think about it in terms of pure numbers, we have an X relaxation and a Y relaxation variable.
+
+X represents how much apartments are relaxed horizontally, and Y represents how much apartments are from the circulation paths.
+
+When X is 0, apartments are packed right next to each other with no horizontal spacing. As X increases, apartments are relaxed further apart horizontally, creating more space for circulation and access.
+
+{% procgenembed
+   eyebrow="Interactive Demo"
+   src="/proc-gen?embed=1&generator=Apartment_StageTwo&lockGenerator=1&hideGenerator=1&hideTitle=1&shape=enclosed&rotation=0deg&horizontalCorridorLength=56&verticalCorridorLength=36&corridorWidth=5&elevatorSize=4&stairwellSize=6&elevatorSide=0&stairSide=1&accessArrangement=1"
+   height="44rem" /%}
+
+---
+
+OLD
+
 A first helpful step of any proc gen is to gather references, analyze and reduce to the simplest rulesets/conditions as possible.
 
 Its too easy to throw in some noise or other random input and end up with something that maybe is visually interesting, but lacks the intention.

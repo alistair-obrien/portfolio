@@ -25,6 +25,9 @@ const flatCtx = flatCanvas.getContext("2d");
 const appRoot = document.getElementById("procgen-app") || flatCanvas.closest(".procgen-app") || document.body;
 
 const storageKey = runtimeConfig.storageKey || "procgen-devapp-state";
+const syncGroup = String(runtimeConfig.syncGroup || "").trim();
+const syncInstanceId = String(runtimeConfig.instanceId || `procgen-${Math.random().toString(36).slice(2)}`);
+const procGenSyncEventName = "procgen:sync-options";
 const autoRegenDelayMs = 180;
 const viewportPadding = 32;
 const minZoomMultiplier = 0.35;
@@ -48,6 +51,7 @@ let gl = null;
 let shaderRuntime = null;
 let noiseTexture = null;
 let fullscreenTarget = null;
+let suppressSyncBroadcast = false;
 
 const knownEmbedParams = new Set([
   "embed",
@@ -283,6 +287,13 @@ function getDefaultOptions(generatorId) {
   );
 }
 
+function getOptionInitialValue(option, defaults) {
+  return normalizeOptionValue(
+    option,
+    Number(defaults?.[option.key] ?? option.value ?? option.defaultValue),
+  );
+}
+
 function loadState() {
   try {
     const raw = localStorage.getItem(storageKey);
@@ -309,6 +320,14 @@ function loadState() {
   }
 }
 
+function getProcGenSyncStore() {
+  if (!window.__procgenSyncStore || typeof window.__procgenSyncStore !== "object") {
+    window.__procgenSyncStore = {};
+  }
+
+  return window.__procgenSyncStore;
+}
+
 function saveState() {
   localStorage.setItem(
     storageKey,
@@ -322,6 +341,134 @@ function saveState() {
       renderMode,
     }),
   );
+}
+
+function setOptionControlValue(option, value) {
+  const normalized = normalizeOptionValue(option, value);
+
+  inputsRoot.querySelectorAll(`.option-control[name="${option.key}"]`).forEach((control) => {
+    control.value = String(normalized);
+  });
+
+  if (isRotationOption(option)) {
+    inputsRoot.querySelectorAll(".rotation-choice-button").forEach((button) => {
+      const isSelected = Number(button.dataset.value) === normalized;
+      button.classList.toggle("is-selected", isSelected);
+      button.setAttribute("aria-pressed", isSelected ? "true" : "false");
+    });
+    refreshShapeChoiceButtons();
+  }
+
+  if (option.key === "shape") {
+    inputsRoot.querySelectorAll(".shape-choice-button").forEach((button) => {
+      const isSelected = Number(button.dataset.value) === normalized;
+      button.classList.toggle("is-selected", isSelected);
+      button.setAttribute("aria-pressed", isSelected ? "true" : "false");
+    });
+    refreshRotationChoiceButtons();
+  }
+
+  return normalized;
+}
+
+function broadcastSynchronizedOptions() {
+  if (!syncGroup || suppressSyncBroadcast) {
+    return;
+  }
+
+  const payload = {
+    group: syncGroup,
+    instanceId: syncInstanceId,
+    generatorId: generatorSelect.value,
+    options: readOptions(),
+  };
+
+  getProcGenSyncStore()[syncGroup] = payload;
+  window.dispatchEvent(new CustomEvent(procGenSyncEventName, { detail: payload }));
+}
+
+function applySynchronizedOptions(
+  options,
+  {
+    resetViewport = false,
+    shouldGenerate = true,
+  } = {},
+) {
+  if (!options || typeof options !== "object") {
+    return false;
+  }
+
+  let changed = false;
+
+  (generatorDefinitionById[generatorSelect.value]?.options || []).forEach((option) => {
+    if (!(option.key in options)) {
+      return;
+    }
+
+    const rawValue = Number(options[option.key]);
+    if (!Number.isFinite(rawValue)) {
+      return;
+    }
+
+    const nextValue = normalizeOptionValue(option, rawValue);
+    const controls = inputsRoot.querySelectorAll(`.option-control[name="${option.key}"]`);
+    if (controls.length === 0) {
+      return;
+    }
+
+    const currentValue = Number(controls[0].value);
+    if (currentValue === nextValue) {
+      return;
+    }
+
+    setOptionControlValue(option, nextValue);
+    changed = true;
+  });
+
+  if (!changed) {
+    return false;
+  }
+
+  saveState();
+
+  if (shouldGenerate) {
+    queueGenerate(resetViewport);
+  }
+
+  return true;
+}
+
+function seedSynchronizedOptions() {
+  if (!syncGroup) {
+    return;
+  }
+
+  const existing = getProcGenSyncStore()[syncGroup];
+  if (existing?.instanceId && existing.instanceId !== syncInstanceId) {
+    suppressSyncBroadcast = true;
+    try {
+      applySynchronizedOptions(existing.options, { shouldGenerate: false });
+    } finally {
+      suppressSyncBroadcast = false;
+    }
+    return;
+  }
+
+  broadcastSynchronizedOptions();
+}
+
+function handleSynchronizedOptions(event) {
+  const detail = event?.detail;
+  if (!detail || detail.group !== syncGroup || detail.instanceId === syncInstanceId) {
+    return;
+  }
+
+  suppressSyncBroadcast = true;
+  try {
+    applySynchronizedOptions(detail.options, { resetViewport: false, shouldGenerate: true });
+  } finally {
+    suppressSyncBroadcast = false;
+  }
 }
 
 function parseOptionOverride(option, rawValue) {
@@ -367,13 +514,11 @@ function getInitialOptions(generatorId, savedState) {
     ? (savedState.options || {})
     : {};
 
-  return applyEmbedOptionOverrides(
-    generatorId,
-    {
-      ...getDefaultOptions(generatorId),
-      ...savedOptions,
-    },
-  );
+  return {
+    ...getDefaultOptions(generatorId),
+    ...applyEmbedOptionOverrides(generatorId, {}),
+    ...savedOptions,
+  };
 }
 
 function applyEmbedChrome() {
@@ -678,10 +823,7 @@ function buildInputs() {
     const meta = document.createElement("div");
     const controls = document.createElement("div");
     const isLocked = embedConfig.lockedOptions.has(option.key);
-    const initialValue = normalizeOptionValue(
-      option,
-      Number(defaults[option.key] ?? option.defaultValue),
-    );
+    const initialValue = getOptionInitialValue(option, defaults);
 
     field.className = "option-field";
     header.className = "option-header";
@@ -723,26 +865,7 @@ function buildInputs() {
         return;
       }
 
-      const normalized = normalizeOptionValue(option, value);
-      controls.querySelectorAll(".option-control").forEach((control) => {
-        control.value = String(normalized);
-      });
-      if (isRotationOption(option)) {
-        controls.querySelectorAll(".rotation-choice-button").forEach((button) => {
-          const isSelected = Number(button.dataset.value) === normalized;
-          button.classList.toggle("is-selected", isSelected);
-          button.setAttribute("aria-pressed", isSelected ? "true" : "false");
-        });
-        refreshShapeChoiceButtons();
-      }
-      if (option.key === "shape") {
-        controls.querySelectorAll(".shape-choice-button").forEach((button) => {
-          const isSelected = Number(button.dataset.value) === normalized;
-          button.classList.toggle("is-selected", isSelected);
-          button.setAttribute("aria-pressed", isSelected ? "true" : "false");
-        });
-        refreshRotationChoiceButtons();
-      }
+      setOptionControlValue(option, value);
       onSettingsChanged(false);
     };
 
@@ -884,6 +1007,16 @@ function readOptions() {
   });
 
   return options;
+}
+
+function applyResolvedOptions(generatorId, resolvedOptions) {
+  const definition = generatorDefinitionById[generatorId];
+  if (!definition || !Array.isArray(resolvedOptions) || resolvedOptions.length === 0) {
+    return false;
+  }
+
+  definition.options = resolvedOptions;
+  return true;
 }
 
 function parseColorToRgb(color, fallback) {
@@ -1142,6 +1275,7 @@ function queueGenerate(resetViewport = true) {
 
 function onSettingsChanged(resetViewport = false) {
   saveState();
+  broadcastSynchronizedOptions();
 
   // if (autoRegenCheckbox.checked) {
     queueGenerate(resetViewport);
@@ -1270,6 +1404,7 @@ function createStorySnapshot(layers) {
   }
   drawFlatCells(snapshotContext, layers?.lowWalls || [], getThemeColor("--map-low-wall", "#b59e82"));
   drawFlatCells(snapshotContext, layers?.walls || [], getThemeColor("--map-wall", "#d87b24"));
+  drawFlatCells(snapshotContext, layers?.doors || [], getThemeColor("--map-door", "#f6f1c7"));
   drawFlatCells(snapshotContext, layers?.windows || [], getThemeColor("--map-window", "#84b8ff"));
 
   return snapshot;
@@ -1278,7 +1413,7 @@ function createStorySnapshot(layers) {
 function getRegionColor(kind) {
   switch ((kind || "").toLowerCase()) {
     case "corridor":
-      return getThemeColor("--region-corridor", "#365c7b");
+      return getThemeColor("--region-corridor", "rgba(64, 142, 255, 0.56)");
     case "outside":
       return getThemeColor("--region-outside", "#353e4d");
     case "accesscore":
@@ -1294,7 +1429,11 @@ function getRegionColor(kind) {
     case "apartment-zone":
       return getThemeColor("--region-apartment-zone", "#55604c");
     case "apartment":
-      return getThemeColor("--region-apartment", "#49636f");
+      return getThemeColor("--region-apartment", "rgba(255, 68, 68, 0.62)");
+    case "apartment-potential":
+      return getThemeColor("--region-apartment", "rgba(255, 68, 68, 0.62)");
+    case "apartment-placement":
+      return getThemeColor("--region-apartment-placement", "rgba(255, 136, 64, 0.66)");
     case "balcony":
       return getThemeColor("--region-balcony", "#5b6773");
     case "room-ldk":
@@ -1319,6 +1458,441 @@ function drawRegions(targetContext, regions) {
       targetContext.fillRect(rect.x, rect.y, rect.width, rect.height);
     });
   });
+}
+
+function getEdgeColor(edge) {
+  const edgeId = edge?.id || "";
+  switch (edgeId) {
+    case "facade-north":
+      return "#ff8a5b";
+    case "facade-east":
+      return "#56c7ff";
+    case "facade-south":
+      return "#9bdb4d";
+    case "facade-west":
+      return "#f2c14e";
+    default:
+      return "#f77fbe";
+  }
+}
+
+function getEdgePlacementInfo(points) {
+  if (!Array.isArray(points) || points.length < 4) {
+    return null;
+  }
+
+  let minX = Number.POSITIVE_INFINITY;
+  let maxX = Number.NEGATIVE_INFINITY;
+  let minY = Number.POSITIVE_INFINITY;
+  let maxY = Number.NEGATIVE_INFINITY;
+  let totalLength = 0;
+  const segments = [];
+
+  for (let index = 0; index <= points.length - 4; index += 2) {
+    const x1 = points[index];
+    const y1 = points[index + 1];
+    const x2 = points[index + 2];
+    const y2 = points[index + 3];
+    const length = Math.hypot(x2 - x1, y2 - y1);
+    segments.push({ x1, y1, x2, y2, length });
+    totalLength += length;
+  }
+
+  for (let index = 0; index < points.length; index += 2) {
+    minX = Math.min(minX, points[index]);
+    maxX = Math.max(maxX, points[index]);
+    minY = Math.min(minY, points[index + 1]);
+    maxY = Math.max(maxY, points[index + 1]);
+  }
+
+  const width = maxX - minX;
+  const height = maxY - minY;
+  const mapCenterX = currentMap.width * 0.5;
+  const mapCenterY = currentMap.height * 0.5;
+  const anchorX = (minX + maxX) * 0.5;
+  const anchorY = (minY + maxY) * 0.5;
+
+  let side = "top";
+  if (width >= height) {
+    side = anchorY <= mapCenterY ? "top" : "bottom";
+  } else {
+    side = anchorX <= mapCenterX ? "left" : "right";
+  }
+
+  return {
+    minX,
+    maxX,
+    minY,
+    maxY,
+    width,
+    height,
+    totalLength,
+    segments,
+    anchorX,
+    anchorY,
+    side,
+  };
+}
+
+function getAdjacentFeature(edge) {
+  return String(edge?.metadata?.adjacentFeature || edge?.facadeMetadata?.adjacentFeature || "").toLowerCase();
+}
+
+function formatMetadataToken(value) {
+  const normalized = String(value || "").trim();
+  if (!normalized) {
+    return "";
+  }
+
+  return normalized
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (match) => match.toUpperCase());
+}
+
+function getDaylightLabel(edge) {
+  return formatMetadataToken(edge?.metadata?.daylight || edge?.facadeMetadata?.daylight);
+}
+
+function getEdgeMetadataLines(edge) {
+  const adjacentFeature = getAdjacentFeature(edge);
+  const daylight = getDaylightLabel(edge);
+  const lines = [];
+
+  if (adjacentFeature) {
+    lines.push(adjacentFeature === "street" ? "Street" : adjacentFeature === "building" ? "Building" : adjacentFeature);
+  }
+
+  if (daylight) {
+    lines.push(`${daylight} daylight`);
+  }
+
+  if (lines.length > 0) {
+    return lines;
+  }
+
+  return String(edge?.detail || "")
+    .split("|")
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .slice(0, 2);
+}
+
+function drawEdgeAdjacentPreviews(targetContext, edges) {
+  if (!Array.isArray(edges) || edges.length === 0 || !currentMap) {
+    return;
+  }
+
+  targetContext.save();
+  targetContext.translate(viewportState.offsetX, viewportState.offsetY);
+  targetContext.scale(viewportState.scale, viewportState.scale);
+  targetContext.lineCap = "round";
+  targetContext.lineJoin = "round";
+
+  edges.forEach((edge) => {
+    const placement = getEdgePlacementInfo(edge?.points);
+    if (!placement) {
+      return;
+    }
+
+    const adjacentFeature = getAdjacentFeature(edge);
+    const isStreet = adjacentFeature === "street";
+    const margin = 0.7;
+    const fadeDepth = isStreet ? 4.4 : 2.8;
+    const buildingTick = 1.55;
+    const color = getEdgeColor(edge);
+    const lineAlpha = isStreet ? "88" : "55";
+    const previewLineWidth = Math.max(0.04, 1 / Math.max(viewportState.scale, 1));
+
+    switch (placement.side) {
+      case "left":
+      {
+        const previewX = placement.minX - margin;
+        targetContext.strokeStyle = `${color}${lineAlpha}`;
+        targetContext.lineWidth = previewLineWidth;
+        targetContext.beginPath();
+        targetContext.moveTo(previewX, placement.minY);
+        targetContext.lineTo(previewX, placement.maxY);
+        targetContext.stroke();
+
+        if (isStreet) {
+          const gradient = targetContext.createLinearGradient(previewX - fadeDepth, placement.anchorY, previewX, placement.anchorY);
+          gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+          gradient.addColorStop(1, `${color}1f`);
+          targetContext.fillStyle = gradient;
+          targetContext.fillRect(previewX - fadeDepth, placement.minY, fadeDepth, Math.max(0.001, placement.maxY - placement.minY));
+
+          const laneX = previewX - Math.max(0.65, fadeDepth * 0.5);
+          targetContext.save();
+          targetContext.strokeStyle = "rgba(236, 241, 247, 0.26)";
+          targetContext.setLineDash([0.55, 0.45]);
+          targetContext.beginPath();
+          targetContext.moveTo(laneX, placement.minY + 0.3);
+          targetContext.lineTo(laneX, placement.maxY - 0.3);
+          targetContext.stroke();
+          targetContext.restore();
+        } else {
+          const gradient = targetContext.createLinearGradient(previewX - fadeDepth, placement.anchorY, previewX, placement.anchorY);
+          gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+          gradient.addColorStop(1, "rgba(150, 160, 178, 0.12)");
+          targetContext.fillStyle = gradient;
+          targetContext.fillRect(previewX - fadeDepth, placement.minY, fadeDepth, Math.max(0.001, placement.maxY - placement.minY));
+          targetContext.beginPath();
+          targetContext.moveTo(previewX - buildingTick, placement.minY);
+          targetContext.lineTo(previewX, placement.minY);
+          targetContext.moveTo(previewX - buildingTick, placement.maxY);
+          targetContext.lineTo(previewX, placement.maxY);
+          targetContext.stroke();
+        }
+        break;
+      }
+      case "right":
+      {
+        const previewX = placement.maxX + margin;
+        targetContext.strokeStyle = `${color}${lineAlpha}`;
+        targetContext.lineWidth = previewLineWidth;
+        targetContext.beginPath();
+        targetContext.moveTo(previewX, placement.minY);
+        targetContext.lineTo(previewX, placement.maxY);
+        targetContext.stroke();
+
+        if (isStreet) {
+          const gradient = targetContext.createLinearGradient(previewX + fadeDepth, placement.anchorY, previewX, placement.anchorY);
+          gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+          gradient.addColorStop(1, `${color}1f`);
+          targetContext.fillStyle = gradient;
+          targetContext.fillRect(previewX, placement.minY, fadeDepth, Math.max(0.001, placement.maxY - placement.minY));
+
+          const laneX = previewX + Math.max(0.65, fadeDepth * 0.5);
+          targetContext.save();
+          targetContext.strokeStyle = "rgba(236, 241, 247, 0.26)";
+          targetContext.setLineDash([0.55, 0.45]);
+          targetContext.beginPath();
+          targetContext.moveTo(laneX, placement.minY + 0.3);
+          targetContext.lineTo(laneX, placement.maxY - 0.3);
+          targetContext.stroke();
+          targetContext.restore();
+        } else {
+          const gradient = targetContext.createLinearGradient(previewX + fadeDepth, placement.anchorY, previewX, placement.anchorY);
+          gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+          gradient.addColorStop(1, "rgba(150, 160, 178, 0.12)");
+          targetContext.fillStyle = gradient;
+          targetContext.fillRect(previewX, placement.minY, fadeDepth, Math.max(0.001, placement.maxY - placement.minY));
+          targetContext.beginPath();
+          targetContext.moveTo(previewX, placement.minY);
+          targetContext.lineTo(previewX + buildingTick, placement.minY);
+          targetContext.moveTo(previewX, placement.maxY);
+          targetContext.lineTo(previewX + buildingTick, placement.maxY);
+          targetContext.stroke();
+        }
+        break;
+      }
+      case "bottom":
+      {
+        const previewY = placement.maxY + margin;
+        targetContext.strokeStyle = `${color}${lineAlpha}`;
+        targetContext.lineWidth = previewLineWidth;
+        targetContext.beginPath();
+        targetContext.moveTo(placement.minX, previewY);
+        targetContext.lineTo(placement.maxX, previewY);
+        targetContext.stroke();
+
+        if (isStreet) {
+          const gradient = targetContext.createLinearGradient(placement.anchorX, previewY + fadeDepth, placement.anchorX, previewY);
+          gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+          gradient.addColorStop(1, `${color}1f`);
+          targetContext.fillStyle = gradient;
+          targetContext.fillRect(placement.minX, previewY, Math.max(0.001, placement.maxX - placement.minX), fadeDepth);
+
+          const laneY = previewY + Math.max(0.65, fadeDepth * 0.5);
+          targetContext.save();
+          targetContext.strokeStyle = "rgba(236, 241, 247, 0.26)";
+          targetContext.setLineDash([0.55, 0.45]);
+          targetContext.beginPath();
+          targetContext.moveTo(placement.minX + 0.3, laneY);
+          targetContext.lineTo(placement.maxX - 0.3, laneY);
+          targetContext.stroke();
+          targetContext.restore();
+        } else {
+          const gradient = targetContext.createLinearGradient(placement.anchorX, previewY + fadeDepth, placement.anchorX, previewY);
+          gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+          gradient.addColorStop(1, "rgba(150, 160, 178, 0.12)");
+          targetContext.fillStyle = gradient;
+          targetContext.fillRect(placement.minX, previewY, Math.max(0.001, placement.maxX - placement.minX), fadeDepth);
+          targetContext.beginPath();
+          targetContext.moveTo(placement.minX, previewY);
+          targetContext.lineTo(placement.minX, previewY + buildingTick);
+          targetContext.moveTo(placement.maxX, previewY);
+          targetContext.lineTo(placement.maxX, previewY + buildingTick);
+          targetContext.stroke();
+        }
+        break;
+      }
+      default:
+      {
+        const previewY = placement.minY - margin;
+        targetContext.strokeStyle = `${color}${lineAlpha}`;
+        targetContext.lineWidth = previewLineWidth;
+        targetContext.beginPath();
+        targetContext.moveTo(placement.minX, previewY);
+        targetContext.lineTo(placement.maxX, previewY);
+        targetContext.stroke();
+
+        if (isStreet) {
+          const gradient = targetContext.createLinearGradient(placement.anchorX, previewY - fadeDepth, placement.anchorX, previewY);
+          gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+          gradient.addColorStop(1, `${color}1f`);
+          targetContext.fillStyle = gradient;
+          targetContext.fillRect(placement.minX, previewY - fadeDepth, Math.max(0.001, placement.maxX - placement.minX), fadeDepth);
+
+          const laneY = previewY - Math.max(0.65, fadeDepth * 0.5);
+          targetContext.save();
+          targetContext.strokeStyle = "rgba(236, 241, 247, 0.26)";
+          targetContext.setLineDash([0.55, 0.45]);
+          targetContext.beginPath();
+          targetContext.moveTo(placement.minX + 0.3, laneY);
+          targetContext.lineTo(placement.maxX - 0.3, laneY);
+          targetContext.stroke();
+          targetContext.restore();
+        } else {
+          const gradient = targetContext.createLinearGradient(placement.anchorX, previewY - fadeDepth, placement.anchorX, previewY);
+          gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+          gradient.addColorStop(1, "rgba(150, 160, 178, 0.12)");
+          targetContext.fillStyle = gradient;
+          targetContext.fillRect(placement.minX, previewY - fadeDepth, Math.max(0.001, placement.maxX - placement.minX), fadeDepth);
+          targetContext.beginPath();
+          targetContext.moveTo(placement.minX, previewY - buildingTick);
+          targetContext.lineTo(placement.minX, previewY);
+          targetContext.moveTo(placement.maxX, previewY - buildingTick);
+          targetContext.lineTo(placement.maxX, previewY);
+          targetContext.stroke();
+        }
+        break;
+      }
+    }
+  });
+
+  targetContext.restore();
+}
+
+function drawMetaEdges(targetContext, edges) {
+  if (!Array.isArray(edges) || edges.length === 0 || !currentMap) {
+    return;
+  }
+
+  targetContext.save();
+  targetContext.translate(viewportState.offsetX, viewportState.offsetY);
+  targetContext.scale(viewportState.scale, viewportState.scale);
+  targetContext.lineCap = "round";
+  targetContext.lineJoin = "round";
+
+  edges.forEach((edge) => {
+    const points = edge?.points;
+    if (!Array.isArray(points) || points.length < 4) {
+      return;
+    }
+
+    targetContext.strokeStyle = getEdgeColor(edge);
+    targetContext.globalAlpha = 0.92;
+    targetContext.lineWidth = Math.max(0.08, 1.4 / Math.max(viewportState.scale, 1));
+    targetContext.beginPath();
+    targetContext.moveTo(points[0], points[1]);
+
+    for (let index = 2; index < points.length; index += 2) {
+      targetContext.lineTo(points[index], points[index + 1]);
+    }
+
+    targetContext.stroke();
+  });
+
+  targetContext.restore();
+}
+
+function drawEdgeLabels(targetContext, edges) {
+  if (!Array.isArray(edges) || edges.length === 0 || !currentMap || viewportState.scale < 2) {
+    return;
+  }
+
+  targetContext.save();
+  targetContext.translate(viewportState.offsetX, viewportState.offsetY);
+  targetContext.scale(viewportState.scale, viewportState.scale);
+  targetContext.textAlign = "center";
+  targetContext.textBaseline = "middle";
+
+  edges.forEach((edge) => {
+    const label = String(edge?.label || "").trim();
+    const metadataLines = getEdgeMetadataLines(edge);
+    const placement = getEdgePlacementInfo(edge?.points);
+    if (!label || !placement) {
+      return;
+    }
+
+    const adjacentFeature = getAdjacentFeature(edge);
+    const streetExtra = adjacentFeature === "street" ? 4.25 : 0.95;
+    const labelGap = 1.9 + streetExtra;
+    let labelX = placement.anchorX;
+    let labelY = placement.anchorY;
+
+    switch (placement.side) {
+      case "left":
+        labelX = placement.minX - labelGap;
+        break;
+      case "right":
+        labelX = placement.maxX + labelGap;
+        break;
+      case "bottom":
+        labelY = placement.maxY + labelGap;
+        break;
+      default:
+        labelY = placement.minY - labelGap;
+        break;
+    }
+
+    targetContext.textAlign = placement.side === "left"
+      ? "right"
+      : placement.side === "right"
+        ? "left"
+        : "center";
+    const titleSize = Math.max(0.72, 6.5 / Math.max(viewportState.scale, 1));
+    const metaSize = Math.max(0.52, titleSize * 0.62);
+    const metaGap = 0.14;
+    const blockGap = 0.22;
+
+    targetContext.font = `700 ${titleSize}px ui-sans-serif, system-ui, sans-serif`;
+    targetContext.lineWidth = Math.max(0.05, 0.95 / Math.max(viewportState.scale, 1));
+    targetContext.strokeStyle = "rgba(17, 22, 29, 0.92)";
+    targetContext.fillStyle = getEdgeColor(edge);
+    targetContext.textBaseline = "middle";
+
+    const detailBlockHeight = metadataLines.length > 0
+      ? metadataLines.length * metaSize + (metadataLines.length - 1) * metaGap
+      : 0;
+    const totalBlockHeight = titleSize + (metadataLines.length > 0 ? blockGap + detailBlockHeight : 0);
+    let titleY = labelY;
+
+    if (placement.side === "top" || placement.side === "bottom") {
+      titleY = labelY - totalBlockHeight * 0.5 + titleSize * 0.5;
+    }
+
+    targetContext.strokeText(label, labelX, titleY);
+    targetContext.fillText(label, labelX, titleY);
+
+    if (metadataLines.length > 0) {
+      targetContext.font = `600 ${metaSize}px ui-sans-serif, system-ui, sans-serif`;
+      targetContext.fillStyle = "rgba(214, 222, 232, 0.9)";
+      metadataLines.forEach((line, index) => {
+        const lineY = titleY + titleSize * 0.5 + blockGap + metaSize * 0.5 + index * (metaSize + metaGap);
+
+        targetContext.strokeText(line, labelX, lineY);
+        targetContext.fillText(line, labelX, lineY);
+      });
+    }
+
+    targetContext.textAlign = "center";
+    targetContext.textBaseline = "middle";
+  });
+
+  targetContext.restore();
 }
 
 function drawLowWallCells(targetContext, values) {
@@ -1484,37 +2058,58 @@ function renderRegionLegend() {
   }
 
   const regions = currentMap?.regions || [];
-  if (!Array.isArray(regions) || regions.length === 0) {
-    regionLegend.hidden = true;
-    regionLegend.innerHTML = "";
-    return;
-  }
+  // const edges = currentMap?.edges || [];
+  // if ((!Array.isArray(regions) || regions.length === 0) && (!Array.isArray(edges) || edges.length === 0)) {
+  //   regionLegend.hidden = true;
+  //   regionLegend.innerHTML = "";
+  //   return;
+  // }
 
   const seen = new Set();
-  const items = regions.filter((region) => {
-    const key = `${region.kind}:${region.label}`;
+  const items = [];
+
+  regions.forEach((region) => {
+    const key = `region:${region.kind}:${region.label}`;
     if ((region.kind || "").toLowerCase().startsWith("room-")) {
-      return false;
+      return;
     }
     if (seen.has(key)) {
-      return false;
+      return;
     }
 
     seen.add(key);
-    return true;
+    items.push({
+      kind: region.kind,
+      label: region.label,
+      color: getRegionColor(region.kind),
+    });
   });
 
+  // edges.forEach((edge) => {
+  //   const key = `edge:${edge.kind}:${edge.label}`;
+  //   if (seen.has(key)) {
+  //     return;
+  //   }
+
+  //   seen.add(key);
+  //   items.push({
+  //     kind: edge.kind,
+  //     label: edge.detail ? `${edge.label} - ${edge.detail}` : edge.label,
+  //     color: getEdgeColor(edge),
+  //   });
+  // });
+
   regionLegend.innerHTML = "";
-  items.forEach((region) => {
+  items.forEach((itemData) => {
     const item = document.createElement("div");
     const swatch = document.createElement("span");
     const label = document.createElement("span");
 
     item.className = "legend-item";
     swatch.className = "legend-swatch";
-    swatch.style.background = getRegionColor(region.kind);
+    swatch.style.background = itemData.color;
     label.className = "legend-label";
-    label.textContent = region.label;
+    label.textContent = itemData.label;
 
     item.append(swatch, label);
     regionLegend.appendChild(item);
@@ -1600,6 +2195,9 @@ function renderMap() {
     drawGrid(flatCtx);
   }
 
+  drawEdgeAdjacentPreviews(flatCtx, currentMap.edges || []);
+  drawMetaEdges(flatCtx, currentMap.edges || []);
+
   flatCtx.strokeStyle = getThemeColor("--map-outline", "rgba(255, 255, 255, 0.08)");
   flatCtx.lineWidth = 1;
   flatCtx.strokeRect(
@@ -1610,6 +2208,7 @@ function renderMap() {
   );
   flatCtx.restore();
   drawFeatureOverlays(flatCtx, currentMap.regions);
+  drawEdgeLabels(flatCtx, currentMap.edges || []);
   drawRegionLabels(flatCtx, currentMap.regions);
 
   updateViewportMeta();
@@ -1668,6 +2267,8 @@ function renderShaderMap(width, height, dpr) {
     if (gridEnabled) {
       drawGrid(flatCtx);
     }
+    drawEdgeAdjacentPreviews(flatCtx, currentMap.edges || []);
+    drawMetaEdges(flatCtx, currentMap.edges || []);
     flatCtx.save();
     flatCtx.strokeStyle = getThemeColor("--map-outline", "rgba(255, 255, 255, 0.08)");
     flatCtx.lineWidth = 1;
@@ -1679,6 +2280,7 @@ function renderShaderMap(width, height, dpr) {
     );
     flatCtx.restore();
     drawFeatureOverlays(flatCtx, currentMap.regions);
+    drawEdgeLabels(flatCtx, currentMap.edges || []);
     drawRegionLabels(flatCtx, currentMap.regions);
   }
 
@@ -1771,6 +2373,10 @@ async function generate({ resetViewport = true } = {}) {
       setStatus(envelope.errorMessage || "Generation failed.");
       setMap(null, true);
       return;
+    }
+
+    if (applyResolvedOptions(generatorSelect.value, envelope.resolvedOptions)) {
+      buildInputs();
     }
 
     setMap(envelope.map, resetViewport);
@@ -2051,6 +2657,10 @@ const resizeObserver = new ResizeObserver(() => {
   resizeCanvas();
 });
 
+if (syncGroup) {
+  window.addEventListener(procGenSyncEventName, handleSynchronizedOptions);
+}
+
 async function initialize() {
   setStatus("Loading generators...");
   const runtimeBridge = await ensureRuntimeBridge();
@@ -2081,6 +2691,7 @@ async function initialize() {
   applyEmbedChrome();
   updateGeneratorTitle();
   buildInputs();
+  seedSynchronizedOptions();
   resizeObserver.observe(canvasShell);
   resizeCanvas();
   updateGridButtonState();

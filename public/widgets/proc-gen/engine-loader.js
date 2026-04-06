@@ -9,7 +9,8 @@ async function ensureRuntime() {
 }
 
 async function initializeRuntime() {
-  const { dotnet } = await import("./_framework/dotnet.js");
+  const runtimeQuery = new URL(import.meta.url).search || "";
+  const { dotnet } = await import(`./_framework/dotnet.js${runtimeQuery}`);
   const runtime = await dotnet.withDiagnosticTracing(false).create();
   const config = runtime.getConfig();
   const exports = await runtime.getAssemblyExports(config.mainAssemblyName);

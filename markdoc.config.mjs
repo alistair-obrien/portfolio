@@ -11,6 +11,7 @@ export default defineMarkdocConfig({
         description: { type: String },
         src: { type: String, required: true },
         height: { type: String },
+        syncGroup: { type: String },
       },
     },
   },

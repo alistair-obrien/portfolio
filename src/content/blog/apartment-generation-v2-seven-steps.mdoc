@@ -1,0 +1,84 @@
+---
+title: Apartment Generation V2 in Seven Steps
+description: A step-by-step walkthrough of the current apartment generation pipeline, with synced interactive previews for each stage.
+isDraft: false
+image: '@assets/blog/generating-apartment-complexes/image.png'
+publishDate: 2026-04-07
+tags: []
+---
+
+This is the cleaned-up V2 pipeline for apartment generation.
+
+Each stage below has a single job, and all of the interactive previews are linked together. If you change a shared slider like plot width, plot height, or facade conditions in any stage, the other stages will update to match. That makes it easier to study how each step transforms the same input instead of comparing unrelated snapshots.
+
+The current scale rule is `3 units = 1 meter`.
+
+## Step 1 - Define the Plot
+
+The first step defines the footprint and the facade conditions. This is the stable outer constraint that every later stage has to respect.
+
+{% procgenembed
+   eyebrow="Interactive Preview"
+   src="/proc-gen?embed=1&generator=apt_v2_s1&lockGenerator=1&hideGenerator=1&hideTitle=1&plotFootprintWidth=111&plotFootprintHeight=82&north-facade-feature=0&east-facade-feature=1&south-facade-feature=1&west-facade-feature=0"
+   syncGroup="apt-v2-seven-step-walkthrough"
+   height="46rem" /%}
+
+## Step 2 - Mark Apartment-Valid Areas
+
+This step projects inward from the open facades and marks the continuous areas where apartments are allowed to exist at all. It does not place circulation or subdivide units yet.
+
+{% procgenembed
+   eyebrow="Interactive Preview"
+   src="/proc-gen?embed=1&generator=apt_v2_s2&lockGenerator=1&hideGenerator=1&hideTitle=1&plotFootprintWidth=111&plotFootprintHeight=82&north-facade-feature=0&east-facade-feature=1&south-facade-feature=1&west-facade-feature=0&minCorridorWidth=6&maxCorridorWidth=10&minApartmentDepth=12&minApartmentWidth=9"
+   syncGroup="apt-v2-seven-step-walkthrough"
+   height="46rem" /%}
+
+## Step 3 - Add Circulation
+
+Once the valid apartment area is known, circulation is carved into the remaining interior. This stage exists to make access possible without yet deciding where individual units begin and end.
+
+{% procgenembed
+   eyebrow="Interactive Preview"
+   src="/proc-gen?embed=1&generator=apt_v2_s3&lockGenerator=1&hideGenerator=1&hideTitle=1&plotFootprintWidth=111&plotFootprintHeight=82&north-facade-feature=0&east-facade-feature=1&south-facade-feature=1&west-facade-feature=0&minCorridorWidth=6&maxCorridorWidth=10&minApartmentDepth=12&minApartmentWidth=9&minUnitSpacing=2"
+   syncGroup="apt-v2-seven-step-walkthrough"
+   height="46rem" /%}
+
+## Step 4 - Divide Apartment Placements
+
+This is the first point where the continuous apartment bands are broken into concrete placements. The current pass allocates along corridor-facing frontage so every placement starts from a reachable side.
+
+{% procgenembed
+   eyebrow="Interactive Preview"
+   src="/proc-gen?embed=1&generator=apt_v2_s4&lockGenerator=1&hideGenerator=1&hideTitle=1&plotFootprintWidth=111&plotFootprintHeight=82&north-facade-feature=0&east-facade-feature=1&south-facade-feature=1&west-facade-feature=0&minCorridorWidth=6&maxCorridorWidth=10&minApartmentDepth=12&minApartmentWidth=9&minUnitSpacing=2"
+   syncGroup="apt-v2-seven-step-walkthrough"
+   height="46rem" /%}
+
+## Step 5 - Place Access Blocks
+
+After placements exist, access can be reserved. Elevators and stairs are still treated as abstract blocks here so we can iterate on their logic before cutting walls and doors.
+
+{% procgenembed
+   eyebrow="Interactive Preview"
+   src="/proc-gen?embed=1&generator=apt_v2_s5&lockGenerator=1&hideGenerator=1&hideTitle=1&plotFootprintWidth=111&plotFootprintHeight=82&north-facade-feature=0&east-facade-feature=1&south-facade-feature=1&west-facade-feature=0&minCorridorWidth=6&maxCorridorWidth=10&minApartmentDepth=12&minApartmentWidth=9&minUnitSpacing=2"
+   syncGroup="apt-v2-seven-step-walkthrough"
+   height="46rem" /%}
+
+## Step 6 - Plot Walls
+
+With circulation, placements, and access all reserved, the next stage converts that abstract plan into a wall layout. This is the first structural pass rather than a purely planning pass.
+
+{% procgenembed
+   eyebrow="Interactive Preview"
+   src="/proc-gen?embed=1&generator=apt_v2_s6&lockGenerator=1&hideGenerator=1&hideTitle=1&plotFootprintWidth=111&plotFootprintHeight=82&north-facade-feature=0&east-facade-feature=1&south-facade-feature=1&west-facade-feature=0&minCorridorWidth=6&maxCorridorWidth=10&minApartmentDepth=12&minApartmentWidth=9&minUnitSpacing=2"
+   syncGroup="apt-v2-seven-step-walkthrough"
+   height="46rem" /%}
+
+## Step 7 - Carve Doors
+
+The final stage opens apartment doors into circulation. At the moment this is still intentionally simple, but it makes the transition from blocked massing to a readable accessible plan.
+
+{% procgenembed
+   eyebrow="Interactive Preview"
+   src="/proc-gen?embed=1&generator=apt_v2_s7&lockGenerator=1&hideGenerator=1&hideTitle=1&plotFootprintWidth=111&plotFootprintHeight=82&north-facade-feature=0&east-facade-feature=1&south-facade-feature=1&west-facade-feature=0&minCorridorWidth=6&maxCorridorWidth=10&minApartmentDepth=12&minApartmentWidth=9&minUnitSpacing=2&doorWidth=3"
+   syncGroup="apt-v2-seven-step-walkthrough"
+   height="46rem" /%}

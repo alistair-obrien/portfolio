@@ -6,6 +6,7 @@ interface Props {
   src: string;
   height?: string;
   fullHeight?: boolean;
+  syncGroup?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   src,
   height = "44rem",
   fullHeight = false,
+  syncGroup,
 } = Astro.props;
 
 const parsedUrl = new URL(src, "https://procgen.local");
@@ -180,7 +182,7 @@ const widgetAssetVersion = Date.now().toString();
   }
 </style>
 
-<script define:vars={{ hostId, embedSearch, storageKey, widgetAssetVersion }} is:inline>
+<script define:vars={{ hostId, embedSearch, storageKey, widgetAssetVersion, syncGroup }} is:inline>
   (async () => {
     const host = document.getElementById(hostId);
     if (!host) {
@@ -206,9 +208,11 @@ const widgetAssetVersion = Date.now().toString();
 
     const runtimeConfig = {
       mode: "wasm",
-      moduleUrl: "/widgets/proc-gen/engine-loader.js",
+      moduleUrl: `/widgets/proc-gen/engine-loader.js?v=${encodeURIComponent(widgetAssetVersion)}`,
       search: embedSearch,
       storageKey,
+      syncGroup,
+      instanceId: hostId,
       updateDocumentTitle: false,
     };
 
