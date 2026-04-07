@@ -1019,6 +1019,18 @@ function applyResolvedOptions(generatorId, resolvedOptions) {
   return true;
 }
 
+function getResolvedOptionValues(resolvedOptions) {
+  if (!Array.isArray(resolvedOptions)) {
+    return {};
+  }
+
+  return Object.fromEntries(
+    resolvedOptions
+      .filter((option) => option && typeof option.key === "string")
+      .map((option) => [option.key, option.value]),
+  );
+}
+
 function parseColorToRgb(color, fallback) {
   const normalized = String(color || "").trim();
   const hexMatch = normalized.match(/^#([0-9a-f]{6})$/i);
@@ -2376,6 +2388,15 @@ async function generate({ resetViewport = true } = {}) {
     }
 
     if (applyResolvedOptions(generatorSelect.value, envelope.resolvedOptions)) {
+      const didApplyResolvedValues = applySynchronizedOptions(
+        getResolvedOptionValues(envelope.resolvedOptions),
+        { shouldGenerate: false },
+      );
+
+      if (didApplyResolvedValues) {
+        broadcastSynchronizedOptions();
+      }
+
       buildInputs();
     }
 
