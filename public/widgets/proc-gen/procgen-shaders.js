@@ -17,6 +17,7 @@ in vec2 v_uv;
 out vec4 outColor;
 
 uniform sampler2D u_mask;
+uniform sampler2D u_semantics;
 uniform sampler2D u_noise;
 uniform vec2 u_mask_size;
 uniform vec2 u_viewport_size;
@@ -24,8 +25,12 @@ uniform vec2 u_camera_center;
 uniform float u_scale;
 uniform vec3 u_backdrop_top;
 uniform vec3 u_backdrop_bottom;
-uniform vec3 u_floor_light;
-uniform vec3 u_floor_shadow;
+uniform vec3 u_apartment_floor_light;
+uniform vec3 u_apartment_floor_shadow;
+uniform vec3 u_corridor_floor_light;
+uniform vec3 u_corridor_floor_shadow;
+uniform vec3 u_stair_color;
+uniform vec3 u_elevator_color;
 uniform vec3 u_wall_light;
 uniform vec3 u_wall_shadow;
 uniform vec3 u_outline_color;
@@ -95,6 +100,22 @@ float sampleItemMask(vec2 uv) {
 
 float sampleFloorMask(vec2 uv) {
   return texture(u_mask, uv).a;
+}
+
+float sampleApartmentFloorMask(vec2 uv) {
+  return texture(u_semantics, uv).r;
+}
+
+float sampleCorridorFloorMask(vec2 uv) {
+  return texture(u_semantics, uv).g;
+}
+
+float sampleApartmentVariation(vec2 uv) {
+  return texture(u_semantics, uv).b;
+}
+
+float sampleAccessKind(vec2 uv) {
+  return texture(u_semantics, uv).a;
 }
 
 float sampleChannelLinear(vec2 uv, int channelIndex) {
@@ -204,7 +225,11 @@ void main() {
   float center = sampleWallMask(uv);
   float propMask = samplePropMask(uv);
   float itemMask = sampleItemMask(uv);
-  float floorMask = sampleFloorMask(uv);
+  float apartmentFloorMask = sampleApartmentFloorMask(uv);
+  float corridorFloorMask = sampleCorridorFloorMask(uv);
+  float apartmentVariation = sampleApartmentVariation(uv);
+  float accessKind = sampleAccessKind(uv);
+  float floorMask = clamp(apartmentFloorMask + corridorFloorMask, 0.0, 1.0);
   float sceneGrad = directionalGradient(uv, GRADIENT_DIRECTION);
   float openFloor = floorMask * (1.0 - center) * (1.0 - propMask) * (1.0 - itemMask);
 
@@ -337,8 +362,20 @@ void main() {
   float propShadowTerm = propShadow * PROP_SHADOW_STRENGTH;
   float propAoTerm = propAo * PROP_AO_STRENGTH;
 
-  vec3 floorGradColor = mix(u_floor_shadow, u_floor_light, sceneGrad);
-  vec3 floorColor = mix(u_floor_shadow, floorGradColor, FLOOR_GRADIENT_STRENGTH);
+  vec3 apartmentFloorGradColor = mix(u_apartment_floor_shadow, u_apartment_floor_light, sceneGrad);
+  vec3 apartmentFloorColor = mix(u_apartment_floor_shadow, apartmentFloorGradColor, FLOOR_GRADIENT_STRENGTH);
+  float apartmentVariantBias = (apartmentVariation - 0.5) * 0.12;
+  apartmentFloorColor = clamp(apartmentFloorColor * (1.0 + apartmentVariantBias), 0.0, 1.0);
+  vec3 corridorFloorGradColor = mix(u_corridor_floor_shadow, u_corridor_floor_light, sceneGrad);
+  vec3 corridorFloorColor = mix(u_corridor_floor_shadow, corridorFloorGradColor, FLOOR_GRADIENT_STRENGTH);
+  vec3 floorColor = (
+    apartmentFloorColor * apartmentFloorMask +
+    corridorFloorColor * corridorFloorMask
+  ) / max(floorMask, 0.001);
+  float stairMask = step(0.45, accessKind) * (1.0 - step(0.9, accessKind));
+  float elevatorMask = step(0.9, accessKind);
+  floorColor = mix(floorColor, u_stair_color, stairMask);
+  floorColor = mix(floorColor, u_elevator_color, elevatorMask);
   floorColor *= 1.0 - propShadowTerm;
   floorColor *= 1.0 - propAoTerm;
 
@@ -351,7 +388,7 @@ void main() {
   vec3 wallColor = mix(wallGradBase, outlineTint, innerOutline * INNER_OUTLINE_COLOR.a);
 
   vec3 propColor = shadeDetail(u_prop_color, sceneGrad, DETAIL_GRADIENT_STRENGTH);
-  propColor = mix(propColor, u_outline_color, propInnerOutline * PROP_OUTLINE_COLOR.a);
+  propColor = mix(propColor, u_prop_color * 0.72, propInnerOutline * 0.38);
 
   vec3 itemColor = shadeDetail(u_item_color, sceneGrad, DETAIL_GRADIENT_STRENGTH);
   itemColor = mix(itemColor, ITEM_OUTLINE_COLOR.rgb, itemInnerOutline * ITEM_OUTLINE_COLOR.a);

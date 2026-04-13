@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "widgets", "widgets", "{BCB5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCore", "..\GenOSys - Core\GameCore.csproj", "{7AC89B79-1743-71DE-55F8-7E15783C3A1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoguelikeWidget", "widgets\RoguelikeWidget\RoguelikeWidget.csproj", "{EDE72FF1-B907-5D9E-A95D-0F53E0A6E9B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenOSys.BrowserHost", "..\GenOSys - Core\browser\GenOSys.BrowserHost\GenOSys.BrowserHost.csproj", "{EDE72FF1-B907-5D9E-A95D-0F53E0A6E9B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

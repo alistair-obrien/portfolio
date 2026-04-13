@@ -10,5 +10,10 @@ skills:
   - C#
   - Unity
 ---
-- Programming
+At Active Gaming media, I joined a small department for in house game development.
+
+It was here I learnt from talented coworkers about various project management approaches. I lead a small team of around 8 developers, focusing heavily on optimizing workflows.
+
+- Tools Development
 - Project Management
+- Lead Developer (Unity C#)

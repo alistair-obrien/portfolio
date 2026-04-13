@@ -44,6 +44,8 @@ let renderFrameId = 0;
 let storySnapshotCanvases = [];
 let storyMaskBuffers = [];
 let storyMaskTextures = [];
+let storySemanticBuffers = [];
+let storySemanticTextures = [];
 let gridEnabled = false;
 let runtimeBridgePromise = null;
 let renderMode = "flat";
@@ -52,6 +54,30 @@ let shaderRuntime = null;
 let noiseTexture = null;
 let fullscreenTarget = null;
 let suppressSyncBroadcast = false;
+
+const corridorFloorRegionKinds = new Set([
+  "corridor",
+  "accesscore",
+  "access-core",
+  "elevator",
+  "stair",
+  "stair-up",
+  "stair-down",
+]);
+
+const apartmentFloorRegionKinds = new Set([
+  "apartment",
+  "apartment-placement",
+  "apartment-potential",
+  "internal-apartment-potential",
+  "apartmentzone",
+  "apartment-zone",
+  "room-ldk",
+  "room-bedroom",
+  "room-bath",
+  "room-wc",
+  "room-entry",
+]);
 
 const knownEmbedParams = new Set([
   "embed",
@@ -231,6 +257,31 @@ function getThemeColor(variableName, fallback) {
   return value || fallback;
 }
 
+function normalizeRegionKind(kind) {
+  return String(kind || "").toLowerCase();
+}
+
+function isCorridorFloorRegionKind(kind) {
+  return corridorFloorRegionKinds.has(normalizeRegionKind(kind));
+}
+
+function isApartmentFloorRegionKind(kind) {
+  return apartmentFloorRegionKinds.has(normalizeRegionKind(kind));
+}
+
+function isRenderableFloorRegionKind(kind) {
+  return isCorridorFloorRegionKind(kind) || isApartmentFloorRegionKind(kind);
+}
+
+function getApartmentVariantValue(region, index) {
+  const kind = normalizeRegionKind(region?.kind);
+  if (kind === "apartment-placement") {
+    return 72 + ((index * 37) % 96);
+  }
+
+  return 104;
+}
+
 function normalizeRenderMode(value) {
   return String(value || "").toLowerCase() === "shader" ? "shader" : "flat";
 }
@@ -266,9 +317,12 @@ function clamp(value, min, max) {
 
 function getDefaultState() {
   const firstGenerator = generatorDefinitions[0];
+  const firstGeneratorId = firstGenerator?.id || "";
+  const firstGeneratorOptions = getDefaultOptions(firstGeneratorId);
   return {
-    generatorId: firstGenerator?.id || "",
-    options: getDefaultOptions(firstGenerator?.id),
+    generatorId: firstGeneratorId,
+    options: firstGeneratorOptions,
+    optionsByGenerator: firstGeneratorId ? { [firstGeneratorId]: firstGeneratorOptions } : {},
     autoRegen: true,
     selectedStory: 0,
     gridEnabled: false,
@@ -305,11 +359,19 @@ function loadState() {
     const generatorId = generatorDefinitionById[parsed.generatorId]
       ? parsed.generatorId
       : (generatorDefinitions[0]?.id || "");
-    const options = { ...getDefaultOptions(generatorId), ...(parsed.options || {}) };
+    const optionsByGenerator = { ...(parsed.optionsByGenerator || {}) };
+    if (parsed.generatorId && parsed.options && !optionsByGenerator[parsed.generatorId]) {
+      optionsByGenerator[parsed.generatorId] = parsed.options;
+    }
+    const options = {
+      ...getDefaultOptions(generatorId),
+      ...(optionsByGenerator[generatorId] || parsed.options || {}),
+    };
 
     return {
       generatorId,
       options,
+      optionsByGenerator,
       autoRegen: parsed.autoRegen !== false,
       selectedStory: Number.isFinite(parsed.selectedStory) ? parsed.selectedStory : 0,
       gridEnabled: parsed.gridEnabled === true,
@@ -329,11 +391,19 @@ function getProcGenSyncStore() {
 }
 
 function saveState() {
+  const savedState = loadState();
+  const options = readOptions();
+  const optionsByGenerator = {
+    ...(savedState.optionsByGenerator || {}),
+    [generatorSelect.value]: options,
+  };
+
   localStorage.setItem(
     storageKey,
     JSON.stringify({
       generatorId: generatorSelect.value,
-      options: readOptions(),
+      options,
+      optionsByGenerator,
       autoRegen: true,
       //autoRegenCheckbox.checked,
       selectedStory: selectedStoryIndex,
@@ -510,15 +580,30 @@ function applyEmbedOptionOverrides(generatorId, options) {
 }
 
 function getInitialOptions(generatorId, savedState) {
-  const savedOptions = savedState?.generatorId === generatorId
-    ? (savedState.options || {})
-    : {};
+  const savedOptions = savedState?.optionsByGenerator?.[generatorId]
+    || (savedState?.generatorId === generatorId ? (savedState.options || {}) : {});
 
   return {
     ...getDefaultOptions(generatorId),
     ...applyEmbedOptionOverrides(generatorId, {}),
     ...savedOptions,
   };
+}
+
+function getMergedOptionsForGeneratorChange(nextGeneratorId) {
+  const savedState = loadState();
+  const currentGeneratorId = generatorSelect.value;
+  const currentOptions = readOptions();
+  const nextOptions = getInitialOptions(nextGeneratorId, savedState);
+  const nextDefinition = generatorDefinitionById[nextGeneratorId];
+
+  (nextDefinition?.options || []).forEach((option) => {
+    if (Object.prototype.hasOwnProperty.call(currentOptions, option.key)) {
+      nextOptions[option.key] = currentOptions[option.key];
+    }
+  });
+
+  return nextOptions;
 }
 
 function applyEmbedChrome() {
@@ -1141,6 +1226,7 @@ function ensureShaderRuntime() {
     uniforms: {
       aPosition: gl.getAttribLocation(program, "a_position"),
       mask: gl.getUniformLocation(program, "u_mask"),
+      semantics: gl.getUniformLocation(program, "u_semantics"),
       noise: gl.getUniformLocation(program, "u_noise"),
       maskSize: gl.getUniformLocation(program, "u_mask_size"),
       viewportSize: gl.getUniformLocation(program, "u_viewport_size"),
@@ -1148,8 +1234,12 @@ function ensureShaderRuntime() {
       scale: gl.getUniformLocation(program, "u_scale"),
       backdropTop: gl.getUniformLocation(program, "u_backdrop_top"),
       backdropBottom: gl.getUniformLocation(program, "u_backdrop_bottom"),
-      floorLight: gl.getUniformLocation(program, "u_floor_light"),
-      floorShadow: gl.getUniformLocation(program, "u_floor_shadow"),
+      apartmentFloorLight: gl.getUniformLocation(program, "u_apartment_floor_light"),
+      apartmentFloorShadow: gl.getUniformLocation(program, "u_apartment_floor_shadow"),
+      corridorFloorLight: gl.getUniformLocation(program, "u_corridor_floor_light"),
+      corridorFloorShadow: gl.getUniformLocation(program, "u_corridor_floor_shadow"),
+      stairColor: gl.getUniformLocation(program, "u_stair_color"),
+      elevatorColor: gl.getUniformLocation(program, "u_elevator_color"),
       wallLight: gl.getUniformLocation(program, "u_wall_light"),
       wallShadow: gl.getUniformLocation(program, "u_wall_shadow"),
       outlineColor: gl.getUniformLocation(program, "u_outline_color"),
@@ -1164,13 +1254,22 @@ function ensureShaderRuntime() {
 }
 
 function disposeShaderTextures() {
-  if (!gl || storyMaskTextures.length === 0) {
+  if (!gl) {
     storyMaskTextures = [];
+    storySemanticTextures = [];
+    return;
+  }
+
+  if (storyMaskTextures.length === 0 && storySemanticTextures.length === 0) {
+    storyMaskTextures = [];
+    storySemanticTextures = [];
     return;
   }
 
   storyMaskTextures.forEach((texture) => gl.deleteTexture(texture));
+  storySemanticTextures.forEach((texture) => gl.deleteTexture(texture));
   storyMaskTextures = [];
+  storySemanticTextures = [];
 }
 
 function createMaskSnapshot(layers) {
@@ -1213,7 +1312,7 @@ function createMaskSnapshot(layers) {
 
   if (Array.isArray(currentMap.regions) && currentMap.regions.length > 0) {
     currentMap.regions.forEach((region) => {
-      if ((region.kind || "").toLowerCase() === "outside") {
+      if (!isRenderableFloorRegionKind(region.kind)) {
         return;
       }
 
@@ -1222,6 +1321,70 @@ function createMaskSnapshot(layers) {
   } else {
     setChannel(layers?.floors || [], 3);
     setChannel(layers?.ceilings || [], 3);
+  }
+
+  return {
+    width: currentMap.width,
+    height: currentMap.height,
+    data: imageData,
+  };
+}
+
+function createSemanticSnapshot(layers) {
+  if (!currentMap) {
+    return null;
+  }
+
+  const imageData = new Uint8Array(currentMap.width * currentMap.height * 4);
+  const setChannel = (values, channelIndex) => {
+    if (!Array.isArray(values)) {
+      return;
+    }
+
+    for (let index = 0; index < values.length; index += 2) {
+      const x = values[index];
+      const y = values[index + 1];
+      const pixelIndex = (y * currentMap.width + x) * 4 + channelIndex;
+      imageData[pixelIndex] = 255;
+    }
+  };
+
+  const setRects = (rects, channelIndex, value = 255) => {
+    if (!Array.isArray(rects)) {
+      return;
+    }
+
+    rects.forEach((rect) => {
+      for (let y = rect.y; y < rect.y + rect.height; y += 1) {
+        for (let x = rect.x; x < rect.x + rect.width; x += 1) {
+          const pixelIndex = (y * currentMap.width + x) * 4 + channelIndex;
+          imageData[pixelIndex] = value;
+        }
+      }
+    });
+  };
+
+  if (Array.isArray(currentMap.regions) && currentMap.regions.length > 0) {
+    currentMap.regions.forEach((region, index) => {
+      const kind = normalizeRegionKind(region.kind);
+      if (isApartmentFloorRegionKind(region.kind)) {
+        setRects(region.rects || [], 0);
+        setRects(region.rects || [], 2, getApartmentVariantValue(region, index));
+        return;
+      }
+
+      if (isCorridorFloorRegionKind(kind)) {
+        setRects(region.rects || [], 1);
+        if (kind === "elevator") {
+          setRects(region.rects || [], 3, 255);
+        } else if (kind === "stair" || kind === "stair-up" || kind === "stair-down") {
+          setRects(region.rects || [], 3, 170);
+        }
+      }
+    });
+  } else {
+    setChannel(layers?.floors || [], 0);
+    setChannel(layers?.ceilings || [], 0);
   }
 
   return {
@@ -1259,10 +1422,32 @@ function rebuildShaderTextures() {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
     return texture;
   });
+
+  storySemanticTextures = storySemanticBuffers.map((semanticBuffer) => {
+    const texture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+    gl.texImage2D(
+      gl.TEXTURE_2D,
+      0,
+      gl.RGBA,
+      semanticBuffer.width,
+      semanticBuffer.height,
+      0,
+      gl.RGBA,
+      gl.UNSIGNED_BYTE,
+      semanticBuffer.data,
+    );
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    return texture;
+  });
 }
 
 function updateRenderModeUi() {
-  flatCanvas.hidden = false;
+  flatCanvas.hidden = renderMode === "shader";
   shaderCanvas.hidden = renderMode !== "shader";
 
   if (renderFlatButton) {
@@ -1424,28 +1609,36 @@ function createStorySnapshot(layers) {
 
 function getRegionColor(kind) {
   switch ((kind || "").toLowerCase()) {
+    case "building-area":
+      return getThemeColor("--region-building-area", "rgba(102, 214, 138, 0.22)");
+    case "reserved-block":
+      return getThemeColor("--region-reserved-block", "rgba(54, 102, 84, 0.44)");
     case "corridor":
-      return getThemeColor("--region-corridor", "rgba(64, 142, 255, 0.56)");
+      return getThemeColor("--region-corridor", "#2b4e46");
+    case "unserved-buildable":
+      return getThemeColor("--region-unserved-buildable", "#29313d");
     case "outside":
       return getThemeColor("--region-outside", "#353e4d");
     case "accesscore":
     case "access-core":
       return getThemeColor("--region-access-core", "#5a4b78");
     case "elevator":
-      return getThemeColor("--region-elevator", "#8a6e42");
+      return getThemeColor("--region-elevator", "#8a7c66");
     case "stair":
     case "stair-up":
     case "stair-down":
-      return getThemeColor("--region-stair", "#7a5560");
+      return getThemeColor("--region-stair", "#756784");
     case "apartmentzone":
     case "apartment-zone":
       return getThemeColor("--region-apartment-zone", "#55604c");
     case "apartment":
-      return getThemeColor("--region-apartment", "rgba(255, 68, 68, 0.62)");
+      return getThemeColor("--region-apartment", "#70859c");
     case "apartment-potential":
-      return getThemeColor("--region-apartment", "rgba(255, 68, 68, 0.62)");
+      return getThemeColor("--region-apartment-potential", "#70859c");
+    case "internal-apartment-potential":
+      return getThemeColor("--region-internal-apartment-potential", "#7a8da3");
     case "apartment-placement":
-      return getThemeColor("--region-apartment-placement", "rgba(255, 136, 64, 0.66)");
+      return getThemeColor("--region-apartment-placement", "#70859c");
     case "balcony":
       return getThemeColor("--region-balcony", "#5b6773");
     case "room-ldk":
@@ -1943,6 +2136,26 @@ function drawFeatureOverlays(targetContext, regions) {
 
   regions.forEach((region) => {
     const kind = String(region.kind || "").toLowerCase();
+    if (kind === "building-area" || kind === "reserved-block") {
+      (region.rects || []).forEach((rect) => {
+        if (!rect || rect.width <= 0 || rect.height <= 0) {
+          return;
+        }
+
+        if (kind === "building-area") {
+          return;
+        }
+
+        targetContext.save();
+        targetContext.strokeStyle = "rgba(110, 192, 154, 0.92)";
+        targetContext.lineWidth = Math.max(0.12, 1.05 / Math.max(viewportState.scale, 1));
+        targetContext.setLineDash([0.75, 0.45]);
+        targetContext.strokeRect(rect.x, rect.y, rect.width, rect.height);
+        targetContext.restore();
+      });
+      return;
+    }
+
     if (kind !== "elevator" && kind !== "stair" && kind !== "stair-up" && kind !== "stair-down") {
       return;
     }
@@ -1952,69 +2165,16 @@ function drawFeatureOverlays(targetContext, regions) {
         return;
       }
 
-      const inset = Math.max(0.35, Math.min(rect.width, rect.height) * 0.18);
+      const inset = Math.max(0.04, Math.min(rect.width, rect.height) * 0.05);
       const x = rect.x + inset;
       const y = rect.y + inset;
       const width = Math.max(0.2, rect.width - inset * 2);
       const height = Math.max(0.2, rect.height - inset * 2);
 
-      const isStair = kind === "stair" || kind === "stair-up" || kind === "stair-down";
-      targetContext.strokeStyle = kind === "elevator" ? elevatorColor : stairColor;
-      targetContext.fillStyle = kind === "elevator" ? `${elevatorColor}22` : `${stairColor}18`;
-      targetContext.lineWidth = Math.max(0.12, 1 / Math.max(viewportState.scale, 1));
-
+      targetContext.globalAlpha = 0.96;
+      targetContext.fillStyle = kind === "elevator" ? elevatorColor : stairColor;
       targetContext.fillRect(x, y, width, height);
-      targetContext.strokeRect(x, y, width, height);
-
-      if (kind === "elevator") {
-        const centerX = rect.x + rect.width / 2;
-        const centerY = rect.y + rect.height / 2;
-        targetContext.beginPath();
-        targetContext.moveTo(centerX, y + 0.35);
-        targetContext.lineTo(centerX, y + height - 0.35);
-        targetContext.moveTo(x + 0.35, centerY);
-        targetContext.lineTo(x + width - 0.35, centerY);
-        targetContext.stroke();
-        return;
-      }
-
-      const steps = Math.max(3, Math.min(6, Math.floor(Math.max(rect.width, rect.height) / 1.6)));
-      targetContext.beginPath();
-
-      if (rect.width >= rect.height) {
-        const run = width / steps;
-        for (let step = 0; step < steps; step += 1) {
-          const stepX = x + step * run;
-          targetContext.moveTo(stepX, y + height);
-          targetContext.lineTo(stepX + run, y + height);
-          targetContext.lineTo(stepX + run, y + height - ((step + 1) / steps) * height);
-        }
-      } else {
-        const rise = height / steps;
-        for (let step = 0; step < steps; step += 1) {
-          const stepY = y + step * rise;
-          targetContext.moveTo(x, stepY + rise);
-          targetContext.lineTo(x, stepY);
-          targetContext.lineTo(x + ((step + 1) / steps) * width, stepY);
-        }
-      }
-
-      targetContext.stroke();
-
-      const arrowSize = Math.max(0.4, Math.min(width, height) * 0.28);
-      const centerX = rect.x + rect.width / 2;
-      const centerY = rect.y + rect.height / 2;
-      targetContext.beginPath();
-      if (kind === "stair-down") {
-        targetContext.moveTo(centerX - arrowSize * 0.4, centerY - arrowSize * 0.25);
-        targetContext.lineTo(centerX, centerY + arrowSize * 0.35);
-        targetContext.lineTo(centerX + arrowSize * 0.4, centerY - arrowSize * 0.25);
-      } else {
-        targetContext.moveTo(centerX - arrowSize * 0.4, centerY + arrowSize * 0.25);
-        targetContext.lineTo(centerX, centerY - arrowSize * 0.35);
-        targetContext.lineTo(centerX + arrowSize * 0.4, centerY + arrowSize * 0.25);
-      }
-      targetContext.stroke();
+      targetContext.globalAlpha = 1;
     });
   });
 
@@ -2036,22 +2196,48 @@ function drawRegionLabels(targetContext, regions) {
 
   regions.forEach((region) => {
     const kind = String(region.kind || "").toLowerCase();
-    if (!kind.startsWith("room-")) {
+    if (!kind.startsWith("room-") && kind !== "building-area" && kind !== "reserved-block") {
       return;
     }
 
-    (region.rects || []).forEach((rect) => {
+    const labelRects = kind === "building-area"
+      ? [(region.rects || []).slice().sort((a, b) => (b.width * b.height) - (a.width * a.height))[0]].filter(Boolean)
+      : (region.rects || []);
+
+    labelRects.forEach((rect) => {
       if (!rect || rect.width < 5 || rect.height < 4) {
         return;
       }
 
-      const fontSize = Math.max(1.8, Math.min(rect.width * 0.22, rect.height * 0.42, 3.2));
-      targetContext.font = `600 ${fontSize}px ui-sans-serif, system-ui, sans-serif`;
-      targetContext.lineWidth = Math.max(0.08, 0.6 / Math.max(viewportState.scale, 1));
       const centerX = rect.x + rect.width / 2;
       const centerY = rect.y + rect.height / 2;
-      targetContext.strokeText(region.label, centerX, centerY);
-      targetContext.fillText(region.label, centerX, centerY);
+      const lines = String(region.label || "").split(/\n+/).filter(Boolean);
+      if (lines.length === 0) {
+        return;
+      }
+
+      const fontSize = kind.startsWith("room-")
+        ? Math.max(1.8, Math.min(rect.width * 0.22, rect.height * 0.42, 3.2))
+        : Math.max(1.4, Math.min(rect.width * 0.16, rect.height * 0.22, 2.8));
+      const lineGap = fontSize * 0.16;
+      const totalHeight = lines.length * fontSize + (lines.length - 1) * lineGap;
+
+      targetContext.font = `${kind === "building-area" ? 700 : 600} ${fontSize}px ui-sans-serif, system-ui, sans-serif`;
+      targetContext.lineWidth = Math.max(0.08, 0.6 / Math.max(viewportState.scale, 1));
+      targetContext.fillStyle = kind === "building-area"
+        ? "rgba(228, 247, 232, 0.96)"
+        : kind === "reserved-block"
+          ? "rgba(210, 238, 224, 0.92)"
+          : "rgba(242, 236, 226, 0.92)";
+      targetContext.strokeStyle = kind === "building-area"
+        ? "rgba(18, 30, 23, 0.72)"
+        : "rgba(23, 27, 35, 0.68)";
+
+      lines.forEach((line, index) => {
+        const lineY = centerY - totalHeight / 2 + fontSize / 2 + index * (fontSize + lineGap);
+        targetContext.strokeText(line, centerX, lineY);
+        targetContext.fillText(line, centerX, lineY);
+      });
     });
   });
 
@@ -2133,6 +2319,7 @@ function renderRegionLegend() {
 function rebuildStorySnapshots() {
   storySnapshotCanvases = [];
   storyMaskBuffers = [];
+  storySemanticBuffers = [];
 
   if (!currentMap) {
     disposeShaderTextures();
@@ -2142,12 +2329,14 @@ function rebuildStorySnapshots() {
   if (Array.isArray(currentMap.storyLayers) && currentMap.storyLayers.length > 0) {
     storySnapshotCanvases = currentMap.storyLayers.map((layers) => createStorySnapshot(layers));
     storyMaskBuffers = currentMap.storyLayers.map((layers) => createMaskSnapshot(layers));
+    storySemanticBuffers = currentMap.storyLayers.map((layers) => createSemanticSnapshot(layers));
     rebuildShaderTextures();
     return;
   }
 
   storySnapshotCanvases = [createStorySnapshot(currentMap.layers)];
   storyMaskBuffers = [createMaskSnapshot(currentMap.layers)];
+  storySemanticBuffers = [createSemanticSnapshot(currentMap.layers)];
   rebuildShaderTextures();
 }
 
@@ -2165,6 +2354,14 @@ function getCurrentStoryMaskTexture() {
   }
 
   return storyMaskTextures[selectedStoryIndex] || storyMaskTextures[0];
+}
+
+function getCurrentStorySemanticTexture() {
+  if (storySemanticTextures.length === 0) {
+    return null;
+  }
+
+  return storySemanticTextures[selectedStoryIndex] || storySemanticTextures[0];
 }
 
 function renderMap() {
@@ -2229,7 +2426,8 @@ function renderMap() {
 function renderShaderMap(width, height, dpr) {
   const runtime = ensureShaderRuntime();
   const maskTexture = getCurrentStoryMaskTexture();
-  if (!runtime || !currentMap || !maskTexture) {
+  const semanticTexture = getCurrentStorySemanticTexture();
+  if (!runtime || !currentMap || !maskTexture || !semanticTexture) {
     return false;
   }
 
@@ -2255,8 +2453,12 @@ function renderShaderMap(width, height, dpr) {
   gl.uniform1i(runtime.uniforms.mask, 0);
 
   gl.activeTexture(gl.TEXTURE1);
+  gl.bindTexture(gl.TEXTURE_2D, semanticTexture);
+  gl.uniform1i(runtime.uniforms.semantics, 1);
+
+  gl.activeTexture(gl.TEXTURE2);
   gl.bindTexture(gl.TEXTURE_2D, noiseTexture);
-  gl.uniform1i(runtime.uniforms.noise, 1);
+  gl.uniform1i(runtime.uniforms.noise, 2);
 
   gl.uniform2f(runtime.uniforms.maskSize, currentMap.width, currentMap.height);
   gl.uniform2f(runtime.uniforms.viewportSize, viewportWidth, viewportHeight);
@@ -2264,37 +2466,18 @@ function renderShaderMap(width, height, dpr) {
   gl.uniform1f(runtime.uniforms.scale, scaledMapScale);
   gl.uniform3fv(runtime.uniforms.backdropTop, parseColorToRgb(getThemeColor("--canvas", "#242932"), [0.14, 0.16, 0.2]));
   gl.uniform3fv(runtime.uniforms.backdropBottom, parseColorToRgb(getThemeColor("--surface-strong", "#252c36"), [0.14, 0.16, 0.2]));
-  gl.uniform3fv(runtime.uniforms.floorLight, parseColorToRgb(getThemeColor("--region-corridor", "#4a657d"), [0.29, 0.4, 0.49]));
-  gl.uniform3fv(runtime.uniforms.floorShadow, parseColorToRgb(getThemeColor("--map-floor", "#435163"), [0.25, 0.31, 0.38]));
+  gl.uniform3fv(runtime.uniforms.apartmentFloorLight, parseColorToRgb(getThemeColor("--region-apartment-placement", "#70859c"), [0.44, 0.52, 0.61]));
+  gl.uniform3fv(runtime.uniforms.apartmentFloorShadow, parseColorToRgb(getThemeColor("--map-floor", "#55657e"), [0.33, 0.39, 0.49]));
+  gl.uniform3fv(runtime.uniforms.corridorFloorLight, parseColorToRgb(getThemeColor("--region-corridor", "#2b4e46"), [0.17, 0.31, 0.27]));
+  gl.uniform3fv(runtime.uniforms.corridorFloorShadow, parseColorToRgb(getThemeColor("--surface-strong", "#22342f"), [0.13, 0.2, 0.18]));
+  gl.uniform3fv(runtime.uniforms.stairColor, parseColorToRgb(getThemeColor("--region-stair", "#756784"), [0.46, 0.4, 0.52]));
+  gl.uniform3fv(runtime.uniforms.elevatorColor, parseColorToRgb(getThemeColor("--region-elevator", "#8a7c66"), [0.54, 0.49, 0.4]));
   gl.uniform3fv(runtime.uniforms.wallLight, parseColorToRgb(getThemeColor("--map-wall", "#dbc6ad"), [0.86, 0.78, 0.68]));
   gl.uniform3fv(runtime.uniforms.wallShadow, parseColorToRgb("#8f785f", [0.56, 0.47, 0.37]));
   gl.uniform3fv(runtime.uniforms.outlineColor, [0.88, 0.86, 0.82]);
-  gl.uniform3fv(runtime.uniforms.propColor, parseColorToRgb(getThemeColor("--map-low-wall", "#b59e82"), [0.71, 0.62, 0.51]));
+  gl.uniform3fv(runtime.uniforms.propColor, parseColorToRgb(getThemeColor("--map-low-wall-top", "#b8ced2"), [0.72, 0.81, 0.82]));
   gl.uniform3fv(runtime.uniforms.itemColor, parseColorToRgb(getThemeColor("--map-window", "#9bdcff"), [0.61, 0.86, 1]));
   gl.drawArrays(gl.TRIANGLES, 0, 6);
-
-  if (gridEnabled || currentMap) {
-    flatCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    flatCtx.clearRect(0, 0, width, height);
-    if (gridEnabled) {
-      drawGrid(flatCtx);
-    }
-    drawEdgeAdjacentPreviews(flatCtx, currentMap.edges || []);
-    drawMetaEdges(flatCtx, currentMap.edges || []);
-    flatCtx.save();
-    flatCtx.strokeStyle = getThemeColor("--map-outline", "rgba(255, 255, 255, 0.08)");
-    flatCtx.lineWidth = 1;
-    flatCtx.strokeRect(
-      viewportState.offsetX,
-      viewportState.offsetY,
-      currentMap.width * viewportState.scale,
-      currentMap.height * viewportState.scale,
-    );
-    flatCtx.restore();
-    drawFeatureOverlays(flatCtx, currentMap.regions);
-    drawEdgeLabels(flatCtx, currentMap.edges || []);
-    drawRegionLabels(flatCtx, currentMap.regions);
-  }
 
   return true;
 }
@@ -2573,13 +2756,22 @@ function stopDragging(event) {
 }
 
 generatorSelect.addEventListener("change", () => {
+  const previousGeneratorId = generatorSelect.dataset.previousValue || generatorSelect.value;
   selectedStoryIndex = 0;
-  const nextOptions = applyEmbedOptionOverrides(generatorSelect.value, getDefaultOptions(generatorSelect.value));
+  const nextOptions = getMergedOptionsForGeneratorChange(generatorSelect.value);
+  const savedState = loadState();
+  const currentOptions = readOptions();
+  const optionsByGenerator = {
+    ...(savedState.optionsByGenerator || {}),
+    [previousGeneratorId]: currentOptions,
+    [generatorSelect.value]: nextOptions,
+  };
   localStorage.setItem(
     storageKey,
     JSON.stringify({
       generatorId: generatorSelect.value,
       options: nextOptions,
+      optionsByGenerator,
       autoRegen: true, 
       // autoRegenCheckbox.checked,
       selectedStory: 0,
@@ -2587,6 +2779,7 @@ generatorSelect.addEventListener("change", () => {
       renderMode,
     }),
   );
+  generatorSelect.dataset.previousValue = generatorSelect.value;
   updateGeneratorTitle();
   buildInputs();
   onSettingsChanged(true);
@@ -2640,6 +2833,7 @@ renderShaderButton?.addEventListener("click", () => {
     renderMode = "flat";
   }
   updateRenderModeUi();
+  resizeCanvas();
   saveState();
   requestRender();
 });
@@ -2702,6 +2896,7 @@ async function initialize() {
     ? embedConfig.generatorId
     : initialState.generatorId;
   generatorSelect.value = preferredGeneratorId || generatorDefinitions[0]?.id || "";
+  generatorSelect.dataset.previousValue = generatorSelect.value;
   generatorSelect.disabled = embedConfig.lockGenerator || embedConfig.hideGenerator;
   // autoRegenCheckbox.checked = initialState.autoRegen !== false;
   selectedStoryIndex = initialState.selectedStory || 0;

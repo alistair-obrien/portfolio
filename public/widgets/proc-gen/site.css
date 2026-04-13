@@ -18,10 +18,10 @@
   --tooltip-border:       #2c3544;
 
   /* Map colors */
-  --map-floor:            #51687e;
-  --map-wall:             #e4d3bd;
-  --map-low-wall:         #c3ab8c;
-  --map-low-wall-top:     #efe1d0;
+  --map-floor:            #55657a;
+  --map-wall:             #e6d8c5;
+  --map-low-wall:         #6f8f95;
+  --map-low-wall-top:     #b8ced2;
   --map-door:             #b9a182;
   --map-window:           #93dcff;
   --map-grid:             rgba(255, 255, 255, 0.09);
@@ -30,12 +30,16 @@
   /* Region colors */
   --region-default:       #495668;
   --region-outside:       #37404d;
-  --region-corridor:      #5e7f9d;
+  --region-corridor:      #2b4e46;
+  --region-unserved-buildable:#29313d;
   --region-access-core:   #5e5574;
-  --region-elevator:      #826a4a;
-  --region-stair:         #745563;
+  --region-elevator:      #8a7c66;
+  --region-stair:         #756784;
   --region-apartment-zone:#59624f;
-  --region-apartment:     #6a8494;
+  --region-apartment:     #70859c;
+  --region-apartment-potential:#70859c;
+  --region-internal-apartment-potential:#7a8da3;
+  --region-apartment-placement:#70859c;
   --region-balcony:       #66727d;
   --region-room-ldk:      #72899a;
   --region-room-bedroom:  #617786;

@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "genosys-app:publish": "powershell -ExecutionPolicy Bypass -File ./scripts/publish-genosys-app.ps1",
     "widget:publish": "powershell -ExecutionPolicy Bypass -File ./scripts/publish-roguelike-widget.ps1",
     "widget:publish:proc-gen": "powershell -ExecutionPolicy Bypass -File ./scripts/publish-proc-gen-widget.ps1"
   },
