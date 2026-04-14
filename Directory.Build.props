@@ -3,6 +3,7 @@
     <ProcGenPackageVersion Condition="'$(ProcGenPackageVersion)' == ''">0.1.0-dev.2</ProcGenPackageVersion>
     <ProcGenBrowserPackageVersion Condition="'$(ProcGenBrowserPackageVersion)' == ''">0.1.0-dev.2</ProcGenBrowserPackageVersion>
     <ProcGenDevRoot Condition="'$(ProcGenDevRoot)' == ''">$([System.Environment]::GetEnvironmentVariable('PROCGEN_DEV_ROOT'))</ProcGenDevRoot>
+    <ProcGenDevRoot Condition="'$(ProcGenDevRoot)' == '' and Exists('$(MSBuildThisFileDirectory)..\ProcGen\ProcGen.csproj')">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\ProcGen'))</ProcGenDevRoot>
     <UseProcGenProjectReference Condition="'$(ProcGenDevRoot)' != '' and Exists('$(ProcGenDevRoot)\\ProcGen.csproj')">true</UseProcGenProjectReference>
   </PropertyGroup>
 </Project>
