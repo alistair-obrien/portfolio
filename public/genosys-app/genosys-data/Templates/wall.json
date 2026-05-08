@@ -1,0 +1,26 @@
+{
+  "TemplateId": "PropTemplateId:wall",
+  "EntityDefinitions": [
+    {
+      "TypeId": "Prop",
+      "Version": 1,
+      "Data": {
+        "Id": "PropId:7e028a0b-e26d-45bf-83a8-2fc6c1f4dbaf",
+        "Name": "Wall",
+        "Description": null,
+        "FlavorText": null,
+        "RenderKey": {
+          "Key": "wall"
+        },
+        "SizeOnMap": "1:1",
+        "Layers": [],
+        "MapTransition": null,
+        "TypeId": "Prop"
+      },
+      "SourceTemplateId": null,
+      "SourceBlueprintId": null,
+      "TemplateBaseline": null
+    }
+  ],
+  "FolderPath": ""
+}

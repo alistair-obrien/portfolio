@@ -1,0 +1,444 @@
+{
+  "files": [
+    {
+      "Path": "assets",
+      "IsDirectory": true
+    },
+    {
+      "Path": "assets/character-portraits",
+      "IsDirectory": true
+    },
+    {
+      "Path": "assets/character-portraits/dorian_vale.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/mara_venn.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/orion.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/sable_korr.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons",
+      "IsDirectory": true
+    },
+    {
+      "Path": "assets/item-icons/ammo_flechette.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ammo_piercing_case.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ammo.claim_rounds.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/cigs.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable_medkit.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.canteen_empty.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.canteen.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.detox_cap.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.empty_injector.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.medpatch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.noodle_cup.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.ration_pack_half.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.ration_pack_open.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.ration_pack.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.sleep_tab.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.stim_patch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.water_bulb_empty.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/consumable.water_bulb.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_armor_vest.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_backpack.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_data_chip.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_data_pad.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_document.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_hard_drive.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_injector.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_key.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_keycard.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_med_patch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_note.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_photo.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_pistol.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_pouch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_smg.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/icon_item_tool.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/inventory.consumable_test_pack.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.access_card.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.camera_cache.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.car_key.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.claimant_sling.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.claims_key.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.compliance_pouch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.contract_shard.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.dash_cache.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.dnr_slip.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.executive_briefcase.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.injector_pen.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.instant_noodles.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.kill_order_cache.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.leak_drive.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.ledger_cache.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.ledger_drive.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.null_switch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.pajama_rig.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.redaction_key.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.redline_ring.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.redline_token.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.risk_attache.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.route_roll.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.security_kit.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.sterile_foam.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/item.witness_shard.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/med_inhaler.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ration_pack.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/redline_boots.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/redline_gloves.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/redline_inner_armor.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/redline_inner.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/redline_legs.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/redline_neck_brace.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/redline_outer_armor.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/smg.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/stim_patch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/tansfusion_device.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/weapon_shotgun.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/weapon.badge_baton.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/weapon.policy_sidearm.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/scenario-art",
+      "IsDirectory": true
+    },
+    {
+      "Path": "assets/scenario-art/scenario_fly_the_coop.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/scenario-images",
+      "IsDirectory": true
+    },
+    {
+      "Path": "assets/scenario-images/fly_the_coop",
+      "IsDirectory": true
+    },
+    {
+      "Path": "assets/scenario-images/fly_the_coop/1777948834477-game_cyberpunk_character_portrait_2d_8_bits_16x16_pixels14.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "content",
+      "IsDirectory": true
+    },
+    {
+      "Path": "content/redline",
+      "IsDirectory": true
+    },
+    {
+      "Path": "content/redline/quest.yarn",
+      "IsDirectory": false
+    },
+    {
+      "Path": "recordings",
+      "IsDirectory": true
+    },
+    {
+      "Path": "saves",
+      "IsDirectory": true
+    },
+    {
+      "Path": "saves/save-20260505",
+      "IsDirectory": true
+    },
+    {
+      "Path": "saves/save-20260505/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "saves/save-20260505/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/aurelia_blackout",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/aurelia_blackout/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/aurelia_blackout/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/fly_the_coop",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/fly_the_coop/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/fly_the_coop/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/redline_revival_demo",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/redline_revival_demo/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/redline_revival_demo/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "Templates",
+      "IsDirectory": true
+    },
+    {
+      "Path": "Templates/538d19fd-131e-4938-a495-0cd3ee643d97.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "Templates/item_1778065603861.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "Templates/wall.json",
+      "IsDirectory": false
+    }
+  ]
+}

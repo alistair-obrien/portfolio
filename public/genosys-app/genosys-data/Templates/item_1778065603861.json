@@ -1,0 +1,47 @@
+{
+  "TemplateId": "ItemTemplateId:item_1778065603861",
+  "EntityDefinitions": [
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:item_1778065603861",
+        "Name": "Transfusion Device",
+        "Description": "aasdasdasdasd",
+        "FlavorText": "sadasdasdas",
+        "BaseMonetaryValue": 23,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/tansfusion_device.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "0/0",
+        "Stack": "0/0",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": {
+          "QuantityConsumedPerUse": 1,
+          "ConsumesTurn": true,
+          "HungerDelta": 5.0,
+          "ThirstDelta": 0.0,
+          "FatigueDelta": 0.0,
+          "IntoxicationDelta": 0.0,
+          "DepletedBehavior": "destroy",
+          "UseStages": []
+        },
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      },
+      "SourceTemplateId": null,
+      "SourceBlueprintId": null,
+      "TemplateBaseline": null
+    }
+  ],
+  "FolderPath": ""
+}
