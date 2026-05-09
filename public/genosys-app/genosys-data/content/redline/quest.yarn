@@ -1,5 +1,64 @@
 title: Start
 ---
-$c1: New dialogue begins here.
-$c2: Hello!
+$c1: Not taking new work. Backlog's three days deep and I've got parts on back order.
+
+$c1: No exceptions unless something is actively smoking, bleeding, or paying emergency rates.
+-> $c2: I'm not here for repair work.
+    $c1: Then what?
+    <<jump Talk>>
+-> $c2: Can you make an exception?
+    $c1: Depends what it is. If it's fast I'll look. If it's "my whole rig is fried"-come back Thursday.
+    <<jump Repair>>
+-> $c2: What are you working on?
+    $c1: Mobility chassis. Client dropped it off two days ago, hasn't called. Story of my life.
+    $c1: You'd think people would check in on their own gear.
+    <<jump Talk>>
+===
+title: Talk
+---
+$c1: You're Redline? The revival outfit?
+
+-> $c2: That's right.
+    $c1: Figured. Your gear's got that factory-spec look. Most people running around here don't maintain things that well.
+    $c1: There's a woman upstairs-Voss, I think. Corporate type. Came in asking if the service lift was functional. It's not.
+    <<jump VossLead>>
+-> $c2: Freelance.
+    $c1: Freelance with Redline kit. Sure. None of my business.
+    $c1: You looking for anything specific or just checking the neighbourhood?
+    <<jump General>>
+===
+title: Repair
+---
+$c1: Alright, show me.
+
+-> $c2: It's a modframe-right arm, hydraulic actuator.
+    $c1: That I can do. Give me forty minutes and don't touch anything on the bench.
+    <<jump Close>>
+-> $c2: Neural driver housing-connection's intermittent.
+    $c1: That's delicate. I can stabilise it but I won't promise full calibration. Proper cal needs lab equipment.
+    <<jump Close>>
+===
+title: VossLead
+---
+$c1: She said the main corridor was compromised. Tried the lift, found out it was locked on subfloor authority.
+
+$c1: I told her to wait on the third floor. Safer structure up there.
+
+-> $c2: Thanks. That helps.
+    $c1: Don't mention it. Just-if she's a client of yours, get her out before the building decides it's done standing.
+    <<jump Close>>
+===
+title: General
+---
+$c1: Subfloor's been making noise. Not structural-too regular for that. Mechanical, rhythmic. Started four days ago.
+
+$c1: I've got no reason to go down there and every reason not to. But someone should.
+
+-> $c2: I'll check it out.
+    $c1: Your call. Take a light-the emergency strips down there burned out months ago.
+    <<jump Close>>
+===
+title: Close
+---
+$c1: Door's always open. Well-not always. But during hours.
 ===
