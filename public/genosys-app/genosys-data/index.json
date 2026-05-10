@@ -13,7 +13,19 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/character-portraits/ilya_voss.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/juno_kade.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/character-portraits/mara_venn.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/nix_corvid.png",
       "IsDirectory": false
     },
     {
@@ -21,7 +33,19 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/character-portraits/rook_imani.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/character-portraits/sable_korr.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/silas_wren.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/vale_nyx.png",
       "IsDirectory": false
     },
     {
@@ -126,6 +150,214 @@
     },
     {
       "Path": "assets/item-icons/dorian_vale_shoes.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.access_fob.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.aegis_compact_smg.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.blink_case.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.broker_drive.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.claim_marker.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.claim_tags.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.cold_focus_patch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.crow_knife.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.evidence_tag.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.field_bag.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.flechette_1x1.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.glasswire_lenses.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.holdout_pistol.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.joyworks_fob.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.korr_nanoshield.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.korr_sidearm.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.medkit.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.nano_shield.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.null_pin_key.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.panic_inhaler.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.personal_cache.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.pistol_mag_1x1.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.risk_case.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.sable_boots.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.sable_coat.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.sable_earlink.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.sable_gloves.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.sable_inner.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.sable_trousers.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.scrap_saw.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.shock_caps_1x1.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/fly.smg_mag_1x1.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.blackout_patch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.camera_contacts.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.ceramic_armor.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.dead_switch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.gala_jacket.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.injector.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.kill_contract.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.logic_bomb.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.microdrone.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.neural_crown.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.phantom_deck.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.safehouse_bag.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.server_blade.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.service_tray.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.silenced_pistol.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.smart_ammo_1x1.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.spoof_key.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.target_badge.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.trace_battery.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.visual_tap.png",
       "IsDirectory": false
     },
     {
@@ -369,11 +601,35 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/prop-icons/ghost.gala_lift.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/prop-icons/ghost.map_door.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/prop-icons/ghost.remote_terminal.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/prop-icons/ghost.security_camera.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/prop-icons/ghost.server_rack.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/scenario-art",
       "IsDirectory": true
     },
     {
       "Path": "assets/scenario-art/scenario_fly_the_coop.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/scenario-art/scenario_ghost_dividend.png",
       "IsDirectory": false
     },
     {
@@ -391,6 +647,14 @@
     {
       "Path": "content",
       "IsDirectory": true
+    },
+    {
+      "Path": "content/ghost_dividend",
+      "IsDirectory": true
+    },
+    {
+      "Path": "content/ghost_dividend/briefing.yarn",
+      "IsDirectory": false
     },
     {
       "Path": "content/redline",
@@ -446,6 +710,18 @@
     },
     {
       "Path": "scenarios/fly_the_coop/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/ghost_dividend",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/ghost_dividend/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/ghost_dividend/state.json",
       "IsDirectory": false
     },
     {

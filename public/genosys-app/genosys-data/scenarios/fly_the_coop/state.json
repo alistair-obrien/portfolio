@@ -2239,6 +2239,14 @@
           {
             "Id": "PropId:fly_coop_supply_crate",
             "Position": "18:18"
+          },
+          {
+            "Id": "CharacterId:nix_corvid",
+            "Position": "26:20"
+          },
+          {
+            "Id": "CharacterId:rook_imani",
+            "Position": "34:22"
           }
         ],
         "TypeId": "MapChunk"
@@ -9710,11 +9718,11 @@
           "Technical": 0,
           "Grit": 0,
           "Charisma": 0,
-          "Hunger": 0.0,
-          "Thirst": 0.0,
-          "Fatigue": 0.0,
-          "Intoxication": 0.0,
-          "Humanity": 0.0,
+          "Hunger": 0,
+          "Thirst": 0,
+          "Fatigue": 0,
+          "Intoxication": 0,
+          "Humanity": 0,
           "MovementCellsPerTurn": 6,
           "VisionRangeTiles": 20
         },
@@ -9908,11 +9916,11 @@
           "Technical": 0,
           "Grit": 0,
           "Charisma": 0,
-          "Hunger": 0.0,
-          "Thirst": 0.0,
-          "Fatigue": 0.0,
-          "Intoxication": 0.0,
-          "Humanity": 0.0,
+          "Hunger": 0,
+          "Thirst": 0,
+          "Fatigue": 0,
+          "Intoxication": 0,
+          "Humanity": 0,
           "MovementCellsPerTurn": 6,
           "VisionRangeTiles": 20
         },
@@ -10099,7 +10107,7 @@
         "FlavorText": "Someone made a placeholder and forgot to bury the body.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.claim_marker.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -10138,11 +10146,11 @@
           "Technical": 0,
           "Grit": 0,
           "Charisma": 0,
-          "Hunger": 0.0,
-          "Thirst": 0.0,
-          "Fatigue": 0.0,
-          "Intoxication": 0.0,
-          "Humanity": 0.0,
+          "Hunger": 0,
+          "Thirst": 0,
+          "Fatigue": 0,
+          "Intoxication": 0,
+          "Humanity": 0,
           "MovementCellsPerTurn": 6,
           "VisionRangeTiles": 20
         },
@@ -10329,7 +10337,7 @@
         "FlavorText": "Standard issue, freshly signed out, still too clean to have earned trust.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.field_bag.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -10365,7 +10373,7 @@
         "FlavorText": "The academy called it a deterrent. Everyone else heard the word \"billable.\"",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": "asset:assets/item-icons/smg.png"
+          "Key": "asset:assets/item-icons/fly.aegis_compact_smg.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "2:2",
@@ -10382,16 +10390,16 @@
         "Gun": {
           "LoadedAmmoItemId": null,
           "ProjectileCountPerShot": 1,
-          "SpreadAngleDeg": 0.0,
+          "SpreadAngleDeg": 0,
           "FiringStyle": 0,
-          "ShotRadiusInTiles": 1.0,
+          "ShotRadiusInTiles": 1,
           "RequiresBothHands": false,
           "ClipSize": 6,
           "ControlRequirement": 0,
           "AdditionalShotEnergy": 0,
-          "CloseRangeEnergyMultiplier": 1.0,
-          "MidRangeEnergyMultiplier": 1.0,
-          "LongRangeEnergyMultiplier": 1.0
+          "CloseRangeEnergyMultiplier": 1,
+          "MidRangeEnergyMultiplier": 1,
+          "LongRangeEnergyMultiplier": 1
         },
         "Armor": null,
         "TypeId": "Item"
@@ -10410,7 +10418,7 @@
         "FlavorText": "Stamped TESTED. Not stamped INVINCIBLE.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.nano_shield.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -10444,7 +10452,7 @@
         "FlavorText": "No chain of custody, no owner, no mercy.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.evidence_tag.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -10476,7 +10484,7 @@
         "FlavorText": "Polished enough for a boardroom. Loaded for somewhere worse.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.holdout_pistol.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -10493,16 +10501,16 @@
         "Gun": {
           "LoadedAmmoItemId": null,
           "ProjectileCountPerShot": 1,
-          "SpreadAngleDeg": 0.0,
+          "SpreadAngleDeg": 0,
           "FiringStyle": 0,
-          "ShotRadiusInTiles": 1.0,
+          "ShotRadiusInTiles": 1,
           "RequiresBothHands": false,
           "ClipSize": 6,
           "ControlRequirement": 0,
           "AdditionalShotEnergy": 0,
-          "CloseRangeEnergyMultiplier": 1.0,
-          "MidRangeEnergyMultiplier": 1.0,
-          "LongRangeEnergyMultiplier": 1.0
+          "CloseRangeEnergyMultiplier": 1,
+          "MidRangeEnergyMultiplier": 1,
+          "LongRangeEnergyMultiplier": 1
         },
         "Armor": null,
         "TypeId": "Item"
@@ -10521,7 +10529,7 @@
         "FlavorText": "Protection for people who prefer their danger invisible and their invoices itemized.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.nano_shield.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -10567,7 +10575,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.hands",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -10605,10 +10613,10 @@
         "Consumable": {
           "QuantityConsumedPerUse": 1,
           "ConsumesTurn": true,
-          "HungerDelta": 5.0,
-          "ThirstDelta": 0.0,
-          "FatigueDelta": 0.0,
-          "IntoxicationDelta": 0.0,
+          "HungerDelta": 5,
+          "ThirstDelta": 0,
+          "FatigueDelta": 0,
+          "IntoxicationDelta": 0,
           "DepletedBehavior": "destroy",
           "UseStages": []
         },
@@ -10646,7 +10654,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.accessory_1",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -10684,7 +10692,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.torso_inner",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -10722,7 +10730,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.torso_outer",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -10760,7 +10768,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.feet",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -10798,7 +10806,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.legs",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -11861,10 +11869,10 @@
                     "IsConsumable": true,
                     "ConsumableQuantityConsumedPerUse": 1,
                     "ConsumableConsumesTurn": true,
-                    "ConsumableHungerDelta": 0.0,
-                    "ConsumableThirstDelta": 0.0,
-                    "ConsumableFatigueDelta": 0.0,
-                    "ConsumableIntoxicationDelta": 0.0,
+                    "ConsumableHungerDelta": 0,
+                    "ConsumableThirstDelta": 0,
+                    "ConsumableFatigueDelta": 0,
+                    "ConsumableIntoxicationDelta": 0,
                     "ConsumableDepletedBehavior": "destroy",
                     "IsInventory": false,
                     "IsDigitalInventory": false,
@@ -11954,10 +11962,10 @@
                     "IsConsumable": false,
                     "ConsumableQuantityConsumedPerUse": 0,
                     "ConsumableConsumesTurn": false,
-                    "ConsumableHungerDelta": 0.0,
-                    "ConsumableThirstDelta": 0.0,
-                    "ConsumableFatigueDelta": 0.0,
-                    "ConsumableIntoxicationDelta": 0.0,
+                    "ConsumableHungerDelta": 0,
+                    "ConsumableThirstDelta": 0,
+                    "ConsumableFatigueDelta": 0,
+                    "ConsumableIntoxicationDelta": 0,
                     "ConsumableDepletedBehavior": "",
                     "IsInventory": false,
                     "IsDigitalInventory": false,
@@ -12053,7 +12061,7 @@
                   "CellFootprint": "11:22:3:3",
                   "HasWeapon": true,
                   "WeaponRenderKey": {
-                    "Key": "asset:assets/item-icons/smg.png"
+                    "Key": "asset:assets/item-icons/fly.aegis_compact_smg.png"
                   },
                   "WeaponCellSize": "2:2"
                 },
@@ -12111,7 +12119,7 @@
                   "CellFootprint": "11:22:3:3",
                   "HasWeapon": true,
                   "WeaponRenderKey": {
-                    "Key": "asset:assets/item-icons/smg.png"
+                    "Key": "asset:assets/item-icons/fly.aegis_compact_smg.png"
                   },
                   "WeaponCellSize": "2:2"
                 },
@@ -12285,7 +12293,7 @@
                   "CellFootprint": "11:23:3:3",
                   "HasWeapon": true,
                   "WeaponRenderKey": {
-                    "Key": "asset:assets/item-icons/smg.png"
+                    "Key": "asset:assets/item-icons/fly.aegis_compact_smg.png"
                   },
                   "WeaponCellSize": "2:2"
                 },
@@ -12493,7 +12501,7 @@
                   "CellFootprint": "17:23:3:3",
                   "HasWeapon": true,
                   "WeaponRenderKey": {
-                    "Key": "asset:assets/item-icons/smg.png"
+                    "Key": "asset:assets/item-icons/fly.aegis_compact_smg.png"
                   },
                   "WeaponCellSize": "2:2"
                 },
@@ -12667,7 +12675,7 @@
                   "CellFootprint": "18:20:3:3",
                   "HasWeapon": true,
                   "WeaponRenderKey": {
-                    "Key": "asset:assets/item-icons/smg.png"
+                    "Key": "asset:assets/item-icons/fly.aegis_compact_smg.png"
                   },
                   "WeaponCellSize": "2:2"
                 },
@@ -12725,7 +12733,7 @@
                   "CellFootprint": "18:20:3:3",
                   "HasWeapon": true,
                   "WeaponRenderKey": {
-                    "Key": "asset:assets/item-icons/smg.png"
+                    "Key": "asset:assets/item-icons/fly.aegis_compact_smg.png"
                   },
                   "WeaponCellSize": "2:2"
                 },
@@ -12907,7 +12915,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.torso_inner",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -12945,7 +12953,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.torso_outer",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -12971,7 +12979,7 @@
         "FlavorText": "Plenty of space. Very little accountability.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.personal_cache.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -12988,11 +12996,11 @@
           "ItemPlacements": [
             {
               "ItemId": "ItemId:fly_coop_dorian_pistol_mag",
-              "CellFootprint": "0:0:1:2"
+              "CellFootprint": "0:0:1:1"
             },
             {
               "ItemId": "ItemId:fly_coop_dorian_spare_mag",
-              "CellFootprint": "1:0:1:2"
+              "CellFootprint": "1:0:1:1"
             },
             {
               "ItemId": "ItemId:fly_coop_dorian_panic_inhaler",
@@ -13036,7 +13044,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.hands",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13074,7 +13082,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.legs",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13112,7 +13120,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.feet",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13151,7 +13159,7 @@
           ],
           "ModFrameCoverage": 0,
           "MaxDamageCapacity": 0,
-          "CyberSecurityLevel": 0.0,
+          "CyberSecurityLevel": 0,
           "InstalledMods": [],
           "Damage": []
         },
@@ -13179,10 +13187,10 @@
         "FlavorText": "The academy said to count shots. The magazine makes counting optional until it does not.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.smg_mag_1x1.png"
         },
         "ManufacturerId": null,
-        "SizeInInventory": "1:2",
+        "SizeInInventory": "1:1",
         "Condition": "0/0",
         "Stack": "6/6",
         "GrantedActorGrants": [],
@@ -13214,10 +13222,10 @@
         "FlavorText": "Tiny blades, large paperwork.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.flechette_1x1.png"
         },
         "ManufacturerId": null,
-        "SizeInInventory": "1:2",
+        "SizeInInventory": "1:1",
         "Condition": "0/0",
         "Stack": "3/3",
         "GrantedActorGrants": [],
@@ -13249,7 +13257,7 @@
         "FlavorText": "First aid, then forms.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.medkit.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "2:2",
@@ -13261,10 +13269,10 @@
         "Consumable": {
           "QuantityConsumedPerUse": 1,
           "ConsumesTurn": true,
-          "HungerDelta": 0.0,
-          "ThirstDelta": 0.0,
-          "FatigueDelta": 0.0,
-          "IntoxicationDelta": 0.0,
+          "HungerDelta": 0,
+          "ThirstDelta": 0,
+          "FatigueDelta": 0,
+          "IntoxicationDelta": 0,
           "DepletedBehavior": "destroy",
           "UseStages": []
         },
@@ -13290,7 +13298,7 @@
         "FlavorText": "Little plastic flags for large institutional confidence.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.claim_tags.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -13322,10 +13330,10 @@
         "FlavorText": "Discretion, serialized.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.pistol_mag_1x1.png"
         },
         "ManufacturerId": null,
-        "SizeInInventory": "1:2",
+        "SizeInInventory": "1:1",
         "Condition": "0/0",
         "Stack": "6/6",
         "GrantedActorGrants": [],
@@ -13357,10 +13365,10 @@
         "FlavorText": "Prepared by someone on his staff, naturally.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.pistol_mag_1x1.png"
         },
         "ManufacturerId": null,
-        "SizeInInventory": "1:2",
+        "SizeInInventory": "1:1",
         "Condition": "0/0",
         "Stack": "6/6",
         "GrantedActorGrants": [],
@@ -13392,7 +13400,7 @@
         "FlavorText": "Use before screaming, if possible.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.panic_inhaler.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:2",
@@ -13404,8 +13412,8 @@
         "Consumable": {
           "QuantityConsumedPerUse": 1,
           "ConsumesTurn": true,
-          "HungerDelta": 0.0,
-          "ThirstDelta": 0.0,
+          "HungerDelta": 0,
+          "ThirstDelta": 0,
           "FatigueDelta": -0.18,
           "IntoxicationDelta": 0.04,
           "DepletedBehavior": "destroy",
@@ -13433,7 +13441,7 @@
         "FlavorText": "Every door knows his name. Not every door likes him.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.access_fob.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -13465,7 +13473,7 @@
         "FlavorText": "Nothing rattles. That is the point.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.risk_case.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "2:2",
@@ -13482,11 +13490,11 @@
           "ItemPlacements": [
             {
               "ItemId": "ItemId:fly_coop_sable_magazine",
-              "CellFootprint": "0:0:1:2"
+              "CellFootprint": "0:0:1:1"
             },
             {
               "ItemId": "ItemId:fly_coop_sable_shock_caps",
-              "CellFootprint": "1:0:1:2"
+              "CellFootprint": "1:0:1:1"
             },
             {
               "ItemId": "ItemId:fly_coop_sable_lockpick",
@@ -13518,7 +13526,7 @@
         "FlavorText": "Quiet enough to keep secrets. Loud enough to end them.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.korr_sidearm.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "2:2",
@@ -13535,9 +13543,9 @@
         "Gun": {
           "LoadedAmmoItemId": null,
           "ProjectileCountPerShot": 1,
-          "SpreadAngleDeg": 0.0,
+          "SpreadAngleDeg": 0,
           "FiringStyle": 0,
-          "ShotRadiusInTiles": 1.0,
+          "ShotRadiusInTiles": 1,
           "RequiresBothHands": false,
           "ClipSize": 8,
           "ControlRequirement": 1,
@@ -13563,7 +13571,7 @@
         "FlavorText": "Invisible armor for people who dislike explanations.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.korr_nanoshield.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -13597,7 +13605,7 @@
         "FlavorText": "She watches the room watch itself.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.glasswire_lenses.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -13609,7 +13617,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.face",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13635,7 +13643,7 @@
         "FlavorText": "Quiet fabric. Loud intent.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.sable_inner.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "3:3",
@@ -13647,7 +13655,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.torso_inner",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13673,7 +13681,7 @@
         "FlavorText": "Corporate eveningwear for hostile mornings.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.sable_coat.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "3:3",
@@ -13685,7 +13693,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.torso_outer",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13711,7 +13719,7 @@
         "FlavorText": "No fingerprints, no flourish.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.sable_gloves.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "2:2",
@@ -13723,7 +13731,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.hands",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13749,7 +13757,7 @@
         "FlavorText": "Tailoring with an escape route.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.sable_trousers.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "3:3",
@@ -13761,7 +13769,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.legs",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13787,7 +13795,7 @@
         "FlavorText": "The sound arrives after she does.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.sable_boots.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "2:2",
@@ -13799,7 +13807,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.feet",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13825,7 +13833,7 @@
         "FlavorText": "The voice in her ear never repeats itself.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.sable_earlink.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -13837,7 +13845,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.accessory_1",
-          "SurfaceArea": 1.0,
+          "SurfaceArea": 1,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []
@@ -13863,10 +13871,10 @@
         "FlavorText": "A small answer to loud questions.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.pistol_mag_1x1.png"
         },
         "ManufacturerId": null,
-        "SizeInInventory": "1:2",
+        "SizeInInventory": "1:1",
         "Condition": "0/0",
         "Stack": "8/8",
         "GrantedActorGrants": [],
@@ -13898,10 +13906,10 @@
         "FlavorText": "Mercy, in the contractual sense.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.shock_caps_1x1.png"
         },
         "ManufacturerId": null,
-        "SizeInInventory": "1:2",
+        "SizeInInventory": "1:1",
         "Condition": "0/0",
         "Stack": "4/4",
         "GrantedActorGrants": [],
@@ -13933,7 +13941,7 @@
         "FlavorText": "It does not open doors. It convinces them.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.null_pin_key.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -13965,7 +13973,7 @@
         "FlavorText": "Calm is sometimes chemical.",
         "BaseMonetaryValue": 0,
         "RenderKey": {
-          "Key": ""
+          "Key": "asset:assets/item-icons/fly.cold_focus_patch.png"
         },
         "ManufacturerId": null,
         "SizeInInventory": "1:1",
@@ -13977,8 +13985,8 @@
         "Consumable": {
           "QuantityConsumedPerUse": 1,
           "ConsumesTurn": true,
-          "HungerDelta": 0.0,
-          "ThirstDelta": 0.0,
+          "HungerDelta": 0,
+          "ThirstDelta": 0,
           "FatigueDelta": -0.2,
           "IntoxicationDelta": 0.05,
           "DepletedBehavior": "destroy",
@@ -14033,6 +14041,595 @@
       "SourceTemplateId": null,
       "SourceBlueprintId": null,
       "TemplateBaseline": null
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:fly_nix_scrap_sling",
+        "Name": "Nix Corvid's Scrap Sling",
+        "Description": "A patched scavenger sling sorted for cyber parts, cutters, and whatever still twitches after extraction.",
+        "FlavorText": "",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/fly.risk_case.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "2:2",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": {
+          "Columns": 6,
+          "Rows": 4,
+          "ItemPlacements": [
+            {
+              "ItemId": "ItemId:fly_nix_scrap_saw",
+              "CellFootprint": "0:0:1:1"
+            },
+            {
+              "ItemId": "ItemId:fly_nix_crow_knife",
+              "CellFootprint": "1:0:1:1"
+            },
+            {
+              "ItemId": "ItemId:fly_nix_pistol_mag",
+              "CellFootprint": "2:0:1:1"
+            }
+          ]
+        },
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:fly_nix_scrap_pistol",
+        "Name": "Crowline Scrap Pistol",
+        "Description": "A chopped-together pistol with clean internals, ugly welds, and no serial remorse.",
+        "FlavorText": "",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/fly.korr_sidearm.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "2:2",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": {
+          "LoadedAmmoItemId": null,
+          "ProjectileCountPerShot": 1,
+          "SpreadAngleDeg": 0,
+          "FiringStyle": 0,
+          "ShotRadiusInTiles": 1,
+          "RequiresBothHands": false,
+          "ClipSize": 6,
+          "ControlRequirement": 0,
+          "AdditionalShotEnergy": 0,
+          "CloseRangeEnergyMultiplier": 1,
+          "MidRangeEnergyMultiplier": 1,
+          "LongRangeEnergyMultiplier": 0.75
+        },
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:fly_nix_patch_shield",
+        "Name": "Crow Patch Shield",
+        "Description": "A scavenged shield emitter repaired with black-market capacitors and spite.",
+        "FlavorText": "",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/fly.korr_nanoshield.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": {
+          "Resistances": []
+        },
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:fly_nix_scrap_saw",
+        "Name": "Compact Scrap Saw",
+        "Description": "A quiet rotary cutter for cybernetic housings, door hinges, and very bad plans.",
+        "FlavorText": "",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/fly.scrap_saw.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:fly_nix_crow_knife",
+        "Name": "Crow Carver Knife",
+        "Description": "A hooked ceramic knife designed to open armor seams without wasting the parts beneath.",
+        "FlavorText": "",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/fly.crow_knife.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:fly_nix_pistol_mag",
+        "Name": "Scavenger Pistol Magazine",
+        "Description": "A 1x1 magazine of mixed hardball rounds that somehow all feed.",
+        "FlavorText": "",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/fly.pistol_mag_1x1.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "1/1",
+        "Stack": "6/6",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": {
+          "DamageType": "piercing",
+          "BaseEnergy": 7
+        },
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:fly_rook_media_satchel",
+        "Name": "Rook Imani's Media Satchel",
+        "Description": "A Joy Works satchel with access slates, private-tip ledgers, and enough plausible deniability to stain the lining.",
+        "FlavorText": "",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/fly.personal_cache.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "2:2",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": {
+          "Columns": 6,
+          "Rows": 4,
+          "ItemPlacements": [
+            {
+              "ItemId": "ItemId:fly_rook_broker_drive",
+              "CellFootprint": "0:0:1:1"
+            },
+            {
+              "ItemId": "ItemId:fly_rook_joyworks_fob",
+              "CellFootprint": "1:0:1:1"
+            }
+          ]
+        },
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:fly_rook_broker_drive",
+        "Name": "Broker Contact Drive",
+        "Description": "A slim drive full of backdoor key manifests and Joy Works creator payout routing.",
+        "FlavorText": "",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/fly.broker_drive.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:fly_rook_joyworks_fob",
+        "Name": "Joy Works Ops Fob",
+        "Description": "A staff access fob for lift banks, media booths, and server-room excuses.",
+        "FlavorText": "",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/fly.access_fob.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Character",
+      "Version": 1,
+      "Data": {
+        "Id": "CharacterId:nix_corvid",
+        "Name": "Nix Corvid",
+        "Description": "A Crow scavenger breacher who came for Dorian Vale's expensive implants, especially Blink. Her gear is compact, ugly, and practical: cutters, a scrap pistol, and a shield emitter kept alive past warranty.",
+        "Level": 1,
+        "PortraitRenderKey": {
+          "Key": "asset:assets/character-portraits/nix_corvid.png"
+        },
+        "Stats": {
+          "Physique": 4,
+          "Reflexes": 5,
+          "Technical": 3,
+          "Grit": 4,
+          "Charisma": 1,
+          "Hunger": 0,
+          "Thirst": 0,
+          "Fatigue": 0,
+          "Intoxication": 0,
+          "Humanity": 0,
+          "MovementCellsPerTurn": 6,
+          "VisionRangeTiles": 20
+        },
+        "Anatomy": {
+          "AnatomyMap": []
+        },
+        "Cybernetics": {
+          "Cybernetics": [
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.head",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.torso",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.leftArm",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.rightArm",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.legs",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_1",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_2",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_3",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_4",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_5",
+              "ItemId": null
+            }
+          ]
+        },
+        "Style": {
+          "StyleItems": [
+            {
+              "StyleSlotId": "StyleSlotId:character.style.head",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.face",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.torso_inner",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.torso_outer",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.hands",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.legs",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.feet",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_1",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_2",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_3",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_4",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_5",
+              "ItemId": null
+            }
+          ]
+        },
+        "OperatingSystem": {
+          "Id": "ripos-cracked",
+          "Modules": [],
+          "ConnectedStorageItemId": null
+        },
+        "IntrinsicGrants": [],
+        "InventoryItemId": "ItemId:fly_nix_scrap_sling",
+        "WeaponItemId": "ItemId:fly_nix_scrap_pistol",
+        "ArmorItemId": "ItemId:fly_nix_patch_shield",
+        "DialogueNode": "Start",
+        "DialogueScriptPath": "",
+        "ActiveDialogueInstanceId": null,
+        "SizeOnMap": "3:3",
+        "TypeId": "Character"
+      }
+    },
+    {
+      "TypeId": "Character",
+      "Version": 1,
+      "Data": {
+        "Id": "CharacterId:rook_imani",
+        "Name": "Rook Imani",
+        "Description": "A Joy Works media operations handler who knows the premium client was selling server backdoor keys. Rook is trying to stay useful enough that nobody decides he is evidence.",
+        "Level": 1,
+        "PortraitRenderKey": {
+          "Key": "asset:assets/character-portraits/rook_imani.png"
+        },
+        "Stats": {
+          "Physique": 2,
+          "Reflexes": 3,
+          "Technical": 5,
+          "Grit": 2,
+          "Charisma": 4,
+          "Hunger": 0,
+          "Thirst": 0,
+          "Fatigue": 0,
+          "Intoxication": 0,
+          "Humanity": 0,
+          "MovementCellsPerTurn": 6,
+          "VisionRangeTiles": 20
+        },
+        "Anatomy": {
+          "AnatomyMap": []
+        },
+        "Cybernetics": {
+          "Cybernetics": [
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.head",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.torso",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.leftArm",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.rightArm",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.legs",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_1",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_2",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_3",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_4",
+              "ItemId": null
+            },
+            {
+              "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_5",
+              "ItemId": null
+            }
+          ]
+        },
+        "Style": {
+          "StyleItems": [
+            {
+              "StyleSlotId": "StyleSlotId:character.style.head",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.face",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.torso_inner",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.torso_outer",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.hands",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.legs",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.feet",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_1",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_2",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_3",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_4",
+              "ItemId": null
+            },
+            {
+              "StyleSlotId": "StyleSlotId:character.style.accessory_5",
+              "ItemId": null
+            }
+          ]
+        },
+        "OperatingSystem": {
+          "Id": "civilian-shell",
+          "Modules": [],
+          "ConnectedStorageItemId": null
+        },
+        "IntrinsicGrants": [],
+        "InventoryItemId": "ItemId:fly_rook_media_satchel",
+        "WeaponItemId": null,
+        "ArmorItemId": null,
+        "DialogueNode": "Start",
+        "DialogueScriptPath": "",
+        "ActiveDialogueInstanceId": null,
+        "SizeOnMap": "3:3",
+        "TypeId": "Character"
+      }
     }
   ],
   "Worlds": [],
@@ -17256,6 +17853,138 @@
       "OwnerEntityId": "MapChunkId:aparment_block",
       "MapId": "MapChunkId:aparment_block",
       "CellFootprint": "18:18:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": null
+    },
+    {
+      "EntityId": "ItemId:fly_nix_scrap_sling",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:nix_corvid",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:0:0",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "LoadoutSlotId:character.loadout.inventory"
+    },
+    {
+      "EntityId": "ItemId:fly_nix_scrap_pistol",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:nix_corvid",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:0:0",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "LoadoutSlotId:character.loadout.primaryWeapon"
+    },
+    {
+      "EntityId": "ItemId:fly_nix_patch_shield",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:nix_corvid",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:0:0",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "LoadoutSlotId:character.loadout.armor"
+    },
+    {
+      "EntityId": "ItemId:fly_nix_scrap_saw",
+      "Kind": "Inventory",
+      "OwnerEntityId": "ItemId:fly_nix_scrap_sling",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:0:0",
+      "InventoryOwnerId": "ItemId:fly_nix_scrap_sling",
+      "InventoryItemId": "ItemId:fly_nix_scrap_sling",
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": null
+    },
+    {
+      "EntityId": "ItemId:fly_nix_crow_knife",
+      "Kind": "Inventory",
+      "OwnerEntityId": "ItemId:fly_nix_scrap_sling",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:0:0",
+      "InventoryOwnerId": "ItemId:fly_nix_scrap_sling",
+      "InventoryItemId": "ItemId:fly_nix_scrap_sling",
+      "CellPosition": "1:0",
+      "GunItemId": null,
+      "SlotPath": null
+    },
+    {
+      "EntityId": "ItemId:fly_nix_pistol_mag",
+      "Kind": "Inventory",
+      "OwnerEntityId": "ItemId:fly_nix_scrap_sling",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:0:0",
+      "InventoryOwnerId": "ItemId:fly_nix_scrap_sling",
+      "InventoryItemId": "ItemId:fly_nix_scrap_sling",
+      "CellPosition": "2:0",
+      "GunItemId": null,
+      "SlotPath": null
+    },
+    {
+      "EntityId": "ItemId:fly_rook_media_satchel",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:rook_imani",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:0:0",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "LoadoutSlotId:character.loadout.inventory"
+    },
+    {
+      "EntityId": "ItemId:fly_rook_broker_drive",
+      "Kind": "Inventory",
+      "OwnerEntityId": "ItemId:fly_rook_media_satchel",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:0:0",
+      "InventoryOwnerId": "ItemId:fly_rook_media_satchel",
+      "InventoryItemId": "ItemId:fly_rook_media_satchel",
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": null
+    },
+    {
+      "EntityId": "ItemId:fly_rook_joyworks_fob",
+      "Kind": "Inventory",
+      "OwnerEntityId": "ItemId:fly_rook_media_satchel",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:0:0",
+      "InventoryOwnerId": "ItemId:fly_rook_media_satchel",
+      "InventoryItemId": "ItemId:fly_rook_media_satchel",
+      "CellPosition": "1:0",
+      "GunItemId": null,
+      "SlotPath": null
+    },
+    {
+      "EntityId": "CharacterId:nix_corvid",
+      "Kind": "Map",
+      "OwnerEntityId": "MapChunkId:aparment_block",
+      "MapId": "MapChunkId:aparment_block",
+      "CellFootprint": "26:20:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": null
+    },
+    {
+      "EntityId": "CharacterId:rook_imani",
+      "Kind": "Map",
+      "OwnerEntityId": "MapChunkId:aparment_block",
+      "MapId": "MapChunkId:aparment_block",
+      "CellFootprint": "34:22:3:3",
       "InventoryOwnerId": null,
       "InventoryItemId": null,
       "CellPosition": "0:0",
