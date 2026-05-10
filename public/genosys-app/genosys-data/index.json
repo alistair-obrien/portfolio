@@ -101,6 +101,34 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/item-icons/dorian_vale_blink.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/dorian_vale_coat.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/dorian_vale_gloves.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/dorian_vale_inner_shirt.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/dorian_vale_inner.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/dorian_vale_pants.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/dorian_vale_shoes.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/item-icons/icon_item_armor_vest.png",
       "IsDirectory": false
     },
@@ -330,6 +358,14 @@
     },
     {
       "Path": "assets/item-icons/weapon.policy_sidearm.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/prop-icons",
+      "IsDirectory": true
+    },
+    {
+      "Path": "assets/prop-icons/aegis_supply_crate.png",
       "IsDirectory": false
     },
     {

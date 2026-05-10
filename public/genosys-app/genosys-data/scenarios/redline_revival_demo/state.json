@@ -9,7 +9,6 @@
         "PlayerCharacterId": "CharacterId:root@origin.sys",
         "PrimaryObservationId": null,
         "Observations": [],
-        "PlayerNeuralDriverId": "NeuralDriverId:root@origin.driver",
         "TurnData": {},
         "ActiveContract": {
           "EmployerId": "employer.redline.revival",
@@ -53,50 +52,6 @@
         "Name": "Graymarket Utility Concern",
         "Description": "An unapproved supplier with no Redline Revival liability coverage.",
         "TypeId": "Manufacturer"
-      },
-      "SourceTemplateId": null,
-      "SourceBlueprintId": null,
-      "TemplateBaseline": null
-    },
-    {
-      "TypeId": "NeuralDriver",
-      "Version": 1,
-      "Data": {
-        "Id": "NeuralDriverId:root@origin.driver",
-        "Name": "Administrator Neural Driver",
-        "Substrate": 0,
-        "Agency": 0,
-        "Grants": [
-          {
-            "Id": "interactions.build",
-            "Access": 30
-          },
-          {
-            "Id": "interactions.entity.duplicate",
-            "Access": 30
-          },
-          {
-            "Id": "interactions.entity.delete",
-            "Access": 30
-          },
-          {
-            "Id": "interactions.entity.detach",
-            "Access": 30
-          },
-          {
-            "Id": "interactions.character.possess",
-            "Access": 40
-          },
-          {
-            "Id": "interactions.character.spy",
-            "Access": 40
-          },
-          {
-            "Id": "interactions.character.operating-system.set",
-            "Access": 40
-          }
-        ],
-        "TypeId": "NeuralDriver"
       },
       "SourceTemplateId": null,
       "SourceBlueprintId": null,
@@ -194,7 +149,6 @@
           "ConnectedStorageItemId": "ItemId:246c4353-6188-4e26-abe5-48f1f571c604"
         },
         "IntrinsicGrants": [],
-        "ActiveNeuralDriverId": "NeuralDriverId:root@origin.driver",
         "InventoryItemId": "ItemId:a9b22a5a-0d72-4d88-965f-005deecb1be3",
         "WeaponItemId": "ItemId:f5914896-9618-47fe-a4d2-d167d025ad11",
         "ArmorItemId": "ItemId:acecff31-7c51-4fad-a4d7-74a4fb52575a",
@@ -319,7 +273,6 @@
           "ConnectedStorageItemId": null
         },
         "IntrinsicGrants": [],
-        "ActiveNeuralDriverId": null,
         "InventoryItemId": "ItemId:8b1654b3-257a-47b4-938a-29c1ca50015b",
         "WeaponItemId": "ItemId:197d9a63-a712-464b-a2fd-c0664349e6bb",
         "ArmorItemId": null,
@@ -426,7 +379,6 @@
           "ConnectedStorageItemId": null
         },
         "IntrinsicGrants": [],
-        "ActiveNeuralDriverId": null,
         "InventoryItemId": "ItemId:738e4615-2c89-4d43-a2a7-61acf18978a3",
         "WeaponItemId": "ItemId:5f905770-4eb2-4afc-a744-90ed6803ddb4",
         "ArmorItemId": null,
@@ -533,7 +485,6 @@
           "ConnectedStorageItemId": null
         },
         "IntrinsicGrants": [],
-        "ActiveNeuralDriverId": null,
         "InventoryItemId": "ItemId:5dd860ec-840d-40b5-8696-df760edee341",
         "WeaponItemId": "ItemId:f3da9bcf-0020-45a4-b011-6fcc990f81f1",
         "ArmorItemId": null,
@@ -640,7 +591,6 @@
           "ConnectedStorageItemId": null
         },
         "IntrinsicGrants": [],
-        "ActiveNeuralDriverId": null,
         "InventoryItemId": "ItemId:698d96ef-4f0b-422d-9dac-64c92eb9a079",
         "WeaponItemId": "ItemId:9843026a-622b-48ad-93d8-565081db94de",
         "ArmorItemId": null,
@@ -96656,11 +96606,10 @@
               "IsRootOwned": true,
               "InstallTarget": "/core",
               "Modified": "07-10 11:54",
-              "Summary": "A reflex assist package for neural driver timing.",
+              "Summary": "A reflex assist package for local motor timing.",
               "Contents": "",
               "Tags": [
-                "installed-program",
-                "head-mod"
+                "installed-program"
               ]
             },
             {
@@ -97939,7 +97888,6 @@
   "Worlds": [],
   "AttachedEntities": [
     "gamestate:root@origin.game-state",
-    "NeuralDriverId:root@origin.driver",
     "MapChunkId:f211528a-580f-41cd-9b9a-ff1008dd3914"
   ],
   "EntityLocations": [
@@ -97967,17 +97915,6 @@
     },
     {
       "EntityId": "ManufacturerId:manufacturer.unregistered.graymarket",
-      "Kind": "Root",
-      "OwnerEntityId": null,
-      "MapId": "MapChunkId:",
-      "CellFootprint": "0:0:0:0",
-      "InventoryItemId": null,
-      "CellPosition": "0:0",
-      "GunItemId": null,
-      "SlotPath": null
-    },
-    {
-      "EntityId": "NeuralDriverId:root@origin.driver",
       "Kind": "Root",
       "OwnerEntityId": null,
       "MapId": "MapChunkId:",

@@ -9,7 +9,6 @@
         "PlayerCharacterId": "CharacterId:mara_venn",
         "PrimaryObservationId": null,
         "Observations": [],
-        "PlayerNeuralDriverId": null,
         "TurnData": {},
         "ActiveContract": null,
         "Hostilities": {
@@ -6708,7 +6707,6 @@
           "ConnectedStorageItemId": null
         },
         "IntrinsicGrants": [],
-        "ActiveNeuralDriverId": null,
         "InventoryItemId": null,
         "WeaponItemId": null,
         "ArmorItemId": null,

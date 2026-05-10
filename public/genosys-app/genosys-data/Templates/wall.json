@@ -14,6 +14,7 @@
         },
         "SizeOnMap": "1:1",
         "Layers": [],
+        "Inventory": null,
         "MapTransition": null,
         "TypeId": "Prop"
       },

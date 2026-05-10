@@ -1,14 +1,14 @@
 {
   "PackageId": "fly_the_coop",
   "Name": "Fly the Coop",
-  "Subtitle": "Big Trouble in Little China",
-  "Description": "Medical test scenario",
-  "Category": "Vanilla",
-  "EstimatedDuration": "",
+  "Subtitle": "Rookie response, premium liability",
+  "Description": "Mara Venn takes her first unsupervised Aegis Continuity field claim: extract Dorian Vale before his panic, his hardware, or the building turns a routine pickup into a billable disaster.",
+  "Category": "Rescue",
+  "EstimatedDuration": "15-25 minutes",
   "RenderKey": {
     "Key": "asset:assets/scenario-art/scenario_fly_the_coop.png"
   },
   "FolderPath": "Scenarios",
-  "CreatedAt": "2026-05-08T07:26:47.5680000Z",
-  "UpdatedAt": "2026-05-08T07:26:47.5680000Z"
+  "CreatedAt": "2026-05-10T02:32:48.1570000Z",
+  "UpdatedAt": "2026-05-10T02:32:48.1570000Z"
 }
