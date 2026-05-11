@@ -14,8 +14,96 @@
             "Position": "0:0"
           },
           {
+            "Id": "PropId:ghost_safehouse_wall_64",
+            "Position": "0:1"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_82",
+            "Position": "0:10"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_84",
+            "Position": "0:11"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_86",
+            "Position": "0:12"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_88",
+            "Position": "0:13"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_90",
+            "Position": "0:14"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_92",
+            "Position": "0:15"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_94",
+            "Position": "0:16"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_96",
+            "Position": "0:17"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_98",
+            "Position": "0:18"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_100",
+            "Position": "0:19"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_66",
+            "Position": "0:2"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_102",
+            "Position": "0:20"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_104",
+            "Position": "0:21"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_106",
+            "Position": "0:22"
+          },
+          {
             "Id": "PropId:ghost_safehouse_wall_1",
             "Position": "0:23"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_68",
+            "Position": "0:3"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_70",
+            "Position": "0:4"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_72",
+            "Position": "0:5"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_74",
+            "Position": "0:6"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_76",
+            "Position": "0:7"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_78",
+            "Position": "0:8"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_80",
+            "Position": "0:9"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_2",
@@ -24,70 +112,6 @@
           {
             "Id": "PropId:ghost_safehouse_wall_3",
             "Position": "1:23"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_4",
-            "Position": "2:0"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_5",
-            "Position": "2:23"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_6",
-            "Position": "3:0"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_7",
-            "Position": "3:23"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_8",
-            "Position": "4:0"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_9",
-            "Position": "4:23"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_10",
-            "Position": "5:0"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_11",
-            "Position": "5:23"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_12",
-            "Position": "6:0"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_13",
-            "Position": "6:23"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_14",
-            "Position": "7:0"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_15",
-            "Position": "7:23"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_16",
-            "Position": "8:0"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_17",
-            "Position": "8:23"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_18",
-            "Position": "9:0"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_19",
-            "Position": "9:23"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_20",
@@ -124,6 +148,14 @@
           {
             "Id": "PropId:ghost_safehouse_wall_28",
             "Position": "14:0"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_terminal",
+            "Position": "14:10"
+          },
+          {
+            "Id": "CharacterId:ilya_voss",
+            "Position": "14:14"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_29",
@@ -170,6 +202,14 @@
             "Position": "19:23"
           },
           {
+            "Id": "PropId:ghost_safehouse_wall_4",
+            "Position": "2:0"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_5",
+            "Position": "2:23"
+          },
+          {
             "Id": "PropId:ghost_safehouse_wall_40",
             "Position": "20:0"
           },
@@ -192,6 +232,10 @@
           {
             "Id": "PropId:ghost_safehouse_wall_45",
             "Position": "22:23"
+          },
+          {
+            "Id": "PropId:ghost_feed_to_security",
+            "Position": "22:8"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_46",
@@ -250,6 +294,14 @@
             "Position": "29:23"
           },
           {
+            "Id": "PropId:ghost_safehouse_wall_6",
+            "Position": "3:0"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_7",
+            "Position": "3:23"
+          },
+          {
             "Id": "PropId:ghost_safehouse_wall_60",
             "Position": "30:0"
           },
@@ -262,196 +314,148 @@
             "Position": "31:0"
           },
           {
-            "Id": "PropId:ghost_safehouse_wall_63",
-            "Position": "31:23"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_64",
-            "Position": "0:1"
-          },
-          {
             "Id": "PropId:ghost_safehouse_wall_65",
             "Position": "31:1"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_66",
-            "Position": "0:2"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_67",
-            "Position": "31:2"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_68",
-            "Position": "0:3"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_69",
-            "Position": "31:3"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_70",
-            "Position": "0:4"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_71",
-            "Position": "31:4"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_72",
-            "Position": "0:5"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_73",
-            "Position": "31:5"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_74",
-            "Position": "0:6"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_75",
-            "Position": "31:6"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_76",
-            "Position": "0:7"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_77",
-            "Position": "31:7"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_78",
-            "Position": "0:8"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_79",
-            "Position": "31:8"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_80",
-            "Position": "0:9"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_81",
-            "Position": "31:9"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_82",
-            "Position": "0:10"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_83",
             "Position": "31:10"
           },
           {
-            "Id": "PropId:ghost_safehouse_wall_84",
-            "Position": "0:11"
-          },
-          {
             "Id": "PropId:ghost_safehouse_wall_85",
             "Position": "31:11"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_86",
-            "Position": "0:12"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_87",
             "Position": "31:12"
           },
           {
-            "Id": "PropId:ghost_safehouse_wall_88",
-            "Position": "0:13"
-          },
-          {
             "Id": "PropId:ghost_safehouse_wall_89",
             "Position": "31:13"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_90",
-            "Position": "0:14"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_91",
             "Position": "31:14"
           },
           {
-            "Id": "PropId:ghost_safehouse_wall_92",
-            "Position": "0:15"
-          },
-          {
             "Id": "PropId:ghost_safehouse_wall_93",
             "Position": "31:15"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_94",
-            "Position": "0:16"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_95",
             "Position": "31:16"
           },
           {
-            "Id": "PropId:ghost_safehouse_wall_96",
-            "Position": "0:17"
-          },
-          {
             "Id": "PropId:ghost_safehouse_wall_97",
             "Position": "31:17"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_98",
-            "Position": "0:18"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_99",
             "Position": "31:18"
           },
           {
-            "Id": "PropId:ghost_safehouse_wall_100",
-            "Position": "0:19"
-          },
-          {
             "Id": "PropId:ghost_safehouse_wall_101",
             "Position": "31:19"
           },
           {
-            "Id": "PropId:ghost_safehouse_wall_102",
-            "Position": "0:20"
+            "Id": "PropId:ghost_safehouse_wall_67",
+            "Position": "31:2"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_103",
             "Position": "31:20"
           },
           {
-            "Id": "PropId:ghost_safehouse_wall_104",
-            "Position": "0:21"
-          },
-          {
             "Id": "PropId:ghost_safehouse_wall_105",
             "Position": "31:21"
-          },
-          {
-            "Id": "PropId:ghost_safehouse_wall_106",
-            "Position": "0:22"
           },
           {
             "Id": "PropId:ghost_safehouse_wall_107",
             "Position": "31:22"
           },
           {
-            "Id": "PropId:ghost_safehouse_terminal",
-            "Position": "14:10"
+            "Id": "PropId:ghost_safehouse_wall_63",
+            "Position": "31:23"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_69",
+            "Position": "31:3"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_71",
+            "Position": "31:4"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_73",
+            "Position": "31:5"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_75",
+            "Position": "31:6"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_77",
+            "Position": "31:7"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_79",
+            "Position": "31:8"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_81",
+            "Position": "31:9"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_8",
+            "Position": "4:0"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_9",
+            "Position": "4:23"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_10",
+            "Position": "5:0"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_11",
+            "Position": "5:23"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_12",
+            "Position": "6:0"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_13",
+            "Position": "6:23"
           },
           {
             "Id": "PropId:ghost_feed_to_gala",
             "Position": "6:8"
           },
           {
-            "Id": "PropId:ghost_feed_to_security",
-            "Position": "22:8"
+            "Id": "PropId:ghost_safehouse_wall_14",
+            "Position": "7:0"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_15",
+            "Position": "7:23"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_16",
+            "Position": "8:0"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_17",
+            "Position": "8:23"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_18",
+            "Position": "9:0"
+          },
+          {
+            "Id": "PropId:ghost_safehouse_wall_19",
+            "Position": "9:23"
           }
         ],
         "TypeId": "MapChunk"
@@ -471,8 +475,112 @@
             "Position": "0:0"
           },
           {
+            "Id": "PropId:ghost_gala_wall_188",
+            "Position": "0:1"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_206",
+            "Position": "0:10"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_208",
+            "Position": "0:11"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_210",
+            "Position": "0:12"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_212",
+            "Position": "0:13"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_214",
+            "Position": "0:14"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_216",
+            "Position": "0:15"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_218",
+            "Position": "0:16"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_220",
+            "Position": "0:17"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_222",
+            "Position": "0:18"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_224",
+            "Position": "0:19"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_190",
+            "Position": "0:2"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_226",
+            "Position": "0:20"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_228",
+            "Position": "0:21"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_230",
+            "Position": "0:22"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_232",
+            "Position": "0:23"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_234",
+            "Position": "0:24"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_236",
+            "Position": "0:25"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_238",
+            "Position": "0:26"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_109",
             "Position": "0:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_192",
+            "Position": "0:3"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_194",
+            "Position": "0:4"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_196",
+            "Position": "0:5"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_198",
+            "Position": "0:6"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_200",
+            "Position": "0:7"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_202",
+            "Position": "0:8"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_204",
+            "Position": "0:9"
           },
           {
             "Id": "PropId:ghost_gala_wall_110",
@@ -483,76 +591,16 @@
             "Position": "1:27"
           },
           {
-            "Id": "PropId:ghost_gala_wall_112",
-            "Position": "2:0"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_113",
-            "Position": "2:27"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_114",
-            "Position": "3:0"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_115",
-            "Position": "3:27"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_116",
-            "Position": "4:0"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_117",
-            "Position": "4:27"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_118",
-            "Position": "5:0"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_119",
-            "Position": "5:27"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_120",
-            "Position": "6:0"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_121",
-            "Position": "6:27"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_122",
-            "Position": "7:0"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_123",
-            "Position": "7:27"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_124",
-            "Position": "8:0"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_125",
-            "Position": "8:27"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_126",
-            "Position": "9:0"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_127",
-            "Position": "9:27"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_128",
             "Position": "10:0"
           },
           {
             "Id": "PropId:ghost_gala_wall_129",
             "Position": "10:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_354",
+            "Position": "10:8"
           },
           {
             "Id": "PropId:ghost_gala_wall_130",
@@ -563,12 +611,20 @@
             "Position": "11:27"
           },
           {
+            "Id": "PropId:ghost_gala_wall_355",
+            "Position": "11:8"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_132",
             "Position": "12:0"
           },
           {
             "Id": "PropId:ghost_gala_wall_133",
             "Position": "12:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_356",
+            "Position": "12:8"
           },
           {
             "Id": "PropId:ghost_gala_wall_134",
@@ -579,12 +635,20 @@
             "Position": "13:27"
           },
           {
+            "Id": "PropId:ghost_gala_wall_357",
+            "Position": "13:8"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_136",
             "Position": "14:0"
           },
           {
             "Id": "PropId:ghost_gala_wall_137",
             "Position": "14:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_358",
+            "Position": "14:8"
           },
           {
             "Id": "PropId:ghost_gala_wall_138",
@@ -595,12 +659,20 @@
             "Position": "15:27"
           },
           {
+            "Id": "PropId:ghost_gala_wall_359",
+            "Position": "15:8"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_140",
             "Position": "16:0"
           },
           {
             "Id": "PropId:ghost_gala_wall_141",
             "Position": "16:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_360",
+            "Position": "16:8"
           },
           {
             "Id": "PropId:ghost_gala_wall_142",
@@ -611,12 +683,24 @@
             "Position": "17:27"
           },
           {
+            "Id": "PropId:ghost_gala_wall_361",
+            "Position": "17:8"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_144",
             "Position": "18:0"
           },
           {
             "Id": "PropId:ghost_gala_wall_145",
             "Position": "18:27"
+          },
+          {
+            "Id": "PropId:ghost_security_camera_a",
+            "Position": "18:4"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_362",
+            "Position": "18:8"
           },
           {
             "Id": "PropId:ghost_gala_wall_146",
@@ -627,12 +711,28 @@
             "Position": "19:27"
           },
           {
+            "Id": "PropId:ghost_gala_wall_363",
+            "Position": "19:8"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_112",
+            "Position": "2:0"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_113",
+            "Position": "2:27"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_148",
             "Position": "20:0"
           },
           {
             "Id": "PropId:ghost_gala_wall_149",
             "Position": "20:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_364",
+            "Position": "20:8"
           },
           {
             "Id": "PropId:ghost_gala_wall_150",
@@ -643,12 +743,20 @@
             "Position": "21:27"
           },
           {
+            "Id": "PropId:ghost_gala_wall_365",
+            "Position": "21:8"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_152",
             "Position": "22:0"
           },
           {
             "Id": "PropId:ghost_gala_wall_153",
             "Position": "22:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_366",
+            "Position": "22:8"
           },
           {
             "Id": "PropId:ghost_gala_wall_154",
@@ -659,12 +767,20 @@
             "Position": "23:27"
           },
           {
+            "Id": "PropId:ghost_gala_wall_367",
+            "Position": "23:8"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_156",
             "Position": "24:0"
           },
           {
             "Id": "PropId:ghost_gala_wall_157",
             "Position": "24:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_368",
+            "Position": "24:8"
           },
           {
             "Id": "PropId:ghost_gala_wall_158",
@@ -695,6 +811,10 @@
             "Position": "28:0"
           },
           {
+            "Id": "CharacterId:silas_wren",
+            "Position": "28:12"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_165",
             "Position": "28:27"
           },
@@ -705,6 +825,18 @@
           {
             "Id": "PropId:ghost_gala_wall_167",
             "Position": "29:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_114",
+            "Position": "3:0"
+          },
+          {
+            "Id": "PropId:ghost_gala_return",
+            "Position": "3:20"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_115",
+            "Position": "3:27"
           },
           {
             "Id": "PropId:ghost_gala_wall_168",
@@ -729,6 +861,10 @@
           {
             "Id": "PropId:ghost_gala_wall_173",
             "Position": "32:27"
+          },
+          {
+            "Id": "PropId:ghost_target_lift",
+            "Position": "32:5"
           },
           {
             "Id": "PropId:ghost_gala_wall_174",
@@ -783,296 +919,172 @@
             "Position": "39:0"
           },
           {
-            "Id": "PropId:ghost_gala_wall_187",
-            "Position": "39:27"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_188",
-            "Position": "0:1"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_189",
             "Position": "39:1"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_190",
-            "Position": "0:2"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_191",
-            "Position": "39:2"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_192",
-            "Position": "0:3"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_193",
-            "Position": "39:3"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_194",
-            "Position": "0:4"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_195",
-            "Position": "39:4"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_196",
-            "Position": "0:5"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_197",
-            "Position": "39:5"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_198",
-            "Position": "0:6"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_199",
-            "Position": "39:6"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_200",
-            "Position": "0:7"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_201",
-            "Position": "39:7"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_202",
-            "Position": "0:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_203",
-            "Position": "39:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_204",
-            "Position": "0:9"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_205",
-            "Position": "39:9"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_206",
-            "Position": "0:10"
           },
           {
             "Id": "PropId:ghost_gala_wall_207",
             "Position": "39:10"
           },
           {
-            "Id": "PropId:ghost_gala_wall_208",
-            "Position": "0:11"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_209",
             "Position": "39:11"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_210",
-            "Position": "0:12"
           },
           {
             "Id": "PropId:ghost_gala_wall_211",
             "Position": "39:12"
           },
           {
-            "Id": "PropId:ghost_gala_wall_212",
-            "Position": "0:13"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_213",
             "Position": "39:13"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_214",
-            "Position": "0:14"
           },
           {
             "Id": "PropId:ghost_gala_wall_215",
             "Position": "39:14"
           },
           {
-            "Id": "PropId:ghost_gala_wall_216",
-            "Position": "0:15"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_217",
             "Position": "39:15"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_218",
-            "Position": "0:16"
           },
           {
             "Id": "PropId:ghost_gala_wall_219",
             "Position": "39:16"
           },
           {
-            "Id": "PropId:ghost_gala_wall_220",
-            "Position": "0:17"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_221",
             "Position": "39:17"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_222",
-            "Position": "0:18"
           },
           {
             "Id": "PropId:ghost_gala_wall_223",
             "Position": "39:18"
           },
           {
-            "Id": "PropId:ghost_gala_wall_224",
-            "Position": "0:19"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_225",
             "Position": "39:19"
           },
           {
-            "Id": "PropId:ghost_gala_wall_226",
-            "Position": "0:20"
+            "Id": "PropId:ghost_gala_wall_191",
+            "Position": "39:2"
           },
           {
             "Id": "PropId:ghost_gala_wall_227",
             "Position": "39:20"
           },
           {
-            "Id": "PropId:ghost_gala_wall_228",
-            "Position": "0:21"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_229",
             "Position": "39:21"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_230",
-            "Position": "0:22"
           },
           {
             "Id": "PropId:ghost_gala_wall_231",
             "Position": "39:22"
           },
           {
-            "Id": "PropId:ghost_gala_wall_232",
-            "Position": "0:23"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_233",
             "Position": "39:23"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_234",
-            "Position": "0:24"
           },
           {
             "Id": "PropId:ghost_gala_wall_235",
             "Position": "39:24"
           },
           {
-            "Id": "PropId:ghost_gala_wall_236",
-            "Position": "0:25"
-          },
-          {
             "Id": "PropId:ghost_gala_wall_237",
             "Position": "39:25"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_238",
-            "Position": "0:26"
           },
           {
             "Id": "PropId:ghost_gala_wall_239",
             "Position": "39:26"
           },
           {
+            "Id": "PropId:ghost_gala_wall_187",
+            "Position": "39:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_193",
+            "Position": "39:3"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_195",
+            "Position": "39:4"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_197",
+            "Position": "39:5"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_199",
+            "Position": "39:6"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_201",
+            "Position": "39:7"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_203",
+            "Position": "39:8"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_205",
+            "Position": "39:9"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_116",
+            "Position": "4:0"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_117",
+            "Position": "4:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_118",
+            "Position": "5:0"
+          },
+          {
+            "Id": "CharacterId:vale_nyx",
+            "Position": "5:20"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_119",
+            "Position": "5:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_120",
+            "Position": "6:0"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_121",
+            "Position": "6:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_122",
+            "Position": "7:0"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_123",
+            "Position": "7:27"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_124",
+            "Position": "8:0"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_125",
+            "Position": "8:27"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_352",
             "Position": "8:8"
           },
           {
+            "Id": "PropId:ghost_gala_wall_126",
+            "Position": "9:0"
+          },
+          {
+            "Id": "PropId:ghost_gala_wall_127",
+            "Position": "9:27"
+          },
+          {
             "Id": "PropId:ghost_gala_wall_353",
             "Position": "9:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_354",
-            "Position": "10:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_355",
-            "Position": "11:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_356",
-            "Position": "12:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_357",
-            "Position": "13:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_358",
-            "Position": "14:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_359",
-            "Position": "15:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_360",
-            "Position": "16:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_361",
-            "Position": "17:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_362",
-            "Position": "18:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_363",
-            "Position": "19:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_364",
-            "Position": "20:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_365",
-            "Position": "21:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_366",
-            "Position": "22:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_367",
-            "Position": "23:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_wall_368",
-            "Position": "24:8"
-          },
-          {
-            "Id": "PropId:ghost_gala_return",
-            "Position": "3:20"
-          },
-          {
-            "Id": "PropId:ghost_target_lift",
-            "Position": "32:5"
-          },
-          {
-            "Id": "PropId:ghost_security_camera_a",
-            "Position": "18:4"
           }
         ],
         "TypeId": "MapChunk"
@@ -1092,8 +1104,96 @@
             "Position": "0:0"
           },
           {
+            "Id": "PropId:ghost_security_wall_308",
+            "Position": "0:1"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_326",
+            "Position": "0:10"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_328",
+            "Position": "0:11"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_330",
+            "Position": "0:12"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_332",
+            "Position": "0:13"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_334",
+            "Position": "0:14"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_336",
+            "Position": "0:15"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_338",
+            "Position": "0:16"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_340",
+            "Position": "0:17"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_342",
+            "Position": "0:18"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_344",
+            "Position": "0:19"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_310",
+            "Position": "0:2"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_346",
+            "Position": "0:20"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_348",
+            "Position": "0:21"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_350",
+            "Position": "0:22"
+          },
+          {
             "Id": "PropId:ghost_security_wall_241",
             "Position": "0:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_312",
+            "Position": "0:3"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_314",
+            "Position": "0:4"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_316",
+            "Position": "0:5"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_318",
+            "Position": "0:6"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_320",
+            "Position": "0:7"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_322",
+            "Position": "0:8"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_324",
+            "Position": "0:9"
           },
           {
             "Id": "PropId:ghost_security_wall_242",
@@ -1104,6 +1204,146 @@
             "Position": "1:23"
           },
           {
+            "Id": "PropId:ghost_security_wall_260",
+            "Position": "10:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_261",
+            "Position": "10:23"
+          },
+          {
+            "Id": "PropId:ghost_security_camera_b",
+            "Position": "10:5"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_262",
+            "Position": "11:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_263",
+            "Position": "11:23"
+          },
+          {
+            "Id": "ItemId:ghost_dead_switch",
+            "Position": "11:7"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_264",
+            "Position": "12:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_265",
+            "Position": "12:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_266",
+            "Position": "13:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_267",
+            "Position": "13:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_268",
+            "Position": "14:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_269",
+            "Position": "14:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_270",
+            "Position": "15:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_271",
+            "Position": "15:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_272",
+            "Position": "16:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_373",
+            "Position": "16:10"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_374",
+            "Position": "16:11"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_375",
+            "Position": "16:12"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_376",
+            "Position": "16:13"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_377",
+            "Position": "16:14"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_378",
+            "Position": "16:15"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_379",
+            "Position": "16:16"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_380",
+            "Position": "16:17"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_381",
+            "Position": "16:18"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_273",
+            "Position": "16:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_369",
+            "Position": "16:6"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_370",
+            "Position": "16:7"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_371",
+            "Position": "16:8"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_372",
+            "Position": "16:9"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_274",
+            "Position": "17:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_275",
+            "Position": "17:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_276",
+            "Position": "18:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_277",
+            "Position": "18:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_278",
+            "Position": "19:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_279",
+            "Position": "19:23"
+          },
+          {
             "Id": "PropId:ghost_security_wall_244",
             "Position": "2:0"
           },
@@ -1112,12 +1352,224 @@
             "Position": "2:23"
           },
           {
+            "Id": "PropId:ghost_security_wall_280",
+            "Position": "20:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_281",
+            "Position": "20:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_282",
+            "Position": "21:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_283",
+            "Position": "21:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_284",
+            "Position": "22:0"
+          },
+          {
+            "Id": "CharacterId:juno_kade",
+            "Position": "22:12"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_285",
+            "Position": "22:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_286",
+            "Position": "23:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_287",
+            "Position": "23:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_288",
+            "Position": "24:0"
+          },
+          {
+            "Id": "PropId:ghost_server_rack",
+            "Position": "24:10"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_289",
+            "Position": "24:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_290",
+            "Position": "25:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_291",
+            "Position": "25:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_292",
+            "Position": "26:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_293",
+            "Position": "26:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_294",
+            "Position": "27:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_295",
+            "Position": "27:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_296",
+            "Position": "28:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_297",
+            "Position": "28:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_298",
+            "Position": "29:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_299",
+            "Position": "29:23"
+          },
+          {
             "Id": "PropId:ghost_security_wall_246",
             "Position": "3:0"
           },
           {
+            "Id": "PropId:ghost_security_return",
+            "Position": "3:12"
+          },
+          {
             "Id": "PropId:ghost_security_wall_247",
             "Position": "3:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_300",
+            "Position": "30:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_301",
+            "Position": "30:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_302",
+            "Position": "31:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_303",
+            "Position": "31:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_304",
+            "Position": "32:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_305",
+            "Position": "32:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_306",
+            "Position": "33:0"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_309",
+            "Position": "33:1"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_327",
+            "Position": "33:10"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_329",
+            "Position": "33:11"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_331",
+            "Position": "33:12"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_333",
+            "Position": "33:13"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_335",
+            "Position": "33:14"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_337",
+            "Position": "33:15"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_339",
+            "Position": "33:16"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_341",
+            "Position": "33:17"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_343",
+            "Position": "33:18"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_345",
+            "Position": "33:19"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_311",
+            "Position": "33:2"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_347",
+            "Position": "33:20"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_349",
+            "Position": "33:21"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_351",
+            "Position": "33:22"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_307",
+            "Position": "33:23"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_313",
+            "Position": "33:3"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_315",
+            "Position": "33:4"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_317",
+            "Position": "33:5"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_319",
+            "Position": "33:6"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_321",
+            "Position": "33:7"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_323",
+            "Position": "33:8"
+          },
+          {
+            "Id": "PropId:ghost_security_wall_325",
+            "Position": "33:9"
           },
           {
             "Id": "PropId:ghost_security_wall_248",
@@ -1166,438 +1618,6 @@
           {
             "Id": "PropId:ghost_security_wall_259",
             "Position": "9:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_260",
-            "Position": "10:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_261",
-            "Position": "10:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_262",
-            "Position": "11:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_263",
-            "Position": "11:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_264",
-            "Position": "12:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_265",
-            "Position": "12:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_266",
-            "Position": "13:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_267",
-            "Position": "13:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_268",
-            "Position": "14:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_269",
-            "Position": "14:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_270",
-            "Position": "15:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_271",
-            "Position": "15:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_272",
-            "Position": "16:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_273",
-            "Position": "16:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_274",
-            "Position": "17:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_275",
-            "Position": "17:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_276",
-            "Position": "18:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_277",
-            "Position": "18:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_278",
-            "Position": "19:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_279",
-            "Position": "19:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_280",
-            "Position": "20:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_281",
-            "Position": "20:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_282",
-            "Position": "21:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_283",
-            "Position": "21:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_284",
-            "Position": "22:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_285",
-            "Position": "22:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_286",
-            "Position": "23:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_287",
-            "Position": "23:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_288",
-            "Position": "24:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_289",
-            "Position": "24:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_290",
-            "Position": "25:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_291",
-            "Position": "25:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_292",
-            "Position": "26:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_293",
-            "Position": "26:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_294",
-            "Position": "27:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_295",
-            "Position": "27:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_296",
-            "Position": "28:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_297",
-            "Position": "28:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_298",
-            "Position": "29:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_299",
-            "Position": "29:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_300",
-            "Position": "30:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_301",
-            "Position": "30:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_302",
-            "Position": "31:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_303",
-            "Position": "31:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_304",
-            "Position": "32:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_305",
-            "Position": "32:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_306",
-            "Position": "33:0"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_307",
-            "Position": "33:23"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_308",
-            "Position": "0:1"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_309",
-            "Position": "33:1"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_310",
-            "Position": "0:2"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_311",
-            "Position": "33:2"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_312",
-            "Position": "0:3"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_313",
-            "Position": "33:3"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_314",
-            "Position": "0:4"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_315",
-            "Position": "33:4"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_316",
-            "Position": "0:5"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_317",
-            "Position": "33:5"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_318",
-            "Position": "0:6"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_319",
-            "Position": "33:6"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_320",
-            "Position": "0:7"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_321",
-            "Position": "33:7"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_322",
-            "Position": "0:8"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_323",
-            "Position": "33:8"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_324",
-            "Position": "0:9"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_325",
-            "Position": "33:9"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_326",
-            "Position": "0:10"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_327",
-            "Position": "33:10"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_328",
-            "Position": "0:11"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_329",
-            "Position": "33:11"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_330",
-            "Position": "0:12"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_331",
-            "Position": "33:12"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_332",
-            "Position": "0:13"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_333",
-            "Position": "33:13"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_334",
-            "Position": "0:14"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_335",
-            "Position": "33:14"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_336",
-            "Position": "0:15"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_337",
-            "Position": "33:15"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_338",
-            "Position": "0:16"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_339",
-            "Position": "33:16"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_340",
-            "Position": "0:17"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_341",
-            "Position": "33:17"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_342",
-            "Position": "0:18"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_343",
-            "Position": "33:18"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_344",
-            "Position": "0:19"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_345",
-            "Position": "33:19"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_346",
-            "Position": "0:20"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_347",
-            "Position": "33:20"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_348",
-            "Position": "0:21"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_349",
-            "Position": "33:21"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_350",
-            "Position": "0:22"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_351",
-            "Position": "33:22"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_369",
-            "Position": "16:6"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_370",
-            "Position": "16:7"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_371",
-            "Position": "16:8"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_372",
-            "Position": "16:9"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_373",
-            "Position": "16:10"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_374",
-            "Position": "16:11"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_375",
-            "Position": "16:12"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_376",
-            "Position": "16:13"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_377",
-            "Position": "16:14"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_378",
-            "Position": "16:15"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_379",
-            "Position": "16:16"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_380",
-            "Position": "16:17"
-          },
-          {
-            "Id": "PropId:ghost_security_wall_381",
-            "Position": "16:18"
-          },
-          {
-            "Id": "PropId:ghost_security_return",
-            "Position": "3:12"
-          },
-          {
-            "Id": "PropId:ghost_server_rack",
-            "Position": "24:10"
-          },
-          {
-            "Id": "PropId:ghost_security_camera_b",
-            "Position": "10:5"
           }
         ],
         "TypeId": "MapChunk"
@@ -14152,7 +14172,7 @@
           "Key": "asset:assets/item-icons/ghost.camera_contacts.png"
         },
         "ManufacturerId": null,
-        "SizeInInventory": "1:1",
+        "SizeInInventory": "2:2",
         "Condition": "1/1",
         "Stack": "1/1",
         "GrantedActorGrants": [],
@@ -14334,7 +14354,7 @@
           "Key": "asset:assets/item-icons/ghost.gala_jacket.png"
         },
         "ManufacturerId": null,
-        "SizeInInventory": "2:2",
+        "SizeInInventory": "3:3",
         "Condition": "1/1",
         "Stack": "1/1",
         "GrantedActorGrants": [],
@@ -14455,7 +14475,7 @@
           "Cybernetics": [
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.head",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_ocular_router"
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.torso",
@@ -14475,11 +14495,11 @@
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_1",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_cortical_relay"
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_2",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_trace_bus"
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_3",
@@ -14499,31 +14519,31 @@
           "StyleItems": [
             {
               "StyleSlotId": "StyleSlotId:character.style.head",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_operator_hood"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.face",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_feed_visor"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.torso_inner",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_compression_shirt"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.torso_outer",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_cable_jacket"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.hands",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_haptic_gloves"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.legs",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_cargo_pants"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.feet",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_ilya_softstep_boots"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.accessory_1",
@@ -14584,7 +14604,7 @@
         "WeaponItemId": null,
         "ArmorItemId": null,
         "DialogueNode": "Start",
-        "DialogueScriptPath": "",
+        "DialogueScriptPath": "content/ghost_dividend/briefing.yarn",
         "ActiveDialogueInstanceId": null,
         "SizeOnMap": "3:3",
         "TypeId": "Character"
@@ -14622,7 +14642,7 @@
           "Cybernetics": [
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.head",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_vale_ocular_bridge"
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.torso",
@@ -14674,27 +14694,27 @@
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.torso_inner",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_vale_service_shirt"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.torso_outer",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_vale_service_blazer"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.hands",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_vale_tray_gloves"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.legs",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_vale_service_slacks"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.feet",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_vale_silent_loafers"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.accessory_1",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_vale_spoof_lapel"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.accessory_2",
@@ -14723,8 +14743,8 @@
         "InventoryItemId": "ItemId:ghost_vale_service_tray",
         "WeaponItemId": "ItemId:ghost_vale_pistol",
         "ArmorItemId": null,
-        "DialogueNode": "Start",
-        "DialogueScriptPath": "",
+        "DialogueNode": "Vale",
+        "DialogueScriptPath": "content/ghost_dividend/briefing.yarn",
         "ActiveDialogueInstanceId": null,
         "SizeOnMap": "3:3",
         "TypeId": "Character"
@@ -14762,7 +14782,7 @@
           "Cybernetics": [
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.head",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_silas_blink_optic"
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.torso",
@@ -14782,7 +14802,7 @@
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_1",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_silas_biomonitor"
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_2",
@@ -14810,11 +14830,11 @@
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.face",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_silas_blink_lens_style"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.torso_inner",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_silas_gala_shirt"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.torso_outer",
@@ -14822,19 +14842,19 @@
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.hands",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_silas_cufflinks"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.legs",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_silas_gala_trousers"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.feet",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_silas_formal_shoes"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.accessory_1",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_silas_vip_badge_lanyard"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.accessory_2",
@@ -14863,8 +14883,8 @@
         "InventoryItemId": null,
         "WeaponItemId": null,
         "ArmorItemId": null,
-        "DialogueNode": "Start",
-        "DialogueScriptPath": "",
+        "DialogueNode": "Silas",
+        "DialogueScriptPath": "content/ghost_dividend/briefing.yarn",
         "ActiveDialogueInstanceId": null,
         "SizeOnMap": "3:3",
         "TypeId": "Character"
@@ -14902,11 +14922,11 @@
           "Cybernetics": [
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.head",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_juno_threat_lens"
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.torso",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_juno_subdermal_mesh"
             },
             {
               "CyberneticSlotId": "CyberneticSlotId:character.cyber.leftArm",
@@ -14950,31 +14970,31 @@
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.face",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_juno_threat_lens_style"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.torso_inner",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_juno_tactical_underlayer"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.torso_outer",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_juno_security_vest"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.hands",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_juno_duty_gloves"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.legs",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_juno_duty_pants"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.feet",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_juno_security_boots"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.accessory_1",
-              "ItemId": null
+              "ItemId": "ItemId:ghost_juno_deadman_clip"
             },
             {
               "StyleSlotId": "StyleSlotId:character.style.accessory_2",
@@ -15003,11 +15023,1224 @@
         "InventoryItemId": null,
         "WeaponItemId": "ItemId:ghost_juno_sidearm",
         "ArmorItemId": "ItemId:ghost_juno_ceramic_armor",
-        "DialogueNode": "Start",
-        "DialogueScriptPath": "",
+        "DialogueNode": "Juno",
+        "DialogueScriptPath": "content/ghost_dividend/briefing.yarn",
         "ActiveDialogueInstanceId": null,
         "SizeOnMap": "3:3",
         "TypeId": "Character"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.head",
+          "SurfaceArea": 0.65,
+          "Aesthetics": [
+            "techwear"
+          ],
+          "Traits": [
+            "hooded",
+            "insulated"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_operator_hood",
+        "Name": "Ilya's Operator Hood",
+        "Description": "A matte black hood threaded with shielded cable runs for long PhantomRoot sessions.",
+        "FlavorText": "It hides the sweat before the job hides the body.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.operator_hood.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.face",
+          "SurfaceArea": 0.35,
+          "Aesthetics": [
+            "techwear"
+          ],
+          "Traits": [
+            "display"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_feed_visor",
+        "Name": "Ghostline Feed Visor",
+        "Description": "A low-profile visor that keeps tapped feeds pinned at the edge of Ilya's vision.",
+        "FlavorText": "Three borrowed eyes, one rented room.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.ocular_implant.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.torso_inner",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "techwear"
+          ],
+          "Traits": [
+            "thermal"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_compression_shirt",
+        "Name": "Signal-Damped Compression Shirt",
+        "Description": "A black underlayer that bleeds heat away from the PhantomRoot neural deck.",
+        "FlavorText": "Comfort for the body, plausible denial for the trace.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.compression_shirt.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.torso_outer",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "techwear"
+          ],
+          "Traits": [
+            "insulated",
+            "cable-routing"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_cable_jacket",
+        "Name": "Cable-Runner Jacket",
+        "Description": "A cropped technical jacket with hidden patch bays under the lapels.",
+        "FlavorText": "Every pocket has a different alibi.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.cable_jacket.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.hands",
+          "SurfaceArea": 0.75,
+          "Aesthetics": [
+            "techwear"
+          ],
+          "Traits": [
+            "haptic"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_haptic_gloves",
+        "Name": "Haptic Switch Gloves",
+        "Description": "Thin operator gloves with pressure sensors mapped to PhantomRoot feed controls.",
+        "FlavorText": "A kill command should never need a loud keypress.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.haptic_gloves.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.legs",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "noir"
+          ],
+          "Traits": [
+            "utility"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_cargo_pants",
+        "Name": "Blackout Cargo Pants",
+        "Description": "Flexible black cargo pants with sealed battery loops and a panic-drop pocket.",
+        "FlavorText": "Built for kneeling behind cheap furniture.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.cargo_pants.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.feet",
+          "SurfaceArea": 0.9,
+          "Aesthetics": [
+            "noir"
+          ],
+          "Traits": [
+            "quiet"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_softstep_boots",
+        "Name": "Softstep Operator Boots",
+        "Description": "Quiet ankle boots with conductive soles for grounding deck surge.",
+        "FlavorText": "No squeaks. No witnesses.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.softstep_boots.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.torso_inner",
+          "SurfaceArea": 0.8,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "formal"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_vale_service_shirt",
+        "Name": "Vale's Service Shirt",
+        "Description": "A crisp white service shirt cut to hide a panic patch and a holdout mic.",
+        "FlavorText": "Undercover means laundering your breathing too.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.gala_shirt.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.torso_outer",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "formal",
+            "concealed"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_vale_service_blazer",
+        "Name": "Vale's Service Blazer",
+        "Description": "A black catering blazer with a gold venue pin and a pocket slit for the smart pistol.",
+        "FlavorText": "Waitstaff uniform, broker posture.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.service_blazer.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.hands",
+          "SurfaceArea": 0.7,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "grip"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_vale_tray_gloves",
+        "Name": "Grip-Tack Tray Gloves",
+        "Description": "Service gloves with transparent grip film and a hidden trigger callus.",
+        "FlavorText": "Never spill the drink. Only the target.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.haptic_gloves.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.legs",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "formal"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_vale_service_slacks",
+        "Name": "Vale's Service Slacks",
+        "Description": "Black service slacks tailored for quick exits through staff corridors.",
+        "FlavorText": "Looks rented. Moves custom.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.service_slacks.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.feet",
+          "SurfaceArea": 0.8,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "quiet",
+            "formal"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_vale_silent_loafers",
+        "Name": "Silent Service Loafers",
+        "Description": "Polished black shoes with damped soles and a ceramic toe wedge.",
+        "FlavorText": "Perfect for crossing marble without joining the conversation.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.softstep_boots.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.face",
+          "SurfaceArea": 0.45,
+          "Aesthetics": [
+            "techwear"
+          ],
+          "Traits": [
+            "luxury",
+            "display"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_silas_blink_lens_style",
+        "Name": "Blink Cosmetic Lens",
+        "Description": "A cosmetic ocular surround that makes Silas's experimental prediction optic look like fashion.",
+        "FlavorText": "Future sight, dressed as vanity.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.ocular_implant.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.torso_inner",
+          "SurfaceArea": 0.8,
+          "Aesthetics": [
+            "corporate"
+          ],
+          "Traits": [
+            "formal",
+            "luxury"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_silas_gala_shirt",
+        "Name": "Silas's Gala Shirt",
+        "Description": "A severe black formal shirt with gold collar hardware and biometric thread.",
+        "FlavorText": "The collar costs more than most people's exits.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.gala_shirt.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.hands",
+          "SurfaceArea": 0.15,
+          "Aesthetics": [
+            "dandy"
+          ],
+          "Traits": [
+            "luxury"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_silas_cufflinks",
+        "Name": "Predictive Gold Cufflinks",
+        "Description": "Gold cufflinks paired to Silas's calendar, threat model, and ego.",
+        "FlavorText": "They know when he is about to gesture.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.target_badge.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.legs",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "corporate"
+          ],
+          "Traits": [
+            "formal",
+            "luxury"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_silas_gala_trousers",
+        "Name": "Silas's Gala Trousers",
+        "Description": "Tailored black gala trousers with smart-crease motors and gold side piping.",
+        "FlavorText": "Never wrinkled. Never sorry.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.gala_trousers.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.feet",
+          "SurfaceArea": 0.7,
+          "Aesthetics": [
+            "dandy"
+          ],
+          "Traits": [
+            "formal",
+            "luxury"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_silas_formal_shoes",
+        "Name": "Silas's Formal Shoes",
+        "Description": "Gloss black formal shoes with a biometric lift-bank handshake in the heel.",
+        "FlavorText": "Access control, but smug.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.service_slacks.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.face",
+          "SurfaceArea": 0.35,
+          "Aesthetics": [
+            "militarized"
+          ],
+          "Traits": [
+            "tactical",
+            "display"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_juno_threat_lens_style",
+        "Name": "Kade Threat Lens",
+        "Description": "A redline tactical lens clipped over one eye for target sorting and badge checks.",
+        "FlavorText": "Security sees patterns. Juno sees problems.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.ocular_implant.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.torso_inner",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "armored"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_juno_tactical_underlayer",
+        "Name": "Kade Tactical Underlayer",
+        "Description": "A black compression underlayer with impact-mesh ribs and red service tabs.",
+        "FlavorText": "The part of the uniform that never gets photographed.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.compression_shirt.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.torso_outer",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "armored",
+            "uniform"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_juno_security_vest",
+        "Name": "Kade Security Vest",
+        "Description": "A compact armored security vest with a white plate face and red alert seams.",
+        "FlavorText": "Corporate peace, ceramic version.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.security_vest.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.hands",
+          "SurfaceArea": 0.8,
+          "Aesthetics": [
+            "militarized"
+          ],
+          "Traits": [
+            "armored"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_juno_duty_gloves",
+        "Name": "Kade Duty Gloves",
+        "Description": "Black duty gloves with reinforced knuckles and red status lights.",
+        "FlavorText": "Polite hands for impolite work.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.security_gloves.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.legs",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "armored",
+            "uniform"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_juno_duty_pants",
+        "Name": "Kade Duty Pants",
+        "Description": "Armored black duty pants with knee plates and a baton clip.",
+        "FlavorText": "Made to run toward alarms.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.security_pants.png"
+        },
+        "SizeInInventory": "3:3"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.feet",
+          "SurfaceArea": 1,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "armored",
+            "uniform"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_juno_security_boots",
+        "Name": "Kade Security Boots",
+        "Description": "Heavy black boots with white toe armor and red sole lights.",
+        "FlavorText": "They announce authority one tile at a time.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.security_boots.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "5/5",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": {
+          "CompatibleSlotIds": [
+            "CyberneticSlotId:character.cyber.head"
+          ],
+          "ModFrameCoverage": 1,
+          "MaxDamageCapacity": 5,
+          "CyberSecurityLevel": 2.5,
+          "InstalledMods": [],
+          "Damage": []
+        },
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_ocular_router",
+        "Name": "Ghostline Ocular Router",
+        "Description": "A cybernetic ocular router that lets Ilya keep hostile feeds open without losing her own sight.",
+        "FlavorText": "One eye on the room, three eyes elsewhere.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.ocular_implant.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "6/6",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": {
+          "CompatibleSlotIds": [
+            "CyberneticSlotId:character.cyber.internal_1"
+          ],
+          "ModFrameCoverage": 1,
+          "MaxDamageCapacity": 6,
+          "CyberSecurityLevel": 3,
+          "InstalledMods": [],
+          "Damage": []
+        },
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_cortical_relay",
+        "Name": "PhantomRoot Cortical Relay",
+        "Description": "A cortical relay tuned for feed possession, prediction lag, and pain suppression.",
+        "FlavorText": "The deck whispers. The relay answers.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.cortical_relay.png"
+        },
+        "SizeInInventory": "1:1"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "4/4",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": {
+          "CompatibleSlotIds": [
+            "CyberneticSlotId:character.cyber.internal_2"
+          ],
+          "ModFrameCoverage": 1,
+          "MaxDamageCapacity": 4,
+          "CyberSecurityLevel": 2,
+          "InstalledMods": [],
+          "Damage": []
+        },
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_ilya_trace_bus",
+        "Name": "Trace-Sink Nerve Bus",
+        "Description": "A disposable internal bus that soaks trace spikes before they reach Ilya's motor cortex.",
+        "FlavorText": "A fuse with a pulse.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.visual_tap.png"
+        },
+        "SizeInInventory": "1:1"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "4/4",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": {
+          "CompatibleSlotIds": [
+            "CyberneticSlotId:character.cyber.head"
+          ],
+          "ModFrameCoverage": 1,
+          "MaxDamageCapacity": 4,
+          "CyberSecurityLevel": 2,
+          "InstalledMods": [],
+          "Damage": []
+        },
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_vale_ocular_bridge",
+        "Name": "Vale Ocular Feed Bridge",
+        "Description": "A tiny feed bridge behind Vale's camera contacts, laundering her sightline to PhantomRoot.",
+        "FlavorText": "The waiter blinks. Ilya sees.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.ocular_implant.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "8/8",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": {
+          "CompatibleSlotIds": [
+            "CyberneticSlotId:character.cyber.head"
+          ],
+          "ModFrameCoverage": 2,
+          "MaxDamageCapacity": 8,
+          "CyberSecurityLevel": 4,
+          "InstalledMods": [],
+          "Damage": []
+        },
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_silas_blink_optic",
+        "Name": "Blink Prediction Optic",
+        "Description": "The experimental corporate optic that projects likely futures into Silas's visual field.",
+        "FlavorText": "It sees the next second. It did not see the invoice.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.ocular_implant.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "5/5",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": {
+          "CompatibleSlotIds": [
+            "CyberneticSlotId:character.cyber.internal_1"
+          ],
+          "ModFrameCoverage": 1,
+          "MaxDamageCapacity": 5,
+          "CyberSecurityLevel": 2.5,
+          "InstalledMods": [],
+          "Damage": []
+        },
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_silas_biomonitor",
+        "Name": "Premium Biomonitor Mesh",
+        "Description": "A premium internal biomonitor that reports stress, toxins, and subscriber-grade fear.",
+        "FlavorText": "Every heartbeat has a service tier.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.cortical_relay.png"
+        },
+        "SizeInInventory": "1:1"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "5/5",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": {
+          "CompatibleSlotIds": [
+            "CyberneticSlotId:character.cyber.head"
+          ],
+          "ModFrameCoverage": 1,
+          "MaxDamageCapacity": 5,
+          "CyberSecurityLevel": 2,
+          "InstalledMods": [],
+          "Damage": []
+        },
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_juno_threat_lens",
+        "Name": "Kade Threat Lens Implant",
+        "Description": "A security-grade tactical lens that flags weapons, faces, and unpaid risk.",
+        "FlavorText": "Threats render brighter when someone else owns the building.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.ocular_implant.png"
+        },
+        "SizeInInventory": "2:2"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "BaseMonetaryValue": 0,
+        "ManufacturerId": null,
+        "Condition": "7/7",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": {
+          "CompatibleSlotIds": [
+            "CyberneticSlotId:character.cyber.torso"
+          ],
+          "ModFrameCoverage": 2,
+          "MaxDamageCapacity": 7,
+          "CyberSecurityLevel": 1.5,
+          "InstalledMods": [],
+          "Damage": []
+        },
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item",
+        "Id": "ItemId:ghost_juno_subdermal_mesh",
+        "Name": "Subdermal Ceramic Mesh",
+        "Description": "A corporate security implant that stiffens under sudden impact.",
+        "FlavorText": "Armor you can clock in with.",
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.security_vest.png"
+        },
+        "SizeInInventory": "3:3"
       }
     },
     {
@@ -15017,8 +16250,30 @@
         "Id": "gamestate:root@origin.game-state",
         "Name": "Game State",
         "PlayerCharacterId": "CharacterId:ilya_voss",
-        "PrimaryObservationId": null,
-        "Observations": [],
+        "PrimaryObservationId": "ObservationId:spy:ilya_voss:silas_wren",
+        "Observations": [
+          {
+            "Id": "ObservationId:spy:ilya_voss:silas_wren",
+            "Kind": "Spy",
+            "ObserverCharacterId": "CharacterId:ilya_voss",
+            "CharacterId": "CharacterId:silas_wren",
+            "DialogueInstanceId": null
+          },
+          {
+            "Id": "ObservationId:spy:ilya_voss:vale_nyx",
+            "Kind": "Spy",
+            "ObserverCharacterId": "CharacterId:ilya_voss",
+            "CharacterId": "CharacterId:vale_nyx",
+            "DialogueInstanceId": null
+          },
+          {
+            "Id": "ObservationId:spy:ilya_voss:juno_kade",
+            "Kind": "Spy",
+            "ObserverCharacterId": "CharacterId:ilya_voss",
+            "CharacterId": "CharacterId:juno_kade",
+            "DialogueInstanceId": null
+          }
+        ],
         "TurnData": {},
         "ActiveContract": null,
         "Hostilities": {
@@ -15091,6 +16346,126 @@
           "MidRangeEnergyMultiplier": 1,
           "LongRangeEnergyMultiplier": 0.75
         },
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:ghost_vale_spoof_lapel",
+        "Name": "Vale's Spoof Lapel Pin",
+        "Description": "A lapel pin shell hiding the shimmer of a biometric spoof key without spending the key itself as clothing.",
+        "FlavorText": "Service smile, forged pulse.",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.spoof_key.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_1",
+          "SurfaceArea": 0.15,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "concealed",
+            "credentialed"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:ghost_silas_vip_badge_lanyard",
+        "Name": "Silas' VIP Badge Lanyard",
+        "Description": "A Joy Works gala credential on a smart-fabric lanyard, tuned to keep Silas visible to security and invisible to scrutiny.",
+        "FlavorText": "Access looks cleaner when it has a logo.",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.target_badge.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_1",
+          "SurfaceArea": 0.15,
+          "Aesthetics": [
+            "militarized"
+          ],
+          "Traits": [
+            "credentialed",
+            "corporate"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      }
+    },
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:ghost_juno_deadman_clip",
+        "Name": "Juno's Deadman Collar Clip",
+        "Description": "A visible collar clip wired to Juno's contract telemetry, worn as both threat display and status marker.",
+        "FlavorText": "A warning light that chose a uniform.",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "asset:assets/item-icons/ghost.dead_switch.png"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "1/1",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_1",
+          "SurfaceArea": 0.15,
+          "Aesthetics": [
+            "uniformed"
+          ],
+          "Traits": [
+            "armed",
+            "signal"
+          ],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
         "Armor": null,
         "TypeId": "Item"
       }
@@ -20044,13 +21419,13 @@
     },
     {
       "EntityId": "ItemId:ghost_dead_switch",
-      "Kind": "Root",
-      "OwnerEntityId": null,
-      "MapId": "MapChunkId:",
-      "CellFootprint": "0:0:0:0",
+      "Kind": "Map",
+      "OwnerEntityId": "MapChunkId:ghost_security",
+      "MapId": "MapChunkId:ghost_security",
+      "CellFootprint": "11:7:1:1",
       "InventoryOwnerId": null,
       "InventoryItemId": null,
-      "CellPosition": "0:0",
+      "CellPosition": "11:7",
       "GunItemId": null,
       "SlotPath": null
     },
@@ -20083,7 +21458,7 @@
       "Kind": "Attached",
       "OwnerEntityId": "CharacterId:vale_nyx",
       "MapId": "MapChunkId:",
-      "CellFootprint": "0:0:0:0",
+      "CellFootprint": "0:0:2:2",
       "InventoryOwnerId": null,
       "InventoryItemId": null,
       "CellPosition": "0:0",
@@ -20131,7 +21506,7 @@
       "Kind": "Attached",
       "OwnerEntityId": "CharacterId:silas_wren",
       "MapId": "MapChunkId:",
-      "CellFootprint": "0:0:0:0",
+      "CellFootprint": "0:0:3:3",
       "InventoryOwnerId": null,
       "InventoryItemId": null,
       "CellPosition": "0:0",
@@ -20161,6 +21536,414 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": "LoadoutSlotId:character.loadout.primaryWeapon"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_operator_hood",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.head"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_feed_visor",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.face"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_compression_shirt",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.torso_inner"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_cable_jacket",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.torso_outer"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_haptic_gloves",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.hands"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_cargo_pants",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.legs"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_softstep_boots",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.feet"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_ocular_router",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "CyberneticSlotId:character.cyber.head"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_cortical_relay",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:1:1",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "CyberneticSlotId:character.cyber.internal_1"
+    },
+    {
+      "EntityId": "ItemId:ghost_ilya_trace_bus",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:ilya_voss",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:1:1",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "CyberneticSlotId:character.cyber.internal_2"
+    },
+    {
+      "EntityId": "ItemId:ghost_vale_service_shirt",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:vale_nyx",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.torso_inner"
+    },
+    {
+      "EntityId": "ItemId:ghost_vale_service_blazer",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:vale_nyx",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.torso_outer"
+    },
+    {
+      "EntityId": "ItemId:ghost_vale_tray_gloves",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:vale_nyx",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.hands"
+    },
+    {
+      "EntityId": "ItemId:ghost_vale_service_slacks",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:vale_nyx",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.legs"
+    },
+    {
+      "EntityId": "ItemId:ghost_vale_silent_loafers",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:vale_nyx",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.feet"
+    },
+    {
+      "EntityId": "ItemId:ghost_vale_ocular_bridge",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:vale_nyx",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "CyberneticSlotId:character.cyber.head"
+    },
+    {
+      "EntityId": "ItemId:ghost_silas_blink_lens_style",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:silas_wren",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.face"
+    },
+    {
+      "EntityId": "ItemId:ghost_silas_gala_shirt",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:silas_wren",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.torso_inner"
+    },
+    {
+      "EntityId": "ItemId:ghost_silas_cufflinks",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:silas_wren",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.hands"
+    },
+    {
+      "EntityId": "ItemId:ghost_silas_gala_trousers",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:silas_wren",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.legs"
+    },
+    {
+      "EntityId": "ItemId:ghost_silas_formal_shoes",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:silas_wren",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.feet"
+    },
+    {
+      "EntityId": "ItemId:ghost_silas_blink_optic",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:silas_wren",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "CyberneticSlotId:character.cyber.head"
+    },
+    {
+      "EntityId": "ItemId:ghost_silas_biomonitor",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:silas_wren",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:1:1",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "CyberneticSlotId:character.cyber.internal_1"
+    },
+    {
+      "EntityId": "ItemId:ghost_juno_threat_lens_style",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:juno_kade",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.face"
+    },
+    {
+      "EntityId": "ItemId:ghost_juno_tactical_underlayer",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:juno_kade",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.torso_inner"
+    },
+    {
+      "EntityId": "ItemId:ghost_juno_security_vest",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:juno_kade",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.torso_outer"
+    },
+    {
+      "EntityId": "ItemId:ghost_juno_duty_gloves",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:juno_kade",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.hands"
+    },
+    {
+      "EntityId": "ItemId:ghost_juno_duty_pants",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:juno_kade",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.legs"
+    },
+    {
+      "EntityId": "ItemId:ghost_juno_security_boots",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:juno_kade",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.feet"
+    },
+    {
+      "EntityId": "ItemId:ghost_juno_threat_lens",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:juno_kade",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:2:2",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "CyberneticSlotId:character.cyber.head"
+    },
+    {
+      "EntityId": "ItemId:ghost_juno_subdermal_mesh",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:juno_kade",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:3:3",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "CyberneticSlotId:character.cyber.torso"
+    },
+    {
+      "EntityId": "ItemId:ghost_vale_spoof_lapel",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:vale_nyx",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:1:1",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.accessory_1"
+    },
+    {
+      "EntityId": "ItemId:ghost_silas_vip_badge_lanyard",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:silas_wren",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:1:1",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.accessory_1"
+    },
+    {
+      "EntityId": "ItemId:ghost_juno_deadman_clip",
+      "Kind": "Attached",
+      "OwnerEntityId": "CharacterId:juno_kade",
+      "MapId": "MapChunkId:",
+      "CellFootprint": "0:0:1:1",
+      "InventoryOwnerId": null,
+      "InventoryItemId": null,
+      "CellPosition": "0:0",
+      "GunItemId": null,
+      "SlotPath": "StyleSlotId:character.style.accessory_1"
     }
   ],
   "RNGSeed": 0

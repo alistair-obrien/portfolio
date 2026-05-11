@@ -9,6 +9,54 @@
       "IsDirectory": true
     },
     {
+      "Path": "assets/character-portraits/biker.grit_vale.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/biker.latch_marrow.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/biker.mercy_gear.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/biker.oona_brake.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/biker.pike_soren.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/biker.vela_rook.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/cyborg.ione_vale.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/cyborg.kade_null.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/cyborg.lio_quench.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/cyborg.morrow_pike.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/cyborg.mother_servo.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/cyborg.sable_orison.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/character-portraits/dorian_vale.png",
       "IsDirectory": false
     },
@@ -33,6 +81,30 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/character-portraits/pop.halo_saint.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/pop.jett_karo.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/pop.luma_vale.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/pop.mimi_vox.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/pop.pax_meridian.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/pop.rina_vey.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/character-portraits/rook_imani.png",
       "IsDirectory": false
     },
@@ -42,6 +114,114 @@
     },
     {
       "Path": "assets/character-portraits/silas_wren.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/street.brick_sol.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/street.jun_thread.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/street.miko_static.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/street.nox_parade.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/street.sera_vant.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/street.tavi_lace.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.all_cyber_full_replacement.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.all_cyber_prominent.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.all_cyber_subtle.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.corporate_feminine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.corporate_masculine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.dandy_feminine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.dandy_masculine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.militarized_feminine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.militarized_masculine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.noir_feminine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.noir_masculine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.party_feminine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.party_masculine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.street_feminine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.street_masculine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.techwear_feminine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.techwear_masculine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.uniformed_feminine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.uniformed_masculine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.vanilla_feminine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/token_lab.vanilla_masculine.png",
       "IsDirectory": false
     },
     {
@@ -57,15 +237,67 @@
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/ammo_piercing_case.png",
+      "Path": "assets/item-icons/biker.amber_helmet.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/ammo.claim_rounds.png",
+      "Path": "assets/item-icons/biker.armored_jacket.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/cigs.png",
+      "Path": "assets/item-icons/biker.bike_key.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.brass_revolver.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.chain_belt.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.denim_cut.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.fuel_can.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.patched_saddlebag.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.revolver_rounds_1x1.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.road_boots.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.route_wafer.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.sawn_off.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.shells_1x1.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.studded_gloves.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.torque_wrench.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/biker.waxed_pants.png",
       "IsDirectory": false
     },
     {
@@ -73,55 +305,67 @@
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.canteen_empty.png",
+      "Path": "assets/item-icons/cyborg.coolant_injector.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.canteen.png",
+      "Path": "assets/item-icons/cyborg.cyber_arm.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.detox_cap.png",
+      "Path": "assets/item-icons/cyborg.cyber_hands.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.empty_injector.png",
+      "Path": "assets/item-icons/cyborg.cyber_legs.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.medpatch.png",
+      "Path": "assets/item-icons/cyborg.diagnostic_tablet.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.noodle_cup.png",
+      "Path": "assets/item-icons/cyborg.faceplate.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.ration_pack_half.png",
+      "Path": "assets/item-icons/cyborg.identity_chip.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.ration_pack_open.png",
+      "Path": "assets/item-icons/cyborg.limb_case.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.ration_pack.png",
+      "Path": "assets/item-icons/cyborg.muscle_capsule.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.sleep_tab.png",
+      "Path": "assets/item-icons/cyborg.neural_crown.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.stim_patch.png",
+      "Path": "assets/item-icons/cyborg.ocular_case.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.water_bulb_empty.png",
+      "Path": "assets/item-icons/cyborg.reactor_core.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/consumable.water_bulb.png",
+      "Path": "assets/item-icons/cyborg.rib_cassette.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/cyborg.servo_grease.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/cyborg.spine_coil.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/cyborg.suture_spool.png",
       "IsDirectory": false
     },
     {
@@ -205,10 +449,6 @@
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/fly.joyworks_fob.png",
-      "IsDirectory": false
-    },
-    {
       "Path": "assets/item-icons/fly.korr_nanoshield.png",
       "IsDirectory": false
     },
@@ -285,11 +525,27 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/item-icons/ghost.cable_jacket.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/item-icons/ghost.camera_contacts.png",
       "IsDirectory": false
     },
     {
+      "Path": "assets/item-icons/ghost.cargo_pants.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/item-icons/ghost.ceramic_armor.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.compression_shirt.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.cortical_relay.png",
       "IsDirectory": false
     },
     {
@@ -298,6 +554,18 @@
     },
     {
       "Path": "assets/item-icons/ghost.gala_jacket.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.gala_shirt.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.gala_trousers.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.haptic_gloves.png",
       "IsDirectory": false
     },
     {
@@ -321,6 +589,14 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/item-icons/ghost.ocular_implant.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.operator_hood.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/item-icons/ghost.phantom_deck.png",
       "IsDirectory": false
     },
@@ -329,7 +605,31 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/item-icons/ghost.security_boots.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.security_gloves.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.security_pants.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.security_vest.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/item-icons/ghost.server_blade.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.service_blazer.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.service_slacks.png",
       "IsDirectory": false
     },
     {
@@ -342,6 +642,10 @@
     },
     {
       "Path": "assets/item-icons/ghost.smart_ammo_1x1.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/ghost.softstep_boots.png",
       "IsDirectory": false
     },
     {
@@ -361,179 +665,79 @@
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/icon_item_armor_vest.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_backpack.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_data_chip.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_data_pad.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_document.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_hard_drive.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_injector.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_key.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_keycard.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_med_patch.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_note.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_photo.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_pistol.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_pouch.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_smg.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/icon_item_tool.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/inventory.consumable_test_pack.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.access_card.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.camera_cache.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.car_key.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.claimant_sling.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.claims_key.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.compliance_pouch.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.contract_shard.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.dash_cache.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.dnr_slip.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.executive_briefcase.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.injector_pen.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.instant_noodles.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.kill_order_cache.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.leak_drive.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.ledger_cache.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.ledger_drive.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.null_switch.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.pajama_rig.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.redaction_key.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.redline_ring.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.redline_token.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.risk_attache.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.route_roll.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.security_kit.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.sterile_foam.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/item.witness_shard.png",
+      "Path": "assets/item-icons/map_door_terminal.png",
       "IsDirectory": false
     },
     {
       "Path": "assets/item-icons/med_inhaler.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop._contact.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.analytics_tablet.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.backstage_pass.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.charm_mic.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.fan_contract.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.glitter_inhaler.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.heart_visor.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.holo_skirt.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.merch_scarf.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.moon_boots.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.privacy_veil.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.ringlight_drone.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.sample_pad.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.security_baton.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.sparkle_ammo_1x1.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.spotlight_perfume.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/pop.stage_jacket.png",
       "IsDirectory": false
     },
     {
@@ -569,11 +773,71 @@
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/smg.png",
+      "Path": "assets/item-icons/stim_patch.png",
       "IsDirectory": false
     },
     {
-      "Path": "assets/item-icons/stim_patch.png",
+      "Path": "assets/item-icons/street.bracelet_stack.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.clear_poncho.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.folded_zine.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.graffiti_hoodie.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.holo_sling.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.lace_gloves.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.led_choker.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.magenta_wraps.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.patch_skirt.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.pin_beanie.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.platform_sneakers.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.reflective_trousers.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.roller_shoes.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.spray_perfume.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.sticker_camera.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/item-icons/street.vinyl_bomber.png",
       "IsDirectory": false
     },
     {
@@ -581,43 +845,11 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/item-icons/transfusion_device.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/item-icons/weapon_shotgun.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/weapon.badge_baton.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/item-icons/weapon.policy_sidearm.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/prop-icons",
-      "IsDirectory": true
-    },
-    {
-      "Path": "assets/prop-icons/aegis_supply_crate.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/prop-icons/ghost.gala_lift.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/prop-icons/ghost.map_door.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/prop-icons/ghost.remote_terminal.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/prop-icons/ghost.security_camera.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "assets/prop-icons/ghost.server_rack.png",
       "IsDirectory": false
     },
     {
@@ -625,11 +857,27 @@
       "IsDirectory": true
     },
     {
+      "Path": "assets/scenario-art/scenario_chrome_wake.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/scenario-art/scenario_fly_the_coop.png",
       "IsDirectory": false
     },
     {
       "Path": "assets/scenario-art/scenario_ghost_dividend.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/scenario-art/scenario_porcelain_tax.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/scenario-art/scenario_starfall_protocol.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/scenario-art/scenario_thread_the_needle.png",
       "IsDirectory": false
     },
     {
@@ -649,6 +897,14 @@
       "IsDirectory": true
     },
     {
+      "Path": "content/chrome_wake",
+      "IsDirectory": true
+    },
+    {
+      "Path": "content/chrome_wake/briefing.yarn",
+      "IsDirectory": false
+    },
+    {
       "Path": "content/ghost_dividend",
       "IsDirectory": true
     },
@@ -657,11 +913,35 @@
       "IsDirectory": false
     },
     {
+      "Path": "content/porcelain_tax",
+      "IsDirectory": true
+    },
+    {
+      "Path": "content/porcelain_tax/briefing.yarn",
+      "IsDirectory": false
+    },
+    {
       "Path": "content/redline",
       "IsDirectory": true
     },
     {
       "Path": "content/redline/quest.yarn",
+      "IsDirectory": false
+    },
+    {
+      "Path": "content/starfall_protocol",
+      "IsDirectory": true
+    },
+    {
+      "Path": "content/starfall_protocol/briefing.yarn",
+      "IsDirectory": false
+    },
+    {
+      "Path": "content/thread_the_needle",
+      "IsDirectory": true
+    },
+    {
+      "Path": "content/thread_the_needle/briefing.yarn",
       "IsDirectory": false
     },
     {
@@ -701,6 +981,18 @@
       "IsDirectory": false
     },
     {
+      "Path": "scenarios/chrome_wake",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/chrome_wake/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/chrome_wake/state.json",
+      "IsDirectory": false
+    },
+    {
       "Path": "scenarios/fly_the_coop",
       "IsDirectory": true
     },
@@ -725,6 +1017,18 @@
       "IsDirectory": false
     },
     {
+      "Path": "scenarios/porcelain_tax",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/porcelain_tax/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/porcelain_tax/state.json",
+      "IsDirectory": false
+    },
+    {
       "Path": "scenarios/redline_revival_demo",
       "IsDirectory": true
     },
@@ -734,6 +1038,42 @@
     },
     {
       "Path": "scenarios/redline_revival_demo/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/starfall_protocol",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/starfall_protocol/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/starfall_protocol/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/thread_the_needle",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/thread_the_needle/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/thread_the_needle/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/token_style_lab",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/token_style_lab/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/token_style_lab/state.json",
       "IsDirectory": false
     },
     {

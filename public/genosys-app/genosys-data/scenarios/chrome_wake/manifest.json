@@ -1,0 +1,14 @@
+{
+  "PackageId": "chrome_wake",
+  "Name": "Chrome Wake",
+  "Subtitle": "Road debt, wet chrome",
+  "Description": "Vela Rook carries a dead rider's route wafer into a rain-slick biker wake, where the Chain Saints must settle succession before a rival enforcer turns mourning into a yard war.",
+  "Category": "Biker Gang",
+  "EstimatedDuration": "20-30 minutes",
+  "RenderKey": {
+    "Key": "asset:assets/scenario-art/scenario_chrome_wake.png"
+  },
+  "FolderPath": "Scenarios",
+  "CreatedAt": "2026-05-11T00:00:00.0000000Z",
+  "UpdatedAt": "2026-05-11T00:00:00.0000000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "PackageId": "starfall_protocol",
+  "Name": "Starfall Protocol",
+  "Subtitle": "Premium access, public panic",
+  "Description": "Rina Vey is sent into a pop-star livestream crisis where stolen voice models, premium fan contracts, and a masked superfan turn an album launch into a remote assassination attempt.",
+  "Category": "Influencer Pop",
+  "EstimatedDuration": "25-40 minutes",
+  "RenderKey": {
+    "Key": "asset:assets/scenario-art/scenario_starfall_protocol.png"
+  },
+  "FolderPath": "Scenarios",
+  "CreatedAt": "2026-05-11T00:00:00.0000000Z",
+  "UpdatedAt": "2026-05-11T00:00:00.0000000Z"
+}

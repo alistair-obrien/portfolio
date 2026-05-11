@@ -1,0 +1,70 @@
+title: Start
+---
+$c1: If the stream dies, Pax says I die slower but for longer.
+
+-> $c2: I need everyone off the live feed and away from the premium gate.
+    $c1: Then say it like a remix. If you say it like a warning, they will clip it.
+    <<jump Close>>
+-> $c2: Who can move the crowd fastest?
+    $c1: Mimi can make them look left. Halo can make them run right. Pax can make it expensive.
+    <<jump Close>>
+===
+title: Luma
+---
+$c1: If the stream dies, Pax says I die slower but for longer.
+
+-> $c2: I need everyone off the live feed and away from the premium gate.
+    $c1: Then get me thirty seconds with no camera love and no sponsor panic.
+    <<jump Close>>
+-> $c2: Do you recognize the threat voice?
+    $c1: I recognize the silence before it. That is worse.
+    <<jump Close>>
+===
+title: Pax
+---
+$c1: That is not what I said. That is almost what legal said.
+
+-> $c2: I need everyone off the live feed and away from the premium gate.
+    $c1: I can sell a delay. I cannot sell dead air unless Luma is breathing at the end of it.
+    <<jump Close>>
+-> $c2: Who has access to the premium gate?
+    $c1: Staff, sponsors, and anyone rich enough to make staff stop checking badges.
+    <<jump Close>>
+===
+title: Mimi
+---
+$c1: The chorus in the threat clip is mine. The breath before it is not.
+
+-> $c2: I need everyone off the live feed and away from the premium gate.
+    $c1: Give me a cue and I can pull the fanline toward the merch wall.
+    <<jump Close>>
+-> $c2: Can you isolate the breath?
+    $c1: Already did. It has stage monitor reverb, not crowd mic. Someone was close.
+    <<jump Close>>
+===
+title: Jett
+---
+$c1: Masked fan in the vault has a charge baton and a route through camera rail maintenance.
+
+-> $c2: I need everyone off the live feed and away from the premium gate.
+    $c1: Then kill the rail lights first. People follow brightness even when it leads them wrong.
+    <<jump Close>>
+-> $c2: How did they reach the vault?
+    $c1: Maintenance rail, sponsor corridor, or a badge that thinks rules are for cheaper people.
+    <<jump Close>>
+===
+title: Halo
+---
+$c1: She said my name in the private drop. That means she knew I would come.
+
+-> $c2: I need everyone off the live feed and away from the premium gate.
+    $c1: Then do it before she says Luma's name again. That is when people stop thinking.
+    <<jump Close>>
+-> $c2: Why contact you?
+    $c1: Because I answer. Because she knew I would hate myself if I did not.
+    <<jump Close>>
+===
+title: Close
+---
+$c1: Make it look intentional. Panic gets sponsors killed slower than mistakes do.
+===

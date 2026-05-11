@@ -1,0 +1,85 @@
+title: Start
+---
+$c1: Your proof did not just walk, Miko. It left tracks, witnesses, and one very smug thief-shaped shadow.
+
+-> $c2: Give me the clean read.
+    $c1: Start with the zine table. If Jun printed six and the table shows seven, somebody planned a duplicate before your drop even had a crowd.
+    $c1: After that, talk to Brick about orange wheels and Sera about timestamps. Do not chase Nox until you know what he was running from.
+    <<jump CloseMarket>>
+-> $c2: Who would steal a proof this loudly?
+    $c1: Someone who wants you blaming the loudest person in the room. Nox is loud. That makes him useful, not automatically guilty.
+    <<jump CloseMarket>>
+===
+title: Tavi
+---
+$c1: Then follow the fabric, not the rumor. Fake confidence wrinkles faster than vinyl.
+
+-> $c2: What fabric am I following?
+    $c1: Three threads. Orange wheel dust on the catwalk, a cherry-static perfume smear near the dye sink, and a page seven nobody admits they ordered.
+    $c1: If those meet in the backlot, you are not chasing a thief. You are chasing a setup.
+    <<jump CloseMarket>>
+-> $c2: L-E-CAT says my proof zine walked before the drop.
+    $c1: Proofs do not walk. People carry them badly and pretend the wind has hands.
+    $c1: Read the mirror column. It saw enough to make one suspect split into two.
+    <<jump CloseMarket>>
+===
+title: Brick
+---
+$c1: Nox cut through the print backlot. I saw orange wheels.
+
+-> $c2: You are sure it was Nox?
+    $c1: Orange wheels, black grin, jacket pretending not to be loud. I am sure about Nox.
+    $c1: I am less sure he had the page when he ran. Check the sneaker wall first. One orange display pair went missing before he made his exit.
+    <<jump CloseMarket>>
+-> $c2: Where did the trail go?
+    $c1: Backlot curtain, west edge, fast enough to look casual. Then the sound cart caught a rack crash after he passed.
+    $c1: That means someone moved behind him. Nox was the flare, not necessarily the fire.
+    <<jump CloseMarket>>
+===
+title: Sera
+---
+$c1: If you get me the page, I get you the timestamp. If you get me the fit, I get you the cover.
+
+-> $c2: What did your camera catch?
+    $c1: Mirror column caught Nox rolling away, sure. But there is another sleeve at the zine table after he turns.
+    $c1: Black mesh, brass ring glove, not enough face. Bring me the rival page from the backlot and I can match the ink bloom.
+    <<jump CloseMarket>>
+-> $c2: What do you need first?
+    $c1: The loose page or the screen press ghost. A page tells me who printed it. A ghost tells me who planned it.
+    $c1: If you want the cover, bring me a villain with better evidence than vibes.
+    <<jump CloseMarket>>
+===
+title: Nox
+---
+$c1: I borrowed one proof, not your whole future. If you want it back, follow the orange wheels.
+
+-> $c2: Why take it?
+    $c1: Because Jun's page seven had a rival stamp under your fit. I grabbed the proof before the market saw you wearing someone else's trap.
+    $c1: Then someone slammed the rack maze behind me and made sure everybody saw the wheels.
+    <<jump CloseBacklot>>
+-> $c2: Did you plant the rival page?
+    $c1: Please. If I were framing you, the page would have better margins.
+    $c1: Check the dye sink. Whoever cleaned up used your cherry-static scent and did not know the backlot drain keeps perfume like gossip.
+    <<jump CloseBacklot>>
+===
+title: Jun
+---
+$c1: Please do not let them publish the wrong one. I only printed six. I think.
+
+-> $c2: The zine table had a slot seven.
+    $c1: I did not label that. My tabs are violet; that label is violet copied by somebody with a cheap pen and cruel confidence.
+    $c1: The press ghost should still show the fake stamp. If it matches the loose page, somebody used my setup after I stepped away.
+    <<jump CloseBacklot>>
+-> $c2: Who handled the print run?
+    $c1: Me, Miko, the cutter, the dryer rack, and everyone who said they were just looking.
+    $c1: I left the back door latched at 20:10. If it opened after that, the scanner knows more than I do.
+    <<jump CloseBacklot>>
+===
+title: CloseMarket
+---
+$c1: Market first: zine table, sneaker wall, mirror column, sound cart. Then take the backlot curtain and make the setup sweat.
+===
+title: CloseBacklot
+---
+$c1: Backlot truth is physical: press ghost, dye sink, rack maze, delivery door. Follow what could not lie fast enough.
+===
