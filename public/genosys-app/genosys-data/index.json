@@ -69,6 +69,26 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/character-portraits/lab.elian_voss.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/lab.kade_security_guard.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/lab.rogue_specimen_rho.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/lab.vanta_9.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/lab.whitecoat_scientist.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/character-portraits/mara_venn.png",
       "IsDirectory": false
     },
@@ -110,6 +130,46 @@
     },
     {
       "Path": "assets/character-portraits/sable_korr.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.archive_preacher.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.blackhood_scout.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.chrome_enforcer.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.convoy_tactician.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.debt_collector.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.gang_matriarch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.road_captain.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.signal_mechanic.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.wire_courier.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/character-portraits/signal_hounds.young_prospect.png",
       "IsDirectory": false
     },
     {
@@ -857,7 +917,15 @@
       "IsDirectory": true
     },
     {
+      "Path": "assets/scenario-art/scenario_aurelia_blackout.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/scenario-art/scenario_chrome_wake.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "assets/scenario-art/scenario_cyberpunk_lab_tutorial_escape.png",
       "IsDirectory": false
     },
     {
@@ -873,6 +941,10 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/scenario-art/scenario_rapid_response.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/scenario-art/scenario_starfall_protocol.png",
       "IsDirectory": false
     },
@@ -881,16 +953,12 @@
       "IsDirectory": false
     },
     {
+      "Path": "assets/scenario-art/scenario_token_style_lab.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "assets/scenario-images",
       "IsDirectory": true
-    },
-    {
-      "Path": "assets/scenario-images/fly_the_coop",
-      "IsDirectory": true
-    },
-    {
-      "Path": "assets/scenario-images/fly_the_coop/1777948834477-game_cyberpunk_character_portrait_2d_8_bits_16x16_pixels14.png",
-      "IsDirectory": false
     },
     {
       "Path": "content",
@@ -902,6 +970,14 @@
     },
     {
       "Path": "content/chrome_wake/briefing.yarn",
+      "IsDirectory": false
+    },
+    {
+      "Path": "content/cyberpunk_lab_tutorial_escape",
+      "IsDirectory": true
+    },
+    {
+      "Path": "content/cyberpunk_lab_tutorial_escape/briefing.yarn",
       "IsDirectory": false
     },
     {
@@ -953,6 +1029,30 @@
       "IsDirectory": true
     },
     {
+      "Path": "saves/Death Test",
+      "IsDirectory": true
+    },
+    {
+      "Path": "saves/Death Test 2",
+      "IsDirectory": true
+    },
+    {
+      "Path": "saves/Death Test 2/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "saves/Death Test 2/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "saves/Death Test/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "saves/Death Test/state.json",
+      "IsDirectory": false
+    },
+    {
       "Path": "saves/save-20260505",
       "IsDirectory": true
     },
@@ -993,8 +1093,32 @@
       "IsDirectory": false
     },
     {
+      "Path": "scenarios/cyberpunk_lab_tutorial_escape",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/cyberpunk_lab_tutorial_escape/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/cyberpunk_lab_tutorial_escape/state.json",
+      "IsDirectory": false
+    },
+    {
       "Path": "scenarios/fly_the_coop",
       "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/fly_the_coop_inventory_lab",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/fly_the_coop_inventory_lab/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/fly_the_coop_inventory_lab/state.json",
+      "IsDirectory": false
     },
     {
       "Path": "scenarios/fly_the_coop/manifest.json",
@@ -1074,6 +1198,18 @@
     },
     {
       "Path": "scenarios/token_style_lab/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/tutorial",
+      "IsDirectory": true
+    },
+    {
+      "Path": "scenarios/tutorial/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "scenarios/tutorial/state.json",
       "IsDirectory": false
     },
     {

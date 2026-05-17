@@ -1,11 +1,11 @@
 let runtimePromise;
+let runtimeInstance = null;
 let runtimeProgress = { phase: "idle", percent: 0 };
 let runtimePulseTimer = null;
 let persistentDirectoryHandle = null;
-let pendingPersistencePromise = null;
-let pendingPersistenceRequested = false;
+const persistentAssetUrlCache = new Map();
 const runtimeProgressListeners = new Set();
-const metricPrefix = "[GenOSys RuntimeLoader]";
+const logPrefix = "[GenOSys Loader]";
 const directoryStoreName = "genosys-web-file-system";
 const directoryStoreKey = "persistent-directory";
 const browserStorageKey = "persistent-files";
@@ -39,8 +39,89 @@ function elapsedMs(startedAt) {
   return Math.round((performance.now() - startedAt) * 10) / 10;
 }
 
-function logRuntimeTiming(label, fields = {}) {
-  console.info(metricPrefix, label, fields);
+function logLoaderStep(operationName, fields = {}) {
+  const ok = fields.ok !== false && !fields.error;
+  const durationMs = getPrimaryDurationMs(fields);
+  const durationText = typeof durationMs === "number" ? `${durationMs.toFixed(1)}ms` : "";
+
+  console.info(
+    `%c${logPrefix}%c ${operationName}%c ${ok ? "OK" : "FAIL"}%c${durationText ? ` ${durationText}` : ""}`,
+    "font-weight: 700; color: #bd93f9;",
+    "color: inherit; font-weight: 400;",
+    ok
+      ? "color: #3ddc84; font-weight: 700;"
+      : "color: #ff5f57; font-weight: 700;",
+    getDurationStyle(durationMs),
+    getLoaderLogDetails(fields)
+  );
+}
+
+function getLoaderLogDetails(fields = {}) {
+  return compactFields({
+    timing: compactFields({
+      stepMs: fields.stepMs,
+      totalMs: fields.totalMs,
+      elapsedMs: fields.elapsedMs,
+      durationMs: fields.durationMs,
+    }),
+    progress: compactFields({
+      percent: fields.percent,
+    }),
+    transfer: compactFields({
+      loadedBytes: fields.loadedBytes,
+      totalBytes: fields.totalBytes,
+    }),
+    files: fields.files,
+    path: fields.path,
+    error: fields.error,
+  });
+}
+
+function getPrimaryDurationMs(fields = {}) {
+  for (const key of ["stepMs", "totalMs", "elapsedMs", "durationMs"]) {
+    const value = fields[key];
+    if (typeof value === "number" && Number.isFinite(value)) {
+      return value;
+    }
+  }
+
+  return undefined;
+}
+
+function getDurationStyle(totalMs) {
+  if (typeof totalMs !== "number" || !Number.isFinite(totalMs) || totalMs < 30) {
+    return "color: inherit; font-weight: 400;";
+  }
+
+  if (totalMs < 100) {
+    return "color: #ffd866; font-weight: 700;";
+  }
+
+  if (totalMs < 500) {
+    return "color: #ff9f43; font-weight: 700;";
+  }
+
+  return "color: #ff5f57; font-weight: 700;";
+}
+
+function compactFields(fields = {}) {
+  return Object.fromEntries(
+    Object.entries(fields).filter(([, value]) =>
+      value !== null &&
+      value !== undefined &&
+      value !== false &&
+      value !== 0 &&
+      value !== "" &&
+      !(Array.isArray(value) && value.length === 0) &&
+      !(isPlainObject(value) && Object.keys(value).length === 0)
+    )
+  );
+}
+
+function isPlainObject(value) {
+  return typeof value === "object" &&
+    value !== null &&
+    Object.getPrototypeOf(value) === Object.prototype;
 }
 
 function setRuntimeProgress(phase, percent) {
@@ -84,9 +165,9 @@ async function initializeRuntime() {
   const loadStartedAt = performance.now();
   let stepStartedAt = loadStartedAt;
 
-  function markRuntimeStep(phase, percent, fields = {}) {
+  function markRuntimeStep(phase, percent, operationName, fields = {}) {
     setRuntimeProgress(phase, percent);
-    logRuntimeTiming(phase, {
+    logLoaderStep(operationName, {
       stepMs: elapsedMs(stepStartedAt),
       totalMs: elapsedMs(loadStartedAt),
       percent: runtimeProgress.percent,
@@ -97,12 +178,12 @@ async function initializeRuntime() {
 
   setRuntimeProgress("loading-dotnet-module", 2);
   const { dotnet } = await import("./_framework/dotnet.js");
-  markRuntimeStep("creating-runtime", 8);
+  markRuntimeStep("creating-runtime", 8, "CreatingRuntime");
 
   let loadedBytes = 0;
   let totalBytes = 0;
   let resourcesDownloaded = false;
-  markRuntimeStep("loading-runtime-resources", 10);
+  markRuntimeStep("loading-runtime-resources", 10, "LoadingRuntimeResources");
   startRuntimePulse("loading-runtime-resources", 12, 66);
   const runtimeBuilder = dotnet
     .withDiagnosticTracing(false)
@@ -114,7 +195,7 @@ async function initializeRuntime() {
         if (ratio >= 1) {
           if (!resourcesDownloaded) {
             resourcesDownloaded = true;
-            logRuntimeTiming("runtime-resources-downloaded", {
+            logLoaderStep("RuntimeResourcesDownloaded", {
               stepMs: elapsedMs(stepStartedAt),
               totalMs: elapsedMs(loadStartedAt),
               loadedBytes,
@@ -136,28 +217,29 @@ async function initializeRuntime() {
   const createStartedAt = performance.now();
   try {
     runtime = await runtimeBuilder.create();
+    runtimeInstance = runtime;
   } finally {
     stopRuntimePulse();
   }
-  logRuntimeTiming("runtime-created", {
+  logLoaderStep("RuntimeCreated", {
     stepMs: elapsedMs(createStartedAt),
     totalMs: elapsedMs(loadStartedAt),
     loadedBytes,
     totalBytes,
   });
 
-  markRuntimeStep("reading-config", 90);
+  markRuntimeStep("reading-config", 90, "ReadingConfig");
   const config = runtime.getConfig();
 
-  markRuntimeStep("loading-assembly-exports", 94);
+  markRuntimeStep("loading-assembly-exports", 94, "LoadingAssemblyExports");
   const exportsStartedAt = performance.now();
   const exports = await runtime.getAssemblyExports(config.mainAssemblyName);
-  logRuntimeTiming("assembly-exports-loaded", {
+  logLoaderStep("AssemblyExportsLoaded", {
     stepMs: elapsedMs(exportsStartedAt),
     totalMs: elapsedMs(loadStartedAt),
   });
 
-  markRuntimeStep("creating-session", 97);
+  markRuntimeStep("creating-session", 97, "CreatingSession");
   return exports.BrowserGameExports;
 }
 
@@ -299,7 +381,7 @@ function readBinaryString(reader) {
   if (end > reader.bytes.length) {
     throw new Error("Binary transport string length is invalid.");
   }
-  const value = getTextDecoder().decode(reader.bytes.slice(reader.offset, end));
+  const value = getTextDecoder().decode(reader.bytes.subarray(reader.offset, end));
   reader.offset = end;
   return value;
 }
@@ -405,6 +487,17 @@ function devPublicDataRootUrl(path) {
   return `${devPublicDataRootEndpoint}${path}`;
 }
 
+function persistentDataUrl(relativePath) {
+  return new URL(`../genosys-data/${encodeRelativeUrlPath(relativePath)}`, import.meta.url).toString();
+}
+
+function encodeRelativeUrlPath(relativePath) {
+  return normalizePersistentPath(relativePath)
+    .split("/")
+    .map((part) => encodeURIComponent(part))
+    .join("/");
+}
+
 async function fetchJson(url, options = {}) {
   const response = await fetch(url, {
     cache: "no-store",
@@ -425,6 +518,16 @@ async function fetchJson(url, options = {}) {
 async function getDevPublicFiles() {
   const response = await fetchJson(devPublicDataRootUrl("/files"));
   return Array.isArray(response?.files) ? response.files : [];
+}
+
+function persistentRuntimeFiles(files) {
+  return (Array.isArray(files) ? files : []).map((file) => {
+    if (file?.IsDirectory === true || isTextPersistentPath(file?.Path)) {
+      return file;
+    }
+
+    return null;
+  }).filter(Boolean);
 }
 
 async function putDevPublicFiles(files) {
@@ -477,7 +580,7 @@ async function getBundledDataFiles() {
 
     return files;
   } catch (error) {
-    console.info(metricPrefix, "bundled-data-unavailable", error);
+    logLoaderStep("BundledDataUnavailable", { ok: false, error });
     return [];
   }
 }
@@ -571,6 +674,14 @@ function mergeInteropMetrics(response, metrics) {
     return response;
   }
 
+  const totalBeforeSerializeMs = Number(response.__interopMetrics?.totalBeforeSerializeMs);
+  if (
+    typeof metrics.wasmCallMs === "number" &&
+    Number.isFinite(totalBeforeSerializeMs)
+  ) {
+    metrics.wasmReturnMs = Math.max(0, metrics.wasmCallMs - totalBeforeSerializeMs);
+  }
+
   response.__interopMetrics = {
     ...(response.__interopMetrics ?? {}),
     ...metrics,
@@ -586,18 +697,48 @@ function parseEnvelopeWithMetrics(payload, metrics) {
   return mergeInteropMetrics(envelope, metrics);
 }
 
-function getResponseEvents(response) {
-  const events = response?.data?.Events;
-  return Array.isArray(events) ? events : [];
+function readManagedHeapBytes(exports) {
+  if (!exports || typeof exports.GetManagedHeapBytes !== "function") {
+    return undefined;
+  }
+
+  const value = Number(exports.GetManagedHeapBytes());
+  return Number.isFinite(value) ? value : undefined;
 }
 
-function isPersistentDataChangedEvent(event) {
-  const name = String(event?.name ?? event?.Name ?? event?.type ?? event?.Type ?? "");
-  return name === "PersistentDataChanged" || name.endsWith(".PersistentDataChanged");
+function readWasmMemoryBytes() {
+  const memory =
+    runtimeInstance?.Module?.wasmMemory ??
+    runtimeInstance?.Module?.asm?.memory ??
+    runtimeInstance?.Module?.HEAPU8?.buffer ??
+    runtimeInstance?.Module?.HEAP8?.buffer;
+  const buffer = memory instanceof WebAssembly.Memory ? memory.buffer : memory;
+  const bytes = Number(buffer?.byteLength);
+  return Number.isFinite(bytes) ? bytes : undefined;
 }
 
-function hasPersistentDataChanged(response) {
-  return getResponseEvents(response).some(isPersistentDataChangedEvent);
+function recordManagedHeapDelta(metrics) {
+  if (
+    typeof metrics.managedHeapBeforeWasmCallBytes !== "number" ||
+    typeof metrics.managedHeapAfterWasmCallBytes !== "number"
+  ) {
+    return;
+  }
+
+  metrics.managedHeapDeltaBytes =
+    metrics.managedHeapAfterWasmCallBytes - metrics.managedHeapBeforeWasmCallBytes;
+}
+
+function recordWasmMemoryDelta(metrics) {
+  if (
+    typeof metrics.wasmMemoryBeforeWasmCallBytes !== "number" ||
+    typeof metrics.wasmMemoryAfterWasmCallBytes !== "number"
+  ) {
+    return;
+  }
+
+  metrics.wasmMemoryDeltaBytes =
+    metrics.wasmMemoryAfterWasmCallBytes - metrics.wasmMemoryBeforeWasmCallBytes;
 }
 
 function hasFileSystemAccess() {
@@ -786,7 +927,7 @@ async function writeDirectoryJsonFiles(rootHandle, files) {
     try {
       await removePath(rootHandle, path, true);
     } catch (error) {
-      console.warn(metricPrefix, "persistent-directory-remove-failed", { path, error });
+      logLoaderStep("PersistentDirectoryRemoveFailed", { ok: false, path, error });
     }
   }
 }
@@ -838,7 +979,7 @@ async function getBrowserStoreFiles() {
     const files = await getStoredBrowserFiles();
     return Array.isArray(files) ? files : null;
   } catch (error) {
-    console.warn(metricPrefix, "persistent-browser-store-import-failed", error);
+    logLoaderStep("PersistentBrowserStoreImportFailed", { ok: false, error });
     return null;
   }
 }
@@ -858,7 +999,7 @@ async function getDevPublicDataFiles() {
     const files = await getDevPublicFiles();
     return Array.isArray(files) ? files : [];
   } catch (error) {
-    console.info(metricPrefix, "persistent-dev-public-import-unavailable", error);
+    logLoaderStep("PersistentDevPublicImportUnavailable", { ok: false, error });
     return null;
   }
 }
@@ -881,16 +1022,124 @@ async function getLocalPersistentFiles() {
   return await getBrowserStoreFiles();
 }
 
+function getAssetRelativePath(renderKey) {
+  const prefix = "asset:";
+  if (typeof renderKey !== "string" || !renderKey.toLowerCase().startsWith(prefix)) {
+    return "";
+  }
+
+  const relativePath = normalizePersistentPath(renderKey.slice(prefix.length));
+  return relativePath.startsWith("assets/") ? relativePath : "";
+}
+
+async function getDirectoryFile(rootHandle, relativePath) {
+  const parts = normalizePersistentPath(relativePath).split("/").filter(Boolean);
+  if (parts.length === 0) {
+    return null;
+  }
+
+  let current = rootHandle;
+  for (const part of parts.slice(0, -1)) {
+    current = await current.getDirectoryHandle(part);
+  }
+
+  return await (await current.getFileHandle(parts[parts.length - 1])).getFile();
+}
+
+function mimeTypeForPath(relativePath) {
+  const extension = relativePath.split(".").pop()?.toLowerCase() ?? "";
+  switch (extension) {
+    case "jpg":
+    case "jpeg":
+      return "image/jpeg";
+    case "webp":
+      return "image/webp";
+    case "gif":
+      return "image/gif";
+    case "svg":
+      return "image/svg+xml";
+    case "png":
+    default:
+      return "image/png";
+  }
+}
+
+function rememberPersistentAssetUrl(relativePath, sourceKey, createUrl) {
+  const current = persistentAssetUrlCache.get(relativePath);
+  if (current?.sourceKey === sourceKey) {
+    return current.url;
+  }
+
+  if (current?.url) {
+    URL.revokeObjectURL(current.url);
+  }
+
+  const url = createUrl();
+  persistentAssetUrlCache.set(relativePath, { sourceKey, url });
+  return url;
+}
+
+function findPersistentFile(files, relativePath) {
+  const normalized = normalizePersistentPath(relativePath);
+  return (Array.isArray(files) ? files : []).find((file) =>
+    file?.IsDirectory !== true &&
+    normalizePersistentPath(file?.Path) === normalized
+  ) ?? null;
+}
+
+export async function resolveAssetUrl(renderKey) {
+  const relativePath = getAssetRelativePath(renderKey);
+  if (!relativePath) {
+    return null;
+  }
+
+  if (getStoredDataRootMode() === dataRootModes.devPublic) {
+    return persistentDataUrl(relativePath);
+  }
+
+  const handle = await ensurePersistentDirectoryHandle();
+  if (handle) {
+    try {
+      const file = await getDirectoryFile(handle, relativePath);
+      return rememberPersistentAssetUrl(
+        relativePath,
+        `directory:${file.size}:${file.lastModified}`,
+        () => URL.createObjectURL(file)
+      );
+    } catch {
+      return persistentDataUrl(relativePath);
+    }
+  }
+
+  const storedFiles = await getBrowserStoreFiles();
+  const file = findPersistentFile(storedFiles, relativePath);
+  if (file?.Base64Data) {
+    return rememberPersistentAssetUrl(
+      relativePath,
+      `browser:${file.Base64Data.length}`,
+      () => URL.createObjectURL(new Blob([base64ToBytes(file.Base64Data)], {
+        type: mimeTypeForPath(relativePath),
+      }))
+    );
+  }
+
+  return persistentDataUrl(relativePath);
+}
+
 function importPersistentFilesToRuntime(exports, files, label) {
-  const normalizedFiles = Array.isArray(files) ? files : [];
+  const sourceFiles = Array.isArray(files) ? files : [];
+  const normalizedFiles = persistentRuntimeFiles(sourceFiles);
   parseEnvelope(exports.ImportPersistentFiles(JSON.stringify(normalizedFiles)));
-  logRuntimeTiming(label, { files: normalizedFiles.length });
+  logLoaderStep(label, {
+    files: normalizedFiles.length,
+    skippedBinaryFiles: sourceFiles.length - normalizedFiles.length,
+  });
   return normalizedFiles.length > 0;
 }
 
 async function syncDevPublicModeToRuntime(exports) {
   const publicFiles = await getPublicAuthoringFiles();
-  importPersistentFilesToRuntime(exports, publicFiles, "persistent-dev-public-mode-imported");
+  importPersistentFilesToRuntime(exports, publicFiles, "PersistentDevPublicModeImported");
   return true;
 }
 
@@ -898,7 +1147,7 @@ async function syncLocalModeToRuntime(exports) {
   const publicFiles = await getPublicAuthoringFiles();
   const localFiles = await getLocalPersistentFiles();
   const files = mergePersistentFiles(publicFiles, localFiles);
-  importPersistentFilesToRuntime(exports, files, "persistent-local-mode-imported");
+  importPersistentFilesToRuntime(exports, files, "PersistentLocalModeImported");
   return true;
 }
 
@@ -924,7 +1173,7 @@ async function syncRuntimeToDirectory(exports, metrics = null) {
     metrics.persistenceWriteMs = elapsedMs(writeStartedAt);
     metrics.persistenceTarget = "directory";
   }
-  logRuntimeTiming("persistent-directory-exported", { files: files.length });
+  logLoaderStep("PersistentDirectoryExported", { files: files.length });
   return true;
 }
 
@@ -947,11 +1196,11 @@ async function syncRuntimeToBrowserStore(exports, metrics = null) {
       metrics.persistenceTarget = saved ? "browser-storage" : null;
     }
     if (saved) {
-      logRuntimeTiming("persistent-browser-store-exported", { files: files.length });
+      logLoaderStep("PersistentBrowserStoreExported", { files: files.length });
     }
     return saved;
   } catch (error) {
-    console.warn(metricPrefix, "persistent-browser-store-export-failed", error);
+    logLoaderStep("PersistentBrowserStoreExportFailed", { ok: false, error });
     return false;
   }
 }
@@ -975,48 +1224,13 @@ async function syncRuntimeToDevPublic(exports, metrics = null) {
       metrics.persistenceTarget = saved ? "dev-public" : null;
     }
     if (saved) {
-      logRuntimeTiming("persistent-dev-public-exported", { files: files.length });
+      logLoaderStep("PersistentDevPublicExported", { files: files.length });
     }
     return saved;
   } catch (error) {
-    console.warn(metricPrefix, "persistent-dev-public-export-failed", error);
+    logLoaderStep("PersistentDevPublicExportFailed", { ok: false, error });
     return false;
   }
-}
-
-async function syncRuntimePersistence(exports, metrics = null) {
-  if (getStoredDataRootMode() === dataRootModes.devPublic &&
-    (await syncRuntimeToDevPublic(exports, metrics))) {
-    return;
-  }
-
-  if (!(await syncRuntimeToDirectory(exports, metrics))) {
-    await syncRuntimeToBrowserStore(exports, metrics);
-  }
-}
-
-function queueRuntimePersistence(exports) {
-  if (pendingPersistencePromise) {
-    pendingPersistenceRequested = true;
-    return pendingPersistencePromise;
-  }
-
-  pendingPersistencePromise = (async () => {
-    do {
-      pendingPersistenceRequested = false;
-      const metrics = {};
-      await syncRuntimePersistence(exports, metrics);
-      logRuntimeTiming("persistent-sync", metrics);
-    } while (pendingPersistenceRequested);
-  })()
-    .catch((error) => {
-      console.warn(metricPrefix, "persistent-sync-failed", error);
-    })
-    .finally(() => {
-      pendingPersistencePromise = null;
-    });
-
-  return pendingPersistencePromise;
 }
 
 export async function createSession() {
@@ -1029,7 +1243,7 @@ export async function createSession() {
   }
   setRuntimeProgress("creating-session", 98);
   const session = parseEnvelope(exports.CreateSession());
-  logRuntimeTiming("session-created", {
+  logLoaderStep("SessionCreated", {
     stepMs: elapsedMs(startedAt),
   });
   setRuntimeProgress("ready", 100);
@@ -1066,7 +1280,10 @@ export async function disposeSession(sessionId) {
 export async function handleMessage(sessionId, message) {
   const exports = await ensureRuntime();
   const bridgeStartedAt = performance.now();
-  const bridgeMetrics = {};
+  const bridgeMetrics = {
+    managedHeapBeforeWasmCallBytes: readManagedHeapBytes(exports),
+    wasmMemoryBeforeWasmCallBytes: readWasmMemoryBytes(),
+  };
 
   let response;
   if (transportFormat === transportFormats.binary) {
@@ -1083,6 +1300,11 @@ export async function handleMessage(sessionId, message) {
     const wasmStartedAt = performance.now();
     const responseBytes = exports.HandleMessageBinary(sessionId, messageBytes);
     bridgeMetrics.wasmCallMs = elapsedMs(wasmStartedAt);
+    bridgeMetrics.managedHeapAfterWasmCallBytes = readManagedHeapBytes(exports);
+    bridgeMetrics.wasmMemoryAfterWasmCallBytes = readWasmMemoryBytes();
+    bridgeMetrics.responseBytes = responseBytes.byteLength;
+    recordManagedHeapDelta(bridgeMetrics);
+    recordWasmMemoryDelta(bridgeMetrics);
 
     const parseStartedAt = performance.now();
     response = decodeBinaryEnvelope(responseBytes);
@@ -1097,14 +1319,12 @@ export async function handleMessage(sessionId, message) {
     const wasmStartedAt = performance.now();
     const responseJson = exports.HandleMessage(sessionId, messageJson);
     bridgeMetrics.wasmCallMs = elapsedMs(wasmStartedAt);
+    bridgeMetrics.managedHeapAfterWasmCallBytes = readManagedHeapBytes(exports);
+    bridgeMetrics.wasmMemoryAfterWasmCallBytes = readWasmMemoryBytes();
+    recordManagedHeapDelta(bridgeMetrics);
+    recordWasmMemoryDelta(bridgeMetrics);
 
     response = parseEnvelopeWithMetrics(responseJson, bridgeMetrics);
-  }
-
-  if (message.execution !== "preview" && response?.ok) {
-    if (hasPersistentDataChanged(response)) {
-      queueRuntimePersistence(exports);
-    }
   }
 
   bridgeMetrics.totalJsBridgeMs = elapsedMs(bridgeStartedAt);
