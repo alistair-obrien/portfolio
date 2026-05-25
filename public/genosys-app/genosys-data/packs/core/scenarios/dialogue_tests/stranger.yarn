@@ -1,0 +1,72 @@
+title: stranger_pre
+---
+<<set $context = "uncertain">>
+
+You sit together in a dim space. Neither of you fully committed to being here.
+
+-> $c2: "We don't have to do anything."
+    <<set $tone = "safe">>
+    <<jump stranger_start>>
+
+-> $c2: "I think I want this."
+    <<set $tone = "forward">>
+    <<jump stranger_start>>
+
+-> $c2: "This is kind of weird, huh?"
+    <<set $tone = "honest">>
+    <<jump stranger_start>>
+===
+
+title: stranger_start
+---
+They smile, a little nervously.
+
+<<fade_out>>
+<<jump stranger_act>>
+===
+
+title: stranger_act
+---
+Close proximity. Shared space. Uncertain rhythm.
+
+-> $c2: Mirror their pace
+    <<set $sync += 2>>
+    <<set $presence += 1>>
+    "You adjust carefully, matching them."
+
+-> $c2: Move quickly
+    <<set $sync -= 1>>
+    <<set $presence -= 1>>
+    "You feel slightly out of sync."
+
+-> $c2: Pause, make eye contact
+    <<set $sync += 0>>
+    <<set $presence += 2>>
+    "A quiet moment stretches between you."
+
+-> $c2: Make a joke
+    <<set $sync += 1>>
+    <<set $presence += 0>>
+    "They laugh, tension shifting."
+
+===
+
+title: stranger_post
+---
+<<fade_in>>
+
+You both sit there for a moment after.
+
+-> $c2: "That was nice."
+    <<set $emotional_outcome += 1>>
+    "They nod, but seem unsure what it meant."
+
+-> $c2: "We should do this again."
+    <<set $emotional_outcome += 0>>
+    "They smile politely."
+
+-> $c2: "Sorry, that was awkward."
+    <<set $emotional_outcome -= 1>>
+    "They look relieved... or maybe distant."
+
+===

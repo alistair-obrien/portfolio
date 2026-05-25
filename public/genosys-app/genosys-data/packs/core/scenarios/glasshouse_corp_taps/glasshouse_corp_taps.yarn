@@ -1,0 +1,103 @@
+title: SecurityTap
+---
+$c1: Irene Proxy to lobby two. Boardroom traffic just went private and my camera is still recording. That is either a miracle or a disciplinary hearing.
+$c2: You do not know I am here.
+$c1: If I knew you were here, I would charge you overtime.
+
+-> $c2: What can the lobby see?
+    $c1: Handler entered first. Voss entered second. Chauffeur is holding the elevator against policy. Compliance keeps pinging the dead drop.
+    <<jump SecurityTapEnd>>
+-> $c2: Why is your own feed tapped?
+    $c1: Because someone bought my badge cam and forgot the receipt. PLACEHOLDER: counter-trace mechanic not implemented.
+    <<jump SecurityTapEnd>>
+-> $c2: Any threat to Voss?
+    $c1: Handler keeps looking at him like paperwork that learned to breathe.
+    <<jump SecurityTapEnd>>
+===
+
+title: SecurityTapEnd
+---
+$c1: Irene mutes herself and pretends not to notice the camera light blinking wrong.
+===
+
+title: ComplianceTap
+---
+$c1: Mara Quill, private note. If Voss leaks the Glasshouse ledger, AsterDyne loses executive immunity in six jurisdictions.
+$c1: If Voss dies before the upload, Risk calls it market protection and Procurement buries the contract chain.
+
+-> $c2: Who hired the assassin?
+    $c1: Shell company Veyr Practical, paid through AsterDyne Procurement. It is too tidy. It wants a cheap external actor with no boardroom fingerprints.
+    <<jump ComplianceTapEnd>>
+-> $c2: What is the Glasshouse ledger?
+    $c1: Project Glasshouse. Predictive labor liquidation. People tagged as unprofitable before the accidents that killed them.
+    <<jump ComplianceTapEnd>>
+-> $c2: Where is the proof?
+    $c1: Voss has a dead drop in the executive network. The upload window opens at midnight, if he stays alive and frightened enough.
+    <<jump ComplianceTapEnd>>
+===
+
+title: ComplianceTapEnd
+---
+$c1: Mara's cursor hovers over SEND TO REGULATOR and does not click.
+===
+
+title: ChauffeurTap
+---
+$c1: Jaxon Reeve route log. Executive elevator reserved. Destination says helipad. Voss told me to keep the car warm and ignore any security override.
+
+-> $c2: Who changed the route?
+    $c1: Risk office pushed a quiet detour through the service lift. Not Voss. Not security. Someone wants him off the public cameras.
+    <<jump ChauffeurTapEnd>>
+-> $c2: Can the elevator be used as a kill point?
+    $c1: PLACEHOLDER: route sabotage not implemented. Future flow could stall the elevator, spoof clearance, or turn the car into an extraction instead.
+    <<jump ChauffeurTapEnd>>
+-> $c2: Does Jaxon know about the leak?
+    $c1: He knows enough to be scared. That is a different kind of map.
+    <<jump ChauffeurTapEnd>>
+===
+
+title: ChauffeurTapEnd
+---
+$c1: Jaxon checks the mirror like the back seat might accuse him.
+===
+
+title: TargetLeak
+---
+$c1: Elias Voss personal memo. If this reaches the outside, every Glasshouse death gets a name again.
+$c1: If it does not, tell my daughter I found the courage late, not never.
+
+-> $c2: You are the target.
+    $c1: Then someone finally read the ledger. AsterDyne hired outside because inside knew my habits too well.
+    <<jump TargetLeakEnd>>
+-> $c2: Why whistleblow now?
+    $c1: Because numbers are quiet until you meet the bodies. Glasshouse was supposed to forecast turnover. It learned to manufacture it.
+    <<jump TargetLeakEnd>>
+-> $c2: How do I stop the hit?
+    $c1: PLACEHOLDER: counter-contract path not implemented. For now, prove the mesh can identify me and expose the client.
+    <<jump TargetLeakEnd>>
+===
+
+title: TargetLeakEnd
+---
+$c1: Voss keeps one hand near the dead drop and the other near his heart.
+===
+
+title: HandlerTell
+---
+$c1: Risk note. External contractor has accepted the work. Asset Voss remains unaware of kill-chain source.
+
+-> $c2: You ordered the hit.
+    $c1: Ordered is a crude word. Procured has deniability and budget code.
+    <<jump HandlerTellEnd>>
+-> $c2: Why outsource it?
+    $c1: Greenhats are cheap, hungry, and grateful for clear instructions. Usually.
+    <<jump HandlerTellEnd>>
+-> $c2: What if the contractor learns the truth?
+    $c1: Then we classify them as an access anomaly and buy a second contractor.
+    <<jump HandlerTellEnd>>
+===
+
+title: HandlerTellEnd
+---
+$c1: The handler deletes the note, unaware the tap has already made deletion decorative.
+===

@@ -1,0 +1,14 @@
+{
+  "PackageId": "core/thread_the_needle",
+  "Name": "Thread the Needle",
+  "Subtitle": "Street fit, sharp receipts",
+  "Description": "Miko Static runs L-E-CAT OS through a rain-bright streetwear night market, tracking a stolen lookbook proof before a rival crew turns her first showcase into someone else's signature drop.",
+  "Category": "Street Style",
+  "EstimatedDuration": "20-30 minutes",
+  "RenderKey": {
+    "Key": "core/scenario_thread_the_needle"
+  },
+  "FolderPath": "Scenarios",
+  "CreatedAt": "2026-05-11T00:00:00.0000000Z",
+  "UpdatedAt": "2026-05-11T00:00:00.0000000Z"
+}

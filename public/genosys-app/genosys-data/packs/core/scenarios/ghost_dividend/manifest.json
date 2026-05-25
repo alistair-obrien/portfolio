@@ -1,0 +1,14 @@
+{
+  "PackageId": "core/ghost_dividend",
+  "Name": "Ghost Dividend",
+  "Subtitle": "Remote eyes, quiet kill",
+  "Description": "Ilya Voss runs PhantomRoot from a rented safehouse, tapping hostile visual feeds to execute a remote hit on biotech executive Silas Wren across gala, service, and security maps.",
+  "Category": "Hacking",
+  "EstimatedDuration": "20-35 minutes",
+  "RenderKey": {
+    "Key": "core/scenario_ghost_dividend"
+  },
+  "FolderPath": "Scenarios",
+  "CreatedAt": "2026-05-10T00:00:00.0000000Z",
+  "UpdatedAt": "2026-05-10T00:00:00.0000000Z"
+}

@@ -333,7 +333,7 @@ function createMovePlayerCommand(
 ) {
   return engine.createCommand(MOVE_COMMAND_TYPE, {
     ActorId: createTypedId("CharacterId", playerId),
-    MapId: createTypedId("MapChunkId", mapId),
+    MapId: createTypedId("MapId", mapId),
     CharacterId: createTypedId("CharacterId", playerId),
     ToX: x,
     ToY: y,
@@ -954,3 +954,4 @@ export default function GuidedCommandPreview() {
     </div>
   );
 }
+

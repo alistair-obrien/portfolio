@@ -1,0 +1,44 @@
+{
+  "TemplateId": "ItemTemplateId:core/538d19fd-131e-4938-a495-0cd3ee643d97",
+  "EntityDefinitions": [
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:538d19fd-131e-4938-a495-0cd3ee643d97",
+        "Name": "Redline Inner",
+        "Description": null,
+        "FlavorText": null,
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "core/redline_inner"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "0/0",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.torso_inner",
+          "SurfaceArea": 1,
+          "Aesthetics": [],
+          "Traits": [],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      },
+      "SourceTemplateId": null,
+      "SourceBlueprintId": null,
+      "TemplateBaseline": null
+    }
+  ],
+  "FolderPath": ""
+}

@@ -1,0 +1,56 @@
+title: Briefing
+---
+$c1: Good morning, operator. You are awake, unpaid, and selected.
+$c2: I am in pajamas.
+$c1: Correct. Dress code is not in scope. AsterDyne executive asset, high clearance, lethal termination required before the midnight disclosure window.
+
+-> $c2: Who is the target?
+    $c1: Identity is withheld until your confidence score rises. The contract shard contains three initial taps. Use PhantomRoot, correlate feeds, then return with a name.
+    <<jump BriefingAsk>>
+-> $c2: Why hire a greenhat for an assassination?
+    $c1: Because a professional would ask who benefits. You will ask eventually. The first payment arrives now.
+    <<jump BriefingAsk>>
+-> $c2: What can I actually do with the taps?
+    $c1: Observe. Trace. Infer. Future builds will add exploit chains and payload deployment. For now, treat every hack prompt as a placeholder and follow the human evidence.
+    <<jump BriefingAsk>>
+===
+
+title: BriefingAsk
+---
+$c1: Your entry points are Irene Proxy in lobby security, Mara Quill in compliance, and Jaxon Reeve on executive transport.
+$c1: One sees movement. One sees motive. One sees the target's route.
+
+-> $c2: The client is AsterDyne, is it not?
+    $c1: The client is a shell with clean escrow and no curiosity. Curiosity is your disease, not mine.
+    <<jump BriefingEnd>>
+-> $c2: What happens after I identify the target?
+    $c1: PLACEHOLDER: remote kill payload is not implemented. Current objective is to prove the observation mesh, identify Elias Voss, and inspect the dead drop.
+    <<jump BriefingEnd>>
+-> $c2: Keep the line open.
+    $c1: It is open. That is not the same as safe.
+    <<jump BriefingEnd>>
+===
+
+title: BriefingEnd
+---
+$c1: Start in PhantomRoot. The target is not the first person who looks important. Corporations make the knife look like a contract.
+===
+
+title: ApartmentTerminal
+---
+$c1: PHANTOMROOT://mesh online.
+$c1: Three corporate taps are linked. Exploit builder, credential escalation, and payload deployment are placeholders.
+$c1: Suggested test flow: open tapped feeds, inspect each target OS, fullscreen a feed, hover inventories, and verify the controlled apartment view remains actionable.
+
+-> $c2: Run placeholder trace.
+    $c1: TRACE RESULT: confidence insufficient. Review compliance dialogue and executive dead drop.
+    <<jump ApartmentTerminalEnd>>
+-> $c2: Show contract warning.
+    $c1: WARNING: client identity obscured through AsterDyne procurement mirrors. Probability of internal corporate hire: uncomfortable.
+    <<jump ApartmentTerminalEnd>>
+===
+
+title: ApartmentTerminalEnd
+---
+$c1: Terminal returns to passive observation mode.
+===

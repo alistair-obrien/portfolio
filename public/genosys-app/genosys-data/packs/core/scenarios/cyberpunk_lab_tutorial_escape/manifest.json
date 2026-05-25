@@ -1,0 +1,14 @@
+{
+  "PackageId": "core/cyberpunk_lab_tutorial_escape",
+  "Name": "Cyberpunk Lab Tutorial Escape",
+  "Subtitle": "Wake up, arm yourself, disrupt the lockdown",
+  "Description": "A one-map tactical tutorial escape from a sealed corporate cybernetics laboratory, built around 3x3 bodies, gun lanes, hazards, Neural Pulse disruption, and an elevator objective.",
+  "Category": "Tutorial / Combat",
+  "EstimatedDuration": "25-35 min",
+  "RenderKey": {
+    "Key": "core/scenario_cyberpunk_lab_tutorial_escape"
+  },
+  "FolderPath": "Scenarios/Tutorials",
+  "CreatedAt": "2026-05-12T16:27:27.1520606Z",
+  "UpdatedAt": "2026-05-12T16:27:27.1520606Z"
+}

@@ -1,5 +1,6 @@
 let runtimePromise;
 let runtimeInstance = null;
+let assemblyExports = null;
 let runtimeProgress = { phase: "idle", percent: 0 };
 let runtimePulseTimer = null;
 let persistentDirectoryHandle = null;
@@ -10,29 +11,12 @@ const directoryStoreName = "genosys-web-file-system";
 const directoryStoreKey = "persistent-directory";
 const browserStorageKey = "persistent-files";
 const dataRootModeStorageKey = "genosys-data-root-mode";
+const managedHeapMetricsStorageKey = "genosys-managed-heap-metrics";
 const devPublicDataRootEndpoint = "/__genosys-dev-data";
 const bundledDataRootUrl = new URL("../genosys-data/index.json", import.meta.url).toString();
 const dataRootModes = {
   local: "local",
   devPublic: "dev-public",
-};
-const transportFormats = {
-  json: "json",
-  binary: "binary",
-};
-let transportFormat = transportFormats.json;
-let utf8Encoder = null;
-let utf8Decoder = null;
-
-const binaryTags = {
-  null: 0,
-  false: 1,
-  true: 2,
-  double: 3,
-  string: 4,
-  array: 5,
-  object: 6,
-  integer: 7,
 };
 
 function elapsedMs(startedAt) {
@@ -238,6 +222,7 @@ async function initializeRuntime() {
     stepMs: elapsedMs(exportsStartedAt),
     totalMs: elapsedMs(loadStartedAt),
   });
+  assemblyExports = exports;
 
   markRuntimeStep("creating-session", 97, "CreatingSession");
   return exports.BrowserGameExports;
@@ -253,212 +238,12 @@ function parseEnvelope(payload) {
   return envelope;
 }
 
-function byteLength(value) {
-  return typeof TextEncoder !== "undefined"
-    ? new TextEncoder().encode(value ?? "").length
-    : String(value ?? "").length;
-}
-
-function normalizeTransportFormat(format) {
-  return format === transportFormats.binary ? transportFormats.binary : transportFormats.json;
-}
-
-function getTextEncoder() {
-  utf8Encoder ??= new TextEncoder();
-  return utf8Encoder;
-}
-
-function getTextDecoder() {
-  utf8Decoder ??= new TextDecoder();
-  return utf8Decoder;
-}
-
-function encodeBinaryEnvelope(value) {
-  const bytes = [];
-  writeBinaryValue(bytes, value === undefined ? null : value);
-  return new Uint8Array(bytes);
-}
-
-function decodeBinaryEnvelope(bytes) {
-  const reader = {
-    bytes: bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes),
-    offset: 0,
-  };
-  const value = readBinaryValue(reader);
-  if (reader.offset !== reader.bytes.length) {
-    throw new Error("Binary transport payload contains trailing data.");
+export async function getAssemblyExports() {
+  await ensureRuntime();
+  if (!assemblyExports) {
+    throw new Error("The GenOSys runtime assembly exports are unavailable.");
   }
-  return value;
-}
-
-function writeBinaryValue(bytes, value) {
-  if (value === null || value === undefined) {
-    bytes.push(binaryTags.null);
-    return;
-  }
-
-  if (typeof value === "boolean") {
-    bytes.push(value ? binaryTags.true : binaryTags.false);
-    return;
-  }
-
-  if (typeof value === "number") {
-    if (Number.isSafeInteger(value)) {
-      bytes.push(binaryTags.integer);
-      writeSignedVarInt(bytes, value);
-      return;
-    }
-
-    bytes.push(binaryTags.double);
-    writeDouble(bytes, value);
-    return;
-  }
-
-  if (typeof value === "string") {
-    bytes.push(binaryTags.string);
-    writeBinaryString(bytes, value);
-    return;
-  }
-
-  if (Array.isArray(value)) {
-    bytes.push(binaryTags.array);
-    writeVarInt(bytes, value.length);
-    for (const entry of value) {
-      writeBinaryValue(bytes, entry === undefined ? null : entry);
-    }
-    return;
-  }
-
-  if (typeof value === "object") {
-    const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined);
-    bytes.push(binaryTags.object);
-    writeVarInt(bytes, entries.length);
-    for (const [entryKey, entryValue] of entries) {
-      writeBinaryString(bytes, entryKey);
-      writeBinaryValue(bytes, entryValue);
-    }
-    return;
-  }
-
-  bytes.push(binaryTags.null);
-}
-
-function readBinaryValue(reader) {
-  const tag = readByte(reader);
-  switch (tag) {
-    case binaryTags.null:
-      return null;
-    case binaryTags.false:
-      return false;
-    case binaryTags.true:
-      return true;
-    case binaryTags.double:
-      return readDouble(reader);
-    case binaryTags.string:
-      return readBinaryString(reader);
-    case binaryTags.array:
-      return readBinaryArray(reader);
-    case binaryTags.object:
-      return readBinaryObject(reader);
-    case binaryTags.integer:
-      return readSignedVarInt(reader);
-    default:
-      throw new Error(`Unknown binary transport tag '${tag}'.`);
-  }
-}
-
-function writeBinaryString(bytes, value) {
-  const encoded = getTextEncoder().encode(value);
-  writeVarInt(bytes, encoded.length);
-  for (const byte of encoded) {
-    bytes.push(byte);
-  }
-}
-
-function readBinaryString(reader) {
-  const length = readVarInt(reader);
-  const end = reader.offset + length;
-  if (end > reader.bytes.length) {
-    throw new Error("Binary transport string length is invalid.");
-  }
-  const value = getTextDecoder().decode(reader.bytes.subarray(reader.offset, end));
-  reader.offset = end;
-  return value;
-}
-
-function readBinaryArray(reader) {
-  const length = readVarInt(reader);
-  const value = [];
-  for (let index = 0; index < length; index += 1) {
-    value.push(readBinaryValue(reader));
-  }
-  return value;
-}
-
-function readBinaryObject(reader) {
-  const length = readVarInt(reader);
-  const value = {};
-  for (let index = 0; index < length; index += 1) {
-    const key = readBinaryString(reader);
-    value[key] = readBinaryValue(reader);
-  }
-  return value;
-}
-
-function writeDouble(bytes, value) {
-  const buffer = new ArrayBuffer(8);
-  new DataView(buffer).setFloat64(0, value, true);
-  for (const byte of new Uint8Array(buffer)) {
-    bytes.push(byte);
-  }
-}
-
-function readDouble(reader) {
-  if (reader.offset + 8 > reader.bytes.length) {
-    throw new Error("Binary transport number ended early.");
-  }
-  const value = new DataView(reader.bytes.buffer, reader.bytes.byteOffset + reader.offset, 8).getFloat64(0, true);
-  reader.offset += 8;
-  return value;
-}
-
-function writeSignedVarInt(bytes, value) {
-  writeVarInt(bytes, value >= 0 ? value * 2 : (-value * 2) - 1);
-}
-
-function readSignedVarInt(reader) {
-  const value = readVarInt(reader);
-  return value % 2 === 0 ? value / 2 : -((value + 1) / 2);
-}
-
-function writeVarInt(bytes, value) {
-  let remaining = Math.max(0, Math.floor(value));
-  while (remaining >= 0x80) {
-    bytes.push((remaining & 0x7F) | 0x80);
-    remaining = Math.floor(remaining / 128);
-  }
-  bytes.push(remaining);
-}
-
-function readVarInt(reader) {
-  let result = 0;
-  let shift = 0;
-  while (shift < 53) {
-    const value = readByte(reader);
-    result += (value & 0x7F) * (2 ** shift);
-    if ((value & 0x80) === 0) {
-      return result;
-    }
-    shift += 7;
-  }
-  throw new Error("Binary transport varint is too large.");
-}
-
-function readByte(reader) {
-  if (reader.offset >= reader.bytes.length) {
-    throw new Error("Binary transport payload ended early.");
-  }
-  return reader.bytes[reader.offset++];
+  return assemblyExports;
 }
 
 function normalizeDataRootMode(mode) {
@@ -669,41 +454,25 @@ function mergePersistentFiles(...groups) {
     });
 }
 
-function mergeInteropMetrics(response, metrics) {
-  if (!response || typeof response !== "object") {
-    return response;
-  }
-
-  const totalBeforeSerializeMs = Number(response.__interopMetrics?.totalBeforeSerializeMs);
-  if (
-    typeof metrics.wasmCallMs === "number" &&
-    Number.isFinite(totalBeforeSerializeMs)
-  ) {
-    metrics.wasmReturnMs = Math.max(0, metrics.wasmCallMs - totalBeforeSerializeMs);
-  }
-
-  response.__interopMetrics = {
-    ...(response.__interopMetrics ?? {}),
-    ...metrics,
-  };
-  return response;
-}
-
-function parseEnvelopeWithMetrics(payload, metrics) {
-  const parseStartedAt = performance.now();
-  const envelope = parseEnvelope(payload);
-  metrics.responseParseMs = elapsedMs(parseStartedAt);
-  metrics.responseBytes = byteLength(payload);
-  return mergeInteropMetrics(envelope, metrics);
-}
-
 function readManagedHeapBytes(exports) {
+  if (!isManagedHeapMetricsEnabled()) {
+    return undefined;
+  }
+
   if (!exports || typeof exports.GetManagedHeapBytes !== "function") {
     return undefined;
   }
 
   const value = Number(exports.GetManagedHeapBytes());
   return Number.isFinite(value) ? value : undefined;
+}
+
+function isManagedHeapMetricsEnabled() {
+  try {
+    return globalThis.localStorage?.getItem(managedHeapMetricsStorageKey) === "true";
+  } catch {
+    return false;
+  }
 }
 
 function readWasmMemoryBytes() {
@@ -717,28 +486,12 @@ function readWasmMemoryBytes() {
   return Number.isFinite(bytes) ? bytes : undefined;
 }
 
-function recordManagedHeapDelta(metrics) {
-  if (
-    typeof metrics.managedHeapBeforeWasmCallBytes !== "number" ||
-    typeof metrics.managedHeapAfterWasmCallBytes !== "number"
-  ) {
-    return;
-  }
-
-  metrics.managedHeapDeltaBytes =
-    metrics.managedHeapAfterWasmCallBytes - metrics.managedHeapBeforeWasmCallBytes;
+export async function getManagedHeapBytes() {
+  return readManagedHeapBytes(await ensureRuntime());
 }
 
-function recordWasmMemoryDelta(metrics) {
-  if (
-    typeof metrics.wasmMemoryBeforeWasmCallBytes !== "number" ||
-    typeof metrics.wasmMemoryAfterWasmCallBytes !== "number"
-  ) {
-    return;
-  }
-
-  metrics.wasmMemoryDeltaBytes =
-    metrics.wasmMemoryAfterWasmCallBytes - metrics.wasmMemoryBeforeWasmCallBytes;
+export function getWasmMemoryBytes() {
+  return readWasmMemoryBytes();
 }
 
 function hasFileSystemAccess() {
@@ -1233,10 +986,12 @@ async function syncRuntimeToDevPublic(exports, metrics = null) {
   }
 }
 
-export async function createSession() {
+export async function createSession(persistentFiles = null) {
   const startedAt = performance.now();
   const exports = await ensureRuntime();
-  if (getStoredDataRootMode() === dataRootModes.devPublic) {
+  if (Array.isArray(persistentFiles)) {
+    importPersistentFilesToRuntime(exports, persistentFiles, "PersistentFilesImported");
+  } else if (getStoredDataRootMode() === dataRootModes.devPublic) {
     await syncDevPublicModeToRuntime(exports);
   } else {
     await syncLocalModeToRuntime(exports);
@@ -1263,72 +1018,10 @@ export function subscribeRuntimeProgress(listener) {
   };
 }
 
-export function getTransportFormat() {
-  return transportFormat;
-}
-
-export function setTransportFormat(format) {
-  transportFormat = normalizeTransportFormat(format);
-  return transportFormat;
-}
 
 export async function disposeSession(sessionId) {
   const exports = await ensureRuntime();
   return parseEnvelope(exports.DisposeSession(sessionId));
-}
-
-export async function handleMessage(sessionId, message) {
-  const exports = await ensureRuntime();
-  const bridgeStartedAt = performance.now();
-  const bridgeMetrics = {
-    managedHeapBeforeWasmCallBytes: readManagedHeapBytes(exports),
-    wasmMemoryBeforeWasmCallBytes: readWasmMemoryBytes(),
-  };
-
-  let response;
-  if (transportFormat === transportFormats.binary) {
-    if (typeof exports.HandleMessageBinary !== "function") {
-      throw new Error("The GenOSys runtime does not expose binary transport.");
-    }
-
-    const serializeStartedAt = performance.now();
-    const messageBytes = encodeBinaryEnvelope(message);
-    bridgeMetrics.requestSerializeMs = elapsedMs(serializeStartedAt);
-    bridgeMetrics.requestBytes = messageBytes.byteLength;
-    bridgeMetrics.transportFormat = transportFormats.binary;
-
-    const wasmStartedAt = performance.now();
-    const responseBytes = exports.HandleMessageBinary(sessionId, messageBytes);
-    bridgeMetrics.wasmCallMs = elapsedMs(wasmStartedAt);
-    bridgeMetrics.managedHeapAfterWasmCallBytes = readManagedHeapBytes(exports);
-    bridgeMetrics.wasmMemoryAfterWasmCallBytes = readWasmMemoryBytes();
-    bridgeMetrics.responseBytes = responseBytes.byteLength;
-    recordManagedHeapDelta(bridgeMetrics);
-    recordWasmMemoryDelta(bridgeMetrics);
-
-    const parseStartedAt = performance.now();
-    response = decodeBinaryEnvelope(responseBytes);
-    bridgeMetrics.responseParseMs = elapsedMs(parseStartedAt);
-  } else {
-    const serializeStartedAt = performance.now();
-    const messageJson = JSON.stringify(message);
-    bridgeMetrics.requestSerializeMs = elapsedMs(serializeStartedAt);
-    bridgeMetrics.requestBytes = byteLength(messageJson);
-    bridgeMetrics.transportFormat = transportFormats.json;
-
-    const wasmStartedAt = performance.now();
-    const responseJson = exports.HandleMessage(sessionId, messageJson);
-    bridgeMetrics.wasmCallMs = elapsedMs(wasmStartedAt);
-    bridgeMetrics.managedHeapAfterWasmCallBytes = readManagedHeapBytes(exports);
-    bridgeMetrics.wasmMemoryAfterWasmCallBytes = readWasmMemoryBytes();
-    recordManagedHeapDelta(bridgeMetrics);
-    recordWasmMemoryDelta(bridgeMetrics);
-
-    response = parseEnvelopeWithMetrics(responseJson, bridgeMetrics);
-  }
-
-  bridgeMetrics.totalJsBridgeMs = elapsedMs(bridgeStartedAt);
-  return mergeInteropMetrics(response, bridgeMetrics);
 }
 
 export async function choosePersistentDirectory() {

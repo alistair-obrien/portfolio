@@ -1,0 +1,49 @@
+title: Start
+---
+$c1: Off shift. Whatever you need, the answer is no.
+
+$c1: I said off shift. If this turns into paperwork, I'm blaming you personally.
+-> $c2: I'm not looking for trouble.
+    $c1: That's what everyone says before they cause some. What do you want?
+    <<jump Talk>>
+-> $c2: You're security?
+    $c1: Was. For about ten more minutes officially. Then I'm a civilian with a very justified headache.
+    $c1: So whatever it is-make it fast.
+    <<jump Talk>>
+-> $c2: I'll leave you to it.
+    $c1: Appreciated. Most people don't.
+    <<jump Leave>>
+===
+title: Talk
+---
+$c1: Something's wrong with this building. I've been saying it for two weeks. Pressure in the lower levels, access logs that don't match occupancy.
+
+-> $c2: You filed a report?
+    $c1: Three of them. Two got flagged as maintenance. One got closed before I submitted it.
+    $c1: Someone's either incompetent or they don't want it looked at. Pick whichever one worries you more.
+    <<jump Deepen>>
+-> $c2: What kind of access logs?
+    $c1: Subfloor. Maintenance codes used at hours nobody's scheduled. Same two-hour window, three different nights.
+    $c1: Either there's a ghost in the system or someone has an override key that isn't on the books.
+    <<jump Deepen>>
+===
+title: Deepen
+---
+$c1: Look-I'm not asking you to do anything with this. I'm just tired of being the only one who noticed.
+
+-> $c2: I'll look into it.
+    $c1: Don't tell me if you find something. I'm off shift.
+    $c1: ...Actually no. Tell me. I'll hate myself if I don't know.
+    <<jump Close>>
+-> $c2: That's above my current scope.
+    $c1: Yeah. That's what I said. And here we are anyway.
+    <<jump Close>>
+===
+title: Leave
+---
+$c1: Good instinct.
+===
+title: Close
+---
+$c1: Stay out of the lower levels unless you know what you're doing. And if you know what you're doing, watch your back.
+===

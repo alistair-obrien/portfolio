@@ -1,0 +1,14 @@
+{
+  "PackageId": "core/fly_the_coop",
+  "Name": "Fly the Coop",
+  "Subtitle": "Rookie response, premium liability",
+  "Description": "Mara Venn takes her first unsupervised Aegis Continuity field claim: extract Dorian Vale before his panic, his hardware, or the building turns a routine pickup into a billable disaster.",
+  "Category": "Rescue",
+  "EstimatedDuration": "15-25 minutes",
+  "RenderKey": {
+    "Key": "core/scenario_fly_the_coop"
+  },
+  "FolderPath": "Scenarios",
+  "CreatedAt": "2026-05-11T12:28:47.6610000Z",
+  "UpdatedAt": "2026-05-11T12:28:47.6610000Z"
+}

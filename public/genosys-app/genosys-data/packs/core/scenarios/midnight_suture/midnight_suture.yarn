@@ -1,0 +1,276 @@
+title: MireStart
+---
+<<declare $mire_trust = 0>>
+<<declare $evidence_promised = false>>
+
+$c1: If Redline wanted me arrested, they would have sent quieter shoes.
+$c2: Redline sent me for the witness buffer.
+$c1: Then you are already late. Ward Seven is shedding memory every minute the quarantine door stays awake.
+
+-> $c2: Tell me what happened here.
+    $c1: I treated people after curfew. Redline denied the claims before the blood dried.
+    $c1: Someone used my stolen key to turn the denials into death certificates.
+    <<set $mire_trust += 1>>
+    <<jump MireAsk>>
+-> $c2: Hand over the buffer.
+    $c1: Not to a stranger with a corporate shell and a clean chain of custody form.
+    <<jump MireAsk>>
+-> $c2: I can help you keep patients alive.
+    $c1: That is the first useful sentence anyone has said tonight.
+    <<set $mire_trust += 2>>
+    <<jump MireAsk>>
+===
+
+title: MireAsk
+---
+<<if has_item_named("Unpriced Ledger Drive")>>
+    $c1: You found the ledger drive. Good. Keep it out of Redline custody and it becomes motive, audit trail, and murder weapon in one ugly package.
+<<else>>
+    $c1: The shard on the ward floor is only a splinter. The full ledger drive was yanked from the cradle when the purge clock started.
+    $c1: If you recover it, it proves motive. If you recover the ring, Ward Seven stops sounding impossible.
+<<endif>>
+
+-> $c2: I will preserve the whole ledger.
+    <<set $evidence_promised to true>>
+    $c1: Then keep the drive away from Redline custody and let the cradle's audit trail corroborate it.
+    <<jump MireEnd>>
+-> $c2: I only need the insured evidence.
+    $c1: Of course. The living can be sorted by invoice.
+    <<jump MireEnd>>
+-> $c2: Who benefits if the ledger is purged?
+    $c1: Whoever inserted the third hand into Ward Seven's surgery record.
+    $c1: The hand wore a Redline credential ring. The owner did not expect the patient to remember it.
+    <<jump MireEnd>>
+===
+
+title: MireEnd
+---
+<<if $mire_trust >= 2>>
+    $c1: Take the expired claims key from your sling. It still talks to the south door if you ask like an old machine.
+<<else>>
+    $c1: Ask your questions quickly. The ward is running out of seconds.
+<<endif>>
+===
+
+title: TamsinStart
+---
+<<declare $tamsin_pressure = 0>>
+
+$c1: Field adjuster. Good. You can witness that I requested quarantine before the clinic contaminated any admissible evidence.
+$c2: You are sealing living patients inside.
+$c1: I am preserving liability boundaries. People confuse the two when alarms are loud.
+
+-> $c2: Stand down the purge.
+    $c1: Impossible without proof the ledger is cleaner than the clinic.
+    <<set $tamsin_pressure += 1>>
+    <<jump TamsinTerms>>
+-> $c2: Who authorized you?
+    $c1: Redline Mutual, emergency indemnity desk, after the terminal reported four impossible recoveries and one impossible corpse.
+    <<jump TamsinTerms>>
+-> $c2: You sound scared.
+    $c1: I sound employed. There is overlap.
+    <<set $tamsin_pressure += 1>>
+    <<jump TamsinTerms>>
+===
+
+title: TamsinTerms
+---
+<<if has_item_named("Witness Buffer Shard") or has_item_named("Redline Credential Ring") or has_item_named("Unpriced Ledger Drive")>>
+    $c1: You have proof now. 
+    <<if has_item_named("Witness Buffer Shard")>>
+        $c1: The shard puts a living witness back in the record.
+    <<endif>>
+    <<if has_item_named("Redline Credential Ring")>>
+        $c1: The ring puts Redline's hand in the room.
+    <<endif>>
+    <<if has_item_named("Unpriced Ledger Drive")>>
+        $c1: The ledger gives the crime a motive and a paper trail.
+    <<endif>>
+    $c1: Any one of those buys me enough authority to stop the seal. Together, they become harder to bury.
+<<else>>
+    $c1: Bring me the witness shard, the credential ring, or the ledger drive. One proves the hand. One proves Redline. One proves motive. Any of them buys me enough authority to stop the seal.
+<<endif>>
+
+-> $c2: You get a copy, not the original.
+    $c1: Copies can become official if the original becomes inconvenient. I accept.
+    <<jump TamsinEnd>>
+-> $c2: I decide what survives.
+    $c1: Then decide fast. The system likes people who hesitate.
+    <<jump TamsinEnd>>
+-> $c2: Did Redline put a hand in that surgery?
+    <<if $tamsin_pressure >= 1>>
+        $c1: I saw a credential ring in the damaged frame. I did not enter that observation into the queue.
+    <<else>>
+        $c1: I do not speculate in writing.
+    <<endif>>
+    <<jump TamsinEnd>>
+===
+
+title: TamsinEnd
+---
+    $c1: Start north with Kestrel, if you want the trail. The cracked terminal points through the north wing to Ward Seven's bed: shard on the floor, ring beside it. Mire is deeper south with the ledger's motive.
+$c1: If the quarantine drops, the clinic becomes a sealed asset. If you are still inside, so do you.
+===
+
+title: WardStart
+---
+<<declare $ward_grounded = false>>
+
+$c1: Seven seconds. Bright hand. Cold mouth. Door says paid. Door says dead. Door says paid.
+$c2: Ward Seven, look at me. You are in Midnight Suture.
+$c1: I know the ceiling. It has counted me backward all night.
+
+-> $c2: What do you remember from surgery?
+    $c1: Dr. Mire's gloves were blue. The third hand was black. Ring clicked on steel. Red line on the ring.
+    <<jump WardStabilize>>
+-> $c2: Do you want the shard removed?
+    $c1: If it leaves, I get quieter. If it stays, I stay proof.
+    <<jump WardStabilize>>
+-> $c2: Breathe with me.
+    <<set $ward_grounded to true>>
+    $c1: I can do four counts. I can do five if you lie and say I am safe.
+    <<jump WardStabilize>>
+===
+
+title: WardStabilize
+---
+<<if $ward_grounded>>
+    $c1: The cradle knows the whole shape. The shard only knows fear.
+<<else>>
+    $c1: Seven seconds. Bright hand. Red ring. Not Mire. Not Mire.
+<<endif>>
+$c2: I heard you.
+===
+
+title: KestrelStart
+---
+<<declare $kestrel_cut = false>>
+
+$c1: You are between me and a paycheck, adjuster.
+$c2: If that paycheck is for the ledger, we have a problem.
+$c1: Problems are just invoices with better shoes.
+
+-> $c2: Who hired you?
+    $c1: A voice with Redline clearance and street manners. Paid half up front to move the drive before quarantine.
+    <<jump KestrelOffer>>
+-> $c2: Walk away.
+    $c1: I do not leave expensive trouble lying on tile.
+    <<jump KestrelOffer>>
+-> $c2: Help me expose the hand in the surgery record.
+    $c1: That is a larger price than I quoted.
+    <<set $kestrel_cut to true>>
+    <<jump KestrelOffer>>
+===
+
+title: KestrelOffer
+---
+<<if $kestrel_cut>>
+    $c1: Give me immunity from Redline recovery and I will tell you the drop point: the cracked intake terminal, north wing. Its cache points east under the black ad board.
+<<else>>
+    $c1: You can chase me, buy me, or convince me the ledger is worth more alive than sold. Either way, check the cracked intake terminal; it names the long east route where the ring and shard landed.
+<<endif>>
+
+-> $c2: I can offer a clean exit, not immunity.
+    $c1: Honest enough to be insulting. I will consider it.
+-> $c2: Keep moving and I mark you hostile.
+    $c1: There is the corporate poetry.
+-> $c2: The ledger protects patients.
+    $c1: Then maybe make sure it protects the people who carried it too.
+===
+
+title: UplinkStart
+---
+<<declare $ending_pressure = 0>>
+
+$c1: Orion Styrogis. Field channel confirmed. I have quarantine authority, asset seizure authority, and three impatient directors watching the same clock.
+$c2: Then listen carefully. Midnight Suture was not a fraud clinic. It was a clinic someone needed to make look fraudulent.
+$c1: That sentence has weight only if you can carry it with evidence. I am not interested in instinct dressed as testimony.
+
+<<if has_item_named("Witness Buffer Shard") and has_item_named("Redline Credential Ring") and has_item_named("Unpriced Ledger Drive")>>
+    <<jump UplinkAllEvidence>>
+<<endif>>
+<<if has_item_named("Witness Buffer Shard") and has_item_named("Redline Credential Ring")>>
+    <<jump UplinkWitnessEvidence>>
+<<endif>>
+<<if has_item_named("Unpriced Ledger Drive")>>
+    <<jump UplinkLedgerEvidence>>
+<<endif>>
+<<jump UplinkNoEvidence>>
+===
+
+title: UplinkNoEvidence
+---
+-> $c2: I need more than a theory.
+    $c1: Good. Then keep moving. Evidence first; righteousness later.
+    <<jump UplinkEnd>>
+===
+
+title: UplinkWitnessEvidence
+---
+-> $c2: Submit Ward Seven's witness shard and the credential ring.
+    $c1: Ward Seven saw blue gloves, then a black glove, then the Redline credential ring. That is not enough for court, but it is enough to stop an automatic purge.
+    <<set $ending_pressure += 1>>
+    <<jump UplinkEvidence>>
+-> $c2: I need more than a theory.
+    $c1: Good. Then keep moving. Evidence first; righteousness later.
+    <<jump UplinkEnd>>
+===
+
+title: UplinkLedgerEvidence
+---
+-> $c2: Submit the ledger drive from Mire's cradle.
+    $c1: Charity care denied before review, death certificates printed before death, payout reversals staged as quarantine cleanup. That is a motive with stationery.
+    <<set $ending_pressure += 1>>
+    <<jump UplinkEvidence>>
+-> $c2: I need more than a theory.
+    $c1: Good. Then keep moving. Evidence first; righteousness later.
+    <<jump UplinkEnd>>
+===
+
+title: UplinkAllEvidence
+---
+-> $c2: Submit Ward Seven's witness shard and the credential ring.
+    $c1: Ward Seven saw blue gloves, then a black glove, then the Redline credential ring. That is not enough for court, but it is enough to stop an automatic purge.
+    <<set $ending_pressure += 1>>
+    <<jump UplinkEvidence>>
+-> $c2: Submit the ledger drive from Mire's cradle.
+    $c1: Charity care denied before review, death certificates printed before death, payout reversals staged as quarantine cleanup. That is a motive with stationery.
+    <<set $ending_pressure += 1>>
+    <<jump UplinkEvidence>>
+-> $c2: Tie the shard, ring, and ledger into one accusation.
+    $c1: Careful. That is the kind of sentence that makes careers disappear.
+    <<set $ending_pressure += 2>>
+    <<jump UplinkEvidence>>
+-> $c2: I need more than a theory.
+    $c1: Good. Then keep moving. Evidence first; righteousness later.
+    <<jump UplinkEnd>>
+===
+
+title: UplinkEvidence
+---
+$c1: I can file this three ways: protect the patients and burn an executive, close the case cleanly against Mire, or bury the clinic under privacy quarantine.
+$c2: You are asking me to choose the shape of the truth.
+$c1: I am asking whether you still work for the people who sent you.
+
+-> $c2: Protect the patients. Release the ledger to oversight.
+    $c1: Then Midnight Suture becomes a protected witness site. Mire faces licensing hell, not a disappearance. Tamsin gets her stop order. Redline loses a director by morning.
+    $c1: I hope you kept a coat. Whistleblowers are always cold.
+    $c1: OUTCOME: Patients protected. Redline exposed. Mire cleared of murder, not absolved of every law she broke. Tamsin's quarantine becomes evidence preservation, not a death sentence.
+    <<jump UplinkEnd>>
+-> $c2: File against the courier and the stolen key. Keep Redline out of it.
+    $c1: Clean, profitable, cowardly. The patients survive tonight. The machine that bought their deaths survives longer.
+    $c1: I will mark the report as your recommendation.
+    $c1: OUTCOME: Patients survive the purge. Mire takes the official wound. Redline remains clean on paper. Midnight Suture stays open only because the file lies politely.
+    <<jump UplinkEnd>>
+-> $c2: Seal the clinic, but keep the raw evidence out of Redline hands.
+    $c1: A privacy quarantine. No purge, no public report, no clean victory. Everyone walks away wounded and alive.
+    $c1: Sometimes that is the closest thing to mercy the system permits.
+    $c1: OUTCOME: Clinic sealed, patients extracted, raw evidence withheld from Redline. Mire is spared the frame. Tamsin signs a stop order she can barely defend.
+    <<jump UplinkEnd>>
+===
+
+title: UplinkEnd
+---
+    $c1: Report received. Extraction opens on the far south service door. Leave before the building remembers it was supposed to be empty.
+$c1: Midnight Suture will not be clean by morning. It may be alive, which is harder and more useful.
+===

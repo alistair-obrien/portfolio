@@ -59,14 +59,14 @@ Here are some examples of what commands look like:
 ```csharp
 public sealed record AddEntityToMap(
     CharacterId ActorId,
-    MapChunkId MapId,
+    MapId MapId,
     IGameDbId EntityId,
     CellPosition CellPosition
     ) : IGameCommand;
 
 public sealed record MoveEntityAlongPathToCell(
     CharacterId ActorId,
-    MapChunkId MapId,
+    MapId MapId,
     CharacterId CharacterId,
     int ToX,
     int ToY
@@ -436,3 +436,4 @@ By implementing a strict command pattern for all domain mutations and using copy
 There is no need for complex state management or manual tracking of changes in multiple places, as the command pattern funnels everything through a single mutation path and copy on write ensures that we only clone what we need to clone when we need to clone it.
 
 This reduces a lot of the complexity of managing state that would often times creep into the controller layer or even the view layer. With this simple but effective setup, work can focus on implementing features and content rather than managing state and edge cases around time traversal.
+

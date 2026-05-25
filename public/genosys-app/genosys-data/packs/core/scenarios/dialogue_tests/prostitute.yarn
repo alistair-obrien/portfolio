@@ -1,0 +1,72 @@
+title: prostitute_pre
+---
+<<set $context = "transactional">>
+
+She leans against the wall, watching you with practiced ease.
+
+-> $c2: "How much?"
+    <<set $tone = "direct">>
+    <<jump prostitute_start>>
+
+-> $c2: "You look tired."
+    <<set $tone = "empathetic">>
+    <<jump prostitute_start>>
+
+-> $c2: "Just... want company."
+    <<set $tone = "uncertain">>
+    <<jump prostitute_start>>
+===
+
+title: prostitute_start
+---
+She studies you for a moment, then nods.
+
+<<fade_out>>
+<<jump prostitute_act>>
+===
+
+title: prostitute_act
+---
+The room is quiet. Close. Breathing, movement, small reactions.
+
+-> $c2: Follow her lead
+    <<set $sync += 1>>
+    <<set $presence += 0>>
+    "You let her guide the pace."
+
+-> $c2: Try to control the rhythm
+    <<set $sync -= 1>>
+    <<set $presence += 0>>
+    "You push forward, slightly out of step."
+
+-> $c2: Slow down, watch her face
+    <<set $sync += 0>>
+    <<set $presence += 1>>
+    "You pay attention to the subtle shifts in her expression."
+
+-> $c2: Ask if she's okay
+    <<set $sync += 0>>
+    <<set $presence += 2>>
+    "She seems surprised for a moment."
+
+===
+
+title: prostitute_post
+---
+<<fade_in>>
+
+She gets dressed quickly.
+
+-> $c2: Leave without a word
+    <<set $emotional_outcome -= 1>>
+    "She doesn't look at you."
+
+-> $c2: Thank her politely
+    <<set $emotional_outcome += 0>>
+    "She nods. Professional."
+
+-> $c2: Ask if she's really okay
+    <<set $emotional_outcome += 1>>
+    "She hesitates. Something genuine, briefly."
+
+===

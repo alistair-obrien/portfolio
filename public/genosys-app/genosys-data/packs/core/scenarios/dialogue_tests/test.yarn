@@ -1,0 +1,101 @@
+title: Start
+---
+<<declare $trust = 0>>
+<<declare $knows_secret = false>>
+
+You encounter a mysterious traveler at the crossroads.
+
+$c1: Greetings, wanderer. These roads can be dangerous alone.
+
+$c1: I can point out the dangerous road without walking it for you.
+-> $c2: Greet them warmly
+    <<set $trust += 1>>
+    $c2: Hello there! It's good to see a friendly face.
+    $c1: Indeed it is. Perhaps we could travel together a while?
+    <<jump TravelTogether>>
+-> $c2: Eye them suspiciously
+    $c2: I can handle myself just fine.
+    $c1: I'm sure you can. But even the strongest benefit from allies.
+    <<jump Suspicious>>
+-> $c2: Ignore them and walk past
+    You walk past without a word.
+    $c1: Suit yourself... but beware the bridge ahead.
+    <<jump Alone>>
+===
+title: TravelTogether
+---
+You walk together down the winding path.
+
+$c1: I should warn you—there's trouble at the old bridge.
+
+-> $c2: Ask for details
+    <<set $trust += 1>>
+    $c1: Bandits have been collecting "tolls." Unfair ones.
+    <<if $trust >= 2>>
+        $c1: I know a secret path, if you're interested...
+        <<set $knows_secret to true>>
+        <<jump SecretPath>>
+    <<else>>
+        $c1: But together, we might get through.
+        <<jump Bridge>>
+    <<endif>>
+-> $c2: Say nothing
+    <<jump Bridge>>
+===
+title: Suspicious
+---
+$c1: I understand caution. The world has earned it.
+
+They reach into their cloak. You tense.
+
+But they only pull out a worn map.
+
+$c1: Here—take this. It shows a path around the bandits at the bridge.
+
+-> $c2: Accept the map
+    <<set $knows_secret to true>>
+    $c2: Thank you. I... misjudged you.
+    $c1: Safe travels.
+    <<jump SecretPath>>
+-> $c2: Refuse
+    $c2: I don't need help.
+    <<jump Bridge>>
+===
+title: Alone
+---
+You continue alone.
+
+The bridge looms ahead, three figures waiting in the shadows.
+
+<<jump Bridge>>
+===
+title: SecretPath
+---
+Following the hidden path, you bypass the bridge entirely.
+
+The forest is quiet here. Peaceful.
+
+You emerge safely on the other side, grateful for the unexpected help.
+
+// Continue your story here!
+===
+title: Bridge
+---
+The bridge bandits block your path.
+
+<<if $trust >= 1>>
+    But you're not alone.
+    $c1: Let us pass, or face us both.
+    The bandits reconsider and step aside.
+<<else>>
+    Bandit: Toll's ten gold. Or we take your pack.
+    -> $c2: Pay the toll
+        You hand over the coins reluctantly.
+    -> $c2: Fight!
+        It's a tough fight, but you prevail.
+<<endif>>
+
+You cross the bridge and continue your journey.
+
+// Continue your story here!
+===

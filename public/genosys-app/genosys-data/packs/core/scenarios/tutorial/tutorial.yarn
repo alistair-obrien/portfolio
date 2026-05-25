@@ -1,0 +1,135 @@
+title: Start
+---
+$c1: LOG 173
+$c1: TEST SUBJECT ID: 7734
+$c1: REPORT TYPE: Identity Suppression Operation
+$c1: CLEARANCE: Internal / Rehabilitation Division / Neurocorrection Wing
+$c1: Test Subject 7734 is regaining consciousness.
+
+// Sound Check
+$c1: 1, 2, 3
+-> $c2: Don't react
+-> $c2: Twitch
+$c1: 1, 2, 3
+-> $c2: Don't react
+-> $c2: Twitch
+$c1: 1, 2, 3
+-> $c2: Don't react
+-> $c2: Twitch
+$c1: Auditory systems nominal.
+$c1: Proceeding to screen language aphasia.
+$c1: What color is an Apple?
+-> $c2: Mhmmph
+-> $c2: Grrrr
+-> $c2: Asda
+$c1: Neural activity detected. Cranial scoped muscular control inadequate.
+$c1: Administering adrenaline shot.
+// Flash
+$c1: Restarting language aphasia screening.
+$c1: What color is an Apple?
+-> $c2: Re.....
+-> $c2: Re-mphhhh
+-> $c2: Urghh
+$c1: Cranial scoped muscular control remains Inadequate.
+$c1: Manually Exercising Jaw Flexion Exercises.
+$c1: Restarting language aphasia screening.
+$c1: What color is an Apple?
+-> $c2: Red
+-> $c2: Urghh
+-> $c2: ...
+$c1: If you fall in a river, what will you become?
+-> $c2: Wet
+-> $c2: Urghh
+-> $c2: ...
+$c1: If a person is in a stable upright position supported by their feet and legs, what would they be doing?
+-> $c2: Standing
+-> $c2: Walking
+-> $c2: Urghh
+-> $c2: ...
+$c1: How many r's in the word 'strawberry'?
+-> $c2: 1
+-> $c2: 2
+-> $c2: 3
+-> $c2: 4
+-> $c2: ...
+$c1: No aphasia detected. Language skills are intact.
+$c1: Proceeding to optical screening.
+$c1: Removing eye lid stitches.
+// Fade in - Vision Check
+// Teach about hovering!
+$c1: What is written on the north wall?
+-> $c2: Compliance
+-> $c2: ...
+$c1: How many markings are on the east wall?
+-> $c2: 1
+-> $c2: 2
+-> $c2: 3
+-> $c2: 4
+-> $c2: 5
+-> $c2: ...
+$c1: What is playing on the monitor to the left?
+-> $c2: Static
+-> $c2: A cartoon
+-> $c2: An old movie
+-> $c2: A music video
+-> $c2: ...
+$c1: Be more specific.
+-> $c2: A cartoon of a white rabbit being chased by a girl in a light blue dress
+-> $c2: An old movie of cowboys in a standoff
+-> $c2: A pop group in an abstract music video
+-> $c2: ...
+$c1: That is adequate for now.
+$c1: Administering IV drip and sedatives.
+// Fade out
+
+
+// Maybe increment more and have missing log files findable later
+$c1: LOG 174
+$c1: TEST SUBJECT ID: 7734
+$c1: REPORT TYPE: Identity Suppression Operation
+$c1: CLEARANCE: Internal / Rehabilitation Division / Neurocorrection Wing
+$c1: Test Subject 7734 is regaining consciousness.
+
+$c1: Muscles have atrophied.
+$c1: Commencing with motor skills relearning protocol.
+$c1: Exposing Subject to Operating System for diagnostics.
+$c1: Pick up the nutrition pack next to you.
+// Pick up
+$c1: Consume the nutrition pack.
+// Eat
+$c1: Digestive system nominal. Strength should gradually return.
+$c1: I have dropped a nutrition pack to your west.
+$c1: Retrieve it and place it to the east of the room.
+// Walks to nutrition pack and retrieves it
+// If player consumes, gets shocked. Consuming was not part of the instructions. But nevermind, we continue
+
+$c1: Moving patient into obstacle course.
+$c1: Complete the course and satiate your hunger and thirst.
+
+$c1: Basic motor skills are adequate, yet strength is low.
+$c1: Administering protein synthesis acceleration and simulating resistance training.
+
+$c1: Moving patient into advanced obstacle course.
+$c1: Complete the course and satiate your hunger and thirst.
+// Teach about interacting with props
+
+$c1: Excellent.
+$c1: Subject is prepared for the next phase.
+
+//TODO: Teach about weapons/armor
+$c1: Basic combat reflexes test
+
+// Installing Neural Operating System
+// This will replace vanilla with a basic shell (Not sure what it will do yet)
+
+// Surgically implanting mod frame
+// Mod frame unlocks some ability maybe?
+
+// OLD
+$c1: Performing biological systems analysis.
+$c1: ...
+-> $c2: That depends. Who exactly are you?
+    $c1: Aurelia Voss. Executive tier, solar branch, and currently trapped in a building that is trying to become historical rubble.
+    $c1: Since identities are now established, I have a decision to make.
+    <<jump VossDecision>>
+===

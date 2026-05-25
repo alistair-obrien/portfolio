@@ -1,0 +1,72 @@
+title: friend_pre
+---
+<<set $context = "intimate">>
+
+You've known each other for a long time. This feels like crossing a line.
+
+-> $c2: "Are you sure about this?"
+    <<set $tone = "careful">>
+    <<jump friend_start>>
+
+-> $c2: "I've wanted this for a while."
+    <<set $tone = "honest">>
+    <<jump friend_start>>
+
+-> $c2: Stay quiet, just look at them
+    <<set $tone = "vulnerable">>
+    <<jump friend_start>>
+===
+
+title: friend_start
+---
+They take a breath, then move closer.
+
+<<fade_out>>
+<<jump friend_act>>
+===
+
+title: friend_act
+---
+Everything feels more intense. Familiar, but different.
+
+-> $c2: Focus on them completely
+    <<set $sync += 2>>
+    <<set $presence += 2>>
+    "You notice every small reaction."
+
+-> $c2: Get lost in the moment
+    <<set $sync += 1>>
+    <<set $presence += 1>>
+    "You stop thinking, just feeling."
+
+-> $c2: Hold back slightly
+    <<set $sync -= 1>>
+    <<set $presence += 0>>
+    "Something feels restrained."
+
+-> $c2: Say their name softly
+    <<set $sync += 1>>
+    <<set $presence += 2>>
+    "They respond immediately."
+
+===
+
+title: friend_post
+---
+<<fade_in>>
+
+Silence, but not empty.
+
+-> $c2: "Did that change things?"
+    <<set $emotional_outcome += 1>>
+    "They smile, uncertain but warm."
+
+-> $c2: "We can pretend this didn't happen."
+    <<set $emotional_outcome -= 2>>
+    "That lands badly."
+
+-> $c2: Just stay with them quietly
+    <<set $emotional_outcome += 2>>
+    "They lean closer."
+
+===

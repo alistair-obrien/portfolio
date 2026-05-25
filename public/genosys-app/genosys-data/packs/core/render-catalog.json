@@ -1,0 +1,1702 @@
+{
+  "Entries": [
+    {
+      "RenderKey": "core/aegis_supply_crate",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/aegis_supply_crate.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ammo_flechette",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ammo_flechette.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ammo_light",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ammo_light.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ammo_magazine",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ammo_magazine.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ammo_piercing_case",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ammo_piercing_case.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ammo_shells",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ammo_shells.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/armor_jacket",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/armor_jacket.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/battery_cell",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/battery_cell.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/biker.amber_helmet",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.amber_helmet.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.armored_jacket",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.armored_jacket.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.bike_key",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.bike_key.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.brass_revolver",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.brass_revolver.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.chain_belt",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.chain_belt.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.denim_cut",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.denim_cut.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.fuel_can",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.fuel_can.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.grit_vale",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/biker.grit_vale.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.latch_marrow",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/biker.latch_marrow.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.mercy_gear",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/biker.mercy_gear.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.oona_brake",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/biker.oona_brake.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.patched_saddlebag",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.patched_saddlebag.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.pike_soren",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/biker.pike_soren.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.revolver_rounds_1x1",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.revolver_rounds_1x1.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.road_boots",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.road_boots.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.route_wafer",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.route_wafer.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.sawn_off",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.sawn_off.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.shells_1x1",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.shells_1x1.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.studded_gloves",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.studded_gloves.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.torque_wrench",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.torque_wrench.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.vela_rook",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/biker.vela_rook.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/biker.waxed_pants",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/biker.waxed_pants.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/consumable_medkit",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/consumable_medkit.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyber_arm",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyber_arm.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/cyber_optics",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyber_optics.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/cyber_spine",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyber_spine.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/cyborg.coolant_injector",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.coolant_injector.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.cyber_arm",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.cyber_arm.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.cyber_hands",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.cyber_hands.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.cyber_legs",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.cyber_legs.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.diagnostic_tablet",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.diagnostic_tablet.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.faceplate",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.faceplate.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.identity_chip",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.identity_chip.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.ione_vale",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/cyborg.ione_vale.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.kade_null",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/cyborg.kade_null.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.limb_case",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.limb_case.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.lio_quench",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/cyborg.lio_quench.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.morrow_pike",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/cyborg.morrow_pike.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.mother_servo",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/cyborg.mother_servo.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.muscle_capsule",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.muscle_capsule.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.neural_crown",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.neural_crown.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.ocular_case",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.ocular_case.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.reactor_core",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.reactor_core.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.rib_cassette",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.rib_cassette.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.sable_orison",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/cyborg.sable_orison.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.servo_grease",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.servo_grease.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.spine_coil",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.spine_coil.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/cyborg.suture_spool",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/cyborg.suture_spool.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/datapad",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/datapad.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/dorian_vale",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/dorian_vale.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/dorian_vale_blink",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/dorian_vale_blink.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/dorian_vale_coat",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/dorian_vale_coat.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/dorian_vale_gloves",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/dorian_vale_gloves.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/dorian_vale_inner",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/dorian_vale_inner.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/dorian_vale_inner_shirt",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/dorian_vale_inner_shirt.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/dorian_vale_pants",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/dorian_vale_pants.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/dorian_vale_shoes",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/dorian_vale_shoes.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/executive_client",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/executive_client.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/fly.access_fob",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.access_fob.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.aegis_compact_smg",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.aegis_compact_smg.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.blink_case",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.blink_case.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.broker_drive",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.broker_drive.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.claim_marker",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.claim_marker.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.claim_tags",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.claim_tags.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.cold_focus_patch",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.cold_focus_patch.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.crow_knife",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.crow_knife.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.evidence_tag",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.evidence_tag.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.field_bag",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.field_bag.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.flechette_1x1",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.flechette_1x1.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.glasswire_lenses",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.glasswire_lenses.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.holdout_pistol",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.holdout_pistol.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.korr_nanoshield",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.korr_nanoshield.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.korr_sidearm",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.korr_sidearm.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.medkit",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.medkit.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.nano_shield",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.nano_shield.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.null_pin_key",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.null_pin_key.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.panic_inhaler",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.panic_inhaler.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.personal_cache",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.personal_cache.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.pistol_mag_1x1",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.pistol_mag_1x1.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.risk_case",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.risk_case.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.sable_boots",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.sable_boots.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.sable_coat",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.sable_coat.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.sable_earlink",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.sable_earlink.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.sable_gloves",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.sable_gloves.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.sable_inner",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.sable_inner.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.sable_trousers",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.sable_trousers.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.scrap_saw",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.scrap_saw.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.shock_caps_1x1",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.shock_caps_1x1.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/fly.smg_mag_1x1",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/fly.smg_mag_1x1.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.blackout_patch",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.blackout_patch.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.cable_jacket",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.cable_jacket.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.camera_contacts",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.camera_contacts.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.cargo_pants",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.cargo_pants.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.ceramic_armor",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.ceramic_armor.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.compression_shirt",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.compression_shirt.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.cortical_relay",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.cortical_relay.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.dead_switch",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.dead_switch.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.gala_jacket",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.gala_jacket.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.gala_lift",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.gala_lift.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ghost.gala_shirt",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.gala_shirt.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.gala_trousers",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.gala_trousers.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.haptic_gloves",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.haptic_gloves.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.injector",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.injector.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.kill_contract",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.kill_contract.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.logic_bomb",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.logic_bomb.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.map_door",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/ghost.map_door.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ghost.microdrone",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.microdrone.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.neural_crown",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.neural_crown.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.ocular_implant",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.ocular_implant.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.operator_hood",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.operator_hood.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.phantom_deck",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.phantom_deck.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.remote_terminal",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/ghost.remote_terminal.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ghost.safehouse_bag",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.safehouse_bag.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.security_boots",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.security_boots.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.security_camera",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.security_camera.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ghost.security_gloves",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.security_gloves.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.security_pants",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.security_pants.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.security_vest",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.security_vest.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.server_blade",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.server_blade.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.server_rack",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.server_rack.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ghost.service_blazer",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.service_blazer.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.service_slacks",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.service_slacks.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.service_tray",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.service_tray.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.silenced_pistol",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.silenced_pistol.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.smart_ammo_1x1",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.smart_ammo_1x1.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.softstep_boots",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.softstep_boots.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.spoof_key",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.spoof_key.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.target_badge",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.target_badge.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.trace_battery",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.trace_battery.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/ghost.visual_tap",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ghost.visual_tap.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/hey",
+      "AssetKind": "tile-icons",
+      "Path": "assets/tile-icons/hey.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ilya_voss",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/ilya_voss.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/inventory_pack",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/inventory_pack.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/inventory_satchel",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/inventory_satchel.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/juno_kade",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/juno_kade.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/lab.elian_voss",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/lab.elian_voss.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/lab.kade_security_guard",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/lab.kade_security_guard.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/lab.rogue_specimen_rho",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/lab.rogue_specimen_rho.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/lab.vanta_9",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/lab.vanta_9.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/lab.whitecoat_scientist",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/lab.whitecoat_scientist.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/map_door_terminal",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/map_door_terminal.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/mara",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/mara.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/mara_venn",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/mara_venn.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/mechanic",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/mechanic.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/med_inhaler",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/med_inhaler.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/nix_corvid",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/nix_corvid.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/orion",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/orion.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop._contact",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop._contact.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.analytics_tablet",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.analytics_tablet.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.backstage_pass",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.backstage_pass.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.charm_mic",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.charm_mic.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.fan_contract",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.fan_contract.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.glitter_inhaler",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.glitter_inhaler.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.halo_saint",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/pop.halo_saint.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.heart_visor",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.heart_visor.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.holo_skirt",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.holo_skirt.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.jett_karo",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/pop.jett_karo.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.luma_vale",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/pop.luma_vale.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.merch_scarf",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.merch_scarf.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.mimi_vox",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/pop.mimi_vox.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.moon_boots",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.moon_boots.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.pax_meridian",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/pop.pax_meridian.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.privacy_veil",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.privacy_veil.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.rina_vey",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/pop.rina_vey.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.ringlight_drone",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.ringlight_drone.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.sample_pad",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.sample_pad.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.security_baton",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.security_baton.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.sparkle_ammo_1x1",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.sparkle_ammo_1x1.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.spotlight_perfume",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.spotlight_perfume.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/pop.stage_jacket",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/pop.stage_jacket.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/prop_alarm_console",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/prop_alarm_console.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/prop_cyberware_station",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/prop_cyberware_station.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/prop_damaged_drone",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/prop_damaged_drone.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/prop_lab_console",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/prop_lab_console.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/prop_lab_glass",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/prop_lab_glass.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/prop_lab_machinery",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/prop_lab_machinery.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/prop_lab_turret",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/prop_lab_turret.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/prop_lab_wall",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/prop_lab_wall.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/prop_lockdown_console",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/prop_lockdown_console.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/ration_pack",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/ration_pack.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/redline_boots",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/redline_boots.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/redline_gloves",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/redline_gloves.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/redline_inner",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/redline_inner.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/redline_inner_armor",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/redline_inner_armor.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/redline_legs",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/redline_legs.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/redline_neck_brace",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/redline_neck_brace.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/redline_outer_armor",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/redline_outer_armor.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/rock",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/rock.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/rook_imani",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/rook_imani.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/sable_korr",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/sable_korr.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_aurelia_blackout",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_aurelia_blackout.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_chrome_wake",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_chrome_wake.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_custom",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_custom.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/scenario_cyberpunk_lab_tutorial_escape",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_cyberpunk_lab_tutorial_escape.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_fly_the_coop",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_fly_the_coop.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_ghost_dividend",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_ghost_dividend.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_metadata",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_metadata.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/scenario_porcelain_tax",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_porcelain_tax.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_rapid_response",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_rapid_response.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_starfall_protocol",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_starfall_protocol.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_thread_the_needle",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_thread_the_needle.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/scenario_token_style_lab",
+      "AssetKind": "scenario-art",
+      "Path": "assets/scenario-art/scenario_token_style_lab.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/security_guard",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/security_guard.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/signal_hounds.archive_preacher",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.archive_preacher.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/signal_hounds.blackhood_scout",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.blackhood_scout.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/signal_hounds.chrome_enforcer",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.chrome_enforcer.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/signal_hounds.convoy_tactician",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.convoy_tactician.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/signal_hounds.debt_collector",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.debt_collector.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/signal_hounds.gang_matriarch",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.gang_matriarch.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/signal_hounds.road_captain",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.road_captain.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/signal_hounds.signal_mechanic",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.signal_mechanic.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/signal_hounds.wire_courier",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.wire_courier.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/signal_hounds.young_prospect",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/signal_hounds.young_prospect.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/silas_wren",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/silas_wren.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/snack_full",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/snack_full.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/stim_patch",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/stim_patch.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street_cache",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street_cache.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/street_vendor",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/street_vendor.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/street.bracelet_stack",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.bracelet_stack.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.brick_sol",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/street.brick_sol.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.clear_poncho",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.clear_poncho.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.folded_zine",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.folded_zine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.graffiti_hoodie",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.graffiti_hoodie.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.holo_sling",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.holo_sling.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.jun_thread",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/street.jun_thread.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.lace_gloves",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.lace_gloves.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.led_choker",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.led_choker.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.magenta_wraps",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.magenta_wraps.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.miko_static",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/street.miko_static.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.nox_parade",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/street.nox_parade.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.patch_skirt",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.patch_skirt.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.pin_beanie",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.pin_beanie.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.platform_sneakers",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.platform_sneakers.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.reflective_trousers",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.reflective_trousers.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.roller_shoes",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.roller_shoes.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.sera_vant",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/street.sera_vant.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.spray_perfume",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.spray_perfume.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.sticker_camera",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.sticker_camera.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.tavi_lace",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/street.tavi_lace.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/street.vinyl_bomber",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/street.vinyl_bomber.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/tansfusion_device",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/tansfusion_device.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/tile_elevator_exit",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/tile_elevator_exit.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/tile_lab_hazard",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/tile_lab_hazard.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/tile_turret_lane",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/tile_turret_lane.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/token_lab.all_cyber_full_replacement",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.all_cyber_full_replacement.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.all_cyber_prominent",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.all_cyber_prominent.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.all_cyber_subtle",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.all_cyber_subtle.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.corporate_feminine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.corporate_feminine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.corporate_masculine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.corporate_masculine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.dandy_feminine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.dandy_feminine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.dandy_masculine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.dandy_masculine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.militarized_feminine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.militarized_feminine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.militarized_masculine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.militarized_masculine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.noir_feminine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.noir_feminine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.noir_masculine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.noir_masculine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.party_feminine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.party_feminine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.party_masculine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.party_masculine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.street_feminine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.street_feminine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.street_masculine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.street_masculine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.techwear_feminine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.techwear_feminine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.techwear_masculine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.techwear_masculine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.uniformed_feminine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.uniformed_feminine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.uniformed_masculine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.uniformed_masculine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.vanilla_feminine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.vanilla_feminine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/token_lab.vanilla_masculine",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/token_lab.vanilla_masculine.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/tool_case",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/tool_case.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/transfusion_device",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/transfusion_device.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/usb_stick",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/usb_stick.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/vale_nyx",
+      "AssetKind": "character-portraits",
+      "Path": "assets/character-portraits/vale_nyx.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/wall",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/wall.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/wallet_credstick",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/wallet_credstick.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/weapon_pistol",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/weapon_pistol.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/weapon_shiv",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/weapon_shiv.svg",
+      "MimeType": "image/svg+xml"
+    },
+    {
+      "RenderKey": "core/weapon_shotgun",
+      "AssetKind": "item-icons",
+      "Path": "assets/item-icons/weapon_shotgun.png",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "core/window",
+      "AssetKind": "prop-icons",
+      "Path": "assets/prop-icons/window.svg",
+      "MimeType": "image/svg+xml"
+    }
+  ]
+}

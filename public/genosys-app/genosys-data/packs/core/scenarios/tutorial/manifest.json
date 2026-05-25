@@ -1,0 +1,14 @@
+{
+  "PackageId": "core/tutorial",
+  "Name": "Tutorial",
+  "Subtitle": "Adasdas",
+  "Description": "dasdasdasdasd",
+  "Category": "Custom",
+  "EstimatedDuration": "",
+  "RenderKey": {
+    "Key": "core/scenario_custom"
+  },
+  "FolderPath": "Scenarios",
+  "CreatedAt": "2026-05-25T03:36:58.1930000Z",
+  "UpdatedAt": "2026-05-25T03:36:58.1930000Z"
+}

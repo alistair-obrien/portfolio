@@ -1,0 +1,7 @@
+{
+  "PackId": "core",
+  "Name": "Core",
+  "Version": "1.0.0",
+  "Dependencies": [],
+  "ReadOnly": false
+}
