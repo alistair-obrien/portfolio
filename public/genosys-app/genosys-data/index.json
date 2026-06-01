@@ -1145,66 +1145,6 @@
       "IsDirectory": true
     },
     {
-      "Path": "packs/core/scenarios/aurelia_blackout",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/aurelia_blackout/aurelia.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/aurelia_blackout/dex.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/aurelia_blackout/kira.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/aurelia_blackout/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/aurelia_blackout/piet.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/aurelia_blackout/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/chrome_wake",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/chrome_wake/briefing.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/chrome_wake/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/chrome_wake/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/cyberpunk_lab_tutorial_escape",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/cyberpunk_lab_tutorial_escape/briefing.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/cyberpunk_lab_tutorial_escape/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/cyberpunk_lab_tutorial_escape/state.json",
-      "IsDirectory": false
-    },
-    {
       "Path": "packs/core/scenarios/dialogue_tests",
       "IsDirectory": true
     },
@@ -1222,54 +1162,6 @@
     },
     {
       "Path": "packs/core/scenarios/dialogue_tests/test.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/fly_the_coop",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/fly_the_coop_inventory_lab",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/fly_the_coop_inventory_lab/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/fly_the_coop_inventory_lab/quest.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/fly_the_coop_inventory_lab/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/fly_the_coop/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/fly_the_coop/quest.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/fly_the_coop/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/ghost_dividend",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/ghost_dividend/briefing.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/ghost_dividend/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/ghost_dividend/state.json",
       "IsDirectory": false
     },
     {
@@ -1297,116 +1189,8 @@
       "IsDirectory": false
     },
     {
-      "Path": "packs/core/scenarios/porcelain_tax",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/porcelain_tax/briefing.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/porcelain_tax/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/porcelain_tax/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/redline_revival_demo",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/redline_revival_demo/aurelia.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/redline_revival_demo/dex.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/redline_revival_demo/kira.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/redline_revival_demo/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/redline_revival_demo/piet.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/redline_revival_demo/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/starfall_protocol",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/starfall_protocol/briefing.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/starfall_protocol/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/starfall_protocol/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/thread_the_needle",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/thread_the_needle/briefing.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/thread_the_needle/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/thread_the_needle/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/token_style_lab",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/token_style_lab/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/token_style_lab/state.json",
-      "IsDirectory": false
-    },
-    {
       "Path": "packs/core/scenarios/tutorial",
       "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/tutorial_command_demo",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/core/scenarios/tutorial_command_demo/briefing.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/tutorial_command_demo/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/tutorial_command_demo/security.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/tutorial_command_demo/state.json",
-      "IsDirectory": false
     },
     {
       "Path": "packs/core/scenarios/tutorial/manifest.json",
@@ -1510,58 +1294,6 @@
     },
     {
       "Path": "packs/signal_hounds/render-catalog.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/blackhood_collection",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/blackhood_collection/debt_collector.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/blackhood_collection/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/blackhood_collection/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/dead_air_convoy",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/dead_air_convoy/convoy_tactician.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/dead_air_convoy/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/dead_air_convoy/state.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/roadside_checkpoint",
-      "IsDirectory": true
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/roadside_checkpoint/manifest.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/roadside_checkpoint/road_captain.yarn",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/signal_hounds/scenarios/roadside_checkpoint/state.json",
       "IsDirectory": false
     }
   ]
