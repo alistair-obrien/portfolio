@@ -225,8 +225,8 @@ $c1: Removing eye lid stitches.
 You feel fine strands being removed from your eyelids.
 The heat from the friction as they thread through your skin burns.
 Even if you wanted to yell out in pain, it would only come out as a hoarse cry.
+<<Characters.SetVisionRange CharacterId=CharacterId:subject_7734 VisionRangeTiles=2>>
 <<Cutscenes.FrameEntity EntityId=CharacterId:subject_7734 Padding=0 Zoom=1.35 DurationSeconds=0.0 Label=frame-vale>>
-<<Characters.SetVisionRange CharacterId=CharacterId:subject_7734 VisionRangeTiles=3>>
 <<Characters.EnableOptics CharacterId=CharacterId:subject_7734>>
 <<Characters.ChangeName CharacterId=CharacterId:dr_mara_vale Name="Dr. Mara Vale">>
 The lights burn your retinas for a time.
@@ -235,119 +235,55 @@ But eventually everything settles.
 <<Characters.SetVisionRange CharacterId=CharacterId:subject_7734 VisionRangeTiles=20>>
 You figure its a good time to look around the room.
 (Hover on any object to look at it) // Teach about hovering!
-$c1: Let's begin.
-$c1: What is written on the north wall?
--> $c2: Compliance
--> $c2: ...
-$c1: How many markings are on the east wall?
--> $c2: 1
--> $c2: 2
--> $c2: 3
--> $c2: 4
--> $c2: 5
--> $c2: ...
-$c1: What is playing on the monitor to the left?
--> $c2: Static
--> $c2: A cartoon
--> $c2: An old movie
--> $c2: A music video
--> $c2: ...
-$c1: Be more specific.
--> $c2: A cartoon of a white rabbit being chased by a girl in a light blue dress
--> $c2: An old movie of cowboys in a standoff
--> $c2: A pop group in an abstract music video
--> $c2: ...
-$c1: That is adequate for now.
-$c1: Administering IV drip and sedatives.
-// Fade out
+TODO: Properly set up objects with rich descriptions then test player on them
+
+// $c1: Let's begin.
+// $c1: What is written on the north wall?
+// -> $c2: Compliance
+// -> $c2: ...
+// $c1: How many markings are on the east wall?
+// -> $c2: 1
+// -> $c2: 2
+// -> $c2: 3
+// -> $c2: 4
+// -> $c2: 5
+// -> $c2: ...
+// $c1: What is playing on the monitor to the left?
+// -> $c2: Static
+// -> $c2: A cartoon
+// -> $c2: An old movie
+// -> $c2: A music video
+// -> $c2: ...
+// $c1: Be more specific.
+// -> $c2: A cartoon of a white rabbit being chased by a girl in a light blue dress
+// -> $c2: An old movie of cowboys in a standoff
+// -> $c2: A pop group in an abstract music video
+// -> $c2: ...
+// $c1: That is adequate for now.
+// $c1: Administering IV drip and sedatives.
+// // Fade out
 
 $c1: Report your dominant discomfort.
 (Press C to review your condition.)
 -> $c2: My head is in pain.
-    $c1: Expected. Cranial anchoring and ocular access both produce residual trauma.
-    $c1: There is a sealed trauma patch in your kit.
-    $c1: Use it before we continue. I need to know you can identify damage and treat it without instruction.
     // GATE: end dialogue here until the player uses a healing item.
     // Resume at RecoveryNeedPain after the backend query confirms organic health is stable.
-    <<jump RecoveryGatePause>>
+    TODO: Teach about basic healing items
 -> $c2: I'm hungry.
-    $c1: Metabolic demand is elevated.
-    $c1: You have been maintained intravenously, not fed. Your stomach is remembering its job.
-    $c1: Eat the nutrition pack from your kit before we continue.
     // GATE: end dialogue here until the player eats food.
     // Resume at RecoveryNeedHunger after the backend query confirms hunger is resolved.
-    <<jump RecoveryGatePause>>
+    TODO: Teach about hunger
 -> $c2: I'm thirsty.
     $c1: Dehydration markers are within tolerance.
     $c1: The sensation is unpleasant, not dangerous. Hold onto the distinction.
     $c1: Drink from the water pouch in your kit before we continue.
     // GATE: end dialogue here until the player drinks water.
     // Resume at RecoveryNeedThirst after the backend query confirms thirst is resolved.
-    <<jump RecoveryGatePause>>
+    TODO: Teach about thirst
 -> $c2: I don't know who I am.
-    $c1: Identity confusion is the point of this procedure.
-    $c1: Do not chase missing context. Chasing causes false reconstruction.
-    $c1: Open your status record. Read the designation. For now, answer to Subject 7734.
     // GATE: end dialogue here until the player reviews status.
     // Resume at RecoveryNeedIdentity after the status-review trigger confirms it.
-    <<jump RecoveryGatePause>>
-===
-
-title: RecoveryGatePause
----
-===
-
-title: RecoveryNeedPain
----
-<<if Characters_GetOrganicHealthPercent("CharacterId:subject_7734") >= 1>>
-$c1: Trauma response is stabilizing.
-$c1: You found the patch, opened it, and used it correctly. That matters more than comfort.
-<<jump RecoveryNeedResolved>>
-<<else>>
-$c1: Trauma response remains elevated.
-$c1: Use the sealed trauma patch before we continue.
-<<jump RecoveryGatePause>>
-<<endif>>
-===
-
-title: RecoveryNeedHunger
----
-<<if Characters_GetCharacterHunger("CharacterId:subject_7734") <= 0.05>>
-$c1: Nutrition registered.
-$c1: Do not expect strength yet. Expect enough coordination to stand without tearing anything loose.
-<<jump RecoveryNeedResolved>>
-<<else>>
-$c1: Hunger remains above tolerance.
-$c1: Eat the nutrition pack from your kit before we continue.
-<<jump RecoveryGatePause>>
-<<endif>>
-===
-
-title: RecoveryNeedThirst
----
-<<if Characters_GetCharacterThirst("CharacterId:subject_7734") <= 0.05>>
-$c1: Fluid intake registered.
-$c1: Your throat should stop fighting you soon. Speech will remain unreliable for a while.
-<<jump RecoveryNeedResolved>>
-<<else>>
-$c1: Dehydration markers remain above tolerance.
-$c1: Drink from the water pouch in your kit before we continue.
-<<jump RecoveryGatePause>>
-<<endif>>
-===
-
-title: RecoveryNeedIdentity
----
-$c1: Status record acknowledged.
-$c1: The designation is ugly, but it is stable. Stability is useful.
-<<jump RecoveryNeedResolved>>
-===
-
-title: RecoveryNeedResolved
----
-$c1: Baseline recovery task complete.
-$c1: Motor relearning begins after sedation clears.
-$c1: If you can follow simple instructions, you may leave the chair alive.
+    TODO: Some narrative stuff
 ===
 
 // Next pass:

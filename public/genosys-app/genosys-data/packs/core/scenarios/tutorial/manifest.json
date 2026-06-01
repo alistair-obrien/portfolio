@@ -1,13 +1,10 @@
 {
   "PackageId": "core/tutorial",
-  "Name": "Tutorial",
-  "Subtitle": "Heeeere's Johnny!",
-  "Description": "Lab Rat",
+  "Name": "Lab Rat",
+  "Subtitle": "Work in progress tutorial scenario.",
+  "Description": "Learn the basics of the game in this tutorial scenario.",
   "Category": "Custom",
   "EstimatedDuration": "",
-  "RenderKey": {
-    "Key": "core/scenario_custom"
-  },
   "FolderPath": "Scenarios",
   "IsDraft": false,
   "CreatedAt": "2026-05-30T10:48:44.7560000Z",
