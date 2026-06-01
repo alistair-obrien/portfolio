@@ -1,0 +1,51 @@
+{
+  "TemplateId": "ItemTemplateId:core/blackbox_audit_pistol",
+  "EntityDefinitions": [
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:blackbox_audit_pistol",
+        "Name": "Audit Pistol",
+        "Description": "A low-energy security pistol used to demonstrate command-driven combat beats.",
+        "FlavorText": "The sidearm chirps before it fires, as if apologizing to the glass.",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "core/redline_inner"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "8/8",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": {
+          "LoadedAmmoItemId": null,
+          "ProjectileCountPerShot": 1,
+          "SpreadAngleDeg": 0.0,
+          "FiringStyle": "Default",
+          "ShotRadiusInTiles": 1.0,
+          "RequiresBothHands": false,
+          "ClipSize": 6,
+          "ControlRequirement": 0,
+          "AdditionalShotEnergy": 0,
+          "CloseRangeEnergyMultiplier": 1.0,
+          "MidRangeEnergyMultiplier": 0.7,
+          "LongRangeEnergyMultiplier": 0.4
+        },
+        "Armor": null,
+        "TypeId": "Item"
+      },
+      "SourceTemplateId": null,
+      "SourceBlueprintId": null,
+      "TemplateBaseline": null
+    }
+  ],
+  "FolderPath": ""
+}

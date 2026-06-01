@@ -23,10 +23,10 @@
         "Consumable": {
           "QuantityConsumedPerUse": 1,
           "ConsumesTurn": true,
-          "HungerDelta": 5,
-          "ThirstDelta": 0,
-          "FatigueDelta": 0,
-          "IntoxicationDelta": 0,
+          "HungerDelta": 5.0,
+          "ThirstDelta": 0.0,
+          "FatigueDelta": 0.0,
+          "IntoxicationDelta": 0.0,
           "DepletedBehavior": "destroy",
           "UseStages": []
         },

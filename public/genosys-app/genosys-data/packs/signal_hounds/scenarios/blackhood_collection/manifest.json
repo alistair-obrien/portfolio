@@ -1,0 +1,14 @@
+{
+  "PackageId": "signal_hounds/blackhood_collection",
+  "Name": "Blackhood Collection",
+  "Subtitle": "Debt has a helmet and a schedule",
+  "Description": "A Blackhood collector arrives to settle a courier debt, but the ledger points at a name that should not be alive.",
+  "Category": "Social / Combat",
+  "EstimatedDuration": "10-15 minutes",
+  "RenderKey": {
+    "Key": "signal_hounds/debt_collector"
+  },
+  "FolderPath": "Scenarios/Signal Hounds",
+  "CreatedAt": "2026-05-28T00:00:00.0000000Z",
+  "UpdatedAt": "2026-05-28T00:00:00.0000000Z"
+}

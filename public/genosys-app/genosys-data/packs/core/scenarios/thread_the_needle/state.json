@@ -6,12 +6,12 @@
       "Data": {
         "Id": "MapId:thread_market",
         "Name": "Thread the Needle - Canal Market",
-        "Width": 32,
-        "Height": 24,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:thread_market",
+            "ChunkId": "MapChunkId:thread_market:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -35,7 +35,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 8
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:thread_market:chunk:1:1",
@@ -44,7 +44,7 @@
             "OriginX": 16,
             "OriginY": 16,
             "Width": 16,
-            "Height": 8
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -59,12 +59,12 @@
       "Data": {
         "Id": "MapId:thread_backlot",
         "Name": "Thread the Needle - Print Backlot",
-        "Width": 26,
-        "Height": 18,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:thread_backlot",
+            "ChunkId": "MapChunkId:thread_backlot:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -78,7 +78,7 @@
             "ChunkY": 0,
             "OriginX": 16,
             "OriginY": 0,
-            "Width": 10,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -88,7 +88,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 2
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:thread_backlot:chunk:1:1",
@@ -96,8 +96,8 @@
             "ChunkY": 1,
             "OriginX": 16,
             "OriginY": 16,
-            "Width": 10,
-            "Height": 2
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -9404,7 +9404,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:thread_backlot",
+          "TargetMapId": "MapChunkId:thread_backlot:chunk:0:0",
           "TargetCellPosition": "6:8",
           "ActionLabel": "Slip to Backlot"
         },
@@ -9439,7 +9439,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:thread_market",
+          "TargetMapId": "MapChunkId:thread_market:chunk:0:0",
           "TargetCellPosition": "25:12",
           "ActionLabel": "Return to Market"
         },
@@ -9450,7 +9450,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:thread_market",
+        "Id": "MapChunkId:thread_market:chunk:0:0",
         "Name": "Thread the Needle - Canal Market (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -9618,7 +9618,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:thread_backlot",
+        "Id": "MapChunkId:thread_backlot:chunk:0:0",
         "Name": "Thread the Needle - Print Backlot (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -9944,7 +9944,7 @@
       "Data": {
         "Id": "MapChunkId:thread_market:chunk:0:1",
         "Name": "Thread the Needle - Canal Market (0,1)",
-        "Size": "16:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -10052,7 +10052,7 @@
       "Data": {
         "Id": "MapChunkId:thread_market:chunk:1:1",
         "Name": "Thread the Needle - Canal Market (1,1)",
-        "Size": "16:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -10164,7 +10164,7 @@
       "Data": {
         "Id": "MapChunkId:thread_backlot:chunk:1:0",
         "Name": "Thread the Needle - Print Backlot (1,0)",
-        "Size": "10:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -10288,7 +10288,7 @@
       "Data": {
         "Id": "MapChunkId:thread_backlot:chunk:0:1",
         "Name": "Thread the Needle - Print Backlot (0,1)",
-        "Size": "16:2",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -10372,7 +10372,7 @@
       "Data": {
         "Id": "MapChunkId:thread_backlot:chunk:1:1",
         "Name": "Thread the Needle - Print Backlot (1,1)",
-        "Size": "10:2",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -10438,7 +10438,7 @@
     {
       "EntityId": "PropId:thread_market_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -10446,7 +10446,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_1",
@@ -10464,7 +10464,7 @@
     {
       "EntityId": "PropId:thread_market_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -10472,7 +10472,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_3",
@@ -10490,7 +10490,7 @@
     {
       "EntityId": "PropId:thread_market_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -10498,7 +10498,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_5",
@@ -10516,7 +10516,7 @@
     {
       "EntityId": "PropId:thread_market_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -10524,7 +10524,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_7",
@@ -10542,7 +10542,7 @@
     {
       "EntityId": "PropId:thread_market_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -10550,7 +10550,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_9",
@@ -10568,7 +10568,7 @@
     {
       "EntityId": "PropId:thread_market_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -10576,7 +10576,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_11",
@@ -10594,7 +10594,7 @@
     {
       "EntityId": "PropId:thread_market_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -10602,7 +10602,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_13",
@@ -10620,7 +10620,7 @@
     {
       "EntityId": "PropId:thread_market_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -10628,7 +10628,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_15",
@@ -10646,7 +10646,7 @@
     {
       "EntityId": "PropId:thread_market_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -10654,7 +10654,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_17",
@@ -10672,7 +10672,7 @@
     {
       "EntityId": "PropId:thread_market_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -10680,7 +10680,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_19",
@@ -10698,7 +10698,7 @@
     {
       "EntityId": "PropId:thread_market_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -10706,7 +10706,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_21",
@@ -10724,7 +10724,7 @@
     {
       "EntityId": "PropId:thread_market_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -10732,7 +10732,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_23",
@@ -10750,7 +10750,7 @@
     {
       "EntityId": "PropId:thread_market_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -10758,7 +10758,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_25",
@@ -10776,7 +10776,7 @@
     {
       "EntityId": "PropId:thread_market_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -10784,7 +10784,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_27",
@@ -10802,7 +10802,7 @@
     {
       "EntityId": "PropId:thread_market_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -10810,7 +10810,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_29",
@@ -10828,7 +10828,7 @@
     {
       "EntityId": "PropId:thread_market_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -10836,7 +10836,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_31",
@@ -11270,7 +11270,7 @@
     {
       "EntityId": "PropId:thread_market_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -11278,7 +11278,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_65",
@@ -11296,7 +11296,7 @@
     {
       "EntityId": "PropId:thread_market_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -11304,7 +11304,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_67",
@@ -11322,7 +11322,7 @@
     {
       "EntityId": "PropId:thread_market_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -11330,7 +11330,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_69",
@@ -11348,7 +11348,7 @@
     {
       "EntityId": "PropId:thread_market_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -11356,7 +11356,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_71",
@@ -11374,7 +11374,7 @@
     {
       "EntityId": "PropId:thread_market_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -11382,7 +11382,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_73",
@@ -11400,7 +11400,7 @@
     {
       "EntityId": "PropId:thread_market_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -11408,7 +11408,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_75",
@@ -11426,7 +11426,7 @@
     {
       "EntityId": "PropId:thread_market_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -11434,7 +11434,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_77",
@@ -11452,7 +11452,7 @@
     {
       "EntityId": "PropId:thread_market_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -11460,7 +11460,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_79",
@@ -11478,7 +11478,7 @@
     {
       "EntityId": "PropId:thread_market_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -11486,7 +11486,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_81",
@@ -11504,7 +11504,7 @@
     {
       "EntityId": "PropId:thread_market_wall_82",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -11512,7 +11512,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_83",
@@ -11530,7 +11530,7 @@
     {
       "EntityId": "PropId:thread_market_wall_84",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -11538,7 +11538,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_85",
@@ -11556,7 +11556,7 @@
     {
       "EntityId": "PropId:thread_market_wall_86",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -11564,7 +11564,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_87",
@@ -11582,7 +11582,7 @@
     {
       "EntityId": "PropId:thread_market_wall_88",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -11590,7 +11590,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_89",
@@ -11608,7 +11608,7 @@
     {
       "EntityId": "PropId:thread_market_wall_90",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -11616,7 +11616,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_91",
@@ -11634,7 +11634,7 @@
     {
       "EntityId": "PropId:thread_market_wall_92",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -11642,7 +11642,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_market_wall_93",
@@ -11842,7 +11842,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -11850,7 +11850,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_1",
@@ -11868,7 +11868,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -11876,7 +11876,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_3",
@@ -11894,7 +11894,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -11902,7 +11902,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_5",
@@ -11920,7 +11920,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -11928,7 +11928,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_7",
@@ -11946,7 +11946,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -11954,7 +11954,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_9",
@@ -11972,7 +11972,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -11980,7 +11980,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_11",
@@ -11998,7 +11998,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -12006,7 +12006,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_13",
@@ -12024,7 +12024,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -12032,7 +12032,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_15",
@@ -12050,7 +12050,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -12058,7 +12058,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_17",
@@ -12076,7 +12076,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -12084,7 +12084,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_19",
@@ -12102,7 +12102,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -12110,7 +12110,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_21",
@@ -12128,7 +12128,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -12136,7 +12136,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_23",
@@ -12154,7 +12154,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -12162,7 +12162,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_25",
@@ -12180,7 +12180,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -12188,7 +12188,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_27",
@@ -12206,7 +12206,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -12214,7 +12214,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_29",
@@ -12232,7 +12232,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -12240,7 +12240,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_31",
@@ -12518,7 +12518,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_52",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -12526,7 +12526,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_53",
@@ -12544,7 +12544,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_54",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -12552,7 +12552,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_55",
@@ -12570,7 +12570,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_56",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -12578,7 +12578,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_57",
@@ -12596,7 +12596,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_58",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -12604,7 +12604,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_59",
@@ -12622,7 +12622,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_60",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -12630,7 +12630,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_61",
@@ -12648,7 +12648,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_62",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -12656,7 +12656,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_63",
@@ -12674,7 +12674,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -12682,7 +12682,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_65",
@@ -12700,7 +12700,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -12708,7 +12708,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_67",
@@ -12726,7 +12726,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -12734,7 +12734,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_69",
@@ -12752,7 +12752,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -12760,7 +12760,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_71",
@@ -12778,7 +12778,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -12786,7 +12786,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_73",
@@ -12804,7 +12804,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -12812,7 +12812,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_75",
@@ -12830,7 +12830,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -12838,7 +12838,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_77",
@@ -12856,7 +12856,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -12864,7 +12864,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_79",
@@ -12882,7 +12882,7 @@
     {
       "EntityId": "PropId:thread_backlot_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -12890,7 +12890,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_backlot_wall_81",
@@ -12934,7 +12934,7 @@
     {
       "EntityId": "PropId:thread_sneaker_wall",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "7:4:4:1",
       "InventoryOwnerId": null,
@@ -12942,12 +12942,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_zine_table",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "5:15:5:1",
       "InventoryOwnerId": null,
@@ -12955,7 +12955,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_mirror_column",
@@ -12973,7 +12973,7 @@
     {
       "EntityId": "PropId:thread_catwalk_mat",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "12:10:8:2",
       "InventoryOwnerId": null,
@@ -12981,7 +12981,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_sound_cart",
@@ -12999,7 +12999,7 @@
     {
       "EntityId": "PropId:thread_screen_press",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "5:5:4:2",
       "InventoryOwnerId": null,
@@ -13007,12 +13007,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_dye_sink",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "15:4:3:2",
       "InventoryOwnerId": null,
@@ -13020,12 +13020,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_rack_maze",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "10:10:1:4",
       "InventoryOwnerId": null,
@@ -13033,7 +13033,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "PropId:thread_back_door",
@@ -13051,7 +13051,7 @@
     {
       "EntityId": "ItemId:thread_miko_holo_sling",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "13:14:2:2",
       "InventoryOwnerId": null,
@@ -13059,7 +13059,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "ItemId:thread_miko_spray_perfume",
@@ -13100,7 +13100,7 @@
     {
       "EntityId": "ItemId:thread_loose_rival_zine",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "7:8:1:1",
       "InventoryOwnerId": null,
@@ -13108,7 +13108,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "ItemId:thread_transit_bracelets",
@@ -13126,7 +13126,7 @@
     {
       "EntityId": "ItemId:thread_sample_atomizer",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "9:6:1:1",
       "InventoryOwnerId": null,
@@ -13134,7 +13134,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "ItemId:thread_miko_pin_beanie",
@@ -13247,7 +13247,7 @@
     {
       "EntityId": "CharacterId:miko_static",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "14:13:3:3",
       "InventoryOwnerId": null,
@@ -13255,7 +13255,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "ItemId:thread_tavi_lenses",
@@ -13441,7 +13441,7 @@
     {
       "EntityId": "CharacterId:brick_sol",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_market",
+      "OwnerEntityId": "MapChunkId:thread_market:chunk:0:0",
       "MapId": "MapId:thread_market",
       "CellFootprint": "7:9:3:3",
       "InventoryOwnerId": null,
@@ -13449,7 +13449,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_market"
+      "MapChunkId": "MapChunkId:thread_market:chunk:0:0"
     },
     {
       "EntityId": "ItemId:thread_sera_magenta_wraps",
@@ -13744,7 +13744,7 @@
     {
       "EntityId": "CharacterId:jun_thread",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "8:7:3:3",
       "InventoryOwnerId": null,
@@ -13752,7 +13752,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "gamestate:root@origin.game-state",
@@ -13794,7 +13794,7 @@
     {
       "EntityId": "PropId:thread_backlot_to_market",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:thread_backlot",
+      "OwnerEntityId": "MapChunkId:thread_backlot:chunk:0:0",
       "MapId": "MapId:thread_backlot",
       "CellFootprint": "3:8:2:2",
       "InventoryOwnerId": null,
@@ -13802,7 +13802,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:thread_backlot"
+      "MapChunkId": "MapChunkId:thread_backlot:chunk:0:0"
     },
     {
       "EntityId": "MapId:thread_market",

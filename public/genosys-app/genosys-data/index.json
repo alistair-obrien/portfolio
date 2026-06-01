@@ -165,46 +165,6 @@
       "IsDirectory": false
     },
     {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.archive_preacher.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.blackhood_scout.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.chrome_enforcer.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.convoy_tactician.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.debt_collector.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.gang_matriarch.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.road_captain.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.signal_mechanic.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.wire_courier.png",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/assets/character-portraits/signal_hounds.young_prospect.png",
-      "IsDirectory": false
-    },
-    {
       "Path": "packs/core/assets/character-portraits/silas_wren.png",
       "IsDirectory": false
     },
@@ -1429,6 +1389,26 @@
       "IsDirectory": true
     },
     {
+      "Path": "packs/core/scenarios/tutorial_command_demo",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial_command_demo/briefing.yarn",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial_command_demo/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial_command_demo/security.yarn",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial_command_demo/state.json",
+      "IsDirectory": false
+    },
+    {
       "Path": "packs/core/scenarios/tutorial/manifest.json",
       "IsDirectory": false
     },
@@ -1441,19 +1421,147 @@
       "IsDirectory": false
     },
     {
-      "Path": "packs/core/Templates",
+      "Path": "packs/core/templates",
       "IsDirectory": true
     },
     {
-      "Path": "packs/core/Templates/538d19fd-131e-4938-a495-0cd3ee643d97.json",
+      "Path": "packs/core/templates/538d19fd-131e-4938-a495-0cd3ee643d97.json",
       "IsDirectory": false
     },
     {
-      "Path": "packs/core/Templates/item_1778065603861.json",
+      "Path": "packs/core/templates/blackbox_audit_pistol.json",
       "IsDirectory": false
     },
     {
-      "Path": "packs/core/Templates/wall.json",
+      "Path": "packs/core/templates/blackbox_stabilizer.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/templates/blackbox_training_rounds.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/templates/item_1778065603861.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/templates/one_way_mirror.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/templates/wall.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/signal_hounds/assets",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/archive_preacher.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/blackhood_scout.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/chrome_enforcer.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/convoy_tactician.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/debt_collector.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/gang_matriarch.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/road_captain.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/signal_mechanic.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/wire_courier.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/assets/character-portraits/young_prospect.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/pack.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/render-catalog.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/blackhood_collection",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/blackhood_collection/debt_collector.yarn",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/blackhood_collection/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/blackhood_collection/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/dead_air_convoy",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/dead_air_convoy/convoy_tactician.yarn",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/dead_air_convoy/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/dead_air_convoy/state.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/roadside_checkpoint",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/roadside_checkpoint/manifest.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/roadside_checkpoint/road_captain.yarn",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/signal_hounds/scenarios/roadside_checkpoint/state.json",
       "IsDirectory": false
     }
   ]

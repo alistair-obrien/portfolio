@@ -6,12 +6,12 @@
       "Data": {
         "Id": "MapId:chrome_fuel_shrine",
         "Name": "Chrome Wake - Fuel Shrine",
-        "Width": 30,
-        "Height": 22,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:chrome_fuel_shrine",
+            "ChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -25,7 +25,7 @@
             "ChunkY": 0,
             "OriginX": 16,
             "OriginY": 0,
-            "Width": 14,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -35,7 +35,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 6
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:chrome_fuel_shrine:chunk:1:1",
@@ -43,8 +43,8 @@
             "ChunkY": 1,
             "OriginX": 16,
             "OriginY": 16,
-            "Width": 14,
-            "Height": 6
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -59,12 +59,12 @@
       "Data": {
         "Id": "MapId:chrome_chop_yard",
         "Name": "Chrome Wake - Chop Yard",
-        "Width": 28,
-        "Height": 20,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:chrome_chop_yard",
+            "ChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -78,7 +78,7 @@
             "ChunkY": 0,
             "OriginX": 16,
             "OriginY": 0,
-            "Width": 12,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -88,7 +88,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 4
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:chrome_chop_yard:chunk:1:1",
@@ -96,8 +96,8 @@
             "ChunkY": 1,
             "OriginX": 16,
             "OriginY": 16,
-            "Width": 12,
-            "Height": 4
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -112,12 +112,12 @@
       "Data": {
         "Id": "MapId:chrome_underpass",
         "Name": "Chrome Wake - Underpass Approach",
-        "Width": 32,
-        "Height": 18,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:chrome_underpass",
+            "ChunkId": "MapChunkId:chrome_underpass:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -141,7 +141,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 2
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:chrome_underpass:chunk:1:1",
@@ -150,7 +150,7 @@
             "OriginX": 16,
             "OriginY": 16,
             "Width": 16,
-            "Height": 2
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -12645,7 +12645,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:chrome_chop_yard",
+          "TargetMapId": "MapChunkId:chrome_chop_yard:chunk:0:0",
           "TargetCellPosition": "6:8",
           "ActionLabel": "Ride to Chop Yard"
         },
@@ -12680,7 +12680,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:chrome_fuel_shrine",
+          "TargetMapId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
           "TargetCellPosition": "26:10",
           "ActionLabel": "Ride to Fuel Shrine"
         },
@@ -12715,7 +12715,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:chrome_underpass",
+          "TargetMapId": "MapChunkId:chrome_underpass:chunk:0:0",
           "TargetCellPosition": "14:12",
           "ActionLabel": "Ride to Underpass"
         },
@@ -12750,7 +12750,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:chrome_fuel_shrine",
+          "TargetMapId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
           "TargetCellPosition": "15:18",
           "ActionLabel": "Ride to Fuel Shrine"
         },
@@ -12761,7 +12761,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:chrome_fuel_shrine",
+        "Id": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
         "Name": "Chrome Wake - Fuel Shrine (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -12921,7 +12921,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:chrome_chop_yard",
+        "Id": "MapChunkId:chrome_chop_yard:chunk:0:0",
         "Name": "Chrome Wake - Chop Yard (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -13081,7 +13081,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:chrome_underpass",
+        "Id": "MapChunkId:chrome_underpass:chunk:0:0",
         "Name": "Chrome Wake - Underpass Approach (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -13239,7 +13239,7 @@
       "Data": {
         "Id": "MapChunkId:chrome_fuel_shrine:chunk:1:0",
         "Name": "Chrome Wake - Fuel Shrine (1,0)",
-        "Size": "14:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -13387,7 +13387,7 @@
       "Data": {
         "Id": "MapChunkId:chrome_fuel_shrine:chunk:0:1",
         "Name": "Chrome Wake - Fuel Shrine (0,1)",
-        "Size": "16:6",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -13491,7 +13491,7 @@
       "Data": {
         "Id": "MapChunkId:chrome_fuel_shrine:chunk:1:1",
         "Name": "Chrome Wake - Fuel Shrine (1,1)",
-        "Size": "14:6",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -13583,7 +13583,7 @@
       "Data": {
         "Id": "MapChunkId:chrome_chop_yard:chunk:1:0",
         "Name": "Chrome Wake - Chop Yard (1,0)",
-        "Size": "12:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -13723,7 +13723,7 @@
       "Data": {
         "Id": "MapChunkId:chrome_chop_yard:chunk:0:1",
         "Name": "Chrome Wake - Chop Yard (0,1)",
-        "Size": "16:4",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -13815,7 +13815,7 @@
       "Data": {
         "Id": "MapChunkId:chrome_chop_yard:chunk:1:1",
         "Name": "Chrome Wake - Chop Yard (1,1)",
-        "Size": "12:4",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14035,7 +14035,7 @@
       "Data": {
         "Id": "MapChunkId:chrome_underpass:chunk:0:1",
         "Name": "Chrome Wake - Underpass Approach (0,1)",
-        "Size": "16:2",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14119,7 +14119,7 @@
       "Data": {
         "Id": "MapChunkId:chrome_underpass:chunk:1:1",
         "Name": "Chrome Wake - Underpass Approach (1,1)",
-        "Size": "16:2",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14210,7 +14210,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -14218,7 +14218,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_1",
@@ -14236,7 +14236,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -14244,7 +14244,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_3",
@@ -14262,7 +14262,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -14270,7 +14270,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_5",
@@ -14288,7 +14288,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -14296,7 +14296,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_7",
@@ -14314,7 +14314,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -14322,7 +14322,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_9",
@@ -14340,7 +14340,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -14348,7 +14348,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_11",
@@ -14366,7 +14366,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -14374,7 +14374,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_13",
@@ -14392,7 +14392,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -14400,7 +14400,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_15",
@@ -14418,7 +14418,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -14426,7 +14426,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_17",
@@ -14444,7 +14444,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -14452,7 +14452,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_19",
@@ -14470,7 +14470,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -14478,7 +14478,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_21",
@@ -14496,7 +14496,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -14504,7 +14504,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_23",
@@ -14522,7 +14522,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -14530,7 +14530,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_25",
@@ -14548,7 +14548,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -14556,7 +14556,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_27",
@@ -14574,7 +14574,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -14582,7 +14582,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_29",
@@ -14600,7 +14600,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -14608,7 +14608,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_31",
@@ -14990,7 +14990,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_60",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -14998,7 +14998,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_61",
@@ -15016,7 +15016,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_62",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -15024,7 +15024,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_63",
@@ -15042,7 +15042,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -15050,7 +15050,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_65",
@@ -15068,7 +15068,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -15076,7 +15076,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_67",
@@ -15094,7 +15094,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -15102,7 +15102,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_69",
@@ -15120,7 +15120,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -15128,7 +15128,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_71",
@@ -15146,7 +15146,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -15154,7 +15154,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_73",
@@ -15172,7 +15172,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -15180,7 +15180,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_75",
@@ -15198,7 +15198,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -15206,7 +15206,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_77",
@@ -15224,7 +15224,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -15232,7 +15232,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_79",
@@ -15250,7 +15250,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -15258,7 +15258,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_81",
@@ -15276,7 +15276,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_82",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -15284,7 +15284,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_83",
@@ -15302,7 +15302,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_84",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -15310,7 +15310,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_85",
@@ -15328,7 +15328,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_86",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -15336,7 +15336,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_87",
@@ -15354,7 +15354,7 @@
     {
       "EntityId": "PropId:chrome_shrine_wall_88",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -15362,7 +15362,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_shrine_wall_89",
@@ -15510,7 +15510,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -15518,7 +15518,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_1",
@@ -15536,7 +15536,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -15544,7 +15544,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_3",
@@ -15562,7 +15562,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -15570,7 +15570,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_5",
@@ -15588,7 +15588,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -15596,7 +15596,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_7",
@@ -15614,7 +15614,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -15622,7 +15622,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_9",
@@ -15640,7 +15640,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -15648,7 +15648,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_11",
@@ -15666,7 +15666,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -15674,7 +15674,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_13",
@@ -15692,7 +15692,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -15700,7 +15700,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_15",
@@ -15718,7 +15718,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -15726,7 +15726,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_17",
@@ -15744,7 +15744,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -15752,7 +15752,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_19",
@@ -15770,7 +15770,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -15778,7 +15778,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_21",
@@ -15796,7 +15796,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -15804,7 +15804,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_23",
@@ -15822,7 +15822,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -15830,7 +15830,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_25",
@@ -15848,7 +15848,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -15856,7 +15856,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_27",
@@ -15874,7 +15874,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -15882,7 +15882,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_29",
@@ -15900,7 +15900,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -15908,7 +15908,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_31",
@@ -16238,7 +16238,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_56",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -16246,7 +16246,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_57",
@@ -16264,7 +16264,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_58",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -16272,7 +16272,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_59",
@@ -16290,7 +16290,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_60",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -16298,7 +16298,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_61",
@@ -16316,7 +16316,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_62",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -16324,7 +16324,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_63",
@@ -16342,7 +16342,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -16350,7 +16350,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_65",
@@ -16368,7 +16368,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -16376,7 +16376,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_67",
@@ -16394,7 +16394,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -16402,7 +16402,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_69",
@@ -16420,7 +16420,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -16428,7 +16428,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_71",
@@ -16446,7 +16446,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -16454,7 +16454,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_73",
@@ -16472,7 +16472,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -16480,7 +16480,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_75",
@@ -16498,7 +16498,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -16506,7 +16506,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_77",
@@ -16524,7 +16524,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -16532,7 +16532,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_79",
@@ -16550,7 +16550,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -16558,7 +16558,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_81",
@@ -16576,7 +16576,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_82",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -16584,7 +16584,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_83",
@@ -16602,7 +16602,7 @@
     {
       "EntityId": "PropId:chrome_yard_wall_84",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -16610,7 +16610,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_yard_wall_85",
@@ -16706,7 +16706,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -16714,7 +16714,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_1",
@@ -16732,7 +16732,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -16740,7 +16740,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_3",
@@ -16758,7 +16758,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -16766,7 +16766,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_5",
@@ -16784,7 +16784,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -16792,7 +16792,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_7",
@@ -16810,7 +16810,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -16818,7 +16818,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_9",
@@ -16836,7 +16836,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -16844,7 +16844,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_11",
@@ -16862,7 +16862,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -16870,7 +16870,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_13",
@@ -16888,7 +16888,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -16896,7 +16896,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_15",
@@ -16914,7 +16914,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -16922,7 +16922,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_17",
@@ -16940,7 +16940,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -16948,7 +16948,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_19",
@@ -16966,7 +16966,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -16974,7 +16974,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_21",
@@ -16992,7 +16992,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -17000,7 +17000,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_23",
@@ -17018,7 +17018,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -17026,7 +17026,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_25",
@@ -17044,7 +17044,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -17052,7 +17052,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_27",
@@ -17070,7 +17070,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -17078,7 +17078,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_29",
@@ -17096,7 +17096,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -17104,7 +17104,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_31",
@@ -17538,7 +17538,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -17546,7 +17546,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_65",
@@ -17564,7 +17564,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -17572,7 +17572,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_67",
@@ -17590,7 +17590,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -17598,7 +17598,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_69",
@@ -17616,7 +17616,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -17624,7 +17624,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_71",
@@ -17642,7 +17642,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -17650,7 +17650,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_73",
@@ -17668,7 +17668,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -17676,7 +17676,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_75",
@@ -17694,7 +17694,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -17702,7 +17702,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_77",
@@ -17720,7 +17720,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -17728,7 +17728,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_79",
@@ -17746,7 +17746,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -17754,7 +17754,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_81",
@@ -17772,7 +17772,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_82",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -17780,7 +17780,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_83",
@@ -17798,7 +17798,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_84",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -17806,7 +17806,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_85",
@@ -17824,7 +17824,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_86",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -17832,7 +17832,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_87",
@@ -17850,7 +17850,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_88",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -17858,7 +17858,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_89",
@@ -17876,7 +17876,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_90",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -17884,7 +17884,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_91",
@@ -17902,7 +17902,7 @@
     {
       "EntityId": "PropId:chrome_pass_wall_92",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -17910,7 +17910,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pass_wall_93",
@@ -17954,7 +17954,7 @@
     {
       "EntityId": "PropId:chrome_pump_1",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "6:6:2:2",
       "InventoryOwnerId": null,
@@ -17962,12 +17962,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_pump_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "10:6:2:2",
       "InventoryOwnerId": null,
@@ -17975,7 +17975,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_road_shrine",
@@ -18006,7 +18006,7 @@
     {
       "EntityId": "PropId:chrome_cash_table",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "12:14:3:1",
       "InventoryOwnerId": null,
@@ -18014,12 +18014,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_lift",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "7:6:4:2",
       "InventoryOwnerId": null,
@@ -18027,12 +18027,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_parts_rack",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "14:5:2:5",
       "InventoryOwnerId": null,
@@ -18040,7 +18040,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_oil_pit",
@@ -18071,7 +18071,7 @@
     {
       "EntityId": "PropId:chrome_roadblock",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "10:8:5:1",
       "InventoryOwnerId": null,
@@ -18079,7 +18079,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_signal_tower",
@@ -18097,7 +18097,7 @@
     {
       "EntityId": "PropId:chrome_bike_line",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "15:12:8:2",
       "InventoryOwnerId": null,
@@ -18105,7 +18105,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "ItemId:chrome_vela_saddlebag",
@@ -18195,7 +18195,7 @@
     {
       "EntityId": "ItemId:chrome_loose_wrench",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "8:8:1:2",
       "InventoryOwnerId": null,
@@ -18203,7 +18203,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "ItemId:chrome_vela_revolver",
@@ -18316,7 +18316,7 @@
     {
       "EntityId": "CharacterId:vela_rook",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "13:13:3:3",
       "InventoryOwnerId": null,
@@ -18324,7 +18324,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "ItemId:chrome_grit_jaw_implant_style",
@@ -18534,7 +18534,7 @@
     {
       "EntityId": "CharacterId:mercy_gear",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "8:8:3:3",
       "InventoryOwnerId": null,
@@ -18542,7 +18542,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "ItemId:chrome_latch_visor",
@@ -18728,7 +18728,7 @@
     {
       "EntityId": "CharacterId:pike_soren",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "15:10:3:3",
       "InventoryOwnerId": null,
@@ -18736,7 +18736,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "ItemId:chrome_oona_goggles",
@@ -18837,7 +18837,7 @@
     {
       "EntityId": "CharacterId:oona_brake",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine",
+      "OwnerEntityId": "MapChunkId:chrome_fuel_shrine:chunk:0:0",
       "MapId": "MapId:chrome_fuel_shrine",
       "CellFootprint": "10:8:3:3",
       "InventoryOwnerId": null,
@@ -18845,7 +18845,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_fuel_shrine"
+      "MapChunkId": "MapChunkId:chrome_fuel_shrine:chunk:0:0"
     },
     {
       "EntityId": "gamestate:root@origin.game-state",
@@ -18887,7 +18887,7 @@
     {
       "EntityId": "PropId:chrome_yard_to_fuel",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_chop_yard",
+      "OwnerEntityId": "MapChunkId:chrome_chop_yard:chunk:0:0",
       "MapId": "MapId:chrome_chop_yard",
       "CellFootprint": "3:8:2:2",
       "InventoryOwnerId": null,
@@ -18895,7 +18895,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_chop_yard"
+      "MapChunkId": "MapChunkId:chrome_chop_yard:chunk:0:0"
     },
     {
       "EntityId": "PropId:chrome_fuel_to_underpass",
@@ -18913,7 +18913,7 @@
     {
       "EntityId": "PropId:chrome_underpass_to_fuel",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:chrome_underpass",
+      "OwnerEntityId": "MapChunkId:chrome_underpass:chunk:0:0",
       "MapId": "MapId:chrome_underpass",
       "CellFootprint": "14:15:2:2",
       "InventoryOwnerId": null,
@@ -18921,7 +18921,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:chrome_underpass"
+      "MapChunkId": "MapChunkId:chrome_underpass:chunk:0:0"
     },
     {
       "EntityId": "MapId:chrome_fuel_shrine",

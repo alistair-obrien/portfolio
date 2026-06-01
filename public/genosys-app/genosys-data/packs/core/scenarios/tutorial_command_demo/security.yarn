@@ -1,0 +1,75 @@
+title: Start
+---
+<<if $bb_security_clearance>>
+$c1: Clearance is already signed. Vale has the report slate now.
+$c1: Go back to her before she decides I kept you too long.
+<<else>>
+$c1: Stop there. I am Marshal Ivo. Dr. Vale got her answers; now I need the version that survives a door audit.
+<<Effects.PlayMusicTrack TrackId=blackbox.security_slate Volume=0.35 FadeSeconds=0.5 Label=security-slate>>
+<<if $bb_intake_complete>>
+$c1: Intake flag is green. That means you can ask for corridor access instead of a sedative.
+<<else>>
+$c1: Intake flag is missing. Either Vale forgot to file it, or you walked out of sequence.
+<<endif>>
+-> $c2: Full command smoke test: OS swap, spawn, load, shoot, shake, use item.
+    $c1: Eyes on the slate. I am changing your feed before I read the route back.
+    <<Cutscenes.FrameEntity EntityId=CharacterId:marshal_ivo Padding=2 Zoom=1.30 DurationSeconds=0.80 Label=frame-ivo>>
+    <<Cutscenes.Emote EntityId=CharacterId:marshal_ivo Kind=Alert DurationSeconds=0.80 Label=ivo-alert>>
+    <<OperatingSystems.SetOperatingSystem CharacterId=CharacterId:subject_7734 OperatingSystemId=ripos-cracked>>
+    $c1: There. I borrowed your shell for the audit slate. It will look wrong for a minute.
+    <<Cutscenes.Delay Seconds=0.60 Label=audit-shell-settle>>
+    $c1: Let it stay wrong. The cracked feed shows me which parts of your report were edited.
+    <<Templates.SpawnModelFromTemplate TemplateDbId=ItemTemplateId:core/blackbox_training_rounds InstanceId=ItemId:blackbox_training_rounds_runtime>>
+    $c1: Training rounds are on the bench. They are loud, but they are not supposed to kill anyone today.
+    <<Templates.SpawnModelFromTemplate TemplateDbId=ItemTemplateId:core/blackbox_audit_pistol InstanceId=ItemId:blackbox_audit_pistol_runtime>>
+    $c1: Audit pistol is live. Watch the line of fire, not my hands.
+    <<Items.LoadGun ActorId=CharacterId:marshal_ivo GunItemId=ItemId:blackbox_audit_pistol_runtime AmmoItemId=ItemId:blackbox_training_rounds_runtime>>
+    $c1: Loaded. One round is enough to make the door camera believe the threat model.
+    <<Effects.PlayOneShotSound SoundId=blackbox.audit_shot Volume=0.85 Label=clearance-shot-prime>>
+    $c1: Slate tone. That means the recorder is listening.
+    <<Cutscenes.FrameEntity EntityId=CharacterId:marshal_ivo Padding=2 Zoom=1.35 DurationSeconds=0.75 Label=frame-shooter>>
+    <<Cutscenes.Delay Seconds=0.35 Label=shot-breath>>
+    <<Combat.AttackInDirection AttackerId=CharacterId:marshal_ivo WeaponItemId=ItemId:blackbox_audit_pistol_runtime directionX=1 directionY=0>>
+    <<Cutscenes.FrameEntity EntityId=CharacterId:subject_7734 Padding=2 Zoom=1.25 DurationSeconds=0.55 Label=frame-subject>>
+    <<Effects.ScreenShake DurationSeconds=0.95 Intensity=1.15 Label=clearance-shot-shake>>
+    $c1: Training round across the glass. The door camera has its proof.
+    <<Cutscenes.ClearCameraTarget DurationSeconds=0.45 Label=shot-camera-clear>>
+    $c1: The room felt it too. Stay where you are.
+    <<if $bb_route == "east_stair">>
+    $c1: East stairwell. Red utility paint, bad lighting, three turns to the service cage. That is the corridor I expected.
+    <<elseif $bb_route == "service_lift">>
+    $c1: Service lift. That is worse for my report and better for your odds. Someone wanted you mobile.
+    <<else>>
+    $c1: No route. Fine. I can clear a blank if the blank stays honest.
+    <<endif>>
+    <<set $bb_security_clearance = true>>
+    <<ScenarioEvents.SetVariable Key=blackbox.security_clearance Value=true>>
+    <<ScenarioEvents.SetVariable Key=blackbox.phase Value=debrief_ready>>
+    <<ScenarioEvents.ClearVariable Key=blackbox.temp_note>>
+    $c1: Clearance flag is green. Now I patch the part of you that keeps arguing with the room.
+    <<Templates.SpawnModelFromTemplate TemplateDbId=ItemTemplateId:core/blackbox_stabilizer InstanceId=ItemId:blackbox_stabilizer_runtime>>
+    $c1: Stabilizer is on the bench.
+    <<Items.MoveEntity ActorId=CharacterId:subject_7734 EntityId=ItemId:blackbox_stabilizer_runtime TargetLocation=Attached:CharacterId:subject_7734|StyleSlotId:character.style.accessory_1 AllowSwap=false>>
+    $c1: Patch is seated. Do not pull at it.
+    <<Items.UseItemOnLocation ActorId=CharacterId:subject_7734 ItemId=ItemId:blackbox_stabilizer_runtime TargetLocation=Root:CharacterId:subject_7734>>
+    $c1: That should steady the tremor before Vale sees you again.
+    <<Maps.PlaceTemplateOnMap TemplateId=ItemTemplateId:core/538d19fd-131e-4938-a495-0cd3ee643d97 MapId=MapId:lab X=18 Y=10>>
+    $c1: I am leaving the redline marker on the floor. Vale likes physical evidence.
+    <<Cutscenes.FollowCamera EntityId=CharacterId:marshal_ivo Zoom=1.15 Label=ivo-exit-follow>>
+    <<Maps.MoveCharacterDirectlyToCell ActorId=CharacterId:subject_7734 MapId=MapId:lab CharacterId=CharacterId:marshal_ivo ToX=16 ToY=12 MoveType=Walk>>
+    <<Cutscenes.ClearCameraTarget DurationSeconds=0.45 Label=ivo-exit-clear>>
+    $c1: I am stepping off the door line.
+    <<Effects.StopMusicTrack FadeSeconds=1.0 Label=clearance-complete>>
+    $c1: Slate is quiet. Your normal shell comes back next.
+    <<Cutscenes.Delay Seconds=0.65 Label=normal-shell-return-delay>>
+    <<OperatingSystems.SetOperatingSystem CharacterId=CharacterId:subject_7734 OperatingSystemId=vanilla-shell>>
+    $c1: There. Vanilla shell, stable feed, no audit overlay.
+    $c1: Clearance granted. Go back to Vale and make her put a human signature on this.
+-> $c2: Shake and sound test only: ask what happens if the story changes.
+    $c1: Then I assume the room is editing you in real time, and nobody leaves until we find the hand on the switch.
+    <<ScenarioEvents.SetVariable Key=blackbox.temp_note Value=subject_asked_about_revision>>
+    <<Effects.ScreenShake DurationSeconds=0.50 Intensity=0.8 Label=revision-warning>>
+    <<Effects.PlayOneShotSound SoundId=blackbox.revision_warning Volume=0.7 Label=revision-warning>>
+    $c1: Ask for clearance when you are ready to stand behind one version.
+<<endif>>
+===

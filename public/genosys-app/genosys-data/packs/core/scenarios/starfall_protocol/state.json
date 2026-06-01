@@ -6,12 +6,12 @@
       "Data": {
         "Id": "MapId:starfall_atrium",
         "Name": "Starfall Protocol - Fan Atrium",
-        "Width": 34,
-        "Height": 24,
+        "Width": 3,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:starfall_atrium",
+            "ChunkId": "MapChunkId:starfall_atrium:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -34,7 +34,7 @@
             "ChunkY": 0,
             "OriginX": 32,
             "OriginY": 0,
-            "Width": 2,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -44,7 +44,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 8
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:starfall_atrium:chunk:1:1",
@@ -53,7 +53,7 @@
             "OriginX": 16,
             "OriginY": 16,
             "Width": 16,
-            "Height": 8
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:starfall_atrium:chunk:2:1",
@@ -61,8 +61,8 @@
             "ChunkY": 1,
             "OriginX": 32,
             "OriginY": 16,
-            "Width": 2,
-            "Height": 8
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -77,12 +77,12 @@
       "Data": {
         "Id": "MapId:starfall_backstage",
         "Name": "Starfall Protocol - Backstage Suite",
-        "Width": 30,
-        "Height": 22,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:starfall_backstage",
+            "ChunkId": "MapChunkId:starfall_backstage:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -96,7 +96,7 @@
             "ChunkY": 0,
             "OriginX": 16,
             "OriginY": 0,
-            "Width": 14,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -106,7 +106,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 6
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:starfall_backstage:chunk:1:1",
@@ -114,8 +114,8 @@
             "ChunkY": 1,
             "OriginX": 16,
             "OriginY": 16,
-            "Width": 14,
-            "Height": 6
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -130,12 +130,12 @@
       "Data": {
         "Id": "MapId:starfall_stream_vault",
         "Name": "Starfall Protocol - Stream Vault",
-        "Width": 28,
-        "Height": 20,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:starfall_stream_vault",
+            "ChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -149,7 +149,7 @@
             "ChunkY": 0,
             "OriginX": 16,
             "OriginY": 0,
-            "Width": 12,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -159,7 +159,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 4
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:starfall_stream_vault:chunk:1:1",
@@ -167,8 +167,8 @@
             "ChunkY": 1,
             "OriginX": 16,
             "OriginY": 16,
-            "Width": 12,
-            "Height": 4
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -13323,7 +13323,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:starfall_atrium",
+          "TargetMapId": "MapChunkId:starfall_atrium:chunk:0:0",
           "TargetCellPosition": "16:18",
           "ActionLabel": "Enter Fan Atrium"
         },
@@ -13358,7 +13358,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:starfall_backstage",
+          "TargetMapId": "MapChunkId:starfall_backstage:chunk:0:0",
           "TargetCellPosition": "4:10",
           "ActionLabel": "Enter Backstage Suite"
         },
@@ -13393,7 +13393,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:starfall_stream_vault",
+          "TargetMapId": "MapChunkId:starfall_stream_vault:chunk:0:0",
           "TargetCellPosition": "13:3",
           "ActionLabel": "Enter Stream Vault"
         },
@@ -13428,7 +13428,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:starfall_backstage",
+          "TargetMapId": "MapChunkId:starfall_backstage:chunk:0:0",
           "TargetCellPosition": "24:10",
           "ActionLabel": "Return Backstage"
         },
@@ -13439,7 +13439,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:starfall_atrium",
+        "Id": "MapChunkId:starfall_atrium:chunk:0:0",
         "Name": "Starfall Protocol - Fan Atrium (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -13591,7 +13591,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:starfall_backstage",
+        "Id": "MapChunkId:starfall_backstage:chunk:0:0",
         "Name": "Starfall Protocol - Backstage Suite (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -13751,7 +13751,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:starfall_stream_vault",
+        "Id": "MapChunkId:starfall_stream_vault:chunk:0:0",
         "Name": "Starfall Protocol - Stream Vault (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -13997,7 +13997,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_atrium:chunk:2:0",
         "Name": "Starfall Protocol - Fan Atrium (2,0)",
-        "Size": "2:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14081,7 +14081,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_atrium:chunk:0:1",
         "Name": "Starfall Protocol - Fan Atrium (0,1)",
-        "Size": "16:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14197,7 +14197,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_atrium:chunk:1:1",
         "Name": "Starfall Protocol - Fan Atrium (1,1)",
-        "Size": "16:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14277,7 +14277,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_atrium:chunk:2:1",
         "Name": "Starfall Protocol - Fan Atrium (2,1)",
-        "Size": "2:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14329,7 +14329,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_backstage:chunk:1:0",
         "Name": "Starfall Protocol - Backstage Suite (1,0)",
-        "Size": "14:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14469,7 +14469,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_backstage:chunk:0:1",
         "Name": "Starfall Protocol - Backstage Suite (0,1)",
-        "Size": "16:6",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14573,7 +14573,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_backstage:chunk:1:1",
         "Name": "Starfall Protocol - Backstage Suite (1,1)",
-        "Size": "14:6",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14665,7 +14665,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_stream_vault:chunk:1:0",
         "Name": "Starfall Protocol - Stream Vault (1,0)",
-        "Size": "12:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14801,7 +14801,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_stream_vault:chunk:0:1",
         "Name": "Starfall Protocol - Stream Vault (0,1)",
-        "Size": "16:4",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14893,7 +14893,7 @@
       "Data": {
         "Id": "MapChunkId:starfall_stream_vault:chunk:1:1",
         "Name": "Starfall Protocol - Stream Vault (1,1)",
-        "Size": "12:4",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14974,7 +14974,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -14982,7 +14982,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_1",
@@ -15000,7 +15000,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -15008,7 +15008,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_3",
@@ -15026,7 +15026,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -15034,7 +15034,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_5",
@@ -15052,7 +15052,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -15060,7 +15060,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_7",
@@ -15078,7 +15078,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -15086,7 +15086,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_9",
@@ -15104,7 +15104,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -15112,7 +15112,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_11",
@@ -15130,7 +15130,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -15138,7 +15138,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_13",
@@ -15156,7 +15156,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -15164,7 +15164,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_15",
@@ -15182,7 +15182,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -15190,7 +15190,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_17",
@@ -15208,7 +15208,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -15216,7 +15216,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_19",
@@ -15234,7 +15234,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -15242,7 +15242,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_21",
@@ -15260,7 +15260,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -15268,7 +15268,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_23",
@@ -15286,7 +15286,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -15294,7 +15294,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_25",
@@ -15312,7 +15312,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -15320,7 +15320,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_27",
@@ -15338,7 +15338,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -15346,7 +15346,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_29",
@@ -15364,7 +15364,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -15372,7 +15372,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_31",
@@ -15832,7 +15832,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -15840,7 +15840,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_67",
@@ -15858,7 +15858,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -15866,7 +15866,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_69",
@@ -15884,7 +15884,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -15892,7 +15892,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_71",
@@ -15910,7 +15910,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -15918,7 +15918,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_73",
@@ -15936,7 +15936,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -15944,7 +15944,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_75",
@@ -15962,7 +15962,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -15970,7 +15970,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_77",
@@ -15988,7 +15988,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -15996,7 +15996,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_79",
@@ -16014,7 +16014,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -16022,7 +16022,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_81",
@@ -16040,7 +16040,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_82",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -16048,7 +16048,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_83",
@@ -16066,7 +16066,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_84",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -16074,7 +16074,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_85",
@@ -16092,7 +16092,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_86",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -16100,7 +16100,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_87",
@@ -16118,7 +16118,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_88",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -16126,7 +16126,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_89",
@@ -16144,7 +16144,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_90",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -16152,7 +16152,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_91",
@@ -16170,7 +16170,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_92",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -16178,7 +16178,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_93",
@@ -16196,7 +16196,7 @@
     {
       "EntityId": "PropId:starfall_atrium_wall_94",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -16204,7 +16204,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_wall_95",
@@ -16404,7 +16404,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -16412,7 +16412,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_1",
@@ -16430,7 +16430,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -16438,7 +16438,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_3",
@@ -16456,7 +16456,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -16464,7 +16464,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_5",
@@ -16482,7 +16482,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -16490,7 +16490,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_7",
@@ -16508,7 +16508,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -16516,7 +16516,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_9",
@@ -16534,7 +16534,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -16542,7 +16542,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_11",
@@ -16560,7 +16560,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -16568,7 +16568,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_13",
@@ -16586,7 +16586,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -16594,7 +16594,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_15",
@@ -16612,7 +16612,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -16620,7 +16620,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_17",
@@ -16638,7 +16638,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -16646,7 +16646,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_19",
@@ -16664,7 +16664,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -16672,7 +16672,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_21",
@@ -16690,7 +16690,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -16698,7 +16698,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_23",
@@ -16716,7 +16716,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -16724,7 +16724,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_25",
@@ -16742,7 +16742,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -16750,7 +16750,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_27",
@@ -16768,7 +16768,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -16776,7 +16776,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_29",
@@ -16794,7 +16794,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -16802,7 +16802,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_31",
@@ -17184,7 +17184,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_60",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -17192,7 +17192,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_61",
@@ -17210,7 +17210,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_62",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -17218,7 +17218,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_63",
@@ -17236,7 +17236,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -17244,7 +17244,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_65",
@@ -17262,7 +17262,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -17270,7 +17270,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_67",
@@ -17288,7 +17288,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -17296,7 +17296,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_69",
@@ -17314,7 +17314,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -17322,7 +17322,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_71",
@@ -17340,7 +17340,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -17348,7 +17348,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_73",
@@ -17366,7 +17366,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -17374,7 +17374,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_75",
@@ -17392,7 +17392,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -17400,7 +17400,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_77",
@@ -17431,7 +17431,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_79",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -17439,7 +17439,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_80",
@@ -17457,7 +17457,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_81",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -17465,7 +17465,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_82",
@@ -17483,7 +17483,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_83",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -17491,7 +17491,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_84",
@@ -17509,7 +17509,7 @@
     {
       "EntityId": "PropId:starfall_backstage_wall_85",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -17517,7 +17517,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_backstage_wall_86",
@@ -17665,7 +17665,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -17673,7 +17673,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_1",
@@ -17691,7 +17691,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -17699,7 +17699,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_3",
@@ -17717,7 +17717,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -17725,7 +17725,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_5",
@@ -17743,7 +17743,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -17751,7 +17751,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_7",
@@ -17769,7 +17769,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -17777,7 +17777,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_9",
@@ -17795,7 +17795,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -17803,7 +17803,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_11",
@@ -17821,7 +17821,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -17829,7 +17829,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_13",
@@ -17847,7 +17847,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -17855,7 +17855,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_15",
@@ -17873,7 +17873,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -17881,7 +17881,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_17",
@@ -17899,7 +17899,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -17907,7 +17907,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_19",
@@ -17925,7 +17925,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -17933,7 +17933,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_21",
@@ -17951,7 +17951,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -17959,7 +17959,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_23",
@@ -17977,7 +17977,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -17985,7 +17985,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_25",
@@ -18029,7 +18029,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -18037,7 +18037,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_29",
@@ -18367,7 +18367,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_54",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -18375,7 +18375,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_55",
@@ -18393,7 +18393,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_56",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -18401,7 +18401,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_57",
@@ -18419,7 +18419,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_58",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -18427,7 +18427,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_59",
@@ -18445,7 +18445,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_60",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -18453,7 +18453,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_61",
@@ -18471,7 +18471,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_62",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -18479,7 +18479,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_63",
@@ -18497,7 +18497,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -18505,7 +18505,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_65",
@@ -18523,7 +18523,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -18531,7 +18531,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_67",
@@ -18549,7 +18549,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -18557,7 +18557,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_69",
@@ -18575,7 +18575,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -18583,7 +18583,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_71",
@@ -18601,7 +18601,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -18609,7 +18609,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_73",
@@ -18627,7 +18627,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -18635,7 +18635,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_75",
@@ -18653,7 +18653,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -18661,7 +18661,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_77",
@@ -18679,7 +18679,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -18687,7 +18687,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_79",
@@ -18705,7 +18705,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -18713,7 +18713,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_81",
@@ -18731,7 +18731,7 @@
     {
       "EntityId": "PropId:starfall_vault_wall_82",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -18739,7 +18739,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vault_wall_83",
@@ -18835,7 +18835,7 @@
     {
       "EntityId": "PropId:starfall_main_stage",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "11:3:10:4",
       "InventoryOwnerId": null,
@@ -18843,12 +18843,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_vip_gate",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "5:10:3:5",
       "InventoryOwnerId": null,
@@ -18856,7 +18856,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_merch_wall",
@@ -18874,7 +18874,7 @@
     {
       "EntityId": "PropId:starfall_ringlight_grove",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_atrium",
+      "OwnerEntityId": "MapChunkId:starfall_atrium:chunk:0:0",
       "MapId": "MapId:starfall_atrium",
       "CellFootprint": "14:12:6:4",
       "InventoryOwnerId": null,
@@ -18882,7 +18882,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_atrium"
+      "MapChunkId": "MapChunkId:starfall_atrium:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_tip_kiosk",
@@ -18913,7 +18913,7 @@
     {
       "EntityId": "PropId:starfall_dressing_mirror",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "4:4:5:2",
       "InventoryOwnerId": null,
@@ -18921,12 +18921,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_panic_sofa",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "5:13:5:3",
       "InventoryOwnerId": null,
@@ -18934,12 +18934,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_sponsor_altar",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "15:5:4:4",
       "InventoryOwnerId": null,
@@ -18947,7 +18947,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_manager_desk",
@@ -18978,7 +18978,7 @@
     {
       "EntityId": "PropId:starfall_voiceprint_rig",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "5:4:6:5",
       "InventoryOwnerId": null,
@@ -18986,7 +18986,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_server_glass",
@@ -19004,7 +19004,7 @@
     {
       "EntityId": "PropId:starfall_camera_rail",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "4:13:18:2",
       "InventoryOwnerId": null,
@@ -19012,7 +19012,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_upload_lift",
@@ -19798,7 +19798,7 @@
     {
       "EntityId": "CharacterId:rina_vey",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "6:11:3:3",
       "InventoryOwnerId": null,
@@ -19806,12 +19806,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "CharacterId:luma_vale",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "10:7:3:3",
       "InventoryOwnerId": null,
@@ -19819,7 +19819,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "CharacterId:pax_meridian",
@@ -19863,7 +19863,7 @@
     {
       "EntityId": "CharacterId:mimi_vox",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "8:12:3:3",
       "InventoryOwnerId": null,
@@ -19871,7 +19871,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "ItemId:starfall_stage_perfume_loose",
@@ -19902,7 +19902,7 @@
     {
       "EntityId": "ItemId:starfall_vault_contract_wafer",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "12:6:1:1",
       "InventoryOwnerId": null,
@@ -19910,12 +19910,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "ItemId:starfall_cracked_ringlight",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "15:10:2:2",
       "InventoryOwnerId": null,
@@ -19923,7 +19923,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "gamestate:root@origin.game-state",
@@ -19952,7 +19952,7 @@
     {
       "EntityId": "PropId:starfall_backstage_to_atrium",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_backstage",
+      "OwnerEntityId": "MapChunkId:starfall_backstage:chunk:0:0",
       "MapId": "MapId:starfall_backstage",
       "CellFootprint": "2:10:2:2",
       "InventoryOwnerId": null,
@@ -19960,7 +19960,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_backstage"
+      "MapChunkId": "MapChunkId:starfall_backstage:chunk:0:0"
     },
     {
       "EntityId": "PropId:starfall_atrium_to_backstage",
@@ -19991,7 +19991,7 @@
     {
       "EntityId": "PropId:starfall_vault_to_backstage",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:starfall_stream_vault",
+      "OwnerEntityId": "MapChunkId:starfall_stream_vault:chunk:0:0",
       "MapId": "MapId:starfall_stream_vault",
       "CellFootprint": "13:2:2:2",
       "InventoryOwnerId": null,
@@ -19999,7 +19999,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:starfall_stream_vault"
+      "MapChunkId": "MapChunkId:starfall_stream_vault:chunk:0:0"
     },
     {
       "EntityId": "MapId:starfall_atrium",

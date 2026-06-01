@@ -1024,6 +1024,16 @@ export async function disposeSession(sessionId) {
   return parseEnvelope(exports.DisposeSession(sessionId));
 }
 
+export async function createMapTemplateEditorSession(ownerSessionId, templateId) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.CreateMapTemplateEditorSession(ownerSessionId, templateId));
+}
+
+export async function applyMapTemplateEditorSession(ownerSessionId, editorSessionId) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.ApplyMapTemplateEditorSession(ownerSessionId, editorSessionId));
+}
+
 export async function choosePersistentDirectory() {
   if (!hasFileSystemAccess()) {
     const exports = await ensureRuntime();

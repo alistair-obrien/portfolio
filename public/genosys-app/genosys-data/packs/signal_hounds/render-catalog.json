@@ -1,0 +1,54 @@
+{
+  "Entries": [
+    {
+      "RenderKey": "signal_hounds/archive_preacher",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "signal_hounds/blackhood_scout",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "signal_hounds/chrome_enforcer",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "signal_hounds/convoy_tactician",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "signal_hounds/debt_collector",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "signal_hounds/gang_matriarch",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "signal_hounds/road_captain",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "signal_hounds/signal_mechanic",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "signal_hounds/wire_courier",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    },
+    {
+      "RenderKey": "signal_hounds/young_prospect",
+      "AssetKind": "character-portraits",
+      "MimeType": "image/png"
+    }
+  ]
+}

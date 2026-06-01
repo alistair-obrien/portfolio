@@ -1,0 +1,31 @@
+{
+  "TemplateId": "PropTemplateId:core/one_way_mirror",
+  "EntityDefinitions": [
+    {
+      "TypeId": "Prop",
+      "Version": 1,
+      "Data": {
+        "Id": "PropId:15358b77-b5a6-4a62-b67b-c570a8f5ae63",
+        "Name": "One Way Mirror",
+        "Description": null,
+        "FlavorText": null,
+        "RenderKey": {
+          "Key": ""
+        },
+        "SizeOnMap": "1:1",
+        "ForwardVisionBlocking": "Full",
+        "BackwardVisionBlocking": "None",
+        "LeftVisionBlocking": "None",
+        "RightVisionBlocking": "None",
+        "Layers": [],
+        "Inventory": null,
+        "MapTransition": null,
+        "TypeId": "Prop"
+      },
+      "SourceTemplateId": null,
+      "SourceBlueprintId": null,
+      "TemplateBaseline": null
+    }
+  ],
+  "FolderPath": ""
+}

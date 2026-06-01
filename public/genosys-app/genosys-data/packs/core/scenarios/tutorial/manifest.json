@@ -1,14 +1,14 @@
 {
   "PackageId": "core/tutorial",
   "Name": "Tutorial",
-  "Subtitle": "Adasdas",
-  "Description": "dasdasdasdasd",
+  "Subtitle": "Heeeere's Johnny!",
+  "Description": "Lab Rat",
   "Category": "Custom",
   "EstimatedDuration": "",
   "RenderKey": {
     "Key": "core/scenario_custom"
   },
   "FolderPath": "Scenarios",
-  "CreatedAt": "2026-05-25T03:36:58.1930000Z",
-  "UpdatedAt": "2026-05-25T03:36:58.1930000Z"
+  "CreatedAt": "2026-05-30T10:48:44.7560000Z",
+  "UpdatedAt": "2026-05-30T10:48:44.7560000Z"
 }

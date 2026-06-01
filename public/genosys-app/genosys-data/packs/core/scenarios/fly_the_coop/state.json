@@ -1357,12 +1357,12 @@
       "Data": {
         "Id": "MapId:aparment_block",
         "Name": "Apartment Block",
-        "Width": 48,
-        "Height": 48,
+        "Width": 3,
+        "Height": 3,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:aparment_block",
+            "ChunkId": "MapChunkId:aparment_block:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -10676,9 +10676,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "11:19:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "11:20:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -10691,7 +10691,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -10732,9 +10732,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "14:16:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "13:16:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -10747,7 +10747,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -10880,9 +10880,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "11:20:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "11:19:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -10895,7 +10895,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -10936,9 +10936,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "13:16:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "14:16:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -10951,7 +10951,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11297,9 +11297,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "14:19:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "14:22:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 2,
@@ -11312,7 +11312,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11355,9 +11355,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "14:22:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "11:22:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 5,
@@ -11370,7 +11370,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11413,9 +11413,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "11:19:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "12:19:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -11428,7 +11428,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11471,9 +11471,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "14:16:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "15:16:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -11486,7 +11486,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11529,9 +11529,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "11:22:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "11:23:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -11544,7 +11544,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11587,9 +11587,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "12:19:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "13:19:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -11602,7 +11602,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11645,9 +11645,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "15:16:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "15:15:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -11660,7 +11660,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11737,9 +11737,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "11:23:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "17:23:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 5,
@@ -11752,7 +11752,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11795,9 +11795,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "13:19:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "14:19:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -11810,7 +11810,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11853,9 +11853,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "15:15:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "15:16:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -11868,7 +11868,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11911,9 +11911,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "17:23:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "18:23:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -11926,7 +11926,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -11969,9 +11969,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "18:23:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "18:20:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 3,
@@ -11984,7 +11984,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -12027,9 +12027,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "14:19:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "13:19:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -12042,7 +12042,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -12085,9 +12085,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "15:16:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "15:15:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -12100,7 +12100,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -12130,7 +12130,7 @@
                 "TargetLocation": {
                   "MapId": "MapId:aparment_block",
                   "CellFootprint": "21:21:1:1",
-                  "OwnerEntityId": "MapChunkId:aparment_block"
+                  "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0"
                 },
                 "InventoryPlacement": null,
                 "SlotPlacement": null,
@@ -12171,7 +12171,7 @@
                 "SizeOnMap": "1:1"
               },
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -12225,9 +12225,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "13:19:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "14:19:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -12240,7 +12240,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -12301,9 +12301,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "26:20:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "26:21:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -12316,7 +12316,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -12375,9 +12375,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "34:22:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "34:23:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -12390,7 +12390,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -12451,9 +12451,9 @@
                 },
                 "MoveResult": {
                   "WasMoved": true,
-                  "FromMapId": "MapChunkId:aparment_block",
+                  "FromMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "From": "15:15:3:3",
-                  "ToMapId": "MapChunkId:aparment_block",
+                  "ToMapId": "MapChunkId:aparment_block:chunk:0:0",
                   "To": "16:15:3:3",
                   "TurnIndex": 0,
                   "TurnStepIndex": 0,
@@ -12466,7 +12466,7 @@
             },
             "Identities": [
               {
-                "Id": "MapChunkId:aparment_block",
+                "Id": "MapChunkId:aparment_block:chunk:0:0",
                 "Name": "Apartment Block",
                 "Type": "MapChunk",
                 "RenderKey": null,
@@ -14923,7 +14923,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:aparment_block",
+        "Id": "MapChunkId:aparment_block:chunk:0:0",
         "Name": "Apartment Block (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -16477,7 +16477,7 @@
     {
       "EntityId": "PropId:1b36a1b7-abaf-4d5b-969e-a7e1d7e25619",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:15:1:1",
       "InventoryOwnerId": null,
@@ -16485,7 +16485,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:59e554f3-576d-48da-a290-3bdf76ecc434",
@@ -16503,7 +16503,7 @@
     {
       "EntityId": "PropId:ab27922d-0e0b-459c-aaf6-8d8d26472b0a",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:14:1:1",
       "InventoryOwnerId": null,
@@ -16511,7 +16511,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:e7308b42-7d55-48d0-a7d3-ab4705066102",
@@ -16529,7 +16529,7 @@
     {
       "EntityId": "PropId:2480dbc6-83e5-4b5f-af78-ccd84372f34a",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:13:1:1",
       "InventoryOwnerId": null,
@@ -16537,7 +16537,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:186248af-266a-4e70-b01d-5752618c2016",
@@ -16555,7 +16555,7 @@
     {
       "EntityId": "PropId:a94e464c-3405-41f4-8ffd-982477596f0c",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:12:1:1",
       "InventoryOwnerId": null,
@@ -16563,7 +16563,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:9beae080-6183-49a7-a1cd-73c2ac9428e6",
@@ -16581,7 +16581,7 @@
     {
       "EntityId": "PropId:bf5d2050-5a4f-4c7e-94fd-3d006b396349",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:11:1:1",
       "InventoryOwnerId": null,
@@ -16589,7 +16589,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:3f24fbb5-19f2-4a57-8b47-04d411dedd31",
@@ -16607,7 +16607,7 @@
     {
       "EntityId": "PropId:302277d7-8f0e-41c5-b225-576c44d85671",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:10:1:1",
       "InventoryOwnerId": null,
@@ -16615,7 +16615,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:7a3f2aed-038a-434c-a895-286dc6639e01",
@@ -16633,7 +16633,7 @@
     {
       "EntityId": "PropId:38c1e222-0a7a-4953-8e98-06de87e1f08d",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:9:1:1",
       "InventoryOwnerId": null,
@@ -16641,7 +16641,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:719f6bf6-9b48-41e1-a398-bd4ead9a7849",
@@ -16659,7 +16659,7 @@
     {
       "EntityId": "PropId:0c5ce931-d4c2-4751-a24f-ea47541ce19b",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:8:1:1",
       "InventoryOwnerId": null,
@@ -16667,7 +16667,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:a666994d-d944-4b04-ace5-5671368eff64",
@@ -16685,7 +16685,7 @@
     {
       "EntityId": "PropId:11a5a922-3b0e-471d-871b-3172cf9a65ab",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:7:1:1",
       "InventoryOwnerId": null,
@@ -16693,7 +16693,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:f6a52d93-8194-41cb-9d75-367fcd897af2",
@@ -16711,7 +16711,7 @@
     {
       "EntityId": "PropId:6277a861-e1b5-41b7-ab27-cbf2148a39cc",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:6:1:1",
       "InventoryOwnerId": null,
@@ -16719,7 +16719,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:32cfecad-1d83-4097-b9e9-0c02e115f944",
@@ -16737,7 +16737,7 @@
     {
       "EntityId": "PropId:3c10c6d3-52d6-4114-a1c7-2f8f59e47daa",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:5:1:1",
       "InventoryOwnerId": null,
@@ -16745,7 +16745,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:6fe5a464-c2b7-44b7-8ed3-69cec161eeae",
@@ -17517,7 +17517,7 @@
     {
       "EntityId": "PropId:772764a3-7bd3-4240-95b8-130094282b94",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "15:4:1:1",
       "InventoryOwnerId": null,
@@ -17525,7 +17525,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:709562cc-4d59-4938-9805-e11af3bc3a86",
@@ -17543,7 +17543,7 @@
     {
       "EntityId": "PropId:1b0da210-b8df-4bae-a659-230817d1ce65",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "14:4:1:1",
       "InventoryOwnerId": null,
@@ -17551,7 +17551,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:3c172a5f-7554-4199-9378-004474ebbe28",
@@ -17569,7 +17569,7 @@
     {
       "EntityId": "PropId:05e5d085-0cc5-4c5a-a2fc-a758e41534f9",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "13:4:1:1",
       "InventoryOwnerId": null,
@@ -17577,7 +17577,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:3f668a91-063a-4a7b-91f8-123bd323c57a",
@@ -17595,7 +17595,7 @@
     {
       "EntityId": "PropId:1959f43d-0f4a-4d83-8b96-9c82e07ca9b8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "12:4:1:1",
       "InventoryOwnerId": null,
@@ -17603,7 +17603,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:453d8fe9-cb7c-4672-b798-1cc02926946a",
@@ -17621,7 +17621,7 @@
     {
       "EntityId": "PropId:8540471e-efc6-41fe-aa2f-9d275bf697a2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "11:4:1:1",
       "InventoryOwnerId": null,
@@ -17629,7 +17629,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:1a2b86a0-6b7b-4d6d-adba-c96837ddbb17",
@@ -17647,7 +17647,7 @@
     {
       "EntityId": "PropId:2ad3926c-ad44-4c60-a6f4-479b130a4ab4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "10:4:1:1",
       "InventoryOwnerId": null,
@@ -17655,7 +17655,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:db6155c0-252e-4603-9db0-3a759fefbbe0",
@@ -17673,7 +17673,7 @@
     {
       "EntityId": "PropId:2cae0332-26bb-4848-b4f3-27105e035f5e",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "9:4:1:1",
       "InventoryOwnerId": null,
@@ -17681,7 +17681,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:e11eda79-b509-4813-9eca-317488c44b92",
@@ -17699,7 +17699,7 @@
     {
       "EntityId": "PropId:e2240e66-2563-47a3-b6d2-c542c520eb89",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "8:4:1:1",
       "InventoryOwnerId": null,
@@ -17707,7 +17707,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:c01973f7-ed13-412e-9835-5f2d9cdecc14",
@@ -17725,7 +17725,7 @@
     {
       "EntityId": "PropId:c10f0b5b-d610-41e6-88c6-ea5587678f45",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "7:4:1:1",
       "InventoryOwnerId": null,
@@ -17733,7 +17733,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:85ccebe2-b77e-47c1-be26-99d9eafa2ae6",
@@ -17751,7 +17751,7 @@
     {
       "EntityId": "PropId:4fbaf455-6041-4e46-9ec1-b5b48a928153",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "6:4:1:1",
       "InventoryOwnerId": null,
@@ -17759,7 +17759,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:8798cc60-6da6-4021-8929-05fce5826b31",
@@ -17777,7 +17777,7 @@
     {
       "EntityId": "PropId:55f009dc-7e66-4978-bbc8-9bd4e13c6e7b",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:aparment_block",
+      "OwnerEntityId": "MapChunkId:aparment_block:chunk:0:0",
       "MapId": "MapId:aparment_block",
       "CellFootprint": "5:4:1:1",
       "InventoryOwnerId": null,
@@ -17785,7 +17785,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:aparment_block"
+      "MapChunkId": "MapChunkId:aparment_block:chunk:0:0"
     },
     {
       "EntityId": "PropId:c3a1ce87-31e0-4acb-a939-f6f1eccc1780",

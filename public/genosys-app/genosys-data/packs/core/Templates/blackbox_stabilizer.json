@@ -1,0 +1,53 @@
+{
+  "TemplateId": "ItemTemplateId:core/blackbox_stabilizer",
+  "EntityDefinitions": [
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:blackbox_stabilizer",
+        "Name": "Stabilizer Patch",
+        "Description": "A disposable med patch used during blackbox continuity checks.",
+        "FlavorText": "The adhesive warms on contact and leaves a bitter metal taste.",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "core/tansfusion_device"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "0/0",
+        "Stack": "1/1",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": {
+          "QuantityConsumedPerUse": 1,
+          "ConsumesTurn": true,
+          "HungerDelta": 0.0,
+          "ThirstDelta": 0.0,
+          "FatigueDelta": -1.0,
+          "IntoxicationDelta": 0.0,
+          "DepletedBehavior": "destroy",
+          "UseStages": []
+        },
+        "Clothing": {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_1",
+          "SurfaceArea": 0.05,
+          "Aesthetics": [],
+          "Traits": [],
+          "FactionAffiliations": []
+        },
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": null,
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      },
+      "SourceTemplateId": null,
+      "SourceBlueprintId": null,
+      "TemplateBaseline": null
+    }
+  ],
+  "FolderPath": ""
+}

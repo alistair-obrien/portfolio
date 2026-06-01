@@ -6,12 +6,12 @@
       "Data": {
         "Id": "MapId:porcelain_lobby",
         "Name": "Porcelain Tax - Conversion Lobby",
-        "Width": 30,
-        "Height": 22,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:porcelain_lobby",
+            "ChunkId": "MapChunkId:porcelain_lobby:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -25,7 +25,7 @@
             "ChunkY": 0,
             "OriginX": 16,
             "OriginY": 0,
-            "Width": 14,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -35,7 +35,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 6
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:porcelain_lobby:chunk:1:1",
@@ -43,8 +43,8 @@
             "ChunkY": 1,
             "OriginX": 16,
             "OriginY": 16,
-            "Width": 14,
-            "Height": 6
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -59,12 +59,12 @@
       "Data": {
         "Id": "MapId:porcelain_limb_rail",
         "Name": "Porcelain Tax - Limb Rail Foundry",
-        "Width": 34,
-        "Height": 22,
+        "Width": 3,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:porcelain_limb_rail",
+            "ChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -87,7 +87,7 @@
             "ChunkY": 0,
             "OriginX": 32,
             "OriginY": 0,
-            "Width": 2,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -97,7 +97,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 6
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:porcelain_limb_rail:chunk:1:1",
@@ -106,7 +106,7 @@
             "OriginX": 16,
             "OriginY": 16,
             "Width": 16,
-            "Height": 6
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:porcelain_limb_rail:chunk:2:1",
@@ -114,8 +114,8 @@
             "ChunkY": 1,
             "OriginX": 32,
             "OriginY": 16,
-            "Width": 2,
-            "Height": 6
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -130,12 +130,12 @@
       "Data": {
         "Id": "MapId:porcelain_identity_vault",
         "Name": "Porcelain Tax - Identity Vault",
-        "Width": 26,
-        "Height": 18,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:porcelain_identity_vault",
+            "ChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -149,7 +149,7 @@
             "ChunkY": 0,
             "OriginX": 16,
             "OriginY": 0,
-            "Width": 10,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -159,7 +159,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 2
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:porcelain_identity_vault:chunk:1:1",
@@ -167,8 +167,8 @@
             "ChunkY": 1,
             "OriginX": 16,
             "OriginY": 16,
-            "Width": 10,
-            "Height": 2
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -13647,7 +13647,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:porcelain_limb_rail",
+          "TargetMapId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
           "TargetCellPosition": "5:12",
           "ActionLabel": "Enter Limb Rail"
         },
@@ -13682,7 +13682,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:porcelain_lobby",
+          "TargetMapId": "MapChunkId:porcelain_lobby:chunk:0:0",
           "TargetCellPosition": "24:10",
           "ActionLabel": "Return to Lobby"
         },
@@ -13717,7 +13717,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:porcelain_identity_vault",
+          "TargetMapId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
           "TargetCellPosition": "5:9",
           "ActionLabel": "Enter Identity Vault"
         },
@@ -13752,7 +13752,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:porcelain_limb_rail",
+          "TargetMapId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
           "TargetCellPosition": "26:9",
           "ActionLabel": "Return to Limb Rail"
         },
@@ -13763,7 +13763,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:porcelain_lobby",
+        "Id": "MapChunkId:porcelain_lobby:chunk:0:0",
         "Name": "Porcelain Tax - Conversion Lobby (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -13927,7 +13927,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:porcelain_limb_rail",
+        "Id": "MapChunkId:porcelain_limb_rail:chunk:0:0",
         "Name": "Porcelain Tax - Limb Rail Foundry (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -14091,7 +14091,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:porcelain_identity_vault",
+        "Id": "MapChunkId:porcelain_identity_vault:chunk:0:0",
         "Name": "Porcelain Tax - Identity Vault (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -14257,7 +14257,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_lobby:chunk:1:0",
         "Name": "Porcelain Tax - Conversion Lobby (1,0)",
-        "Size": "14:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14397,7 +14397,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_lobby:chunk:0:1",
         "Name": "Porcelain Tax - Conversion Lobby (0,1)",
-        "Size": "16:6",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14497,7 +14497,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_lobby:chunk:1:1",
         "Name": "Porcelain Tax - Conversion Lobby (1,1)",
-        "Size": "14:6",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14689,7 +14689,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_limb_rail:chunk:2:0",
         "Name": "Porcelain Tax - Limb Rail Foundry (2,0)",
-        "Size": "2:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14773,7 +14773,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_limb_rail:chunk:0:1",
         "Name": "Porcelain Tax - Limb Rail Foundry (0,1)",
-        "Size": "16:6",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14873,7 +14873,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_limb_rail:chunk:1:1",
         "Name": "Porcelain Tax - Limb Rail Foundry (1,1)",
-        "Size": "16:6",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14953,7 +14953,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_limb_rail:chunk:2:1",
         "Name": "Porcelain Tax - Limb Rail Foundry (2,1)",
-        "Size": "2:6",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -14997,7 +14997,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_identity_vault:chunk:1:0",
         "Name": "Porcelain Tax - Identity Vault (1,0)",
-        "Size": "10:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -15117,7 +15117,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_identity_vault:chunk:0:1",
         "Name": "Porcelain Tax - Identity Vault (0,1)",
-        "Size": "16:2",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -15201,7 +15201,7 @@
       "Data": {
         "Id": "MapChunkId:porcelain_identity_vault:chunk:1:1",
         "Name": "Porcelain Tax - Identity Vault (1,1)",
-        "Size": "10:2",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -15268,7 +15268,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -15276,7 +15276,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_1",
@@ -15294,7 +15294,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -15302,7 +15302,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_3",
@@ -15320,7 +15320,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -15328,7 +15328,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_5",
@@ -15346,7 +15346,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -15354,7 +15354,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_7",
@@ -15372,7 +15372,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -15380,7 +15380,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_9",
@@ -15398,7 +15398,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -15406,7 +15406,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_11",
@@ -15424,7 +15424,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -15432,7 +15432,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_13",
@@ -15450,7 +15450,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -15458,7 +15458,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_15",
@@ -15476,7 +15476,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -15484,7 +15484,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_17",
@@ -15502,7 +15502,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -15510,7 +15510,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_19",
@@ -15528,7 +15528,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -15536,7 +15536,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_21",
@@ -15554,7 +15554,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -15562,7 +15562,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_23",
@@ -15580,7 +15580,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -15588,7 +15588,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_25",
@@ -15606,7 +15606,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -15614,7 +15614,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_27",
@@ -15632,7 +15632,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -15640,7 +15640,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_29",
@@ -15658,7 +15658,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -15666,7 +15666,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_31",
@@ -16048,7 +16048,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_60",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -16056,7 +16056,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_61",
@@ -16074,7 +16074,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_62",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -16082,7 +16082,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_63",
@@ -16100,7 +16100,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -16108,7 +16108,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_65",
@@ -16126,7 +16126,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -16134,7 +16134,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_67",
@@ -16152,7 +16152,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -16160,7 +16160,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_69",
@@ -16178,7 +16178,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -16186,7 +16186,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_71",
@@ -16204,7 +16204,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -16212,7 +16212,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_73",
@@ -16230,7 +16230,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -16238,7 +16238,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_75",
@@ -16256,7 +16256,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -16264,7 +16264,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_77",
@@ -16282,7 +16282,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -16290,7 +16290,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_79",
@@ -16308,7 +16308,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -16316,7 +16316,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_81",
@@ -16334,7 +16334,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_82",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -16342,7 +16342,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_83",
@@ -16360,7 +16360,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_84",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -16368,7 +16368,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_85",
@@ -16386,7 +16386,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_86",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -16394,7 +16394,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_87",
@@ -16412,7 +16412,7 @@
     {
       "EntityId": "PropId:porcelain_lobby_wall_88",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -16420,7 +16420,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_lobby_wall_89",
@@ -16568,7 +16568,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -16576,7 +16576,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_1",
@@ -16594,7 +16594,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -16602,7 +16602,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_3",
@@ -16620,7 +16620,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -16628,7 +16628,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_5",
@@ -16646,7 +16646,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -16654,7 +16654,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_7",
@@ -16672,7 +16672,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -16680,7 +16680,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_9",
@@ -16698,7 +16698,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -16706,7 +16706,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_11",
@@ -16724,7 +16724,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -16732,7 +16732,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_13",
@@ -16750,7 +16750,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -16758,7 +16758,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_15",
@@ -16776,7 +16776,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -16784,7 +16784,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_17",
@@ -16802,7 +16802,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -16810,7 +16810,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_19",
@@ -16828,7 +16828,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -16836,7 +16836,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_21",
@@ -16854,7 +16854,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -16862,7 +16862,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_23",
@@ -16880,7 +16880,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -16888,7 +16888,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_25",
@@ -16906,7 +16906,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -16914,7 +16914,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_27",
@@ -16932,7 +16932,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -16940,7 +16940,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_29",
@@ -16958,7 +16958,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -16966,7 +16966,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_31",
@@ -17452,7 +17452,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -17460,7 +17460,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_69",
@@ -17478,7 +17478,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -17486,7 +17486,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_71",
@@ -17504,7 +17504,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -17512,7 +17512,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_73",
@@ -17530,7 +17530,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -17538,7 +17538,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_75",
@@ -17556,7 +17556,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -17564,7 +17564,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_77",
@@ -17582,7 +17582,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -17590,7 +17590,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_79",
@@ -17608,7 +17608,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -17616,7 +17616,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_81",
@@ -17634,7 +17634,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_82",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -17642,7 +17642,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_83",
@@ -17660,7 +17660,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_84",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -17668,7 +17668,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_85",
@@ -17686,7 +17686,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_86",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -17694,7 +17694,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_87",
@@ -17712,7 +17712,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_88",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -17720,7 +17720,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_89",
@@ -17738,7 +17738,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_90",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -17746,7 +17746,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_91",
@@ -17764,7 +17764,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_92",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -17772,7 +17772,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_93",
@@ -17790,7 +17790,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_94",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -17798,7 +17798,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_95",
@@ -17816,7 +17816,7 @@
     {
       "EntityId": "PropId:porcelain_rail_wall_96",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -17824,7 +17824,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_wall_97",
@@ -17972,7 +17972,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -17980,7 +17980,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_1",
@@ -17998,7 +17998,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -18006,7 +18006,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_3",
@@ -18024,7 +18024,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -18032,7 +18032,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_5",
@@ -18050,7 +18050,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -18058,7 +18058,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_7",
@@ -18076,7 +18076,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -18084,7 +18084,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_9",
@@ -18102,7 +18102,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -18110,7 +18110,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_11",
@@ -18128,7 +18128,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -18136,7 +18136,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_13",
@@ -18154,7 +18154,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -18162,7 +18162,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_15",
@@ -18180,7 +18180,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -18188,7 +18188,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_17",
@@ -18206,7 +18206,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -18214,7 +18214,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_19",
@@ -18232,7 +18232,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -18240,7 +18240,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_21",
@@ -18258,7 +18258,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -18266,7 +18266,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_23",
@@ -18284,7 +18284,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -18292,7 +18292,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_25",
@@ -18310,7 +18310,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -18318,7 +18318,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_27",
@@ -18336,7 +18336,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -18344,7 +18344,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_29",
@@ -18362,7 +18362,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -18370,7 +18370,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_31",
@@ -18648,7 +18648,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_52",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -18656,7 +18656,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_53",
@@ -18674,7 +18674,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_54",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -18682,7 +18682,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_55",
@@ -18700,7 +18700,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_56",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -18708,7 +18708,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_57",
@@ -18726,7 +18726,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_58",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -18734,7 +18734,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_59",
@@ -18752,7 +18752,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_60",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -18760,7 +18760,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_61",
@@ -18778,7 +18778,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_62",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -18786,7 +18786,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_63",
@@ -18804,7 +18804,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -18812,7 +18812,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_65",
@@ -18830,7 +18830,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -18838,7 +18838,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_67",
@@ -18856,7 +18856,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -18864,7 +18864,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_69",
@@ -18882,7 +18882,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -18890,7 +18890,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_71",
@@ -18908,7 +18908,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -18916,7 +18916,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_73",
@@ -18934,7 +18934,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -18942,7 +18942,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_75",
@@ -18960,7 +18960,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -18968,7 +18968,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_77",
@@ -18986,7 +18986,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -18994,7 +18994,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_79",
@@ -19012,7 +19012,7 @@
     {
       "EntityId": "PropId:porcelain_vault_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -19020,7 +19020,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_vault_wall_81",
@@ -19064,7 +19064,7 @@
     {
       "EntityId": "PropId:porcelain_triage_chair",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "6:7:3:3",
       "InventoryOwnerId": null,
@@ -19072,12 +19072,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_credit_desk",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "14:5:4:2",
       "InventoryOwnerId": null,
@@ -19085,7 +19085,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_glass_cabinet",
@@ -19103,7 +19103,7 @@
     {
       "EntityId": "PropId:porcelain_waiting_rack",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "10:15:6:1",
       "InventoryOwnerId": null,
@@ -19111,12 +19111,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_limb_track",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "5:5:18:1",
       "InventoryOwnerId": null,
@@ -19124,12 +19124,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_muscle_vat",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "8:10:3:4",
       "InventoryOwnerId": null,
@@ -19137,7 +19137,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_spine_press",
@@ -19168,7 +19168,7 @@
     {
       "EntityId": "PropId:porcelain_chip_locker",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "6:5:4:2",
       "InventoryOwnerId": null,
@@ -19176,12 +19176,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_airgap_core",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "14:7:3:3",
       "InventoryOwnerId": null,
@@ -19189,12 +19189,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_evidence_table",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "9:12:5:1",
       "InventoryOwnerId": null,
@@ -19202,7 +19202,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_seal_door",
@@ -19293,7 +19293,7 @@
     {
       "EntityId": "ItemId:porcelain_loose_muscle",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "9:14:1:2",
       "InventoryOwnerId": null,
@@ -19301,12 +19301,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "ItemId:porcelain_suture_spool",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "12:8:1:1",
       "InventoryOwnerId": null,
@@ -19314,12 +19314,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "ItemId:porcelain_ocular_case",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "10:12:2:1",
       "InventoryOwnerId": null,
@@ -19327,7 +19327,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "ItemId:porcelain_ione_vale_head",
@@ -19428,7 +19428,7 @@
     {
       "EntityId": "CharacterId:ione_vale",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "8:11:3:3",
       "InventoryOwnerId": null,
@@ -19436,7 +19436,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "ItemId:porcelain_sable_orison_head",
@@ -19537,7 +19537,7 @@
     {
       "EntityId": "CharacterId:sable_orison",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_lobby",
+      "OwnerEntityId": "MapChunkId:porcelain_lobby:chunk:0:0",
       "MapId": "MapId:porcelain_lobby",
       "CellFootprint": "15:7:3:3",
       "InventoryOwnerId": null,
@@ -19545,7 +19545,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_lobby"
+      "MapChunkId": "MapChunkId:porcelain_lobby:chunk:0:0"
     },
     {
       "EntityId": "ItemId:porcelain_kade_null_head",
@@ -19646,7 +19646,7 @@
     {
       "EntityId": "CharacterId:kade_null",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "13:12:3:3",
       "InventoryOwnerId": null,
@@ -19654,7 +19654,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "ItemId:porcelain_morrow_pike_head",
@@ -19864,7 +19864,7 @@
     {
       "EntityId": "CharacterId:lio_quench",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "8:13:3:3",
       "InventoryOwnerId": null,
@@ -19872,7 +19872,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "ItemId:porcelain_mother_servo_head",
@@ -19973,7 +19973,7 @@
     {
       "EntityId": "CharacterId:mother_servo",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "13:9:3:3",
       "InventoryOwnerId": null,
@@ -19981,7 +19981,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "gamestate:root@origin.game-state",
@@ -20311,7 +20311,7 @@
     {
       "EntityId": "PropId:porcelain_rail_to_lobby",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_limb_rail",
+      "OwnerEntityId": "MapChunkId:porcelain_limb_rail:chunk:0:0",
       "MapId": "MapId:porcelain_limb_rail",
       "CellFootprint": "3:12:2:2",
       "InventoryOwnerId": null,
@@ -20319,7 +20319,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_limb_rail"
+      "MapChunkId": "MapChunkId:porcelain_limb_rail:chunk:0:0"
     },
     {
       "EntityId": "PropId:porcelain_rail_to_vault",
@@ -20337,7 +20337,7 @@
     {
       "EntityId": "PropId:porcelain_vault_to_rail",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:porcelain_identity_vault",
+      "OwnerEntityId": "MapChunkId:porcelain_identity_vault:chunk:0:0",
       "MapId": "MapId:porcelain_identity_vault",
       "CellFootprint": "3:9:2:2",
       "InventoryOwnerId": null,
@@ -20345,7 +20345,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:porcelain_identity_vault"
+      "MapChunkId": "MapChunkId:porcelain_identity_vault:chunk:0:0"
     },
     {
       "EntityId": "MapId:porcelain_lobby",

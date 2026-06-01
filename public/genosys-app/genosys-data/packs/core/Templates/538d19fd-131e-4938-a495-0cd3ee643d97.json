@@ -23,7 +23,7 @@
         "Consumable": null,
         "Clothing": {
           "StyleSlotId": "StyleSlotId:character.style.torso_inner",
-          "SurfaceArea": 1,
+          "SurfaceArea": 1.0,
           "Aesthetics": [],
           "Traits": [],
           "FactionAffiliations": []

@@ -1,0 +1,12 @@
+{
+  "PackId": "signal_hounds",
+  "Name": "Signal Hounds",
+  "Version": "1.0.0",
+  "Dependencies": [
+    {
+      "PackId": "core",
+      "Version": "1.0.0"
+    }
+  ],
+  "ReadOnly": false
+}

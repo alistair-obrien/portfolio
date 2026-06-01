@@ -6,12 +6,12 @@
       "Data": {
         "Id": "MapId:ghost_safehouse",
         "Name": "Ghost Dividend - Safehouse",
-        "Width": 32,
-        "Height": 24,
+        "Width": 2,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:ghost_safehouse",
+            "ChunkId": "MapChunkId:ghost_safehouse:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -35,7 +35,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 8
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:ghost_safehouse:chunk:1:1",
@@ -44,7 +44,7 @@
             "OriginX": 16,
             "OriginY": 16,
             "Width": 16,
-            "Height": 8
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -59,12 +59,12 @@
       "Data": {
         "Id": "MapId:ghost_gala",
         "Name": "Ghost Dividend - Gala Floor",
-        "Width": 40,
-        "Height": 28,
+        "Width": 3,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:ghost_gala",
+            "ChunkId": "MapChunkId:ghost_gala:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -87,7 +87,7 @@
             "ChunkY": 0,
             "OriginX": 32,
             "OriginY": 0,
-            "Width": 8,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -97,7 +97,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 12
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:ghost_gala:chunk:1:1",
@@ -106,7 +106,7 @@
             "OriginX": 16,
             "OriginY": 16,
             "Width": 16,
-            "Height": 12
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:ghost_gala:chunk:2:1",
@@ -114,8 +114,8 @@
             "ChunkY": 1,
             "OriginX": 32,
             "OriginY": 16,
-            "Width": 8,
-            "Height": 12
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -130,12 +130,12 @@
       "Data": {
         "Id": "MapId:ghost_security",
         "Name": "Ghost Dividend - Security Spine",
-        "Width": 34,
-        "Height": 24,
+        "Width": 3,
+        "Height": 2,
         "ChunkSize": 16,
         "Chunks": [
           {
-            "ChunkId": "MapChunkId:ghost_security",
+            "ChunkId": "MapChunkId:ghost_security:chunk:0:0",
             "ChunkX": 0,
             "ChunkY": 0,
             "OriginX": 0,
@@ -158,7 +158,7 @@
             "ChunkY": 0,
             "OriginX": 32,
             "OriginY": 0,
-            "Width": 2,
+            "Width": 16,
             "Height": 16
           },
           {
@@ -168,7 +168,7 @@
             "OriginX": 0,
             "OriginY": 16,
             "Width": 16,
-            "Height": 8
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:ghost_security:chunk:1:1",
@@ -177,7 +177,7 @@
             "OriginX": 16,
             "OriginY": 16,
             "Width": 16,
-            "Height": 8
+            "Height": 16
           },
           {
             "ChunkId": "MapChunkId:ghost_security:chunk:2:1",
@@ -185,8 +185,8 @@
             "ChunkY": 1,
             "OriginX": 32,
             "OriginY": 16,
-            "Width": 2,
-            "Height": 8
+            "Width": 16,
+            "Height": 16
           }
         ],
         "TypeId": "Map"
@@ -12096,7 +12096,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:ghost_gala",
+          "TargetMapId": "MapChunkId:ghost_gala:chunk:0:0",
           "TargetCellPosition": "5:20",
           "ActionLabel": "Enter Gala Feed"
         },
@@ -12131,7 +12131,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:ghost_security",
+          "TargetMapId": "MapChunkId:ghost_security:chunk:0:0",
           "TargetCellPosition": "5:12",
           "ActionLabel": "Enter Security Feed"
         },
@@ -12166,7 +12166,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:ghost_safehouse",
+          "TargetMapId": "MapChunkId:ghost_safehouse:chunk:0:0",
           "TargetCellPosition": "14:14",
           "ActionLabel": "Return to Safehouse"
         },
@@ -12201,7 +12201,7 @@
         ],
         "Inventory": null,
         "MapTransition": {
-          "TargetMapId": "MapChunkId:ghost_safehouse",
+          "TargetMapId": "MapChunkId:ghost_safehouse:chunk:0:0",
           "TargetCellPosition": "14:14",
           "ActionLabel": "Return to Safehouse"
         },
@@ -15046,7 +15046,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:ghost_safehouse",
+        "Id": "MapChunkId:ghost_safehouse:chunk:0:0",
         "Name": "Ghost Dividend - Safehouse (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -15198,7 +15198,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:ghost_gala",
+        "Id": "MapChunkId:ghost_gala:chunk:0:0",
         "Name": "Ghost Dividend - Gala Floor (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -15370,7 +15370,7 @@
       "TypeId": "MapChunk",
       "Version": 1,
       "Data": {
-        "Id": "MapChunkId:ghost_security",
+        "Id": "MapChunkId:ghost_security:chunk:0:0",
         "Name": "Ghost Dividend - Security Spine (0,0)",
         "Size": "16:16",
         "TileOverrides": [],
@@ -15668,7 +15668,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_safehouse:chunk:0:1",
         "Name": "Ghost Dividend - Safehouse (0,1)",
-        "Size": "16:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -15776,7 +15776,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_safehouse:chunk:1:1",
         "Name": "Ghost Dividend - Safehouse (1,1)",
-        "Size": "16:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -16008,7 +16008,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_gala:chunk:2:0",
         "Name": "Ghost Dividend - Gala Floor (2,0)",
-        "Size": "8:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -16120,7 +16120,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_gala:chunk:0:1",
         "Name": "Ghost Dividend - Gala Floor (0,1)",
-        "Size": "16:12",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -16252,7 +16252,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_gala:chunk:1:1",
         "Name": "Ghost Dividend - Gala Floor (1,1)",
-        "Size": "16:12",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -16332,7 +16332,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_gala:chunk:2:1",
         "Name": "Ghost Dividend - Gala Floor (2,1)",
-        "Size": "8:12",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -16552,7 +16552,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_security:chunk:2:0",
         "Name": "Ghost Dividend - Security Spine (2,0)",
-        "Size": "2:16",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -16636,7 +16636,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_security:chunk:0:1",
         "Name": "Ghost Dividend - Security Spine (0,1)",
-        "Size": "16:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -16744,7 +16744,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_security:chunk:1:1",
         "Name": "Ghost Dividend - Security Spine (1,1)",
-        "Size": "16:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -16836,7 +16836,7 @@
       "Data": {
         "Id": "MapChunkId:ghost_security:chunk:2:1",
         "Name": "Ghost Dividend - Security Spine (2,1)",
-        "Size": "2:8",
+        "Size": "16:16",
         "TileOverrides": [],
         "Placements": [
           {
@@ -16900,7 +16900,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_0",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -16908,7 +16908,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_1",
@@ -16926,7 +16926,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_2",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -16934,7 +16934,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_3",
@@ -16952,7 +16952,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_4",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -16960,7 +16960,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_5",
@@ -16978,7 +16978,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_6",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -16986,7 +16986,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_7",
@@ -17004,7 +17004,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_8",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -17012,7 +17012,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_9",
@@ -17030,7 +17030,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_10",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -17038,7 +17038,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_11",
@@ -17056,7 +17056,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_12",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -17064,7 +17064,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_13",
@@ -17082,7 +17082,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_14",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -17090,7 +17090,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_15",
@@ -17108,7 +17108,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_16",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -17116,7 +17116,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_17",
@@ -17134,7 +17134,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_18",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -17142,7 +17142,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_19",
@@ -17160,7 +17160,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_20",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -17168,7 +17168,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_21",
@@ -17186,7 +17186,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_22",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -17194,7 +17194,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_23",
@@ -17212,7 +17212,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_24",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -17220,7 +17220,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_25",
@@ -17238,7 +17238,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_26",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -17246,7 +17246,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_27",
@@ -17264,7 +17264,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_28",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -17272,7 +17272,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_29",
@@ -17290,7 +17290,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_30",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -17298,7 +17298,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_31",
@@ -17732,7 +17732,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_64",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -17740,7 +17740,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_65",
@@ -17758,7 +17758,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_66",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -17766,7 +17766,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_67",
@@ -17784,7 +17784,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_68",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -17792,7 +17792,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_69",
@@ -17810,7 +17810,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_70",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -17818,7 +17818,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_71",
@@ -17836,7 +17836,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_72",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -17844,7 +17844,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_73",
@@ -17862,7 +17862,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_74",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -17870,7 +17870,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_75",
@@ -17888,7 +17888,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_76",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -17896,7 +17896,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_77",
@@ -17914,7 +17914,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_78",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -17922,7 +17922,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_79",
@@ -17940,7 +17940,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_80",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -17948,7 +17948,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_81",
@@ -17966,7 +17966,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_82",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -17974,7 +17974,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_83",
@@ -17992,7 +17992,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_84",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -18000,7 +18000,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_85",
@@ -18018,7 +18018,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_86",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -18026,7 +18026,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_87",
@@ -18044,7 +18044,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_88",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -18052,7 +18052,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_89",
@@ -18070,7 +18070,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_90",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -18078,7 +18078,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_91",
@@ -18096,7 +18096,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_wall_92",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -18104,7 +18104,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_safehouse_wall_93",
@@ -18304,7 +18304,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_108",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -18312,7 +18312,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_109",
@@ -18330,7 +18330,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_110",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -18338,7 +18338,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_111",
@@ -18356,7 +18356,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_112",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -18364,7 +18364,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_113",
@@ -18382,7 +18382,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_114",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -18390,7 +18390,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_115",
@@ -18408,7 +18408,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_116",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -18416,7 +18416,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_117",
@@ -18434,7 +18434,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_118",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -18442,7 +18442,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_119",
@@ -18460,7 +18460,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_120",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -18468,7 +18468,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_121",
@@ -18486,7 +18486,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_122",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -18494,7 +18494,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_123",
@@ -18512,7 +18512,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_124",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -18520,7 +18520,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_125",
@@ -18538,7 +18538,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_126",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -18546,7 +18546,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_127",
@@ -18564,7 +18564,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_128",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -18572,7 +18572,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_129",
@@ -18590,7 +18590,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_130",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -18598,7 +18598,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_131",
@@ -18616,7 +18616,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_132",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -18624,7 +18624,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_133",
@@ -18642,7 +18642,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_134",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -18650,7 +18650,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_135",
@@ -18668,7 +18668,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_136",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -18676,7 +18676,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_137",
@@ -18694,7 +18694,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_138",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -18702,7 +18702,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_139",
@@ -19344,7 +19344,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_188",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -19352,7 +19352,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_189",
@@ -19370,7 +19370,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_190",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -19378,7 +19378,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_191",
@@ -19396,7 +19396,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_192",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -19404,7 +19404,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_193",
@@ -19422,7 +19422,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_194",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -19430,7 +19430,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_195",
@@ -19448,7 +19448,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_196",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -19456,7 +19456,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_197",
@@ -19474,7 +19474,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_198",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -19482,7 +19482,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_199",
@@ -19500,7 +19500,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_200",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -19508,7 +19508,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_201",
@@ -19526,7 +19526,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_202",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -19534,7 +19534,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_203",
@@ -19552,7 +19552,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_204",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -19560,7 +19560,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_205",
@@ -19578,7 +19578,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_206",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -19586,7 +19586,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_207",
@@ -19604,7 +19604,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_208",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -19612,7 +19612,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_209",
@@ -19630,7 +19630,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_210",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -19638,7 +19638,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_211",
@@ -19656,7 +19656,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_212",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -19664,7 +19664,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_213",
@@ -19682,7 +19682,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_214",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -19690,7 +19690,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_215",
@@ -19708,7 +19708,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_216",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -19716,7 +19716,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_217",
@@ -20020,7 +20020,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_240",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:0:1:1",
       "InventoryOwnerId": null,
@@ -20028,7 +20028,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_241",
@@ -20046,7 +20046,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_242",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "1:0:1:1",
       "InventoryOwnerId": null,
@@ -20054,7 +20054,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_243",
@@ -20072,7 +20072,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_244",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "2:0:1:1",
       "InventoryOwnerId": null,
@@ -20080,7 +20080,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_245",
@@ -20098,7 +20098,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_246",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "3:0:1:1",
       "InventoryOwnerId": null,
@@ -20106,7 +20106,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_247",
@@ -20124,7 +20124,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_248",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "4:0:1:1",
       "InventoryOwnerId": null,
@@ -20132,7 +20132,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_249",
@@ -20150,7 +20150,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_250",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "5:0:1:1",
       "InventoryOwnerId": null,
@@ -20158,7 +20158,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_251",
@@ -20176,7 +20176,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_252",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "6:0:1:1",
       "InventoryOwnerId": null,
@@ -20184,7 +20184,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_253",
@@ -20202,7 +20202,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_254",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "7:0:1:1",
       "InventoryOwnerId": null,
@@ -20210,7 +20210,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_255",
@@ -20228,7 +20228,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_256",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "8:0:1:1",
       "InventoryOwnerId": null,
@@ -20236,7 +20236,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_257",
@@ -20254,7 +20254,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_258",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "9:0:1:1",
       "InventoryOwnerId": null,
@@ -20262,7 +20262,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_259",
@@ -20280,7 +20280,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_260",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "10:0:1:1",
       "InventoryOwnerId": null,
@@ -20288,7 +20288,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_261",
@@ -20306,7 +20306,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_262",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "11:0:1:1",
       "InventoryOwnerId": null,
@@ -20314,7 +20314,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_263",
@@ -20332,7 +20332,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_264",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "12:0:1:1",
       "InventoryOwnerId": null,
@@ -20340,7 +20340,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_265",
@@ -20358,7 +20358,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_266",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "13:0:1:1",
       "InventoryOwnerId": null,
@@ -20366,7 +20366,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_267",
@@ -20384,7 +20384,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_268",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "14:0:1:1",
       "InventoryOwnerId": null,
@@ -20392,7 +20392,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_269",
@@ -20410,7 +20410,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_270",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "15:0:1:1",
       "InventoryOwnerId": null,
@@ -20418,7 +20418,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_271",
@@ -20904,7 +20904,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_308",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:1:1:1",
       "InventoryOwnerId": null,
@@ -20912,7 +20912,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_309",
@@ -20930,7 +20930,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_310",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:2:1:1",
       "InventoryOwnerId": null,
@@ -20938,7 +20938,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_311",
@@ -20956,7 +20956,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_312",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:3:1:1",
       "InventoryOwnerId": null,
@@ -20964,7 +20964,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_313",
@@ -20982,7 +20982,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_314",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:4:1:1",
       "InventoryOwnerId": null,
@@ -20990,7 +20990,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_315",
@@ -21008,7 +21008,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_316",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:5:1:1",
       "InventoryOwnerId": null,
@@ -21016,7 +21016,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_317",
@@ -21034,7 +21034,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_318",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:6:1:1",
       "InventoryOwnerId": null,
@@ -21042,7 +21042,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_319",
@@ -21060,7 +21060,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_320",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:7:1:1",
       "InventoryOwnerId": null,
@@ -21068,7 +21068,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_321",
@@ -21086,7 +21086,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_322",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:8:1:1",
       "InventoryOwnerId": null,
@@ -21094,7 +21094,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_323",
@@ -21112,7 +21112,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_324",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:9:1:1",
       "InventoryOwnerId": null,
@@ -21120,7 +21120,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_325",
@@ -21138,7 +21138,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_326",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:10:1:1",
       "InventoryOwnerId": null,
@@ -21146,7 +21146,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_327",
@@ -21164,7 +21164,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_328",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:11:1:1",
       "InventoryOwnerId": null,
@@ -21172,7 +21172,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_329",
@@ -21190,7 +21190,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_330",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:12:1:1",
       "InventoryOwnerId": null,
@@ -21198,7 +21198,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_331",
@@ -21216,7 +21216,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_332",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:13:1:1",
       "InventoryOwnerId": null,
@@ -21224,7 +21224,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_333",
@@ -21242,7 +21242,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_334",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:14:1:1",
       "InventoryOwnerId": null,
@@ -21250,7 +21250,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_335",
@@ -21268,7 +21268,7 @@
     {
       "EntityId": "PropId:ghost_security_wall_336",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "0:15:1:1",
       "InventoryOwnerId": null,
@@ -21276,7 +21276,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_security_wall_337",
@@ -21476,7 +21476,7 @@
     {
       "EntityId": "PropId:ghost_gala_wall_352",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "8:8:1:1",
       "InventoryOwnerId": null,
@@ -21484,12 +21484,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_353",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "9:8:1:1",
       "InventoryOwnerId": null,
@@ -21497,12 +21497,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_354",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "10:8:1:1",
       "InventoryOwnerId": null,
@@ -21510,12 +21510,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_355",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "11:8:1:1",
       "InventoryOwnerId": null,
@@ -21523,12 +21523,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_356",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "12:8:1:1",
       "InventoryOwnerId": null,
@@ -21536,12 +21536,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_357",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "13:8:1:1",
       "InventoryOwnerId": null,
@@ -21549,12 +21549,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_358",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "14:8:1:1",
       "InventoryOwnerId": null,
@@ -21562,12 +21562,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_359",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_gala",
+      "OwnerEntityId": "MapChunkId:ghost_gala:chunk:0:0",
       "MapId": "MapId:ghost_gala",
       "CellFootprint": "15:8:1:1",
       "InventoryOwnerId": null,
@@ -21575,7 +21575,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_gala"
+      "MapChunkId": "MapChunkId:ghost_gala:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_gala_wall_360",
@@ -21866,7 +21866,7 @@
     {
       "EntityId": "PropId:ghost_safehouse_terminal",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "14:10:2:2",
       "InventoryOwnerId": null,
@@ -21874,12 +21874,12 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_feed_to_gala",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "6:8:2:2",
       "InventoryOwnerId": null,
@@ -21887,7 +21887,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_feed_to_security",
@@ -21918,7 +21918,7 @@
     {
       "EntityId": "PropId:ghost_security_return",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "3:12:2:2",
       "InventoryOwnerId": null,
@@ -21926,7 +21926,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "PropId:ghost_target_lift",
@@ -21970,7 +21970,7 @@
     {
       "EntityId": "PropId:ghost_security_camera_b",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "10:5:1:1",
       "InventoryOwnerId": null,
@@ -21978,7 +21978,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "gamestate:root@origin.game-state",
@@ -22007,7 +22007,7 @@
     {
       "EntityId": "CharacterId:ilya_voss",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_safehouse",
+      "OwnerEntityId": "MapChunkId:ghost_safehouse:chunk:0:0",
       "MapId": "MapId:ghost_safehouse",
       "CellFootprint": "14:14:3:3",
       "InventoryOwnerId": null,
@@ -22015,7 +22015,7 @@
       "CellPosition": "0:0",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_safehouse"
+      "MapChunkId": "MapChunkId:ghost_safehouse:chunk:0:0"
     },
     {
       "EntityId": "CharacterId:vale_nyx",
@@ -22191,7 +22191,7 @@
     {
       "EntityId": "ItemId:ghost_dead_switch",
       "Kind": "Map",
-      "OwnerEntityId": "MapChunkId:ghost_security",
+      "OwnerEntityId": "MapChunkId:ghost_security:chunk:0:0",
       "MapId": "MapId:ghost_security",
       "CellFootprint": "11:7:1:1",
       "InventoryOwnerId": null,
@@ -22199,7 +22199,7 @@
       "CellPosition": "11:7",
       "GunItemId": null,
       "SlotPath": null,
-      "MapChunkId": "MapChunkId:ghost_security"
+      "MapChunkId": "MapChunkId:ghost_security:chunk:0:0"
     },
     {
       "EntityId": "ItemId:ghost_vale_service_tray",

@@ -1,0 +1,41 @@
+{
+  "TemplateId": "ItemTemplateId:core/blackbox_training_rounds",
+  "EntityDefinitions": [
+    {
+      "TypeId": "Item",
+      "Version": 1,
+      "Data": {
+        "Id": "ItemId:blackbox_training_rounds",
+        "Name": "Training Rounds",
+        "Description": "Reduced-charge rounds for corridor audit drills.",
+        "FlavorText": "Soft-load ammunition. Still loud enough to make everyone honest.",
+        "BaseMonetaryValue": 0,
+        "RenderKey": {
+          "Key": "core/redline_inner"
+        },
+        "ManufacturerId": null,
+        "SizeInInventory": "1:1",
+        "Condition": "0/0",
+        "Stack": "3/6",
+        "GrantedActorGrants": [],
+        "ModFrame": null,
+        "Mod": null,
+        "Consumable": null,
+        "Clothing": null,
+        "Inventory": null,
+        "DigitalInventory": null,
+        "Ammo": {
+          "DamageType": "impact",
+          "BaseEnergy": 3
+        },
+        "Gun": null,
+        "Armor": null,
+        "TypeId": "Item"
+      },
+      "SourceTemplateId": null,
+      "SourceBlueprintId": null,
+      "TemplateBaseline": null
+    }
+  ],
+  "FolderPath": ""
+}

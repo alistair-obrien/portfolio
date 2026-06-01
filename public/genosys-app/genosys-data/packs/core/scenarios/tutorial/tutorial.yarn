@@ -1,62 +1,241 @@
 title: Start
 ---
-$c1: LOG 173
-$c1: TEST SUBJECT ID: 7734
-$c1: REPORT TYPE: Identity Suppression Operation
-$c1: CLEARANCE: Internal / Rehabilitation Division / Neurocorrection Wing
-$c1: Test Subject 7734 is regaining consciousness.
-
-// Sound Check
-$c1: 1, 2, 3
+<<set $dream_anchor = "none">>
+<<set $dream_resistance = "none">>
+<<set $auditory_response = "none">>
+<<set $language_signal = 0>>
+Sudden Darkness.
+Quiet except for a low buzz.
+Just a moment ago you were out walking the family dog in the nearby park.
+Then...
+Were you involved in an accident?
+Is...
+Wait.
+What's your dog's name?
+-> $c2: Spike
+    <<set $dream_anchor = "spike">>
+    Yes. 
+    That was it right.
+    Only it isn't a dog.
+    It's a turtle.
+    You remember it moving slowly across the pavement in the park.
+-> $c2: Aki
+    <<set $dream_anchor = "aki">>
+    Right.
+    Aki was the name.
+    A sweet pomeranian.
+    You almost hear her soft bark.
+-> $c2: Ricky
+    <<set $dream_anchor = "ricky">>
+    You recall a metal name tag. 
+    "Ricky" engraved cleanly into it.
+    But Ricky is not a dog at all.
+    He's a rabbit.
+    Weird mistake to make.
+-> $c2: I... don't remember.
+    <<set $dream_anchor = "forgotten">>
+    No matter what you do, you can not conjure up a clear memory of your dog.
+And your family...
+You were all together.
+But now you think about it, you don't know any of those people.
+Everything made sense just a moment ago.
+The memories begin to fade.
+Just another dream.
+-> $c2: Focus on recalling the dream
+    <<set $dream_resistance = "holding_on">>
+    You remember you were taking some time off work.
+    An attempt to relieve the compounding stress.
+    At least for a while.
+    That part seems normal enough.
+    -> $c2: Try to remember more
+        <<set $dream_resistance = "wife">>
+        Your wife... Well in the moment she was your wife.
+        Now, thinking back she is just a stranger.
+        Green eyes, blonde hair? Or was it brown...
+        -> $c2: Try to remember more
+            <<set $dream_resistance = "children">>
+            And you had children. 
+            At first there were three that you recall.
+            But then one disappeared and no-one questioned it at all.
+            -> $c2: Try to remember more
+                <<set $dream_resistance = "final_detail">>
+                It's all fading. 
+                The warm feelings remain, but the details are rapidly disappearing.
+            -> $c2: Let it slip away            
+                <<set $dream_resistance = "released_after_children">>
+                You stop chasing the shape of the missing child.
+        -> $c2: Let it slip away
+            <<set $dream_resistance = "released_after_wife">>
+            The face folds into the dark.
+    -> $c2: Let it slip away
+        <<set $dream_resistance = "released_early">>
+        You know it's not worth recalling. 
+        None of it was real.
+-> $c2: Let it slip away
+    <<set $dream_resistance = "released_immediately">>
+    You let the memory of the dream recede before it becomes an obsession.
+Another one of those hauntingly real, unfairly blissful dreams.
+But this time is different too.
+After waking there's usually a sudden jolt of remembering reality.
+Remembering who you really are, your real family. 
+If you even have one.
+A relief when the dream was worse than your true reality, but a disappointment when the dream was better.
+Which one is it this time?
+Who... are you?
+Nothing is hap-
+Your thoughts are interrupted by a sharp sound.
+$c1: Test Subject number seven-seven-three-four is regaining consciousness.
+$c1: Commencing auditory tests.
+Another sharp sound. 
+This time it doesn't stop, but continues to assault from all angles.
 -> $c2: Don't react
+    <<set $auditory_response = "none">>
+    $c1: Failure to respond.
+    $c1: Let's try that again.
+    The sound gets uncomfortably louder.
+    -> $c2: Twitch
+        <<set $auditory_response = "delayed_twitch">>
+        You feel disconnected from your own body, but somehow manage to move your head an fraction away from the sound.
+        $c1: Motor response detected.
+    -> $c2: Try to open your eyes
+        <<set $auditory_response = "forced_eyes">>
+        You struggle to open your eyes. 
+        Something is keeping them closed. 
+        You are too weak to fight against whatever it is.
+        $c1: Motor response detected.
+        $c1: Optics still stitched closed.
 -> $c2: Twitch
-$c1: 1, 2, 3
--> $c2: Don't react
--> $c2: Twitch
-$c1: 1, 2, 3
--> $c2: Don't react
--> $c2: Twitch
-$c1: Auditory systems nominal.
+    <<set $auditory_response = "twitch">>
+    $c1: Excellent.
+    $c1: Neural activity detected as a result of auditory stimulation.
+-> $c2: Open Eyes
+    <<set $auditory_response = "eyes_attempted">>
+    You struggle to open your eyes. 
+    Something is keeping them closed. 
+    You are too weak to fight against whatever it is.
+    $c1: Motor response detected.
+    $c1: Optics still forcibly blocked.
+$c1: Auditory systems appear nominal.
 $c1: Proceeding to screen language aphasia.
+The voice clears it's throat, almost as if it were preparing to make a speech or an announcement.
+You still can not see, but somehow you feel the voice become more directed towards you.
 $c1: What color is an Apple?
 -> $c2: Mhmmph
+    <<set $language_signal = $language_signal + 1>>
+    Your lips press around the answer, but it collapses into a muffled sound.
 -> $c2: Grrrr
+    <<set $language_signal = $language_signal + 1>>
+    A growl escapes before the word can form.
 -> $c2: Asda
-$c1: Neural activity detected. Cranial scoped muscular control inadequate.
+    <<set $language_signal = $language_signal + 1>>
+    You know the answer, but your mouth is not cooperating.
+$c1: Neural activity detected, however facial muscular control appears inadequate.
 $c1: Administering adrenaline shot.
-// Flash
+<<Effects.ScreenShake DurationSeconds=0.55 Intensity=0.9 Label=adrenaline-shake>>
+<<Effects.FadeToColor Color=#FFFFFF DurationSeconds=0.35 Label=adrenaline-fade-in>>
+<<Effects.FadeToGame DurationSeconds=1.0 Label=adrenaline-fade-out>>
+// Maybe a flash too
+You feel a sudden tightness in your chest.
+Your breathing hastens. Quick, sharp inhales.
+You worry you have forgotten how to breathe out.
+Finally, the air finds its way out of your nostrils.
+Much weaker than the feeling inside would have had you believe.
 $c1: Restarting language aphasia screening.
 $c1: What color is an Apple?
 -> $c2: Re.....
+    <<set $language_signal = $language_signal + 1>>
+    The beginning of the word scratches out and dies.
 -> $c2: Re-mphhhh
+    <<set $language_signal = $language_signal + 1>>
+    The shape is closer, but your mouth refuses to open around it.
 -> $c2: Urghh
-$c1: Cranial scoped muscular control remains Inadequate.
-$c1: Manually Exercising Jaw Flexion Exercises.
+    <<set $language_signal = $language_signal + 1>>
+    Frustration becomes the only sound you can make.
+$c1: Facial muscular control remains inadequate.
+$c1: Manually exercising jaw flexion exercises.
+There's the sound of what you assume are footsteps.
+Something seems to clamp onto your jaw.
+You were expecting coldness, but there is only numbness and a tingling sensation.
+Then muscle spasms.
+Suddenly your brain and face seem to be connected again, and you can freely move your mouth.
+Your jaw becomes freed from whatever was clasped onto it.
+More footsteps, this time receding away.
 $c1: Restarting language aphasia screening.
 $c1: What color is an Apple?
 -> $c2: Red
+    <<set $language_signal = $language_signal + 2>>
+    The word comes out thin, but intact.
+    $c1: Correct.
 -> $c2: Urghh
+    <<set $language_signal = $language_signal + 1>>
+    The answer is in your head. Your mouth betrays it.
+    $c1: Attempt logged. Repeating with alternate prompt.
 -> $c2: ...
+    <<set $language_signal = $language_signal - 1>>
+    You keep the answer to yourself.
+    $c1: Non-response logged. Continuing.
 $c1: If you fall in a river, what will you become?
 -> $c2: Wet
+    <<set $language_signal = $language_signal + 2>>
+    $c1: Correct.
 -> $c2: Urghh
+    <<set $language_signal = $language_signal + 1>>
+    Your throat makes a sound like a rusted hinge.
+    $c1: Motor speech disruption persists.
 -> $c2: ...
+    <<set $language_signal = $language_signal - 1>>
+    You wait, either out of fear or spite.
+    $c1: Non-response logged.
 $c1: If a person is in a stable upright position supported by their feet and legs, what would they be doing?
 -> $c2: Standing
+    <<set $language_signal = $language_signal + 2>>
+    $c1: Correct.
 -> $c2: Walking
+    <<set $language_signal = $language_signal + 1>>
+    $c1: Acceptable category error. Balance and locomotion are both accessible.
 -> $c2: Urghh
+    <<set $language_signal = $language_signal + 1>>
+    The word is gone by the time your mouth opens.
+    $c1: Verbal obstruction noted.
 -> $c2: ...
+    <<set $language_signal = $language_signal - 1>>
+    The silence feels like the only thing you still control.
+    $c1: Non-response logged.
 $c1: How many r's in the word 'strawberry'?
 -> $c2: 1
+    <<set $language_signal = $language_signal + 1>>
+    $c1: Incorrect, but numeracy pathway is responsive.
 -> $c2: 2
+    <<set $language_signal = $language_signal + 1>>
+    $c1: Incorrect. Continuing.
 -> $c2: 3
+    <<set $language_signal = $language_signal + 2>>
+    $c1: Correct.
 -> $c2: 4
+    <<set $language_signal = $language_signal + 1>>
+    $c1: Incorrect. Overcount likely stress response.
 -> $c2: ...
+    <<set $language_signal = $language_signal - 1>>
+    $c1: Non-response logged.
+// TODO: If fail, we should handle it
 $c1: No aphasia detected. Language skills are intact.
 $c1: Proceeding to optical screening.
 $c1: Removing eye lid stitches.
-// Fade in - Vision Check
-// Teach about hovering!
+<<Characters.AddOrganicInjury CharacterId=CharacterId:subject_7734 BodySlotPath=AnatomySlotId:character.organic.head DamageType=piercing Severity=1>>
+You feel fine strands being removed from your eyelids.
+The heat from the friction as they thread through your skin burns.
+Even if you wanted to yell out in pain, it would only come out as a hoarse cry.
+<<Cutscenes.FrameEntity EntityId=CharacterId:subject_7734 Padding=0 Zoom=1.35 DurationSeconds=0.0 Label=frame-vale>>
+<<Characters.SetVisionRange CharacterId=CharacterId:subject_7734 VisionRangeTiles=3>>
+<<Characters.EnableOptics CharacterId=CharacterId:subject_7734>>
+<<Characters.ChangeName CharacterId=CharacterId:dr_mara_vale Name="Dr. Mara Vale">>
+The lights burn your retinas for a time.
+<<Characters.SetVisionRange CharacterId=CharacterId:subject_7734 VisionRangeTiles=5>>
+But eventually everything settles.
+<<Characters.SetVisionRange CharacterId=CharacterId:subject_7734 VisionRangeTiles=20>>
+You figure its a good time to look around the room.
+(Hover on any object to look at it) // Teach about hovering!
+$c1: Let's begin.
 $c1: What is written on the north wall?
 -> $c2: Compliance
 -> $c2: ...
@@ -82,54 +261,99 @@ $c1: That is adequate for now.
 $c1: Administering IV drip and sedatives.
 // Fade out
 
-
-// Maybe increment more and have missing log files findable later
-$c1: LOG 174
-$c1: TEST SUBJECT ID: 7734
-$c1: REPORT TYPE: Identity Suppression Operation
-$c1: CLEARANCE: Internal / Rehabilitation Division / Neurocorrection Wing
-$c1: Test Subject 7734 is regaining consciousness.
-
-$c1: Muscles have atrophied.
-$c1: Commencing with motor skills relearning protocol.
-$c1: Exposing Subject to Operating System for diagnostics.
-$c1: Pick up the nutrition pack next to you.
-// Pick up
-$c1: Consume the nutrition pack.
-// Eat
-$c1: Digestive system nominal. Strength should gradually return.
-$c1: I have dropped a nutrition pack to your west.
-$c1: Retrieve it and place it to the east of the room.
-// Walks to nutrition pack and retrieves it
-// If player consumes, gets shocked. Consuming was not part of the instructions. But nevermind, we continue
-
-$c1: Moving patient into obstacle course.
-$c1: Complete the course and satiate your hunger and thirst.
-
-$c1: Basic motor skills are adequate, yet strength is low.
-$c1: Administering protein synthesis acceleration and simulating resistance training.
-
-$c1: Moving patient into advanced obstacle course.
-$c1: Complete the course and satiate your hunger and thirst.
-// Teach about interacting with props
-
-$c1: Excellent.
-$c1: Subject is prepared for the next phase.
-
-//TODO: Teach about weapons/armor
-$c1: Basic combat reflexes test
-
-// Installing Neural Operating System
-// This will replace vanilla with a basic shell (Not sure what it will do yet)
-
-// Surgically implanting mod frame
-// Mod frame unlocks some ability maybe?
-
-// OLD
-$c1: Performing biological systems analysis.
-$c1: ...
--> $c2: That depends. Who exactly are you?
-    $c1: Aurelia Voss. Executive tier, solar branch, and currently trapped in a building that is trying to become historical rubble.
-    $c1: Since identities are now established, I have a decision to make.
-    <<jump VossDecision>>
+$c1: Report your dominant discomfort.
+(Press C to review your condition.)
+-> $c2: My head is in pain.
+    $c1: Expected. Cranial anchoring and ocular access both produce residual trauma.
+    $c1: There is a sealed trauma patch in your kit.
+    $c1: Use it before we continue. I need to know you can identify damage and treat it without instruction.
+    // GATE: end dialogue here until the player uses a healing item.
+    // Resume at RecoveryNeedPain after the backend query confirms organic health is stable.
+    <<jump RecoveryGatePause>>
+-> $c2: I'm hungry.
+    $c1: Metabolic demand is elevated.
+    $c1: You have been maintained intravenously, not fed. Your stomach is remembering its job.
+    $c1: Eat the nutrition pack from your kit before we continue.
+    // GATE: end dialogue here until the player eats food.
+    // Resume at RecoveryNeedHunger after the backend query confirms hunger is resolved.
+    <<jump RecoveryGatePause>>
+-> $c2: I'm thirsty.
+    $c1: Dehydration markers are within tolerance.
+    $c1: The sensation is unpleasant, not dangerous. Hold onto the distinction.
+    $c1: Drink from the water pouch in your kit before we continue.
+    // GATE: end dialogue here until the player drinks water.
+    // Resume at RecoveryNeedThirst after the backend query confirms thirst is resolved.
+    <<jump RecoveryGatePause>>
+-> $c2: I don't know who I am.
+    $c1: Identity confusion is the point of this procedure.
+    $c1: Do not chase missing context. Chasing causes false reconstruction.
+    $c1: Open your status record. Read the designation. For now, answer to Subject 7734.
+    // GATE: end dialogue here until the player reviews status.
+    // Resume at RecoveryNeedIdentity after the status-review trigger confirms it.
+    <<jump RecoveryGatePause>>
 ===
+
+title: RecoveryGatePause
+---
+===
+
+title: RecoveryNeedPain
+---
+<<if Characters_GetOrganicHealthPercent("CharacterId:subject_7734") >= 1>>
+$c1: Trauma response is stabilizing.
+$c1: You found the patch, opened it, and used it correctly. That matters more than comfort.
+<<jump RecoveryNeedResolved>>
+<<else>>
+$c1: Trauma response remains elevated.
+$c1: Use the sealed trauma patch before we continue.
+<<jump RecoveryGatePause>>
+<<endif>>
+===
+
+title: RecoveryNeedHunger
+---
+<<if Characters_GetCharacterHunger("CharacterId:subject_7734") <= 0.05>>
+$c1: Nutrition registered.
+$c1: Do not expect strength yet. Expect enough coordination to stand without tearing anything loose.
+<<jump RecoveryNeedResolved>>
+<<else>>
+$c1: Hunger remains above tolerance.
+$c1: Eat the nutrition pack from your kit before we continue.
+<<jump RecoveryGatePause>>
+<<endif>>
+===
+
+title: RecoveryNeedThirst
+---
+<<if Characters_GetCharacterThirst("CharacterId:subject_7734") <= 0.05>>
+$c1: Fluid intake registered.
+$c1: Your throat should stop fighting you soon. Speech will remain unreliable for a while.
+<<jump RecoveryNeedResolved>>
+<<else>>
+$c1: Dehydration markers remain above tolerance.
+$c1: Drink from the water pouch in your kit before we continue.
+<<jump RecoveryGatePause>>
+<<endif>>
+===
+
+title: RecoveryNeedIdentity
+---
+$c1: Status record acknowledged.
+$c1: The designation is ugly, but it is stable. Stability is useful.
+<<jump RecoveryNeedResolved>>
+===
+
+title: RecoveryNeedResolved
+---
+$c1: Baseline recovery task complete.
+$c1: Motor relearning begins after sedation clears.
+$c1: If you can follow simple instructions, you may leave the chair alive.
+===
+
+// Next pass:
+// - Fade out after sedation.
+// - Add item-use/status-review scenario triggers that resume the specific RecoveryNeed* check nodes.
+// - Wake into motor relearning protocol.
+// - Teach movement and object inspection as separate beats.
+// - Keep missing log fragments discoverable later instead of dumping all procedure context here.
+// - Escalate into combat reflexes, OS installation, then augmentation surgery.

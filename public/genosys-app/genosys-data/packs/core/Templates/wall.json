@@ -13,6 +13,10 @@
           "Key": "core/wall"
         },
         "SizeOnMap": "1:1",
+        "ForwardVisionBlocking": "Full",
+        "BackwardVisionBlocking": "Full",
+        "LeftVisionBlocking": "Full",
+        "RightVisionBlocking": "Full",
         "Layers": [],
         "Inventory": null,
         "MapTransition": null,

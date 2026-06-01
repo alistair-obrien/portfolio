@@ -1,0 +1,14 @@
+{
+  "PackageId": "signal_hounds/roadside_checkpoint",
+  "Name": "Roadside Checkpoint",
+  "Subtitle": "A toll road that listens back",
+  "Description": "A Signal Hounds road captain locks down a relay checkpoint after a courier drops off the map with a route wafer full of bad debt.",
+  "Category": "Encounter",
+  "EstimatedDuration": "10-15 minutes",
+  "RenderKey": {
+    "Key": "signal_hounds/road_captain"
+  },
+  "FolderPath": "Scenarios/Signal Hounds",
+  "CreatedAt": "2026-05-28T00:00:00.0000000Z",
+  "UpdatedAt": "2026-05-28T00:00:00.0000000Z"
+}
