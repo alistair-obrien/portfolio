@@ -1125,6 +1125,90 @@
       "IsDirectory": false
     },
     {
+      "Path": "packs/core/assets/status-icons",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/assets/status-icons/adrenaline.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/antitoxin.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/bleeding.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/blinded.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/dazzled.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/dehydrated.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/exhausted.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/fatigued.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/fed.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/generic.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/hungry.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/hydrated.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/poisoned.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/queasy.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/sick.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/staggered.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/starving.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/thirsty.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/well_rested.png",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/assets/status-icons/winded.png",
+      "IsDirectory": false
+    },
+    {
       "Path": "packs/core/assets/tile-icons",
       "IsDirectory": true
     },
@@ -1191,6 +1275,1142 @@
     {
       "Path": "packs/core/scenarios/tutorial",
       "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Character",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Character/dr_mara_vale-ff6aded6.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Character/subject_7734-228fe5d4.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/GameEventLog",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/GameEventLog/root-origin.game-event-log-1826128b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/GameState",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/GameState/root-origin.game-state-2ffd0abb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Item",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Item/bbb6bbcd-718c-408c-9caf-dcdebccdc9ff-e8e2e5b2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Item/tutorial_nutrition_pack-9561e720.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Item/tutorial_subject_patient_kit-98a40100.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Item/tutorial_trauma_patch-bd9317a3.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Item/tutorial_water_pouch-60fce7b5.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Map",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Map/lab-937f2e0a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-0-0-5460ef8f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-0-1-b1481b1e.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-0-2-68a18b83.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-1-0-777b478e.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-1-1-49bb6946.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-1-2-d6965b45.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-2-0-8d5a7f0d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-2-1-c64c0626.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-2-2-fac21127.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-3-0-2928ea59.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-3-1-35b6a7c6.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-3-2-823992ef.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-4-0-c1660bda.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-4-1-6131717f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-4-2-1cfdfcb9.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-5-0-f3d88986.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-5-1-09718018.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-5-2-44374ddc.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/cbb6af43-768c-41da-926b-b32bab21728b-4c95d0af.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_cyberware_station-ecca17ae.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_floor_drone-d1860195.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_locked_starting_room_door-0a557b3a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x02_y16-418173a0.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x03_y16-81097775.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x04_y16-744db47f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x05_y16-5c6bc63b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x06_y16-9c3bda72.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x07_y16-036f95cd.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x08_y16-39b96254.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x09_y16-2cf25c47.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x10_y16-80e5ecfb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x11_y16-653ab13c.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x12_y16-3279d7cc.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x13_y16-6cd381bd.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x14_y16-c4cc0fdb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x15_y16-a8e0230d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x16_y16-8779a49e.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x17_y16-c1a814a2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x18_y16-2df0ffe9.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x19_y16-4d1dcb6c.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x20_y16-f9479489.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_one_way_mirror_x21_y16-5bc90984.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y00-4c2232fd.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y01-9b29ba6f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y02-c64577a2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y03-60f5a4c6.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y04-e21e68a5.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y05-e7b85bd8.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y06-802dbda0.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y07-1dd2b0a2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y08-56f82e03.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y09-8cc54347.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y10-c082e459.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y11-687310fd.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y12-581f8486.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y13-fa31d967.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y14-93e60a8c.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y15-3ca61332.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y16-1a93fd68.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y17-00239fdb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y18-ef37c023.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y19-02f447f7.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y20-e2c4e252.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y21-d1710d95.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y22-1a390e20.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y23-dc5a8df4.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y24-c2d4c922.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y25-f5aa5c74.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y26-8dfcc523.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y27-711fd617.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y28-6b9c011a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y29-17565d5b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y30-3194766c.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x00_y31-3f891598.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y00-3493d697.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y01-087eaab5.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y02-a0d5a3bf.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y03-f5677108.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y04-ccaec2b8.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y05-72283397.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y06-fa2e9daf.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y07-649011ad.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y08-964388ca.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y09-455756b7.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y10-69e71aac.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y11-826cd851.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y12-35b88b03.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y13-0399baef.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y14-26623566.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y15-a675a617.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y16-3b34cb56.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y17-c71a7780.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y18-358c3240.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y19-751fc487.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y20-38b751b8.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y21-1927f008.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y22-89d2cb20.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y23-9cd8fc1b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x01_y31-056c487b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x02_y00-b44f2bc2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x02_y01-b7556783.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x02_y23-8a4278da.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x02_y31-8d3f31f9.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x03_y00-9fa79dcc.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x03_y01-e6517411.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x03_y23-9e0dd78b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x03_y31-19dcb014.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x04_y00-42c49221.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x04_y01-572b2562.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x04_y23-85f7dfd1.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x04_y31-5fada3bb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x05_y00-6f4eed8d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x05_y01-e3807980.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x05_y23-0d7659f4.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x05_y31-a501a8ea.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x06_y00-9f1ab3ed.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x06_y01-569c9a63.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x06_y23-09cc63d0.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x06_y31-45b00e0f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x07_y00-6dcdc073.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x07_y01-059c2d6d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x07_y23-11fcaceb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x07_y31-4fb2cf55.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x08_y00-99ed2632.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x08_y01-fe50fd06.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x08_y23-f8a238d3.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x08_y31-0a630bc2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x09_y00-56e89068.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x09_y01-5a7f376c.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x09_y23-f6e69e9c.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x09_y31-0f833c82.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x10_y00-ff386844.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x10_y01-2bc794d4.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x10_y23-a6167633.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x10_y31-d2ee728f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x11_y00-78ba3ba1.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x11_y01-85d3dc1d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x11_y23-8ba43943.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x11_y31-015eb1e1.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x12_y00-999211af.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x12_y01-265571c8.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x12_y23-6d400bd4.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x12_y31-2fc17235.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x13_y00-0211564b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x13_y01-dd64d475.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x13_y23-209ecee3.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x13_y31-9ea63e1f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x14_y00-26baa37e.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x14_y01-33bfd429.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x14_y23-3f6458d2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x14_y31-da501e91.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x15_y00-b0e9285f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x15_y01-4153cd6f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x15_y23-3b90de6a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x15_y31-8f454e4b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x16_y00-5bc77c46.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x16_y01-26950d5d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x16_y23-215ebc30.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x16_y31-507713ff.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x17_y00-bbb13fd5.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x17_y01-c0a325c4.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x17_y23-5c0e4f4a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x17_y31-96d70d0c.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x18_y00-f55221c7.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x18_y01-254f0dfb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x18_y23-df3dfc30.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x18_y31-a977edaf.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x19_y00-94f9d352.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x19_y01-5506b83f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x19_y23-a46317b1.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x19_y31-8684f39e.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x20_y00-cc3e0e65.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x20_y01-f6d57743.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x20_y23-f95f32c5.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x20_y31-4bfee3a7.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x21_y00-fb472334.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x21_y01-81ea2501.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x21_y23-7f0b711d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x21_y31-5e4b5758.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y00-54686b60.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y01-c7594a80.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y02-845e2e7e.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y03-e300d93f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y04-849cb031.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y05-3be40d74.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y06-1800c923.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y07-7165c781.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y08-53e1c038.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y09-bd2e3af1.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y13-e8c41aad.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y14-892b19e2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y15-d2f32148.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y16-c3589a79.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y17-f137c619.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y18-e506e613.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y19-b2d33bee.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y20-f4b3711b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y21-e593fcee.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y22-98d9af81.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y23-52d384ff.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x22_y31-d7e64035.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x23_y00-20ee122d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x23_y31-7eddc4cd.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x24_y00-cff70d8e.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x24_y31-61b1d338.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x25_y00-4d68a9d3.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x25_y31-f129fc8f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x26_y00-2137139f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x26_y31-54a29a08.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x27_y00-8bfcfa78.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x27_y31-c45b3c9e.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x28_y00-a4727663.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x28_y31-ce019308.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x29_y00-ae9f2218.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x29_y31-11ac624b.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x30_y00-42ba91ee.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x30_y31-3d543b49.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x31_y00-7c21c77e.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x31_y31-06ce04d2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x32_y00-34c5a8f9.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x32_y31-a3aaec01.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x33_y00-be38825f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x33_y31-0e284927.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x34_y00-8d2de5af.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x34_y31-ff49d985.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x35_y00-93c3231c.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x35_y31-aa68ce62.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y00-54e58f6f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y01-1789e303.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y02-5ed63870.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y03-62560bd1.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y04-1b547c99.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y05-b3f62105.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y06-64da8212.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y07-47e6cf6d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y08-3a00677d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y09-3b3f28c9.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y10-c7a321be.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y11-2bddfc6a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y12-059893fb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y13-ab7071fb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y14-241db733.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y15-48dc7d4a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y16-600af6b2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y17-cc2799cb.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y18-8cb17a6f.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y19-2950c1fa.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y20-112da393.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y21-2f3b6d11.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y22-d203ff92.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y23-23df81d2.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y24-62f549e1.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y25-823d3897.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y26-147c8503.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y27-bf1c507d.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y28-868d68d1.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y29-89b8e48a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y30-66db8b4a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_wall_x36_y31-a29b12a3.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/ScenarioEvent",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/ScenarioEvent/scenarioevent_1779680130612-3a9c6120.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/ScenarioEvent/tutorial_resume_eyes_adjusted.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/ScenarioVariableTrigger",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/ScenarioVariableTrigger/tutorial_wait_for_eyes_adjusted.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/TurnState",
+      "IsDirectory": true
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/TurnState/root-origin.turn-state-745377bb.json",
+      "IsDirectory": false
     },
     {
       "Path": "packs/core/scenarios/tutorial/manifest.json",

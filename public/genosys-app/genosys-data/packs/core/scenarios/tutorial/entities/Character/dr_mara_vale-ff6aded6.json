@@ -1,0 +1,200 @@
+{
+  "TypeId": "Character",
+  "Version": 1,
+  "Data": {
+    "Id": "CharacterId:dr_mara_vale",
+    "Name": "Unknown Voice",
+    "Description": "",
+    "Level": 1,
+    "PortraitRenderKey": {
+      "Key": ""
+    },
+    "Stats": {
+      "Physique": 0,
+      "Reflexes": 0,
+      "Technical": 0,
+      "Grit": 0,
+      "Charisma": 0,
+      "Hunger": 0,
+      "Thirst": 0,
+      "Fatigue": 0,
+      "Intoxication": 0,
+      "Humanity": 0,
+      "MovementCellsPerTurn": 6,
+      "VisionRangeTiles": 20
+    },
+    "Statuses": [],
+    "Anatomy": {
+      "TokenBodyType": "Masculine",
+      "AnatomyMap": [
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.head",
+          "BodyPart": {
+            "Name": "Head",
+            "Description": "The Head",
+            "MaxOrganicInjuryCapacity": 3,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.torso",
+          "BodyPart": {
+            "Name": "Torso",
+            "Description": "The Torso",
+            "MaxOrganicInjuryCapacity": 6,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.left_arm",
+          "BodyPart": {
+            "Name": "Left Arm",
+            "Description": "The Left Arm",
+            "MaxOrganicInjuryCapacity": 4,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.right_arm",
+          "BodyPart": {
+            "Name": "Right Arm",
+            "Description": "The Right Arm",
+            "MaxOrganicInjuryCapacity": 4,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.left_leg",
+          "BodyPart": {
+            "Name": "Left Leg",
+            "Description": "The Left Leg",
+            "MaxOrganicInjuryCapacity": 4,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.right_leg",
+          "BodyPart": {
+            "Name": "Right Leg",
+            "Description": "The Right Leg",
+            "MaxOrganicInjuryCapacity": 4,
+            "OrganicInjuries": []
+          }
+        }
+      ]
+    },
+    "Cybernetics": {
+      "Cybernetics": [
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.head",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.torso",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.left_arm",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.right_arm",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.legs",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_1",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_2",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_3",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_4",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_5",
+          "ItemId": null
+        }
+      ]
+    },
+    "Style": {
+      "StyleItems": [
+        {
+          "StyleSlotId": "StyleSlotId:character.style.head",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.face",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.torso_inner",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.torso_outer",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.hands",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.legs",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.feet",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_1",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_2",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_3",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_4",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_5",
+          "ItemId": null
+        }
+      ]
+    },
+    "OperatingSystem": {
+      "Id": "vanilla-shell",
+      "Modules": [],
+      "ConnectedStorageItemId": null
+    },
+    "IntrinsicGrants": [],
+    "InventoryItemId": null,
+    "WeaponItemId": null,
+    "ArmorItemId": null,
+    "DialogueNode": null,
+    "DialogueScriptPath": null,
+    "ActiveDialogueInstanceId": null,
+    "SizeOnMap": "3:3",
+    "TypeId": "Character"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

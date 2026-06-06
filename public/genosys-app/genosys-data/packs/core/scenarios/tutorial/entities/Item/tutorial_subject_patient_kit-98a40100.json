@@ -1,0 +1,36 @@
+{
+  "TypeId": "Item",
+  "Version": 1,
+  "Data": {
+    "Id": "ItemId:tutorial_subject_patient_kit",
+    "Name": "Patient Kit",
+    "Description": "A sealed recovery pouch clipped to the chair rail. The printed label reads: SUBJECT 7734 - BASIC RESPONSE.",
+    "FlavorText": "Everything inside is sized for trembling hands and minimum trust.",
+    "BaseMonetaryValue": 0,
+    "RenderKey": {
+      "Key": "core/inventory_pack"
+    },
+    "ManufacturerId": null,
+    "SizeInInventory": "2:2",
+    "Condition": "0/0",
+    "Stack": "1/1",
+    "GrantedActorGrants": [],
+    "ModFrame": null,
+    "Mod": null,
+    "Consumable": null,
+    "Clothing": null,
+    "Inventory": {
+      "Columns": 6,
+      "Rows": 4,
+      "ItemPlacements": []
+    },
+    "DigitalInventory": null,
+    "Ammo": null,
+    "Gun": null,
+    "Armor": null,
+    "TypeId": "Item"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

@@ -1,0 +1,41 @@
+{
+  "TypeId": "Item",
+  "Version": 1,
+  "Data": {
+    "Id": "ItemId:tutorial_water_pouch",
+    "Name": "Water Pouch",
+    "Description": "A soft hydration pouch with a sealed bite valve. Condensation beads on the sterile plastic.",
+    "FlavorText": "Cold enough to feel like evidence of kindness.",
+    "BaseMonetaryValue": 0,
+    "RenderKey": {
+      "Key": "core/med_inhaler"
+    },
+    "ManufacturerId": null,
+    "SizeInInventory": "1:2",
+    "Condition": "0/0",
+    "Stack": "1/1",
+    "GrantedActorGrants": [],
+    "ModFrame": null,
+    "Mod": null,
+    "Consumable": {
+      "QuantityConsumedPerUse": 1,
+      "ConsumesTurn": true,
+      "HungerDelta": 0,
+      "ThirstDelta": -0.45,
+      "FatigueDelta": 0,
+      "IntoxicationDelta": 0,
+      "DepletedBehavior": "destroy",
+      "UseStages": []
+    },
+    "Clothing": null,
+    "Inventory": null,
+    "DigitalInventory": null,
+    "Ammo": null,
+    "Gun": null,
+    "Armor": null,
+    "TypeId": "Item"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

@@ -1,0 +1,101 @@
+{
+  "TypeId": "MapChunk",
+  "Version": 1,
+  "Data": {
+    "Id": "MapChunkId:lab:chunk:1:0",
+    "Name": "Lab (1,0)",
+    "Size": "16:16",
+    "Placements": [
+      {
+        "Id": "PropId:tutorial_wall_x16_y01",
+        "Position": "16:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x17_y01",
+        "Position": "17:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x18_y01",
+        "Position": "18:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x19_y01",
+        "Position": "19:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x20_y01",
+        "Position": "20:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x21_y01",
+        "Position": "21:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y01",
+        "Position": "22:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y02",
+        "Position": "22:2"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y03",
+        "Position": "22:3"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y04",
+        "Position": "22:4"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y05",
+        "Position": "22:5"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y06",
+        "Position": "22:6"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y07",
+        "Position": "22:7"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y08",
+        "Position": "22:8"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y09",
+        "Position": "22:9"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y13",
+        "Position": "22:13"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y14",
+        "Position": "22:14"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y15",
+        "Position": "22:15"
+      },
+      {
+        "Id": "PropId:tutorial_floor_drone",
+        "Position": "16:2"
+      },
+      {
+        "Id": "PropId:tutorial_locked_starting_room_door",
+        "Position": "22:10"
+      }
+    ],
+    "Exploration": [
+      {
+        "ViewerCharacterId": "CharacterId:dr_mara_vale",
+        "ExploredMask": "0000000000000000111111000000000011111110000000001111111000000000111111100000000011111110000000001111111000000000111111100000000011111110000000001111111000000000111111100000000011111110000000001111111000000000111111100000000011111110000000001111111000000000"
+      }
+    ],
+    "TypeId": "MapChunk"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

@@ -1,0 +1,41 @@
+{
+  "TypeId": "Item",
+  "Version": 1,
+  "Data": {
+    "Id": "ItemId:tutorial_trauma_patch",
+    "Name": "Sealed Trauma Patch",
+    "Description": "A pressure-sealed medical patch for shallow cranial trauma and surgical abrasions. The applicator flexes once, then locks.",
+    "FlavorText": "The instructions assume you can read while bleeding.",
+    "BaseMonetaryValue": 0,
+    "RenderKey": {
+      "Key": "core/consumable_medkit"
+    },
+    "ManufacturerId": null,
+    "SizeInInventory": "1:1",
+    "Condition": "0/0",
+    "Stack": "1/1",
+    "GrantedActorGrants": [],
+    "ModFrame": null,
+    "Mod": null,
+    "Consumable": {
+      "QuantityConsumedPerUse": 1,
+      "ConsumesTurn": true,
+      "HungerDelta": 0,
+      "ThirstDelta": 0,
+      "FatigueDelta": 0,
+      "IntoxicationDelta": 0,
+      "DepletedBehavior": "destroy",
+      "UseStages": []
+    },
+    "Clothing": null,
+    "Inventory": null,
+    "DigitalInventory": null,
+    "Ammo": null,
+    "Gun": null,
+    "Armor": null,
+    "TypeId": "Item"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

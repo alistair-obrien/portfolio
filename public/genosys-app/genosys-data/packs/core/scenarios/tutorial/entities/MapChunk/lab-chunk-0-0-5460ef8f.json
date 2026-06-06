@@ -1,0 +1,149 @@
+{
+  "TypeId": "MapChunk",
+  "Version": 1,
+  "Data": {
+    "Id": "MapChunkId:lab:chunk:0:0",
+    "Name": "Lab (0,0)",
+    "Size": "16:16",
+    "Placements": [
+      {
+        "Id": "PropId:tutorial_wall_x01_y01",
+        "Position": "1:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x02_y01",
+        "Position": "2:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x03_y01",
+        "Position": "3:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x04_y01",
+        "Position": "4:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x05_y01",
+        "Position": "5:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x06_y01",
+        "Position": "6:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x07_y01",
+        "Position": "7:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x08_y01",
+        "Position": "8:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x09_y01",
+        "Position": "9:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x10_y01",
+        "Position": "10:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x11_y01",
+        "Position": "11:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x12_y01",
+        "Position": "12:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x13_y01",
+        "Position": "13:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x14_y01",
+        "Position": "14:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x15_y01",
+        "Position": "15:1"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y02",
+        "Position": "1:2"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y03",
+        "Position": "1:3"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y04",
+        "Position": "1:4"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y05",
+        "Position": "1:5"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y06",
+        "Position": "1:6"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y07",
+        "Position": "1:7"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y08",
+        "Position": "1:8"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y09",
+        "Position": "1:9"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y10",
+        "Position": "1:10"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y11",
+        "Position": "1:11"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y12",
+        "Position": "1:12"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y13",
+        "Position": "1:13"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y14",
+        "Position": "1:14"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y15",
+        "Position": "1:15"
+      },
+      {
+        "Id": "CharacterId:subject_7734",
+        "Position": "11:7"
+      },
+      {
+        "Id": "PropId:cbb6af43-768c-41da-926b-b32bab21728b",
+        "Position": "6:2"
+      },
+      {
+        "Id": "PropId:tutorial_cyberware_station",
+        "Position": "11:2"
+      }
+    ],
+    "Exploration": [
+      {
+        "ViewerCharacterId": "CharacterId:dr_mara_vale",
+        "ExploredMask": "0000000000000000011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111111"
+      }
+    ],
+    "TypeId": "MapChunk"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

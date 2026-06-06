@@ -1,0 +1,38 @@
+{
+  "TypeId": "Prop",
+  "Version": 1,
+  "Data": {
+    "Id": "PropId:tutorial_floor_drone",
+    "Name": "Monitor",
+    "Description": "It looks expensive. Not new, but often cleaned.\n\nThe display is mostly static, but every now and then you make out a face. It's uncertain if the expression is of pain or ecstatic joy. There is no color, nor sound.",
+    "FlavorText": "",
+    "RenderKey": {
+      "Key": ""
+    },
+    "SizeOnMap": "2:1",
+    "ForwardVisionBlocking": "Full",
+    "BackwardVisionBlocking": "Full",
+    "LeftVisionBlocking": "Full",
+    "RightVisionBlocking": "Full",
+    "Layers": [
+      {
+        "Id": "PropLayerId:tutorial_floor_drone.structural",
+        "Name": "Structural shell",
+        "DamageDomain": "structural",
+        "MaxIntegrity": 6,
+        "RicochetTransfer": 1,
+        "Resistances": [],
+        "DamageInstances": [],
+        "RenderKey": {
+          "Key": "core/prop_damaged_drone"
+        }
+      }
+    ],
+    "Inventory": null,
+    "MapTransition": null,
+    "TypeId": "Prop"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

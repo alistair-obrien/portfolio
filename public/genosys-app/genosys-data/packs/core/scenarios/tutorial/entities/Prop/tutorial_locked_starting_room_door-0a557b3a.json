@@ -1,0 +1,38 @@
+{
+  "TypeId": "Prop",
+  "Version": 1,
+  "Data": {
+    "Id": "PropId:tutorial_locked_starting_room_door",
+    "Name": "Locked Door",
+    "Description": "A sealed 1x3 lab door set into the right wall. The latch housing is dark, and the manual override slot has been filled with red resin.",
+    "FlavorText": "A sealed 1x3 lab door set into the right wall. The latch housing is dark, and the manual override slot has been filled with red resin.",
+    "RenderKey": {
+      "Key": ""
+    },
+    "SizeOnMap": "1:3",
+    "ForwardVisionBlocking": "Full",
+    "BackwardVisionBlocking": "Full",
+    "LeftVisionBlocking": "Full",
+    "RightVisionBlocking": "Full",
+    "Layers": [
+      {
+        "Id": "PropLayerId:tutorial_locked_starting_room_door.structural",
+        "Name": "Locked door shell",
+        "DamageDomain": "structural",
+        "MaxIntegrity": 12,
+        "RicochetTransfer": 1,
+        "Resistances": [],
+        "DamageInstances": [],
+        "RenderKey": {
+          "Key": "core/ghost.map_door"
+        }
+      }
+    ],
+    "Inventory": null,
+    "MapTransition": null,
+    "TypeId": "Prop"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

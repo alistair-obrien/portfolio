@@ -1,0 +1,25 @@
+{
+  "TypeId": "ScenarioEvent",
+  "Version": 1,
+  "Data": {
+    "Id": "ScenarioEventId:scenarioevent_1779680130612",
+    "Name": "New Scenario Event",
+    "PlayImmediate": true,
+    "Actions": [
+      {
+        "CommandId": "DialogueAPI.Commands.StartDialogue",
+        "Payload": {
+          "InstigatorCharacterId": "CharacterId:subject_7734",
+          "TargetCharacterId": "CharacterId:dr_mara_vale",
+          "DialogueScriptPath": "core/tutorial/tutorial.yarn",
+          "DialogueNode": "Start"
+        },
+        "ContinueOnFailure": false
+      }
+    ],
+    "TypeId": "ScenarioEvent"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

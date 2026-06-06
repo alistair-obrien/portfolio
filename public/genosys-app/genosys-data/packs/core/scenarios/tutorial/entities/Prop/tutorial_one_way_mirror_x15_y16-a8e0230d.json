@@ -1,0 +1,38 @@
+{
+  "TypeId": "Prop",
+  "Version": 1,
+  "Data": {
+    "Id": "PropId:tutorial_one_way_mirror_x15_y16",
+    "Name": "One Way Mirror",
+    "Description": null,
+    "FlavorText": null,
+    "RenderKey": {
+      "Key": ""
+    },
+    "SizeOnMap": "1:1",
+    "ForwardVisionBlocking": "Full",
+    "BackwardVisionBlocking": "None",
+    "LeftVisionBlocking": "None",
+    "RightVisionBlocking": "None",
+    "Layers": [
+      {
+        "Id": "PropLayerId:tutorial_one_way_mirror_x15_y16.structural",
+        "Name": "Mirror structure",
+        "DamageDomain": "structural",
+        "MaxIntegrity": 6,
+        "RicochetTransfer": 1,
+        "Resistances": [],
+        "DamageInstances": [],
+        "RenderKey": {
+          "Key": ""
+        }
+      }
+    ],
+    "Inventory": null,
+    "MapTransition": null,
+    "TypeId": "Prop"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

@@ -1,12 +1,16 @@
 {
+  "FormatVersion": 2,
   "PackageId": "core/tutorial",
   "Name": "Lab Rat",
   "Subtitle": "Work in progress tutorial scenario.",
   "Description": "Learn the basics of the game in this tutorial scenario.",
   "Category": "Custom",
   "EstimatedDuration": "",
+  "RenderKey": {
+    "Key": "core/scenario_custom"
+  },
   "FolderPath": "Scenarios",
   "IsDraft": false,
-  "CreatedAt": "2026-05-30T10:48:44.7560000Z",
-  "UpdatedAt": "2026-05-30T10:48:44.7560000Z"
+  "CreatedAt": "2026-06-03T17:13:07.3890000Z",
+  "UpdatedAt": "2026-06-03T23:45:58.5060000Z"
 }

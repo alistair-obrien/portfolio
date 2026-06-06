@@ -1029,6 +1029,17 @@ export async function createMapTemplateEditorSession(ownerSessionId, templateId)
   return parseEnvelope(exports.CreateMapTemplateEditorSession(ownerSessionId, templateId));
 }
 
+export async function exportRuntimeSnapshot(sessionId) {
+  const exports = await ensureRuntime();
+  return parseEnvelope(exports.ExportRuntimeSnapshot(sessionId));
+}
+
+export async function loadRuntimeSnapshot(sessionId, snapshot) {
+  const exports = await ensureRuntime();
+  const snapshotJson = typeof snapshot === "string" ? snapshot : JSON.stringify(snapshot);
+  return parseEnvelope(exports.LoadRuntimeSnapshot(sessionId, snapshotJson));
+}
+
 export async function applyMapTemplateEditorSession(ownerSessionId, editorSessionId) {
   const exports = await ensureRuntime();
   return parseEnvelope(exports.ApplyMapTemplateEditorSession(ownerSessionId, editorSessionId));

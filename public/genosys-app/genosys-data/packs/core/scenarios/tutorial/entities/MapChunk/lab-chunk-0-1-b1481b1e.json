@@ -1,0 +1,169 @@
+{
+  "TypeId": "MapChunk",
+  "Version": 1,
+  "Data": {
+    "Id": "MapChunkId:lab:chunk:0:1",
+    "Name": "Lab (0,1)",
+    "Size": "16:16",
+    "Placements": [
+      {
+        "Id": "PropId:tutorial_wall_x01_y16",
+        "Position": "1:16"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y17",
+        "Position": "1:17"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y18",
+        "Position": "1:18"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y19",
+        "Position": "1:19"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x02_y16",
+        "Position": "2:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x03_y16",
+        "Position": "3:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x04_y16",
+        "Position": "4:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x05_y16",
+        "Position": "5:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x06_y16",
+        "Position": "6:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x07_y16",
+        "Position": "7:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x08_y16",
+        "Position": "8:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x09_y16",
+        "Position": "9:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x10_y16",
+        "Position": "10:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x11_y16",
+        "Position": "11:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x12_y16",
+        "Position": "12:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x13_y16",
+        "Position": "13:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x14_y16",
+        "Position": "14:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x15_y16",
+        "Position": "15:16"
+      },
+      {
+        "Id": "CharacterId:dr_mara_vale",
+        "Position": "9:17"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y23",
+        "Position": "1:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x02_y23",
+        "Position": "2:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x03_y23",
+        "Position": "3:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x04_y23",
+        "Position": "4:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x05_y23",
+        "Position": "5:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x06_y23",
+        "Position": "6:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x07_y23",
+        "Position": "7:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x08_y23",
+        "Position": "8:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x09_y23",
+        "Position": "9:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x10_y23",
+        "Position": "10:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x11_y23",
+        "Position": "11:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x12_y23",
+        "Position": "12:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x13_y23",
+        "Position": "13:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x14_y23",
+        "Position": "14:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x15_y23",
+        "Position": "15:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y20",
+        "Position": "1:20"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y21",
+        "Position": "1:21"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x01_y22",
+        "Position": "1:22"
+      }
+    ],
+    "Exploration": [
+      {
+        "ViewerCharacterId": "CharacterId:dr_mara_vale",
+        "ExploredMask": "0111111111111111011111111111111101111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+      }
+    ],
+    "TypeId": "MapChunk"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

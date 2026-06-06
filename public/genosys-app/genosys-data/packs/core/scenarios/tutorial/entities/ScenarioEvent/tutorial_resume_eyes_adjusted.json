@@ -1,0 +1,38 @@
+{
+  "TypeId": "ScenarioEvent",
+  "Version": 1,
+  "Data": {
+    "Id": "ScenarioEventId:tutorial_resume_eyes_adjusted",
+    "Name": "Tutorial Resume Eyes Adjusted",
+    "PlayImmediate": false,
+    "Actions": [
+      {
+        "CommandId": "ScenarioEventsAPI.Commands.SetVariable",
+        "Payload": {
+          "Key": "tutorial.phase",
+          "Value": {
+            "Kind": "String",
+            "BoolValue": false,
+            "NumberValue": 0.0,
+            "StringValue": "eyes_adjusted"
+          }
+        },
+        "ContinueOnFailure": false
+      },
+      {
+        "CommandId": "DialogueAPI.Commands.StartDialogue",
+        "Payload": {
+          "InstigatorCharacterId": "CharacterId:subject_7734",
+          "TargetCharacterId": "CharacterId:dr_mara_vale",
+          "DialogueScriptPath": "core/tutorial/tutorial.yarn",
+          "DialogueNode": "EyesAdjusted"
+        },
+        "ContinueOnFailure": false
+      }
+    ],
+    "TypeId": "ScenarioEvent"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

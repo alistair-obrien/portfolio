@@ -1,0 +1,101 @@
+{
+  "TypeId": "MapChunk",
+  "Version": 1,
+  "Data": {
+    "Id": "MapChunkId:lab:chunk:1:1",
+    "Name": "Lab (1,1)",
+    "Size": "16:16",
+    "Placements": [
+      {
+        "Id": "PropId:tutorial_wall_x22_y16",
+        "Position": "22:16"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y17",
+        "Position": "22:17"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y18",
+        "Position": "22:18"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y19",
+        "Position": "22:19"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x16_y16",
+        "Position": "16:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x17_y16",
+        "Position": "17:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x18_y16",
+        "Position": "18:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x19_y16",
+        "Position": "19:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x20_y16",
+        "Position": "20:16"
+      },
+      {
+        "Id": "PropId:tutorial_one_way_mirror_x21_y16",
+        "Position": "21:16"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x16_y23",
+        "Position": "16:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x17_y23",
+        "Position": "17:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x18_y23",
+        "Position": "18:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x19_y23",
+        "Position": "19:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x20_y23",
+        "Position": "20:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x21_y23",
+        "Position": "21:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y23",
+        "Position": "22:23"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y20",
+        "Position": "22:20"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y21",
+        "Position": "22:21"
+      },
+      {
+        "Id": "PropId:tutorial_wall_x22_y22",
+        "Position": "22:22"
+      }
+    ],
+    "Exploration": [
+      {
+        "ViewerCharacterId": "CharacterId:dr_mara_vale",
+        "ExploredMask": "1111111000000000111111100000000011111110000000001111111000000000111111111111111011111111111111101111111111111110111111111111111011111111111111101111111111111110111111111111110011111111111111001111111111111000111111111111100011111111111100001111111111110000"
+      }
+    ],
+    "TypeId": "MapChunk"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

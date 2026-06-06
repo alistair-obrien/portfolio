@@ -1,0 +1,13 @@
+{
+  "TypeId": "TurnState",
+  "Version": 1,
+  "Data": {
+    "Id": "turnstate:root@origin.turn-state",
+    "Name": "Turn State",
+    "TurnData": {},
+    "TypeId": "TurnState"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

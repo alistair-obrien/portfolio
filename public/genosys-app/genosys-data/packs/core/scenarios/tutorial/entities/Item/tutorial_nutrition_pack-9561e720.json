@@ -1,0 +1,41 @@
+{
+  "TypeId": "Item",
+  "Version": 1,
+  "Data": {
+    "Id": "ItemId:tutorial_nutrition_pack",
+    "Name": "Nutrition Pack",
+    "Description": "A silver nutrient pouch with a peel-away straw. The formula is bland, dense, and designed for post-sedation digestion.",
+    "FlavorText": "The packet warns you not to taste it too carefully.",
+    "BaseMonetaryValue": 0,
+    "RenderKey": {
+      "Key": "core/ration_pack"
+    },
+    "ManufacturerId": null,
+    "SizeInInventory": "1:2",
+    "Condition": "0/0",
+    "Stack": "1/1",
+    "GrantedActorGrants": [],
+    "ModFrame": null,
+    "Mod": null,
+    "Consumable": {
+      "QuantityConsumedPerUse": 1,
+      "ConsumesTurn": true,
+      "HungerDelta": -0.45,
+      "ThirstDelta": 0,
+      "FatigueDelta": 0,
+      "IntoxicationDelta": 0,
+      "DepletedBehavior": "destroy",
+      "UseStages": []
+    },
+    "Clothing": null,
+    "Inventory": null,
+    "DigitalInventory": null,
+    "Ammo": null,
+    "Gun": null,
+    "Armor": null,
+    "TypeId": "Item"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

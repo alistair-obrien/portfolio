@@ -1,0 +1,38 @@
+{
+  "TypeId": "Item",
+  "Version": 1,
+  "Data": {
+    "Id": "ItemId:bbb6bbcd-718c-408c-9caf-dcdebccdc9ff",
+    "Name": "New Item",
+    "Description": null,
+    "FlavorText": null,
+    "BaseMonetaryValue": 0,
+    "RenderKey": {
+      "Key": ""
+    },
+    "ManufacturerId": null,
+    "SizeInInventory": "1:1",
+    "Condition": "0/0",
+    "Stack": "1/1",
+    "GrantedActorGrants": [],
+    "ModFrame": null,
+    "Mod": null,
+    "Consumable": null,
+    "Clothing": {
+      "StyleSlotId": "StyleSlotId:character.style.head",
+      "SurfaceArea": 1,
+      "Aesthetics": [],
+      "Traits": [],
+      "FactionAffiliations": []
+    },
+    "Inventory": null,
+    "DigitalInventory": null,
+    "Ammo": null,
+    "Gun": null,
+    "Armor": null,
+    "TypeId": "Item"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

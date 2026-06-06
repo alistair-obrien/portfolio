@@ -1,0 +1,38 @@
+{
+  "TypeId": "Prop",
+  "Version": 1,
+  "Data": {
+    "Id": "PropId:tutorial_wall_x04_y01",
+    "Name": "Wall",
+    "Description": null,
+    "FlavorText": null,
+    "RenderKey": {
+      "Key": "core/wall"
+    },
+    "SizeOnMap": "1:1",
+    "ForwardVisionBlocking": "None",
+    "BackwardVisionBlocking": "None",
+    "LeftVisionBlocking": "None",
+    "RightVisionBlocking": "None",
+    "Layers": [
+      {
+        "Id": "PropLayerId:tutorial_wall_x04_y01.structural",
+        "Name": "Wall structure",
+        "DamageDomain": "structural",
+        "MaxIntegrity": 12,
+        "RicochetTransfer": 1,
+        "Resistances": [],
+        "DamageInstances": [],
+        "RenderKey": {
+          "Key": "core/wall"
+        }
+      }
+    ],
+    "Inventory": null,
+    "MapTransition": null,
+    "TypeId": "Prop"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

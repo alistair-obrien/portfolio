@@ -1,0 +1,297 @@
+{
+  "TypeId": "Character",
+  "Version": 1,
+  "Data": {
+    "Id": "CharacterId:subject_7734",
+    "Name": "Subject #7734",
+    "Description": "",
+    "Level": 1,
+    "PortraitRenderKey": {
+      "Key": ""
+    },
+    "Stats": {
+      "Physique": 0,
+      "Reflexes": 0,
+      "Technical": 0,
+      "Grit": 0,
+      "Charisma": 0,
+      "Hunger": 0,
+      "Thirst": 0,
+      "Fatigue": 0.8,
+      "Intoxication": 0,
+      "Humanity": 0.0,
+      "MovementCellsPerTurn": 6,
+      "VisionRangeTiles": 20
+    },
+    "Statuses": [
+      {
+        "DefinitionId": "status.fatigue.fatigued",
+        "Name": "Fatigued",
+        "Severity": 1,
+        "Source": "Fatigue",
+        "Description": "Your body is slowing down and movement takes more effort.",
+        "EffectLines": [
+          {
+            "Text": "-1 movement cell per turn",
+            "Tone": "negative"
+          },
+          {
+            "Text": "-10% control",
+            "Tone": "negative"
+          }
+        ],
+        "MovementCellsPerTurnModifier": -1,
+        "HungerTickRateMultiplier": 1.0,
+        "ThirstTickRateMultiplier": 1.0,
+        "FatigueTickRateMultiplier": 1.0,
+        "ControlModifierPercent": -0.1,
+        "FoodConsumptionEffectMultiplier": 1.0,
+        "DrinkConsumptionEffectMultiplier": 1.0,
+        "HealingRecoveryMultiplier": 1.0,
+        "PeriodicInjuryIntervalTicks": 0,
+        "TicksUntilPeriodicInjury": 0,
+        "SourceBodySlotId": null,
+        "SourceDamageTypeId": "none",
+        "RemainingTicks": -1,
+        "AppliedSource": "Fatigue",
+        "IsStateMaintained": true
+      },
+      {
+        "DefinitionId": "status.sensory.blinded",
+        "Name": "Blinded",
+        "Severity": 1,
+        "Source": "Sensory",
+        "Description": "You cannot make out the world around you.",
+        "EffectLines": [
+          {
+            "Text": "World view unavailable",
+            "Tone": "negative"
+          }
+        ],
+        "MovementCellsPerTurnModifier": 0,
+        "HungerTickRateMultiplier": 1.0,
+        "ThirstTickRateMultiplier": 1.0,
+        "FatigueTickRateMultiplier": 1.0,
+        "ControlModifierPercent": 0.0,
+        "FoodConsumptionEffectMultiplier": 1.0,
+        "DrinkConsumptionEffectMultiplier": 1.0,
+        "HealingRecoveryMultiplier": 1.0,
+        "PeriodicInjuryIntervalTicks": 0,
+        "TicksUntilPeriodicInjury": 0,
+        "EffectiveVisionRangeCapTiles": 0,
+        "HidesWorld": true,
+        "PreventsMovement": false,
+        "ExpiresIntoStatusDefinitionId": "",
+        "SourceBodySlotId": null,
+        "SourceDamageTypeId": "none",
+        "RemainingTicks": -1,
+        "AppliedSource": "Restraint",
+        "IsStateMaintained": false
+      },
+      {
+        "DefinitionId": "status.action.immobilized",
+        "Name": "Immobilized",
+        "Severity": 1,
+        "Source": "Action",
+        "Description": "You are unable to move from your current position.",
+        "EffectLines": [
+          {
+            "Text": "Movement blocked",
+            "Tone": "negative"
+          }
+        ],
+        "MovementCellsPerTurnModifier": 0,
+        "HungerTickRateMultiplier": 1.0,
+        "ThirstTickRateMultiplier": 1.0,
+        "FatigueTickRateMultiplier": 1.0,
+        "ControlModifierPercent": 0.0,
+        "FoodConsumptionEffectMultiplier": 1.0,
+        "DrinkConsumptionEffectMultiplier": 1.0,
+        "HealingRecoveryMultiplier": 1.0,
+        "PeriodicInjuryIntervalTicks": 0,
+        "TicksUntilPeriodicInjury": 0,
+        "EffectiveVisionRangeCapTiles": null,
+        "HidesWorld": false,
+        "PreventsMovement": true,
+        "ExpiresIntoStatusDefinitionId": "",
+        "SourceBodySlotId": null,
+        "SourceDamageTypeId": "none",
+        "RemainingTicks": -1,
+        "AppliedSource": "Restraint",
+        "IsStateMaintained": false
+      }
+    ],
+    "Anatomy": {
+      "TokenBodyType": "Masculine",
+      "AnatomyMap": [
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.head",
+          "BodyPart": {
+            "Name": "Head",
+            "Description": "The Head",
+            "MaxOrganicInjuryCapacity": 3,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.torso",
+          "BodyPart": {
+            "Name": "Torso",
+            "Description": "The Torso",
+            "MaxOrganicInjuryCapacity": 6,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.left_arm",
+          "BodyPart": {
+            "Name": "Left Arm",
+            "Description": "The Left Arm",
+            "MaxOrganicInjuryCapacity": 4,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.right_arm",
+          "BodyPart": {
+            "Name": "Right Arm",
+            "Description": "The Right Arm",
+            "MaxOrganicInjuryCapacity": 4,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.left_leg",
+          "BodyPart": {
+            "Name": "Left Leg",
+            "Description": "The Left Leg",
+            "MaxOrganicInjuryCapacity": 4,
+            "OrganicInjuries": []
+          }
+        },
+        {
+          "BodySlotId": "AnatomySlotId:character.organic.right_leg",
+          "BodyPart": {
+            "Name": "Right Leg",
+            "Description": "The Right Leg",
+            "MaxOrganicInjuryCapacity": 4,
+            "OrganicInjuries": []
+          }
+        }
+      ]
+    },
+    "Cybernetics": {
+      "Cybernetics": [
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.head",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.torso",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.left_arm",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.right_arm",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.legs",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_1",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_2",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_3",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_4",
+          "ItemId": null
+        },
+        {
+          "CyberneticSlotId": "CyberneticSlotId:character.cyber.internal_5",
+          "ItemId": null
+        }
+      ]
+    },
+    "Style": {
+      "StyleItems": [
+        {
+          "StyleSlotId": "StyleSlotId:character.style.head",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.face",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.torso_inner",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.torso_outer",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.hands",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.legs",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.feet",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_1",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_2",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_3",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_4",
+          "ItemId": null
+        },
+        {
+          "StyleSlotId": "StyleSlotId:character.style.accessory_5",
+          "ItemId": null
+        }
+      ]
+    },
+    "OperatingSystem": {
+      "Id": "vanilla-shell",
+      "Modules": [],
+      "ConnectedStorageItemId": null
+    },
+    "IntrinsicGrants": [],
+    "InventoryItemId": "ItemId:tutorial_subject_patient_kit",
+    "WeaponItemId": null,
+    "ArmorItemId": null,
+    "DialogueNode": null,
+    "DialogueScriptPath": null,
+    "ActiveDialogueInstanceId": null,
+    "SizeOnMap": "3:3",
+    "TypeId": "Character"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

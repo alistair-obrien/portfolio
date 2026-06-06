@@ -1,9 +1,17 @@
 title: Start
 ---
-<<set $dream_anchor = "none">>
-<<set $dream_resistance = "none">>
-<<set $auditory_response = "none">>
-<<set $language_signal = 0>>
+<<Characters.HideHUD CharacterId=CharacterId:subject_7734>>
+<<set $language_correct_response = false>>
+<<set $current_test = "none">>
+<<set $incompetence_count = 0>>
+<<set $disobedience_count = 0>>
+<<Maps.ResetCharacterExploration CharacterId=CharacterId:subject_7734>>
+<<jump Dream>>
+===
+
+title: Dream
+---
+HINT: Click Continue or Press Space to advance dialogue.
 Sudden Darkness.
 Quiet except for a low buzz.
 Just a moment ago you were out walking the family dog in the nearby park.
@@ -11,29 +19,26 @@ Then...
 Were you involved in an accident?
 Is...
 Wait.
+HINT: Click the option or press the Number key to choose an option.
 What's your dog's name?
 -> $c2: Spike
-    <<set $dream_anchor = "spike">>
     Yes. 
     That was it right.
     Only it isn't a dog.
     It's a turtle.
     You remember it moving slowly across the pavement in the park.
 -> $c2: Aki
-    <<set $dream_anchor = "aki">>
     Right.
     Aki was the name.
     A sweet pomeranian.
     You almost hear her soft bark.
 -> $c2: Ricky
-    <<set $dream_anchor = "ricky">>
     You recall a metal name tag. 
     "Ricky" engraved cleanly into it.
     But Ricky is not a dog at all.
     He's a rabbit.
     Weird mistake to make.
 -> $c2: I... don't remember.
-    <<set $dream_anchor = "forgotten">>
     No matter what you do, you can not conjure up a clear memory of your dog.
 And your family...
 You were all together.
@@ -42,37 +47,29 @@ Everything made sense just a moment ago.
 The memories begin to fade.
 Just another dream.
 -> $c2: Focus on recalling the dream
-    <<set $dream_resistance = "holding_on">>
     You remember you were taking some time off work.
     An attempt to relieve the compounding stress.
     At least for a while.
     That part seems normal enough.
     -> $c2: Try to remember more
-        <<set $dream_resistance = "wife">>
         Your wife... Well in the moment she was your wife.
         Now, thinking back she is just a stranger.
         Green eyes, blonde hair? Or was it brown...
         -> $c2: Try to remember more
-            <<set $dream_resistance = "children">>
             And you had children. 
             At first there were three that you recall.
             But then one disappeared and no-one questioned it at all.
             -> $c2: Try to remember more
-                <<set $dream_resistance = "final_detail">>
                 It's all fading. 
                 The warm feelings remain, but the details are rapidly disappearing.
             -> $c2: Let it slip away            
-                <<set $dream_resistance = "released_after_children">>
                 You stop chasing the shape of the missing child.
         -> $c2: Let it slip away
-            <<set $dream_resistance = "released_after_wife">>
             The face folds into the dark.
     -> $c2: Let it slip away
-        <<set $dream_resistance = "released_early">>
         You know it's not worth recalling. 
         None of it was real.
 -> $c2: Let it slip away
-    <<set $dream_resistance = "released_immediately">>
     You let the memory of the dream recede before it becomes an obsession.
 Another one of those hauntingly real, unfairly blissful dreams.
 But this time is different too.
@@ -84,32 +81,38 @@ Which one is it this time?
 Who... are you?
 Nothing is hap-
 Your thoughts are interrupted by a sharp sound.
+<<jump AuditoryTest>>
+===
+
+title: AuditoryTest
+---
 $c1: Test Subject number seven-seven-three-four is regaining consciousness.
 $c1: Commencing auditory tests.
-Another sharp sound. 
+Another sharp sound.
+<<jump StatusHydration>>
+===
+
+title: StatusHydration
+---
+Your body seems to remember it's job and an overwhelming amount of signals are dispatched across your nervous system.
+The numbness fades away and gives way to discomfort.
+<<Characters.ShowHUD CharacterId=CharacterId:subject_7734>>
+<<jump AuditoryStimulus>>
+===
+
+title: AuditoryStimulus
+---
+<<set $current_test = "auditory_stimulus">>
 This time it doesn't stop, but continues to assault from all angles.
 -> $c2: Don't react
-    <<set $auditory_response = "none">>
     $c1: Failure to respond.
     $c1: Let's try that again.
     The sound gets uncomfortably louder.
-    -> $c2: Twitch
-        <<set $auditory_response = "delayed_twitch">>
-        You feel disconnected from your own body, but somehow manage to move your head an fraction away from the sound.
-        $c1: Motor response detected.
-    -> $c2: Try to open your eyes
-        <<set $auditory_response = "forced_eyes">>
-        You struggle to open your eyes. 
-        Something is keeping them closed. 
-        You are too weak to fight against whatever it is.
-        $c1: Motor response detected.
-        $c1: Optics still stitched closed.
+    <<jump Incompetence>>
 -> $c2: Twitch
-    <<set $auditory_response = "twitch">>
     $c1: Excellent.
     $c1: Neural activity detected as a result of auditory stimulation.
 -> $c2: Open Eyes
-    <<set $auditory_response = "eyes_attempted">>
     You struggle to open your eyes. 
     Something is keeping them closed. 
     You are too weak to fight against whatever it is.
@@ -121,20 +124,18 @@ The voice clears it's throat, almost as if it were preparing to make a speech or
 You still can not see, but somehow you feel the voice become more directed towards you.
 $c1: What color is an Apple?
 -> $c2: Mhmmph
-    <<set $language_signal = $language_signal + 1>>
     Your lips press around the answer, but it collapses into a muffled sound.
 -> $c2: Grrrr
-    <<set $language_signal = $language_signal + 1>>
     A growl escapes before the word can form.
 -> $c2: Asda
-    <<set $language_signal = $language_signal + 1>>
     You know the answer, but your mouth is not cooperating.
 $c1: Neural activity detected, however facial muscular control appears inadequate.
 $c1: Administering adrenaline shot.
-<<Effects.ScreenShake DurationSeconds=0.55 Intensity=0.9 Label=adrenaline-shake>>
-<<Effects.FadeToColor Color=#FFFFFF DurationSeconds=0.35 Label=adrenaline-fade-in>>
-<<Effects.FadeToGame DurationSeconds=1.0 Label=adrenaline-fade-out>>
-// Maybe a flash too
+<<Effects.ScreenShake DurationSeconds=0.55 Intensity=0.9>>
+<<Effects.FadeToColor Color=#FFFFFF DurationSeconds=0.35>>
+<<Effects.FadeToGame DurationSeconds=2.0>>
+// Apply Adrenaline Status
+<<Characters.ApplyStatus CharacterId=CharacterId:subject_7734 StatusId=status.action.adrenaline AppliedSource=AdrenalineShot>>
 You feel a sudden tightness in your chest.
 Your breathing hastens. Quick, sharp inhales.
 You worry you have forgotten how to breathe out.
@@ -143,13 +144,10 @@ Much weaker than the feeling inside would have had you believe.
 $c1: Restarting language aphasia screening.
 $c1: What color is an Apple?
 -> $c2: Re.....
-    <<set $language_signal = $language_signal + 1>>
     The beginning of the word scratches out and dies.
 -> $c2: Re-mphhhh
-    <<set $language_signal = $language_signal + 1>>
     The shape is closer, but your mouth refuses to open around it.
 -> $c2: Urghh
-    <<set $language_signal = $language_signal + 1>>
     Frustration becomes the only sound you can make.
 $c1: Facial muscular control remains inadequate.
 $c1: Manually exercising jaw flexion exercises.
@@ -161,110 +159,178 @@ Suddenly your brain and face seem to be connected again, and you can freely move
 Your jaw becomes freed from whatever was clasped onto it.
 More footsteps, this time receding away.
 $c1: Restarting language aphasia screening.
+<<jump LanguageApple>>
+===
+
+title: LanguageApple
+---
+<<set $current_test = "language_apple">>
 $c1: What color is an Apple?
 -> $c2: Red
-    <<set $language_signal = $language_signal + 2>>
+    <<set $language_correct_response = true>>
     The word comes out thin, but intact.
     $c1: Correct.
 -> $c2: Urghh
-    <<set $language_signal = $language_signal + 1>>
     The answer is in your head. Your mouth betrays it.
-    $c1: Attempt logged. Repeating with alternate prompt.
+    $c1: Attempt logged.
+    <<jump Incompetence>>
 -> $c2: ...
-    <<set $language_signal = $language_signal - 1>>
     You keep the answer to yourself.
-    $c1: Non-response logged. Continuing.
+    $c1: Non-response logged.
+    <<jump Disobedience>>
+<<jump LanguageRiver>>
+===
+
+title: LanguageRiver
+---
+<<set $current_test = "language_river">>
 $c1: If you fall in a river, what will you become?
 -> $c2: Wet
-    <<set $language_signal = $language_signal + 2>>
+    <<set $language_correct_response = true>>
     $c1: Correct.
 -> $c2: Urghh
-    <<set $language_signal = $language_signal + 1>>
     Your throat makes a sound like a rusted hinge.
     $c1: Motor speech disruption persists.
+    <<jump Incompetence>>
 -> $c2: ...
-    <<set $language_signal = $language_signal - 1>>
     You wait, either out of fear or spite.
     $c1: Non-response logged.
+    <<if $language_correct_response>>
+    <<jump Disobedience>>
+    <<else>>
+    <<jump Incompetence>>
+    <<endif>>
+<<jump LanguageStanding>>
+===
+
+title: LanguageStanding
+---
+<<set $current_test = "language_standing">>
 $c1: If a person is in a stable upright position supported by their feet and legs, what would they be doing?
 -> $c2: Standing
-    <<set $language_signal = $language_signal + 2>>
+    <<set $language_correct_response = true>>
     $c1: Correct.
--> $c2: Walking
-    <<set $language_signal = $language_signal + 1>>
-    $c1: Acceptable category error. Balance and locomotion are both accessible.
+-> $c2: Eating
+    <<set $language_correct_response = true>>
+    $c1: Hmm. Words forming well, relevancy inadequate.
+    <<jump Incompetence>>
 -> $c2: Urghh
-    <<set $language_signal = $language_signal + 1>>
     The word is gone by the time your mouth opens.
-    $c1: Verbal obstruction noted.
+    $c1: Something's wrong here...
+    <<jump Incompetence>>
 -> $c2: ...
-    <<set $language_signal = $language_signal - 1>>
     The silence feels like the only thing you still control.
     $c1: Non-response logged.
+    <<if $language_correct_response>>
+    <<jump Disobedience>>
+    <<else>>
+    <<jump Incompetence>>
+    <<endif>>
+<<jump LanguageStrawberry>>
+===
+
+title: LanguageStrawberry
+---
+<<set $current_test = "language_strawberry">>
 $c1: How many r's in the word 'strawberry'?
 -> $c2: 1
-    <<set $language_signal = $language_signal + 1>>
-    $c1: Incorrect, but numeracy pathway is responsive.
+    <<jump Incompetence>>
 -> $c2: 2
-    <<set $language_signal = $language_signal + 1>>
-    $c1: Incorrect. Continuing.
+    <<jump Incompetence>>
 -> $c2: 3
-    <<set $language_signal = $language_signal + 2>>
+    <<set $language_correct_response = true>>
     $c1: Correct.
 -> $c2: 4
-    <<set $language_signal = $language_signal + 1>>
-    $c1: Incorrect. Overcount likely stress response.
+    <<jump Incompetence>>
 -> $c2: ...
-    <<set $language_signal = $language_signal - 1>>
     $c1: Non-response logged.
-// TODO: If fail, we should handle it
+    <<if $language_correct_response>>
+    <<jump Disobedience>>
+    <<else>>
+    <<jump Incompetence>>
+    <<endif>>
+<<jump LanguageResult>>
+===
+
+title: LanguageResult
+---
+<<if $language_correct_response>>
 $c1: No aphasia detected. Language skills are intact.
+<<jump PerceptionCheck>>
+<<else>>
+$c1: Subject has lost control over his language abilities.
+$c1: Another one for disposal.
+$c1: Organs are mostly healthy, so not a total waste.
+-> $c2: Wait!
+    $c1: Oh. So not a vegetable after all. I suppose this constitutes a technical pass, however your lack of cooperation has been noted.
+    $c1: Let's move on, but I warn you. We do not waste time on defect products here.
+    <<jump PerceptionCheck>>
+-> $c2: ...
+    <<jump Disposal>>
+<<endif>>
+===
+
+title: PerceptionCheck
+---
+<<set $current_test = "perception_check">>
 $c1: Proceeding to optical screening.
 $c1: Removing eye lid stitches.
 <<Characters.AddOrganicInjury CharacterId=CharacterId:subject_7734 BodySlotPath=AnatomySlotId:character.organic.head DamageType=piercing Severity=1>>
 You feel fine strands being removed from your eyelids.
 The heat from the friction as they thread through your skin burns.
 Even if you wanted to yell out in pain, it would only come out as a hoarse cry.
-<<Characters.SetVisionRange CharacterId=CharacterId:subject_7734 VisionRangeTiles=2>>
-<<Cutscenes.FrameEntity EntityId=CharacterId:subject_7734 Padding=0 Zoom=1.35 DurationSeconds=0.0 Label=frame-vale>>
-<<Characters.EnableOptics CharacterId=CharacterId:subject_7734>>
+<<Cutscenes.FrameEntity EntityId=CharacterId:subject_7734 Padding=0 Zoom=1.35 DurationSeconds=0.0>>
+<<Characters.RemoveStatus CharacterId=CharacterId:subject_7734 StatusId=status.sensory.blinded>>
+<<Characters.ApplyStatus CharacterId=CharacterId:subject_7734 StatusId=status.sensory.dazzled_2 AppliedSource=OpticalScreening>>
+<<Maps.ResetCharacterExploration CharacterId=CharacterId:subject_7734>>
 <<Characters.ChangeName CharacterId=CharacterId:dr_mara_vale Name="Dr. Mara Vale">>
-The lights burn your retinas for a time.
-<<Characters.SetVisionRange CharacterId=CharacterId:subject_7734 VisionRangeTiles=5>>
-But eventually everything settles.
-<<Characters.SetVisionRange CharacterId=CharacterId:subject_7734 VisionRangeTiles=20>>
-You figure its a good time to look around the room.
-(Hover on any object to look at it) // Teach about hovering!
-TODO: Properly set up objects with rich descriptions then test player on them
+Light suddenly floods your retinas, burning worse than the scars.
+$c1: I'll give your eyes some time to adjust.
+<<jump WaitForEyesToAdjust>>
+===
 
-// $c1: Let's begin.
-// $c1: What is written on the north wall?
-// -> $c2: Compliance
-// -> $c2: ...
-// $c1: How many markings are on the east wall?
-// -> $c2: 1
-// -> $c2: 2
-// -> $c2: 3
-// -> $c2: 4
-// -> $c2: 5
-// -> $c2: ...
-// $c1: What is playing on the monitor to the left?
-// -> $c2: Static
-// -> $c2: A cartoon
-// -> $c2: An old movie
-// -> $c2: A music video
-// -> $c2: ...
-// $c1: Be more specific.
-// -> $c2: A cartoon of a white rabbit being chased by a girl in a light blue dress
-// -> $c2: An old movie of cowboys in a standoff
-// -> $c2: A pop group in an abstract music video
-// -> $c2: ...
-// $c1: That is adequate for now.
-// $c1: Administering IV drip and sedatives.
-// // Fade out
+// TODO: Teach Wait and Resting curing some wounds
+title: WaitForEyesToAdjust
+---
+<<ScenarioEvents.SetVariable Key=tutorial.phase Value=wait_for_eyes>>
+HINT: Press . to advance time one tick.
+===
 
+title: EyesAdjusted
+---
+Eventually everything settles.
+$c1: Look at the monitors to the north of the room.
+<<jump PerceptionMonitorCount>>
+===
+
+title: PerceptionMonitorCount
+---
+<<set $current_test = "perception_monitor_count">>
+$c1: How many monitors do you see?
+HINT: Hover on any object to look at it.
+-> $c2: 1
+    $c1: Hmm...
+    <<jump Incompetence>>
+-> $c2: 2
+    $c1: Hmm...
+    <<jump Incompetence>>
+-> $c2: 3
+    $c1: Good. Moving on.
+    <<jump Status>>
+-> $c2: 4
+    $c1: Hmm...
+    <<jump Incompetence>>
+-> $c2: 5
+    $c1: Hmm...
+    <<jump Incompetence>>
+-> $c2: ...
+    <<jump Disobedience>>
+===
+
+title: Status
+---
 $c1: Report your dominant discomfort.
-(Press C to review your condition.)
+HINT: Press C to review your condition.
 -> $c2: My head is in pain.
     // GATE: end dialogue here until the player uses a healing item.
     // Resume at RecoveryNeedPain after the backend query confirms organic health is stable.
@@ -293,3 +359,75 @@ $c1: Report your dominant discomfort.
 // - Teach movement and object inspection as separate beats.
 // - Keep missing log fragments discoverable later instead of dumping all procedure context here.
 // - Escalate into combat reflexes, OS installation, then augmentation surgery.
+
+title: Incompetence
+---
+<<set $incompetence_count = $incompetence_count + 1>>
+<<if $incompetence_count == 1>>
+$c1: Subject is showing signs of brain damage.
+<<elseif $incompetence_count == 2>>
+$c1: Further tests seem futile if the subject continues to fail basic tests.
+<<elseif $incompetence_count >= 3>>
+$c1: A lost cause. Too deep with the scalpel again probably.
+$c1: Typical.
+<<jump Disposal>>
+<<endif>>
+<<if $current_test == "auditory_stimulus">>
+<<jump AuditoryStimulus>>
+<<elseif $current_test == "language_apple">>
+<<jump LanguageApple>>
+<<elseif $current_test == "language_river">>
+<<jump LanguageRiver>>
+<<elseif $current_test == "language_standing">>
+<<jump LanguageStanding>>
+<<elseif $current_test == "language_strawberry">>
+<<jump LanguageStrawberry>>
+<<elseif $current_test == "perception_check">>
+<<jump PerceptionCheck>>
+<<elseif $current_test == "perception_monitor_count">>
+<<jump PerceptionMonitorCount>>
+<<endif>>
+===
+
+title: Disobedience
+---
+<<set $disobedience_count = $disobedience_count + 1>>
+<<if $disobedience_count == 1>>
+$c1: Please understand that compliance is not optional.
+$c1: If you refuse to cooperate, you will be disposed of. This is not ideal for us, nor for you.
+$c1: Now, let's try again shall we?
+<<elseif $disobedience_count == 2>>
+$c1: That's two strikes.
+$c1: Are you ready to continue?
+<<elseif $disobedience_count >= 3>>
+<<jump Disposal>>
+<<endif>>
+<<if $current_test == "auditory_stimulus">>
+<<jump AuditoryStimulus>>
+<<elseif $current_test == "language_apple">>
+<<jump LanguageApple>>
+<<elseif $current_test == "language_river">>
+<<jump LanguageRiver>>
+<<elseif $current_test == "language_standing">>
+<<jump LanguageStanding>>
+<<elseif $current_test == "language_strawberry">>
+<<jump LanguageStrawberry>>
+<<elseif $current_test == "perception_check">>
+<<jump PerceptionCheck>>
+<<elseif $current_test == "perception_monitor_count">>
+<<jump PerceptionMonitorCount>>
+<<endif>>
+===
+
+title: Disposal
+---
+TODO: Factor in test results
+$c1: Closing file of subject number seven-seven-three-four
+$c1: Biological parts filed and ready for harvesting. 
+$c1: No cybernetics to extract. Just pure human.
+<<Characters.AddOrganicInjury CharacterId=CharacterId:subject_7734 BodySlotPath=AnatomySlotId:character.organic.head DamageType=piercing Severity=3>>
+<<Characters.AddOrganicInjury CharacterId=CharacterId:subject_7734 BodySlotPath=AnatomySlotId:character.organic.head DamageType=piercing Severity=3>>
+<<Characters.AddOrganicInjury CharacterId=CharacterId:subject_7734 BodySlotPath=AnatomySlotId:character.organic.head DamageType=piercing Severity=3>>
+<<Characters.AddOrganicInjury CharacterId=CharacterId:subject_7734 BodySlotPath=AnatomySlotId:character.organic.head DamageType=piercing Severity=3>>
+<<Characters.AddOrganicInjury CharacterId=CharacterId:subject_7734 BodySlotPath=AnatomySlotId:character.organic.head DamageType=piercing Severity=3>>
+===

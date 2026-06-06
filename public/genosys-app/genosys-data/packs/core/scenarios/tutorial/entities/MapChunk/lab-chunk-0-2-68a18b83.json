@@ -1,0 +1,20 @@
+{
+  "TypeId": "MapChunk",
+  "Version": 1,
+  "Data": {
+    "Id": "MapChunkId:lab:chunk:0:2",
+    "Name": "Lab (0,2)",
+    "Size": "16:16",
+    "Placements": [],
+    "Exploration": [
+      {
+        "ViewerCharacterId": "CharacterId:dr_mara_vale",
+        "ExploredMask": "1111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111110001111111111111000000000111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "TypeId": "MapChunk"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

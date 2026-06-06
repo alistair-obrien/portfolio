@@ -1,0 +1,15 @@
+{
+  "TypeId": "MapChunk",
+  "Version": 1,
+  "Data": {
+    "Id": "MapChunkId:lab:chunk:5:2",
+    "Name": "Lab (5,2)",
+    "Size": "16:16",
+    "Placements": [],
+    "Exploration": [],
+    "TypeId": "MapChunk"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

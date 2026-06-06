@@ -1,0 +1,58 @@
+{
+  "TypeId": "ScenarioVariableTrigger",
+  "Version": 1,
+  "Data": {
+    "Id": "ScenarioTriggerId:tutorial_wait_for_eyes_adjusted",
+    "Name": "Tutorial Wait For Eyes Adjusted",
+    "Conditions": [
+      {
+        "Key": "tutorial.phase",
+        "Comparison": "Equals",
+        "Value": {
+          "Kind": "String",
+          "BoolValue": false,
+          "NumberValue": 0.0,
+          "StringValue": "wait_for_eyes"
+        }
+      }
+    ],
+    "ScalarConditions": [
+      {
+        "QueryAlias": "Characters.HasStatus",
+        "Arguments": {
+          "CharacterId": "CharacterId:subject_7734",
+          "StatusId": "status.sensory.dazzled_2"
+        },
+        "Comparison": "Equals",
+        "Value": {
+          "Kind": "Boolean",
+          "BoolValue": false,
+          "NumberValue": 0.0,
+          "StringValue": null
+        }
+      },
+      {
+        "QueryAlias": "Characters.HasStatus",
+        "Arguments": {
+          "CharacterId": "CharacterId:subject_7734",
+          "StatusId": "status.sensory.dazzled_1"
+        },
+        "Comparison": "Equals",
+        "Value": {
+          "Kind": "Boolean",
+          "BoolValue": false,
+          "NumberValue": 0.0,
+          "StringValue": null
+        }
+      }
+    ],
+    "EventId": "ScenarioEventId:tutorial_resume_eyes_adjusted",
+    "Enabled": true,
+    "FireOnce": true,
+    "VariableKey": "tutorial.phase",
+    "TypeId": "ScenarioVariableTrigger"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

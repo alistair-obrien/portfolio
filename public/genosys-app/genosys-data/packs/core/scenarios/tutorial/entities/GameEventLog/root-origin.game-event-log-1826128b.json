@@ -1,0 +1,13 @@
+{
+  "TypeId": "GameEventLog",
+  "Version": 1,
+  "Data": {
+    "Id": "gameeventlog:root@origin.game-event-log",
+    "Name": "Event Log",
+    "Entries": [],
+    "TypeId": "GameEventLog"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

@@ -1,0 +1,38 @@
+{
+  "TypeId": "Prop",
+  "Version": 1,
+  "Data": {
+    "Id": "PropId:cbb6af43-768c-41da-926b-b32bab21728b",
+    "Name": "Monitor",
+    "Description": "It looks expensive. Not new, but often cleaned.\n\nSome kind of music video is playimg. The audio is muted, but from the aesthetic you can tell it's some weird experimental pop. None of the members look human at all.",
+    "FlavorText": "",
+    "RenderKey": {
+      "Key": ""
+    },
+    "SizeOnMap": "2:1",
+    "ForwardVisionBlocking": "Full",
+    "BackwardVisionBlocking": "Full",
+    "LeftVisionBlocking": "Full",
+    "RightVisionBlocking": "Full",
+    "Layers": [
+      {
+        "Id": "PropLayerId:tutorial_cyberware_station.structural",
+        "Name": "Structural shell",
+        "DamageDomain": "structural",
+        "MaxIntegrity": 10,
+        "RicochetTransfer": 1,
+        "Resistances": [],
+        "DamageInstances": [],
+        "RenderKey": {
+          "Key": "core/prop_cyberware_station"
+        }
+      }
+    ],
+    "Inventory": null,
+    "MapTransition": null,
+    "TypeId": "Prop"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

@@ -1,0 +1,38 @@
+{
+  "TypeId": "Prop",
+  "Version": 1,
+  "Data": {
+    "Id": "PropId:tutorial_cyberware_station",
+    "Name": "Monitor",
+    "Description": "It looks expensive. Not new, but often cleaned.\n\nThe monitor shows a lady in a red dress walking through a crowd of grey. She occasionally seems to be about to turn her head, but her face is somehow always obscured.",
+    "FlavorText": "",
+    "RenderKey": {
+      "Key": ""
+    },
+    "SizeOnMap": "2:1",
+    "ForwardVisionBlocking": "Full",
+    "BackwardVisionBlocking": "Full",
+    "LeftVisionBlocking": "Full",
+    "RightVisionBlocking": "Full",
+    "Layers": [
+      {
+        "Id": "PropLayerId:tutorial_cyberware_station.structural",
+        "Name": "Structural shell",
+        "DamageDomain": "structural",
+        "MaxIntegrity": 10,
+        "RicochetTransfer": 1,
+        "Resistances": [],
+        "DamageInstances": [],
+        "RenderKey": {
+          "Key": "core/prop_cyberware_station"
+        }
+      }
+    ],
+    "Inventory": null,
+    "MapTransition": null,
+    "TypeId": "Prop"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

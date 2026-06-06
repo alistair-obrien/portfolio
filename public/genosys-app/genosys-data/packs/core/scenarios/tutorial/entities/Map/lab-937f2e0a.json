@@ -1,0 +1,178 @@
+{
+  "TypeId": "Map",
+  "Version": 1,
+  "Data": {
+    "Id": "MapId:lab",
+    "Name": "Lab",
+    "Width": 6,
+    "Height": 3,
+    "Chunks": [
+      {
+        "ChunkId": "MapChunkId:lab:chunk:0:0",
+        "ChunkX": 0,
+        "ChunkY": 0,
+        "OriginX": 0,
+        "OriginY": 0,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:1:0",
+        "ChunkX": 1,
+        "ChunkY": 0,
+        "OriginX": 16,
+        "OriginY": 0,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:2:0",
+        "ChunkX": 2,
+        "ChunkY": 0,
+        "OriginX": 32,
+        "OriginY": 0,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:3:0",
+        "ChunkX": 3,
+        "ChunkY": 0,
+        "OriginX": 48,
+        "OriginY": 0,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:4:0",
+        "ChunkX": 4,
+        "ChunkY": 0,
+        "OriginX": 64,
+        "OriginY": 0,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:5:0",
+        "ChunkX": 5,
+        "ChunkY": 0,
+        "OriginX": 80,
+        "OriginY": 0,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:0:1",
+        "ChunkX": 0,
+        "ChunkY": 1,
+        "OriginX": 0,
+        "OriginY": 16,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:1:1",
+        "ChunkX": 1,
+        "ChunkY": 1,
+        "OriginX": 16,
+        "OriginY": 16,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:2:1",
+        "ChunkX": 2,
+        "ChunkY": 1,
+        "OriginX": 32,
+        "OriginY": 16,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:3:1",
+        "ChunkX": 3,
+        "ChunkY": 1,
+        "OriginX": 48,
+        "OriginY": 16,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:4:1",
+        "ChunkX": 4,
+        "ChunkY": 1,
+        "OriginX": 64,
+        "OriginY": 16,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:5:1",
+        "ChunkX": 5,
+        "ChunkY": 1,
+        "OriginX": 80,
+        "OriginY": 16,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:0:2",
+        "ChunkX": 0,
+        "ChunkY": 2,
+        "OriginX": 0,
+        "OriginY": 32,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:1:2",
+        "ChunkX": 1,
+        "ChunkY": 2,
+        "OriginX": 16,
+        "OriginY": 32,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:2:2",
+        "ChunkX": 2,
+        "ChunkY": 2,
+        "OriginX": 32,
+        "OriginY": 32,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:3:2",
+        "ChunkX": 3,
+        "ChunkY": 2,
+        "OriginX": 48,
+        "OriginY": 32,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:4:2",
+        "ChunkX": 4,
+        "ChunkY": 2,
+        "OriginX": 64,
+        "OriginY": 32,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "ChunkId": "MapChunkId:lab:chunk:5:2",
+        "ChunkX": 5,
+        "ChunkY": 2,
+        "OriginX": 80,
+        "OriginY": 32,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "TypeId": "Map"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}

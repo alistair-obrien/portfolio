@@ -1,0 +1,44 @@
+{
+  "TypeId": "GameState",
+  "Version": 1,
+  "Data": {
+    "Id": "gamestate:root@origin.game-state",
+    "Name": "Game State",
+    "PlayerCharacterId": "CharacterId:subject_7734",
+    "PrimaryObservationId": null,
+    "Observations": [],
+    "TurnData": null,
+    "ActiveContract": {
+      "EmployerId": "scenario.tutorial",
+      "EmployerName": "Tutorial",
+      "ContractId": "contract.tutorial",
+      "Status": "active",
+      "TrackedCharacterId": null,
+      "Metadata": {
+        "scenarioId": "tutorial",
+        "operation": "Tutorial",
+        "primaryObjective": "Resolve the active objective for Tutorial.",
+        "briefing": "dasdasdasdasd"
+      }
+    },
+    "Hostilities": {
+      "Pairs": []
+    },
+    "ScenarioEventRuntime": {
+      "FiredTriggerIds": []
+    },
+    "CutsceneViewState": {
+      "UiSuppression": "None",
+      "CameraMode": "Player",
+      "MapId": null,
+      "X": 0,
+      "Y": 0,
+      "Zoom": 1,
+      "TargetEntityId": null
+    },
+    "TypeId": "GameState"
+  },
+  "SourceTemplateId": null,
+  "SourceBlueprintId": null,
+  "TemplateBaseline": null
+}
