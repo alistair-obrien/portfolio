@@ -2,9 +2,9 @@
   "TypeId": "Prop",
   "Version": 1,
   "Data": {
-    "Id": "PropId:tutorial_floor_drone",
+    "Id": "PropId:tutorial_monitor_static_face",
     "Name": "Monitor",
-    "Description": "It looks expensive. Not new, but often cleaned.\n\nThe display is mostly static, but every now and then you make out a face. It's uncertain if the expression is of pain or ecstatic joy. There is no color, nor sound.",
+    "Description": "The display is tuned to a dead channel. It shows static the color of a dull sky above an abandoned port.",
     "FlavorText": "",
     "RenderKey": {
       "Key": ""
@@ -16,7 +16,7 @@
     "RightVisionBlocking": "Full",
     "Layers": [
       {
-        "Id": "PropLayerId:tutorial_floor_drone.structural",
+        "Id": "PropLayerId:tutorial_monitor_static_face.structural",
         "Name": "Structural shell",
         "DamageDomain": "structural",
         "MaxIntegrity": 6,

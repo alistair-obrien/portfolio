@@ -1421,19 +1421,19 @@
       "IsDirectory": true
     },
     {
-      "Path": "packs/core/scenarios/tutorial/entities/Prop/cbb6af43-768c-41da-926b-b32bab21728b-4c95d0af.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_cyberware_station-ecca17ae.json",
-      "IsDirectory": false
-    },
-    {
-      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_floor_drone-d1860195.json",
-      "IsDirectory": false
-    },
-    {
       "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_locked_starting_room_door-0a557b3a.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_monitor_music_video.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_monitor_red_dress.json",
+      "IsDirectory": false
+    },
+    {
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_monitor_static_face.json",
       "IsDirectory": false
     },
     {

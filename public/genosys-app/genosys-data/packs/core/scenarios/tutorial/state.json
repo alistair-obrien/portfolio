@@ -338,7 +338,7 @@
       "SlotPath": null
     },
     {
-      "EntityId": "PropId:cbb6af43-768c-41da-926b-b32bab21728b",
+      "EntityId": "PropId:tutorial_monitor_music_video",
       "Kind": "Map",
       "OwnerEntityId": "MapChunkId:lab:chunk:0:0",
       "MapId": "MapId:lab",
@@ -351,7 +351,7 @@
       "SlotPath": null
     },
     {
-      "EntityId": "PropId:tutorial_cyberware_station",
+      "EntityId": "PropId:tutorial_monitor_red_dress",
       "Kind": "Map",
       "OwnerEntityId": "MapChunkId:lab:chunk:0:0",
       "MapId": "MapId:lab",
@@ -364,7 +364,7 @@
       "SlotPath": null
     },
     {
-      "EntityId": "PropId:tutorial_floor_drone",
+      "EntityId": "PropId:tutorial_monitor_static_face",
       "Kind": "Map",
       "OwnerEntityId": "MapChunkId:lab:chunk:1:0",
       "MapId": "MapId:lab",
@@ -3640,19 +3640,19 @@
       "Path": "packs/core/scenarios/tutorial/entities/MapChunk/lab-chunk-5-2-44374ddc.json"
     },
     {
-      "Id": "PropId:cbb6af43-768c-41da-926b-b32bab21728b",
+      "Id": "PropId:tutorial_monitor_music_video",
       "TypeId": "Prop",
-      "Path": "packs/core/scenarios/tutorial/entities/Prop/cbb6af43-768c-41da-926b-b32bab21728b-4c95d0af.json"
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_monitor_music_video.json"
     },
     {
-      "Id": "PropId:tutorial_cyberware_station",
+      "Id": "PropId:tutorial_monitor_red_dress",
       "TypeId": "Prop",
-      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_cyberware_station-ecca17ae.json"
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_monitor_red_dress.json"
     },
     {
-      "Id": "PropId:tutorial_floor_drone",
+      "Id": "PropId:tutorial_monitor_static_face",
       "TypeId": "Prop",
-      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_floor_drone-d1860195.json"
+      "Path": "packs/core/scenarios/tutorial/entities/Prop/tutorial_monitor_static_face.json"
     },
     {
       "Id": "PropId:tutorial_locked_starting_room_door",

@@ -11,71 +11,222 @@ title: Start
 
 title: Dream
 ---
-HINT: Click Continue or Press Space to advance dialogue.
+//HINT: Click Continue or Press Space to advance dialogue.
 Sudden Darkness.
 Quiet except for a low buzz.
-Just a moment ago you were out walking the family dog in the nearby park.
-Then...
-Were you involved in an accident?
-Is...
-Wait.
-HINT: Click the option or press the Number key to choose an option.
-What's your dog's name?
--> $c2: Spike
-    Yes. 
-    That was it right.
-    Only it isn't a dog.
-    It's a turtle.
-    You remember it moving slowly across the pavement in the park.
--> $c2: Aki
-    Right.
-    Aki was the name.
-    A sweet pomeranian.
-    You almost hear her soft bark.
--> $c2: Ricky
-    You recall a metal name tag. 
-    "Ricky" engraved cleanly into it.
-    But Ricky is not a dog at all.
-    He's a rabbit.
-    Weird mistake to make.
--> $c2: I... don't remember.
-    No matter what you do, you can not conjure up a clear memory of your dog.
-And your family...
-You were all together.
-But now you think about it, you don't know any of those people.
-Everything made sense just a moment ago.
-The memories begin to fade.
+You recall your last memory of consciousness.
+
+<<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=4>>
+<<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=4>>
+<<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=4>>
+<<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=4>>
+<<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=4>>
+
+//HINT: Click the Option Text or press the corresponding Number key to choose a dialogue option.
+-> $c2: A door buckling under your shoulder. //Physique 
+    Blood roaring in your ears.
+    <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=10>>
+    -> $c2: You struck hard and fast, never compromising your balance. //Reflexes
+        Momentum retained, you were ready for the next obstacle.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=8>>
+        -> $c2: A security alarm beeps. You tripped something dangerous. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: Pain shot through your shoulder, causing you to hesitate. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+        -> $c2: You heard the murmurings of disapproval of your brutish methods. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: You knew exactly where to hit so the frame would give way. //Technical
+        There was a sweet spot where the wires to the security alarm would tear if you hit it just right.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=8>>
+        -> $c2: You stumble after the door gives way, falling to the floor. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: Pain shot through your shoulder, causing you to hesitate. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+        -> $c2: You heard the murmurings of disapproval of your brutish methods. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: You kept driving forward paying no mind to the impact on your shoulder. //Grit
+        Glass shards left a story on your skin, but not one of surrender.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=8>>
+        -> $c2: You stumble after the door gives way, falling to the floor. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: A security alarm beeps. You tripped something dangerous. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: You heard the murmurings of disapproval of your brutish methods. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: One look and a smirk had been enough to tell the others to stand back. //Charisma
+        All eyes were affixed on you, and murmurs of admiration crept up from behind you.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=8>>
+        -> $c2: You stumble after the door gives way, falling to the floor. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: A security alarm beeps. You tripped something dangerous. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: Pain shot through your shoulder, causing you to hesitate. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+-> $c2: The blur of a city skyline from above. //Reflexes
+    The rush of adrenaline. 
+    <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=10>>
+    -> $c2: You pulled yourself up over an edge with ease. //Physique
+        The railing bending from your sheer strength.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=8>>
+        -> $c2: You heard a menacing beep and noticed a faint laser line outlined in the smoke of an exhaust port. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: Extensive bruising and cuts force you stop and catch your breath. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+        -> $c2: The others saw only recklessness, not grace. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: You read the angles, gaps and surfaces before your feet touched them. //Technical
+        The route already calculated, every risk accounted for.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=8>>
+        -> $c2: Your arms had trembled and your strength gave out. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: Extensive bruising and cuts force you stop and catch your breath. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+        -> $c2: The others saw only recklessness, not grace. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: You jumped without much thought, trusting in momentum. //Grit
+        Your callused hands could feel nothing new.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=8>>
+        -> $c2: Your arms had trembled and your strength gave out. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: You heard a menacing beep and noticed a faint laser line outlined in the smoke of an exhaust port. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: The others saw only recklessness, not grace. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: You caught the eye of a woman smoking outside. //Charisma
+        You had exchanged a smile.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=8>>
+        -> $c2: Your arms had trembled and your strength gave out. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: You heard a menacing beep and noticed a faint laser line outlined in the smoke of an exhaust port. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: Extensive bruising and cuts force you stop and catch your breath. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+-> $c2: Sparking wires and rapidly transforming lines of code. //Technical
+    You understood every single detail and their implication.
+    <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=10>>
+    -> $c2: You had forced the panel open with your bare hands. //Physique
+        There was no amount of rivets that could stop you.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=8>>
+        -> $c2: Your hands were not nimble enough to disable the fail safe protocols. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: The wires sparked and burnt, breaking your focus. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+        -> $c2: Your instructions for assistance came too fast, all static and sharp edges. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: Your fingers moved faster than the fail safes. //Reflexes
+        You expertly severed the correct wires to prevent emergency procedures from frying the motherboard.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=8>>
+        -> $c2: You knew the final wire to rip off, but couldn't muster the strength to do it. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: The wires sparked and burnt, breaking your focus. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+        -> $c2: Your instructions for assistance came too fast, all static and sharp edges. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: The burning wires and electrical currents only fueled you further. //Grit
+        The heat and pulses were just another signal that the unit was still operational.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=8>>
+        -> $c2: You knew the final wire to rip off, but couldn't muster the strength to do it. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: Your hands were not nimble enough to disable the fail safe protocols. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: Your instructions for assistance came too fast, all static and sharp edges. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: You had left a cheeky message for the admin. //Charisma
+        You knew they would not be able to resist a smile, despite the damage you caused.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=8>>
+        -> $c2: You knew the final wire to rip off, but couldn't muster the strength to do it. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: Your hands were not nimble enough to disable the fail safe protocols. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: The wires sparked and burnt, breaking your focus. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+-> $c2: A dark and grimy fight pit. //Grit 
+    Odds were stacked against you. 
+    <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=10>>
+    -> $c2: You hit harder every time you got back up. //Physique
+        You were just warming up. Your opponents would fear when the real work began.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=8>>
+        -> $c2: The next strike caught you by surprise. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: You failed to get a grip on their attack pattern. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: The crowd was against you. You were not their chosen champion. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: You slipped between blows by instinct alone. //Reflexes
+        Weaving in and out, causing the other fighters to expend energy needlessly.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=8>>
+        -> $c2: You struggled to topple your opponents. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: You failed to get a grip on their attack pattern. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: The crowd was against you. You were not their chosen champion. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: You struck rarely, but every blow hit the right spot. //Technical
+        Rigid and calculated, like a machine. Fully reactionary, yet still in complete control.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=8>>
+        -> $c2: You struggled to topple your opponents. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: The next strike caught you by surprise. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: The crowd was against you. You were not their chosen champion. //Charisma
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=2>>
+    -> $c2: You played the underdog role to perfection, winning over the crowd. //Charisma
+        You took dives, feigned exhaustion and improvised choreography to keep the crowd engaged.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=8>>
+        -> $c2: You struggled to topple your opponents. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: The next strike caught you by surprise. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: You failed to get a grip on their attack pattern. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+-> $c2: Faces in a colorful montage. //Charisma
+    Every expression a small signal in a larger puzzle. 
+    <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Charisma Value=10>>
+    -> $c2: Your looming presence was enough to demand attention. //Physique
+        You talked rarely, but with power and intimidation.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=8>>
+        -> $c2: You missed the twitch before the knife came out. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: It became obvious to all that you were out of your depth where the details were concerned. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: You snapped when the verbal assaults hit too close to home. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+    -> $c2: You deflected the sly attempts to catch your contradictions. //Reflexes
+        Accusations redirected, sneaky traps dismantled. They couldn't keep up with your wit.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=8>>
+        -> $c2: Despite tall words, you felt small and weak. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: It became obvious to all that you were out of your depth where the details were concerned. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+        -> $c2: You snapped when the verbal assaults hit too close to home. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+    -> $c2: Each line delivered was but a move in an elaborate game of chess. //Technical
+        Nothing was filler, everything had purpose. Each sentence delivered was one step closer to checkmate.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=8>>
+        -> $c2: Despite tall words, you felt small and weak. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: You missed the twitch before the knife came out. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: You snapped when the verbal assaults hit too close to home. //Grit
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=2>>
+    -> $c2: You kept a warm smile on, even as harsh words hit home. //Grit
+        They wouldn't wear you down. You could not crack. Their frustrations began to leak from behind their masks.
+        <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Grit Value=8>>
+        -> $c2: Despite tall words, you felt small and weak. //Physique
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Physique Value=2>>
+        -> $c2: You missed the twitch before the knife came out. //Reflexes
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Reflexes Value=2>>
+        -> $c2: It became obvious to all that you were out of your depth where the details were concerned. //Technical
+            <<Characters.SetAttribute CharacterId=CharacterId:subject_7734 AttributeName=Technical Value=2>>
+And then...
+The rest escapes you.
+But now you think about it, none of this bears any familiarity whatsoever.
+Everything made sense just a moment ago, but now nothing seems real.
+The fabricated memories begin to fade.
 Just another dream.
--> $c2: Focus on recalling the dream
-    You remember you were taking some time off work.
-    An attempt to relieve the compounding stress.
-    At least for a while.
-    That part seems normal enough.
-    -> $c2: Try to remember more
-        Your wife... Well in the moment she was your wife.
-        Now, thinking back she is just a stranger.
-        Green eyes, blonde hair? Or was it brown...
-        -> $c2: Try to remember more
-            And you had children. 
-            At first there were three that you recall.
-            But then one disappeared and no-one questioned it at all.
-            -> $c2: Try to remember more
-                It's all fading. 
-                The warm feelings remain, but the details are rapidly disappearing.
-            -> $c2: Let it slip away            
-                You stop chasing the shape of the missing child.
-        -> $c2: Let it slip away
-            The face folds into the dark.
-    -> $c2: Let it slip away
-        You know it's not worth recalling. 
-        None of it was real.
--> $c2: Let it slip away
-    You let the memory of the dream recede before it becomes an obsession.
-Another one of those hauntingly real, unfairly blissful dreams.
-But this time is different too.
-After waking there's usually a sudden jolt of remembering reality.
-Remembering who you really are, your real family. 
-If you even have one.
+You know it's not worth recalling and you let it slip away.
+Another one of those hauntingly real dreams, but this time is different too.
+After waking there's usually a sudden jolt of remembering reality. Remembering who you really are, your real life. 
 A relief when the dream was worse than your true reality, but a disappointment when the dream was better.
 Which one is it this time?
 Who... are you?
@@ -94,16 +245,16 @@ Another sharp sound.
 
 title: StatusHydration
 ---
-Your body seems to remember it's job and an overwhelming amount of signals are dispatched across your nervous system.
-The numbness fades away and gives way to discomfort.
 <<Characters.ShowHUD CharacterId=CharacterId:subject_7734>>
+Your body seems to remember its job and an overwhelming amount of signals are dispatched across your nervous system.
+The numbness fades away and gives way to discomfort.
 <<jump AuditoryStimulus>>
 ===
 
 title: AuditoryStimulus
 ---
 <<set $current_test = "auditory_stimulus">>
-This time it doesn't stop, but continues to assault from all angles.
+The sound doesn't stop, but continues to assault from all angles.
 -> $c2: Don't react
     $c1: Failure to respond.
     $c1: Let's try that again.
@@ -120,7 +271,7 @@ This time it doesn't stop, but continues to assault from all angles.
     $c1: Optics still forcibly blocked.
 $c1: Auditory systems appear nominal.
 $c1: Proceeding to screen language aphasia.
-The voice clears it's throat, almost as if it were preparing to make a speech or an announcement.
+The voice clears its throat, almost as if it were preparing to make a speech or an announcement.
 You still can not see, but somehow you feel the voice become more directed towards you.
 $c1: What color is an Apple?
 -> $c2: Mhmmph
@@ -200,32 +351,6 @@ $c1: If you fall in a river, what will you become?
     <<else>>
     <<jump Incompetence>>
     <<endif>>
-<<jump LanguageStanding>>
-===
-
-title: LanguageStanding
----
-<<set $current_test = "language_standing">>
-$c1: If a person is in a stable upright position supported by their feet and legs, what would they be doing?
--> $c2: Standing
-    <<set $language_correct_response = true>>
-    $c1: Correct.
--> $c2: Eating
-    <<set $language_correct_response = true>>
-    $c1: Hmm. Words forming well, relevancy inadequate.
-    <<jump Incompetence>>
--> $c2: Urghh
-    The word is gone by the time your mouth opens.
-    $c1: Something's wrong here...
-    <<jump Incompetence>>
--> $c2: ...
-    The silence feels like the only thing you still control.
-    $c1: Non-response logged.
-    <<if $language_correct_response>>
-    <<jump Disobedience>>
-    <<else>>
-    <<jump Incompetence>>
-    <<endif>>
 <<jump LanguageStrawberry>>
 ===
 
@@ -274,7 +399,7 @@ title: PerceptionCheck
 ---
 <<set $current_test = "perception_check">>
 $c1: Proceeding to optical screening.
-$c1: Removing eye lid stitches.
+$c1: Removing eyelid stitches.
 <<Characters.AddOrganicInjury CharacterId=CharacterId:subject_7734 BodySlotPath=AnatomySlotId:character.organic.head DamageType=piercing Severity=1>>
 You feel fine strands being removed from your eyelids.
 The heat from the friction as they thread through your skin burns.
@@ -283,8 +408,8 @@ Even if you wanted to yell out in pain, it would only come out as a hoarse cry.
 <<Characters.RemoveStatus CharacterId=CharacterId:subject_7734 StatusId=status.sensory.blinded>>
 <<Characters.ApplyStatus CharacterId=CharacterId:subject_7734 StatusId=status.sensory.dazzled_2 AppliedSource=OpticalScreening>>
 <<Maps.ResetCharacterExploration CharacterId=CharacterId:subject_7734>>
-<<Characters.ChangeName CharacterId=CharacterId:dr_mara_vale Name="Dr. Mara Vale">>
-Light suddenly floods your retinas, burning worse than the scars.
+//<<Characters.ChangeName CharacterId=CharacterId:dr_mara_vale Name="Dr. Mara Vale">>
+Light suddenly floods your retinas, burning worse than the cuts.
 $c1: I'll give your eyes some time to adjust.
 <<jump WaitForEyesToAdjust>>
 ===
@@ -293,7 +418,7 @@ $c1: I'll give your eyes some time to adjust.
 title: WaitForEyesToAdjust
 ---
 <<ScenarioEvents.SetVariable Key=tutorial.phase Value=wait_for_eyes>>
-HINT: Press . to advance time one tick.
+HINT: Press . to advance time one tick. You can not wait while a conversation is active. End the conversation first.
 ===
 
 title: EyesAdjusted
@@ -315,8 +440,7 @@ HINT: Hover on any object to look at it.
     $c1: Hmm...
     <<jump Incompetence>>
 -> $c2: 3
-    $c1: Good. Moving on.
-    <<jump Status>>
+    $c1: Good.
 -> $c2: 4
     $c1: Hmm...
     <<jump Incompetence>>
@@ -325,31 +449,53 @@ HINT: Hover on any object to look at it.
     <<jump Incompetence>>
 -> $c2: ...
     <<jump Disobedience>>
+There are three distinct clicking sounds. The three monitors suddenly flash and start displaying images.
+<<Maps.SetPropDescription PropId=PropId:tutorial_monitor_music_video Description="Some kind of music video is playimg. The audio is muted, but from the aesthetic you can tell it's some weird experimental pop. None of the members look human at all.">>
+<<Maps.SetPropDescription PropId=PropId:tutorial_monitor_red_dress Description="The monitor shows a lady in a red dress walking through a crowd of grey. She occasionally seems to be about to turn her head, but her face is somehow always obscured.">>
+<<Maps.SetPropDescription PropId=PropId:tutorial_monitor_static_face Description="The display is mostly static, but every now and then you make out a face. It's uncertain if the expression is of pain or ecstatic joy. There is no color, nor sound.">>
+$c1: What is shown on the center monitor?
+-> $c2: A lady walking through a crowd of grey.
+    $c1: Correct. Moving on.
+    <<jump Status>>
+-> $c2: A face in static.
+    $c1: Hmm...
+    <<jump Incompetence>>
+-> $c2: A music video.
+    $c1: Hmm...
+    <<jump Incompetence>>
+-> $c2: ...
+    <<jump Disobedience>>
 ===
 
 title: Status
 ---
-$c1: Report your dominant discomfort.
-HINT: Press C to review your condition.
--> $c2: My head is in pain.
-    // GATE: end dialogue here until the player uses a healing item.
-    // Resume at RecoveryNeedPain after the backend query confirms organic health is stable.
-    TODO: Teach about basic healing items
--> $c2: I'm hungry.
-    // GATE: end dialogue here until the player eats food.
-    // Resume at RecoveryNeedHunger after the backend query confirms hunger is resolved.
-    TODO: Teach about hunger
--> $c2: I'm thirsty.
-    $c1: Dehydration markers are within tolerance.
-    $c1: The sensation is unpleasant, not dangerous. Hold onto the distinction.
-    $c1: Drink from the water pouch in your kit before we continue.
-    // GATE: end dialogue here until the player drinks water.
-    // Resume at RecoveryNeedThirst after the backend query confirms thirst is resolved.
-    TODO: Teach about thirst
--> $c2: I don't know who I am.
-    // GATE: end dialogue here until the player reviews status.
-    // Resume at RecoveryNeedIdentity after the status-review trigger confirms it.
-    TODO: Some narrative stuff
+TODO: Finish this section.
+TODO: There is nothing left of the demo so far.
+TODO: I'll at least let you move around lol.
+<<Characters.RemoveStatus CharacterId=CharacterId:subject_7734 StatusId=status.action.immobilized>>
+
+
+// $c1: Report your dominant discomfort.
+// HINT: Press C to review your condition.
+// -> $c2: My head is in pain.
+//     // GATE: end dialogue here until the player uses a healing item.
+//     // Resume at RecoveryNeedPain after the backend query confirms organic health is stable.
+//     TODO: Teach about basic healing items
+// -> $c2: I'm hungry.
+//     // GATE: end dialogue here until the player eats food.
+//     // Resume at RecoveryNeedHunger after the backend query confirms hunger is resolved.
+//     TODO: Teach about hunger
+// -> $c2: I'm thirsty.
+//     $c1: Dehydration markers are within tolerance.
+//     $c1: The sensation is unpleasant, not dangerous. Hold onto the distinction.
+//     $c1: Drink from the water pouch in your kit before we continue.
+//     // GATE: end dialogue here until the player drinks water.
+//     // Resume at RecoveryNeedThirst after the backend query confirms thirst is resolved.
+//     TODO: Teach about thirst
+// -> $c2: I don't know who I am.
+//     // GATE: end dialogue here until the player reviews status.
+//     // Resume at RecoveryNeedIdentity after the status-review trigger confirms it.
+//     TODO: Some narrative stuff
 ===
 
 // Next pass:
@@ -378,8 +524,6 @@ $c1: Typical.
 <<jump LanguageApple>>
 <<elseif $current_test == "language_river">>
 <<jump LanguageRiver>>
-<<elseif $current_test == "language_standing">>
-<<jump LanguageStanding>>
 <<elseif $current_test == "language_strawberry">>
 <<jump LanguageStrawberry>>
 <<elseif $current_test == "perception_check">>
@@ -408,8 +552,6 @@ $c1: Are you ready to continue?
 <<jump LanguageApple>>
 <<elseif $current_test == "language_river">>
 <<jump LanguageRiver>>
-<<elseif $current_test == "language_standing">>
-<<jump LanguageStanding>>
 <<elseif $current_test == "language_strawberry">>
 <<jump LanguageStrawberry>>
 <<elseif $current_test == "perception_check">>

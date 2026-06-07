@@ -2,9 +2,9 @@
   "TypeId": "Prop",
   "Version": 1,
   "Data": {
-    "Id": "PropId:tutorial_cyberware_station",
+    "Id": "PropId:tutorial_monitor_red_dress",
     "Name": "Monitor",
-    "Description": "It looks expensive. Not new, but often cleaned.\n\nThe monitor shows a lady in a red dress walking through a crowd of grey. She occasionally seems to be about to turn her head, but her face is somehow always obscured.",
+    "Description": "The display is tuned to a dead channel. It shows static the color of a dull sky above an abandoned port.",
     "FlavorText": "",
     "RenderKey": {
       "Key": ""
@@ -16,7 +16,7 @@
     "RightVisionBlocking": "Full",
     "Layers": [
       {
-        "Id": "PropLayerId:tutorial_cyberware_station.structural",
+        "Id": "PropLayerId:tutorial_monitor_red_dress.structural",
         "Name": "Structural shell",
         "DamageDomain": "structural",
         "MaxIntegrity": 10,
