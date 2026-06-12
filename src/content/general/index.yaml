@@ -3,9 +3,9 @@ extraLinksEnabled: false
 extraLinks: []
 showAboutSection: true
 showProjectsSection: true
-showToolsSection: true
-showToysSection: true
-showBlogSection: true
+showToolsSection: false
+showToysSection: false
+showBlogSection: false
 showWorkSection: true
 showEducationSection: true
 showHackathonsSection: true

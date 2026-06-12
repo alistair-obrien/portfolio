@@ -27,3 +27,20 @@ skills:
   - Photoshop
 demoLink: https://www.mmorpg.com/the-aetherlight-chronicles-of-the-resistance
 ---
+This was my first project at my first job out of university and so holds a special place in my memories.
+
+I was able to work in many different domains, learning the general shape of all workflows and tools, as well as being able to work alongside various talented developers.
+
+## 3D Artist
+
+I started out as a 3D artist, modelling, texturing, rigging and animating hand painted low poly assets. Using Blender, Photoshop and Unity, I learnt how to create a ready game asset.
+
+## Tech Artist
+
+There was always a part of me interested in the more technical side of development. I was fortunate to be able to work on tools such as minecart track generations over splines, vertex shader animations for more expressive cheap animations and fragement shaders for color remapping or other ambient effects.
+
+## Programmer
+
+Mostly I worked on tools for allowing game designers to setup animation timelines for the combat system.
+
+Fortunately I was under the wing of a very experienced programmer and was able to learn so much about C# and code architecture in general.
