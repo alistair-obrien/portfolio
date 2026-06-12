@@ -6,4 +6,4 @@ I enjoy getting stuck into interesting projects and finding the best ways to opt
 
 In my personal life I enjoy cooking, keeping fit, consuming science fiction media and playing games.
 
-I am attracted especially to games with complex systems, which allow me to express myself creatively as a player whilst being completely emersed in a rich and believable world. They are not only a joy to play, but also very inspiring.
+I am attracted especially to games with complex systems, which allow me to express myself creatively as a player whilst being completely immersed in a rich and believable world. They are not only a joy to play, but also very inspiring.
