@@ -1,0 +1,289 @@
+---
+import { Download, FileText, X } from "@lucide/astro";
+---
+
+<button
+  type="button"
+  class="btn btn-primary mt-5 gap-2"
+  onclick="document.getElementById('resume-modal')?.showModal()"
+>
+  <FileText class="size-5" />
+  Resume
+</button>
+
+<dialog id="resume-modal" class="modal">
+  <div
+    class="modal-box flex max-h-[86vh] w-11/12 max-w-5xl flex-col overflow-hidden rounded-lg p-0 text-left"
+  >
+    <div
+      class="flex shrink-0 items-start justify-between gap-3 border-b border-base-300 bg-base-100 px-5 py-4"
+    >
+      <div class="min-w-0">
+        <h2 class="text-xl font-bold leading-tight">Alistair O'Brien</h2>
+        <p class="text-sm text-base-content/70">
+          Senior Game/Tools Programmer
+        </p>
+        <p class="mt-1 text-sm text-base-content/70">
+          Osaka, Japan | alistair.m.obrien@gmail.com |
+          <a
+            class="link link-primary"
+            href="https://jp.linkedin.com/in/alistair-o-brien"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            jp.linkedin.com/in/alistair-o-brien
+          </a>
+        </p>
+      </div>
+      <div class="flex shrink-0 items-center gap-2">
+        <a
+          class="btn btn-sm btn-primary gap-2"
+          href="/alistair-obrien-resume.pdf"
+          download="alistair-obrien-resume.pdf"
+        >
+          <Download class="size-4" />
+          PDF
+        </a>
+        <form method="dialog">
+          <button class="btn btn-sm btn-ghost btn-circle" aria-label="Close resume">
+            <X class="size-5" />
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <article class="resume-document min-h-0 flex-1 overflow-y-auto px-5 py-5 sm:px-8 sm:py-7">
+      <section>
+        <h2>Professional Summary</h2>
+        <p>
+          Senior game/tools programmer with experience across Unity, C#, tools
+          development, game systems architecture, console porting, production
+          workflows, and technical art. Strong focus on building practical tools
+          and pipelines that reduce friction for designers, artists, programmers,
+          and other collaborators. Shipped work spans PC, Nintendo Switch,
+          PlayStation, Xbox, Android, Web.
+        </p>
+      </section>
+
+      <section>
+        <h2>Core Skills</h2>
+        <ul>
+          <li><strong>Programming:</strong> C#, Unity, Python</li>
+          <li>
+            <strong>Game development:</strong> Core Gameplay Architecture, Combat
+            Systems, UI Frameworks, Animation Tooling, Procedural Generation,
+            Localization, Debug/Diagnostics Tooling
+          </li>
+          <li>
+            <strong>Platforms:</strong> Windows, macOS, iOS, Android, web,
+            Nintendo Switch, PlayStation, Xbox
+          </li>
+          <li>
+            <strong>Production:</strong> Project Scheduling, Budgeting, Publisher
+            Communications, Workflow Design, Dev Ops
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Professional Experience</h2>
+
+        <h3>Skeleton Crew Studio - Senior Programmer</h3>
+        <p class="meta">Kyoto, Japan | October 2019 - Present</p>
+        <ul>
+          <li>
+            Built game systems architecture, internal tools, and production
+            workflows across games, VR, web, experimental experiences, and
+            non-game projects.
+          </li>
+          <li>
+            Led workflow optimization and tool development efforts to ensure
+            designers and artists had minimum friction when implementing their
+            visions.
+          </li>
+          <li>
+            Contributed to console porting work, including graphics optimization,
+            memory management, CPU performance, input, and platform-specific
+            compliance.
+          </li>
+          <li>
+            Led production and project management through scheduling, budgeting,
+            and efficient communication processes.
+          </li>
+        </ul>
+
+        <p class="subhead">Selected projects:</p>
+        <ul>
+          <li>
+            <strong
+              >Forestrike - Lead Programmer / Producer, Unity, C#, Python,
+              Windows, Nintendo Switch</strong
+            >
+            <ul>
+              <li>
+                Designed project schedule, budget, milestone structure, and
+                development workflow for a martial arts roguelite published by
+                Devolver Digital.
+              </li>
+              <li>
+                Built a custom Aseprite importer and combat animation sequencer
+                for designer-authored combat behavior.
+              </li>
+              <li>Created designer-facing player technique tooling.</li>
+              <li>
+                Designed a localization system which favored in context editing
+                and enabled late-stage localization kit export.
+              </li>
+              <li>
+                Built an asset-driven audio layer with audio designer friendly
+                parameters which reduced manual AudioSource management.
+              </li>
+              <li>
+                Set up remote build deployment systems and workflows to ensure
+                rapid testing processes were non interrupting.
+              </li>
+              <li>
+                Optimized the Nintendo Switch version for graphics, memory, CPU
+                bottlenecks, and implemented correct authentication processes for
+                independent server communication.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >Olija - Programmer, Unity, C#, Construct 2, Windows, Nintendo
+              Switch, PlayStation, Xbox</strong
+            >
+            <ul>
+              <li>Supported multi-platform porting.</li>
+              <li>Documented and automated platform build processes.</li>
+              <li>Built debug overlays and investigated niche platform-specific bugs.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Active Gaming Media - Programmer</h3>
+        <p class="meta">Osaka, Japan | March 2018 - October 2019</p>
+        <ul>
+          <li>
+            Worked in a small in-house game development department using Unity
+            and C#.
+          </li>
+          <li>
+            Led a team of roughly eight developers, with emphasis on project
+            management and smoother development workflows.
+          </li>
+          <li>
+            Developed tools and Unity systems to support production needs and
+            reduce repeated manual work.
+          </li>
+        </ul>
+
+        <h3>Scarlet City Studios - Programmer / 3D Artist</h3>
+        <p class="meta">Auckland, New Zealand | December 2013 - July 2017</p>
+        <ul>
+          <li>
+            Started as a 3D and texture artist, moved into technical art, then
+            transitioned into programming.
+          </li>
+          <li>
+            Created hand-painted low-poly game assets using Blender, Photoshop,
+            and Unity.
+          </li>
+          <li>
+            Built mobile-friendly shaders for vertex animation, color remapping,
+            and ambient effects.
+          </li>
+          <li>
+            Implemented combat system frontend work, quest content, and game
+            designer tools for animation timelines.
+          </li>
+        </ul>
+
+        <p class="subhead">Selected project:</p>
+        <ul>
+          <li>
+            <strong
+              >The Aetherlight - Programmer / 3D Artist, Unity, C#, Java,
+              Blender, Photoshop, Windows, macOS, iOS, Android, web</strong
+            >
+            <ul>
+              <li>
+                Contributed 3D art, technical art, shader work, combat tooling,
+                and frontend gameplay programming.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <h3>Auckland University of Technology</h3>
+        <p class="meta">
+          Auckland, New Zealand | Bachelor of Art and Design, Digital Design |
+          2011 - 2013
+        </p>
+        <ul>
+          <li>Graduated as Head of School.</li>
+        </ul>
+      </section>
+    </article>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+
+<style>
+  .resume-document {
+    background: var(--fallback-b1, oklch(var(--b1)));
+    color: var(--fallback-bc, oklch(var(--bc)));
+    font-size: 0.95rem;
+    line-height: 1.55;
+    text-align: left;
+  }
+
+  .resume-document section {
+    margin-top: 1rem;
+  }
+
+  .resume-document h2 {
+    margin: 1rem 0 0.4rem;
+    border-bottom: 1px solid color-mix(in oklch, currentColor 28%, transparent);
+    padding-bottom: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .resume-document h3 {
+    margin: 0.8rem 0 0.2rem;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .resume-document p {
+    margin: 0.25rem 0;
+  }
+
+  .resume-document ul {
+    margin: 0.35rem 0 0.65rem 1.2rem;
+    padding: 0;
+  }
+
+  .resume-document li {
+    margin: 0.2rem 0;
+  }
+
+  .resume-document .meta {
+    color: color-mix(in oklch, currentColor 72%, transparent);
+    font-size: 0.9rem;
+  }
+
+  .resume-document .subhead {
+    margin-top: 0.7rem;
+    font-weight: 700;
+  }
+</style>

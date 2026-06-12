@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
-import { ExternalLink, Eye } from "@lucide/astro";
+import { ExternalLink } from "@lucide/astro";
+import PlatformBadge from "./PlatformBadge.astro";
 
 const hackathonEntries = await getCollection("hackathons");
 
@@ -63,9 +64,17 @@ function formatPeriod(startDate: Date, endDate?: Date) {
                     )}
                   </time>
                   <h3 class="card-title mt-1">{hackathon.data.title}</h3>
-                  <p class="text-sm text-primary font-semibold">
-                    {hackathon.data.location}
-                  </p>
+                  {hackathon.data.platforms && hackathon.data.platforms.length > 0 ? (
+                    <div class="mt-1 flex gap-1">
+                      {hackathon.data.platforms.map((platform) => (
+                        <PlatformBadge platform={platform} />
+                      ))}
+                    </div>
+                  ) : (
+                    <p class="text-sm text-primary font-semibold">
+                      {hackathon.data.location}
+                    </p>
+                  )}
                   <p class="text-base-content/80 mt-3">
                     {hackathon.data.description}
                   </p>

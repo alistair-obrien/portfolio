@@ -8,6 +8,8 @@ description: >-
 startDate: 2025-05-02
 endDate: 2025-05-12
 logo: '@assets/hackathons/tomayto-tomahto-bullet-hell-jam-6/logo.png'
+platforms:
+  - web
 sourceLink: https://pixel-dust-dev.itch.io/tomato
 ---
 **Warning:** The Tomato has a foul mouth (There is profanity)

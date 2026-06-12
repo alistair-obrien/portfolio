@@ -9,6 +9,7 @@ import Toys from "../components/Toys.astro";
 import Blog from "../components/Blog.astro";
 import Hackathons from "../components/Hackathons.astro";
 import Contact from "../components/Contact.astro";
+import ResumeModal from "../components/ResumeModal.astro";
 import { Briefcase, GraduationCap } from "@lucide/astro";
 import { getEntry, render } from "astro:content";
 
@@ -48,6 +49,9 @@ const general = generalEntry.data;
           Tools Development - Project Management - Workflow Optimization
         </p>
           <a id="email-link" class="text-primary underline mt-4 inline-block"></a>
+          <div>
+            <ResumeModal />
+          </div>
         </div>
       </div>
     </section>

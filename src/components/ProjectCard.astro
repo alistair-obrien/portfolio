@@ -3,14 +3,16 @@ import { Image } from "astro:assets";
 import SkillBadge from "./SkillBadge.astro";
 import PlatformBadge from "./PlatformBadge.astro";
 import RoleBadge from "./RoleBadge.astro";
-import { ExternalLink, Eye } from "@lucide/astro";
-import type { CollectionEntry } from "astro:content";
+import { ExternalLink, Eye, X } from "@lucide/astro";
+import { render, type CollectionEntry } from "astro:content";
 
 interface Props {
   project: CollectionEntry<"projects">;
 }
 
 const { project } = Astro.props;
+const { Content } = await render(project);
+const modalId = `project-modal-${project.id.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
 
 function formatPeriod(startDate: Date, endDate?: Date) {
   const options: Intl.DateTimeFormatOptions = {
@@ -26,9 +28,11 @@ function formatPeriod(startDate: Date, endDate?: Date) {
 ---
 
 <article class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
-  <a
-    class="hover:opacity-80 transition-opacity"
-    href={`/projects/${project.id}`}
+  <button
+    type="button"
+    class="block w-full cursor-pointer border-0 bg-transparent p-0 text-left hover:opacity-80 transition-opacity"
+    aria-controls={modalId}
+    onclick={`document.getElementById('${modalId}').showModal()`}
   >
     <figure class="aspect-video">
       <Image
@@ -39,10 +43,17 @@ function formatPeriod(startDate: Date, endDate?: Date) {
         height={400}
       />
     </figure>
-  </a>
+  </button>
   <div class="card-body">
     <h3 class="card-title hover:text-primary transition-colors">
-      <a href={`/projects/${project.id}`}>{project.data.title}</a>
+      <button
+        type="button"
+        class="cursor-pointer border-0 bg-transparent p-0 text-left font-[inherit] text-inherit"
+        aria-controls={modalId}
+        onclick={`document.getElementById('${modalId}').showModal()`}
+      >
+        {project.data.title}
+      </button>
     </h3>
     <time class="text-sm text-base-content/60">
       {formatPeriod(project.data.startDate, project.data.endDate)}
@@ -92,9 +103,117 @@ function formatPeriod(startDate: Date, endDate?: Date) {
           </a>
         )
       }
-      <a href={`/projects/${project.id}`} class="btn btn-sm btn-primary">
+      <button
+        type="button"
+        class="btn btn-sm btn-primary gap-1"
+        aria-controls={modalId}
+        onclick={`document.getElementById('${modalId}').showModal()`}
+      >
+        <Eye class="size-4" />
         More Details
-      </a>
+      </button>
     </div>
   </div>
 </article>
+
+<dialog id={modalId} class="modal p-4 sm:p-8">
+  <div
+    class="modal-box flex max-h-[calc(100dvh-2rem)] w-11/12 max-w-5xl flex-col overflow-hidden rounded-lg p-0 text-left sm:max-h-[calc(100dvh-4rem)] lg:max-h-[calc(100dvh-6rem)]"
+  >
+    <div
+      class="flex shrink-0 items-start justify-between gap-4 border-b border-base-300 bg-base-100 px-5 py-4"
+    >
+      <div class="flex min-w-0 flex-wrap items-baseline gap-x-3 gap-y-1">
+        <h3 class="text-xl font-bold leading-tight">{project.data.title}</h3>
+        <time class="text-sm text-base-content/60 font-mono">
+          {formatPeriod(project.data.startDate, project.data.endDate)}
+        </time>
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center justify-end gap-2">
+        {project.data.demoLink && (
+          <a
+            href={project.data.demoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-sm btn-soft gap-1"
+          >
+            Game Store Page
+            <ExternalLink class="size-4" />
+          </a>
+        )}
+        {project.data.sourceLink && (
+          <a
+            href={project.data.sourceLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-sm btn-ghost gap-2"
+          >
+            Source
+            <ExternalLink class="size-4" />
+          </a>
+        )}
+        <form method="dialog">
+          <button
+            class="btn btn-sm btn-ghost btn-circle"
+            aria-label="Close project details"
+          >
+            <X class="size-5" />
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <article
+      class="min-h-0 flex-1 overflow-y-auto [scrollbar-gutter:stable] px-5 py-5 sm:px-8 sm:py-7"
+    >
+      <div class="space-y-7">
+        <figure class="overflow-hidden rounded-lg bg-base-200 shadow-sm">
+          <Image
+            src={project.data.image}
+            alt={project.data.title}
+            class="w-full aspect-video object-cover"
+            width={1000}
+            height={563}
+          />
+        </figure>
+
+        <section class="space-y-4">
+          <p class="max-w-3xl text-base leading-7 text-base-content/80">
+            {project.data.description}
+          </p>
+        </section>
+
+        <div class="space-y-3">
+          {project.data.roles && project.data.roles.length > 0 && (
+            <div class="flex flex-wrap gap-2">
+              {project.data.roles.map((role) => <RoleBadge role={role} />)}
+            </div>
+          )}
+
+          <div class="flex flex-wrap gap-2">
+            {project.data.skills.map((skill) => <SkillBadge skill={skill} />)}
+          </div>
+
+          {project.data.platforms && project.data.platforms.length > 0 && (
+            <div class="flex flex-wrap gap-3 pt-1">
+              {project.data.platforms.map((platform) => (
+                <PlatformBadge platform={platform} />
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div class="border-t border-base-content/10 pt-7">
+          <div
+            class="prose prose-base max-w-none text-base-content/80 prose-headings:mt-10 prose-headings:mb-4 prose-h2:text-2xl prose-h3:text-xl prose-p:my-4 prose-p:leading-7"
+          >
+            <Content />
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

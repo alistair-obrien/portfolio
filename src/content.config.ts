@@ -145,6 +145,7 @@ const hackathons = defineCollection({
       startDate: z.coerce.date(),
       endDate: z.coerce.date().optional(),
       logo: image().optional(),
+      platforms: z.array(z.string()).optional(),
       sourceLink: z.string().url().optional(),
     }),
 });

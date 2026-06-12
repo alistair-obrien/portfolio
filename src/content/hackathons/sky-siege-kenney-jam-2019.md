@@ -11,6 +11,8 @@ description: >-
 startDate: 2019-08-10
 endDate: 2019-08-12
 logo: '@assets/hackathons/sky-siege-kenney-jam-2019/logo.png'
+platforms:
+  - windows
 sourceLink: https://pixel-dust-dev.itch.io/sky-siege
 ---
 Awarded the prize for "Most Creative use of Assets"

@@ -11,6 +11,8 @@ description: >-
 startDate: 2025-05-15
 endDate: 2025-06-15
 logo: '@assets/hackathons/cactus-cowboy-metroidvania-month-28/logo.png'
+platforms:
+  - web
 sourceLink: https://pixel-dust-dev.itch.io/cactus-cowboy
 ---
 **Controls**

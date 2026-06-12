@@ -18,6 +18,8 @@ description: >-
 startDate: 2020-01-10
 endDate: 2020-01-12
 logo: '@assets/hackathons/bounty-pirate-jam-pre-jam-skirmish-2020/logo.png'
+platforms:
+  - web
 sourceLink: https://pixel-dust-dev.itch.io/bounty
 ---
 Dig through the legendary treasure chest to find the three gem boxes.
