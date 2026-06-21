@@ -267,3 +267,16 @@ Generated public\alistair-obrien-resume.pdf
 [2m10:01:58[22m [34m[watch][39m src/content/resume/resume.md
 [2m10:02:07[22m [34m[200][39m / [2m7292ms[22m
 [2m10:02:07[22m [34m[200][39m / [2m7293ms[22m
+[2m10:10:05[22m [34m[watch][39m scripts/generate-resume.py
+[2m10:10:05[22m [34m[watch][39m scripts/generate-resume.py
+[2m10:10:20[22m [34m[200][39m / [2m13016ms[22m
+[2m10:10:20[22m [34m[200][39m / [2m13017ms[22m
+[2m10:10:20[22m [34m[watch][39m src/content/resume/resume.md
+[2m10:10:20[22m [34m[watch][39m src/content/resume/resume.md
+[2m10:10:32[22m [34m[watch][39m src/content/resume/resume.md
+[2m10:10:32[22m [34m[watch][39m src/content/resume/resume.md
+[2m10:10:44[22m [34m[200][39m / [2m9961ms[22m
+[2m10:10:44[22m [34m[200][39m / [2m9962ms[22m
+[2m10:10:54[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m10:10:54[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m10:10:54[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html

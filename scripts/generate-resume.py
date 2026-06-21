@@ -1,25 +1,11 @@
 from __future__ import annotations
 
 import html
+import os
 import re
 import shutil
 import sys
 from pathlib import Path
-
-try:
-    from reportlab.lib import colors
-    from reportlab.lib.pagesizes import A4
-    from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
-    from reportlab.lib.units import mm
-    from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
-except ModuleNotFoundError as exc:
-    missing = exc.name or "reportlab"
-    print(
-        f"Missing Python package: {missing}. Install dependencies with: "
-        "python -m pip install reportlab",
-        file=sys.stderr,
-    )
-    raise SystemExit(1)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,6 +13,10 @@ SOURCE = ROOT / "resume.md"
 SITE_RESUME = ROOT / "src" / "content" / "resume" / "resume.md"
 ROOT_PDF = ROOT / "alistair-obrien-resume.pdf"
 PUBLIC_PDF = ROOT / "public" / "alistair-obrien-resume.pdf"
+
+
+def is_vercel_build() -> bool:
+    return os.environ.get("VERCEL") == "1"
 
 
 def markdown_inline(text: str) -> str:
@@ -72,6 +62,21 @@ def write_site_markdown(name: str, body_lines: list[str]) -> None:
 
 
 def build_pdf(lines: list[str], output_path: Path) -> None:
+    try:
+        from reportlab.lib import colors
+        from reportlab.lib.pagesizes import A4
+        from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+        from reportlab.lib.units import mm
+        from reportlab.platypus import Paragraph, SimpleDocTemplate
+    except (ModuleNotFoundError, ImportError) as exc:
+        missing = getattr(exc, "name", None) or "reportlab"
+        print(
+            f"Could not generate PDF because Python package '{missing}' failed to load. "
+            "Install local dependencies with: python -m pip install -r requirements.txt",
+            file=sys.stderr,
+        )
+        raise SystemExit(1) from exc
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
     name, contact_lines, body_lines = split_source(lines)
 
@@ -205,6 +210,20 @@ def main() -> None:
     lines = read_resume()
     name, _, body = split_source(lines)
     write_site_markdown(name, body)
+
+    if is_vercel_build():
+        if not PUBLIC_PDF.exists():
+            if ROOT_PDF.exists():
+                PUBLIC_PDF.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT_PDF, PUBLIC_PDF)
+            else:
+                raise FileNotFoundError(
+                    f"PDF generation is skipped on Vercel, but no committed PDF exists at {PUBLIC_PDF}"
+                )
+        print(f"Generated {SITE_RESUME.relative_to(ROOT)}")
+        print(f"Skipped PDF generation on Vercel; using {PUBLIC_PDF.relative_to(ROOT)}")
+        return
+
     build_pdf(lines, ROOT_PDF)
     PUBLIC_PDF.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(ROOT_PDF, PUBLIC_PDF)
