@@ -1,0 +1,269 @@
+
+> bloomfolio@0.0.1 predev
+> npm run resume:generate
+
+
+> bloomfolio@0.0.1 resume:generate
+> python scripts/generate-resume.py
+
+Generated src\content\resume\resume.md
+Generated alistair-obrien-resume.pdf
+Generated public\alistair-obrien-resume.pdf
+
+> bloomfolio@0.0.1 dev
+> astro dev --host 127.0.0.1 --port 4321
+
+[2m08:56:06[22m [34m[types][39m Generated [2m2ms[22m
+[2m08:56:11[22m [34m[content][39m Syncing content
+[2m08:56:11[22m [34m[content][39m Content config changed
+[2m08:56:11[22m [34m[content][39m Clearing content store
+[2m08:56:12[22m [34m[content][39m Synced content
+[2m08:56:12[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+
+[42m[1m astro [22m[49m [32mv5.18.1[39m [2mready in[22m 7344 [2mms[22m
+
+[2m┃[22m Local    [36mhttp://127.0.0.1:4321/[39m
+
+[2m08:56:12[22m [32mwatching for file changes...[39m
+/*! 🌼 daisyUI 5.5.14 */
+[2m08:56:48[22m [34m[astro-icon][39m Loaded icons from src/icons
+[2m08:56:52[22m [34m[200][39m / [2m4251ms[22m
+[2m08:57:00[22m [34m[200][39m / [2m3154ms[22m
+[2m08:57:02[22m [34m[200][39m /_image [2m225ms[22m
+[2m08:57:02[22m [34m[200][39m /_image [2m254ms[22m
+[2m08:57:02[22m [34m[200][39m /_image [2m269ms[22m
+[2m08:57:02[22m [34m[200][39m /_image [2m428ms[22m
+[2m08:57:02[22m [34m[200][39m /_image [2m157ms[22m
+[2m08:57:02[22m [34m[200][39m /_image [2m507ms[22m
+[2m08:57:02[22m [34m[200][39m /_image [2m75ms[22m
+[2m08:57:03[22m [34m[200][39m /_image [2m264ms[22m
+[2m08:57:03[22m [34m[200][39m /_image [2m337ms[22m
+[2m08:57:03[22m [34m[200][39m /_image [2m133ms[22m
+[2m08:57:10[22m [34m[200][39m /_image [2m59ms[22m
+[2m09:00:59[22m [34m[watch][39m src/pages/index.astro
+[2m09:00:59[22m [34m[watch][39m src/pages/index.astro
+[2m09:01:09[22m [34m[200][39m / [2m7158ms[22m
+[2m09:01:09[22m [34m[watch][39m src/content/about/index.md
+[2m09:01:09[22m [34m[watch][39m src/content/about/index.md
+[33m[1m09:01:09[22m [WARN] [glob-loader][39m Duplicate id "index" found in C:\Users\alist\Documents\Projects\Portfolio\src\content\about\index.md. Later items with the same id will overwrite earlier ones.
+[2m09:01:09[22m [34m[glob-loader][39m Reloaded data from [32mindex.md[39m
+[2m09:01:16[22m [34m[watch][39m resume.md
+[2m09:01:16[22m [34m[watch][39m resume.md
+[2m09:01:23[22m [34m[200][39m / [2m4999ms[22m
+[2m09:01:55[22m [34m[watch][39m src/components/ResumeModal.astro
+[2m09:02:01[22m [34m[200][39m / [2m5124ms[22m
+[2m09:02:10[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:02:10[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:02:16[22m [34m[200][39m / [2m4663ms[22m
+[2m09:02:37[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:02:37[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:02:44[22m [34m[200][39m / [2m5296ms[22m
+[2m09:02:55[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:02:55[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:02:55[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:03:15[22m [34m[200][39m / [2m19031ms[22m
+[2m09:03:28[22m [34m[200][39m / [2m10249ms[22m
+[2m09:03:28[22m [34m[200][39m / [2m10252ms[22m
+[2m09:03:50[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:03:51[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:03:51[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:05:53[22m [34m[watch][39m src/pages/index.astro
+[2m09:05:53[22m [34m[watch][39m src/pages/index.astro
+[2m09:05:58[22m [34m[200][39m / [2m4223ms[22m
+[2m09:06:02[22m [34m[watch][39m resume.md
+[2m09:06:02[22m [34m[watch][39m resume.md
+[2m09:06:08[22m [34m[200][39m / [2m4190ms[22m
+[2m09:06:13[22m [34m[watch][39m src/content/about/index.md
+[2m09:06:13[22m [34m[watch][39m src/content/about/index.md
+[33m[1m09:06:13[22m [WARN] [glob-loader][39m Duplicate id "index" found in C:\Users\alist\Documents\Projects\Portfolio\src\content\about\index.md. Later items with the same id will overwrite earlier ones.
+[2m09:06:13[22m [34m[glob-loader][39m Reloaded data from [32mindex.md[39m
+[2m09:06:21[22m [34m[200][39m / [2m6691ms[22m
+[2m09:06:21[22m [34m[200][39m / [2m2500ms[22m
+[2m09:06:24[22m [34m[watch][39m src/components/ResumeModal.astro
+[2m09:06:28[22m [34m[200][39m / [2m3244ms[22m
+[2m09:06:38[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:06:38[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:06:43[22m [34m[200][39m / [2m3946ms[22m
+[2m09:06:50[22m [34m[watch][39m resume.md
+[2m09:06:50[22m [34m[watch][39m resume.md
+[2m09:06:56[22m [34m[200][39m / [2m4303ms[22m
+[2m09:07:04[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:07:04[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:07:10[22m [34m[200][39m / [2m4237ms[22m
+[2m09:07:14[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:07:28[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:07:28[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:07:32[22m [34m[200][39m / [2m18160ms[22m
+[2m09:08:07[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:08:09[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:08:09[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:08:48[22m [34m[watch][39m src/pages/index.astro
+[2m09:08:48[22m [34m[watch][39m src/pages/index.astro
+[2m09:08:55[22m [34m[200][39m / [2m5106ms[22m
+[2m09:09:04[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:09:04[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:09:13[22m [34m[200][39m / [2m6642ms[22m
+[2m09:09:21[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:09:28[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:09:28[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:09:32[22m [34m[200][39m / [2m15822ms[22m
+[2m09:10:04[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:10:05[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:10:05[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:10:27[22m [34m[watch][39m /src/components/ResumeModal.astro?astro&type=style&index=0&lang.css
+[2m09:10:27[22m [34m[watch][39m src/components/ResumeModal.astro
+[2m09:11:22[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:11:22[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:11:31[22m [34m[200][39m / [2m6461ms[22m
+[2m09:11:36[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:11:39[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:11:39[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:11:56[22m [34m[200][39m / [2m15485ms[22m
+[2m09:12:02[22m [34m[200][39m / [2m4438ms[22m
+[2m09:12:41[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:12:43[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:12:44[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:12:58[22m [34m[200][39m / [2m3478ms[22m
+[2m09:13:08[22m [34m[200][39m / [2m2445ms[22m
+[2m09:13:11[22m [34m[200][39m / [2m2536ms[22m
+[2m09:13:53[22m [34m[200][39m / [2m2660ms[22m
+[2m09:15:31[22m [34m[watch][39m src/components/ResumeModal.astro
+[2m09:15:39[22m [34m[200][39m / [2m7259ms[22m
+[2m09:15:39[22m [34m[200][39m / [2m7261ms[22m
+[2m09:15:39[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:15:39[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:15:43[22m [34m[200][39m /_image [2m101ms[22m
+[2m09:15:43[22m [34m[200][39m /_image [2m120ms[22m
+[2m09:15:43[22m [34m[200][39m /_image [2m165ms[22m
+[2m09:15:43[22m [34m[200][39m /_image [2m528ms[22m
+[2m09:15:48[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:15:57[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:15:57[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:16:34[22m [34m[200][39m / [2m27457ms[22m
+[2m09:16:34[22m [34m[200][39m / [2m27457ms[22m
+[2m09:16:34[22m [34m[200][39m / [2m27458ms[22m
+[2m09:16:34[22m [34m[200][39m / [2m27458ms[22m
+[2m09:16:34[22m [34m[200][39m / [2m27459ms[22m
+[2m09:16:34[22m [34m[200][39m / [2m27459ms[22m
+[2m09:16:48[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:16:49[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:16:49[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:17:07[22m [34m[200][39m / [2m5596ms[22m
+[2m09:17:53[22m [34m[200][39m / [2m3139ms[22m
+[2m09:18:51[22m [34m[watch][39m src/content/about/index.md
+[2m09:18:51[22m [34m[watch][39m src/content/about/index.md
+[33m[1m09:18:51[22m [WARN] [glob-loader][39m Duplicate id "index" found in C:\Users\alist\Documents\Projects\Portfolio\src\content\about\index.md. Later items with the same id will overwrite earlier ones.
+[2m09:18:51[22m [34m[glob-loader][39m Reloaded data from [32mindex.md[39m
+[2m09:19:13[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:19:13[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:19:13[22m [34m[200][39m / [2m20491ms[22m
+[2m09:19:13[22m [34m[200][39m / [2m20492ms[22m
+[2m09:19:13[22m [34m[200][39m / [2m20493ms[22m
+[2m09:19:13[22m [34m[200][39m / [2m19657ms[22m
+[2m09:19:26[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:19:26[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:19:26[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:19:55[22m [34m[200][39m / [2m20559ms[22m
+[2m09:19:55[22m [34m[200][39m / [2m20560ms[22m
+[2m09:19:55[22m [34m[200][39m / [2m20561ms[22m
+[2m09:19:55[22m [34m[200][39m / [2m20562ms[22m
+[2m09:19:55[22m [34m[200][39m / [2m20562ms[22m
+[2m09:20:16[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:20:17[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:20:17[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:20:40[22m [34m[watch][39m src/content/about/index.md
+[2m09:20:40[22m [34m[watch][39m src/content/about/index.md
+[33m[1m09:20:40[22m [WARN] [glob-loader][39m Duplicate id "index" found in C:\Users\alist\Documents\Projects\Portfolio\src\content\about\index.md. Later items with the same id will overwrite earlier ones.
+[2m09:20:40[22m [34m[glob-loader][39m Reloaded data from [32mindex.md[39m
+[2m09:21:10[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:21:10[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:21:10[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:21:10[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:21:10[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:21:18[22m [34m[200][39m / [2m36225ms[22m
+[2m09:21:18[22m [34m[200][39m / [2m36226ms[22m
+[2m09:21:18[22m [34m[200][39m / [2m36227ms[22m
+[2m09:21:18[22m [34m[200][39m / [2m36229ms[22m
+[2m09:21:38[22m [34m[200][39m / [2m3065ms[22m
+[2m09:21:55[22m [34m[watch][39m .vercel/output/static/genosys-app/index.html
+[2m09:21:56[22m [34m[watch][39m .vercel/output/static/widgets/proc-gen/index.html
+[2m09:21:56[22m [34m[watch][39m .vercel/output/static/widgets/roguelike/index.html
+[2m09:22:14[22m [34m[watch][39m src/components/Projects.astro
+[2m09:22:14[22m [34m[watch][39m src/components/Projects.astro
+[2m09:22:22[22m [34m[200][39m / [2m7237ms[22m
+[2m09:22:22[22m [34m[200][39m / [2m7238ms[22m
+[2m09:26:14[22m [34m[watch][39m src/content/about/index.md
+[2m09:26:14[22m [34m[watch][39m src/content/about/index.md
+[33m[1m09:26:14[22m [WARN] [glob-loader][39m Duplicate id "index" found in C:\Users\alist\Documents\Projects\Portfolio\src\content\about\index.md. Later items with the same id will overwrite earlier ones.
+[2m09:26:14[22m [34m[glob-loader][39m Reloaded data from [32mindex.md[39m
+[2m09:26:25[22m [34m[200][39m / [2m9699ms[22m
+[2m09:26:25[22m [34m[200][39m / [2m9700ms[22m
+[2m09:26:25[22m [34m[200][39m / [2m9700ms[22m
+[2m09:33:03[22m [34m[watch][39m src/content/about/index.md
+[2m09:33:03[22m [34m[watch][39m src/content/about/index.md
+[33m[1m09:33:03[22m [WARN] [glob-loader][39m Duplicate id "index" found in C:\Users\alist\Documents\Projects\Portfolio\src\content\about\index.md. Later items with the same id will overwrite earlier ones.
+[2m09:33:03[22m [34m[glob-loader][39m Reloaded data from [32mindex.md[39m
+[2m09:33:15[22m [34m[200][39m / [2m10833ms[22m
+[2m09:33:15[22m [34m[200][39m / [2m10834ms[22m
+[2m09:33:15[22m [34m[200][39m / [2m10835ms[22m
+[2m09:33:15[22m [34m[200][39m / [2m10327ms[22m
+[2m09:34:56[22m [34m[watch][39m src/content/about/index.md
+[2m09:34:56[22m [34m[watch][39m src/content/about/index.md
+[33m[1m09:34:56[22m [WARN] [glob-loader][39m Duplicate id "index" found in C:\Users\alist\Documents\Projects\Portfolio\src\content\about\index.md. Later items with the same id will overwrite earlier ones.
+[2m09:34:56[22m [34m[glob-loader][39m Reloaded data from [32mindex.md[39m
+[2m09:35:09[22m [34m[200][39m / [2m12253ms[22m
+[2m09:35:09[22m [34m[200][39m / [2m12254ms[22m
+[2m09:35:09[22m [34m[200][39m / [2m12255ms[22m
+[2m09:35:09[22m [34m[200][39m / [2m11653ms[22m
+[2m09:36:00[22m [34m[watch][39m src/components/Projects.astro
+[2m09:36:00[22m [34m[watch][39m src/components/Projects.astro
+[2m09:36:08[22m [34m[200][39m / [2m7695ms[22m
+[2m09:36:08[22m [34m[200][39m / [2m7696ms[22m
+[2m09:43:05[22m [34m[watch][39m resume.md
+[2m09:43:05[22m [34m[watch][39m resume.md
+[2m09:43:12[22m [34m[200][39m / [2m6461ms[22m
+[2m09:43:12[22m [34m[200][39m / [2m6462ms[22m
+[2m09:43:13[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:43:13[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:43:50[22m [34m[200][39m / [2m2995ms[22m
+[2m09:45:13[22m [34m[watch][39m resume.md
+[2m09:45:13[22m [34m[watch][39m resume.md
+[2m09:45:21[22m [34m[200][39m / [2m6809ms[22m
+[2m09:45:21[22m [34m[200][39m / [2m6811ms[22m
+[2m09:45:21[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:45:21[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:46:16[22m [34m[200][39m / [2m3080ms[22m
+[2m09:47:20[22m [34m[watch][39m resume.md
+[2m09:47:20[22m [34m[watch][39m resume.md
+[2m09:47:30[22m [34m[200][39m / [2m8902ms[22m
+[2m09:47:30[22m [34m[200][39m / [2m8263ms[22m
+[2m09:47:30[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:47:30[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:47:38[22m [34m[200][39m / [2m5066ms[22m
+[2m09:48:49[22m [34m[watch][39m resume.md
+[2m09:48:49[22m [34m[watch][39m resume.md
+[2m09:48:49[22m [34m[watch][39m src/content/work/active-gaming-media.md
+[2m09:48:49[22m [34m[watch][39m src/content/work/active-gaming-media.md
+[33m[1m09:48:49[22m [WARN] [glob-loader][39m Duplicate id "active-gaming-media" found in C:\Users\alist\Documents\Projects\Portfolio\src\content\work\active-gaming-media.md. Later items with the same id will overwrite earlier ones.
+[2m09:48:49[22m [34m[glob-loader][39m Reloaded data from [32mactive-gaming-media.md[39m
+[2m09:49:12[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:49:12[22m [34m[watch][39m src/content/resume/resume.md
+[2m09:49:12[22m [34m[200][39m / [2m21880ms[22m
+[2m09:49:12[22m [34m[200][39m / [2m21881ms[22m
+[2m09:49:12[22m [34m[200][39m / [2m21882ms[22m
+[2m09:49:12[22m [34m[200][39m / [2m21290ms[22m
+[2m10:00:29[22m [34m[200][39m / [2m3641ms[22m
+[2m10:01:42[22m [34m[watch][39m resume.md
+[2m10:01:42[22m [34m[watch][39m resume.md
+[2m10:01:42[22m [34m[watch][39m src/content/work/active-gaming-media.md
+[2m10:01:42[22m [34m[watch][39m src/content/work/active-gaming-media.md
+[33m[1m10:01:42[22m [WARN] [glob-loader][39m Duplicate id "active-gaming-media" found in C:\Users\alist\Documents\Projects\Portfolio\src\content\work\active-gaming-media.md. Later items with the same id will overwrite earlier ones.
+[2m10:01:42[22m [34m[glob-loader][39m Reloaded data from [32mactive-gaming-media.md[39m
+[2m10:01:54[22m [34m[200][39m / [2m10148ms[22m
+[2m10:01:54[22m [34m[200][39m / [2m10149ms[22m
+[2m10:01:54[22m [34m[200][39m / [2m10149ms[22m
+[2m10:01:54[22m [34m[200][39m / [2m10143ms[22m
+[2m10:01:58[22m [34m[watch][39m src/content/resume/resume.md
+[2m10:01:58[22m [34m[watch][39m src/content/resume/resume.md
+[2m10:02:07[22m [34m[200][39m / [2m7292ms[22m
+[2m10:02:07[22m [34m[200][39m / [2m7293ms[22m

@@ -9,16 +9,17 @@ skills:
   - C#
   - Unity
   - Godot
+  - Python
   - Photoshop
   - React.js
 ---
-At Skeleton Crew Studios I was exposed to many different projects, not all games.
+At Skeleton Crew Studio I built production software, tools, and workflows across games, VR, web, experimental experiences, and non-game projects.
 
-I was able to dabble in VR, web development, experimental experiences and more.
-
-It is here that I gained a love for workflow optimizations and tool development to empower game designers and artists to fulfill their creative visions.
+This is where I developed a strong focus on internal tooling, automation, and deliberate architecture that helps cross-functional teams work faster with fewer manual steps.
 
 - Game Systems Architecture
 - Tools Development
 - Console Porting
+- Build Automation
+- Localization Pipelines
 - Project Management

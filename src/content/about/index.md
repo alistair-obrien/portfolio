@@ -2,8 +2,8 @@
 title: About Me
 photo: '@assets/about/photo.png'
 ---
-I enjoy getting stuck into interesting projects and finding the best ways to optimize workflows for all contributors. This includes setting up robust and deliberate architecture as well as intuitive tools for designers.
+I am a senior C# tools and automation engineer based in Osaka, focused on full-stack internal tools, production automation, and workflow improvements that make complex projects easier to ship.
 
-In my personal life I enjoy cooking, keeping fit, consuming science fiction media and playing games.
+Most of my experience is in shipped games and interactive products, building core system architecture, content creation tooling, build workflows, localization pipelines, and debug systems across multiple game engines and full-stack web projects. I enjoy reducing friction for cross-disciplinary teams so they can build, test, and ship with higher quality and faster iteration.
 
-I am attracted especially to games with complex systems, which allow me to express myself creatively as a player whilst being completely immersed in a rich and believable world. They are not only a joy to play, but also very inspiring!
+I am interested in remote or Japan-based roles across games, software, web platforms, developer tooling, automation, robotics, simulation, or other systems-heavy product teams. I am open to relocation for the right opportunity.

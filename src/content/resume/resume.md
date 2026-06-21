@@ -1,8 +1,6 @@
-# Alistair O'Brien
-
-Osaka, Japan | Remote or Japan-based roles | Open to relocation  
-alistair.m.obrien@gmail.com | https://jp.linkedin.com/in/alistair-o-brien
-
+---
+title: Alistair O'Brien
+---
 ## Summary
 
 Senior C# Internal Tools & Automation Engineer with 10+ years of shipped product experience across full-stack production tooling, authoring workflows, build automation, localization pipelines, debugging systems, console porting, and performance optimization. I build practical software that reduces manual work for cross-functional teams, from user-facing tool interfaces to the data, workflow, and runtime systems behind them. Shipped work spans PC, Nintendo Switch, PlayStation, Xbox, Android, and Web.

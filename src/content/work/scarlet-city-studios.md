@@ -13,11 +13,11 @@ skills:
   - Blender
   - Photoshop
 ---
-This was my first job after University and it was here I had the chance to meet with many very talented people and dabble in all sorts of disciplines.
+This was my first role after university, where I moved from art production into technical art and programming.
 
-I started as a 3D artist and texture artist, then moved into technical art, and finally settled as a programmer.
+I started as a 3D artist and texture artist, then moved into shader work, tools, and frontend gameplay programming.
 
-Other than the 3D art in the game, my contributions included some custom shaders for mobile friendly vertex animations, color remapping, combat system frontend and quest implementations.
+Alongside 3D art, my contributions included mobile-friendly vertex animation shaders, color remapping, combat system frontend work, quest implementation, and designer-facing animation timeline tools.
 
 - 3D Art
 - Shaders

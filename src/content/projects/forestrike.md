@@ -43,7 +43,7 @@ The core tool that the majority of the game is built on.
 
 The games director is a very talented pixel art animator, especially when it comes to action. He works very fast and iterates often, making adjustments to pixels, hitboxes, character states, sounds and more.
 
-Asperite is his tool of choice, so I built an Asperite importer and a custom animation system that presents frames in the same format as Asperite.
+Aseprite is his tool of choice, so I built an Aseprite importer and a custom animation system that presents frames in the same format as Aseprite.
 
 On top of the custom animation I built a modular designer that allowed him to adjust frame lengths, add hitboxes/hurtboxes, manipulate physics, set states, transition to other animations, set up bind points for weapons/hats and more.
 

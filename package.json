@@ -3,7 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "resume:generate": "python scripts/generate-resume.py",
+    "predev": "npm run resume:generate",
     "dev": "astro dev",
+    "prebuild": "npm run resume:generate",
     "dev:widget": "powershell -ExecutionPolicy Bypass -File ./scripts/dev-roguelike-widget.ps1",
     "build": "astro build",
     "preview": "astro preview",
